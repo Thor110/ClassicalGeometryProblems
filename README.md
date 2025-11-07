@@ -77,17 +77,18 @@ Users are encouraged to reference the PDF for readability and the .ods file for 
 
 ### 1. Squaring The Circle
 
+Srinivasa Ramanujans method for approximating this problem is the most accurate and is listed in the approximation chart.
+
+### 2. Trisecting An Angle
+
 I wrote a paper on the three primary classic geometry problems which presents two different methods for approximating each problem.
 
 - `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf)
 
-### 2. Trisecting An Angle
-
-- `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
-[Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf)
-
 ### 3. Doubling The Cube
+
+I wrote a paper on the three primary classic geometry problems which presents two different methods for approximating each problem.
 
 - `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf)
