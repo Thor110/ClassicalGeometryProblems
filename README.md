@@ -16,23 +16,23 @@ All approximations of these problems are intended to remain strictly Euclidean, 
 
 1. Squaring The Circle - This is the problem of constructing a square with the same area as any given circle.
 
-[Approximation Chart](https://github.com/thor110/classicalgeometryproblems/Approximations/01%20Squaring%20The%20Circle/Approximation%20Chart.pdf)
+[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/01%20Squaring%20The%20Circle/STC-ApproximationChart.pdf)
 
 2. Trisecting An Angle - This is the problem of trisecting any given angle.
 
-[Approximation Chart](https://github.com/thor110/classicalgeometryproblems/Approximations/02%20Trisecting%20An%20Angle/Approximation%20Chart.pdf)
+[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/02%20Trisecting%20An%20Angle/TAA-ApproximationChart.pdf)
 
 3. Doubling The Cube - This is the problem of doubling the volume of any given cube.
 
-[Approximation Chart](https://github.com/thor110/classicalgeometryproblems/Approximations/03%20Doubling%20The%20Cube/Approximation%20Chart.pdf)
+[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/03%20Doubling%20The%20Cube/DTC-ApproximationChart.pdf)
 
 4. Rectifying The Circle - This is a problem similar to arc rectification, but instead of transferring the length of a given arc, it is intended to transfer the length of the circumference of any given circle.
 
-[Approximation Chart](https://github.com/thor110/classicalgeometryproblems/Approximations/04%20Rectifying%20The%20Circle/Approximation%20Chart.pdf)
+[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/04%20Rectifying%20The%20Circle/RTC-ApproximationChart.pdf)
 
 5. Arc Rectification - This is the problem of rectifying the length of any given arc, that is to transfer the length of any given arc to a newly constructed line (Sometimes referred to as “rectifying the circle” when applied to the entire circumference).
 
-[Approximation Chart](https://github.com/thor110/classicalgeometryproblems/Approximations/05%20Arc%20Rectification/Approximation%20Chart.pdf)
+[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/05%20Arc%20Rectification/AR-ApproximationChart.pdf)
 
 It is my belief that rectification of any given arc is actually impossible, due to the inherent differences present in any given arc that would result in a generalised method being inapplicable to any other given arc.
 
@@ -40,7 +40,7 @@ However I chose to list it amongst the problems as it relates to many of the oth
 
 6. π Approximations - This is the problem of approximating π using a geometric construction.
 
-[Approximation Chart](https://github.com/thor110/classicalgeometryproblems/Approximations/06%20π%20Approximation/Approximation%20Chart.pdf)
+[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/06%20%CF%80%20Approximation/PA-ApproximationChart.pdf)
 
 I also chose to list this as a problem due to similar reasoning, that ultimately the core of the problem can help people understand why the problems are impossible.
 
@@ -124,15 +124,15 @@ Here I will list any mechanical solutions for any of these problems.
 
 ### 2. Trisecting An Angle
 
-My method for arc rectification can be adapted to trisecting an angle [Arc Rectification](#5-arc-rectification).
+My mechanical method for arc rectification can be adapted to trisecting an angle [Arc Rectification (Mechanical)](#mech-5-arc-rectification).
 
 ### 3. Doubling The Cube
 
 ### 4. Rectifying The Circle
 
-My method for arc rectification can be adapted to rectifying the circle. [Arc Rectification](#5-arc-rectification).
+My mechanical method for arc rectification can be adapted to rectifying the circle [Arc Rectification (Mechanical)](#mech-5-arc-rectification).
 
-### 5. Arc Rectification
+### 5. Arc Rectification <a name="mech-5-arc-rectification"></a>
 
 I devised a mechanical solution which lies outside the Euclidean rules for rectifying any given arc length.
 
@@ -141,7 +141,7 @@ I devised a mechanical solution which lies outside the Euclidean rules for recti
 
 ### 6. π Approximations
 
-I believe my mechanical method for arc rectification could be adapted for approximating Pi [Arc Rectification](#5-arc-rectification).
+My mechanical method for arc rectification can be adapted for approximating Pi [Arc Rectification (Mechanical)](#mech-5-arc-rectification).
 
 ## Understanding Impossibility
 
