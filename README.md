@@ -81,17 +81,17 @@ Users are encouraged to reference the PDF for readability and the .ods file for 
 
 I wrote a paper on the three primary classic geometry problems which presents two different methods for approximating each problem.
 
-- `/Approximations/Three Classic Geometry Problems v8.pdf`
+- `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf)
 
 ### 2. Trisecting An Angle
 
-- `/Approximations/Three Classic Geometry Problems v8.pdf`
+- `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf)
 
 ### 3. Doubling The Cube
 
-- `/Approximations/Three Classic Geometry Problems v8.pdf`
+- `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf)
 
 ### 4. Rectifying The Circle
@@ -100,7 +100,7 @@ I believe that the most accurate approximation of rectifying the circle would re
 
 However for the sake of presenting different methods and until a more accurate singular method is discovered, I have chosen to list my own approximation which I discovered recently.
 
-- `/Approximations/04 Rectifying The Circle/EuclideanCircumferenceApproximation.pdf`
+- `/Approximations/07 Accompanying Papers/EuclideanCircumferenceApproximation.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/EuclideanCircumferenceApproximation.pdf)
 
 ### 5. Arc Rectification
@@ -136,7 +136,7 @@ My mechanical method for arc rectification can be adapted to rectifying the circ
 
 I devised a mechanical solution which lies outside the Euclidean rules for rectifying any given arc length.
 
-- `/Mechanical Solutions/05 Arc Rectification/Rope Around The Clock.pdf`
+- `/Mechanical Solutions/07 Accompanying Papers/Rope Around The Clock.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Mechanical%20Solutions/07%20Accompanying%20Papers/Rope%20Around%20The%20Clock.pdf)
 
 ### 6. π Approximations
