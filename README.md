@@ -122,26 +122,30 @@ Here I will list any mechanical solutions for any of these problems.
 
 ### 1. Squaring The Circle <a name="mech-1-squaring-the-circle"></a>
 
+Currently, no verified or submitted mechanical solutions exist for this problem.
+
 ### 2. Trisecting An Angle <a name="mech-2-trisecting-an-angle"></a>
 
-My mechanical method for arc rectification can be adapted to trisecting an angle [Arc Rectification (Mechanical)](#mech-5-arc-rectification).
-
-### 3. Doubling The Cube <a name="mech-3-doubling-the-cube"></a>
-
-### 4. Rectifying The Circle <a name="mech-4-rectifying-the-circle"></a>
-
-My mechanical method for arc rectification can be adapted to rectifying the circle [Arc Rectification (Mechanical)](#mech-5-arc-rectification).
-
-### 5. Arc Rectification <a name="mech-5-arc-rectification"></a>
-
-I devised a mechanical solution which lies outside the Euclidean rules for rectifying any given arc length.
+I devised a mechanical solution which lies outside the Euclidean rules for triscting an angle.
 
 - `/Mechanical Solutions/07 Accompanying Papers/Rope Around The Clock.pdf`
 [Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Mechanical%20Solutions/07%20Accompanying%20Papers/Rope%20Around%20The%20Clock.pdf)
 
+### 3. Doubling The Cube <a name="mech-3-doubling-the-cube"></a>
+
+Currently, no verified or submitted mechanical solutions exist for this problem.
+
+### 4. Rectifying The Circle <a name="mech-4-rectifying-the-circle"></a>
+
+My mechanical method for trisecting an angle can be adapted to rectifying the circle [Trisecting An Angle (Mechanical)](#mech-2-trisecting-an-angle).
+
+### 5. Arc Rectification <a name="mech-5-arc-rectification"></a>
+
+My mechanical method for trisecting an angle can be adapted for arc rectification [Trisecting An Angle (Mechanical)](#mech-2-trisecting-an-angle).
+
 ### 6. π Approximations <a name="mech-6-π-approximations"></a>
 
-My mechanical method for arc rectification can be adapted for approximating Pi [Arc Rectification (Mechanical)](#mech-5-arc-rectification).
+My mechanical method for trisecting an angle can be adapted for approximating Pi [Trisecting An Angle (Mechanical)](#mech-2-trisecting-an-angle).
 
 ## Understanding Impossibility
 
