@@ -16,23 +16,23 @@ All approximations of these problems are intended to remain strictly Euclidean, 
 
 1. Squaring The Circle - This is the problem of constructing a square with the same area as any given circle.
 
-[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/01%20Squaring%20The%20Circle/STC-ApproximationChart.pdf)
+[Squaring The Circle - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/01%20Squaring%20The%20Circle/STC-ApproximationChart.pdf)
 
 2. Trisecting An Angle - This is the problem of trisecting any given angle.
 
-[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/02%20Trisecting%20An%20Angle/TAA-ApproximationChart.pdf)
+[Trisecting An Angle - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/02%20Trisecting%20An%20Angle/TAA-ApproximationChart.pdf)
 
 3. Doubling The Cube - This is the problem of doubling the volume of any given cube.
 
-[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/03%20Doubling%20The%20Cube/DTC-ApproximationChart.pdf)
+[Doubling The Cube - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/03%20Doubling%20The%20Cube/DTC-ApproximationChart.pdf)
 
 4. Rectifying The Circle - This is a problem similar to arc rectification, but instead of transferring the length of a given arc, it is intended to transfer the length of the circumference of any given circle.
 
-[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/04%20Rectifying%20The%20Circle/RTC-ApproximationChart.pdf)
+[Rectifying The Circle - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/04%20Rectifying%20The%20Circle/RTC-ApproximationChart.pdf)
 
 5. Arc Rectification - This is the problem of rectifying the length of any given arc, that is to transfer the length of any given arc to a newly constructed line (Sometimes referred to as “rectifying the circle” when applied to the entire circumference).
 
-[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/05%20Arc%20Rectification/AR-ApproximationChart.pdf)
+[Arc Rectification - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/05%20Arc%20Rectification/AR-ApproximationChart.pdf)
 
 It is my belief that rectification of any given arc is actually impossible, due to the inherent differences present in any given arc that would result in a generalised method being inapplicable to any other given arc.
 
@@ -40,7 +40,7 @@ However I chose to list it amongst the problems as it relates to many of the oth
 
 6. π Approximations - This is the problem of approximating π using a geometric construction.
 
-[Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/06%20%CF%80%20Approximation/PA-ApproximationChart.pdf)
+[π Approximations - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/06%20%CF%80%20Approximation/PA-ApproximationChart.pdf)
 
 I also chose to list this as a problem due to similar reasoning, that ultimately the core of the problem can help people understand why the problems are impossible.
 
@@ -111,7 +111,7 @@ The best method I could find for rectifying any given arc gives ~95% accuracy an
 
 Kochanski's approximations for π are likely the best that will ever be discovered.
 
-"(5 August 1631 – 17 May 1700) was a Polish mathematician, physicist, clock-maker, pedagogue and librarian." - https://en.wikipedia.org/wiki/Adam_Adamandy_Kocha%C5%84ski
+"Adam Adamandy Kochański (5 August 1631 – 17 May 1700) was a Polish mathematician, physicist, clock-maker, pedagogue and librarian." - https://en.wikipedia.org/wiki/Adam_Adamandy_Kocha%C5%84ski
 
 **References**
 - Henryk Fuks : Adam Adamandy Kochanski’s approximations of ´ π: reconstruction of the algorithm : https://arxiv.org/pdf/1111.1739
