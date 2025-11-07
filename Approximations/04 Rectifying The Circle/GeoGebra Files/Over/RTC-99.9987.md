@@ -22,7 +22,7 @@ Oversized
 Verified using GeoGebra and https://percentagecalculator.net/
 
 **File(s):**
-RTC-99.998.gbb
+RTC-99.9987.gbb
 
 **Description:**
 This is a slight adjustment from my 99.806% method.

@@ -1,23 +1,28 @@
-**Problem:** π Approximation
+**Problem:**Rectifying The Circle
 
 **Method Name:**
+
 
 **Author:**
 Edward James Gordon
 
 **Accuracy (%):**
-99.806
+98.538
 
 **Oversized / Undersized:**
+Oversized
 
 **Number of Circles:**
+6
 
 **Number of Lines:**
+10
 
 **Verification Method:**
 
+
 **File(s):**
-PA-99.806.gbb
+RTC-98.538.gbb
 
 **Description:**
-This uses my method for rectifying the circle and then simply divides the constructed length in two to approximate π.
+This is an adjustment of my undersized 99.999% accurate method.

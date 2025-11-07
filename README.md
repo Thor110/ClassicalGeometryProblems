@@ -38,11 +38,7 @@ However I chose to list it amongst the problems as it relates to many of the oth
 
 6. π Approximations - This is the problem of approximating π using a geometric construction.
 
-[π Approximations - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/06%20%CF%80%20Approximation/PA-ApproximationChart.pdf)
-
-I also chose to list this as a problem due to similar reasoning, that ultimately the core of the problem can help people understand why the problems are impossible.
-
-It is also worth noting that it is quite likely no one will ever find a closer approximation than [Kochanski](#6-kochanskis-approximations-of-π).
+Approximations for π can be found using any existing method for Rectifying The Circle by simply dividing the rectified length in two.
 
 ## Cataloguing & Submission Guide
 

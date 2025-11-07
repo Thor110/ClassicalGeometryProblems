@@ -1,4 +1,4 @@
-**Problem:** π Approximation
+**Problem:**Rectifying The Circle
 
 **Method Name:**
 
@@ -7,22 +7,22 @@
 Edward James Gordon
 
 **Accuracy (%):**
-99.98755028618388
+99.97953327991887
 
 **Oversized / Undersized:**
-Undersized
+Oversized
 
 **Number of Circles:**
-4
+6
 
 **Number of Lines:**
-14
+8
 
 **Verification Method:**
-Verified using GeoGebra and https://percentagecalculator.net/
+
 
 **File(s):**
-PA-99.987.gbb
+RTC-99.979.gbb
 
 **Description:**
-This is a slight adjustment from my 99.806% method.
+This is an adjustment of my undersized 99.999% accurate method.
