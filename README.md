@@ -1,10 +1,8 @@
 # Classical Geometry Problems
 
-An open archive for documenting Euclidean approximations of the classical geometric problems.
+An open archive for documenting Euclidean approximations of the classical geometric problems and a proposal for a centralised system to catalogue all attempts to approximate the classical geometry problems.
 
 This archive is not intended to prove the classical problems possible, but to document all meaningful geometric approximations, their accuracy, and their construction efficiency, so that future work may be compared transparently.
-
-A proposal for a centralised system to catalogue all attempts to approximate the classical geometry problems.
 
 It is my hope that this repository might be able to help alleviate the burden imparted on academic journals, mathematicians or anyone else that finds themselves regularly receiving claims of solving the classic geometry problems.
 
