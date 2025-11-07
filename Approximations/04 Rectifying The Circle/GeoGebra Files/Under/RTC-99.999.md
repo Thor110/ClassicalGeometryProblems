@@ -1,0 +1,28 @@
+**Problem:** Rectifying The Circle
+
+**Method Name:**
+Microscale Trisection
+
+**Author:**
+Edward James Gordon - 07-11-2025
+
+**Accuracy (%):**
+99.99948805479345
+
+**Oversized / Undersized:**
+Undersized
+
+**Number of Circles:**
+9
+
+**Number of Lines:**
+13
+
+**Verification Method:**
+Verified using GeoGebra and https://percentagecalculator.net/
+
+**File(s):**
+RTC-99.999.gbb
+
+**Description:**
+This is a completely new method that might be considered incredibly difficult to reproduce unless done on a megalithic scale due to the final 6 steps being over a 500th of the scale of the initial circle.
