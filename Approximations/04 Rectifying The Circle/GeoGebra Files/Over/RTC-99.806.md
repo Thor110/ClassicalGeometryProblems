@@ -1,4 +1,4 @@
-**Problem:**
+**Problem:**Rectifying The Circle
 
 **Method Name:**
 
@@ -10,13 +10,13 @@ Edward James Gordon
 99.806
 
 **Oversized / Undersized:**
-
+Oversized
 
 **Number of Circles:**
-
+1
 
 **Number of Lines:**
-
+10
 
 **Verification Method:**
 
