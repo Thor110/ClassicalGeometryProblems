@@ -7,22 +7,22 @@
 Edward James Gordon
 
 **Accuracy (%):**
-99.98755028618388
+99.98745429466945
 
 **Oversized / Undersized:**
 Undersized
 
 **Number of Circles:**
-4
+9
 
 **Number of Lines:**
-14
+6
 
 **Verification Method:**
 Verified using GeoGebra and https://percentagecalculator.net/
 
 **File(s):**
-RTC-99.987.gbb
+RTC-99.9875.gbb
 
 **Description:**
-This is a slight adjustment from my 99.806% method.
+This was found using my search space method.
