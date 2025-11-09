@@ -6,13 +6,16 @@
 Adam Adamandy Kochanski
 
 **Accuracy (%):**
-99.998
+99.99811194856672
 
 **Oversized / Undersized:**
+Undersized
 
 **Number of Circles:**
+5
 
 **Number of Lines:**
+7
 
 **Verification Method:**
 

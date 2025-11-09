@@ -7,7 +7,7 @@
 Edward James Gordon
 
 **Accuracy (%):**
-98.16518509675318
+99.37407696435614
 
 **Oversized / Undersized:**
 Undersized
@@ -22,6 +22,6 @@ Undersized
 
 
 **File(s):**
-RTC-98.165.gbb
+RTC-99.374.gbb
 
 **Description:**
