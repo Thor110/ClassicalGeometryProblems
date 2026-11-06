@@ -19,7 +19,7 @@
 
 <h1>Classical Geometry Problems // Why Try The Impossible</h1>
 <div class="sub">
-  On the people who searched, why the search is worth it, and how to meet someone who shares an attempt.
+  On the people who searched, why the search is worth it, how to meet someone who shares an attempt, and where to refer claims of a solution.
 </div>
 
 <div class="box">
@@ -86,8 +86,28 @@
   <div class="box-title">A Reply You Can Use</div>
   <div class="box-text">Copy, edit and post it wherever someone shares a construction.</div>
   <textarea id="reply" readonly>Nice work, and thanks for sharing the construction. A straightedge and compass can't solve this problem exactly (Wantzel proved it for the angle and the cube in 1837, Lindemann for the circle in 1882), but close approximations are a real, centuries-old pursuit: Kochański and Ramanujan both published them. What accuracy do you measure, and how many circles and lines does it take? If you'd like to see how it compares, there is an open archive that ranks approximations and welcomes submissions:
-https://thor110.github.io/ClassicalGeometryProblems/</textarea>
-  <div class="controls" style="margin-top:12px;"><button class="small" id="copy">Copy Reply</button></div>
+Website: https://thor110.github.io/ClassicalGeometryProblems/
+Repository: https://github.com/Thor110/ClassicalGeometryProblems</textarea>
+  <div class="controls" style="margin-top:12px;"><button class="small" data-copy="reply">Copy Reply</button></div>
+</div>
+
+<div class="box" id="referral">
+  <div class="box-title">For Mathematicians, Journals And Moderators</div>
+  <div class="box-text">
+    Mathematics departments and journals receive a steady stream of letters claiming to have squared the circle, trisected the angle or doubled the cube. Each one costs someone time, and a curt rejection rarely helps the sender. This archive exists partly to lift that burden: you can refer such claims here instead.
+  </div>
+  <ul>
+    <li>The sender gets a fair hearing: their construction is measured by public rules and, if it reaches 95%, charted with their name on it.</li>
+    <li>They learn why exactness is impossible, from the same page that credits their work.</li>
+    <li>You can answer in one short message, without needing to check the construction yourself.</li>
+  </ul>
+  <div class="box-text">A referral you can send:</div>
+  <textarea id="referralText" readonly style="min-height:190px;font-size:14px;color:#b0aca5;">Thank you for sending your construction. Exact solutions to squaring the circle, trisecting the angle and doubling the cube with straightedge and compass are proven impossible (Wantzel, 1837; Lindemann, 1882), so we are unable to review claims of exact solutions. Close approximations, however, are a long and honourable tradition, from Kochański to Ramanujan, and there is an open archive that measures, ranks and credits them.
+
+If you measure your construction's accuracy and submit it there, it will be checked by public rules and recorded under your name:
+Website: https://thor110.github.io/ClassicalGeometryProblems/
+Repository: https://github.com/Thor110/ClassicalGeometryProblems</textarea>
+  <div class="controls" style="margin-top:12px;"><button class="small" data-copy="referralText">Copy Referral</button></div>
 </div>
 
 <div class="box">
@@ -118,11 +138,11 @@ https://thor110.github.io/ClassicalGeometryProblems/</textarea>
 </div>
 
 <script>
-document.getElementById('copy').onclick = async () => {
-  const t = document.getElementById('reply'), b = document.getElementById('copy');
+document.querySelectorAll('[data-copy]').forEach(b => b.onclick = async () => {
+  const t = document.getElementById(b.dataset.copy), label = b.textContent;
   try { await navigator.clipboard.writeText(t.value); } catch { t.select(); document.execCommand('copy'); }
-  b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy Reply', 1500);
-};
+  b.textContent = 'Copied'; setTimeout(() => b.textContent = label, 1500);
+});
 </script>
 </body>
 </html>

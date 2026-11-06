@@ -13,10 +13,10 @@ Edward James Gordon - 08-11-2025
 Undersized
 
 **Number of Circles:**
-10
+9
 
 **Number of Lines:**
-5
+4
 
 **Verification Method:**
 Verified using GeoGebra and https://percentagecalculator.net/

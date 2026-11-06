@@ -69,7 +69,7 @@ const PROBLEMS = [
     target: 'A segment of length 2πr. Halve it and you have π.',
     why: 'The same wall as squaring the circle: π is transcendental (Lindemann, 1882).',
     entries: [
-      ['over', 15, '', 'Edward James Gordon', 6, 7, '99.538', 'gmypmfqa', 'GeoGebra Files/Over/RTC-98.538', {}],
+      ['over', 15, '', 'Edward James Gordon', 6, 7, '98.538', 'gmypmfqa', 'GeoGebra Files/Over/RTC-98.538', {}],
       ['over', 14, '', 'Edward James Gordon', 13, 9, '99.596', 's5d6kgfs', 'GeoGebra Files/Over/RTC-99.596', {precise: '99.59619104296647'}],
       ['over', 13, 'µ', 'Edward James Gordon', 9, 4, '99.607', 'ryhqksry', 'GeoGebra Files/Over/RTC-99.607', {precise: '99.6074651519426'}],
       ['over', 12, '', 'Edward James Gordon', 7, 3, '99.65', 't5bqfckt', 'GeoGebra Files/Over/RTC-99.650', {precise: '99.65016198300786'}],

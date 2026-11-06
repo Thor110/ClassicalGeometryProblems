@@ -13,10 +13,10 @@ Edward James Gordon
 Undersized
 
 **Number of Circles:**
-
+8
 
 **Number of Lines:**
-
+4
 
 **Verification Method:**
 
