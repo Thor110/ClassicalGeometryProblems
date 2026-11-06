@@ -150,9 +150,7 @@ def check_new(path, problem):
 
 def write(pairs):
     out = {'tool': 'tools/crossref.py', 'run': datetime.date.today().isoformat(), 'pairs': pairs}
-    with open(os.path.join(v.ROOT, 'pages', 'crossref.js'), 'w', encoding='utf-8') as f:
-        f.write('// Written by tools/crossref.py. Do not edit by hand: run it again.\nconst CROSSREF = ')
-        json.dump(out, f, indent=1, ensure_ascii=False); f.write(';\n')
+    v.write_js(os.path.join(v.ROOT, 'pages', 'crossref.js'), '// Written by tools/crossref.py. Do not edit by hand: run it again.', 'CROSSREF', out)
 
 def main():
     if len(sys.argv) >= 3: return check_new(sys.argv[1], sys.argv[2])

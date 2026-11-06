@@ -576,6 +576,26 @@ def precise_accuracy(problem, path, entry, digits=50, shown=32):
     finally:
         use_precision(None)
 
+def write_js(path, comment, name, obj):
+    """Write data for the website as `const NAME = {...};`, compactly: one line for each item of the
+    largest list or table in it, so the file stays small to load and easy to compare between runs."""
+    dumps = lambda x: json.dumps(x, ensure_ascii=False, separators=(',', ':'))
+    big = max((k for k, x in obj.items() if isinstance(x, (dict, list))), key=lambda k: len(obj[k]), default=None)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(comment + '\nconst %s = {' % name)
+        f.write(','.join('%s:%s' % (dumps(k), dumps(x)) for k, x in obj.items() if k != big))
+        if big is not None:
+            items = obj[big]
+            rows = ['%s:%s' % (dumps(k), dumps(x)) for k, x in items.items()] if isinstance(items, dict) else [dumps(x) for x in items]
+            open_, close = ('{', '}') if isinstance(items, dict) else ('[', ']')
+            f.write('%s%s:%s\n' % (',' if len(obj) > 1 else '', dumps(big), open_) + ',\n'.join(rows) + '\n' + close)
+        f.write('};\n')
+
+def read_js(path):
+    """The data in a file written by write_js (or any `const NAME = {...};` file)."""
+    s = open(path, encoding='utf-8').read()
+    return json.loads(s[s.index('{', s.index('const ')):s.rindex('}') + 1])
+
 def load_archive():
     src = open(os.path.join(ROOT, 'pages', 'archive-data.js'), encoding='utf-8').read()
     return json.loads(src[src.index('{'):src.rindex('}') + 1])
@@ -747,10 +767,7 @@ def main():
             import draw; draw.main()
         except Exception as ex:
             print('drawings were not made: %s' % ex)
-        with open(os.path.join(ROOT, 'pages', 'ai-checks.js'), 'w', encoding='utf-8') as f:
-            f.write('// Written by tools/verify.py --write. Do not edit by hand: run the script again.\nconst AI_CHECKS = ')
-            json.dump(out, f, indent=1, ensure_ascii=False)
-            f.write(';\n')
+        write_js(os.path.join(ROOT, 'pages', 'ai-checks.js'), '// Written by tools/verify.py --write. Do not edit by hand: run the script again.', 'AI_CHECKS', out)
     ORIGINS = {'historical', 'maintainer', 'session', 'submitted'}
     for pr in archive['problems']:
         for e in pr['entries']:

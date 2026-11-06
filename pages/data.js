@@ -2,6 +2,12 @@
 // charts) and ai-checks.js (written by tools/verify.py), which must be loaded before this file.
 
 const REPO = 'https://github.com/Thor110/ClassicalGeometryProblems';
+
+// Text from the data (names, methods, notes, verifications, disputes) is written into pages as
+// HTML, and some of it comes from public submissions, so it is escaped first.
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+// The best entry on one side, by the full-precision figure (the chart figure is shortened).
+const bestOf = (entries, side) => entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact)[0];
 const CHECKS = (typeof AI_CHECKS !== 'undefined') ? AI_CHECKS.results : {};
 
 // Status of an entry under the verification rules (VERIFICATION.md):
@@ -66,6 +72,9 @@ const PI_CHART = (() => {
 })();
 // π written out, and how many decimal places of it are right (within half a unit of the last place).
 function piText(e) { return 'π ≈ ' + e.piValue.toFixed(Math.min(14, e.piPlaces + 3)) + ' · ' + e.piPlaces + ' decimal place' + (e.piPlaces === 1 ? '' : 's'); }
+
+// An entry's current rank on its side of its chart, by its id ('' if it is not charted).
+const rankOf = id => { for (const p of PROBLEMS) { const e = p.entries.find(x => x.id === id); if (e) return e.rank; } return ''; };
 
 // A repository path as a link: the file itself (served next to the website) or its page on GitHub.
 function repoFile(path, root) { return (root || '../') + path.split('/').map(encodeURIComponent).join('/'); }

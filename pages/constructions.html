@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Step-by-step walkthroughs of classical approximations, from Kochański to the Euclidean circumference approximation, with their measured accuracy.">
 <title>Classical Geometry Problems // Step By Step Constructions</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -55,7 +56,6 @@
 </div>
 
 <script src="archive-data.js"></script>
-<script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
 // ---- A little plane geometry. Points are [x, y]; the unit circle has radius 1. ----
@@ -92,7 +92,7 @@ function circumference() {
   return {
     title: 'Euclidean Circumference Approximation',
     intro: 'Edward James Gordon\'s method for rectifying the circle: a straight line nearly as long as the circle\'s circumference. Oversized, 99.806%.',
-    source: `From the paper <a class="link" href="paper-euclidean-circumference-approximation.html">Euclidean Circumference Approximation</a> · chart entry: <a class="link" href="charts.html#rtc">Rectifying The Circle, oversized #9</a>`,
+    source: `From the paper <a class="link" href="paper-euclidean-circumference-approximation.html">Euclidean Circumference Approximation</a> · chart entry: <a class="link" href="charts.html#rtc">Rectifying The Circle, oversized #${rankOf('rtc-over-99.806')}</a>`,
     view: [-1.6, -1.55, 5.9, 1.4],
     truthLabel: '2πr', result: alpha, truth, K, T,
     steps: [
@@ -130,7 +130,7 @@ function kochanski() {
   return {
     title: "Kochański's Approximation Of π (1685)",
     intro: 'Adam Adamandy Kochański\'s construction, in its common textbook form: a length of nearly π r. Double it to rectify the circle. Undersized, 99.998%.',
-    source: `Background: <a class="link" href="https://arxiv.org/pdf/1111.1739" target="_blank" rel="noopener">Henryk Fuks, reconstruction of Kochański's algorithm</a> · chart entry: <a class="link" href="charts.html#rtc">Rectifying The Circle, undersized #2</a>`,
+    source: `Background: <a class="link" href="https://arxiv.org/pdf/1111.1739" target="_blank" rel="noopener">Henryk Fuks, reconstruction of Kochański's algorithm</a> · chart entry: <a class="link" href="charts.html#rtc">Rectifying The Circle, undersized #${rankOf('rtc-under-99.998')}</a>`,
     view: [-3.0, -1.9, 1.7, 1.4],
     truthLabel: 'πr', result: len, truth, K: D, T, measureFrom: A,
     steps: [

@@ -3,7 +3,7 @@
 The search (tools/architecture_search.py) and the measurements (tools/architecture.py) are worth
 running again as the charts grow. Rather than a fixed number, the number of new entries to wait for,
 X, follows the pace of submissions, worked out from the record of past runs in
-pages/architecture-finds.js:
+Architecture/Finds/finds.json:
 
   X = the number of entries added in an average 30 days (from the first run to now),
       but never fewer than MIN_X and never more than MAX_X.
@@ -54,8 +54,9 @@ def decide(runs, now_entries, today):
 
 def main():
     runs = []
-    if os.path.exists(FINDS_JS):
-        s = open(FINDS_JS, encoding='utf-8').read(); runs = json.loads(s[s.index('{'):s.rindex('}') + 1]).get('runs', [])
+    data = os.path.join(v.ROOT, 'Architecture', 'Finds', 'finds.json')
+    if os.path.exists(data): runs = json.load(open(data, encoding='utf-8')).get('runs', [])
+    elif os.path.exists(FINDS_JS): runs = v.read_js(FINDS_JS).get('runs', [])
     due, x, new, why = decide(runs, entries_now(), datetime.date.today())
     print(('Due: ' if due else 'Not due: ') + why)
     if os.environ.get('GITHUB_OUTPUT'):

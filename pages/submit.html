@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Submit a straightedge and compass approximation: measure its accuracy, write it up, or send it straight from GeoGebra.">
 <title>Classical Geometry Problems // Submit An Approximation</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -148,7 +149,6 @@
 </div>
 
 <script src="archive-data.js"></script>
-<script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
@@ -179,7 +179,8 @@ function calc() {
   }
   const acc = accuracyOf(c, t), side = c > t ? 'over' : c < t ? 'under' : 'exact';
   const p = PROBLEMS.find(x => x.id === $('calcProblem').value);
-  const rank = side === 'exact' ? '—' : 1 + p.entries.filter(e => e.side === side && e.value > parseFloat(truncate(acc, 3))).length;
+  // Ranked by full precision, as the chart is; below the 95% minimum it would not be charted.
+  const rank = side === 'exact' || acc < 95 ? '—' : 1 + p.entries.filter(e => e.side === side && e.exact > acc).length;
   const extended = acc >= 99.91;
   let rules = 'enter circles and lines', rc = '';
   if (!isNaN(circles) && !isNaN(lines)) {
@@ -193,7 +194,7 @@ function calc() {
     ['Precise readout', acc.toFixed(12) + '%', ''],
     ['Side', side === 'over' ? 'Oversized' : side === 'under' ? 'Undersized' : 'Exact?', 'warm'],
     ['Relative gap', 'one part in ' + (side === 'exact' ? '∞' : Math.round(t / Math.abs(c - t)).toLocaleString()), ''],
-    ['Would chart at', side === 'exact' ? '—' : '#' + rank + ' ' + side + 'sized', rank === 1 ? 'good' : ''],
+    ['Would chart at', rank === '—' ? '—' : '#' + rank + ' ' + side + 'sized', rank === 1 ? 'good' : ''],
     ['Ruleset', rules, rc],
   ].map(([l, v, cl]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${cl}">${v}</div></div>`).join('');
 
@@ -267,7 +268,7 @@ $('save').onclick = () => {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([build()], {type: 'text/markdown'}));
   a.download = (result ? truncate(result.acc, 3) : 'submission') + '.md';
-  a.click(); URL.revokeObjectURL(a.href);
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 0);   // after the download has started
 };
 calc();
 </script>

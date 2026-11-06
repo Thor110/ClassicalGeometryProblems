@@ -16,7 +16,7 @@ that pass the checklist in ARCHITECTURAL.md:
 
   python tools/architecture_search.py                 search for 10 minutes and print the finds
   python tools/architecture_search.py --minutes 30    search for longer
-  python tools/architecture_search.py --write         also keep the finds: pages/architecture-finds.js,
+  python tools/architecture_search.py --write         also keep the finds: Architecture/Finds/finds.json, pages/architecture-finds.js,
                                                       GeoGebra files in Architecture/Finds/, and the
                                                       generated part of ARCHITECTURAL.md
 
@@ -29,7 +29,8 @@ sys.path.insert(0, HERE)
 import verify as v
 
 ROOT = v.ROOT
-FINDS_JS = os.path.join(ROOT, 'pages', 'architecture-finds.js')
+FINDS_JS = os.path.join(ROOT, 'pages', 'architecture-finds.js')                 # for the website: the table only
+FINDS_DATA = os.path.join(ROOT, 'Architecture', 'Finds', 'finds.json')           # everything, with each construction's steps
 FINDS_DIR = os.path.join(ROOT, 'Architecture', 'Finds')
 DOC = os.path.join(ROOT, 'ARCHITECTURAL.md')
 MARK_START, MARK_END = '<!-- architecture-finds:start -->', '<!-- architecture-finds:end -->'
@@ -263,9 +264,11 @@ def summary(f):
 
 # ----- keeping the finds
 def load():
-    if not os.path.exists(FINDS_JS): return {'runs': [], 'finds': []}
-    s = open(FINDS_JS, encoding='utf-8').read()
-    return json.loads(s[s.index('{'):s.rindex('}') + 1])
+    for path in (FINDS_DATA, FINDS_JS):          # the website file held everything before the data file existed
+        if os.path.exists(path):
+            d = json.load(open(path, encoding='utf-8')) if path.endswith('.json') else v.read_js(path)
+            if all('record' in f for f in d.get('finds', [])): return d
+    return {'runs': [], 'finds': []}
 
 def write_ggb(f, path):
     import ggb_writer as W
@@ -337,10 +340,11 @@ def keep(new, today, tried, minutes, seed):
     entries = sum(1 for p in v.load_archive()['problems'] for e in p['entries'])
     data['runs'].append({'date': today, 'entries': entries, 'tried': tried, 'minutes': minutes, 'seed': seed, 'new': len(new)})
     data['finds'] = kept
-    with open(FINDS_JS, 'w', encoding='utf-8') as fh:
-        fh.write('// Written by tools/architecture_search.py --write. Do not edit by hand: run it again.\n'
-                 '// The constructions a building can show (ARCHITECTURAL.md), and a record of each run.\nconst ARCHITECTURE_FINDS = ')
-        json.dump(data, fh, ensure_ascii=False, indent=1); fh.write(';\n')
+    with open(FINDS_DATA, 'w', encoding='utf-8') as fh:
+        json.dump(data, fh, ensure_ascii=False, indent=1); fh.write('\n')
+    page = {'runs': data['runs'], 'finds': [{k: f[k] for k in ('id', 'circles', 'lines', 'scale', 'over_rel', 'under_rel', 'gap', 'rope', 'fine', 'reach', 'file', 'found') if k in f} for f in kept]}
+    v.write_js(FINDS_JS, '// Written by tools/architecture_search.py --write. Do not edit by hand: run it again.\n'
+               '// The constructions a building can show (ARCHITECTURAL.md); every detail is in Architecture/Finds/finds.json.', 'ARCHITECTURE_FINDS', page)
     # the generated part of ARCHITECTURAL.md
     doc = open(DOC, encoding='utf-8').read()
     last = data['runs'][-1]

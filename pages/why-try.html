@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Why approximating the impossible classical problems is worthwhile, and a ready reply for mathematicians who receive such claims.">
 <title>Classical Geometry Problems // Why Try The Impossible</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -85,7 +86,7 @@
 <div class="box">
   <div class="box-title">A Reply You Can Use</div>
   <div class="box-text">Copy, edit and post it wherever someone shares a construction.</div>
-  <textarea id="reply" readonly>Nice work, and thanks for sharing the construction. A straightedge and compass can't solve this problem exactly (Wantzel proved it for the angle and the cube in 1837, Lindemann for the circle in 1882), but close approximations are a real, centuries-old pursuit: Kochański and Ramanujan both published them. What accuracy do you measure, and how many circles and lines does it take? If you'd like to see how it compares, there is an open archive that ranks approximations and welcomes submissions:
+  <textarea id="reply" readonly aria-label="A reply you can copy">Nice work, and thanks for sharing the construction. A straightedge and compass can't solve this problem exactly (Wantzel proved it for the angle and the cube in 1837, Lindemann for the circle in 1882), but close approximations are a real, centuries-old pursuit: Kochański and Ramanujan both published them. What accuracy do you measure, and how many circles and lines does it take? If you'd like to see how it compares, there is an open archive that ranks approximations and welcomes submissions:
 Website: https://thor110.github.io/ClassicalGeometryProblems/
 Repository: https://github.com/Thor110/ClassicalGeometryProblems</textarea>
   <div class="controls" style="margin-top:12px;"><button class="small" data-copy="reply">Copy Reply</button></div>
@@ -102,7 +103,7 @@ Repository: https://github.com/Thor110/ClassicalGeometryProblems</textarea>
     <li>You can answer in one short message, without needing to check the construction yourself.</li>
   </ul>
   <div class="box-text">A referral you can send:</div>
-  <textarea id="referralText" readonly style="min-height:190px;font-size:14px;color:#b0aca5;">Thank you for sending your construction. Exact solutions to squaring the circle, trisecting the angle and doubling the cube with straightedge and compass are proven impossible (Wantzel, 1837; Lindemann, 1882), so we are unable to review claims of exact solutions. Close approximations, however, are a long and honourable tradition, from Kochański to Ramanujan, and there is an open archive that measures, ranks and credits them.
+  <textarea id="referralText" readonly aria-label="A referral message you can copy" style="min-height:190px;font-size:14px;color:#b0aca5;">Thank you for sending your construction. Exact solutions to squaring the circle, trisecting the angle and doubling the cube with straightedge and compass are proven impossible (Wantzel, 1837; Lindemann, 1882), so we are unable to review claims of exact solutions. Close approximations, however, are a long and honourable tradition, from Kochański to Ramanujan, and there is an open archive that measures, ranks and credits them.
 
 If you measure your construction's accuracy and submit it there, it will be checked by public rules and recorded under your name:
 Website: https://thor110.github.io/ClassicalGeometryProblems/
@@ -138,10 +139,14 @@ Repository: https://github.com/Thor110/ClassicalGeometryProblems</textarea>
 </div>
 
 <script>
-document.querySelectorAll('[data-copy]').forEach(b => b.onclick = async () => {
-  const t = document.getElementById(b.dataset.copy), label = b.textContent;
-  try { await navigator.clipboard.writeText(t.value); } catch { t.select(); document.execCommand('copy'); }
-  b.textContent = 'Copied'; setTimeout(() => b.textContent = label, 1500);
+document.querySelectorAll('[data-copy]').forEach(b => {
+  const label = b.textContent;          // kept once, so quick repeat clicks cannot leave it saying "Copied"
+  let timer = null;
+  b.onclick = async () => {
+    const t = document.getElementById(b.dataset.copy);
+    try { await navigator.clipboard.writeText(t.value); } catch { t.select(); document.execCommand('copy'); }
+    b.textContent = 'Copied'; clearTimeout(timer); timer = setTimeout(() => b.textContent = label, 1500);
+  };
 });
 </script>
 </body>

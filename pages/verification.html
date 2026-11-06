@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How every approximation in the archive is verified, by people and by AI, with each entry's status and any disputes.">
 <title>Classical Geometry Problems // Verification</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .badge{display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:1px 6px;white-space:nowrap;}
-  .badge.verified,.badge.reproduced{color:#4a9;border-color:#2a4a3a;} .badge.self-verified,.badge.manual{color:#ca6;border-color:#4a3e2a;}
-  .badge.unverified,.badge.no-file{color:#666;} .badge.disputed,.badge.attention{color:#e55;border-color:#5a2a2a;}
   td.wrap{white-space:normal;min-width:260px;font-size:13px;color:#777;}
 </style>
 </head>
@@ -146,13 +144,13 @@ $('all').innerHTML = '<tr><th>Problem</th><th>Entry</th><th>By</th><th>Status</t
   const s = statusOf(e), c = s.ai || {};
   const found = (c.checks || []).filter(x => !/^every rebuilt|^no hand-placed|reproduces the chart/.test(x)).join('; ') || (c.status === 'reproduced' ? 'All checks passed.' : '');
   return `<tr><td><a class="link" href="charts.html#${e.problem.id}">${e.problem.short}</a></td>
-    <td>${e.archived ? 'below 95%' : e.side + ' #' + e.rank} · <b>${e.acc}%</b><br><span class="muted" style="font-size:13px;">${e.holder}</span></td>
+    <td>${e.archived ? 'below 95%' : e.side + ' #' + e.rank} · <b>${esc(e.acc)}%</b><br><span class="muted" style="font-size:13px;">${esc(e.holder)}</span></td>
     <td>${e.holder_kind === 'ai' ? 'AI' : 'person'}</td>
     <td><span class="badge ${s.status}">${s.status.replace('-', ' ')}</span></td>
-    <td>${s.people.map(v => v.by + (isHolder(v.by, e.holder) ? ' (self)' : '')).join('<br>') || '—'}</td>
+    <td>${s.people.map(v => esc(v.by) + (isHolder(v.by, e.holder) ? ' (self)' : '')).join('<br>') || '—'}</td>
     <td><span class="badge ${c.status || 'unverified'}">${{reproduced: 'reproduced', attention: 'does not match', manual: 'by hand', 'no-file': 'no file'}[c.status] || 'none'}</span></td>
     <td>${c.accuracy != null ? c.accuracy.toFixed(6) + '%' + (c.side ? '<br><span class="muted" style="font-size:13px;">' + c.side + 'sized</span>' : '') : '—'}</td>
-    <td class="wrap">${found}</td></tr>`;
+    <td class="wrap">${esc(found)}</td></tr>`;
 }).join('');
 }
 table();
@@ -162,13 +160,13 @@ const X = typeof CROSSREF !== 'undefined' ? CROSSREF : {pairs: [], run: ''};
 const kinds = ['identical', 'same result', 'near identical', 'builds on', 'shares most steps', 'same file'];
 $('xtally').innerHTML = kinds.map(k => `<div class="meter"><div class="mlabel">${k}</div><div class="mval ${k === 'identical' || k === 'same result' ? 'hot' : k === 'near identical' ? 'warm' : ''}">${X.pairs.filter(x => x.kind === k).length}</div></div>`).join('');
 const byId = Object.fromEntries(all.map(e => [e.id, e]));
-const nm = id => byId[id] ? `${byId[id].problem.short} ${byId[id].acc}% ${byId[id].side}<br><span class="muted" style="font-size:13px;">${byId[id].holder}${byId[id].holder_kind === 'ai' ? ' (AI)' : ''}</span>` : id;
+const nm = id => byId[id] ? `${byId[id].problem.short} ${esc(byId[id].acc)}% ${byId[id].side}<br><span class="muted" style="font-size:13px;">${esc(byId[id].holder)}${byId[id].holder_kind === 'ai' ? ' (AI)' : ''}</span>` : esc(id);
 $('xtable').innerHTML = '<tr><th>Relation</th><th>Base or earlier entry</th><th>Later or larger entry</th><th>Score</th></tr>' +
   (X.pairs.map(x => `<tr><td>${x.kind}</td><td>${nm(x.older)}</td><td>${nm(x.newer)}</td><td>${x.similarity.toFixed(2)}</td></tr>`).join('') || '<tr><td colspan="4" class="muted">No related entries.</td></tr>') +
   `<tr><td colspan="4" class="muted" style="font-size:13px;">Run ${X.run}.</td></tr>`;
 
 const log = all.flatMap(e => (e.disputes || []).map(d => ({...d, e})));
-$('log').innerHTML = log.length ? log.map(d => `<li><b>${d.status}</b> · ${d.e.problem.short} ${d.e.acc}% · ${d.kind} · raised by ${d.by}: ${d.summary}${d.outcome ? ' · outcome: ' + d.outcome : ''}</li>`).join('') : '<li class="muted">No disputes have been raised yet.</li>';
+$('log').innerHTML = log.length ? log.map(d => `<li><b>${esc(d.status)}</b> · ${d.e.problem.short} ${esc(d.e.acc)}% · ${esc(d.kind)} · raised by ${esc(d.by)}: ${esc(d.summary)}${d.outcome ? ' · outcome: ' + esc(d.outcome) : ''}</li>`).join('') : '<li class="muted">No disputes have been raised yet.</li>';
 </script>
 </body>
 </html>

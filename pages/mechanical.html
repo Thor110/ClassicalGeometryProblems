@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mechanical solutions to the classical geometry problems: tools beyond straightedge and compass that solve them exactly.">
 <title>Classical Geometry Problems // Mechanical Solutions</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -26,7 +27,7 @@
     Edward James Gordon's rope and peg jig (17-08-2025) divides a length of rope into exact thirds. Lay the rope around a circular template to take up the arc of an angle, divide it on the jig, and lay it back: the angle is trisected. The same idea transfers a whole circumference or any arc to a straight line, so it also serves for rectifying the circle, arc rectification and π. It is exact in principle, apart from human error, and it lies outside the Euclidean rules because it uses a rope, pegs and a template.
   </div>
   <canvas id="cv"></canvas>
-  <div class="slrow"><span style="text-align:left;">Angle</span><input type="range" id="ang" min="10" max="350" value="100"><span id="angV">100°</span></div>
+  <div class="slrow"><span style="text-align:left;">Angle</span><input type="range" id="ang" min="10" max="350" value="100" aria-label="Angle"><span id="angV">100°</span></div>
   <div class="controls" style="margin-top:12px;" id="phases"></div>
   <div class="box-text" id="phaseText" style="min-height:3.2em;margin-top:8px;"></div>
 </div>
@@ -131,8 +132,9 @@ function draw() {
     ctx.strokeStyle = '#ca6'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(ox, oy, r, -th, 0); ctx.stroke();
   }
   // The straight rope on the jig.
-  const ropeLen = r * th, maxLen = wide ? W * 0.42 : W * 0.86, k = Math.min(1, maxLen / ropeLen);
-  const sx = wide ? W * 0.54 : (W - ropeLen * k) / 2, sy = wide ? H * 0.52 : H * 0.84;
+  const ropeLen = r * th, maxLen = wide ? W * 0.38 : W * 0.86, k = Math.min(1, maxLen / ropeLen);
+  // In the wide layout the jig starts at 0.58 W, clear of the ray to A.
+  const sx = wide ? W * 0.58 : (W - ropeLen * k) / 2, sy = wide ? H * 0.52 : H * 0.84;
   if (phase >= 1) {
     ctx.strokeStyle = phase === 1 ? '#ca6' : '#4a4a5c'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx + ropeLen * k, sy); ctx.stroke();

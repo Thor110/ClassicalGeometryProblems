@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The six classical geometry problems, why exact solutions are impossible, and how the problems are linked to one another.">
 <title>Classical Geometry Problems // The Six Problems</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -150,7 +151,7 @@ for (const p of PROBLEMS) {
   // Best by people and best by AI, kept apart.
   const best = (side, kind) => p.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === (kind === 'ai')).sort((a, b) => b.exact - a.exact)[0];
   const line = (label, e) => e
-    ? `<li>${label}: <b>${e.acc}%</b> by ${e.holder}${e.method ? ' (' + e.method + ')' : ''}</li>`
+    ? `<li>${label}: <b>${esc(e.acc)}%</b> by ${esc(e.holder)}${e.method ? ' (' + esc(e.method) + ')' : ''}</li>`
     : `<li>${label}: <span class="muted">none charted yet, the first could be yours</span></li>`;
   const lines = side => line('Best ' + side + 'sized by people', best(side, 'person')) + (best(side, 'ai') ? line('Best ' + side + 'sized by AI', best(side, 'ai')) : '');
   const box = document.createElement('div');
@@ -160,7 +161,7 @@ for (const p of PROBLEMS) {
     <div class="box-text">${p.task} <span class="muted">Target: ${p.target}</span></div>
     <div class="box-text">${p.why}</div>
     <ul>${lines('over')}${lines('under')}</ul>
-    ${ARCHIVE.families.filter(f => f.problem === p.id).map(f => `<div class="box-text small-text"><b>${f.name}</b> on this chart is a method name, not the problem's name: ${f.about}</div>`).join('')}
+    ${ARCHIVE.families.filter(f => f.problem === p.id).map(f => `<div class="box-text small-text"><b>${esc(f.name)}</b> on this chart is a method name, not the problem's name: ${esc(f.about)}</div>`).join('')}
     <div class="box-text">
       <a href="charts.html#${p.id}">Open the chart →</a>
     </div>`;
@@ -171,7 +172,7 @@ for (const p of PROBLEMS) {
 (function () {
   if (!PI_CHART) return;
   const best = (side, ai) => PI_CHART.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === ai).sort((a, b) => b.exact - a.exact)[0];
-  const li = (label, e) => e ? `<li>${label}: <b>${e.acc}%</b> by ${e.holder}, <span class="mono">${piText(e)}</span></li>` : '';
+  const li = (label, e) => e ? `<li>${label}: <b>${esc(e.acc)}%</b> by ${esc(e.holder)}, <span class="mono">${piText(e)}</span></li>` : '';
   document.getElementById('piBest').innerHTML = li('Best oversized by people', best('over', false)) + li('Best undersized by people', best('under', false)) +
     li('Best oversized by AI', best('over', true)) + li('Best undersized by AI', best('under', true));
 })();
@@ -182,7 +183,7 @@ for (const p of PROBLEMS) {
     const rankAmong = (e, ai) => 1 + stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai && x.exact > e.exact).length;
   const rows = rtc.entries.slice().sort((a, b) => b.exact - a.exact).map(e => {
     const ai = e.holder_kind === 'ai', r = rankAmong(e, ai), best = stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai).sort((a, b) => b.exact - a.exact)[0];
-    return `<tr><td>${e.holder}${ai ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
+    return `<tr><td>${esc(e.holder)}${ai ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + esc(e.method) + '</span>' : ''}</td>
       <td>${e.acc}% ${e.side}sized</td><td>${e.circles} + 3</td><td>${e.lines} + 3</td>
       <td>${r === 1 ? '<b class="good">#1</b>, ahead of ' + (best ? best.acc + '%' : 'nothing yet') : '#' + r}</td></tr>`;
   });
@@ -193,7 +194,7 @@ for (const p of PROBLEMS) {
     const at = deg => { const p = c.sweep.find(x => Math.round(x[0]) === deg); return p ? p[1] : null; };
     const half = at(180), quarter = at(90);
     const cell = v => v == null ? '<span class="muted">out of range</span>' : (v >= 95 ? '<b>' : '') + truncate(v, 3) + '%' + (v >= 95 ? '</b>' : '');
-    arows.push(`<tr><td>${e.holder}${e.holder_kind === 'ai' ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td><td>${e.acc}% as drawn</td><td>${cell(half)}</td><td>${cell(quarter)}</td></tr>`);
+    arows.push(`<tr><td>${esc(e.holder)}${e.holder_kind === 'ai' ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + esc(e.method) + '</span>' : ''}</td><td>${e.acc}% as drawn</td><td>${cell(half)}</td><td>${cell(quarter)}</td></tr>`);
   }
   document.getElementById('arcs').innerHTML = '<tr><th>Arc method</th><th>On its chart</th><th>Circle from two half circles</th><th>Circle from four quarter circles</th></tr>' + arows.join('');
 })();

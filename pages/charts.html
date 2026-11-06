@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Open charts of straightedge and compass approximations to squaring the circle, trisecting the angle, doubling the cube, rectifying the circle and arcs, and π.">
 <title>Classical Geometry Problems // Approximation Charts</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -25,9 +26,6 @@
   .mark span{cursor:help;border-bottom:1px dotted #6a5a2a;margin-right:3px;}
   #tooltip{position:fixed;z-index:20;pointer-events:none;background:#14141f;color:#e0ddd8;border:1px solid #4a3e2a;padding:5px 9px;font-size:13px;letter-spacing:0.05em;max-width:280px;display:none;}
   .controls .label{align-self:center;font-size:13px;color:#666;letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;}
-  .badge{display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:1px 6px;white-space:nowrap;}
-  .badge.verified{color:#4a9;border-color:#2a4a3a;} .badge.self-verified{color:#ca6;border-color:#4a3e2a;}
-  .badge.unverified{color:#666;} .badge.disputed{color:#e55;border-color:#5a2a2a;}
   #detail .rec{border-top:1px solid #1e1e2a;padding-top:10px;margin-top:10px;}
   #detail .drawing{margin:12px auto 4px;max-width:640px;text-align:center;}
   #detail .drawing img{width:100%;max-height:520px;object-fit:contain;background:#fff;border:1px solid #2a2a3a;cursor:zoom-in;}
@@ -36,6 +34,7 @@
   #detail svg.sweep{width:100%;max-width:640px;display:block;margin:8px auto 0;background:#0a0a0f;border:1px solid #1e1e2a;}
   #detail .rec-title{font-size:13px;color:#666;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;}
   tr.hl td.acc{color:#4a9;}
+  #table tr[data-key]:focus-visible{outline:1px solid #4a9;outline-offset:-1px;}
 </style>
 </head>
 <body>
@@ -58,7 +57,7 @@
   <div class="small-text" style="text-align:center;margin-bottom:12px;">
     Each step right is ten times closer to the true value. Oversized above the line, undersized below. Hover or tap a point.
   </div>
-  <canvas id="ladder"></canvas>
+  <canvas id="ladder" role="img" aria-label="Accuracy ladder: every method on this chart, placed by how close it is to perfect. The table below lists the same methods."></canvas>
   <div id="tip">&nbsp;</div>
 </div>
 
@@ -152,7 +151,9 @@ let current = PROBLEMS[0], filter = 'all', who = 'all', points = [], highlighted
 // Remember the viewer's choice of people, AI or both (browser storage can be unavailable; that is fine).
 try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
 let sides = {over: true, under: true}, flipped = false;
-try { sides = JSON.parse(localStorage.getItem('cgp-sides')) || sides; flipped = localStorage.getItem('cgp-flip') === '1'; } catch (e) {}
+try { sides = JSON.parse(localStorage.getItem('cgp-sides')) || sides; } catch (e) {}
+try { flipped = localStorage.getItem('cgp-flip') === '1'; } catch (e) {}
+if (!sides || typeof sides !== 'object' || (!sides.over && !sides.under)) sides = {over: true, under: true};
 const saveView = () => { try { localStorage.setItem('cgp-sides', JSON.stringify(sides)); localStorage.setItem('cgp-flip', flipped ? '1' : '0'); } catch (e) {} };
 const MARKS = {'~': 'Contested: the original discoverer is being sought', '@': 'Too Simple: likely found many times before', 'µ': 'Micro Scale Adjustments Required'};
 const marksHTML = m => [...(m || '')].map(c => `<span data-tip="${MARKS[c] || c}" aria-label="${MARKS[c] || c}">${c}</span>`).join('');
@@ -193,7 +194,9 @@ $('flip').onclick = () => { flipped = !flipped; $('flip').classList.toggle('acti
 
 // One floating tooltip for the key marks (and anything else with data-tip), so scrolling halves cannot clip it.
 const tip = $('tooltip');
+let tipTimer = null;
 function showTip(el) {
+  clearTimeout(tipTimer);
   tip.textContent = el.dataset.tip; tip.style.display = 'block';
   const r = el.getBoundingClientRect(), w = tip.offsetWidth;
   tip.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + 'px';
@@ -201,7 +204,7 @@ function showTip(el) {
 }
 document.addEventListener('mouseover', ev => { const el = ev.target.closest('[data-tip]'); if (el) showTip(el); });
 document.addEventListener('mouseout', ev => { if (ev.target.closest('[data-tip]')) tip.style.display = 'none'; });
-document.addEventListener('click', ev => { const el = ev.target.closest('[data-tip]'); if (el) { ev.stopPropagation(); showTip(el); setTimeout(() => tip.style.display = 'none', 2500); } }, true);
+document.addEventListener('click', ev => { const el = ev.target.closest('[data-tip]'); if (el) { showTip(el); tipTimer = setTimeout(() => tip.style.display = 'none', 2500); } }, true);
 addEventListener('scroll', () => tip.style.display = 'none', true);
 window.addEventListener('hashchange', pick);
 window.addEventListener('resize', drawLadder);
@@ -232,7 +235,7 @@ function render() {
   $('task').innerHTML = p.task + '<br><span class="muted">' + p.target + '</span>' +
     (p.derived ? `<br><span class="muted">So it ranks the same constructions as the <a href="#${p.derived}">circle rectification chart</a>; how the six problems are linked is on <a href="problems.html#links">the problems page</a>.</span>` : '');
 
-  const best = side => all.filter(e => e.side === side).sort((a, b) => b.value - a.value)[0];
+  const best = side => bestOf(all, side);
   const bo = best('over'), bu = best('under');
   const nPeople = p.entries.filter(e => kindOf(e) === 'person').length, nAI = p.entries.length - nPeople;
   const people = new Set(all.map(e => e.holder)).size;
@@ -244,8 +247,6 @@ function render() {
   ].map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
 
   // The table mirrors the original charts: oversized ranks count down to perfection, undersized count up from it.
-  const over = shown.filter(e => e.side === 'over').sort((a, b) => b.vrank - a.vrank);
-  const under = shown.filter(e => e.side === 'under').sort((a, b) => a.vrank - b.vrank);
   const row = e => {
     const links = [];
     if (e.geogebra) links.push(`<a class="link" href="${e.geogebra}" target="_blank" rel="noopener">GeoGebra</a>`);
@@ -253,10 +254,10 @@ function render() {
     if (e.notesFile) links.push(`<a class="link" href="${repoBlob(e.notesFile + '.md')}" target="_blank" rel="noopener">notes</a>`);
     if (e.piFile) links.push(`<a class="link" href="${repoFile(e.piFile + '.ggb')}" download title="This construction drawn as π, with the halving step">π .ggb</a>`);
     const title = [e.method, e.note].filter(Boolean).join(' · ');
-    return `<tr data-key="${e.id}" title="${title.replace(/"/g, '&quot;')}">
+    return `<tr data-key="${e.id}" tabindex="0" title="${esc(title)}">
       <td>${e.vrank}</td>
       <td class="keycell"><span class="mark">${marksHTML(e.marks)}</span></td>
-      <td>${e.holder}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}${current.derived ? '<br><span class="mono" style="font-size:13px;">' + piText(e) + '</span>' : ''}</td>
+      <td>${esc(e.holder)}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + esc(e.method) + '</span>' : ''}${current.derived ? '<br><span class="mono" style="font-size:13px;">' + piText(e) + '</span>' : ''}</td>
       <td>${e.circles}</td><td>${e.lines}</td>
       <td class="acc">${e.acc}%</td>
       <td class="precise">${e.precise ? e.precise + '%' : ''}</td>
@@ -265,7 +266,7 @@ function render() {
   };
   const cols = '<colgroup><col style="width:40px"><col style="width:48px"><col style="width:196px"><col style="width:72px"><col style="width:60px"><col style="width:128px"><col style="width:164px"><col style="width:136px"><col style="width:106px"></colgroup>';
   const whoLabel = {all: '', person: ' by people', ai: ' by AI'}[who];
-  const count = side => all.filter(e => e.side === side).length;
+  const count = side => { const n = shown.filter(e => e.side === side).length, m = all.filter(e => e.side === side).length; return n === m ? n : n + ' of ' + m; };
   const caption = (side, n, arrow) => `<div class="caption">${arrow} ${side === 'over' ? 'Oversized' : 'Undersized'} · ${n} ${n === 1 ? 'method' : 'methods'}${whoLabel} · every new attempt is welcome</div>`;
   // Each half lists its side with the best result next to the line of perfection.
   const sorted = (side, bestLast) => shown.filter(e => e.side === side).sort((a, b) => bestLast ? b.vrank - a.vrank : a.vrank - b.vrank);
@@ -282,7 +283,10 @@ function render() {
   // Start each half at its end nearest perfection, where the best results are.
   const top = $('table').querySelector('[data-half="top"]'); if (top) top.scrollTop = top.scrollHeight;
   const bottom = $('table').querySelector('[data-half="bottom"]'); if (bottom) bottom.scrollTop = 0;
-  $('table').querySelectorAll('tr[data-key]').forEach(tr => tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); renderDetail(); });
+  $('table').querySelectorAll('tr[data-key]').forEach(tr => {
+    tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); renderDetail(); };
+    tr.onkeydown = ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); tr.onclick(); } };   // rows open from the keyboard too
+  });
 
   $('downloads').innerHTML = `Click a row for its full record, and to find it on the ladder. The chart's data is <a class="link" href="${REPO}/blob/main/pages/archive-data.js" target="_blank" rel="noopener">archive-data.js</a> in the repository.`;
   renderWanted(); renderDetail(); renderBelow();
@@ -309,7 +313,6 @@ function drawLadder() {
   const xOf = err => padL + ((-Math.log10(err)) - minX) / (maxX - minX) * (W - padL - padR);
   ctx.font = '11px Courier New'; ctx.textAlign = 'center';
 
-  // Decades: 90%, 99%, 99.9% ...
   // Decade k sits at an error of 10^-k percent: 90%, 99%, 99.9% ... as far as the chart reaches.
   const label = k => (100 - Math.pow(10, -k)).toFixed(Math.max(0, k)) + '%';
   for (let k = minX; k <= maxX; k++) {
@@ -371,22 +374,22 @@ function renderDetail() {
   const e = current.entries.find(x => x.id === highlighted);
   if (!e) { $('detail').innerHTML = '<div class="box-title">Entry Details</div><div class="small-text" style="text-align:center;">Click a row or a point on the ladder to see who verified it, what the AI check found, and any disputes.</div>'; return; }
   const s = statusOf(e);
-  const people = s.people.map(v => `<li>${v.by}${isHolder(v.by, e.holder) ? ' <span class="muted">(method holder: self-verification)</span>' : ''}${v.how ? ' · ' + v.how : ''}${v.date ? ' · ' + v.date : ''}</li>`).join('') || '<li class="muted">No person has verified it yet.</li>';
+  const people = s.people.map(v => `<li>${esc(v.by)}${isHolder(v.by, e.holder) ? ' <span class="muted">(method holder: self-verification)</span>' : ''}${v.how ? ' · ' + esc(v.how) : ''}${v.date ? ' · ' + esc(v.date) : ''}</li>`).join('') || '<li class="muted">No person has verified it yet.</li>';
   let ai = '<li class="muted">No AI check yet.</li>';
   if (s.ai) {
     const head = {reproduced: '<span class="good">Reproduced</span>', attention: '<span class="hot">Does not match the chart</span>', manual: '<span class="warm">Needs checking by hand</span>', 'no-file': '<span class="muted">No GeoGebra file to rebuild</span>'}[s.ai.status];
     ai = `<li>Claude (Anthropic), running tools/verify.py on ${AI_CHECKS.run}: ${head}${s.ai.accuracy != null ? ' · file measures <b>' + s.ai.accuracy.toFixed(10) + '%</b>' : ''}</li>` +
-      (s.ai.measured ? `<li class="muted">${s.ai.measured}</li>` : '') +
-      (s.ai.checks || []).map(c => `<li class="muted">${c}</li>`).join('');
+      (s.ai.measured ? `<li class="muted">${esc(s.ai.measured)}</li>` : '') +
+      (s.ai.checks || []).map(c => `<li class="muted">${esc(c)}</li>`).join('');
   }
-  const disputes = (e.disputes || []).map(d => `<li><b>${d.status}</b> · ${d.kind} · raised by ${d.by} · ${d.summary}${d.issue ? ` · <a href="${REPO}/issues/${d.issue}" target="_blank" rel="noopener">issue</a>` : ''}${d.outcome ? ' · outcome: ' + d.outcome : ''}</li>`).join('') || '<li class="muted">None.</li>';
+  const disputes = (e.disputes || []).map(d => `<li><b>${esc(d.status)}</b> · ${esc(d.kind)} · raised by ${esc(d.by)} · ${esc(d.summary)}${d.issue ? ` · <a href="${REPO}/issues/${encodeURIComponent(d.issue)}" target="_blank" rel="noopener">issue</a>` : ''}${d.outcome ? ' · outcome: ' + esc(d.outcome) : ''}</li>`).join('') || '<li class="muted">None.</li>';
   const ask = (t, tpl) => `${REPO}/issues/new?template=${tpl}&title=${encodeURIComponent(t + ': ' + e.id)}&entry=${encodeURIComponent(e.id)}`;
   $('detail').innerHTML = `<div class="box-title">${nameHTML(current.name)} · ${e.side}sized #${e.vrank}${who === 'all' ? '' : who === 'ai' ? ' among AI finds' : ' among people'}${who !== 'all' ? ' · #' + e.rank + ' overall' : ''}</div>
-    <div class="box-text" style="text-align:center;"><b>${e.acc}%</b> · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''} · ${e.circles} circles, ${e.lines} lines ${badge(e)}</div>
+    <div class="box-text" style="text-align:center;"><b>${esc(e.acc)}%</b> · ${esc(e.holder)}${e.method ? ' · ' + esc(e.method) : ''}${e.date ? ' · ' + esc(e.date) : ''} · ${esc(e.circles)} circles, ${esc(e.lines)} lines ${badge(e)}</div>
     ${current.derived ? `<div class="box-text mono" style="text-align:center;">${piText(e)}${e.piFile ? ` · <a class="link" href="${repoFile(e.piFile + '.ggb')}" download>π .ggb</a>` : ''}${e.piGeogebra ? ` · <a class="link" href="${e.piGeogebra}" target="_blank" rel="noopener">π in GeoGebra</a>` : ''}</div>` : ''}
-    ${e.note ? `<div class="box-text" style="text-align:center;">${e.note}</div>` : ''}
-    ${e.count_history || e.micro_note ? `<div class="small-text" style="text-align:center;">${[e.count_history, e.micro_note].filter(Boolean).join(' ')}</div>` : ''}
-    ${e.square ? `<div class="small-text" style="text-align:center;">In GeoGebra, this is the square labelled <span class="mono">${e.square}</span> in the file.</div>` : ''}
+    ${e.note ? `<div class="box-text" style="text-align:center;">${esc(e.note)}</div>` : ''}
+    ${e.count_history || e.micro_note ? `<div class="small-text" style="text-align:center;">${esc([e.count_history, e.micro_note].filter(Boolean).join(' '))}</div>` : ''}
+    ${e.square ? `<div class="small-text" style="text-align:center;">In GeoGebra, this is the square labelled <span class="mono">${esc(e.square)}</span> in the file.</div>` : ''}
     ${s.ai && s.ai.steps_used ? `<div class="drawing">
       <div class="controls" style="margin-bottom:8px;"><button class="small active" data-view="">Steps That Count</button><button class="small" data-view="-full">Everything In The File</button></div>
       <a id="drawLink" href="drawings/${e.id}.svg" target="_blank"><img id="drawImg" src="drawings/${e.id}.svg" alt="The construction for ${e.acc}%"></a>
@@ -434,7 +437,7 @@ function related(e) {
   // From tools/crossref.py: entries that are identical, nearly identical, or build on one another.
   const pairs = (typeof CROSSREF !== 'undefined' ? CROSSREF.pairs : []).filter(x => x.older === e.id || x.newer === e.id);
   if (!pairs.length) return '<li class="muted">None found: no other entry shares this result or most of its construction.</li>';
-  const name = id => { const x = current.entries.find(y => y.id === id); return x ? `${x.acc}% ${x.side}sized by ${x.holder}` : id; };
+  const name = id => { const x = current.entries.find(y => y.id === id); return x ? `${esc(x.acc)}% ${x.side}sized by ${esc(x.holder)}` : esc(id); };
   return pairs.map(x => {
     const other = x.older === e.id ? x.newer : x.older;
     const what = {identical: 'Identical to', 'same result': 'The same result as', 'near identical': 'Nearly identical to',
@@ -449,7 +452,7 @@ function renderBelow() {
   $('below').style.display = a.length ? '' : 'none';
   $('below').innerHTML = `<div class="box-title">Below The 95% Minimum</div>
     <div class="box-text">Kept on record, but not ranked on the chart.</div>
-    <ul>${a.map(e => `<li><b>${e.acc}%</b> ${e.side}sized · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''}. ${e.archive_reason || ''} ${e.note || ''}
+    <ul>${a.map(e => `<li><b>${esc(e.acc)}%</b> ${e.side}sized · ${esc(e.holder)}${e.method ? ' · ' + esc(e.method) : ''}${e.date ? ' · ' + esc(e.date) : ''}. ${esc(e.archive_reason)} ${esc(e.note)}
       ${e.file ? ` <a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a> · <a class="link" href="${repoBlob((e.notesFile || e.file) + '.md')}" target="_blank" rel="noopener">notes</a>` : ''}</li>`).join('')}</ul>`;
 }
 
@@ -458,10 +461,10 @@ function renderWanted() {
   $('wanted').style.display = w.length ? '' : 'none';
   $('wanted').innerHTML = `<div class="box-title">Wanted: Historical Constructions</div>
     <div class="box-text">Known approximations from history that are not on this chart yet, because nobody has reconstructed and verified them here. Reconstruct one in GeoGebra from its original source and <a href="submit.html">submit it</a>, credited to its discoverer.</div>
-    <ul>${w.map(x => `<li><b>${x.who}</b> (${x.year}): ${x.value}. <span class="muted">${x.source}</span></li>`).join('')}</ul>`;
+    <ul>${w.map(x => `<li><b>${esc(x.who)}</b> (${esc(x.year)}): ${esc(x.value)}. <span class="muted">${esc(x.source)}</span></li>`).join('')}</ul>`;
 }
 
-$('families').innerHTML = ARCHIVE.families.map(f => `<li><b>${f.name}</b> (${PROBLEMS.find(p => p.id === f.problem).name}): ${f.about}</li>`).join('');
+$('families').innerHTML = ARCHIVE.families.map(f => `<li><b>${esc(f.name)}</b> (${esc((PROBLEMS.find(p => p.id === f.problem) || {}).name || f.problem)}): ${esc(f.about)}</li>`).join('');
 
 pick();
 </script>
