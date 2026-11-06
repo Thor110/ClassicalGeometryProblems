@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Geometry Problems // Euclidean Circumference Approximation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Papers // Euclidean Circumference Approximation</h1>
+<div class="sub">Edward James Gordon · 1 page · a straightedge and compass construction of a line 99.806% as long as a circle's circumference.</div>
+
+<div class="notice">
+  <div class="notice-title">Web Edition</div>
+  The paper as written, with the formula set as text. <a class="link" href="../Approximations/07%20Accompanying%20Papers/EuclideanCircumferenceApproximation.pdf" target="_blank">Original PDF</a>.
+</div>
+
+<div class="paper">
+<nav class="paper-toc" aria-label="Contents">
+<details open id="tocDetails"><summary class="box-title" style="margin-bottom:8px;">Contents</summary>
+<a href="#method-for-approximating-the-circumference-of-any-given-circle">Method for Approximating the Circumference of Any Given Circle</a>
+<a href="#algebraic-formula">Algebraic Formula</a>
+
+</details>
+</nav>
+<article class="article" id="article">
+
+<span class="pg" id="p1">Page 1</span>
+<h2 id="method-for-approximating-the-circumference-of-any-given-circle">Method for Approximating the Circumference of Any Given Circle</h2>
+<div class="chapter-links">Step through it live on <a href="constructions.html">Constructions →</a> · Chart: <a href="charts.html#rtc">Rectifying The Circle →</a></div>
+<p>Here is a method I devised to approximate the circumference of any given circle, strictly adhering to the Euclidean rule set. (straightedge and compass only)</p>
+<figure class="fig"><img src="images/euclidean-circumference/p01-2.jpg" alt="Figure 1, page 1" loading="lazy" data-n="1"><figcaption>Figure 1 · page 1</figcaption></figure>
+<p>Above is a diagram of the construction and below are the steps for reproducing it.</p>
+<ol><li>Let O=(0,0). Construct the unit circle centred at O. Let B=(1,0) and C=(−1,0) be the right/left cardinal points.</li><li>Connect points BC and draw a perpendicular bisector using BC creating points D=(0,1) and E=(0,−1).</li><li>At point B draw the line perpendicular to DE (this is the vertical line x=1 through B). At point C draw the line perpendicular to DE (the vertical line x=−1 through C).</li><li>At points D and E draw the lines perpendicular to BC (these are the horizontal lines y=1 and y=−1). Extend the line through E=(0,−1) far to the right (this extended horizontal line will act as the baseline for the final intersection). These four lines complete the circumscribing set of four squares about the circle.</li><li>Draw the line DB joining D=(0,1) (top-middle) to B=(1,0) (right-middle).</li><li>Draw the ray OH where H=(1,1) is the top-right corner of the circumscribing square. Let J=OH∩(circle) (the point where the ray meets the circle) and let L=OH∩DB.</li><li>Let M be the midpoint of segment LJ. Construct the perpendicular bisector of segment MJ.</li><li>Let N be the right-side intersection point of that perpendicular bisector at MJ.</li><li>Let F be the top-left corner of the circumscribing arrangement: F=(−1,1). Draw the line FN.</li><li>Let K be the intersection of line FN with the extended baseline (the horizontal line through E, i.e. G=(−1,−1), extended far to the right).</li><li>The constructed length L is the horizontal segment from the left-baseline anchor G=(−1,−1) to the point K. Its numeric value for the unit circle is the coefficient α (so for a circle of radius r the constructed length equals α⋅r).</li></ol>
+<h2 id="algebraic-formula">Algebraic Formula</h2>
+<p>Algebraic formula, instructions and detailed comparison to 2π (derived by GPT-5).</p>
+<div class="formula">α = 2 · (1 + b + s₀) ⁄ (1 − b + s₀)<br>b = 1⁄8 + 3 ⁄ (4√2), &nbsp; s₀ = ½ √(2 − 4b²)</div>
+<ul><li>α ≈ 6.295357530626529 (unit circle coefficient)</li><li>2π ≈ 6.283185307179586</li><li>Absolute gap: α − 2π ≈ 0.012172223446943</li><li>Percentage of accuracy: (GK / Ȼ) × 100 = 99.806647622550144561036880384858% (Ȼ denotes the actual circumference of the circle.)</li></ul>
+<p><i>Revised and rewritten by Edward James Gordon.</i></p>
+</article>
+</div>
+
+<div class="nav-group" style="margin-top:24px;">
+  <a href="papers.html" class="btn-link">All Papers</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<div class="lightbox" id="lb" role="dialog" aria-label="Figure viewer">
+  <img id="lbImg" alt="">
+  <div class="lb-bar">
+    <button class="small" id="lbPrev">◀</button><span id="lbCap"></span><button class="small" id="lbNext">▶</button><button class="small" id="lbClose">Close ✕</button>
+  </div>
+</div>
+
+<script>
+// Figures open full size; arrows step through them, Escape closes.
+const figs = [...document.querySelectorAll('.fig img')], lb = document.getElementById('lb');
+let at = 0;
+function openFig(i) {
+  at = (i + figs.length) % figs.length;
+  document.getElementById('lbImg').src = figs[at].src;
+  document.getElementById('lbCap').textContent = figs[at].alt;
+  lb.classList.add('open');
+}
+figs.forEach((f, i) => f.onclick = () => openFig(i));
+document.getElementById('lbPrev').onclick = () => openFig(at - 1);
+document.getElementById('lbNext').onclick = () => openFig(at + 1);
+document.getElementById('lbClose').onclick = () => lb.classList.remove('open');
+lb.onclick = e => { if (e.target === lb) lb.classList.remove('open'); };
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'ArrowLeft') openFig(at - 1);
+  if (e.key === 'ArrowRight') openFig(at + 1);
+});
+// Highlight the chapter being read in the contents.
+const heads = [...document.querySelectorAll('.article h2')], links = [...document.querySelectorAll('.paper-toc details > a')];
+function here() {
+  let cur = heads[0];
+  for (const h of heads) if (h.getBoundingClientRect().top < 120) cur = h;
+  links.forEach(a => a.classList.toggle('here', cur && a.getAttribute('href') === '#' + cur.id));
+}
+addEventListener('scroll', here, {passive: true}); here();
+// On a phone the contents start folded.
+if (matchMedia('(max-width:860px)').matches) document.getElementById('tocDetails').open = false;
+</script>
+</body>
+</html>
