@@ -26,15 +26,19 @@ function statusOf(e) {
   return {status, people, independent, ai, open};
 }
 
-const PROBLEMS = ARCHIVE.problems.map(p => ({
-  ...p,
-  entries: p.entries.map(e => ({
+const PROBLEMS = ARCHIVE.problems.map(p => {
+  const entries = p.entries.map(e => ({
     ...e,
     file: e.file ? p.folder + '/' + e.file : '',
     geogebra: e.geogebra ? 'https://www.geogebra.org/geometry/' + e.geogebra : '',
     value: parseFloat(String(e.acc).replace(/[^0-9.]/g, '')),
-  })),
-}));
+    exact: parseFloat(e.precise || String(e.acc).replace(/[^0-9.]/g, '')),
+  }));
+  // Rank each side by accuracy: 1 is closest to perfect.
+  for (const side of ['over', 'under'])
+    entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.rank = i + 1; });
+  return {...p, entries};
+});
 
 // A repository path as a link: the file itself (served next to the website) or its page on GitHub.
 function repoFile(path, root) { return (root || '../') + path.split('/').map(encodeURIComponent).join('/'); }

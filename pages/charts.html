@@ -172,7 +172,7 @@ function render() {
       <td>${badge(e)}</td>
       <td>${links.join(' · ')}</td></tr>`;
   };
-  const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} of 15 places filled${n < 15 ? ' · every open place is an invitation' : ''}</td></tr>`;
+  const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} ${n === 1 ? 'method' : 'methods'} · every new attempt is welcome</td></tr>`;
   $('table').innerHTML = `
     <tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr>
     ${group('↑ Oversized', all.filter(e => e.side === 'over').length)}

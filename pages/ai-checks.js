@@ -27,6 +27,10 @@ const AI_CHECKS = {
     "B",
     "O"
    ],
+   "steps_used": {
+    "circles": 1,
+    "lines": 24
+   },
    "accuracy": 99.10928741499923,
    "measured": "square area 606117.891984 against circle area 600766.786609",
    "side": "over",
@@ -52,6 +56,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 17,
+    "lines": 7
+   },
    "accuracy": 99.11961460044009,
    "measured": "square area 453.437386 against circle area 449.480227",
    "side": "over",
@@ -79,6 +87,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 13
+   },
    "accuracy": 99.28301811111724,
    "measured": "square area 241.051316 against circle area 239.335325",
    "side": "over",
@@ -104,6 +116,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 15
+   },
    "accuracy": 99.35632589157363,
    "measured": "square area 163.990659 against circle area 162.941845",
    "side": "over",
@@ -131,6 +147,10 @@ const AI_CHECKS = {
     "B",
     "c"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 17
+   },
    "accuracy": 99.55870872457643,
    "measured": "square area 709.977651 against circle area 706.858347",
    "side": "over",
@@ -158,6 +178,10 @@ const AI_CHECKS = {
     "B",
     "c"
    ],
+   "steps_used": {
+    "circles": 24,
+    "lines": 9
+   },
    "accuracy": 99.69612973842727,
    "measured": "square area 709.006279 against circle area 706.858347",
    "side": "over",
@@ -186,6 +210,10 @@ const AI_CHECKS = {
     "B",
     "c"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 29
+   },
    "accuracy": 99.80950026343882,
    "measured": "square area 708.204910 against circle area 706.858347",
    "side": "over",
@@ -214,6 +242,10 @@ const AI_CHECKS = {
     "B",
     "O"
    ],
+   "steps_used": {
+    "circles": 9,
+    "lines": 15
+   },
    "accuracy": 99.99999150863208,
    "measured": "square area 215.726288 against circle area 215.726269",
    "side": "over",
@@ -241,6 +273,10 @@ const AI_CHECKS = {
     "B",
     "c"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 21
+   },
    "accuracy": 99.93219280033432,
    "measured": "square area 706.379046 against circle area 706.858347",
    "side": "under",
@@ -266,6 +302,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 21,
+    "lines": 11
+   },
    "accuracy": 99.65556737848478,
    "measured": "square area 447.932071 against circle area 449.480227",
    "side": "under",
@@ -294,6 +334,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 13
+   },
    "accuracy": 99.28301811111724,
    "measured": "square area 241.051316 against circle area 239.335325",
    "side": "over",
@@ -321,6 +365,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 16
+   },
    "accuracy": 99.15047322986365,
    "measured": "square area 237.302107 against circle area 239.335325",
    "side": "under",
@@ -348,6 +396,10 @@ const AI_CHECKS = {
     "B",
     "c"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 7
+   },
    "accuracy": 99.01556450524366,
    "measured": "square area 699.899783 against circle area 706.858347",
    "side": "under",
@@ -374,6 +426,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 6
+   },
    "accuracy": 95.49296585513723,
    "measured": "square area 84.918000 against circle area 88.925922",
    "side": "under",
@@ -384,6 +440,7 @@ const AI_CHECKS = {
    "id": "taa-under-99.658",
    "checks": [
     "every rebuilt point matches the saved file",
+    "the result depends on freely placed point(s) beyond the given figure: D",
     "the result depends on hand-placed point(s): A_1, F, Z",
     "accuracy 99.3179314974% does NOT reproduce the chart figure ~99.658%"
    ],
@@ -403,6 +460,10 @@ const AI_CHECKS = {
     "C",
     "D"
    ],
+   "steps_used": {
+    "circles": 9,
+    "lines": 5
+   },
    "accuracy": 99.3179314974492,
    "measured": "thirds 13.0522°, 13.0522°, 13.1862° against 13.0969° (each 99.659%, 99.659%, 99.318%); the worst sets the accuracy",
    "side": "over",
@@ -413,6 +474,7 @@ const AI_CHECKS = {
    "id": "taa-under-95.538",
    "checks": [
     "every rebuilt point matches the saved file",
+    "the result depends on freely placed point(s) beyond the given figure: E",
     "the result depends on hand-placed point(s): D",
     "accuracy 91.0774311712% does NOT reproduce the chart figure ~95.538%"
    ],
@@ -430,6 +492,10 @@ const AI_CHECKS = {
     "C",
     "E"
    ],
+   "steps_used": {
+    "circles": 4,
+    "lines": 1
+   },
    "accuracy": 91.07743117124372,
    "measured": "thirds 19.1556°, 21.8391°, 19.1556° against 20.0501° (each 95.539%, 91.077%, 95.539%); the worst sets the accuracy",
    "side": "over",
@@ -456,6 +522,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 6
+   },
    "accuracy": 97.65625,
    "measured": "edge 7.152797 against given edge 5.722237: volume ratio 1.953125 against 2",
    "side": "under",
@@ -482,6 +552,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 20
+   },
    "accuracy": 98.92478916755539,
    "measured": "edge 7.193806 against given edge 5.730339: volume ratio 1.978496 against 2",
    "side": "under",
@@ -511,6 +585,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 6,
+    "lines": 6
+   },
    "accuracy": 98.53872377891679,
    "measured": "distance A-E_1 = 6375.000000 against circumference 6283.185307",
    "side": "over",
@@ -537,6 +615,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 12,
+    "lines": 6
+   },
    "accuracy": 99.59619104296507,
    "measured": "distance B_1-L = 51.376861 against circumference 51.170231",
    "side": "over",
@@ -564,6 +646,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 4
+   },
    "accuracy": 99.60746515193159,
    "measured": "distance S-H = 52.328512 against circumference 52.123907",
    "side": "over",
@@ -590,6 +676,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 3
+   },
    "accuracy": 99.6501619830063,
    "measured": "distance N-H = 52.306257 against circumference 52.123907",
    "side": "over",
@@ -616,6 +706,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 8,
+    "lines": 5
+   },
    "accuracy": 99.78667113012001,
    "measured": "distance M-P = 56.179691 against circumference 56.060099",
    "side": "over",
@@ -642,6 +736,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 10,
+    "lines": 4
+   },
    "accuracy": 99.80200241995003,
    "measured": "distance S-N = 122.556611 against circumference 122.314431",
    "side": "over",
@@ -671,6 +769,10 @@ const AI_CHECKS = {
     "B",
     "O"
    ],
+   "steps_used": {
+    "circles": 1,
+    "lines": 11
+   },
    "accuracy": 99.80627304689229,
    "measured": "distance G-K = 2752.950616 against circumference 2747.627721",
    "side": "over",
@@ -697,6 +799,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 16,
+    "lines": 7
+   },
    "accuracy": 99.87336639679413,
    "measured": "distance D_1-F = 151.182200 against circumference 150.990995",
    "side": "over",
@@ -723,6 +829,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 15,
+    "lines": 8
+   },
    "accuracy": 99.93438016929082,
    "measured": "distance F_1-Q = 63.754422 against circumference 63.712614",
    "side": "over",
@@ -749,6 +859,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 10,
+    "lines": 4
+   },
    "accuracy": 99.9347870772154,
    "measured": "distance R-I = 63.697371 against circumference 63.655859",
    "side": "over",
@@ -778,6 +892,10 @@ const AI_CHECKS = {
     "B",
     "O"
    ],
+   "steps_used": {
+    "circles": 4,
+    "lines": 14
+   },
    "accuracy": 99.97121438043841,
    "measured": "distance G-Z = 2748.418643 against circumference 2747.627721",
    "side": "over",
@@ -804,6 +922,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 5
+   },
    "accuracy": 99.9974744497282,
    "measured": "distance P-K = 451.266877 against circumference 451.255480",
    "side": "over",
@@ -833,6 +955,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 10,
+    "lines": 6
+   },
    "accuracy": 99.99865760270623,
    "measured": "distance Z-N = 40.721295 against circumference 40.720748",
    "side": "over",
@@ -862,6 +988,10 @@ const AI_CHECKS = {
     "B",
     "O"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 16
+   },
    "accuracy": 99.99870460269611,
    "measured": "distance H_1-G = 2747.663314 against circumference 2747.627721",
    "side": "over",
@@ -870,9 +1000,34 @@ const AI_CHECKS = {
   },
   "rtc-over-99.9996": {
    "id": "rtc-over-99.9996",
-   "checks": [],
-   "status": "no-file",
-   "summary": "No GeoGebra file in the repository yet, so it cannot be rebuilt here."
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9996812506% reproduces the chart figure 99.9996%"
+   ],
+   "tools": {
+    "Circle": 12,
+    "Line": 8,
+    "Intersect": 18,
+    "Midpoint": 4,
+    "Circumference": 1,
+    "PointIn": 1,
+    "Distance": 2,
+    "OrthogonalLine": 3
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 11,
+    "lines": 10
+   },
+   "accuracy": 99.999681250574,
+   "measured": "distance T-K = 451.256918 against circumference 451.255480",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
   "rtc-under-99.999": {
    "id": "rtc-under-99.999",
@@ -898,6 +1053,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 9,
+    "lines": 12
+   },
    "accuracy": 99.99948805477463,
    "measured": "distance A-C_1 = 6283.153141 against circumference 6283.185307",
    "side": "under",
@@ -927,6 +1086,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 5,
+    "lines": 7
+   },
    "accuracy": 99.99811194858026,
    "measured": "distance I-K = 35.814362 against circumference 35.815038",
    "side": "under",
@@ -956,6 +1119,10 @@ const AI_CHECKS = {
     "B",
     "O"
    ],
+   "steps_used": {
+    "circles": 4,
+    "lines": 14
+   },
    "accuracy": 99.98755028617505,
    "measured": "distance G-B_1 = 2747.285649 against circumference 2747.627721",
    "side": "under",
@@ -982,6 +1149,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 9,
+    "lines": 7
+   },
    "accuracy": 99.98745429467247,
    "measured": "distance S-M = 60.949743 against circumference 60.957390",
    "side": "under",
@@ -1007,6 +1178,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 8,
+    "lines": 4
+   },
    "accuracy": 99.8122741308946,
    "measured": "distance M-N = 40.644305 against circumference 40.720748",
    "side": "under",
@@ -1033,6 +1208,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 9,
+    "lines": 4
+   },
    "accuracy": 99.80914728503554,
    "measured": "distance O-K = 41.563776 against circumference 41.643253",
    "side": "under",
@@ -1059,6 +1238,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 10,
+    "lines": 5
+   },
    "accuracy": 99.4430337854331,
    "measured": "distance M-S = 52.385028 against circumference 52.678429",
    "side": "under",
@@ -1085,6 +1268,10 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 4
+   },
    "accuracy": 99.37681013608419,
    "measured": "distance D-T = 363.595195 against circumference 365.875293",
    "side": "under",
@@ -1111,9 +1298,117 @@ const AI_CHECKS = {
     "A",
     "B"
    ],
+   "steps_used": {
+    "circles": 6,
+    "lines": 5
+   },
    "accuracy": 98.16518509675663,
    "measured": "distance M-L = 50.231352 against circumference 51.170231",
    "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "rtc-over-99.979": {
+   "id": "rtc-over-99.979",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "B is placed on a circle of typed radius (Circle[A, 1000])",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9795332799% reproduces the chart figure 99.979%"
+   ],
+   "tools": {
+    "Point": 1,
+    "Segment": 6,
+    "Circle": 6,
+    "Line": 3,
+    "Intersect": 19,
+    "Midpoint": 4,
+    "Circumference": 1,
+    "PointIn": 1,
+    "Distance": 4
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 6,
+    "lines": 7
+   },
+   "accuracy": 99.97953327991249,
+   "measured": "distance A-W = 6284.471269 against circumference 6283.185307",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "rtc-under-99.982": {
+   "id": "rtc-under-99.982",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "K is placed on a circle of typed radius (Circle[H, 262.3629415738])",
+    "L is placed on a circle of typed radius (Circle[C, 262.3629415738])",
+    "M is placed on a circle of typed radius (Circle[A, 262.3629415738])",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9823833184% reproduces the chart figure 99.982%"
+   ],
+   "tools": {
+    "Circle": 25,
+    "Line": 2,
+    "Intersect": 26,
+    "Midpoint": 2,
+    "Circumference": 2,
+    "PointIn": 2,
+    "Point": 3,
+    "Segment": 3,
+    "Distance": 1
+   },
+   "starting_points": [
+    "A",
+    "B",
+    "E_1"
+   ],
+   "steps_used": {
+    "circles": 9,
+    "lines": 2
+   },
+   "accuracy": 99.9823833184313,
+   "measured": "distance N_1-H = 262.316722 against circumference 262.362942",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
+  },
+  "rtc-over-99.989": {
+   "id": "rtc-over-99.989",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "K is placed on a circle of typed radius (Circle[H, 262.3629415738])",
+    "L is placed on a circle of typed radius (Circle[C, 262.3629415738])",
+    "M is placed on a circle of typed radius (Circle[A, 262.3629415738])",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9899741696% reproduces the chart figure 99.989%"
+   ],
+   "tools": {
+    "Circle": 26,
+    "Line": 8,
+    "Intersect": 59,
+    "Midpoint": 3,
+    "Circumference": 2,
+    "PointIn": 2,
+    "Point": 3,
+    "Segment": 3,
+    "Distance": 3
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 20,
+    "lines": 7
+   },
+   "accuracy": 99.98997416959759,
+   "measured": "distance K_3-H = 262.389246 against circumference 262.362942",
+   "side": "over",
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },

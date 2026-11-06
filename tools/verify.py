@@ -59,7 +59,16 @@ def as_curve(o):                            # segments and rays meet things as t
     if o[0] in ('segment', 'ray'): return line_through(o[1], o[2])
     if o[0] == 'arc': return circle(o[1], o[2])
     return o
+def on_segment(p, a, b):
+    return min(a[0], b[0]) - 1e-9 <= p[0] <= max(a[0], b[0]) + 1e-9 and min(a[1], b[1]) - 1e-9 <= p[1] <= max(a[1], b[1]) + 1e-9
 def intersections(o1, o2):
+    for poly, other in ((o1, o2), (o2, o1)):
+        if poly[0] == 'polygon':
+            pts, out = poly[1], []
+            for i in range(len(pts)):
+                a, b = pts[i - 1], pts[i]
+                out += [c for c in intersections(('segment', a, b), other) if on_segment(c, a, b)]
+            return out
     a, b = as_curve(o1), as_curve(o2)
     if a[0] == 'line' and b[0] == 'line': return inter_ll(a, b)
     if a[0] == 'line' and b[0] == 'circle': return inter_lc(a, b)
@@ -133,6 +142,7 @@ HAND_PLACED = {'Point', 'PointIn'}            # a point dropped onto an object b
 def rebuild(path):
     steps, els = read(path)
     obj, deps, notes, tools = {}, {}, [], {}
+    parents, kind_of = {}, {}            # which objects each object was made from, and by which tool
     free, hand, given, made = set(), set(), set(), []
     measures = []
     mismatches = 0
@@ -162,6 +172,8 @@ def rebuild(path):
         _, name, ins, outs = st
         tools[name] = tools.get(name, 0) + 1
         ins = [html_unescape(i) for i in ins]
+        names_in = [n for i in ins for n in re.findall(r"[A-Za-z][A-Za-z0-9_{}']*", i) if n in obj]
+        for o in outs: parents[o] = names_in; kind_of[o] = name
         args, d, typed = [], set(), False
         try:
             for i in ins:
@@ -248,7 +260,7 @@ def rebuild(path):
                 val = r * t
             elif name == 'Length' and kinds[0] == 'segment': val = dist(args[0][1], args[0][2])
             elif name == 'Angle' and kinds == ['point', 'point', 'point']: val = angle_at(args[0][1], args[1][1], args[2][1])
-            measures.append({'tool': name, 'of': ins, 'value': val, 'depends': d})
+            measures.append({'tool': name, 'of': ins, 'value': val, 'depends': d, 'names': names_in})
             for o in outs: obj[o] = ('num', val); deps[o] = d
             continue
         else:
@@ -260,7 +272,7 @@ def rebuild(path):
             made.append(v[0])
             obj[o] = v; deps[o] = (d | {o}) if o in hand else d
             if v[0] == 'point': check(o, v)
-    return {'objects': obj, 'deps': deps, 'free': free, 'given': given, 'hand': hand, 'measures': measures, 'tools': tools,
+    return {'objects': obj, 'deps': deps, 'free': free, 'given': given, 'hand': hand, 'parents': parents, 'kind_of': kind_of, 'measures': measures, 'tools': tools,
             'notes': notes, 'mismatches': mismatches}
 
 # ---------------------------------------------------------------- judging the result
@@ -274,19 +286,21 @@ def judge(problem, r):
         squares = [o for o in obj.values() if o and o[0] == 'polygon' and len(o[1]) == 4]
         if circ and squares:
             area = circ[0]['value']; sq = shoelace(squares[-1][1])
-            return sq, area, 'square area %.6f against circle area %.6f' % (sq, area), set().union(*[r['deps'].get(k, set()) for k, o in obj.items() if o is squares[-1]])
+            sqname = [k for k, o in obj.items() if o is squares[-1]][0]
+            return sq, area, 'square area %.6f against circle area %.6f' % (sq, area), r['deps'].get(sqname, set()), circ[0]['depends'], [sqname] + circ[0]['names']
     if problem == 'rtc':
         circ = [m for m in M if m['tool'] in ('Circumference', 'Perimeter')]
         lens = [m for m in M if m['tool'] == 'Distance' and m['value']]
         if circ and lens:
             C = circ[0]['value']
             best = min(lens, key=lambda m: abs(m['value'] - C))
-            return best['value'], C, 'distance %s = %.6f against circumference %.6f' % ('-'.join(best['of']), best['value'], C), best['depends']
+            return best['value'], C, 'distance %s = %.6f against circumference %.6f' % ('-'.join(best['of']), best['value'], C), best['depends'], circ[0]['depends'], best['names'] + circ[0]['names']
     if problem == 'dtc':
         lens = sorted([m for m in M if m['tool'] == 'Distance' and m['value']], key=lambda m: m['value'])
         if len(lens) >= 2:
             a, b = lens[0], lens[-1]
-            return (b['value'] / a['value']) ** 3, 2.0, 'edge %.6f against given edge %.6f: volume ratio %.6f against 2' % (b['value'], a['value'], (b['value'] / a['value']) ** 3), a['depends'] | b['depends']
+            if abs(b['value'] - a['value']) < 1e-9 * b['value']: return None
+            return (b['value'] / a['value']) ** 3, 2.0, 'edge %.6f against given edge %.6f: volume ratio %.6f against 2' % (b['value'], a['value'], (b['value'] / a['value']) ** 3), b['depends'], a['depends'], a['names'] + b['names']
     if problem == 'taa':
         # Every one of the three parts must be a third of the whole, so the worst part is the measure.
         angs = [m for m in M if m['tool'] == 'Angle' and m['value']]
@@ -296,15 +310,26 @@ def judge(problem, r):
             worst = max(parts, key=lambda m: abs(m['value'] - third))
             each = ', '.join('%.4f°' % math.degrees(m['value']) for m in parts)
             return worst['value'], third, 'thirds %s against %.4f° (each %s); the worst sets the accuracy' % (
-                each, math.degrees(third), ', '.join('%.3f%%' % acc(m['value'], third) for m in parts)), set().union(*[m['depends'] for m in angs])
+                each, math.degrees(third), ', '.join('%.3f%%' % acc(m['value'], third) for m in parts)), set().union(*[m['depends'] for m in parts]), whole['depends'], [n for m in angs for n in m['names']]
     if problem == 'ar':
         arcs = [m for m in M if m['tool'] == 'Length' and m['value']]
         lens = [m for m in M if m['tool'] == 'Distance' and m['value']]
         if arcs and lens:
             L = arcs[0]['value']; best = min(lens, key=lambda m: abs(m['value'] - L))
             if abs(best['value'] - L) / L < 0.1:
-                return best['value'], L, 'distance %.6f against arc length %.6f' % (best['value'], L), best['depends']
+                return best['value'], L, 'distance %.6f against arc length %.6f' % (best['value'], L), best['depends'], arcs[0]['depends'], best['names'] + arcs[0]['names']
     return None
+
+LINE_TOOLS = {'Line', 'Segment', 'Ray', 'OrthogonalLine', 'LineBisector', 'AngularBisector'}
+def steps_used(r, roots):
+    """Circles and lines that the result actually comes from (Midpoint and Intersect are not counted)."""
+    seen, stack = set(), list(roots)
+    while stack:
+        n = stack.pop()
+        if n in seen: continue
+        seen.add(n); stack += r['parents'].get(n, [])
+    kinds = [r['kind_of'].get(n) for n in seen]
+    return {'circles': sum(k in ('Circle', 'CircleArc') for k in kinds), 'lines': sum(k in LINE_TOOLS for k in kinds)}
 
 def load_archive():
     src = open(os.path.join(ROOT, 'pages', 'archive-data.js'), encoding='utf-8').read()
@@ -338,10 +363,13 @@ def main():
             else: res['checks'].append('every rebuilt point matches the saved file')
             for n in r['notes']: res['checks'].append(n)
             if j:
-                c, t, how, d = j
+                c, t, how, d, dtrue, roots = j
+                res['steps_used'] = steps_used(r, roots)
                 a = acc(c, t)
                 res['accuracy'] = a; res['measured'] = how; res['side'] = 'over' if c > t else 'under'
                 hand_used = sorted(h for h in r['hand'] if h in d)
+                extra = sorted(x for x in (d - dtrue) if x in r['free'] and r['objects'].get(x, ('num',))[0] != 'num')
+                if extra: ok = False; res['checks'].append('the result depends on freely placed point(s) beyond the given figure: ' + ', '.join(extra))
                 if hand_used: ok = False; res['checks'].append('the result depends on hand-placed point(s): ' + ', '.join(hand_used))
                 else: res['checks'].append('no hand-placed point feeds the result')
                 chart = float(re.sub(r'[^0-9.]', '', e['acc']))

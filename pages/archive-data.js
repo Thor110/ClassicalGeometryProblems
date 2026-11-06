@@ -1,8 +1,9 @@
 // The archive's data: every charted approximation, who has verified it, and the open places.
 // This is the one place the numbers live. The website reads it, and tools/verify.py checks the
 // GeoGebra files and .md notes against it. Edit it as plain JSON: keep the quotes and commas.
+// Ranks are not stored: the website ranks each side by accuracy (rank 1 is closest to perfect).
 //
-// Each entry: id (problem-side-accuracy, never changes), side (over/under), rank, marks
+// Each entry: id (problem-side-accuracy, never changes), side (over/under), marks
 // (~ contested, @ too simple, µ micro scale edits), holder, method, circles, lines, acc (the chart
 // figure, truncated), precise (a fuller readout, if any), date, geogebra (the id after
 // geogebra.org/geometry/), file (the .ggb/.md pair under the problem's folder, without extension),
@@ -22,7 +23,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.117",
      "side": "over",
-     "rank": 8,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -46,7 +46,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.139",
      "side": "over",
-     "rank": 7,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -70,7 +69,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.253",
      "side": "over",
-     "rank": 6,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -94,7 +92,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.356",
      "side": "over",
-     "rank": 5,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -118,7 +115,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.563",
      "side": "over",
-     "rank": 4,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -142,7 +138,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.703",
      "side": "over",
-     "rank": 3,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -166,7 +161,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.816",
      "side": "over",
-     "rank": 2,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -190,7 +184,6 @@ const ARCHIVE = {
     {
      "id": "stc-over-99.999",
      "side": "over",
-     "rank": 1,
      "marks": "",
      "holder": "Srinivasa Ramanujan",
      "method": "Ramanujan's Method",
@@ -214,7 +207,6 @@ const ARCHIVE = {
     {
      "id": "stc-under-99.929",
      "side": "under",
-     "rank": 1,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -238,7 +230,6 @@ const ARCHIVE = {
     {
      "id": "stc-under-99.644",
      "side": "under",
-     "rank": 2,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -262,7 +253,6 @@ const ARCHIVE = {
     {
      "id": "stc-under-99.253",
      "side": "under",
-     "rank": 3,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -286,7 +276,6 @@ const ARCHIVE = {
     {
      "id": "stc-under-99.164",
      "side": "under",
-     "rank": 4,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -310,7 +299,6 @@ const ARCHIVE = {
     {
      "id": "stc-under-99.009",
      "side": "under",
-     "rank": 5,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
@@ -334,7 +322,6 @@ const ARCHIVE = {
     {
      "id": "stc-under-95.492",
      "side": "under",
-     "rank": 15,
      "marks": "@~",
      "holder": "Edward James Gordon",
      "method": "Circling the Square v1",
@@ -370,7 +357,6 @@ const ARCHIVE = {
     {
      "id": "taa-under-99.658",
      "side": "under",
-     "rank": 1,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Array Casting v2.0",
@@ -394,7 +380,6 @@ const ARCHIVE = {
     {
      "id": "taa-under-95.538",
      "side": "under",
-     "rank": 15,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Array Casting v1.0",
@@ -430,7 +415,6 @@ const ARCHIVE = {
     {
      "id": "dtc-over-99.227",
      "side": "over",
-     "rank": 2,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Cube 2 Tesseract v1.0",
@@ -454,7 +438,6 @@ const ARCHIVE = {
     {
      "id": "dtc-over-99.487",
      "side": "over",
-     "rank": 1,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Cube 2 Tesseract v2.0",
@@ -490,7 +473,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-98.538",
      "side": "over",
-     "rank": 15,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -514,7 +496,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.596",
      "side": "over",
-     "rank": 14,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -538,7 +519,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.607",
      "side": "over",
-     "rank": 13,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
@@ -562,7 +542,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.65",
      "side": "over",
-     "rank": 12,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -586,7 +565,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.786",
      "side": "over",
-     "rank": 11,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -610,7 +588,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.802",
      "side": "over",
-     "rank": 10,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -634,7 +611,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.806",
      "side": "over",
-     "rank": 9,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Euclidean Circumference Approximation",
@@ -658,7 +634,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.873",
      "side": "over",
-     "rank": 8,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
@@ -682,7 +657,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.9343",
      "side": "over",
-     "rank": 7,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -706,7 +680,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.9347",
      "side": "over",
-     "rank": 6,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -730,7 +703,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.971",
      "side": "over",
-     "rank": 5,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
@@ -754,7 +726,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.997",
      "side": "over",
-     "rank": 4,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -778,7 +749,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.9986",
      "side": "over",
-     "rank": 3,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
@@ -802,7 +772,6 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.9987",
      "side": "over",
-     "rank": 2,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
@@ -826,18 +795,17 @@ const ARCHIVE = {
     {
      "id": "rtc-over-99.9996",
      "side": "over",
-     "rank": 1,
      "marks": "µ",
      "holder": "Kochanski / Gordon",
      "method": "Kochanski Gordon Crossover Method",
      "circles": 12,
      "lines": 10,
      "acc": "99.9996",
-     "precise": "",
-     "date": "13-01-2026",
-     "geogebra": "kyhvbkhh",
-     "file": "",
-     "note": "",
+     "precise": "99.99968125157933",
+     "date": "22-12-2025",
+     "geogebra": "puardqtn",
+     "file": "GeoGebra Files/Over/RTC-99.9996-Kochanski-Gordon",
+     "note": "Takes the midpoint between Edward's oversized 99.997% construction and Kochański's undersized 99.998% construction.",
      "verified": [
       {
        "by": "Edward James Gordon",
@@ -850,7 +818,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.999",
      "side": "under",
-     "rank": 1,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "Microscale Trisection",
@@ -874,7 +841,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.998",
      "side": "under",
-     "rank": 2,
      "marks": "",
      "holder": "Adam Adamandy Kochanski",
      "method": "Kochański's approximation",
@@ -898,7 +864,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.9875",
      "side": "under",
-     "rank": 3,
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
@@ -922,7 +887,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.9874",
      "side": "under",
-     "rank": 4,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -946,7 +910,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.812",
      "side": "under",
-     "rank": 5,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -970,7 +933,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.809",
      "side": "under",
-     "rank": 6,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -994,7 +956,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.443",
      "side": "under",
-     "rank": 7,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -1018,7 +979,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-99.374",
      "side": "under",
-     "rank": 8,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -1042,7 +1002,6 @@ const ARCHIVE = {
     {
      "id": "rtc-under-98.165",
      "side": "under",
-     "rank": 9,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
@@ -1062,6 +1021,75 @@ const ARCHIVE = {
       }
      ],
      "disputes": []
+    },
+    {
+     "marks": "",
+     "holder": "Edward James Gordon",
+     "method": "",
+     "precise": "99.97953327991887",
+     "date": "",
+     "geogebra": "",
+     "note": "An adjustment of the undersized 99.999% method.",
+     "verified": [
+      {
+       "by": "Edward James Gordon",
+       "kind": "person",
+       "how": "GeoGebra measuring tools"
+      }
+     ],
+     "disputes": [],
+     "id": "rtc-over-99.979",
+     "side": "over",
+     "circles": 6,
+     "lines": 8,
+     "acc": "99.979",
+     "file": "GeoGebra Files/Over/RTC-99.979"
+    },
+    {
+     "marks": "",
+     "holder": "Edward James Gordon",
+     "method": "",
+     "precise": "99.98238331842036",
+     "date": "11-11-2025",
+     "geogebra": "",
+     "note": "Circle and line counts are the steps the result is built from, counted by tools/verify.py; to be confirmed.",
+     "verified": [
+      {
+       "by": "Edward James Gordon",
+       "kind": "person",
+       "how": "GeoGebra measuring tools"
+      }
+     ],
+     "disputes": [],
+     "id": "rtc-under-99.982",
+     "side": "under",
+     "circles": 9,
+     "lines": 2,
+     "acc": "99.982",
+     "file": "GeoGebra Files/Under/RTC-99.982"
+    },
+    {
+     "marks": "µ",
+     "holder": "Edward James Gordon",
+     "method": "",
+     "precise": "99.98997416958272",
+     "date": "11-11-2025",
+     "geogebra": "",
+     "note": "An adjustment of the 99.982% undersized construction. Circle and line counts are the steps the result is built from, counted by tools/verify.py; to be confirmed.",
+     "verified": [
+      {
+       "by": "Edward James Gordon",
+       "kind": "person",
+       "how": "GeoGebra measuring tools"
+      }
+     ],
+     "disputes": [],
+     "id": "rtc-over-99.989",
+     "side": "over",
+     "circles": 20,
+     "lines": 7,
+     "acc": "99.989",
+     "file": "GeoGebra Files/Over/RTC-99.989"
     }
    ]
   },
@@ -1078,7 +1106,6 @@ const ARCHIVE = {
     {
      "id": "ar-over-95",
      "side": "over",
-     "rank": 1,
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
