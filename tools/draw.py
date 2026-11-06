@@ -62,9 +62,10 @@ def result_shapes(problem, r, entry, j):
         pts = [obj[k][1] for k in roots if obj.get(k) and obj[k][0] == 'point']
         if len(pts) >= 4: shapes += [('given', (pts[0], pts[1])), ('seg', (pts[2], pts[3]))]
     elif problem == 'taa':
-        vertex = obj['B'][1]
+        corner = v.angle_parts(r, 'taa')[0]          # the angle's corner, read from the file (usually B)
+        vertex = obj[corner][1]
         for k in sorted(set(roots)):
-            if k != 'B' and obj.get(k) and obj[k][0] == 'point': shapes.append(('ray', (vertex, obj[k][1])))
+            if k != corner and obj.get(k) and obj[k][0] == 'point': shapes.append(('ray', (vertex, obj[k][1])))
     return shapes
 
 def bounds(r, names, shapes):

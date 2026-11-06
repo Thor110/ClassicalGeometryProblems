@@ -262,7 +262,7 @@ def rebuild(path, overrides=None, ref=None):
             s = saved_object(els.get(outs[0], {}))
             if overrides and s and args and args[0][0] in ('line', 'segment', 'circle'):
                 # When the figure moves, a point placed on an object slides with it: keep it on the object.
-                ref_pt = ref.get(outs[0], s[1]) if ref else s[1]
+                ref_pt = tuple(overrides[outs[0]]) if outs[0] in overrides else ref.get(outs[0], s[1]) if ref else s[1]
                 o0 = as_curve(args[0])
                 if o0[0] == 'line':
                     a, b, c = o0[1], o0[2], o0[3]; n2 = a * a + b * b; t = (a * ref_pt[0] + b * ref_pt[1] + c) / n2
@@ -424,6 +424,40 @@ def shallowest_crossing(r, roots, steps):
         best = ang if best is None else min(best, ang)
     return best
 
+def size_only(problem, path, entry, names, base=None):
+    """The hand-placed points among `names` that only set the size of the figure: sliding each one
+    along the line or circle it sits on, in small steps either way, leaves the accuracy unchanged.
+    (For example a point anywhere on an angle's bisector, used as the radius of the first circle.)"""
+    r0 = base or rebuild(path)
+    j0 = judge(problem, r0, entry.get('square'), entry.get('result_path'), entry.get('result_scale'))
+    if not j0: return set()
+    a0 = acc(j0[0], j0[1]); size = given_size(problem, r0, j0[5]) or 1
+    pts = lambda r: {k: o[1] for k, o in r['objects'].items() if o and o[0] == 'point'}
+    out = set()
+    for n in names:
+        par = [r0['objects'].get(x) for x in r0['parents'].get(n, [])]
+        path_obj = next((x for x in par if x and x[0] in ('line', 'segment', 'circle')), None)
+        if not path_obj or r0['objects'].get(n, ('',))[0] != 'point': continue
+        P = r0['objects'][n][1]
+        if path_obj[0] == 'circle':
+            (cx, cy) = path_obj[1]; t0 = M.atan2(P[1] - cy, P[0] - cx); rr = path_obj[2]
+            at = lambda s: (cx + rr * M.cos(t0 + s * 0.35), cy + rr * M.sin(t0 + s * 0.35))
+        else:
+            l = as_curve(path_obj); dx, dy = line_dir(l); k = M.hypot(dx, dy) or 1
+            at = lambda s: (P[0] + dx / k * s * 0.3 * size, P[1] + dy / k * s * 0.3 * size)
+        same = True
+        for sign in (1, -1):
+            ref = pts(r0)
+            for i in range(1, 11):
+                try:
+                    r = rebuild(path, {n: at(sign * i / 10)}, ref); ref = pts(r)
+                    j = judge(problem, r, entry.get('square'), entry.get('result_path'), entry.get('result_scale'))
+                except (ValueError, ZeroDivisionError, KeyError, TypeError): j = None
+                if not j or abs(acc(j[0], j[1]) - a0) > 1e-9 * max(1, abs(a0)): same = False; break
+            if not same: break
+        if same: out.add(n)
+    return out
+
 def given_size(problem, r, roots):
     o, M = r['objects'], r['measures']
     if problem in ('stc', 'rtc'):
@@ -435,6 +469,25 @@ def given_size(problem, r, roots):
         if d: return d[0]
     rad = [x[2] for x in o.values() if x and x[0] == 'circle']
     return max(rad) if rad else None
+
+def angle_parts(r, problem):
+    """(corner, fixed arm point, turning arm point) of the given angle."""
+    o = r['objects']
+    if problem == 'taa':
+        whole = [n for n, k in r['kind_of'].items() if k == 'Angle' and len(r['parents'].get(n, [])) == 3
+                 and o.get(n) and o[n][0] == 'num' and o[n][1]]
+        if whole:
+            w = max(whole, key=lambda n: min(o[n][1], 2 * M.pi - o[n][1]))
+            p, c, q = r['parents'][w]
+            # the arm whose point was placed freely turns; prefer the one that is not on the base line
+            free_arm = [x for x in (q, p) if x in r['free']]
+            if not free_arm: return 'B', 'A', 'C'          # its arms are constructed: not the given angle
+            turning = free_arm[0]
+            fixed = p if turning == q else q
+            if all(x in o and o[x][0] == 'point' for x in (c, fixed, turning)):
+                if 'C' in (p, q) and fixed == 'C': fixed, turning = turning, fixed
+                return c, fixed, turning
+    return 'B', 'A', 'C'
 
 def sweep_at(problem, path, entry, targets, step=1.0):
     """Accuracy at exact angles, each reached from the file's own angle in steps of at most `step`
@@ -463,13 +516,16 @@ def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None):
         except (ValueError, ZeroDivisionError, KeyError, TypeError): return None, None
     nums = [k for k in base['free'] if base['objects'].get(k, ('',))[0] == 'num']
     if problem == 'taa' or (problem == 'ar' and not nums):
-        # the arm through C turns about the vertex B (arc files drawn this way use the same labels)
-        B, A, C = (base['objects'][k][1] for k in ('B', 'A', 'C'))
+        # One arm turns about the corner. The corner, the fixed arm and the turning arm are read from the
+        # whole angle's measurement (Angle[P, corner, Q]); files without one use the archive's usual
+        # labels, corner B, fixed arm A, turning arm C.
+        corner, fixed, turning = angle_parts(base, problem)
+        B, A, C = (base['objects'][k][1] for k in (corner, fixed, turning))
         a0 = M.atan2(A[1] - B[1], A[0] - B[0]); rC = dist(B, C)
         start = math.degrees((M.atan2(C[1] - B[1], C[0] - B[0]) - a0) % (2 * M.pi))
         sgn = 1 if start <= 180 else -1            # the angle may open clockwise from arm BA
         if sgn < 0: start = 360 - start
-        make = lambda deg: {'C': (B[0] + rC * M.cos(a0 + sgn * math.radians(deg)), B[1] + rC * M.sin(a0 + sgn * math.radians(deg)))}
+        make = lambda deg: {turning: (B[0] + rC * M.cos(a0 + sgn * math.radians(deg)), B[1] + rC * M.sin(a0 + sgn * math.radians(deg)))}
     elif problem == 'ar':
         beta = nums[0]
         start = math.degrees(base['objects'][beta][1])
@@ -626,6 +682,10 @@ def main():
                 a = acc(c, t)
                 res['accuracy'] = a; res['measured'] = how; res['side'] = 'over' if c > t else 'under'
                 hand_used = sorted(h for h in r['hand'] if h in d)
+                sized = size_only(p['id'], ggb, e, hand_used, r) if hand_used else set()
+                if sized:
+                    res['checks'].append('%s %s placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged' % (', '.join(sorted(sized)), 'is' if len(sized) == 1 else 'are'))
+                    hand_used = [h for h in hand_used if h not in sized]
                 extra = sorted(x for x in (d - dtrue) if x in r['free'] and r['objects'].get(x, ('num',))[0] != 'num')
                 if extra: ok = False; res['checks'].append('the result depends on freely placed point(s) beyond the given figure: ' + ', '.join(extra))
                 if hand_used: ok = False; res['checks'].append('the result depends on hand-placed point(s): ' + ', '.join(hand_used))

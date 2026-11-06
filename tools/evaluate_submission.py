@@ -187,6 +187,8 @@ def evaluate(sub_dir):
     roots = roots_for(r, res)
     deps = set().union(*[r['deps'].get(x, set()) for x in roots])
     hand = sorted(h for h in r['hand'] if h in deps)
+    sized = sorted(v.size_only(problem, ggb, {}, hand, r)) if hand else []
+    hand = [h for h in hand if h not in sized]
     su = v.steps_used(r, roots, problem)
     size = v.given_size(problem, r, roots)
     sm = v.smallest_step(r, roots, problem, size)
@@ -199,6 +201,8 @@ def evaluate(sub_dir):
         labels.add('needs-manual-check'); decision = 'manual'
     else:
         rep.append('- **Tools:** only straightedge and compass steps lead to the result.')
+    if sized:
+        rep.append('  %s %s placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged.' % (', '.join(sized), 'is' if len(sized) == 1 else 'are'))
     if r['notes']: rep.append('- **Notes from the rebuild:** ' + '; '.join(r['notes']))
     if sm is not None:
         rep.append('- **Micro scale:** smallest step %.2f%% of the given size%s.' % (100 * sm, ', so it would be marked µ' if sm < v.MICRO else ''))

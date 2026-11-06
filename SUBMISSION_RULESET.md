@@ -5,7 +5,7 @@ These are the rules behind the keys and figures in the approximation charts.
 **Rules are subject to change.** Each change is listed under [Changes](#changes) with its date, and
 entries are re-checked against the current rules by `tools/verify.py`.
 
-Current version: **1.3 (November 2026)**
+Current version: **1.4 (November 2026)**
 
 ## Rulesets
 
@@ -29,7 +29,8 @@ Current version: **1.3 (November 2026)**
 - **Rectifying the circle** compares the constructed length with the circumference.
 - **Arc rectification** compares the constructed length with the arc's length.
 - **Trisecting an angle**: every one of the three parts must be a third of the angle, so the worst of the three sets the accuracy.
-- **Angle methods** (trisection, arc rectification) must work for any angle. Their accuracy is also measured across a sweep of angles, and the chart notes the range over which the method holds. The chart figure is the accuracy at the angle the file is drawn at. A general method, one with no point placed by eye, can be drawn at its worst angle between 30° and 150°, so that its figure holds for the whole of that range.
+- **Angle methods** (trisection, arc rectification) must work for any angle. Their accuracy is also measured across a sweep of angles, and the chart notes the range over which the method holds. The chart figure is the accuracy at the angle the file is drawn at. A general method, one with no point placed by eye, can be drawn at its worst angle between 30° and 150°, so that its figure holds for the whole of that range. The angle's corner and arms are read from the file's measurement of the whole angle, whatever they are labelled.
+- **Points placed freely to set the size.** A point dropped anywhere on a line or circle (for example any point on the angle's bisector, used as the radius of the first circle) is not counted against a construction when it only sets the size: sliding it along its line or circle leaves the accuracy unchanged. `tools/verify.py` tests this for every such point.
 
 ## Key
 
@@ -80,6 +81,7 @@ Each entry is **verified**, **self-verified**, **unverified** or **disputed**. P
 
 ## Changes
 
+- **1.4 (November 2026)**: points placed freely that only set the size are not counted against a construction; angle sweeps find the angle's corner from the file.
 - **1.3 (November 2026)**: submissions through the browser extension, evaluated automatically; new submissions below 95% are no longer accepted.
 - **1.2 (November 2026)**: chart figures for general angle methods, and the shallow crossing report.
 - **1.1 (November 2026)**: precise readouts are recorded to 32 significant digits, worked out in 50-digit arithmetic.

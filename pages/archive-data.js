@@ -1074,6 +1074,52 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
       ]
      }
+    },
+    {
+     "id": "taa-over-99.726",
+     "side": "over",
+     "marks": "",
+     "holder": "Edward James Gordon",
+     "method": "Complicated Attempt",
+     "circles": 5,
+     "lines": 5,
+     "acc": "99.726",
+     "date": "",
+     "geogebra": "fhbn5sry",
+     "file": "GeoGebra Files/Over/TAA-99.726",
+     "note": "Recovered from Edward's GeoGebra account in November 2026. Drawn at 81.6°; 95% or better for angles from 56° to 153° (99.490% at 90°, 99.370% at 120°), falling to 87.174% at 30°. Point D, anywhere on the bisector, only sets the size.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/fhbn5sry",
+       "GeoGebra file in the archive (re-saved from the account in November 2026, so its original date is not recorded)"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-97.995",
+     "side": "over",
+     "marks": "",
+     "holder": "Edward James Gordon",
+     "method": "Incorrect Proof",
+     "circles": 4,
+     "lines": 2,
+     "acc": "97.995",
+     "date": "",
+     "geogebra": "mknfrgkm",
+     "file": "GeoGebra Files/Over/TAA-97.995",
+     "note": "Recovered from Edward's GeoGebra account in November 2026. Exact at 90°, a right angle, which can be trisected exactly; dragging the angle shows it is not a general trisection, hence its name. Drawn at 81.6°; 95% or better from 72° to 128°, 75.880% at 30°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/mknfrgkm",
+       "GeoGebra file in the archive (re-saved from the account in November 2026, so its original date is not recorded)"
+      ]
+     }
     }
    ]
   },

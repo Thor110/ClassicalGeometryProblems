@@ -82,6 +82,19 @@ const CROSSREF = {
    ]
   },
   {
+   "problem": "taa",
+   "kind": "builds on",
+   "similarity": 1.0,
+   "older": "taa-over-97.995",
+   "newer": "taa-over-99.726",
+   "older_holder": "Edward James Gordon",
+   "newer_holder": "Edward James Gordon",
+   "kinds": [
+    "person",
+    "person"
+   ]
+  },
+  {
    "problem": "rtc",
    "kind": "builds on",
    "similarity": 1.0,

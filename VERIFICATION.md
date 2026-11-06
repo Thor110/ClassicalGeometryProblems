@@ -127,7 +127,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (62)
+### Not verified by a person yet (64)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -168,6 +168,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 99.051% · Search find: 4 circles, 4 lines (any angle) (taa-over-99.051): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.051-Claude.ggb`
 - [ ] Trisecting An Angle, undersized 99.467% · Search find: 4 circles, 3 lines (any angle) (taa-under-99.467): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.467-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 99.726% · Complicated Attempt (taa-over-99.726): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.726.ggb`
+- [ ] Trisecting An Angle, oversized 97.995% · Incorrect Proof (taa-over-97.995): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-97.995.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -198,7 +200,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 
 Each needs a decision: correct the entry, or explain why the check does not apply.
 
-- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
+- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
 ### Identical or near-identical entries (2)
 
