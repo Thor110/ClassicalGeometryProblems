@@ -25,14 +25,57 @@
 
 <div id="list" style="width:100%;max-width:1000px;"></div>
 
-<div class="box">
-  <div class="box-title">6. π Approximations</div>
+<div class="box" id="pi">
+  <div class="box-title">6. <span style="text-transform:none">π</span> Approximations</div>
   <div class="box-text">
-    Construct a length of π times a given radius. Any method for rectifying the circle gives one: halve the constructed circumference. Kochański's construction of 1685 is still one of the most elegant, and is walked through on the <a href="constructions.html">constructions page</a>.
+    Construct a length of π from a length of one. Every method for rectifying the circle gives one: halve the constructed circumference of a circle of radius 1. The halving is a midpoint, which is not counted, so the accuracy and the circles and lines stay the same. The π chart is worked out from the circle rectification chart, entry for entry, with each construction's value of π written out. Kochański's construction of 1685 is still one of the most elegant, and is walked through on the <a href="constructions.html">constructions page</a>.
   </div>
+  <ul id="piBest"></ul>
   <div class="box-text">
-    <a href="charts.html#rtc">See the circle rectification chart →</a>
+    <a href="charts.html#pi">Open the π chart →</a>
   </div>
+</div>
+
+<div class="box" id="links">
+  <div class="box-title">7. Causal Links</div>
+  <div class="box-text">The six problems are not independent. Some are the same problem in another form, some share their tools, and one pair has no link at all. Knowing which is which shows where an approximation to one problem gives an approximation to another, and at what accuracy.</div>
+  <div style="text-align:center;margin:14px 0;">
+    <svg viewBox="0 0 760 300" style="width:100%;max-width:760px;" role="img" aria-label="How the six problems are linked">
+      <style>.n{fill:#0d0d14;stroke:#3a3a4a;stroke-width:1.5}.t{fill:#e0ddd8;font:14px 'Courier New',monospace;text-anchor:middle}.s{fill:#888;font:12px 'Courier New',monospace;text-anchor:middle}.g{stroke:#4a9;stroke-width:2;fill:none}.b{stroke:#ca6;stroke-width:2;fill:none;stroke-dasharray:6 5}.x{stroke:#e55;stroke-width:2;fill:none;stroke-dasharray:3 5}</style>
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a9"/></marker>
+            <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ca6"/></marker></defs>
+      <text class="s" x="190" y="18">THE CIRCLE AND π</text><text class="s" x="610" y="18">CUBE ROOTS</text>
+      <rect class="n" x="20" y="34" width="170" height="44" rx="4"/><text class="t" x="105" y="61">5. Arc rectification</text>
+      <rect class="n" x="20" y="128" width="170" height="44" rx="4"/><text class="t" x="105" y="155">4. Rectifying</text>
+      <rect class="n" x="230" y="128" width="130" height="44" rx="4"/><text class="t" x="295" y="155">6. π</text>
+      <rect class="n" x="20" y="226" width="170" height="44" rx="4"/><text class="t" x="105" y="253">1. Squaring</text>
+      <rect class="n" x="530" y="34" width="170" height="44" rx="4"/><text class="t" x="615" y="61">2. Trisecting</text>
+      <rect class="n" x="510" y="226" width="210" height="44" rx="4"/><text class="t" x="615" y="253">3. Doubling the cube</text>
+      <path class="g" d="M105,80 L105,124" marker-end="url(#ah)"/><text class="s" x="148" y="106" style="text-anchor:start">any arc</text>
+      <path class="g" d="M194,150 L226,150" marker-start="url(#ah)" marker-end="url(#ah)"/><text class="s" x="210" y="196">halve</text>
+      <path class="g" d="M105,174 L105,222" marker-start="url(#ah)" marker-end="url(#ah)"/><text class="s" x="132" y="203" style="text-anchor:start">mean</text>
+      <path class="b" d="M192,56 L526,56" marker-end="url(#ab)"/><text class="s" x="360" y="48">arc both ways</text>
+      <path class="g" d="M615,80 L615,222" style="stroke:#6ac;stroke-dasharray:2 4"/><text class="s" x="680" y="155">same tools</text>
+      <path class="x" d="M194,248 L506,248"/><text class="s" x="360" y="240">no link</text>
+    </svg>
+  </div>
+  <div class="box-text"><b class="good">The circle and π: one problem in four forms.</b></div>
+  <ul>
+    <li><b>Arc rectification gives rectifying the circle.</b> A circle is four quarter arcs, or two half arcs, so a method that rectifies any arc rectifies the circle, at the accuracy it has for that arc.</li>
+    <li><b>Rectifying the circle and π are the same.</b> Halving a circumference is a midpoint, and doubling a length is one swing of the compass. The accuracy carries over unchanged.</li>
+    <li><b>Rectifying the circle and squaring it are the same.</b> From a length of π times the radius, the square's side is the geometric mean of that length and the radius: one semicircle and one perpendicular. The square's area then has exactly the accuracy of the length. Back again, a square's side gives π times the radius by similar triangles.</li>
+  </ul>
+  <div class="box-text"><b style="color:#6ac;">Cube roots: two problems that share their tools.</b> Trisecting an angle and doubling the cube both need the root of a cubic, which straightedge and compass cannot reach. Any tool that solves cubics solves both: a marked ruler (the Greeks' neusis), conic sections, Nicomedes' conchoid, or folding paper. Neither gives the other with straightedge and compass, though: trisection solves the cubics with three real roots, doubling the cube one with a single real root (Gleason, 1988).</div>
+  <div class="box-text"><b class="warm">The bridge: rectifying arcs both ways.</b> Rectifying an arc straightens it. If you could also do the reverse, bending a straight length back onto the circle as an arc, you could trisect any angle: straighten the angle's arc, divide the straight length into three, which is easy, and bend one third back. The same works for dividing an angle in any ratio. The Greeks found curves that do exactly this: Hippias's quadratrix (about 420 BC) trisects angles and, as Dinostratus showed, squares the circle; Archimedes' spiral does both too. With approximations, the errors of the two directions add.</div>
+  <div class="box-text"><b class="hot">No link: squaring the circle and doubling the cube.</b> π is transcendental (Lindemann, 1882) and ∛2 is a root of a cubic. Having one gives no way to the other with straightedge and compass: the cubic for ∛2 stays a cubic however many square roots and multiples of π are added.</div>
+
+  <div class="box-title" style="margin-top:18px;">Derived Squares</div>
+  <div class="box-text">Each rectification of the circle, carried on to a square by the geometric mean, squares the circle at the same accuracy. The derived square takes about three more circles and three more lines (laying the radius beside the length, the semicircle, the perpendicular, and raising the square). Derived squares are not entries on the squaring chart, which ranks constructions built as squares; they are shown here to show what each rectification is worth as a square.</div>
+  <div class="table-wrap"><table id="derived"></table></div>
+
+  <div class="box-title" style="margin-top:18px;">From Arcs To The Circle</div>
+  <div class="box-text">The general arc methods on the arc rectification chart, used on a half circle (doubled) or a quarter circle (four times), each give a rectification of the circle. Measured from their sweeps of angles:</div>
+  <div class="table-wrap"><table id="arcs"></table></div>
 </div>
 
 <div class="box">
@@ -99,7 +142,7 @@
 <script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
-// One box per charted problem, with its best oversized and undersized entries.
+// One box per charted problem, with its best oversized and undersized entries. (Problem 6, π, has its own box below.)
 const list = document.getElementById('list');
 for (const p of PROBLEMS) {
   // Best by people and best by AI, kept apart.
@@ -121,6 +164,37 @@ for (const p of PROBLEMS) {
     </div>`;
   list.appendChild(box);
 }
+
+// Problem 6: the best values of π, from the π chart (worked out from the circle rectifications).
+(function () {
+  if (!PI_CHART) return;
+  const best = (side, ai) => PI_CHART.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === ai).sort((a, b) => b.exact - a.exact)[0];
+  const li = (label, e) => e ? `<li>${label}: <b>${e.acc}%</b> by ${e.holder}, <span class="mono">${piText(e)}</span></li>` : '';
+  document.getElementById('piBest').innerHTML = li('Best oversized by people', best('over', false)) + li('Best undersized by people', best('under', false)) +
+    li('Best oversized by AI', best('over', true)) + li('Best undersized by AI', best('under', true));
+})();
+
+// 7. Causal links: the square each rectification gives, and the circle each arc method gives.
+(function () {
+  const rtc = PROBLEMS.find(p => p.id === 'rtc'), stc = PROBLEMS.find(p => p.id === 'stc');
+    const rankAmong = (e, ai) => 1 + stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai && x.exact > e.exact).length;
+  const rows = rtc.entries.slice().sort((a, b) => b.exact - a.exact).map(e => {
+    const ai = e.holder_kind === 'ai', r = rankAmong(e, ai), best = stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai).sort((a, b) => b.exact - a.exact)[0];
+    return `<tr><td>${e.holder}${ai ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
+      <td>${e.acc}% ${e.side}sized</td><td>${e.circles} + 3</td><td>${e.lines} + 3</td>
+      <td>${r === 1 ? '<b class="good">#1</b>, ahead of ' + (best ? best.acc + '%' : 'nothing yet') : '#' + r}</td></tr>`;
+  });
+  document.getElementById('derived').innerHTML = '<tr><th>From the rectification</th><th>Square\'s accuracy</th><th>Circles</th><th>Lines</th><th>Rank among squares (same side, people or AI)</th></tr>' + rows.join('');
+  const ar = PROBLEMS.find(p => p.id === 'ar'), arows = [];
+  for (const e of ar.entries) {
+    const c = CHECKS[e.id]; if (!c || !c.sweep) continue;
+    const at = deg => { const p = c.sweep.find(x => Math.round(x[0]) === deg); return p ? p[1] : null; };
+    const half = at(180), quarter = at(90);
+    const cell = v => v == null ? '<span class="muted">out of range</span>' : (v >= 95 ? '<b>' : '') + truncate(v, 3) + '%' + (v >= 95 ? '</b>' : '');
+    arows.push(`<tr><td>${e.holder}${e.holder_kind === 'ai' ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td><td>${e.acc}% as drawn</td><td>${cell(half)}</td><td>${cell(quarter)}</td></tr>`);
+  }
+  document.getElementById('arcs').innerHTML = '<tr><th>Arc method</th><th>On its chart</th><th>Circle from two half circles</th><th>Circle from four quarter circles</th></tr>' + arows.join('');
+})();
 </script>
 </body>
 </html>

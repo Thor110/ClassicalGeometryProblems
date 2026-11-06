@@ -8,6 +8,8 @@
 // figure, truncated), precise (a fuller readout, if any), date, geogebra (the id after
 // geogebra.org/geometry/), file (the .ggb/.md pair under the problem's folder, without extension),
 // note, verified (people who have checked it), disputes (open or closed; see VERIFICATION.md).
+// derived_pi: the π chart is worked out from the circle rectifications (see Approximations/06 Pi
+// Approximations); it lists only the π versions drawn in GeoGebra, by the rectification they come from.
 // precise is worked out by tools/verify.py to 50 significant digits and shown to 32.
 // origin (not shown on the site): where the entry's point of origin can be traced, for the day
 // someone asks. kind is one of: historical (published, with the source), maintainer (the
@@ -2670,5 +2672,41 @@ const ARCHIVE = {
    "value": "approximate trisection; accuracy depends on the angle",
    "source": "Dürer, “Underweysung der Messung”, 1525."
   }
- ]
+ ],
+ "derived_pi": {
+  "folder": "Approximations/06 Pi Approximations",
+  "about": "The π chart is worked out from the circle rectification chart: each rectification, halved, is a π approximation with the same accuracy and steps. These are the π versions drawn in GeoGebra, linked beside the rectification each comes from.",
+  "files": [
+   {
+    "of": "rtc-under-99.999",
+    "file": "GeoGebra Files/PA-99.999",
+    "geogebra": "krx65evf"
+   },
+   {
+    "of": "rtc-over-99.9987",
+    "file": "GeoGebra Files/PA-99.998",
+    "geogebra": "hcce6uhf"
+   },
+   {
+    "of": "rtc-under-99.9875",
+    "file": "GeoGebra Files/PA-99.987",
+    "geogebra": "gerddbwv"
+   },
+   {
+    "of": "rtc-over-99.971",
+    "file": "GeoGebra Files/PA-99.971",
+    "geogebra": "hxccnzfx"
+   },
+   {
+    "of": "rtc-over-99.806",
+    "file": "GeoGebra Files/PA-99.806",
+    "geogebra": "a8zunqzv"
+   },
+   {
+    "of": "rtc-under-99.998",
+    "file": "GeoGebra Files/PA-99.998-Kochanski",
+    "geogebra": "a8ama49f"
+   }
+  ]
+ }
 };

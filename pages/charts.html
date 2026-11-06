@@ -145,6 +145,9 @@
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
+const CHARTS = PROBLEMS.concat(PI_CHART ? [PI_CHART] : []);   // the five problems, and π worked out from the circle
+// Headings are set in capitals; keep π itself lower case (a capital Π is a different symbol).
+const nameHTML = n => n.replace(/π/g, '<span style="text-transform:none">π</span>');
 let current = PROBLEMS[0], filter = 'all', who = 'all', points = [], highlighted = null;
 // Remember the viewer's choice of people, AI or both (browser storage can be unavailable; that is fine).
 try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
@@ -157,9 +160,9 @@ const kindOf = e => e.holder_kind === 'ai' ? 'ai' : 'person';
 const byWho = e => who === 'all' || kindOf(e) === who;
 
 // Tabs, one per problem; the page's #hash picks one (charts.html#rtc).
-for (const p of PROBLEMS) {
+for (const p of CHARTS) {
   const b = document.createElement('button');
-  b.className = 'tab'; b.textContent = p.n + '. ' + p.name; b.dataset.id = p.id;
+  b.className = 'tab'; b.innerHTML = p.n + '. ' + nameHTML(p.name); b.dataset.id = p.id;
   b.onclick = () => { location.hash = p.id; };
   $('tabs').appendChild(b);
 }
@@ -204,7 +207,7 @@ window.addEventListener('hashchange', pick);
 window.addEventListener('resize', drawLadder);
 
 function pick() {
-  current = PROBLEMS.find(p => p.id === location.hash.slice(1)) || PROBLEMS[0];
+  current = CHARTS.find(p => p.id === location.hash.slice(1)) || CHARTS[0];
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === current.id));
   highlighted = null;
   render();
@@ -225,8 +228,9 @@ function render() {
   // Ranks within what is shown: among people, among AI finds, or among everyone.
   for (const side of ['over', 'under'])
     pool.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.vrank = i + 1; });
-  $('title').textContent = p.n + '. ' + p.name;
-  $('task').innerHTML = p.task + '<br><span class="muted">' + p.target + '</span>';
+  $('title').innerHTML = p.n + '. ' + nameHTML(p.name);
+  $('task').innerHTML = p.task + '<br><span class="muted">' + p.target + '</span>' +
+    (p.derived ? `<br><span class="muted">So it ranks the same constructions as the <a href="#${p.derived}">circle rectification chart</a>; how the six problems are linked is on <a href="problems.html#links">the problems page</a>.</span>` : '');
 
   const best = side => all.filter(e => e.side === side).sort((a, b) => b.value - a.value)[0];
   const bo = best('over'), bu = best('under');
@@ -247,11 +251,12 @@ function render() {
     if (e.geogebra) links.push(`<a class="link" href="${e.geogebra}" target="_blank" rel="noopener">GeoGebra</a>`);
     if (e.file) links.push(`<a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a>`);
     if (e.notesFile) links.push(`<a class="link" href="${repoBlob(e.notesFile + '.md')}" target="_blank" rel="noopener">notes</a>`);
+    if (e.piFile) links.push(`<a class="link" href="${repoFile(e.piFile + '.ggb')}" download title="This construction drawn as π, with the halving step">π .ggb</a>`);
     const title = [e.method, e.note].filter(Boolean).join(' · ');
     return `<tr data-key="${e.id}" title="${title.replace(/"/g, '&quot;')}">
       <td>${e.vrank}</td>
       <td class="keycell"><span class="mark">${marksHTML(e.marks)}</span></td>
-      <td>${e.holder}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
+      <td>${e.holder}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}${current.derived ? '<br><span class="mono" style="font-size:13px;">' + piText(e) + '</span>' : ''}</td>
       <td>${e.circles}</td><td>${e.lines}</td>
       <td class="acc">${e.acc}%</td>
       <td class="precise">${e.precise ? e.precise + '%' : ''}</td>
@@ -305,11 +310,12 @@ function drawLadder() {
   ctx.font = '11px Courier New'; ctx.textAlign = 'center';
 
   // Decades: 90%, 99%, 99.9% ...
-  const labels = ['90%', '99%', '99.9%', '99.99%', '99.999%', '99.9999%', '99.99999%', '99.999999%', ''];
+  // Decade k sits at an error of 10^-k percent: 90%, 99%, 99.9% ... as far as the chart reaches.
+  const label = k => (100 - Math.pow(10, -k)).toFixed(Math.max(0, k)) + '%';
   for (let k = minX; k <= maxX; k++) {
     const x = xOf(Math.pow(10, -k));
     ctx.strokeStyle = '#1a1a24'; ctx.beginPath(); ctx.moveTo(x, 18); ctx.lineTo(x, H - 30); ctx.stroke();
-    if (W > 560 || k % 2 === 1) { ctx.fillStyle = '#55556a'; ctx.fillText(labels[k + 1], x, H - 12); }
+    if (W > 560 || k % 2 === 1) { ctx.fillStyle = '#55556a'; ctx.fillText(label(k), x, H - 12); }
   }
   ctx.strokeStyle = '#2a2a3a'; ctx.beginPath(); ctx.moveTo(padL, mid); ctx.lineTo(W - padR + 20, mid); ctx.stroke();
   // Perfection sits beyond the last decade, out of reach.
@@ -375,8 +381,9 @@ function renderDetail() {
   }
   const disputes = (e.disputes || []).map(d => `<li><b>${d.status}</b> · ${d.kind} · raised by ${d.by} · ${d.summary}${d.issue ? ` · <a href="${REPO}/issues/${d.issue}" target="_blank" rel="noopener">issue</a>` : ''}${d.outcome ? ' · outcome: ' + d.outcome : ''}</li>`).join('') || '<li class="muted">None.</li>';
   const ask = (t, tpl) => `${REPO}/issues/new?template=${tpl}&title=${encodeURIComponent(t + ': ' + e.id)}&entry=${encodeURIComponent(e.id)}`;
-  $('detail').innerHTML = `<div class="box-title">${current.name} · ${e.side}sized #${e.vrank}${who === 'all' ? '' : who === 'ai' ? ' among AI finds' : ' among people'}${who !== 'all' ? ' · #' + e.rank + ' overall' : ''}</div>
+  $('detail').innerHTML = `<div class="box-title">${nameHTML(current.name)} · ${e.side}sized #${e.vrank}${who === 'all' ? '' : who === 'ai' ? ' among AI finds' : ' among people'}${who !== 'all' ? ' · #' + e.rank + ' overall' : ''}</div>
     <div class="box-text" style="text-align:center;"><b>${e.acc}%</b> · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''} · ${e.circles} circles, ${e.lines} lines ${badge(e)}</div>
+    ${current.derived ? `<div class="box-text mono" style="text-align:center;">${piText(e)}${e.piFile ? ` · <a class="link" href="${repoFile(e.piFile + '.ggb')}" download>π .ggb</a>` : ''}${e.piGeogebra ? ` · <a class="link" href="${e.piGeogebra}" target="_blank" rel="noopener">π in GeoGebra</a>` : ''}</div>` : ''}
     ${e.note ? `<div class="box-text" style="text-align:center;">${e.note}</div>` : ''}
     ${e.count_history || e.micro_note ? `<div class="small-text" style="text-align:center;">${[e.count_history, e.micro_note].filter(Boolean).join(' ')}</div>` : ''}
     ${e.square ? `<div class="small-text" style="text-align:center;">In GeoGebra, this is the square labelled <span class="mono">${e.square}</span> in the file.</div>` : ''}

@@ -44,6 +44,17 @@ However I chose to list it amongst the problems as it relates to many of the oth
 
 Approximations for π can be found using any existing method for Rectifying The Circle by simply dividing the rectified length in two.
 
+The [π chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#pi) is worked out from the circle rectification chart in just that way: the halving is a midpoint, which is not counted, so every rectification is a π approximation with the same accuracy and steps, and the chart shows each one's value of π and how many decimal places of it are right. The π versions drawn in GeoGebra are kept in [Approximations/06 Pi Approximations](Approximations/06%20Pi%20Approximations).
+
+7. Causal Links - How the six problems are linked:
+
+- **The circle and π are one problem in four forms.** A method that rectifies any arc rectifies the circle (four quarter arcs, or two half arcs). Rectifying the circle and π are the same (halve or double the length). Rectifying the circle and squaring it are the same: the square's side is the geometric mean of the length and the radius, and the square's area keeps exactly the accuracy of the length. So every rectification of the circle is also a square, about three circles and three lines longer.
+- **Trisecting an angle and doubling the cube share their tools.** Both need a cube root, which straightedge and compass cannot reach, and any tool that solves cubics (a marked ruler, conic sections, folding paper) solves both. Neither gives the other with straightedge and compass.
+- **Rectifying arcs both ways is the bridge.** Straighten the angle's arc, divide the straight length into three, and bend one third back onto the circle: the angle is trisected. The Greeks' quadratrix and Archimedes' spiral do exactly this, and square the circle too.
+- **Squaring the circle and doubling the cube have no link.** π is transcendental and ∛2 is a cube root; neither leads to the other.
+
+The [problems page](https://thor110.github.io/ClassicalGeometryProblems/pages/problems.html#links) has a diagram of these links, the square each rectification of the circle gives, and the circle each arc method gives.
+
 ## Cataloguing & Submission Guide
 
 This is intended to be a short-form guide to cataloguing the approximations to these problems that are discovered.
