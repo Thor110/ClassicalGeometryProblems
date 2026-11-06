@@ -379,7 +379,7 @@ opened in GeoGebra, which measures both lengths exactly as the search did.
 
 <!-- architecture-finds:start -->
 
-_Written by `python tools/architecture_search.py --write`, last run 2026-11-06 with 94 charted entries; 1 run so far. Do not edit by hand._
+_Written by `python tools/architecture_search.py --write`, last run 2026-11-06 with 105 charted entries; 2 runs so far. Do not edit by hand._
 
 | Find | Steps | Over | Under | Gap | Shows at 1 in 5,000 | Plaza for a 1.2 m gap | Longest cord | File |
 |---|---|---|---|---|---|---|---|---|
@@ -387,14 +387,14 @@ _Written by `python tools/architecture_search.py --write`, last run 2026-11-06 w
 | ARCH-02 | 3c 1l (half, laid twice) | 98.668% | 99.148% | 2.18% | 199 times | 17 m | 52 m | [ARCH-02.ggb](Architecture/Finds/ARCH-02.ggb) |
 | ARCH-03 | 3c 1l (half, laid twice) | 99.873% | 98.295% | 1.83% | 189 times | 21 m | 28 m | [ARCH-03.ggb](Architecture/Finds/ARCH-03.ggb) |
 | ARCH-04 | 3c 1l (half, laid twice) | 99.794% | 98.730% | 1.48% | 170 times | 26 m | 44 m | [ARCH-04.ggb](Architecture/Finds/ARCH-04.ggb) |
-| ARCH-05 | 4c 0l (half, laid twice) | 98.414% | 99.691% | 1.89% | 149 times | 20 m | 32 m | [ARCH-05.ggb](Architecture/Finds/ARCH-05.ggb) |
-| ARCH-06 | 2c 2l (half, laid twice) | 98.795% | 99.798% | 1.41% | 145 times | 27 m | 47 m | [ARCH-06.ggb](Architecture/Finds/ARCH-06.ggb) |
-| ARCH-07 | 3c 1l (half, laid twice) | 97.936% | 99.968% | 2.10% | 140 times | 18 m | 36 m | [ARCH-07.ggb](Architecture/Finds/ARCH-07.ggb) |
-| ARCH-08 | 3c 1l (half, laid twice) | 99.888% | 98.386% | 1.73% | 133 times | 22 m | 66 m | [ARCH-08.ggb](Architecture/Finds/ARCH-08.ggb) |
-| ARCH-09 | 3c 1l (half, laid twice) | 99.342% | 99.227% | 1.43% | 130 times | 27 m | 53 m | [ARCH-09.ggb](Architecture/Finds/ARCH-09.ggb) |
-| ARCH-10 | 3c 1l (half, laid twice) | 99.796% | 98.831% | 1.37% | 128 times | 28 m | 42 m | [ARCH-10.ggb](Architecture/Finds/ARCH-10.ggb) |
-| ARCH-11 | 2c 2l (half, laid twice) | 99.802% | 99.056% | 1.14% | 60 times | 33 m | 100 m | [ARCH-11.ggb](Architecture/Finds/ARCH-11.ggb) |
-| ARCH-12 | 3c 1l (half, laid twice) | 99.929% | 99.575% | 0.50% | 59 times | 77 m | 105 m | [ARCH-12.ggb](Architecture/Finds/ARCH-12.ggb) |
+| ARCH-05 | 3c 1l (half, laid twice) | 99.259% | 99.301% | 1.44% | 152 times | 27 m | 56 m | [ARCH-05.ggb](Architecture/Finds/ARCH-05.ggb) |
+| ARCH-06 | 4c 0l (half, laid twice) | 98.414% | 99.691% | 1.89% | 149 times | 20 m | 32 m | [ARCH-06.ggb](Architecture/Finds/ARCH-06.ggb) |
+| ARCH-07 | 2c 2l (half, laid twice) | 98.795% | 99.798% | 1.41% | 145 times | 27 m | 47 m | [ARCH-07.ggb](Architecture/Finds/ARCH-07.ggb) |
+| ARCH-08 | 3c 1l (half, laid twice) | 97.936% | 99.968% | 2.10% | 140 times | 18 m | 36 m | [ARCH-08.ggb](Architecture/Finds/ARCH-08.ggb) |
+| ARCH-09 | 3c 1l (half, laid twice) | 99.888% | 98.386% | 1.73% | 133 times | 22 m | 66 m | [ARCH-09.ggb](Architecture/Finds/ARCH-09.ggb) |
+| ARCH-10 | 2c 2l (half, laid twice) | 99.621% | 99.018% | 1.36% | 130 times | 28 m | 28 m | [ARCH-10.ggb](Architecture/Finds/ARCH-10.ggb) |
+| ARCH-11 | 3c 1l (half, laid twice) | 99.342% | 99.227% | 1.43% | 130 times | 27 m | 53 m | [ARCH-11.ggb](Architecture/Finds/ARCH-11.ggb) |
+| ARCH-12 | 3c 1l (half, laid twice) | 99.796% | 98.831% | 1.37% | 128 times | 28 m | 42 m | [ARCH-12.ggb](Architecture/Finds/ARCH-12.ggb) |
 
 Over and under are each length's accuracy against the circumference; the true end lies between them. "Shows" is how many times wider the gap is than its wander, with every point of the construction marked to one part in 5,000 of the radius. The plaza is the circle's width that makes the gap 1.2 m, and the longest cord is the largest circle swung at that size. "Half, laid twice": the construction gives half the circumference, and each walkway lays its length twice.
 
@@ -412,53 +412,57 @@ Each crossing point staked out to ±5 mm with modern pegs and tapes, or to one p
 
 | Entry | Steps | Its error | Spread, pegs and tapes | Shows? | Spread, rope work | Shows? |
 |---|---|---|---|---|---|---|
-| dtc-under-97.656 | 7c 6l | −99 mm | ±8.9 mm | yes | ±3.6 mm | yes |
-| dtc-over-98.076 | 5c 0l | +80 mm | ±10 mm | yes | ±3.9 mm | yes |
-| dtc-under-98.924 | 13c 20l | −45 mm | ±16 mm | no | ±5.9 mm | yes |
-| dtc-over-99.919 (AI) | 4c 0l | +3.4 mm | ±27 mm | no | ±10 mm | no |
-| dtc-over-99.9998 (AI) | 4c 1l | +7.5 µm | ±9.8 mm | no | ±3.4 mm | no |
-| dtc-under-99.999 (AI) | 4c 2l | −1.2 µm | ±33 mm | no | ±15 mm | no |
-| dtc-over-99.999982 (AI) | 5c 2l | +0.7 µm | ±12 mm | no | ±5.0 mm | no |
-| dtc-over-99.999989 (AI) | 5c 3l | +0.4 µm | ±31 mm | no | ±13 mm | no |
-| dtc-over-99.999992 (AI) | 6c 1l | +0.3 µm | ±75 mm | no | ±31 mm | no |
-| dtc-over-99.999998 (AI) | 7c 2l | +0.072 µm | ±53 mm | no | ±21 mm | no |
-| rtc-under-98.165 | 6c 5l | −2882 mm | ±335 mm | yes | ±345 mm | yes |
-| rtc-over-98.538 | 6c 6l | +2295 mm | ±151 mm | yes | ±157 mm | yes |
-| rtc-under-99.376 | 7c 4l | −979 mm | ±69 mm | yes | ±61 mm | yes |
-| rtc-under-99.443 | 10c 5l | −875 mm | ±221 mm | yes | ±251 mm | yes |
-| rtc-over-99.596 | 12c 6l | +634 mm | ±155 mm | yes | ±139 mm | yes |
-| rtc-over-99.607 | 7c 4l | +617 mm | ±93 mm | yes | ±89 mm | yes |
-| rtc-over-99.65 | 7c 3l | +550 mm | ±675 mm | no | ±673 mm | no |
-| rtc-over-99.786 | 8c 5l | +335 mm | ±237 mm | no | ±262 mm | no |
-| rtc-over-99.802 | 10c 4l | +311 mm | ±668 mm | no | ±712 mm | no |
-| rtc-over-99.806 | 1c 11l | +304 mm | ±403 mm | no | ±471 mm | no |
-| rtc-under-99.809 | 9c 4l | −300 mm | ±120 mm | no | ±134 mm | no |
-| rtc-under-99.812 | 8c 4l | −295 mm | ±553 mm | no | ±627 mm | no |
-| rtc-over-99.873 | 16c 7l | +199 mm | ±486 mm | no (µ) | ±442 mm | no (µ) |
-| rtc-over-99.9343 | 15c 8l | +103 mm | ±102 mm | no | ±115 mm | no |
-| rtc-over-99.9347 | 10c 4l | +102 mm | ±288 mm | no | ±307 mm | no |
-| rtc-over-99.971 | 4c 14l | +45 mm | ±201 mm | no (µ) | ±216 mm | no (µ) |
-| rtc-over-99.979 | 6c 7l | +32 mm | ±100 mm | no | ±98 mm | no |
-| rtc-under-99.982 | 9c 2l | −28 mm | ±37 mm | no | ±34 mm | no |
-| rtc-under-99.9874 | 9c 7l | −20 mm | ±431 mm | no | ±392 mm | no |
-| rtc-under-99.9875 | 4c 14l | −20 mm | ±147 mm | no (µ) | ±149 mm | no (µ) |
-| rtc-over-99.989 | 20c 7l | +16 mm | ±30 mm | no (µ) | ±31 mm | no (µ) |
-| rtc-over-99.992 (AI) | 4c 1l | +12 mm | ±29 mm | no | ±27 mm | no |
-| rtc-over-99.997 | 7c 5l | +4.0 mm | ±107 mm | no | ±112 mm | no |
-| rtc-under-99.998 | 5c 7l | −3.0 mm | ±24 mm | no | ±22 mm | no |
-| rtc-over-99.9986 | 10c 6l | +2.1 mm | ±398 mm | no (µ) | ±491 mm | no (µ) |
-| rtc-over-99.9987 | 7c 16l | +2.0 mm | ±177 mm | no (µ) | ±159 mm | no (µ) |
-| rtc-under-99.999 | 9c 12l | −0.8 mm | ±1027 mm | no (µ) | ±1064 mm | no (µ) |
-| rtc-over-99.9996 | 11c 10l | +0.5 mm | ±53 mm | no (µ) | ±48 mm | no (µ) |
+| dtc-under-97.656 | 7c 6l | −99 mm | ±7.2 mm | yes | ±3.4 mm | yes |
+| dtc-over-98.076 | 5c 0l | +80 mm | ±10 mm | yes | ±4.2 mm | yes |
+| dtc-under-98.924 | 13c 20l | −45 mm | ±15 mm | no | ±5.6 mm | yes |
+| dtc-under-99.214 | 7c 5l | −33 mm | ±8.1 mm | yes | ±3.5 mm | yes |
+| dtc-over-99.919 (AI) | 4c 0l | +3.4 mm | ±25 mm | no | ±9.4 mm | no |
+| dtc-under-99.989 | 6c 4l | −0.5 mm | ±9.4 mm | no | ±3.2 mm | no |
+| dtc-over-99.9998 (AI) | 4c 1l | +7.5 µm | ±9.1 mm | no | ±3.8 mm | no |
+| dtc-under-99.999 (AI) | 4c 2l | −1.2 µm | ±35 mm | no | ±14 mm | no |
+| dtc-over-99.999982 (AI) | 5c 2l | +0.7 µm | ±13 mm | no | ±5.7 mm | no |
+| dtc-over-99.999989 (AI) | 5c 3l | +0.4 µm | ±32 mm | no | ±13 mm | no |
+| dtc-over-99.999992 (AI) | 6c 1l | +0.3 µm | ±72 mm | no | ±28 mm | no |
+| dtc-over-99.999998 (AI) | 7c 2l | +0.072 µm | ±60 mm | no | ±20 mm | no |
+| rtc-under-98.165 | 6c 5l | −2882 mm | ±340 mm | yes | ±370 mm | yes |
+| rtc-over-98.538 | 6c 6l | +2295 mm | ±141 mm | yes | ±165 mm | yes |
+| rtc-under-99.376 | 7c 4l | −979 mm | ±73 mm | yes | ±62 mm | yes |
+| rtc-under-99.443 | 10c 5l | −875 mm | ±243 mm | yes | ±243 mm | yes |
+| rtc-over-99.596 | 12c 6l | +634 mm | ±138 mm | yes | ±168 mm | yes |
+| rtc-over-99.607 | 7c 4l | +617 mm | ±95 mm | yes | ±84 mm | yes |
+| rtc-over-99.65 | 7c 3l | +550 mm | ±743 mm | no | ±708 mm | no |
+| rtc-over-99.786 | 8c 5l | +335 mm | ±259 mm | no | ±282 mm | no |
+| rtc-over-99.802 | 10c 4l | +311 mm | ±565 mm | no | ±713 mm | no |
+| rtc-over-99.806 | 1c 11l | +304 mm | ±432 mm | no | ±453 mm | no |
+| rtc-under-99.809 | 9c 4l | −300 mm | ±122 mm | no | ±116 mm | no |
+| rtc-under-99.812 | 8c 4l | −295 mm | ±607 mm | no | ±586 mm | no |
+| rtc-over-99.873 | 16c 7l | +199 mm | ±462 mm | no (µ) | ±441 mm | no (µ) |
+| rtc-over-99.9343 | 15c 8l | +103 mm | ±116 mm | no | ±109 mm | no |
+| rtc-over-99.9347 | 10c 4l | +102 mm | ±316 mm | no | ±294 mm | no |
+| rtc-over-99.971 | 4c 14l | +45 mm | ±210 mm | no (µ) | ±242 mm | no (µ) |
+| rtc-over-99.979 | 6c 7l | +32 mm | ±118 mm | no | ±111 mm | no |
+| rtc-under-99.982 | 9c 2l | −28 mm | ±35 mm | no | ±35 mm | no |
+| rtc-under-99.9874 | 9c 7l | −20 mm | ±407 mm | no | ±425 mm | no |
+| rtc-under-99.9875 | 4c 14l | −20 mm | ±197 mm | no (µ) | ±180 mm | no (µ) |
+| rtc-over-99.989 | 20c 7l | +16 mm | ±34 mm | no (µ) | ±36 mm | no (µ) |
+| rtc-over-99.992 (AI) | 4c 1l | +12 mm | ±32 mm | no | ±29 mm | no |
+| rtc-over-99.997 | 7c 5l | +4.0 mm | ±108 mm | no | ±103 mm | no |
+| rtc-under-99.998 | 5c 7l | −3.0 mm | ±23 mm | no | ±22 mm | no |
+| rtc-over-99.9986 | 10c 6l | +2.1 mm | ±437 mm | no (µ) | ±492 mm | no (µ) |
+| rtc-over-99.9987 | 7c 16l | +2.0 mm | ±186 mm | no (µ) | ±193 mm | no (µ) |
+| rtc-under-99.999 | 9c 12l | −0.8 mm | ±957 mm | no (µ) | ±989 mm | no (µ) |
+| rtc-over-99.9996 | 11c 10l | +0.5 mm | ±60 mm | no (µ) | ±54 mm | no (µ) |
 | rtc-under-99.99994 (AI) | 5c 1l | −78.8 µm | ±21 mm | no | ±20 mm | no |
-| rtc-under-99.999992 (AI) | 6c 2l | −11.1 µm | ±20 mm | no | ±21 mm | no |
-| rtc-over-99.99999 | 18c 13l | +5.5 µm | ±53 mm | no (µ) | ±56 mm | no (µ) |
-| rtc-under-99.999997 (AI) | 6c 2l | −4.1 µm | ±40 mm | no | ±35 mm | no |
-| rtc-under-99.999998 (AI) | 5c 4l | −1.7 µm | ±33 mm | no | ±30 mm | no |
-| rtc-under-99.9999990 (AI) | 7c 4l | −1.4 µm | ±122 mm | no | ±128 mm | no |
-| rtc-under-99.9999998 (AI) | 8c 4l | −0.2 µm | ±106 mm | no | ±114 mm | no |
-| rtc-over-99.999999 (AI) | 5c 2l | +0.052 µm | ±29 mm | no | ±32 mm | no |
-| rtc-under-99.99999 | 8c 10l | −0.05 µm | ±49 mm | no | ±46 mm | no |
+| rtc-under-99.99997 | 8c 7l | −35.0 µm | ±66 mm | no | ±70 mm | no |
+| rtc-over-99.999991 | 5c 6l | +13.3 µm | ±40 mm | no | ±43 mm | no |
+| rtc-under-99.999992 (AI) | 6c 2l | −11.1 µm | ±19 mm | no | ±20 mm | no |
+| rtc-over-99.99999 | 18c 13l | +5.5 µm | ±57 mm | no (µ) | ±53 mm | no (µ) |
+| rtc-under-99.999997 (AI) | 6c 2l | −4.1 µm | ±37 mm | no | ±37 mm | no |
+| rtc-under-99.999998 (AI) | 5c 4l | −1.7 µm | ±29 mm | no | ±30 mm | no |
+| rtc-under-99.9999990 (AI) | 7c 4l | −1.4 µm | ±134 mm | no | ±120 mm | no |
+| rtc-under-99.9999998 (AI) | 8c 4l | −0.2 µm | ±87 mm | no | ±113 mm | no |
+| rtc-over-99.999999 (AI) | 5c 2l | +0.052 µm | ±32 mm | no | ±35 mm | no |
+| rtc-under-99.99999 | 8c 10l | −0.05 µm | ±42 mm | no | ±47 mm | no |
 | stc-under-95.492 | 7c 6l | −1010 mm | ±5.4 mm | yes | ±4.9 mm | yes |
 | stc-over-96.977 | 13c 15l | +665 mm | ±9.4 mm | yes | ±9.2 mm | yes |
 | stc-under-98.168 | 13c 20l | −408 mm | ±6.2 mm | yes | ±6.1 mm | yes |
@@ -471,6 +475,7 @@ Each crossing point staked out to ±5 mm with modern pegs and tapes, or to one p
 | stc-over-99.283 | 13c 13l | +159 mm | ±8.9 mm | yes | ±7.8 mm | yes |
 | stc-over-99.356 | 13c 15l | +142 mm | ±6.6 mm | yes | ±6.5 mm | yes |
 | stc-under-99.377 | 13c 31l | −138 mm | ±5.9 mm | yes | ±6.1 mm | yes |
+| stc-over-99.398 | 8c 5l | +133 mm | ±10 mm | yes | ±9.4 mm | yes |
 | stc-over-99.414 | 13c 27l | +130 mm | ±6.9 mm | yes | ±7.1 mm | yes |
 | stc-under-99.484 | 13c 24l | −114 mm | ±6.5 mm | yes | ±6.2 mm | yes |
 | stc-over-99.558 | 13c 17l | +98 mm | ±5.1 mm | yes | ±5.2 mm | yes |
@@ -485,12 +490,14 @@ Each crossing point staked out to ±5 mm with modern pegs and tapes, or to one p
 | stc-over-99.944 | 7c 42l | +12 mm | ±19939 mm | no (µ) | ±11202 mm | no (µ) |
 | stc-under-99.956 | 7c 38l | −9.5 mm | ±24587 mm | no (µ) | ±48432 mm | no (µ) |
 | stc-over-99.993 | 7c 46l | +1.4 mm | ±71341 mm | no (µ) | ±2843036 mm | no (µ) |
+| stc-over-99.998 | 10c 6l | +0.3 mm | ±9.7 mm | no | ±10.0 mm | no |
 | stc-under-99.999 | 7c 60l | −0.2 mm | ±57862 mm | no (µ) | ±29339 mm | no (µ) |
 | stc-over-99.9998 (AI) | 6c 5l | +33.0 µm | ±8.9 mm | no | ±10 mm | no |
 | stc-over-99.99996 | 7c 68l | +7.7 µm | ±31348 mm | no (µ) | ±42480 mm | no (µ) |
 | stc-under-99.99998 (AI) | 8c 4l | −3.4 µm | ±146 mm | no | ±152 mm | no |
 | stc-over-99.999 | 9c 15l | +1.9 µm | ±15 mm | no | ±15 mm | no |
 | stc-over-99.99999157 (AI) | 8c 4l | +1.9 µm | ±16 mm | no | ±15 mm | no |
+| stc-over-99.999998 | 7c 15l | +0.4 µm | ±15 mm | no | ±15 mm | no |
 | stc-under-99.9999994 (AI) | 7c 6l | −0.1 µm | ±17 mm | no | ±17 mm | no |
 | stc-over-99.999999 (AI) | 9c 6l | +0.064 µm | ±12 mm | no | ±11 mm | no |
 | stc-under-99.9999999 (AI) | 10c 6l | −0.00041 µm | ±41 mm | no | ±42 mm | no |
@@ -501,22 +508,22 @@ Pairs that show once built (no µ). The gap is the difference between the two le
 
 | Oversized | Undersized | Gap on a 50 m plaza | Plaza for a 1.2 m path | Spread of the gap |
 |---|---|---|---|---|
-| 98.538 (6c 6l) | 99.443 (10c 5l) | 3.17 m | 18.9 m | ±267 mm |
-| 98.538 (6c 6l) | 99.376 (7c 4l) | 3.27 m | 18.3 m | ±166 mm |
+| 98.538 (6c 6l) | 99.443 (10c 5l) | 3.17 m | 18.9 m | ±281 mm |
+| 98.538 (6c 6l) | 99.376 (7c 4l) | 3.27 m | 18.3 m | ±159 mm |
 | 98.538 (6c 6l) | 98.165 (6c 5l) | 5.18 m | 11.6 m | ±368 mm |
-| 99.596 (12c 6l) | 99.443 (10c 5l) | 1.51 m | 39.8 m | ±270 mm |
-| 99.596 (12c 6l) | 99.376 (7c 4l) | 1.61 m | 37.2 m | ±170 mm |
-| 99.596 (12c 6l) | 98.165 (6c 5l) | 3.52 m | 17.1 m | ±370 mm |
+| 99.596 (12c 6l) | 99.443 (10c 5l) | 1.51 m | 39.8 m | ±279 mm |
+| 99.596 (12c 6l) | 99.376 (7c 4l) | 1.61 m | 37.2 m | ±156 mm |
+| 99.596 (12c 6l) | 98.165 (6c 5l) | 3.52 m | 17.1 m | ±367 mm |
 
 #### The best pairs, built for a 1.2 m gap
 
 | Pair | Gap on a 50 m plaza | Plaza needed |
 |---|---|---|
-| Rectifying the circle (people): 99.99999 + 99.99999 | 5.5 µm | 10838 km across |
-| Rectifying the circle: 99.999999 + 99.99999 | 0.1 µm | 585609 km across |
-| Squaring the circle (people): 99.999 + 99.999 | 0.2 mm | 302 km across |
+| Rectifying the circle (people): 99.999996 + 99.9999999 | 5.5 µm | 10838 km across |
+| Rectifying the circle: 99.999999 + 99.9999999 | 0.1 µm | 585609 km across |
+| Squaring the circle (people): 99.999998 + 99.999 | 0.2 mm | 304 km across |
 | Squaring the circle: 99.999999 + 99.9999999 | 0.064 µm | 933507 km across |
-| Doubling the cube (people): 98.076 + 98.924 | 126 mm | 96 m |
+| Doubling the cube (people): 98.076 + 99.989 | 81 mm | 149 m |
 | Doubling the cube: 99.999998 + 99.999 | 1.2 µm | 9606 km across |
 
 #### The sun at noon through an opening 10 m up
