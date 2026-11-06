@@ -943,6 +943,58 @@ const ARCHIVE = {
        "redrawn in November 2026 from the book's text (Internet Archive scans), the three fractions read from the value GH = 1.77246 that Hobson gives"
       ]
      }
+    },
+    {
+     "id": "stc-over-99.999998",
+     "side": "over",
+     "marks": "",
+     "holder": "William Hayden",
+     "method": "Hayden's quadrature",
+     "circles": 7,
+     "lines": 15,
+     "acc": "99.999998",
+     "precise": "99.999998100310301921612819278290",
+     "date": "1871",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.999998-Hayden",
+     "note": "The squares in and about the circle, with their diagonals; a small circle about E whose radius comes from the inner square; the tangent to it from C, halfway along the top side, crosses the circle at P; the chord of the diagonals through P is the side. π ≈ 3.141592713.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: W. Hayden, \"Approximate Geometrical Solutions of the Problems of the Duplication of the Cube and of the Quadrature of the Circle\", Proceedings of the Royal Society of London 20 (1871-72), pp. 525-526, communicated by G. G. Stokes",
+       "read from the Internet Archive scan (paper-doi-10_1098_rspl_1871_0099); the figure is not in the text, so B, D, G and I were placed from Hayden's stated r = 3(√10 − √5)/20 and m = 0.322999477, which only one reading of the text gives",
+       "redrawn in November 2026"
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-over-99.398",
+     "side": "over",
+     "marks": "",
+     "holder": "Ahmes (Rhind Papyrus)",
+     "method": "Eight ninths of the diameter",
+     "circles": 8,
+     "lines": 5,
+     "acc": "99.398",
+     "precise": "99.398356959197022328804337226263",
+     "date": "c. 1700 BC",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.398-Rhind-Papyrus",
+     "note": "The oldest rule on the chart: take away a ninth of the diameter and square what is left, π ≈ 256/81. The papyrus gives the rule as a calculation; the drawing is the archive's.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: the Rhind Mathematical Papyrus (British Museum), copied by the scribe Ahmes, problem 50",
+       "the rule as described in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, \"The first period: earliest traces of the problem\" (Internet Archive scans), which dates it \"probably about 1700 B.C.\"",
+       "drawn in November 2026: the papyrus gives no drawing, so the ninths are laid out the archive's way"
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -1178,6 +1230,54 @@ const ARCHIVE = {
        "published: A. Dürer, Underweysung der Messung, 1525",
        "described step by step, with Dürer's letters, in G. H. Hughes, The Polygons of Albrecht Dürer, 2012 (arXiv:1205.0080), Appendix A, from Strauss's translation",
        "redrawn in November 2026; how the chord and the gap are trisected is the archive's, as Dürer does not say"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.838",
+     "side": "under",
+     "marks": "",
+     "holder": "Karajordanoff",
+     "method": "Karajordanoff's trisection",
+     "circles": 3,
+     "lines": 5,
+     "acc": "99.838",
+     "precise": "99.838643849960773986145409607430",
+     "date": "1928",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.838-Karajordanoff",
+     "note": "Circles of radius 1 and 2 about the corner; the tangent at A meets the chord from B to the middle of the arc in D; the parallel to OB through D meets the larger circle at T. Exact at 90°. Charted at 65.57°, its weakest angle up to 90°; the rest of the angle is bisected.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Karajordanoff, 1928, from W. Breidenbach, Die Dreiteilung des Winkels, Leipzig, 1933, as cited in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 4, with his error table",
+       "redrawn in November 2026; Yates' error table (21\" at 30°, 1'53\" at 60°, 2'12\" at 70°, none at 90°) is reproduced exactly"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-98.796",
+     "side": "over",
+     "marks": "",
+     "holder": "Maurice d'Ocagne",
+     "method": "d'Ocagne's trisection",
+     "circles": 1,
+     "lines": 4,
+     "acc": "98.796",
+     "precise": "98.796021983927621116053226297479",
+     "date": "1934",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-98.796-dOcagne",
+     "note": "From the middle of the radius opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: M. d'Ocagne, \"Étude rationnelle du problème de la trisection de l'angle\", L'Enseignement mathématique, 1934, pp. 49-63, as cited in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 6, with his error table",
+       "redrawn in November 2026; Yates' error table (45\" at 30°, 6'14\" at 60°, 21'41\" at 90°) is reproduced"
       ]
      }
     }
@@ -1459,6 +1559,31 @@ const ARCHIVE = {
       ]
      },
      "precise": "99.214465504374956832682628789287"
+    },
+    {
+     "id": "dtc-under-99.989",
+     "side": "under",
+     "marks": "",
+     "holder": "William Hayden",
+     "method": "Hayden's duplication",
+     "circles": 6,
+     "lines": 4,
+     "acc": "99.989",
+     "precise": "99.989151684165171047048796734704",
+     "date": "1871",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.989-Hayden",
+     "note": "Halve the edge; the equilateral triangle on the outer half; a third of the way along its foot; carry that length from the apex onto the perpendicular at B. AL : AB = 1.2598754, against ∛2 = 1.2599210.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: W. Hayden, \"Approximate Geometrical Solutions of the Problems of the Duplication of the Cube and of the Quadrature of the Circle\", Proceedings of the Royal Society of London 20 (1871-72), p. 525, communicated by G. G. Stokes",
+       "read from the Internet Archive scan (paper-doi-10_1098_rspl_1871_0099); the text and Hayden's worked figures fix every step",
+       "redrawn in November 2026; how CD is trisected is the archive's, as Hayden does not say"
+      ]
+     }
     }
    ]
   },
@@ -2741,6 +2866,31 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
       ]
      }
+    },
+    {
+     "id": "ar-under-95.492",
+     "side": "under",
+     "marks": "",
+     "holder": "Nicholas of Cusa / Snellius",
+     "method": "Cusa's rectification",
+     "circles": 2,
+     "lines": 2,
+     "acc": "95.492",
+     "precise": "95.492965855137202260181280636280",
+     "date": "15th century; 1621",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-95.492-Cusa-Snellius",
+     "note": "Extend the diameter through B a radius beyond the circle, to P; the line from P through A meets the tangent at B in D, and BD stands for the arc: 3 sin θ / (2 + cos θ). Charted at 90°, its weakest angle in the 0-90° range its sources use: 99.9999% at 10°, 99.95% at 30°, 99.23% at 60°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "found by Nicholas of Cusa (15th century); proved by Snellius, Cyclometricus, 1621, and Huygens, De circuli magnitudine inventa, 1654, theorem XIII",
+       "the construction with its letters: R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 2; the formula and its history: E. W. Hobson, Squaring the Circle, 1913, pp. 27-30",
+       "redrawn in November 2026"
+      ]
+     }
     }
    ]
   }
@@ -2783,7 +2933,22 @@ const ARCHIVE = {
    "about": "Edward's methods for doubling the cube, grown from a pattern that doubles a cube's edge."
   }
  ],
- "wanted": [],
+ "wanted": [
+  {
+   "problem": "taa",
+   "who": "Kopf and Perron",
+   "year": "1919",
+   "value": "a trisection from the limaçon of Pascal, at most 15 seconds of arc out up to 90° (Perron's table), exact at 90°",
+   "source": "R. C. Yates, The Trisection Problem (1942), ch. 4, section 5; O. Perron, Sitzungsberichte der Bayerischen Akademie der Wissenschaften, 1933. The scanned text of Yates garbles the construction, so it needs the original figure."
+  },
+  {
+   "problem": "stc",
+   "who": "Hung Viet Chu",
+   "year": "2019",
+   "value": "√(63/25 · (1 + 5/2 · (15√5 − 7)/269)), Ramanujan's number, π correct to nine decimal places",
+   "source": "H. V. Chu, \"Squaring the Circle Revisited\", arXiv:1908.01202, section 3: every step is given, but it is long (three figures combined)."
+  }
+ ],
  "derived_pi": {
   "folder": "Approximations/06 Pi Approximations",
   "about": "The π chart is worked out from the circle rectification chart: each rectification, halved, is a π approximation with the same accuracy and steps. These are the π versions drawn in GeoGebra, linked beside the rectification each comes from.",
@@ -2850,6 +3015,25 @@ const ARCHIVE = {
   ],
   "Specht": [
    "Specht"
+  ],
+  "William Hayden": [
+   "William Hayden"
+  ],
+  "Ahmes (Rhind Papyrus)": [
+   "Ahmes"
+  ],
+  "Nicholas of Cusa / Snellius": [
+   "Nicholas of Cusa",
+   "Nikolaus von Kues",
+   "Willebrord Snellius",
+   "Willebrord Snel van Royen"
+  ],
+  "Karajordanoff": [
+   "Karajordanoff"
+  ],
+  "Maurice d'Ocagne": [
+   "Maurice d'Ocagne",
+   "Philbert Maurice d'Ocagne"
   ]
  }
 };

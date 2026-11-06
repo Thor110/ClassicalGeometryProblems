@@ -487,6 +487,12 @@ def angle_parts(r, problem):
             if all(x in o and o[x][0] == 'point' for x in (c, fixed, turning)):
                 if 'C' in (p, q) and fixed == 'C': fixed, turning = turning, fixed
                 return c, fixed, turning
+    if problem == 'ar' and not all(x in o for x in ('B', 'A', 'C')):
+        # no B, A, C: the measured arc names the angle: CircleArc(centre, start, end), the end on the turning arm
+        arcs = [n for n, k in r['kind_of'].items() if k == 'CircleArc' and len(r['parents'].get(n, [])) == 3]
+        if arcs:
+            c, fixed, turning = r['parents'][arcs[0]]
+            if all(x in o and o[x] and o[x][0] == 'point' for x in (c, fixed, turning)): return c, fixed, turning
     return 'B', 'A', 'C'
 
 def sweep_at(problem, path, entry, targets, step=1.0):

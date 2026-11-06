@@ -1,5 +1,6 @@
 // Written by tools/crossref.py. Do not edit by hand: run it again.
 const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-06","pairs":[
+{"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796","newer":"taa-over-96.305","older_holder":"Maurice d'Ocagne","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
 {"problem":"rtc","kind":"near identical","similarity":0.851,"older":"rtc-over-99.971","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"rtc","kind":"near identical","similarity":0.697,"older":"rtc-over-99.9987","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"stc","kind":"builds on","similarity":1.0,"older":"stc-under-95.492","newer":"stc-over-99.356","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
