@@ -21,72 +21,54 @@ const ARCHIVE = {
    "why": "Needs a length of √π. Lindemann proved in 1882 that π is transcendental, so no finite chain of circles and lines reaches it.",
    "entries": [
     {
-     "id": "stc-over-99.117",
+     "id": "stc-over-99.109",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 1,
      "lines": 20,
-     "acc": "99.117",
-     "precise": "",
+     "acc": "99.109",
+     "precise": "99.10928741499923",
      "date": "04-11-2025",
      "geogebra": "n2gbkesm",
-     "file": "GeoGebra Files/Squared Circle Over/99.117",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Over/99.109",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.117% oversized.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "stc-over-99.139",
+     "id": "stc-over-99.119",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 21,
      "lines": 7,
-     "acc": "99.139",
-     "precise": "",
+     "acc": "99.119",
+     "precise": "99.11961460044009",
      "date": "28-12-2024",
      "geogebra": "gqncwvc3",
-     "file": "GeoGebra Files/Squared Circle Over/99.139",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Over/99.119",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.139% oversized.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "stc-over-99.253",
+     "id": "stc-over-99.283",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
      "lines": 13,
-     "acc": "99.253",
-     "precise": "",
+     "acc": "99.283",
+     "precise": "99.28301811111724",
      "date": "14-12-2024",
      "geogebra": "dvnhfe3u",
-     "file": "GeoGebra Files/Squared Circle Over/99.253",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Over/99.283",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.253% oversized.",
+     "verified": [],
      "disputes": []
     },
     {
@@ -113,72 +95,54 @@ const ARCHIVE = {
      "disputes": []
     },
     {
-     "id": "stc-over-99.563",
+     "id": "stc-over-99.558",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
      "lines": 25,
-     "acc": "99.563",
-     "precise": "",
+     "acc": "99.558",
+     "precise": "99.55870872457643",
      "date": "14-12-2024",
      "geogebra": "pfzqcwgu",
-     "file": "GeoGebra Files/Squared Circle Over/99.563",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Over/99.558",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.563% oversized.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "stc-over-99.703",
+     "id": "stc-over-99.696",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 25,
      "lines": 8,
-     "acc": "99.703",
-     "precise": "",
+     "acc": "99.696",
+     "precise": "99.69612973842727",
      "date": "14-12-2024",
      "geogebra": "dxrt3svk",
-     "file": "GeoGebra Files/Squared Circle Over/99.703",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Over/99.696",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.703% oversized.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "stc-over-99.816",
+     "id": "stc-over-99.809",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
      "lines": 37,
-     "acc": "99.816",
-     "precise": "",
+     "acc": "99.809",
+     "precise": "99.80950026343882",
      "date": "08-12-2024",
      "geogebra": "jb6rgjfa",
-     "file": "GeoGebra Files/Squared Circle Over/99.816",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Over/99.809",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.816% oversized.",
+     "verified": [],
      "disputes": []
     },
     {
@@ -205,49 +169,37 @@ const ARCHIVE = {
      "disputes": []
     },
     {
-     "id": "stc-under-99.929",
+     "id": "stc-under-99.932",
      "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
      "lines": 29,
-     "acc": "99.929",
-     "precise": "",
+     "acc": "99.932",
+     "precise": "99.93219280033432",
      "date": "14-12-2024",
      "geogebra": "aw4nggwg",
-     "file": "GeoGebra Files/Squared Circle Under/99.929",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Under/99.932",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.929% undersized.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "stc-under-99.644",
+     "id": "stc-under-99.655",
      "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 21,
      "lines": 11,
-     "acc": "99.644",
-     "precise": "",
+     "acc": "99.655",
+     "precise": "99.65556737848478",
      "date": "28-12-2024",
      "geogebra": "p2ast9yw",
-     "file": "GeoGebra Files/Squared Circle Under/99.644",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Under/99.655",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.644% undersized.",
+     "verified": [],
      "disputes": []
     },
     {
@@ -262,61 +214,44 @@ const ARCHIVE = {
      "precise": "",
      "date": "14-12-2024",
      "geogebra": "anbgnhsq",
-     "file": "GeoGebra Files/Squared Circle Under/99.253",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
-     "disputes": []
+     "file": "",
+     "note": "The GeoGebra file for this entry turned out to be a copy of the oversized 99.253% construction, so it was removed. The construction is still on GeoGebra (link), and needs saving to the repository again.",
+     "verified": [],
+     "disputes": [],
+     "notes": "GeoGebra Files/Squared Circle Under/99.253"
     },
     {
-     "id": "stc-under-99.164",
+     "id": "stc-under-99.150",
      "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
      "lines": 20,
-     "acc": "99.164",
-     "precise": "",
+     "acc": "99.150",
+     "precise": "99.15047322986365",
      "date": "14-12-2024",
      "geogebra": "ajpnpmwa",
-     "file": "GeoGebra Files/Squared Circle Under/99.164",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Under/99.150",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.164% undersized.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "stc-under-99.009",
+     "id": "stc-under-99.015",
      "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
      "lines": 11,
-     "acc": "99.009",
-     "precise": "",
+     "acc": "99.015",
+     "precise": "99.01556450524366",
      "date": "14-12-2024",
      "geogebra": "sjdede5r",
-     "file": "GeoGebra Files/Squared Circle Under/99.009",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Squared Circle Under/99.015",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.009% undersized.",
+     "verified": [],
      "disputes": []
     },
     {
@@ -636,50 +571,40 @@ const ARCHIVE = {
    "why": "For 60°, the third (20°) needs cos 20°, a root of 8x³ − 6x − 1 = 0, a cubic that does not factor. Circles and lines only reach square roots, so Wantzel proved it impossible in general in 1837.",
    "entries": [
     {
-     "id": "taa-under-99.658",
-     "side": "under",
+     "id": "taa-over-99.317",
+     "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Array Casting v2.0",
      "circles": "~6-12+/-",
      "lines": "~2-3+/-",
-     "acc": "~99.658",
-     "precise": "",
+     "acc": "~99.317",
+     "precise": "99.31793149744919",
      "date": "01-12-2024",
      "geogebra": "ydfkxavz",
-     "file": "GeoGebra Files/Under/TAA-~99.658",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Over/TAA-~99.317",
+     "note": "Re-measured at full precision in November 2026: the chart listed ~99.658% undersized. The worst of the three thirds now sets the accuracy, as every third must equal a third of the angle.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "taa-under-95.538",
-     "side": "under",
+     "id": "taa-over-91.077",
+     "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Array Casting v1.0",
      "circles": "~4-8+/-",
      "lines": "~3-6+/-",
-     "acc": "~95.538",
-     "precise": "",
+     "acc": "~91.077",
+     "precise": "91.07743117124372",
      "date": "01-12-2024",
      "geogebra": "yj7tctaw",
-     "file": "GeoGebra Files/Under/TAA-~95.538",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
-     "disputes": []
+     "file": "GeoGebra Files/Over/TAA-~91.077",
+     "note": "Re-measured at full precision in November 2026: the chart listed ~95.538% undersized. The worst of the three thirds now sets the accuracy, as every third must equal a third of the angle.",
+     "verified": [],
+     "disputes": [],
+     "archived": true,
+     "archive_reason": "Below the 95% minimum once the worst third is measured."
     }
    ]
   },
@@ -694,49 +619,37 @@ const ARCHIVE = {
    "why": "∛2 is a root of x³ − 2 = 0, a cubic that does not factor, so it cannot be built from square roots. Wantzel, 1837.",
    "entries": [
     {
-     "id": "dtc-over-99.227",
-     "side": "over",
+     "id": "dtc-under-97.656",
+     "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Cube 2 Tesseract v1.0",
      "circles": 13,
      "lines": 30,
-     "acc": "99.227",
-     "precise": "99.22729260825194",
+     "acc": "97.656",
+     "precise": "97.65625000000000",
      "date": "06-06-2024",
      "geogebra": "bmzy5bgb",
-     "file": "GeoGebra Files/Over/DTC-99.227",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Under/DTC-97.656",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.227% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
+     "verified": [],
      "disputes": []
     },
     {
-     "id": "dtc-over-99.487",
-     "side": "over",
+     "id": "dtc-under-98.924",
+     "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Cube 2 Tesseract v2.0",
      "circles": 13,
      "lines": 42,
-     "acc": "99.487",
-     "precise": "99.48714854233151",
+     "acc": "98.924",
+     "precise": "98.92478916755539",
      "date": "07-12-2024",
      "geogebra": "yx5e8wnu",
-     "file": "GeoGebra Files/Over/DTC-99.487",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Under/DTC-98.924",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.487% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
+     "verified": [],
      "disputes": []
     }
    ]
@@ -1258,26 +1171,20 @@ const ARCHIVE = {
      "disputes": []
     },
     {
-     "id": "rtc-under-99.374",
+     "id": "rtc-under-99.376",
      "side": "under",
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
      "circles": 8,
      "lines": 4,
-     "acc": "99.374",
-     "precise": "99.37407696435614",
+     "acc": "99.376",
+     "precise": "99.37681013608419",
      "date": "",
      "geogebra": "mpnw4ssy",
-     "file": "GeoGebra Files/Under/RTC-99.374",
-     "note": "",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
-     ],
+     "file": "GeoGebra Files/Under/RTC-99.376",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.374% undersized.",
+     "verified": [],
      "disputes": []
     },
     {
@@ -1333,7 +1240,7 @@ const ARCHIVE = {
      "precise": "99.98238331842036",
      "date": "11-11-2025",
      "geogebra": "",
-     "note": "",
+     "note": "Counted as the 9 circles and 2 lines the result is built from; the file also holds 16 circles and 3 lines of exploration that do not feed it.",
      "verified": [
       {
        "by": "Edward James Gordon",
@@ -1344,8 +1251,8 @@ const ARCHIVE = {
      "disputes": [],
      "id": "rtc-under-99.982",
      "side": "under",
-     "circles": 25,
-     "lines": 5,
+     "circles": 9,
+     "lines": 2,
      "acc": "99.982",
      "file": "GeoGebra Files/Under/RTC-99.982"
     },
@@ -1356,7 +1263,7 @@ const ARCHIVE = {
      "precise": "99.98997416958272",
      "date": "11-11-2025",
      "geogebra": "",
-     "note": "An adjustment of the 99.982% undersized construction, with a micro scale adjustment.",
+     "note": "An adjustment of the 99.982% undersized construction: a small circle (about 0.7% of the main radius) makes the final point. Counted as the 20 circles and 7 lines the result is built from; the file also holds reference marks and exploration that do not feed it.",
      "verified": [
       {
        "by": "Edward James Gordon",
@@ -1367,8 +1274,8 @@ const ARCHIVE = {
      "disputes": [],
      "id": "rtc-over-99.989",
      "side": "over",
-     "circles": 26,
-     "lines": 11,
+     "circles": 20,
+     "lines": 7,
      "acc": "99.989",
      "file": "GeoGebra Files/Over/RTC-99.989"
     }

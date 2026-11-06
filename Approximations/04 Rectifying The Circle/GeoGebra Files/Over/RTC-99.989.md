@@ -13,10 +13,10 @@ Edward James Gordon - 11-11-2025
 Oversized
 
 **Number of Circles:**
-26
+20
 
 **Number of Lines:**
-11
+7
 
 **Verification Method:**
 Verified using GeoGebra. Rebuilt and recomputed by tools/verify.py.
@@ -28,4 +28,5 @@ RTC-99.989.ggb
 Constructed length 262.3892456374 against a true circumference of 262.3629415738. An adjustment of the 99.982% undersized construction.
 
 **Notes / Limitations:**
-Uses a micro scale adjustment (µ).
+Uses a micro scale adjustment (µ): a small circle about 0.7% of the main radius makes the final point. Counted as the steps the result is built from; the file also holds reference marks at the true length and exploration that do not feed the result.
+

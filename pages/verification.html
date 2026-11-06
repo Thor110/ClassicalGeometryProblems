@@ -101,7 +101,7 @@
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
-const all = PROBLEMS.flatMap(p => p.entries.map(e => ({...e, problem: p})));
+const all = PROBLEMS.flatMap(p => p.entries.concat(p.archived || []).map(e => ({...e, problem: p})));
 const counted = name => all.filter(e => (e.verified || []).some(v => v.by === name)).length;
 
 $('people').innerHTML = '<tr><th>Name</th><th>Role</th><th>Since</th><th>Entries verified</th><th>How</th></tr>' +
@@ -120,7 +120,7 @@ $('all').innerHTML = '<tr><th>Problem</th><th>Entry</th><th>Status</th><th>Peopl
   const s = statusOf(e), c = s.ai || {};
   const found = (c.checks || []).filter(x => !/^every rebuilt|^no hand-placed|reproduces the chart/.test(x)).join('; ') || (c.status === 'reproduced' ? 'All checks passed.' : '');
   return `<tr><td><a class="link" href="charts.html#${e.problem.id}">${e.problem.short}</a></td>
-    <td>${e.side} #${e.rank} · <b>${e.acc}%</b><br><span class="muted" style="font-size:13px;">${e.holder}</span></td>
+    <td>${e.archived ? 'below 95%' : e.side + ' #' + e.rank} · <b>${e.acc}%</b><br><span class="muted" style="font-size:13px;">${e.holder}</span></td>
     <td><span class="badge ${s.status}">${s.status.replace('-', ' ')}</span></td>
     <td>${s.people.map(v => v.by + (isHolder(v.by, e.holder) ? ' (self)' : '')).join('<br>') || '—'}</td>
     <td><span class="badge ${c.status || 'unverified'}">${{reproduced: 'reproduced', attention: 'does not match', manual: 'by hand', 'no-file': 'no file'}[c.status] || 'none'}</span></td>

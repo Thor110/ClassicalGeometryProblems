@@ -3,12 +3,12 @@ const AI_CHECKS = {
  "tool": "tools/verify.py",
  "run": "2026-11-06",
  "results": {
-  "stc-over-99.117": {
-   "id": "stc-over-99.117",
+  "stc-over-99.109": {
+   "id": "stc-over-99.109",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.1092874150% does NOT reproduce the chart figure 99.117%"
+    "accuracy 99.1092874150% reproduces the chart figure 99.109%"
    ],
    "tools": {
     "Circle": 1,
@@ -34,15 +34,15 @@ const AI_CHECKS = {
    "accuracy": 99.10928741499923,
    "measured": "square area 606117.891984 against circle area 600766.786609",
    "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "stc-over-99.139": {
-   "id": "stc-over-99.139",
+  "stc-over-99.119": {
+   "id": "stc-over-99.119",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.1196146004% does NOT reproduce the chart figure 99.139%"
+    "accuracy 99.1196146004% reproduces the chart figure 99.119%"
    ],
    "tools": {
     "Circle": 21,
@@ -63,15 +63,15 @@ const AI_CHECKS = {
    "accuracy": 99.11961460044009,
    "measured": "square area 453.437386 against circle area 449.480227",
    "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "stc-over-99.253": {
-   "id": "stc-over-99.253",
+  "stc-over-99.283": {
+   "id": "stc-over-99.283",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.2830181111% does NOT reproduce the chart figure 99.253%"
+    "accuracy 99.2830181111% reproduces the chart figure 99.283%"
    ],
    "tools": {
     "Circle": 13,
@@ -94,8 +94,8 @@ const AI_CHECKS = {
    "accuracy": 99.28301811111724,
    "measured": "square area 241.051316 against circle area 239.335325",
    "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
   "stc-over-99.356": {
    "id": "stc-over-99.356",
@@ -126,12 +126,12 @@ const AI_CHECKS = {
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "stc-over-99.563": {
-   "id": "stc-over-99.563",
+  "stc-over-99.558": {
+   "id": "stc-over-99.558",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.5587087246% does NOT reproduce the chart figure 99.563%"
+    "accuracy 99.5587087246% reproduces the chart figure 99.558%"
    ],
    "tools": {
     "Circle": 13,
@@ -154,15 +154,15 @@ const AI_CHECKS = {
    "accuracy": 99.55870872457643,
    "measured": "square area 709.977651 against circle area 706.858347",
    "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 3 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
   },
-  "stc-over-99.703": {
-   "id": "stc-over-99.703",
+  "stc-over-99.696": {
+   "id": "stc-over-99.696",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.6961297384% does NOT reproduce the chart figure 99.703%"
+    "accuracy 99.6961297384% reproduces the chart figure 99.696%"
    ],
    "tools": {
     "Circle": 25,
@@ -185,15 +185,15 @@ const AI_CHECKS = {
    "accuracy": 99.69612973842727,
    "measured": "square area 709.006279 against circle area 706.858347",
    "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 3 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
   },
-  "stc-over-99.816": {
-   "id": "stc-over-99.816",
+  "stc-over-99.809": {
+   "id": "stc-over-99.809",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.8095002634% does NOT reproduce the chart figure 99.816%"
+    "accuracy 99.8095002634% reproduces the chart figure 99.809%"
    ],
    "tools": {
     "Circle": 13,
@@ -217,8 +217,8 @@ const AI_CHECKS = {
    "accuracy": 99.80950026343882,
    "measured": "square area 708.204910 against circle area 706.858347",
    "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 3 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
   },
   "stc-over-99.999": {
    "id": "stc-over-99.999",
@@ -252,12 +252,12 @@ const AI_CHECKS = {
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "stc-under-99.929": {
-   "id": "stc-under-99.929",
+  "stc-under-99.932": {
+   "id": "stc-under-99.932",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.9321928003% does NOT reproduce the chart figure 99.929%"
+    "accuracy 99.9321928003% reproduces the chart figure 99.932%"
    ],
    "tools": {
     "Circle": 13,
@@ -280,15 +280,15 @@ const AI_CHECKS = {
    "accuracy": 99.93219280033432,
    "measured": "square area 706.379046 against circle area 706.858347",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 3 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
   },
-  "stc-under-99.644": {
-   "id": "stc-under-99.644",
+  "stc-under-99.655": {
+   "id": "stc-under-99.655",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.6555673785% does NOT reproduce the chart figure 99.644%"
+    "accuracy 99.6555673785% reproduces the chart figure 99.655%"
    ],
    "tools": {
     "Circle": 21,
@@ -309,47 +309,21 @@ const AI_CHECKS = {
    "accuracy": 99.65556737848478,
    "measured": "square area 447.932071 against circle area 449.480227",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
   "stc-under-99.253": {
    "id": "stc-under-99.253",
-   "checks": [
-    "every rebuilt point matches the saved file",
-    "no hand-placed point feeds the result",
-    "accuracy 99.2830181111% does NOT reproduce the chart figure 99.253%",
-    "the file is oversized but the chart lists it undersized"
-   ],
-   "tools": {
-    "Circle": 13,
-    "Intersect": 41,
-    "Line": 3,
-    "Segment": 12,
-    "Area": 1,
-    "PointIn": 2,
-    "LineBisector": 2,
-    "Polygon": 1
-   },
-   "starting_points": [
-    "A",
-    "B"
-   ],
-   "steps_used": {
-    "circles": 13,
-    "lines": 13
-   },
-   "accuracy": 99.28301811111724,
-   "measured": "square area 241.051316 against circle area 239.335325",
-   "side": "over",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "checks": [],
+   "status": "no-file",
+   "summary": "No GeoGebra file in the repository yet, so it cannot be rebuilt here."
   },
-  "stc-under-99.164": {
-   "id": "stc-under-99.164",
+  "stc-under-99.150": {
+   "id": "stc-under-99.150",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.1504732299% does NOT reproduce the chart figure 99.164%"
+    "accuracy 99.1504732299% reproduces the chart figure 99.150%"
    ],
    "tools": {
     "Circle": 13,
@@ -372,15 +346,15 @@ const AI_CHECKS = {
    "accuracy": 99.15047322986365,
    "measured": "square area 237.302107 against circle area 239.335325",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "stc-under-99.009": {
-   "id": "stc-under-99.009",
+  "stc-under-99.015": {
+   "id": "stc-under-99.015",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.0155645052% does NOT reproduce the chart figure 99.009%"
+    "accuracy 99.0155645052% reproduces the chart figure 99.015%"
    ],
    "tools": {
     "Circle": 13,
@@ -403,8 +377,8 @@ const AI_CHECKS = {
    "accuracy": 99.01556450524366,
    "measured": "square area 699.899783 against circle area 706.858347",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 3 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
   },
   "stc-under-95.492": {
    "id": "stc-under-95.492",
@@ -906,13 +880,13 @@ const AI_CHECKS = {
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "taa-under-99.658": {
-   "id": "taa-under-99.658",
+  "taa-over-99.317": {
+   "id": "taa-over-99.317",
    "checks": [
     "every rebuilt point matches the saved file",
     "the result depends on freely placed point(s) beyond the given figure: D",
     "the result depends on hand-placed point(s): A_1, F, Z",
-    "accuracy 99.3179314974% does NOT reproduce the chart figure ~99.658%"
+    "accuracy 99.3179314974% reproduces the chart figure ~99.317%"
    ],
    "tools": {
     "Segment": 7,
@@ -940,13 +914,13 @@ const AI_CHECKS = {
    "status": "attention",
    "summary": "Rebuilt from 4 given object(s); does not match the chart."
   },
-  "taa-under-95.538": {
-   "id": "taa-under-95.538",
+  "taa-over-91.077": {
+   "id": "taa-over-91.077",
    "checks": [
     "every rebuilt point matches the saved file",
     "the result depends on freely placed point(s) beyond the given figure: E",
     "the result depends on hand-placed point(s): D",
-    "accuracy 91.0774311712% does NOT reproduce the chart figure ~95.538%"
+    "accuracy 91.0774311712% reproduces the chart figure ~91.077%"
    ],
    "tools": {
     "Segment": 4,
@@ -972,13 +946,12 @@ const AI_CHECKS = {
    "status": "attention",
    "summary": "Rebuilt from 4 given object(s); does not match the chart."
   },
-  "dtc-over-99.227": {
-   "id": "dtc-over-99.227",
+  "dtc-under-97.656": {
+   "id": "dtc-under-97.656",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 97.6562500000% does NOT reproduce the chart figure 99.227%",
-    "the file is undersized but the chart lists it oversized"
+    "accuracy 97.6562500000% reproduces the chart figure 97.656%"
    ],
    "tools": {
     "Circle": 13,
@@ -999,16 +972,15 @@ const AI_CHECKS = {
    "accuracy": 97.65625,
    "measured": "edge 7.152797 against given edge 5.722237: volume ratio 1.953125 against 2",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "dtc-over-99.487": {
-   "id": "dtc-over-99.487",
+  "dtc-under-98.924": {
+   "id": "dtc-under-98.924",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 98.9247891676% does NOT reproduce the chart figure 99.487%",
-    "the file is undersized but the chart lists it oversized"
+    "accuracy 98.9247891676% reproduces the chart figure 98.924%"
    ],
    "tools": {
     "Circle": 13,
@@ -1029,8 +1001,8 @@ const AI_CHECKS = {
    "accuracy": 98.92478916755539,
    "measured": "edge 7.193806 against given edge 5.730339: volume ratio 1.978496 against 2",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
   "rtc-over-98.538": {
    "id": "rtc-over-98.538",
@@ -1718,12 +1690,12 @@ const AI_CHECKS = {
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "rtc-under-99.374": {
-   "id": "rtc-under-99.374",
+  "rtc-under-99.376": {
+   "id": "rtc-under-99.376",
    "checks": [
     "every rebuilt point matches the saved file",
     "no hand-placed point feeds the result",
-    "accuracy 99.3768101361% does NOT reproduce the chart figure 99.374%"
+    "accuracy 99.3768101361% reproduces the chart figure 99.376%"
    ],
    "tools": {
     "Circle": 8,
@@ -1745,8 +1717,8 @@ const AI_CHECKS = {
    "accuracy": 99.37681013608419,
    "measured": "distance D-T = 363.595195 against circumference 365.875293",
    "side": "under",
-   "status": "attention",
-   "summary": "Rebuilt from 2 given object(s); does not match the chart."
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
   "rtc-under-98.165": {
    "id": "rtc-under-98.165",
@@ -1886,7 +1858,7 @@ const AI_CHECKS = {
    "id": "ar-over-95",
    "checks": [
     "every rebuilt point matches the saved file",
-    "D&apos; is made by rotating through an angle, which is not a compass step",
+    "D' is made by rotating through an angle, which is not a compass step",
     "the file does not record a measurement this script can match to the result; it needs checking by hand"
    ],
    "tools": {
@@ -1904,12 +1876,11 @@ const AI_CHECKS = {
    },
    "starting_points": [
     "A",
-    "B",
-    "D'"
+    "B"
    ],
    "manual": true,
    "status": "manual",
-   "summary": "Rebuilt from 3 given object(s); needs checking by hand."
+   "summary": "Rebuilt from 2 given object(s); needs checking by hand."
   }
  }
 };

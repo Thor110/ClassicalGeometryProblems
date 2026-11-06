@@ -59,6 +59,8 @@
   <div class="small-text" style="text-align:center;">Click a row or a point on the ladder to see who verified it, what the AI check found, and any disputes.</div>
 </div>
 
+<div class="box" id="below"></div>
+
 <div class="box" id="wanted"></div>
 
 <div class="box">
@@ -183,7 +185,7 @@ function render() {
   $('table').querySelectorAll('tr[data-key]').forEach(tr => tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); renderDetail(); });
 
   $('downloads').innerHTML = `Click a row for its full record, and to find it on the ladder. The chart's data is <a class="link" href="${REPO}/blob/main/pages/archive-data.js" target="_blank" rel="noopener">archive-data.js</a> in the repository.`;
-  renderWanted(); renderDetail();
+  renderWanted(); renderDetail(); renderBelow();
   mark();
   drawLadder();
 }
@@ -289,6 +291,15 @@ function renderDetail() {
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Dispute', 'dispute.yml')}" target="_blank" rel="noopener">Dispute This</a>
     </div>
     <div class="small-text" style="text-align:center;">Entry id: <span class="mono">${e.id}</span></div>`;
+}
+
+function renderBelow() {
+  const a = current.archived || [];
+  $('below').style.display = a.length ? '' : 'none';
+  $('below').innerHTML = `<div class="box-title">Below The 95% Minimum</div>
+    <div class="box-text">Kept on record, but not ranked on the chart.</div>
+    <ul>${a.map(e => `<li><b>${e.acc}%</b> ${e.side}sized · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''}. ${e.archive_reason || ''} ${e.note || ''}
+      ${e.file ? ` <a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a> · <a class="link" href="${repoBlob((e.notesFile || e.file) + '.md')}" target="_blank" rel="noopener">notes</a>` : ''}</li>`).join('')}</ul>`;
 }
 
 function renderWanted() {

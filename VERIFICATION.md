@@ -101,6 +101,89 @@ Disputes are about constructions and numbers, never about people. Mockery or per
 Method holders are people. If an AI helped find or refine a construction, say so in the
 submission's notes. That keeps the record honest, and it is not held against the submission.
 
+<!-- maintainer-list:start -->
+
+## Waiting for the maintainer
+
+Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
+
+### Not verified by a person yet (30)
+
+Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
+
+- [ ] Squaring The Circle, oversized 99.109% · Circling the Square (additional) (stc-over-99.109): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.109.ggb`
+- [ ] Squaring The Circle, oversized 99.119% · Circling the Square (additional) (stc-over-99.119): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.119.ggb`
+- [ ] Squaring The Circle, oversized 99.283% · Circling the Square (additional) (stc-over-99.283): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.283.ggb`
+- [ ] Squaring The Circle, oversized 99.558% · Circling the Square (additional) (stc-over-99.558): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.558.ggb`
+- [ ] Squaring The Circle, oversized 99.696% · Circling the Square (additional) (stc-over-99.696): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.696.ggb`
+- [ ] Squaring The Circle, oversized 99.809% · Circling the Square (additional) (stc-over-99.809): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.809.ggb`
+- [ ] Squaring The Circle, undersized 99.932% · Circling the Square (additional) (stc-under-99.932): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.932.ggb`
+- [ ] Squaring The Circle, undersized 99.655% · Circling the Square (additional) (stc-under-99.655): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.655.ggb`
+- [ ] Squaring The Circle, undersized 99.253% · Circling the Square (additional) (stc-under-99.253)
+- [ ] Squaring The Circle, undersized 99.150% · Circling the Square (additional) (stc-under-99.150): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.150.ggb`
+- [ ] Squaring The Circle, undersized 99.015% · Circling the Square (additional) (stc-under-99.015): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.015.ggb`
+- [ ] Squaring The Circle, oversized 99.99996% · Circling the Square (additional) (stc-over-99.99996): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99996.ggb`, square q1
+- [ ] Squaring The Circle, undersized 99.999% · Circling the Square (additional) (stc-under-99.999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99996.ggb`, square q2
+- [ ] Squaring The Circle, oversized 99.993% · Circling the Square (additional) (stc-over-99.993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.993.ggb`, square q8
+- [ ] Squaring The Circle, oversized 99.944% · Circling the Square (additional) (stc-over-99.944): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.993.ggb`, square q7
+- [ ] Squaring The Circle, undersized 99.956% · Circling the Square (additional) (stc-under-99.956): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.993.ggb`, square q6
+- [ ] Squaring The Circle, oversized 99.844% · Circling the Square (additional) (stc-over-99.844): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.993.ggb`, square q5
+- [ ] Squaring The Circle, undersized 99.758% · Circling the Square (additional) (stc-under-99.758): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.993.ggb`, square q4
+- [ ] Squaring The Circle, undersized 98.968% · Circling the Square (additional) (stc-under-98.968): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.993.ggb`, square q3
+- [ ] Squaring The Circle, oversized 99.862% · Circling the Square (additional) (stc-over-99.862): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.862.ggb`, square q4
+- [ ] Squaring The Circle, undersized 99.484% · Circling the Square (additional) (stc-under-99.484): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.862.ggb`, square q3
+- [ ] Squaring The Circle, undersized 98.168% · Circling the Square (additional) (stc-under-98.168): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.862.ggb`, square q2
+- [ ] Squaring The Circle, undersized 99.377% · Circling the Square (additional) (stc-under-99.377): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q4
+- [ ] Squaring The Circle, oversized 99.414% · Circling the Square (additional) (stc-over-99.414): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q3
+- [ ] Squaring The Circle, oversized 96.977% · Circling the Square (additional) (stc-over-96.977): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q2
+- [ ] Squaring The Circle, undersized 98.177% · Circling the Square (additional) (stc-under-98.177): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q1
+- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
+- [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
+- [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
+- [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
+
+### Flagged by the AI check (2)
+
+Each needs a decision: correct the entry, or explain why the check does not apply.
+
+- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z
+- [ ] Arc Rectification, oversized ~95% (ar-over-95): D' is made by rotating through an angle, which is not a compass step; the file does not record a measurement this script can match to the result; it needs checking by hand
+
+### Missing GeoGebra files (1)
+
+- [ ] Squaring The Circle, undersized 99.253% · Circling the Square (additional) (stc-under-99.253): no GeoGebra file in the repository (it is online: https://www.geogebra.org/geometry/anbgnhsq)
+
+### Step counts to review (24)
+
+Informational. The checker counts only the circles and lines the result is built from (a perpendicular bisector counts as one line; midpoints and intersections are not counted). Where your count is higher, the extra steps may be exploration that could be left out of the count, or the counting rules may differ.
+
+- [ ] Squaring The Circle, oversized 99.109% · Circling the Square (additional) (stc-over-99.109): charted 1 circles, 20 lines; the result is built from 1 circles, 24 lines
+- [ ] Squaring The Circle, oversized 99.119% · Circling the Square (additional) (stc-over-99.119): charted 21 circles, 7 lines; the result is built from 17 circles, 7 lines
+- [ ] Squaring The Circle, oversized 99.356% · Circling the Square (additional) (stc-over-99.356): charted 13 circles, 17 lines; the result is built from 13 circles, 15 lines
+- [ ] Squaring The Circle, oversized 99.558% · Circling the Square (additional) (stc-over-99.558): charted 13 circles, 25 lines; the result is built from 13 circles, 17 lines
+- [ ] Squaring The Circle, oversized 99.696% · Circling the Square (additional) (stc-over-99.696): charted 25 circles, 8 lines; the result is built from 24 circles, 9 lines
+- [ ] Squaring The Circle, oversized 99.809% · Circling the Square (additional) (stc-over-99.809): charted 13 circles, 37 lines; the result is built from 13 circles, 29 lines
+- [ ] Squaring The Circle, oversized 99.999% · Ramanujan's Method (stc-over-99.999): charted 9 circles, 13 lines; the result is built from 9 circles, 15 lines
+- [ ] Squaring The Circle, undersized 99.932% · Circling the Square (additional) (stc-under-99.932): charted 13 circles, 29 lines; the result is built from 13 circles, 21 lines
+- [ ] Squaring The Circle, undersized 99.150% · Circling the Square (additional) (stc-under-99.150): charted 13 circles, 20 lines; the result is built from 13 circles, 16 lines
+- [ ] Squaring The Circle, undersized 99.015% · Circling the Square (additional) (stc-under-99.015): charted 13 circles, 11 lines; the result is built from 13 circles, 7 lines
+- [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): charted 13 circles, 30 lines; the result is built from 7 circles, 6 lines
+- [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): charted 13 circles, 42 lines; the result is built from 13 circles, 20 lines
+- [ ] Rectifying The Circle, oversized 98.538% (rtc-over-98.538): charted 6 circles, 7 lines; the result is built from 6 circles, 6 lines
+- [ ] Rectifying The Circle, oversized 99.596% (rtc-over-99.596): charted 13 circles, 9 lines; the result is built from 12 circles, 6 lines
+- [ ] Rectifying The Circle, oversized 99.607% (rtc-over-99.607): charted 9 circles, 4 lines; the result is built from 7 circles, 4 lines
+- [ ] Rectifying The Circle, oversized 99.802% (rtc-over-99.802): charted 11 circles, 4 lines; the result is built from 10 circles, 4 lines
+- [ ] Rectifying The Circle, oversized 99.806% · Euclidean Circumference Approximation (rtc-over-99.806): charted 1 circles, 10 lines; the result is built from 1 circles, 11 lines
+- [ ] Rectifying The Circle, oversized 99.9986% (rtc-over-99.9986): charted 10 circles, 7 lines; the result is built from 10 circles, 6 lines
+- [ ] Rectifying The Circle, oversized 99.9996% · Kochanski Gordon Crossover Method (rtc-over-99.9996): charted 12 circles, 10 lines; the result is built from 11 circles, 10 lines
+- [ ] Rectifying The Circle, undersized 99.999% · Microscale Trisection (rtc-under-99.999): charted 9 circles, 13 lines; the result is built from 9 circles, 12 lines
+- [ ] Rectifying The Circle, undersized 99.9874% (rtc-under-99.9874): charted 9 circles, 6 lines; the result is built from 9 circles, 7 lines
+- [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): charted 8 circles, 4 lines; the result is built from 7 circles, 4 lines
+- [ ] Rectifying The Circle, undersized 98.165% (rtc-under-98.165): charted 6 circles, 4 lines; the result is built from 6 circles, 5 lines
+- [ ] Rectifying The Circle, oversized 99.979% (rtc-over-99.979): charted 6 circles, 8 lines; the result is built from 6 circles, 7 lines
+
+<!-- maintainer-list:end -->
+
 ## Log
 
 Disputes and their outcomes are recorded on each entry in [pages/archive-data.js](pages/archive-data.js),

@@ -104,7 +104,7 @@ def read(path):
         if m.group(1):
             ins = re.search(r'<input ([^>]*)/>', m.group(2)); outs = re.search(r'<output ([^>]*)/>', m.group(2))
             steps.append(('cmd', m.group(1), re.findall(r'a\d+="([^"]*)"', ins.group(1)) if ins else [],
-                          re.findall(r'a\d+="([^"]*)"', outs.group(1)) if outs else []))
+                          [html_unescape(x) for x in re.findall(r'a\d+="([^"]*)"', outs.group(1))] if outs else []))
         else:
             body = m.group(5); el = {'type': m.group(3)}
             c = re.search(r'<coords x="([^"]+)" y="([^"]+)" z="([^"]+)"', body)
@@ -340,6 +340,47 @@ def md_fields(path):
     parts = re.split(r'\*\*(.+?):\*\*', t)
     return {parts[i].strip(): parts[i + 1].strip() for i in range(1, len(parts), 2)}
 
+MARK_START, MARK_END = '<!-- maintainer-list:start -->', '<!-- maintainer-list:end -->'
+
+def maintainer_list(archive, results, today):
+    """What still needs the maintainer, written into VERIFICATION.md."""
+    maint = archive['verifiers']['people'][0]['name']
+    side = {'over': 'oversized', 'under': 'undersized'}
+    def name(p, e):
+        return '%s, %s %s%%%s (%s)' % (p['name'], side[e['side']], e['acc'], ' · ' + e['method'] if e.get('method') else '', e['id'])
+    unverified, attention, missing, counts, disputes = [], [], [], [], []
+    for p in archive['problems']:
+        for e in p['entries']:
+            if e.get('archived'): continue
+            r = results.get(e['id'], {})
+            people = [v for v in e.get('verified', []) if v.get('kind') == 'person']
+            if not any(v['by'] == maint for v in people) and not people:
+                unverified.append('- [ ] ' + name(p, e) + (': GeoGebra file `%s/%s.ggb`' % (p['folder'], e['file']) + (', square ' + e['square'] if e.get('square') else '') if e.get('file') else ''))
+            if r.get('status') in ('attention', 'manual'):
+                why = [c for c in r.get('checks', []) if not re.match(r'(every rebuilt|no hand-placed|accuracy .* reproduces)', c)]
+                attention.append('- [ ] ' + name(p, e) + ': ' + '; '.join(why))
+            if not e.get('file'):
+                missing.append('- [ ] ' + name(p, e) + ': no GeoGebra file in the repository' + (' (it is online: https://www.geogebra.org/geometry/%s)' % e['geogebra'] if e.get('geogebra') else ''))
+            su = r.get('steps_used')
+            if su and isinstance(e['circles'], int) and (su['circles'], su['lines']) != (e['circles'], e['lines']):
+                counts.append('- [ ] %s: charted %s circles, %s lines; the result is built from %d circles, %d lines' % (name(p, e), e['circles'], e['lines'], su['circles'], su['lines']))
+            for d in e.get('disputes', []):
+                if d.get('status') == 'open': disputes.append('- [ ] ' + name(p, e) + ': ' + d.get('summary', ''))
+    out = [MARK_START, '', '## Waiting for the maintainer', '',
+           'Kept up to date by `python tools/verify.py --write` (last run %s). Tick items off by fixing them; the next run rewrites this list.' % today, '']
+    for title, items, about in [
+        ('Open disputes', disputes, ''),
+        ('Not verified by a person yet', unverified, 'Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.'),
+        ('Flagged by the AI check', attention, 'Each needs a decision: correct the entry, or explain why the check does not apply.'),
+        ('Missing GeoGebra files', missing, ''),
+        ('Step counts to review', counts, 'Informational. The checker counts only the circles and lines the result is built from (a perpendicular bisector counts as one line; midpoints and intersections are not counted). Where your count is higher, the extra steps may be exploration that could be left out of the count, or the counting rules may differ.')]:
+        if not items: continue
+        out += ['### %s (%d)' % (title, len(items)), '']
+        if about: out += [about, '']
+        out += items + ['']
+    out.append(MARK_END)
+    return '\n'.join(out)
+
 def main():
     write = '--write' in sys.argv
     archive = load_archive()
@@ -402,6 +443,14 @@ def main():
     for g in stray: print('?? not on any chart: ' + os.path.relpath(g, ROOT)); bad += 1
     if write:
         out = {'tool': 'tools/verify.py', 'run': datetime.date.today().isoformat(), 'results': results}
+        vpath = os.path.join(ROOT, 'VERIFICATION.md')
+        vtext = open(vpath, encoding='utf-8').read()
+        block = maintainer_list(archive, results, out['run'])
+        if MARK_START in vtext:
+            vtext = vtext[:vtext.index(MARK_START)] + block + vtext[vtext.index(MARK_END) + len(MARK_END):]
+        else:
+            vtext = vtext.replace('## Log', block + '\n\n## Log')
+        open(vpath, 'w', encoding='utf-8').write(vtext)
         with open(os.path.join(ROOT, 'pages', 'ai-checks.js'), 'w', encoding='utf-8') as f:
             f.write('// Written by tools/verify.py --write. Do not edit by hand: run the script again.\nconst AI_CHECKS = ')
             json.dump(out, f, indent=1, ensure_ascii=False)

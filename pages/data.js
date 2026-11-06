@@ -35,10 +35,12 @@ const PROBLEMS = ARCHIVE.problems.map(p => {
     value: parseFloat(String(e.acc).replace(/[^0-9.]/g, '')),
     exact: parseFloat(e.precise || String(e.acc).replace(/[^0-9.]/g, '')),
   }));
-  // Rank each side by accuracy: 1 is closest to perfect.
+  // Rank each side by accuracy: 1 is closest to perfect. Entries below the 95% minimum are kept
+  // on record but not charted.
+  const charted = entries.filter(e => !e.archived);
   for (const side of ['over', 'under'])
-    entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.rank = i + 1; });
-  return {...p, entries};
+    charted.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.rank = i + 1; });
+  return {...p, entries: charted, archived: entries.filter(e => e.archived)};
 });
 
 // A repository path as a link: the file itself (served next to the website) or its page on GitHub.
