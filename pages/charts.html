@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Geometry Problems // Approximation Charts</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #ladder{height:260px;cursor:crosshair;}
+  #tip{min-height:1.6em;margin-top:8px;font-size:14px;color:#888;text-align:center;letter-spacing:0.05em;}
+  tr.hl td{background:#14141f;}
+  tr.hl td.acc{color:#4a9;}
+</style>
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Approximation Charts</h1>
+<div class="sub">
+  Oversized methods climb towards perfection from above, undersized from below. Rank 1 on either side is the closest yet.
+</div>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="box">
+  <div class="box-title" id="title"></div>
+  <div class="box-text" id="task" style="text-align:center;"></div>
+  <div class="meters" id="meters"></div>
+</div>
+
+<div class="box">
+  <div class="box-title">Accuracy Ladder</div>
+  <div class="small-text" style="text-align:center;margin-bottom:12px;">
+    Each step right is ten times closer to the true value. Oversized above the line, undersized below. Hover or tap a point.
+  </div>
+  <canvas id="ladder"></canvas>
+  <div id="tip">&nbsp;</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Chart</div>
+  <div class="controls">
+    <button class="small active" data-filter="all">All</button>
+    <button class="small" data-filter="base">Base Ruleset Only</button>
+    <button class="small" data-filter="nomicro">Hide µ Micro Scale</button>
+  </div>
+  <div class="table-wrap"><table id="table"></table></div>
+  <div class="small-text" style="margin-top:12px;" id="downloads"></div>
+</div>
+
+<div class="box">
+  <div class="box-title">Reading The Chart</div>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li><b>Base ruleset</b>: at most 25 circles and 40 lines.</li>
+        <li><b>Extended ruleset</b>: at most 49 circles and 80 lines, for constructions at 99.91% and above.</li>
+        <li><b>Accepted range</b>: 95% minimum, 100% maximum.</li>
+        <li><b>Counted</b>: circles and lines. <b>Not counted</b>: macro scale midpoints, those easy to reproduce on paper.</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><span class="mark">~</span> <b>Contested</b>: the original discoverer is being sought.</li>
+        <li><span class="mark">@</span> <b>Too simple</b>: likely found many times before.</li>
+        <li><span class="mark">µ</span> <b>Micro scale edits</b>: some steps would be hard to reproduce on paper.</li>
+        <li><b>Verified</b>: checked with GeoGebra's measuring tools. Every construction listed so far is verified.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="box-text">
+    A contested or too-simple mark is not a judgement of the person. It records that a construction may have been found before, so credit can go to whoever found it first. <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md" target="_blank" rel="noopener">Full ruleset</a>.
+  </div>
+</div>
+
+<div class="nav-group">
+  <a href="submit.html" class="btn-link">Submit An Approximation</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<script src="data.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+let current = PROBLEMS[0], filter = 'all', points = [], highlighted = null;
+
+// Tabs, one per problem; the page's #hash picks one (charts.html#rtc).
+for (const p of PROBLEMS) {
+  const b = document.createElement('button');
+  b.className = 'tab'; b.textContent = p.n + '. ' + p.name; b.dataset.id = p.id;
+  b.onclick = () => { location.hash = p.id; };
+  $('tabs').appendChild(b);
+}
+document.querySelectorAll('[data-filter]').forEach(b => b.onclick = () => {
+  filter = b.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach(x => x.classList.toggle('active', x === b));
+  render();
+});
+window.addEventListener('hashchange', pick);
+window.addEventListener('resize', drawLadder);
+
+function pick() {
+  current = PROBLEMS.find(p => p.id === location.hash.slice(1)) || PROBLEMS[0];
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === current.id));
+  highlighted = null;
+  render();
+}
+
+function visible(e) {
+  const n = x => typeof x === 'number' ? x : 0;
+  if (filter === 'base') return n(e.circles) <= 25 && n(e.lines) <= 40;
+  if (filter === 'nomicro') return !e.marks.includes('µ');
+  return true;
+}
+
+function render() {
+  const p = current, all = p.entries, shown = all.filter(visible);
+  $('title').textContent = p.n + '. ' + p.name;
+  $('task').innerHTML = p.task + '<br><span class="muted">' + p.target + '</span>';
+
+  const best = side => all.filter(e => e.side === side).sort((a, b) => b.value - a.value)[0];
+  const bo = best('over'), bu = best('under');
+  const people = new Set(all.map(e => e.holder)).size;
+  $('meters').innerHTML = [
+    ['Methods charted', all.length, ''],
+    ['Best oversized', bo ? bo.acc + '%' : 'open', bo ? 'good' : 'warm'],
+    ['Best undersized', bu ? bu.acc + '%' : 'open', bu ? 'good' : 'warm'],
+    ['Method holders', people, ''],
+  ].map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
+
+  // The table mirrors the .ods charts: oversized ranks count down to perfection, undersized count up from it.
+  const over = shown.filter(e => e.side === 'over').sort((a, b) => b.rank - a.rank);
+  const under = shown.filter(e => e.side === 'under').sort((a, b) => a.rank - b.rank);
+  const row = e => {
+    const links = [];
+    if (e.geogebra) links.push(`<a class="link" href="${e.geogebra}" target="_blank" rel="noopener">GeoGebra</a>`);
+    if (e.file) links.push(`<a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a>`);
+    if (e.file) links.push(`<a class="link" href="${repoBlob(e.file + '.md')}" target="_blank" rel="noopener">notes</a>`);
+    const title = [e.method, e.note].filter(Boolean).join(' · ');
+    return `<tr data-key="${e.side}${e.rank}" title="${title.replace(/"/g, '&quot;')}">
+      <td>${e.rank}</td>
+      <td><span class="mark">${e.marks || ''}</span></td>
+      <td>${e.holder}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
+      <td>${e.circles}</td><td>${e.lines}</td>
+      <td class="acc">${e.acc}%</td>
+      <td class="precise">${e.precise ? e.precise + '%' : ''}</td>
+      <td class="muted">${e.date}</td>
+      <td>${links.join(' · ')}</td></tr>`;
+  };
+  const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} of 15 places filled${n < 15 ? ' · every open place is an invitation' : ''}</td></tr>`;
+  $('table').innerHTML = `
+    <tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Date</th><th>Links</th></tr>
+    ${group('↑ Oversized', all.filter(e => e.side === 'over').length)}
+    ${over.map(row).join('') || '<tr><td colspan="9" class="muted">No oversized methods charted yet.</td></tr>'}
+    <tr class="perfect"><td colspan="9">0 · Perfection · 100% · impossible with straightedge and compass</td></tr>
+    ${under.map(row).join('') || '<tr><td colspan="9" class="muted">No undersized methods charted yet.</td></tr>'}
+    ${group('↓ Undersized', all.filter(e => e.side === 'under').length)}`;
+  $('table').querySelectorAll('tr[data-key]').forEach(tr => tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); });
+
+  $('downloads').innerHTML = `Source chart: <a class="link" href="${repoFile(p.folder + '/' + p.chart + '.pdf')}" target="_blank">PDF</a> · <a class="link" href="${repoFile(p.folder + '/' + p.chart + '.ods')}">OpenDocument spreadsheet</a>. Hover a row for its method name and notes; click it to find it on the ladder.`;
+  mark();
+  drawLadder();
+}
+
+function mark() {
+  document.querySelectorAll('#table tr[data-key]').forEach(tr => tr.classList.toggle('hl', tr.dataset.key === highlighted));
+}
+
+// Error in percent, from the most precise figure we have.
+const errorOf = e => Math.max(100 - parseFloat(e.precise || e.value), 1e-9);
+
+function drawLadder() {
+  const cv = $('ladder'), ctx = cv.getContext('2d'), dpr = window.devicePixelRatio || 1;
+  const W = cv.clientWidth, H = cv.clientHeight;
+  cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  const shown = current.entries.filter(visible);
+  // Fit the scale to this problem: from 90% to one decade past its closest method.
+  const reach = Math.max(0, ...shown.map(e => -Math.log10(errorOf(e))));
+  const padL = 20, padR = 46, mid = H / 2 - 10, minX = -1, maxX = Math.max(3, Math.ceil(reach + 0.3));
+  const xOf = err => padL + ((-Math.log10(err)) - minX) / (maxX - minX) * (W - padL - padR);
+  ctx.font = '11px Courier New'; ctx.textAlign = 'center';
+
+  // Decades: 90%, 99%, 99.9% ...
+  const labels = ['90%', '99%', '99.9%', '99.99%', '99.999%', '99.9999%', '99.99999%', '99.999999%', ''];
+  for (let k = minX; k <= maxX; k++) {
+    const x = xOf(Math.pow(10, -k));
+    ctx.strokeStyle = '#1a1a24'; ctx.beginPath(); ctx.moveTo(x, 18); ctx.lineTo(x, H - 30); ctx.stroke();
+    if (W > 560 || k % 2 === 1) { ctx.fillStyle = '#55556a'; ctx.fillText(labels[k + 1], x, H - 12); }
+  }
+  ctx.strokeStyle = '#2a2a3a'; ctx.beginPath(); ctx.moveTo(padL, mid); ctx.lineTo(W - padR + 20, mid); ctx.stroke();
+  // Perfection sits beyond the last decade, out of reach.
+  const px = W - padR + 24;
+  ctx.fillStyle = '#4a9'; ctx.beginPath(); ctx.arc(px, mid, 5, 0, 7); ctx.fill();
+  ctx.save(); ctx.translate(px + 14, mid); ctx.rotate(-Math.PI / 2); ctx.fillText('100%', 0, 0); ctx.restore();
+  ctx.fillStyle = '#ca6'; ctx.textAlign = 'left'; ctx.fillText('↑ OVERSIZED', padL, 12);
+  ctx.fillStyle = '#6ac'; ctx.fillText('↓ UNDERSIZED', padL, H - 34 + 4);
+
+  points = [];
+  // Spread points that land on the same spot into a little column.
+  const used = {};
+  for (const e of shown) {
+    const x = xOf(errorOf(e)), slot = Math.round(x / 10) + e.side;
+    used[slot] = (used[slot] || 0) + 1;
+    const dy = 18 + (used[slot] - 1) * 13;
+    const y = e.side === 'over' ? mid - dy : mid + dy;
+    const key = e.side + e.rank, hl = key === highlighted;
+    ctx.fillStyle = e.side === 'over' ? '#ca6' : '#6ac';
+    ctx.globalAlpha = e.marks.includes('µ') ? 0.55 : 1;
+    ctx.beginPath(); ctx.arc(x, y, hl ? 7 : 4.5, 0, 7); ctx.fill();
+    ctx.globalAlpha = 1;
+    if (hl) { ctx.strokeStyle = '#4a9'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 10, 0, 7); ctx.stroke(); ctx.lineWidth = 1; }
+    points.push({x, y, e, key});
+  }
+}
+
+function nearest(ev) {
+  const r = $('ladder').getBoundingClientRect(), mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  let best = null, bd = 400;
+  for (const p of points) { const d = (p.x - mx) ** 2 + (p.y - my) ** 2; if (d < bd) { bd = d; best = p; } }
+  return best;
+}
+function describe(p) {
+  const e = p.e;
+  return `${e.side === 'over' ? 'Oversized' : 'Undersized'} #${e.rank} · ${e.marks ? e.marks + ' ' : ''}${e.holder} · ${e.acc}% · ${e.circles} circles, ${e.lines} lines${e.method ? ' · ' + e.method : ''}`;
+}
+$('ladder').addEventListener('mousemove', ev => { const p = nearest(ev); $('tip').textContent = p ? describe(p) : ' '; });
+$('ladder').addEventListener('click', ev => {
+  const p = nearest(ev); if (!p) return;
+  highlighted = p.key; $('tip').textContent = describe(p); mark(); drawLadder();
+  const tr = document.querySelector(`#table tr[data-key="${p.key}"]`); if (tr) tr.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+});
+
+pick();
+</script>
+</body>
+</html>

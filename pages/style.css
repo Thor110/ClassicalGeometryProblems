@@ -1,0 +1,92 @@
+/* The shared look of the Classical Geometry Problems website (index.html, pages/).
+   It follows the Potentia and Inscribed Viewfinder Suite sites: a dark page, Courier New,
+   uppercase spaced labels, thin bordered boxes, and green / amber / red for the readouts. */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:#0a0a0f;
+  color:#e0ddd8;
+  font-family:'Courier New',monospace;
+  font-size:16px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:32px;
+}
+body.hub{justify-content:center;}
+h1{font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:#666;margin-bottom:12px;text-align:center;font-weight:normal;}
+.sub{font-size:16px;color:#444;margin-bottom:24px;letter-spacing:0.15em;text-align:center;max-width:1000px;line-height:1.6;}
+
+.box{width:100%;max-width:1000px;border:1px solid #2a2a3a;background:#0d0d14;padding:24px;margin-bottom:24px;}
+.box.narrow{max-width:700px;}
+.box-title{font-size:16px;text-transform:uppercase;letter-spacing:0.2em;color:#666;margin-bottom:12px;text-align:center;}
+.box-text{font-size:16px;color:#b0aca5;line-height:1.6;margin-bottom:12px;text-align:justify;}
+.box-text:last-child{margin-bottom:0;}
+.box ul,.box ol{color:#b0aca5;line-height:1.6;margin:0 0 12px 24px;}
+.box li{margin-bottom:6px;}
+.box a,.link{color:#ccc;}
+.box a:hover,.link:hover{color:#fff;}
+.box code,.mono{color:#e0ddd8;background:#111118;padding:0 4px;}
+.quote{border-left:2px solid #2a2a3a;padding-left:16px;color:#888;font-style:italic;}
+
+.section-label{font-size:16px;text-transform:uppercase;letter-spacing:0.2em;color:#444;margin:8px 0 16px;text-align:center;}
+
+.notice{width:100%;max-width:700px;border:1px solid #2a2a3a;background:#0d0d14;padding:16px 20px;margin:8px 0 24px;color:#666;font-size:14px;line-height:1.6;text-align:center;letter-spacing:0.05em;}
+.notice-title{text-transform:uppercase;letter-spacing:0.2em;color:#555;margin-bottom:6px;}
+
+.nav-group{display:flex;flex-direction:column;gap:12px;width:100%;max-width:700px;margin-bottom:24px;}
+.btn-link,button,.tab{
+  display:block;text-decoration:none;background:transparent;border:1px solid #2a2a3a;color:#888;
+  padding:14px 20px;font-family:'Courier New',monospace;font-size:16px;letter-spacing:0.15em;
+  cursor:pointer;text-transform:uppercase;text-align:center;transition:all 0.15s;
+}
+.btn-link:hover,button:hover,.tab:hover{border-color:#555;color:#ccc;background:#111;}
+button.small,.tab{padding:8px 14px;font-size:14px;letter-spacing:0.1em;}
+button.active,.tab.active{border-color:#4a9;color:#4a9;}
+button:disabled{opacity:0.35;cursor:default;}
+button:disabled:hover{border-color:#2a2a3a;color:#888;background:transparent;}
+
+.tabs,.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;max-width:1000px;margin-bottom:16px;}
+
+input,select,textarea{
+  background:#0d0d14;border:1px solid #2a2a3a;color:#e0ddd8;padding:8px 10px;
+  font-family:'Courier New',monospace;font-size:15px;width:100%;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#555;}
+textarea{min-height:90px;resize:vertical;line-height:1.5;}
+label{display:block;font-size:13px;color:#666;letter-spacing:0.12em;text-transform:uppercase;margin:12px 0 4px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+
+/* Readouts, as in the viewfinder suite. */
+.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;width:100%;margin-top:12px;}
+.meter{background:#0a0a0f;border:1px solid #1a1a24;padding:8px 10px;}
+.mlabel{font-size:12px;color:#55556a;letter-spacing:0.1em;text-transform:uppercase;}
+.mval{font-size:17px;font-weight:bold;color:#888;margin-top:2px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;}
+.good{color:#4a9;} .warm{color:#ca6;} .hot{color:#e55;}
+
+canvas{display:block;background:#0d0d14;border:1px solid #1e1e2a;width:100%;}
+
+/* Approximation chart tables. */
+.table-wrap{width:100%;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:15px;color:#b0aca5;}
+th{font-weight:normal;font-size:13px;text-transform:uppercase;letter-spacing:0.12em;color:#666;text-align:left;padding:8px;border-bottom:1px solid #2a2a3a;white-space:nowrap;}
+td{padding:8px;border-bottom:1px solid #16161f;white-space:nowrap;font-variant-numeric:tabular-nums;}
+tr.perfect td{color:#4a9;border-top:1px solid #2a4a3a;border-bottom:1px solid #2a4a3a;text-align:center;letter-spacing:0.2em;text-transform:uppercase;}
+tr.group td{color:#555;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;padding-top:16px;}
+td.acc{color:#e0ddd8;font-weight:bold;}
+td.precise{color:#555;font-size:13px;}
+.mark{display:inline-block;min-width:1.2em;color:#ca6;}
+.dir-over{color:#ca6;} .dir-under{color:#6ac;}
+.muted{color:#555;}
+.small-text{font-size:14px;color:#666;line-height:1.6;}
+
+.footer{margin-top:16px;font-size:16px;color:#222;letter-spacing:0.1em;text-transform:uppercase;text-align:center;}
+
+/* On a phone, long titles and figures wrap rather than push the page sideways. */
+@media (max-width:720px){
+  body{padding:16px;}
+  h1,.sub,.section-label,.btn-link,.footer{white-space:normal;overflow-wrap:anywhere;}
+  .grid2{grid-template-columns:1fr;}
+  .box{padding:16px;}
+  .box-text{text-align:left;}
+}

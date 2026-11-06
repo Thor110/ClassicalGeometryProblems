@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Geometry Problems // Submit An Approximation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #out{min-height:220px;font-size:14px;color:#b0aca5;}
+  .presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+  .presets button{padding:4px 10px;font-size:13px;letter-spacing:0.05em;text-transform:none;}
+  #verdict{margin-top:12px;text-align:center;letter-spacing:0.08em;min-height:1.6em;}
+</style>
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Submit An Approximation</h1>
+<div class="sub">
+  Found a construction? Measure it, write it up, and add it to the charts. Every honest attempt is welcome.
+</div>
+
+<div class="box">
+  <div class="box-title">How To Submit</div>
+  <ol>
+    <li>Draw your construction in <a href="https://www.geogebra.org/geometry" target="_blank" rel="noopener">GeoGebra</a> using only circles and lines: straightedge and compass, no measuring.</li>
+    <li>Measure the constructed value and the true value with GeoGebra's tools, and work out the accuracy with the calculator below.</li>
+    <li>Fill in the form below. It writes your submission in the archive's <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_TEMPLATE.md" target="_blank" rel="noopener">template</a>.</li>
+    <li>Open it as a GitHub issue with the button below, or as a pull request adding your <code>.ggb</code> and <code>.md</code> files beside the others. Include a public GeoGebra link so anyone can check it.</li>
+  </ol>
+  <div class="box-text">
+    Not sure it's good enough? Submit it anyway. A first attempt at 95% teaches as much as a record, and the charts have 15 places on each side for a reason.
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">Accuracy Calculator</div>
+  <div class="box-text" style="text-align:center;">
+    accuracy = 100 − |constructed − true| ÷ true × 100, truncated to three decimal places, never rounded.
+  </div>
+  <div class="grid2">
+    <div>
+      <label for="cVal">Constructed value</label>
+      <input id="cVal" inputmode="decimal" placeholder="e.g. 6.295357530626529">
+    </div>
+    <div>
+      <label for="tVal">True value</label>
+      <input id="tVal" inputmode="decimal" placeholder="e.g. 6.283185307179586">
+      <div class="presets" id="presets"></div>
+    </div>
+    <div>
+      <label for="radius">Radius or edge you measured against (optional)</label>
+      <input id="radius" inputmode="decimal" value="1">
+    </div>
+    <div>
+      <label for="calcProblem">Compare against chart</label>
+      <select id="calcProblem"></select>
+    </div>
+    <div>
+      <label for="cCircles">Circles</label>
+      <input id="cCircles" inputmode="numeric" placeholder="e.g. 9">
+    </div>
+    <div>
+      <label for="cLines">Lines</label>
+      <input id="cLines" inputmode="numeric" placeholder="e.g. 13">
+    </div>
+  </div>
+  <div class="meters" id="meters"></div>
+  <div id="verdict"></div>
+</div>
+
+<div class="box">
+  <div class="box-title">Submission Builder</div>
+  <div class="grid2">
+    <div><label for="fProblem">Problem</label><select id="fProblem"></select></div>
+    <div><label for="fMethod">Method name</label><input id="fMethod" placeholder="e.g. Circling the Square v3"></div>
+    <div><label for="fAuthor">Author (name or pseudonym)</label><input id="fAuthor"></div>
+    <div><label for="fDate">Date (DD-MM-YYYY)</label><input id="fDate"></div>
+    <div><label for="fVerify">Verification method</label><input id="fVerify" value="GeoGebra measuring tools"></div>
+    <div><label for="fFiles">File(s) and GeoGebra link</label><input id="fFiles" placeholder="method.ggb, https://www.geogebra.org/geometry/..."></div>
+  </div>
+  <label for="fDesc">Description</label>
+  <textarea id="fDesc" placeholder="The geometric idea behind the construction, and how it differs from existing methods."></textarea>
+  <label for="fNotes">Notes / limitations</label>
+  <textarea id="fNotes" placeholder="e.g. only valid for angles between 90° and 180°, micro scale steps, etc."></textarea>
+  <div class="small-text" style="margin-top:8px;">Accuracy, oversized or undersized, circles and lines come from the calculator above.</div>
+  <label for="out">Your submission</label>
+  <textarea id="out" readonly></textarea>
+  <div class="controls" style="margin-top:12px;">
+    <button class="small" id="copy">Copy Markdown</button>
+    <button class="small" id="issue">Open As GitHub Issue</button>
+    <button class="small" id="save">Download .md</button>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">The Ruleset</div>
+  <ul>
+    <li><b>Base ruleset</b>: at most 25 circles and 40 lines.</li>
+    <li><b>Extended ruleset</b>: at most 49 circles and 80 lines, for constructions at 99.91% and above.</li>
+    <li><b>Range</b>: 95% minimum, 100% maximum.</li>
+    <li><b>Counted</b>: circles and lines. <b>Not counted</b>: macro scale midpoints, those easy to reproduce on paper.</li>
+    <li><b>Key marks</b>: ~ contested, @ too simple, µ micro scale edits.</li>
+  </ul>
+  <div class="box-text">
+    If your GeoGebra file gives a more precise readout than three decimal places, include it as well. <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md" target="_blank" rel="noopener">Full ruleset</a>.
+  </div>
+</div>
+
+<div class="nav-group">
+  <a href="charts.html" class="btn-link">Approximation Charts</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<script src="data.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const PRESETS = [['π', Math.PI], ['2π', 2 * Math.PI], ['√π', Math.sqrt(Math.PI)], ['∛2', Math.cbrt(2)], ['π ÷ 4', Math.PI / 4]];
+for (const [label, v] of PRESETS) {
+  const b = document.createElement('button');
+  b.textContent = label; b.title = v.toPrecision(16);
+  b.onclick = () => { $('tVal').value = v.toPrecision(16); calc(); };
+  $('presets').appendChild(b);
+}
+for (const p of PROBLEMS) {
+  for (const sel of ['calcProblem', 'fProblem']) $(sel).add(new Option(p.n + '. ' + p.name, p.id));
+}
+$('fProblem').add(new Option('6. π Approximation', 'pi'));
+const d = new Date();
+$('fDate').value = [d.getDate(), d.getMonth() + 1].map(x => String(x).padStart(2, '0')).join('-') + '-' + d.getFullYear();
+
+const num = id => parseFloat(($(id).value || '').replace(/,/g, ''));
+let result = null;
+
+function calc() {
+  const r = num('radius') || 1, c = num('cVal') / r, t = num('tVal') / r;
+  const circles = parseInt($('cCircles').value), lines = parseInt($('cLines').value);
+  result = null;
+  if (!(c > 0) || !(t > 0)) {
+    $('meters').innerHTML = ''; $('verdict').textContent = 'Enter a constructed value and a true value.';
+    $('verdict').className = 'muted'; build(); return;
+  }
+  const acc = accuracyOf(c, t), side = c > t ? 'over' : c < t ? 'under' : 'exact';
+  const p = PROBLEMS.find(x => x.id === $('calcProblem').value);
+  const rank = side === 'exact' ? '—' : 1 + p.entries.filter(e => e.side === side && e.value > parseFloat(truncate(acc, 3))).length;
+  const extended = acc >= 99.91;
+  let rules = 'enter circles and lines', rc = '';
+  if (!isNaN(circles) && !isNaN(lines)) {
+    if (circles <= 25 && lines <= 40) { rules = 'base'; rc = 'good'; }
+    else if (circles <= 49 && lines <= 80) { rules = extended ? 'extended' : 'over base limits'; rc = extended ? 'good' : 'hot'; }
+    else { rules = 'over limits'; rc = 'hot'; }
+  }
+  result = {acc, side, circles, lines};
+  $('meters').innerHTML = [
+    ['Accuracy', truncate(acc, 3) + '%', acc >= 95 ? 'good' : 'hot'],
+    ['Precise readout', acc.toFixed(12) + '%', ''],
+    ['Side', side === 'over' ? 'Oversized' : side === 'under' ? 'Undersized' : 'Exact?', 'warm'],
+    ['Relative gap', 'one part in ' + (side === 'exact' ? '∞' : Math.round(t / Math.abs(c - t)).toLocaleString()), ''],
+    ['Would chart at', side === 'exact' ? '—' : '#' + rank + ' ' + side + 'sized', rank === 1 ? 'good' : ''],
+    ['Ruleset', rules, rc],
+  ].map(([l, v, cl]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${cl}">${v}</div></div>`).join('');
+
+  const v = $('verdict');
+  if (side === 'exact') { v.textContent = 'Exactly equal at this precision. Check more decimal places: GeoGebra rounds its readouts.'; v.className = 'warm'; }
+  else if (acc < 95) { v.textContent = 'Below the 95% minimum for the charts. Keep going: most charted methods started further out than this.'; v.className = 'warm'; }
+  else if (rank === 1) { v.textContent = 'This would be the closest ' + side + 'sized method on the chart. Please submit it!'; v.className = 'good'; }
+  else { v.textContent = 'Within the charts\' range. Please submit it.'; v.className = 'good'; }
+  build();
+}
+
+function build() {
+  const f = id => $(id).value.trim();
+  const sel = $('fProblem'), problem = sel.options[sel.selectedIndex].text.replace(/^\d+\.\s*/, '');
+  const r = result;
+  const md = `**Problem:** ${problem}
+
+**Method Name:**
+${f('fMethod')}
+
+**Author:**
+${[f('fAuthor'), f('fDate')].filter(Boolean).join(' - ')}
+
+**Accuracy (%):**
+${r ? truncate(r.acc, 3) + (r.acc.toFixed(12) !== truncate(r.acc, 3) ? '\n(precise readout: ' + r.acc.toFixed(12) + ')' : '') : ''}
+
+**Oversized / Undersized:**
+${r ? (r.side === 'over' ? 'Oversized.' : r.side === 'under' ? 'Undersized.' : '') : ''}
+
+**Number of Circles:**
+${r && !isNaN(r.circles) ? r.circles : ''}
+
+**Number of Lines:**
+${r && !isNaN(r.lines) ? r.lines : ''}
+
+**Verification Method:**
+${f('fVerify')}
+
+**File(s):**
+${f('fFiles')}
+
+**Description:**
+${f('fDesc')}
+
+**Notes / Limitations:**
+${f('fNotes')}
+`;
+  $('out').value = md;
+  return md;
+}
+
+document.querySelectorAll('input, select, textarea:not(#out)').forEach(el => el.addEventListener('input', calc));
+$('calcProblem').addEventListener('input', () => { $('fProblem').value = $('calcProblem').value; build(); });
+$('copy').onclick = async () => {
+  try { await navigator.clipboard.writeText(build()); $('copy').textContent = 'Copied'; }
+  catch { $('out').select(); document.execCommand('copy'); $('copy').textContent = 'Copied'; }
+  setTimeout(() => $('copy').textContent = 'Copy Markdown', 1500);
+};
+$('issue').onclick = () => {
+  const sel = $('fProblem'), title = 'Submission: ' + sel.options[sel.selectedIndex].text.replace(/^\d+\.\s*/, '') +
+    (result ? ' · ' + truncate(result.acc, 3) + '%' : '') + ($('fMethod').value ? ' · ' + $('fMethod').value : '');
+  window.open(REPO + '/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(build()), '_blank', 'noopener');
+};
+$('save').onclick = () => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([build()], {type: 'text/markdown'}));
+  a.download = (result ? truncate(result.acc, 3) : 'submission') + '.md';
+  a.click(); URL.revokeObjectURL(a.href);
+};
+calc();
+</script>
+</body>
+</html>

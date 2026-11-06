@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Geometry Problems // Mechanical Solutions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #cv{height:380px;}
+  .slrow{display:flex;align-items:center;gap:12px;font-size:14px;color:#666;width:100%;margin-top:12px;}
+  .slrow input[type=range]{flex:1;accent-color:#4a9;padding:0;border:none;}
+  .slrow span{min-width:70px;text-align:right;font-variant-numeric:tabular-nums;}
+  @media (max-width:720px){ #cv{height:300px;} }
+</style>
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Mechanical Solutions</h1>
+<div class="sub">
+  Relax the rules, with a rope, a marked ruler or a special curve, and exact answers become possible. Kept apart from the Euclidean charts.
+</div>
+
+<div class="box">
+  <div class="box-title">Rope Around The Clock</div>
+  <div class="box-text">
+    Edward James Gordon's rope and peg jig (17-08-2025) divides a length of rope into exact thirds. Lay the rope around a circular template to take up the arc of an angle, divide it on the jig, and lay it back: the angle is trisected. The same idea transfers a whole circumference or any arc to a straight line, so it also serves for rectifying the circle, arc rectification and π. It is exact in principle, apart from human error, and it lies outside the Euclidean rules because it uses a rope, pegs and a template.
+  </div>
+  <canvas id="cv"></canvas>
+  <div class="slrow"><span style="text-align:left;">Angle</span><input type="range" id="ang" min="10" max="350" value="100"><span id="angV">100°</span></div>
+  <div class="controls" style="margin-top:12px;" id="phases"></div>
+  <div class="box-text" id="phaseText" style="min-height:3.2em;margin-top:8px;"></div>
+</div>
+
+<div class="box">
+  <div class="box-title">The Steps</div>
+  <ol>
+    <li>Construct the angle you wish to trisect, with vertex O and points A and B on its arms.</li>
+    <li>Lay a circular template of any size centred on O.</li>
+    <li>Measure a rope around the template's edge from A to B, and mark both ends.</li>
+    <li>Secure the start of the rope at the first peg of the jig, weave it around the second and third pegs, and secure the end at the fourth.</li>
+    <li>Pull the two parts of the jig apart. The rope settles into three equal lengths.</li>
+    <li>Mark the rope at the second and third pegs.</li>
+    <li>Lay the rope back along the arc from A to B, and transfer the two marks onto it.</li>
+    <li>Draw rays from O through the two marks. They trisect the angle.</li>
+  </ol>
+  <div class="box-text">
+    The jig extends to fifths, sevenths and ninths, and to any odd division. The paper also asks whether it may be a rediscovery of the ancient mesolabe, the "mean-taker".
+    <a href="../Mechanical%20Solutions/07%20Accompanying%20Papers/Rope%20Around%20The%20Clock.pdf" target="_blank">Read the paper (PDF) →</a>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">By Problem</div>
+  <ul>
+    <li><b>1. Squaring The Circle</b>: no mechanical solution has been submitted yet.</li>
+    <li><b>2. Trisecting An Angle</b>: Rope Around The Clock.</li>
+    <li><b>3. Doubling The Cube</b>: no mechanical solution has been submitted yet.</li>
+    <li><b>4. Rectifying The Circle</b>: Rope Around The Clock, laid around the whole circle.</li>
+    <li><b>5. Arc Rectification</b>: Rope Around The Clock, laid around the arc.</li>
+    <li><b>6. π Approximations</b>: Rope Around The Clock, halving the rectified circumference.</li>
+  </ul>
+</div>
+
+<div class="box">
+  <div class="box-title">Older Than Euclid's Rules</div>
+  <div class="box-text">
+    People have stepped outside the straightedge and compass for as long as they have studied these problems, and those steps opened whole fields of mathematics.
+  </div>
+  <ul>
+    <li><b>Hippias of Elis</b> (c. 420 BCE) drew the quadratrix, a curve that trisects any angle. Dinostratus later used it to square the circle.</li>
+    <li><b>Menaechmus</b> (c. 350 BCE) doubled the cube by intersecting curves that became known as the conic sections.</li>
+    <li><b>Archimedes</b> (c. 250 BCE) trisected angles with a marked straightedge (a neusis construction), and his spiral rectifies the circle.</li>
+    <li><b>Eratosthenes</b> (c. 230 BCE) built the mesolabe, a frame of sliding plates for finding the two mean proportionals that double the cube.</li>
+    <li><b>Nicomedes</b> (c. 200 BCE) used his conchoid curve to trisect angles and double the cube.</li>
+    <li><b>Hisashi Abe</b> (1980) published an exact trisection by paper folding.</li>
+  </ul>
+</div>
+
+<div class="nav-group">
+  <a href="submit.html" class="btn-link">Submit A Method</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const PHASES = [
+  ['Measure', 'Lay the rope around the circular template from A to B. Its length is the arc: r × θ.'],
+  ['Divide', 'Weave the rope on the jig and pull the boards apart. It settles into three equal lengths; mark the two division points.'],
+  ['Transfer', 'Lay the rope back on the arc. The marks fall at θ ÷ 3 and 2θ ÷ 3. Rays from O through them trisect the angle.'],
+];
+let phase = 0;
+PHASES.forEach(([name], i) => {
+  const b = document.createElement('button');
+  b.className = 'small'; b.textContent = (i + 1) + '. ' + name;
+  b.onclick = () => { phase = i; draw(); };
+  $('phases').appendChild(b);
+});
+$('ang').oninput = draw;
+window.addEventListener('resize', draw);
+
+function draw() {
+  const deg = +$('ang').value, th = deg * Math.PI / 180;
+  $('angV').textContent = deg + '°';
+  $('phaseText').textContent = PHASES[phase][1] + `  (θ = ${deg}°, each third ${(deg / 3).toFixed(2)}°)`;
+  document.querySelectorAll('#phases button').forEach((b, i) => b.classList.toggle('active', i === phase));
+
+  const cv = $('cv'), ctx = cv.getContext('2d'), dpr = window.devicePixelRatio || 1;
+  const W = cv.clientWidth, H = cv.clientHeight;
+  cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  ctx.font = '13px Courier New'; ctx.lineCap = 'round';
+
+  const wide = W > 600;
+  const ox = wide ? W * 0.3 : W / 2, oy = wide ? H * 0.52 : H * 0.36;
+  const r = Math.min(wide ? W * 0.17 : W * 0.3, H * 0.3);
+  const P = a => [ox + r * Math.cos(a), oy - r * Math.sin(a)];
+  const ray = (a, len, col, w) => { ctx.strokeStyle = col; ctx.lineWidth = w || 1; ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + len * Math.cos(a), oy - len * Math.sin(a)); ctx.stroke(); };
+  const dot = (p, col, label) => { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(p[0], p[1], 3.5, 0, 7); ctx.fill(); if (label) ctx.fillText(label, p[0] + 7, p[1] - 7); };
+
+  // The template and the angle.
+  ctx.strokeStyle = '#2a2a3a'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(ox, oy, r, 0, 7); ctx.stroke();
+  ray(0, r * 1.45, '#888'); ray(th, r * 1.45, '#888');
+  dot([ox, oy], '#888', 'O'); dot(P(0), '#888', 'A'); dot(P(th), '#888', 'B');
+
+  // The rope on the arc.
+  if (phase !== 1) {
+    ctx.strokeStyle = '#ca6'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(ox, oy, r, -th, 0); ctx.stroke();
+  }
+  // The straight rope on the jig.
+  const ropeLen = r * th, maxLen = wide ? W * 0.42 : W * 0.86, k = Math.min(1, maxLen / ropeLen);
+  const sx = wide ? W * 0.54 : (W - ropeLen * k) / 2, sy = wide ? H * 0.52 : H * 0.84;
+  if (phase >= 1) {
+    ctx.strokeStyle = phase === 1 ? '#ca6' : '#4a4a5c'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx + ropeLen * k, sy); ctx.stroke();
+    for (let i = 0; i <= 3; i++) {                    // the four pegs
+      const x = sx + ropeLen * k * i / 3;
+      ctx.fillStyle = i === 0 || i === 3 ? '#888' : '#4a9';
+      ctx.beginPath(); ctx.arc(x, sy, i === 0 || i === 3 ? 4 : 5, 0, 7); ctx.fill();
+    }
+    ctx.fillStyle = '#666'; ctx.textAlign = 'center';
+    for (let i = 0; i < 3; i++) ctx.fillText('⅓', sx + ropeLen * k * (i + 0.5) / 3, sy - 12);
+    ctx.fillText('rope on the jig' + (k < 1 ? ' (drawn ×' + k.toFixed(2) + ')' : ''), sx + ropeLen * k / 2, sy + 24);
+    ctx.textAlign = 'left';
+  }
+  // The marks back on the arc, and the trisecting rays.
+  if (phase === 2) {
+    for (const f of [1 / 3, 2 / 3]) { ray(th * f, r * 1.45, '#4a9', 1.5); dot(P(th * f), '#4a9'); }
+    ctx.strokeStyle = '#4a9'; ctx.lineWidth = 1;
+    for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.arc(ox, oy, r * 0.28 + i * 5, -th * (i + 1) / 3, -th * i / 3); ctx.stroke(); }
+  }
+}
+draw();
+</script>
+</body>
+</html>

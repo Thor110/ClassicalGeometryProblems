@@ -4,6 +4,8 @@ An open archive for documenting Euclidean approximations of the classical geomet
 
 This archive is not intended to prove the classical problems possible, but to document all meaningful geometric approximations, their accuracy, and their construction efficiency, so that future work may be compared transparently.
 
+**[Visit the website](https://thor110.github.io/ClassicalGeometryProblems/)**: interactive approximation charts, step by step constructions, an accuracy calculator and submission builder, and [why trying the impossible is worthwhile](https://thor110.github.io/ClassicalGeometryProblems/pages/why-try.html).
+
 It is my hope that this repository might be able to help alleviate the burden imparted on academic journals, mathematicians or anyone else that finds themselves regularly receiving claims of solving the classic geometry problems.
 
 The author has spent considerable time exploring these constructions both as an intellectual challenge and as a creative exercise in geometry.

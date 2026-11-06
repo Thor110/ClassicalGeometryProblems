@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Geometry Problems // The Six Problems</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Classical Geometry Problems // The Six Problems</h1>
+<div class="sub">
+  What each problem asks, why no exact construction exists, and what an approximation is aiming for.
+</div>
+
+<div class="box">
+  <div class="box-title">The Rules</div>
+  <div class="box-text">
+    Every approximation in this archive stays strictly Euclidean: an unmarked straightedge and a compass, and no measuring. You may draw a line through two points you already have, draw a circle about a point through another point, and mark where lines and circles cross. That is all.
+  </div>
+  <div class="box-text">
+    Those moves can only ever produce lengths built from whole numbers by adding, subtracting, multiplying, dividing and taking square roots. That single fact is the reason each problem below has no exact answer, and the reason the approximations are interesting at all.
+  </div>
+</div>
+
+<div id="list" style="width:100%;max-width:1000px;"></div>
+
+<div class="box">
+  <div class="box-title">6. π Approximations</div>
+  <div class="box-text">
+    Construct a length of π times a given radius. Any method for rectifying the circle gives one: halve the constructed circumference. Kochański's construction of 1685 is still one of the most elegant, and is walked through on the <a href="constructions.html">constructions page</a>.
+  </div>
+  <div class="box-text">
+    <a href="charts.html#rtc">See the circle rectification chart →</a>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">Understanding Impossibility</div>
+  <div class="box-text">
+    Straightedge and compass constructions generate only numbers reachable through nested square roots of rational numbers. Such numbers are always roots of polynomials whose degree is a power of two.
+  </div>
+  <ul>
+    <li><b>Squaring and rectifying the circle</b> need π (or √π). Lindemann proved in 1882 that π is transcendental: it is not the root of any polynomial with rational coefficients, so it is out of reach.</li>
+    <li><b>Doubling the cube</b> needs ∛2, a root of x³ − 2. <b>Trisecting an angle</b> in general needs roots of cubics such as 8x³ − 6x − 1 (for 60°). Neither cubic factors, so their degree is 3, not a power of two. Pierre Wantzel proved both impossible in 1837.</li>
+    <li>Some angles can be trisected exactly (90° can, as 30° is constructible). The impossibility is that no single method works for <i>every</i> angle.</li>
+  </ul>
+  <div class="box-text">
+    So every method in this archive is an approximation, with an accuracy that can be measured and compared. Relax the rules (a marked ruler, a rope, a special curve) and exact answers do exist. Those are kept separately under <a href="mechanical.html">mechanical solutions</a>.
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">Terminology</div>
+  <ul>
+    <li><b>Rational number</b>: a number expressible as a ratio of two integers, such as 22/7.</li>
+    <li><b>Irrational number</b>: a number that cannot be written as a ratio of integers, such as √2.</li>
+    <li><b>Constructible number</b>: a length reachable from a unit length with straightedge and compass. √2 is constructible; ∛2 is not.</li>
+    <li><b>Transcendental number</b>: a number that is not the root of any non-zero polynomial with rational coefficients, such as π or e.</li>
+    <li><b>Oversized / undersized</b>: whether a construction lands above or below the true value.</li>
+    <li><b>Accuracy</b>: 100 − |constructed − true| ÷ true × 100, reported to three decimal places, truncated rather than rounded.</li>
+  </ul>
+</div>
+
+<div class="box">
+  <div class="box-title">Useful Resources</div>
+  <ul>
+    <li><a href="https://www.geogebra.org/geometry" target="_blank" rel="noopener">GeoGebra Geometry</a>: a free suite for drawing, exploring and measuring constructions. Every file in this archive opens in it.</li>
+    <li><a href="https://people.math.harvard.edu/~ctm/home/text/class/harvard/113/97/html/euclid.html" target="_blank" rel="noopener">Euclid's Postulates</a>.</li>
+    <li><a href="https://arxiv.org/pdf/1111.1739" target="_blank" rel="noopener">Henryk Fuks: Adam Adamandy Kochański's approximations of π, reconstruction of the algorithm</a>.</li>
+    <li><a href="https://www.youtube.com/watch?v=NinrTW1Bx2Y" target="_blank" rel="noopener">Stand-up Maths</a>, the video that led to the Rope Around The Clock jig.</li>
+  </ul>
+</div>
+
+<div class="nav-group">
+  <a href="charts.html" class="btn-link">Approximation Charts</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<script src="data.js"></script>
+<script>
+// One box per charted problem, with its best oversized and undersized entries.
+const list = document.getElementById('list');
+for (const p of PROBLEMS) {
+  const best = side => p.entries.filter(e => e.side === side).sort((a, b) => b.value - a.value)[0];
+  const line = (label, e) => e
+    ? `<li>${label}: <b>${e.acc}%</b> by ${e.holder}${e.method ? ' (' + e.method + ')' : ''}</li>`
+    : `<li>${label}: <span class="muted">none charted yet, the first could be yours</span></li>`;
+  const box = document.createElement('div');
+  box.className = 'box';
+  box.innerHTML = `
+    <div class="box-title">${p.n}. ${p.name}</div>
+    <div class="box-text">${p.task} <span class="muted">Target: ${p.target}</span></div>
+    <div class="box-text">${p.why}</div>
+    <ul>${line('Best oversized', best('over'))}${line('Best undersized', best('under'))}</ul>
+    <div class="box-text">
+      <a href="charts.html#${p.id}">Open the chart →</a> &nbsp;
+      <a href="${repoFile(p.folder + '/' + p.chart + '.pdf')}" target="_blank">Chart PDF</a> &nbsp;
+      <a href="${repoFile(p.folder + '/' + p.chart + '.ods')}">Chart .ods</a>
+    </div>`;
+  list.appendChild(box);
+}
+</script>
+</body>
+</html>
