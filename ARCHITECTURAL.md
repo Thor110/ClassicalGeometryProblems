@@ -86,8 +86,12 @@ below against the current charts.
   large just to transfer its lines and circles to the ground. The walkable path is what made it so
   large.
 - Finding constructions that can actually be built may be a search of its own.
-- It would be built by old-world methods: every circle and line made for real, with cords, stakes
-  and a rope compass, not surveying instruments.
+- Every circle and line of the construction must exist for real, as part of the floor plan and the
+  architecture, and there must be a visible gap between the two lines: preferably room to stand
+  in, but a pencil's width would do, as long as it can be seen. It need not be built strictly by
+  old-world methods.
+- Edward recalls the early calculations finding that the construction would be too large to fit on
+  the face of the Earth.
 
 ### Why the best constructions would need a planet
 
@@ -137,6 +141,47 @@ and the midpoint T, the near-perfect marker, lands 87 mm from the true end, ± 5
 This is the construction the early estimate found too large to build with a visible gap. With
 modern surveying it would take a plaza the size of a town; built by old-world methods, it cannot
 show its gap at any size (below).
+
+### Every line in the floor: would it fit on the Earth?
+
+Built in the floor, with every circle and line inlaid, the question is how large it must be for the
+gap between the two lines to be seen. The table gives the plaza's width (the walkways are π times
+longer) for three gaps: a pencil's width (7 mm), room to stand (0.5 m) and a path (1.2 m).
+
+| The two lines | Gap, as a share of the circumference | Pencil's width | Room to stand | A path |
+|---|---|---|---|---|
+| Architectural Plan: Kochański's end and Edward's end | 0.0044% | 50 m | 4 km | 9 km |
+| Architectural Plan: its midpoint T and the true end | 0.00032% | 700 m | 50 km | 120 km |
+| 3/7 crossover and the true end | 0.0000035% | 64 km | 4,560 km | 10,940 km |
+| 3/7 crossover and Ramanujan (the best pair by people) | 0.0000035% | 63 km | 4,520 km | 10,840 km |
+
+The Earth sets two limits.
+
+- **It is round.** A floor that stays flat lifts clear of the ground at its edges: 0.3 m on a floor
+  4 km across, 1.6 m at 9 km, 80 m at 64 km, 283 m at 120 km. Laid on the ground instead, the floor
+  follows the curve, and circles and lines drawn on a curved surface no longer meet where they do on
+  paper. The curve's effect outgrows the gap once the plaza passes about 207 km across for the
+  Architectural Plan's two lines, 56 km for its midpoint, and only 6 km for the 3/7 crossover.
+- **It is only so big.** The Equator is 40,030 km long and the Earth 12,742 km across.
+
+So Edward's memory holds for the most accurate version. With the 3/7 crossover, room to stand needs
+walkways 14,300 km long, a third of the way round the world, and a 1.2 m path needs walkways
+34,400 km long, 86% of the Equator, on a plaza 86% as wide as the Earth. Long before that, from
+about 6 km across, the Earth's curve bends the construction by more than the gap it is meant to
+show. Even a pencil's width needs a flat floor 64 km across, standing 80 m clear of the ground at
+its edges. It does not fit on the face of the Earth.
+
+The Architectural Plan's own two lines, Kochański's end and Edward's, do fit. A pencil's width of
+gap needs a plaza 50 m across, and room to stand needs about 4 km, well inside the Earth's limits.
+Seen in the floor, though, the lines must also be placed more exactly than the gap is wide:
+
+- For the pencil's width on a 50 m plaza, every point placed to about 0.1 mm: workshop precision,
+  not a building site's.
+- For room to stand on a plaza 4 km across, modern surveying (5 to 10 mm a point) is enough: the gap
+  comes out at 0.5 m give or take 0.1 to 0.2 m.
+
+What does not fit is a visible gap between the Architectural Plan's midpoint and perfection: that
+needs 50 km for room to stand, just inside the Earth's curve, and 120 km for a path, beyond it.
 
 ### Old-world methods: the error grows with the work
 
