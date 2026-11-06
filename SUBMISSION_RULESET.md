@@ -5,7 +5,7 @@ These are the rules behind the keys and figures in the approximation charts.
 **Rules are subject to change.** Each change is listed under [Changes](#changes) with its date, and
 entries are re-checked against the current rules by `tools/verify.py`.
 
-Current version: **1.0 (November 2026)**
+Current version: **1.2 (November 2026)**
 
 ## Rulesets
 
@@ -23,12 +23,13 @@ Current version: **1.0 (November 2026)**
 
 - 95% minimum, 100% maximum. An entry that falls below 95% is kept on record, listed under its chart as below the minimum, but not ranked.
 - Accuracy is `100 − |constructed − true| ÷ true × 100`, worked out from full-precision values and truncated (never rounded) to three decimal places, or more where two entries would otherwise tie.
+- Every entry also records a **precise readout**, as many digits as can be trusted. `tools/verify.py` rebuilds the construction from its GeoGebra file in 50-digit arithmetic and records 32 significant digits. Where a starting point was placed on the given figure by hand (for example "a point on the circle"), GeoGebra stores it to about 16 digits, so for those entries the digits after about the fifteenth reflect where that point was stored rather than the construction itself.
 - **Squaring the circle** compares the square's area with the circle's area.
 - **Doubling the cube** compares the constructed cube's volume with twice the given cube's volume.
 - **Rectifying the circle** compares the constructed length with the circumference.
 - **Arc rectification** compares the constructed length with the arc's length.
 - **Trisecting an angle**: every one of the three parts must be a third of the angle, so the worst of the three sets the accuracy.
-- **Angle methods** (trisection, arc rectification) must work for any angle. Their accuracy is also measured across a sweep of angles, and the chart notes the range over which the method holds.
+- **Angle methods** (trisection, arc rectification) must work for any angle. Their accuracy is also measured across a sweep of angles, and the chart notes the range over which the method holds. The chart figure is the accuracy at the angle the file is drawn at. A general method, one with no point placed by eye, can be drawn at its worst angle between 30° and 150°, so that its figure holds for the whole of that range.
 
 ## Key
 
@@ -65,10 +66,14 @@ A step's size is the length of a segment or line drawn between two points, the d
 
 The test is applied by `tools/verify.py`. A construction can also be marked `µ` by hand when it relies on a small adjustment the test cannot see, with a note saying what it is.
 
+For information, the checker also reports each entry's **shallowest crossing**: the smallest angle at which two curves the result depends on cross. Below about 15° a crossing is hard to place accurately on paper, so the entry's notes say so. A crossing at 0°, where curves only touch, cannot be drawn at all, and such constructions are not accepted.
+
 ## Verification
 
 Each entry is **verified**, **self-verified**, **unverified** or **disputed**. People and AI verifiers are recorded separately. See [VERIFICATION.md](VERIFICATION.md).
 
 ## Changes
 
+- **1.2 (November 2026)**: chart figures for general angle methods, and the shallow crossing report.
+- **1.1 (November 2026)**: precise readouts are recorded to 32 significant digits, worked out in 50-digit arithmetic.
 - **1.0 (November 2026)**: the counting rules and the micro scale test were written down. Entries were recounted under them, and the accuracy rules for trisection (the worst third) and angle sweeps were added.

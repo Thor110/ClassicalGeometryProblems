@@ -7,7 +7,8 @@ Microscale Trisection
 Edward James Gordon - 07-11-2025
 
 **Accuracy (%):**
-99.99948805479345
+99.999
+(precise readout: 99.999488054774351825683597031182)
 
 **Oversized / Undersized:**
 Undersized

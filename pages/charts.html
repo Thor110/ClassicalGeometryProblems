@@ -173,7 +173,7 @@ function render() {
     return `<tr data-key="${e.side}${e.rank}" title="${title.replace(/"/g, '&quot;')}">
       <td>${e.rank}</td>
       <td><span class="mark">${e.marks || ''}</span></td>
-      <td>${e.holder}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
+      <td>${e.holder}${e.holder_kind === 'ai' ? ' <span class="badge">AI</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
       <td>${e.circles}</td><td>${e.lines}</td>
       <td class="acc">${e.acc}%</td>
       <td class="precise">${e.precise ? e.precise + '%' : ''}</td>

@@ -21,7 +21,8 @@ function statusOf(e) {
   const open = (e.disputes || []).filter(d => d.status === 'open');
   let status = 'unverified';
   if (open.length) status = 'disputed';
-  else if (independent.length || (ai && ai.status === 'reproduced')) status = 'verified';
+  else if (independent.length || (ai && ai.status === 'reproduced' && e.holder_kind !== 'ai')) status = 'verified';
+  else if (ai && ai.status === 'reproduced' && e.holder_kind === 'ai') status = 'self-verified';
   else if (people.length) status = 'self-verified';
   return {status, people, independent, ai, open};
 }

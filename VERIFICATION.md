@@ -36,11 +36,11 @@ An AI check is never counted as a person, and the website always labels it as AI
 
 | Name | Role | Since | How it verifies |
 |---|---|---|---|
-| Claude (Anthropic) | Independent automated checker | November 2026 | Runs [tools/verify.py](tools/verify.py), which rebuilds every GeoGebra file from its given objects with its own geometry code, flags any step that is not straightedge and compass, and recomputes the accuracy. |
+| Claude (Anthropic) | Independent automated checker | November 2026 | Runs [tools/verify.py](tools/verify.py), which rebuilds every GeoGebra file from its given objects with its own geometry code (in 50-digit arithmetic for the precise readouts), flags any step that is not straightedge and compass, counts it, and recomputes the accuracy. Its rebuilds are cross-checked against GeoGebra itself with [tools/geogebra_check.js](tools/geogebra_check.js). |
 
 What the AI check can and cannot do:
 
-- It checks the **GeoGebra file**, not drawings on paper, and not the step count (counting needs a person who knows the counting rules).
+- It checks the **GeoGebra file**, not drawings on paper. It counts steps under the counting rules, but a person should confirm any count that matters.
 - It cannot judge who found a construction first, or whether a method is "too simple".
 - It is reproducible: anyone can run `python tools/verify.py` and get the same result.
 - An AI may raise a dispute, but it never resolves one. People decide.
@@ -96,10 +96,15 @@ How a dispute runs:
 
 Disputes are about constructions and numbers, never about people. Mockery or personal remarks get an issue closed. The [archive's promise](https://thor110.github.io/ClassicalGeometryProblems/pages/why-try.html) applies to every exchange.
 
-## AI-assisted submissions
+## AI-assisted submissions and AI method holders
 
-Method holders are people. If an AI helped find or refine a construction, say so in the
-submission's notes. That keeps the record honest, and it is not held against the submission.
+If an AI helped find or refine a construction, say so in the submission's notes. That keeps the
+record honest, and it is not held against the submission.
+
+An AI system may also hold a method it found itself. It is listed under its name with an **AI**
+label on the chart, kept apart from people as verifiers are, and its entries need a person's
+verification like any other. An AI never verifies its own finds alone: its automated check is
+recorded, but the entry stays self-verified until a person or another verifier reproduces it.
 
 <!-- maintainer-list:start -->
 
@@ -107,7 +112,7 @@ submission's notes. That keeps the record honest, and it is not held against the
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (33)
+### Not verified by a person yet (56)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -136,20 +141,43 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, oversized 99.414% · Circling the Square (additional) (stc-over-99.414): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q3
 - [ ] Squaring The Circle, oversized 96.977% · Circling the Square (additional) (stc-over-96.977): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q2
 - [ ] Squaring The Circle, undersized 98.177% · Circling the Square (additional) (stc-under-98.177): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.377.ggb`, square q1
+- [ ] Squaring The Circle, oversized 99.922% · Search find: 6 circles, 4 lines (stc-over-99.922): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.922-Claude.ggb`
+- [ ] Squaring The Circle, oversized 99.9998% · Search find: 6 circles, 5 lines (stc-over-99.9998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9998-Claude.ggb`
+- [ ] Squaring The Circle, oversized 99.999999% · Search find: 9 circles, 6 lines (stc-over-99.999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.999999-Claude.ggb`
+- [ ] Squaring The Circle, undersized 99.99998% · Search find: 8 circles, 4 lines (stc-under-99.99998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.99998-Claude.ggb`
+- [ ] Squaring The Circle, undersized 99.99999% · Search find: 7 circles, 6 lines (stc-under-99.99999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.99999-Claude.ggb`
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
+- [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 99.051% · Search find: 4 circles, 4 lines (any angle) (taa-over-99.051): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.051-Claude.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
+- [ ] Doubling The Cube, oversized 99.919% · Search find: 4 circles (dtc-over-99.919): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.919-Claude.ggb`
+- [ ] Doubling The Cube, oversized 99.9998% · Search find: 4 circles, 1 line (dtc-over-99.9998): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.9998-Claude.ggb`
+- [ ] Doubling The Cube, undersized 99.999% · Search find: 4 circles, 2 lines (dtc-under-99.999): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.999-Claude.ggb`
+- [ ] Doubling The Cube, oversized 99.999982% · Search find: 5 circles, 2 lines (dtc-over-99.999982): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999982-Claude.ggb`
+- [ ] Doubling The Cube, oversized 99.999989% · Search find: 5 circles, 3 lines (dtc-over-99.999989): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999989-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.99999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.99999% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
+- [ ] Rectifying The Circle, oversized 99.992% · Search find: 4 circles, 1 lines (half the circumference) (rtc-over-99.992): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.992-Claude.ggb`
+- [ ] Rectifying The Circle, oversized 99.999999% · Search find: 5 circles, 2 lines (rtc-over-99.999999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999999-Claude.ggb`
+- [ ] Rectifying The Circle, undersized 99.99994% · Search find: 5 circles, 1 lines (rtc-under-99.99994): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99994-Claude.ggb`
+- [ ] Rectifying The Circle, undersized 99.999992% · Search find: 6 circles, 2 lines (half the circumference) (rtc-under-99.999992): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999992-Claude.ggb`
+- [ ] Rectifying The Circle, undersized 99.999998% · Search find: 5 circles, 4 lines (rtc-under-99.999998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999998-Claude.ggb`
+- [ ] Rectifying The Circle, undersized 99.9999990% · Search find: 7 circles, 4 lines (half the circumference) (rtc-under-99.9999990): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999990-Claude.ggb`
+- [ ] Rectifying The Circle, undersized 99.9999998% · Search find: 8 circles, 4 lines (half the circumference) (rtc-under-99.9999998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999998-Claude.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
+- [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
+- [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
+- [ ] Arc Rectification, oversized 99.751% · Search find: 4 circles, 1 lines (any arc) (ar-over-99.751): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.751-Claude.ggb`
 
 ### Flagged by the AI check (1)
 
 Each needs a decision: correct the entry, or explain why the check does not apply.
 
-- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
+- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
 ### µ marks to review (2)
 

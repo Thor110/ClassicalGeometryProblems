@@ -7,7 +7,8 @@
 Edward James Gordon
 
 **Accuracy (%):**
-99.93438016929967
+99.9343
+(precise readout: 99.934380169290796763267768559944)
 
 **Oversized / Undersized:**
 Oversized

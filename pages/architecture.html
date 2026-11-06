@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Geometry Problems // Architectural Vision</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Architectural Vision</h1>
+<div class="sub">
+  Build the best oversized and the best undersized constructions full size, side by side. The perfect result lies between them.
+</div>
+
+<div class="box">
+  <div class="box-title">The Idea</div>
+  <div class="box-text">
+    No straightedge and compass construction reaches the exact answer. But the charts hold the best construction that lands over the true value, and the best that lands under it, so the exact answer must lie between the two.
+  </div>
+  <div class="box-text">
+    So build both: a real building, monument or landscape with the two best constructions laid out full size as a pair of walkable lines. Walk one, then the other. In the gap between them lies the perfect result no construction can reach. The building makes the impossibility visible, and honours every attempt that narrowed the gap.
+  </div>
+  <div class="box-text small-text">An idea of Edward James Gordon's from early in this project, first talked through with an AI assistant and recorded here.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">One Problem At A Time</div>
+  <ul>
+    <li><b>Rectifying the circle</b>: a circular plaza, and beside it two straight walkways from a common threshold, as long as the best oversized and undersized constructions of its circumference. A marker stands in the gap where they end.</li>
+    <li><b>Squaring the circle</b>: a circular garden and, nested, the best oversized and undersized square courts of equal area. The true square's outline runs in the band between their walls.</li>
+    <li><b>Doubling the cube</b>: a cube pavilion beside two larger frames at the best oversized and undersized doubled edge.</li>
+    <li><b>Trisecting an angle</b>: a fan-shaped plaza, its angle set into the paving and divided by the best constructions as paths from the vertex.</li>
+    <li><b>Arc rectification</b>: an arched walkway, and beside it the straight paths that best match its length from either side.</li>
+  </ul>
+  <div class="box-text">One architect could also combine them: a circular plaza, a square court of the same area set into it, a cube pavilion beside a doubled one, and paths that trisect the plaza's angles, each with its pair of lines and its marker in between.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">How Close The Lines Are Today</div>
+  <div class="table-wrap"><table id="gaps"></table></div>
+  <div class="box-text" style="margin-top:12px;">Worked out live from the charts. At the scale of a building, the best constructions for the circle are closer together than any builder can lay a line. The monument can show that the lines meet at the limit of what can be built, or use constructions further apart, or a landscape kilometres across, so the gap is wide enough to walk between. Doubling the cube still has a gap you could stand in.</div>
+</div>
+
+<div class="nav-group">
+  <a href="charts.html" class="btn-link">Approximation Charts</a>
+  <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md" target="_blank" rel="noopener" class="btn-link">In The Repository</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
+<script src="data.js"></script>
+<script>
+// The gap between the best oversized and undersized entries, at a building's scale.
+const SCALES = {
+  rtc: {label: 'plaza 100 m across', true: Math.PI * 100, of: v => v, unit: 'circumference'},
+  stc: {label: 'circle 100 m across', true: Math.sqrt(Math.PI * 2500), of: v => Math.sqrt(v), unit: 'square side'},
+  dtc: {label: 'given cube edge 10 m', true: 10 * Math.cbrt(2), of: v => Math.cbrt(v), unit: 'doubled edge'},
+};
+const fmt = mm => Math.abs(mm) >= 10 ? mm.toFixed(0) + ' mm' : Math.abs(mm) >= 0.01 ? mm.toFixed(3) + ' mm' : (mm * 1000).toFixed(2) + ' µm';
+let rows = '<tr><th>Problem</th><th>Scale</th><th>Best oversized</th><th>Best undersized</th><th>Gap</th></tr>';
+for (const p of PROBLEMS) {
+  const S = SCALES[p.id]; if (!S) continue;
+  const best = side => p.entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact)[0];
+  const o = best('over'), u = best('under'); if (!o || !u) continue;
+  // accuracy is by area for the square and by volume for the cube, so take roots for the length
+  const len = (e, sign) => S.of(1 + sign * (100 - e.exact) / 100) * S.true;
+  const lo = len(o, 1), lu = len(u, -1);
+  rows += `<tr><td>${p.name}</td><td>${S.label}<br><span class="muted" style="font-size:13px;">true ${S.unit} ${S.true.toFixed(4)} m</span></td>
+    <td>${o.acc}% · ${o.holder}<br><span class="muted" style="font-size:13px;">+${fmt((lo - S.true) * 1000)}</span></td>
+    <td>${u.acc}% · ${u.holder}<br><span class="muted" style="font-size:13px;">−${fmt((S.true - lu) * 1000)}</span></td>
+    <td><b>${fmt((lo - lu) * 1000)}</b></td></tr>`;
+}
+document.getElementById('gaps').innerHTML = rows;
+</script>
+</body>
+</html>

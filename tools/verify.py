@@ -12,18 +12,34 @@ For each .ggb file this script:
 
 Run it from the repository root:   python tools/verify.py
 Write the results for the website:  python tools/verify.py --write
+Compare with GeoGebra itself:       node tools/geogebra_check.js, then python tools/verify.py --compare-geogebra
+Precise readouts need the mpmath package (pip install mpmath); everything else needs only Python 3.8+.
 It exits with status 1 if anything disagrees, so it can run on every push.
-Needs only Python 3.8 or later; nothing to install.
 """
 import json, math, re, sys, zipfile, glob, os, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# The numbers the geometry is done in: ordinary floats (about 16 significant digits) for the everyday
+# checks, or arbitrary precision (the mpmath package) for the precise readouts.
+_READ_CACHE = {}
+M, NUM = math, float
+def use_precision(digits=None):
+    """digits=None: ordinary floats. Otherwise work to that many significant digits with mpmath."""
+    global M, NUM
+    _READ_CACHE.clear()
+    if digits is None:
+        M, NUM = math, float
+    else:
+        import mpmath
+        mpmath.mp.dps = digits
+        M, NUM = mpmath, mpmath.mpf
 TOL = 1e-6          # relative tolerance when comparing a rebuilt object with the saved one
 
 # ---------------------------------------------------------------- geometry
 def P(x, y): return (x, y)
 def sub(a, b): return (a[0] - b[0], a[1] - b[1])
-def dist(a, b): return math.hypot(a[0] - b[0], a[1] - b[1])
+def dist(a, b): return M.hypot(a[0] - b[0], a[1] - b[1])
 def line_through(p, q):                     # a x + b y + c = 0
     a, b = q[1] - p[1], p[0] - q[0]
     return ('line', a, b, -(a * p[0] + b * p[1]))
@@ -40,20 +56,20 @@ def inter_ll(l, m):
     return [((l[2] * m[3] - l[3] * m[2]) / d, (l[3] * m[1] - l[1] * m[3]) / d)]
 def inter_lc(l, c):
     a, b, k = l[1], l[2], l[3]; (cx, cy), r = c[1], c[2]
-    n = math.hypot(a, b); a, b, k = a / n, b / n, k / n
+    n = M.hypot(a, b); a, b, k = a / n, b / n, k / n
     d = a * cx + b * cy + k
     foot = (cx - a * d, cy - b * d)
     h2 = r * r - d * d
     if h2 < -1e-9 * r * r: return []
-    h = math.sqrt(max(h2, 0))
+    h = M.sqrt(max(h2, 0))
     return [(foot[0] - b * h, foot[1] + a * h), (foot[0] + b * h, foot[1] - a * h)]
 def inter_cc(c1, c2):
     (x1, y1), r1 = c1[1], c1[2]; (x2, y2), r2 = c2[1], c2[2]
-    d = math.hypot(x2 - x1, y2 - y1)
+    d = M.hypot(x2 - x1, y2 - y1)
     if d == 0: return []
     a = (r1 * r1 - r2 * r2 + d * d) / (2 * d); h2 = r1 * r1 - a * a
     if h2 < -1e-9 * r1 * r1: return []
-    h = math.sqrt(max(h2, 0)); mx, my = x1 + a * (x2 - x1) / d, y1 + a * (y2 - y1) / d
+    h = M.sqrt(max(h2, 0)); mx, my = x1 + a * (x2 - x1) / d, y1 + a * (y2 - y1) / d
     return [(mx + h * (y2 - y1) / d, my - h * (x2 - x1) / d), (mx - h * (y2 - y1) / d, my + h * (x2 - x1) / d)]
 def as_curve(o):                            # segments and rays meet things as their full line
     if o[0] in ('segment', 'ray'): return line_through(o[1], o[2])
@@ -79,7 +95,7 @@ def shoelace(pts):
     return abs(sum(pts[i][0] * pts[i - 1][1] - pts[i - 1][0] * pts[i][1] for i in range(len(pts)))) / 2
 def angle_at(a, b, c):                      # the smaller angle ABC, in radians
     u, v = sub(a, b), sub(c, b)
-    return abs(math.atan2(u[0] * v[1] - u[1] * v[0], u[0] * v[0] + u[1] * v[1]))
+    return abs(M.atan2(u[0] * v[1] - u[1] * v[0], u[0] * v[0] + u[1] * v[1]))
 
 # ---------------------------------------------------------------- reading a .ggb
 def saved_object(el):
@@ -93,7 +109,7 @@ def saved_object(el):
         A = el['matrix']
         if abs(A[0] - A[1]) < 1e-9 * max(1, abs(A[0])) and abs(A[3]) < 1e-9 * max(1, abs(A[0])):
             cx, cy = -A[4] / A[0], -A[5] / A[0]
-            return ('circle', (cx, cy), math.sqrt(max(cx * cx + cy * cy - A[2] / A[0], 0)))
+            return ('circle', (cx, cy), M.sqrt(max(cx * cx + cy * cy - A[2] / A[0], 0)))
     return None
 
 def read(path):
@@ -108,11 +124,11 @@ def read(path):
         else:
             body = m.group(5); el = {'type': m.group(3)}
             c = re.search(r'<coords x="([^"]+)" y="([^"]+)" z="([^"]+)"', body)
-            if c: el['coords'] = tuple(float(v) for v in c.groups())
+            if c: el['coords'] = tuple(NUM(v) for v in c.groups())
             mt = re.search(r'<matrix A0="([^"]+)" A1="([^"]+)" A2="([^"]+)" A3="([^"]+)" A4="([^"]+)" A5="([^"]+)"', body)
-            if mt: el['matrix'] = tuple(float(v) for v in mt.groups())
+            if mt: el['matrix'] = tuple(NUM(v) for v in mt.groups())
             v = re.search(r'<value val="([^"]+)"', body)
-            if v: el['value'] = float(v.group(1))
+            if v: el['value'] = NUM(v.group(1))
             label = html_unescape(m.group(4)); elements[label] = el
             steps.append(('el', label))
     return steps, elements
@@ -125,11 +141,11 @@ def argument(text, obj, deps):
     m = re.fullmatch(r'Segment\[(.+), (.+)\]', text)
     if m: return ('len', dist(obj[m.group(1)][1], obj[m.group(2)][1])), deps.get(m.group(1), set()) | deps.get(m.group(2), set()), False
     m = re.fullmatch(r'Circle\[(.+), ([-0-9.eE]+)\]', text)
-    if m: return ('circle', obj[m.group(1)][1], float(m.group(2))), deps.get(m.group(1), set()), True
+    if m: return ('circle', obj[m.group(1)][1], NUM(m.group(2))), deps.get(m.group(1), set()), True
     m = re.fullmatch(r'\(?(-?)([^()]+)\)?', text)
     if m and m.group(2) in obj and obj[m.group(2)][0] == 'num':
         v = obj[m.group(2)][1]; return ('num', -v if m.group(1) else v), deps.get(m.group(2), set()), False
-    return ('num', float(text)), set(), True
+    return ('num', NUM(text)), set(), True
 
 def html_unescape(s): return s.replace('&apos;', "'").replace('&quot;', '"').replace('&amp;', '&')
 
@@ -139,7 +155,6 @@ CONSTRUCT = {'Circle', 'Line', 'Segment', 'Ray', 'Intersect', 'OrthogonalLine', 
 MEASURE = {'Distance', 'Circumference', 'Area', 'Length', 'Angle', 'Perimeter'}
 HAND_PLACED = {'Point', 'PointIn'}            # a point dropped onto an object by hand
 
-_READ_CACHE = {}
 def rebuild(path, overrides=None, ref=None):
     """Rebuild a construction. overrides moves given objects (label -> point or number); ref gives,
     for each intersection, the point to stay nearest to (used to follow a figure as it moves)."""
@@ -153,7 +168,7 @@ def rebuild(path, overrides=None, ref=None):
     mismatches = 0
     def get(name):
         if name in obj: return obj[name]
-        try: return float(name)
+        try: return NUM(name)
         except ValueError: raise KeyError(name)
     def check(label, rebuilt):
         nonlocal mismatches
@@ -161,7 +176,7 @@ def rebuild(path, overrides=None, ref=None):
         s = saved_object(els.get(label, {}))
         if s is None or rebuilt is None: return
         if s[0] == 'point' and rebuilt[0] == 'point':
-            scale = max(1.0, math.hypot(*s[1]))
+            scale = max(1.0, M.hypot(*s[1]))
             if dist(s[1], rebuilt[1]) > TOL * scale * 100: mismatches += 1; notes.append('%s differs from the saved point' % label)
     commanded = set()
     for st in steps:
@@ -225,7 +240,7 @@ def rebuild(path, overrides=None, ref=None):
             res[outs[0]] = ('point', ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2))
         elif name == 'AngularBisector':
             a, b, c = args[0][1], args[1][1], args[2][1]
-            u, v = sub(a, b), sub(c, b); nu, nv = math.hypot(*u), math.hypot(*v)
+            u, v = sub(a, b), sub(c, b); nu, nv = M.hypot(*u), M.hypot(*v)
             w = (b[0] + u[0] / nu + v[0] / nv, b[1] + u[1] / nu + v[1] / nv)
             res[outs[0]] = line_through(b, w)
         elif name == 'Intersect':
@@ -253,7 +268,7 @@ def rebuild(path, overrides=None, ref=None):
                     a, b, c = o0[1], o0[2], o0[3]; n2 = a * a + b * b; t = (a * ref_pt[0] + b * ref_pt[1] + c) / n2
                     s = ('point', (ref_pt[0] - a * t, ref_pt[1] - b * t))
                 else:
-                    (cx, cy), rr = o0[1], o0[2]; d = math.hypot(ref_pt[0] - cx, ref_pt[1] - cy) or 1
+                    (cx, cy), rr = o0[1], o0[2]; d = M.hypot(ref_pt[0] - cx, ref_pt[1] - cy) or 1
                     s = ('point', (cx + (ref_pt[0] - cx) * rr / d, cy + (ref_pt[1] - cy) * rr / d))
             res[outs[0]] = s
             if name == 'Point' and ((ins and ins[0] in given and not typed) or (typed and not made)):
@@ -262,7 +277,7 @@ def rebuild(path, overrides=None, ref=None):
             if typed: notes.append('%s is placed on a circle of typed radius (%s)' % (outs[0], ', '.join(ins)))
         elif name == 'Rotate' and kinds[0] == 'point' and kinds[1] == 'num' and kinds[2] == 'point':
             (x, y), t, (cx, cy) = args[0][1], args[1][1], args[2][1]
-            res[outs[0]] = ('point', (cx + (x - cx) * math.cos(t) - (y - cy) * math.sin(t), cy + (x - cx) * math.sin(t) + (y - cy) * math.cos(t)))
+            res[outs[0]] = ('point', (cx + (x - cx) * M.cos(t) - (y - cy) * M.sin(t), cy + (x - cx) * M.sin(t) + (y - cy) * M.cos(t)))
             if ins[1].strip('()-') in free:
                 given.add(outs[0])          # sets up the given angle or arc from given points and a given angle
             else:
@@ -270,12 +285,12 @@ def rebuild(path, overrides=None, ref=None):
         elif name in MEASURE:
             val = None
             if name == 'Distance' and kinds == ['point', 'point']: val = dist(args[0][1], args[1][1])
-            elif name in ('Circumference', 'Perimeter') and kinds[0] == 'circle': val = 2 * math.pi * args[0][2]
-            elif name == 'Area' and kinds[0] == 'circle': val = math.pi * args[0][2] ** 2
+            elif name in ('Circumference', 'Perimeter') and kinds[0] == 'circle': val = 2 * M.pi * args[0][2]
+            elif name == 'Area' and kinds[0] == 'circle': val = M.pi * args[0][2] ** 2
             elif name == 'Area' and kinds[0] == 'polygon': val = shoelace(args[0][1])
             elif name == 'Length' and kinds[0] == 'arc':
                 _, c, r, a, b = args[0]
-                t = (math.atan2(b[1] - c[1], b[0] - c[0]) - math.atan2(a[1] - c[1], a[0] - c[0])) % (2 * math.pi)
+                t = (M.atan2(b[1] - c[1], b[0] - c[0]) - M.atan2(a[1] - c[1], a[0] - c[0])) % (2 * M.pi)
                 val = r * t
             elif name == 'Length' and kinds[0] == 'segment': val = dist(args[0][1], args[0][2])
             elif name == 'Angle' and kinds == ['point', 'point', 'point']: val = angle_at(args[0][1], args[1][1], args[2][1])
@@ -301,6 +316,15 @@ def judge(problem, r, target=None, path=None, scale=None):
     """Pick the result the file measures, and how far it is from the true value.
     path: for a result the file does not measure itself, the points whose joined length is the result."""
     obj, M = r['objects'], r['measures']
+    if path and not all(x in obj for x in path):
+        return None                      # the entry names its result points, and they are not in the file
+    if path and problem == 'rtc':
+        circ = [m for m in M if m['tool'] in ('Circumference', 'Perimeter')]
+        if circ and all(x in obj for x in path):
+            k = scale or 1
+            L = k * sum(dist(obj[a][1], obj[b][1]) for a, b in zip(path, path[1:]))
+            d = set().union(*[r['deps'].get(x, set()) for x in path])
+            return L, circ[0]['value'], '%spath %s = %s against circumference %s' % ('%d × ' % k if k != 1 else '', '-'.join(path), L, circ[0]['value']), d, circ[0]['depends'], list(path)
     if path and problem == 'ar':
         arcs = [m for m in M if m['tool'] == 'Length' and m['value']]
         if arcs and all(x in obj for x in path):
@@ -382,6 +406,24 @@ def smallest_step(r, roots, problem, given_size):
     sizes = [x for x in sizes if x > 0]
     return min(sizes) / given_size if sizes and given_size else None
 
+def shallowest_crossing(r, roots, steps):
+    """The smallest angle, in degrees, at which two curves cross at a point the result depends on.
+    Shallow crossings are hard to place accurately on paper."""
+    anc, o, best = ancestry(r, roots), r['objects'], None
+    def tangent(c, p):
+        c = as_curve(c)
+        return (float(c[2]), -float(c[1])) if c[0] == 'line' else (-(float(p[1]) - float(c[1][1])), float(p[0]) - float(c[1][0]))
+    for st in steps:
+        if st[0] != 'cmd' or st[1] != 'Intersect' or not st[3] or st[3][0] not in anc: continue
+        a, b, pt = o.get(st[2][0]), o.get(st[2][1]), o.get(st[3][0])
+        if not a or not b or not pt or a[0] == 'polygon' or b[0] == 'polygon': continue
+        d1, d2 = tangent(a, pt[1]), tangent(b, pt[1])
+        n = math.hypot(*d1) * math.hypot(*d2)
+        if n == 0: continue
+        ang = math.degrees(math.acos(min(1.0, abs(d1[0] * d2[0] + d1[1] * d2[1]) / n)))
+        best = ang if best is None else min(best, ang)
+    return best
+
 def given_size(problem, r, roots):
     o, M = r['objects'], r['measures']
     if problem in ('stc', 'rtc'):
@@ -410,15 +452,17 @@ def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0):
             if not j or any(o is None for o in r['objects'].values() if o is not None and o[0] == 'point' and None in o[1]): return None, r
             return acc(j[0], j[1]), r
         except (ValueError, ZeroDivisionError, KeyError, TypeError): return None, None
-    if problem == 'taa':
+    nums = [k for k in base['free'] if base['objects'].get(k, ('',))[0] == 'num']
+    if problem == 'taa' or (problem == 'ar' and not nums):
+        # the arm through C turns about the vertex B (arc files drawn this way use the same labels)
         B, A, C = (base['objects'][k][1] for k in ('B', 'A', 'C'))
-        a0 = math.atan2(A[1] - B[1], A[0] - B[0]); rC = dist(B, C)
-        start = math.degrees((math.atan2(C[1] - B[1], C[0] - B[0]) - a0) % (2 * math.pi))
+        a0 = M.atan2(A[1] - B[1], A[0] - B[0]); rC = dist(B, C)
+        start = math.degrees((M.atan2(C[1] - B[1], C[0] - B[0]) - a0) % (2 * M.pi))
         sgn = 1 if start <= 180 else -1            # the angle may open clockwise from arm BA
         if sgn < 0: start = 360 - start
-        make = lambda deg: {'C': (B[0] + rC * math.cos(a0 + sgn * math.radians(deg)), B[1] + rC * math.sin(a0 + sgn * math.radians(deg)))}
+        make = lambda deg: {'C': (B[0] + rC * M.cos(a0 + sgn * math.radians(deg)), B[1] + rC * M.sin(a0 + sgn * math.radians(deg)))}
     elif problem == 'ar':
-        beta = [k for k in base['free'] if base['objects'].get(k, ('',))[0] == 'num'][0]
+        beta = nums[0]
         start = math.degrees(base['objects'][beta][1])
         make = lambda deg: {beta: math.radians(deg)}
     else:
@@ -444,6 +488,17 @@ def good_range(points, start, threshold=95.0):
     while lo > 0 and pts[degs[lo - 1]] is not None and pts[degs[lo - 1]] >= threshold: lo -= 1
     while hi < len(degs) - 1 and pts[degs[hi + 1]] is not None and pts[degs[hi + 1]] >= threshold: hi += 1
     return (degs[lo], degs[hi])
+
+def precise_accuracy(problem, path, entry, digits=50, shown=32):
+    """The entry's accuracy worked out to `digits` significant digits, as a string of `shown` digits."""
+    import mpmath
+    use_precision(digits)
+    try:
+        r = rebuild(path)
+        j = judge(problem, r, entry.get('square'), entry.get('result_path'), entry.get('result_scale'))
+        return mpmath.nstr(acc(j[0], j[1]), shown, strip_zeros=False) if j else None
+    finally:
+        use_precision(None)
 
 def load_archive():
     src = open(os.path.join(ROOT, 'pages', 'archive-data.js'), encoding='utf-8').read()
@@ -498,7 +553,24 @@ def maintainer_list(archive, results, today):
     out.append(MARK_END)
     return '\n'.join(out)
 
+def compare_geogebra():
+    """Compare tools/geogebra_points.json (written by tools/geogebra_check.js) with the rebuild."""
+    G = json.load(open(os.path.join(ROOT, 'tools', 'geogebra_points.json')))
+    total, worst = 0, []
+    for f, pts in G.items():
+        if pts is None: print('?? GeoGebra could not open ' + f); continue
+        r = rebuild(os.path.join(ROOT, f)); o = r['objects']
+        scale = max([abs(x[1][0]) + abs(x[1][1]) for x in o.values() if x and x[0] == 'point'] + [1])
+        for n, xy in pts.items():
+            m = o.get(n)
+            if xy is None or not m or m[0] != 'point': continue
+            total += 1; worst.append((math.hypot(xy[0] - m[1][0], xy[1] - m[1][1]) / scale, f, n))
+    worst.sort(reverse=True)
+    print('%d points compared across %d files; largest difference %.1e (%s, %s)' % (total, len(G), worst[0][0], worst[0][1], worst[0][2]))
+    sys.exit(1 if worst and worst[0][0] > 1e-9 else 0)
+
 def main():
+    if '--compare-geogebra' in sys.argv: return compare_geogebra()
     write = '--write' in sys.argv
     archive = load_archive()
     results, problems_found = {}, 0
@@ -525,6 +597,10 @@ def main():
                 res['steps_used'] = steps_used(r, roots, p['id'])
                 sm = smallest_step(r, roots, p['id'], given_size(p['id'], r, roots))
                 res['smallest_step'] = sm; res['micro'] = bool(sm is not None and sm < MICRO)
+                sc = shallowest_crossing(r, roots, _READ_CACHE[ggb][0])
+                if sc is not None:
+                    res['shallowest_crossing'] = round(sc, 2)
+                    res['checks'].append('shallowest crossing the result depends on: %.1f°%s' % (sc, ' (shallow: hard to place accurately on paper)' if sc < 15 else ''))
                 a = acc(c, t)
                 res['accuracy'] = a; res['measured'] = how; res['side'] = 'over' if c > t else 'under'
                 hand_used = sorted(h for h in r['hand'] if h in d)
@@ -555,6 +631,8 @@ def main():
                 g = good_range(pts, start)
                 res['range95'] = g
                 res['checks'].append('swept across angles: %s' % ('95%% or better from %.0f° to %.0f° (as drawn, %.1f° in the file)' % (g[0], g[1], start) if g else 'never reaches 95%% near the file\'s angle (%.1f°)' % start))
+            if write and j:
+                res['precise'] = precise_accuracy(p['id'], ggb, e)
             res['status'] = ('manual' if res.get('manual') and ok else 'reproduced' if ok else 'attention')
             res['summary'] = ('Rebuilt from %d given object(s); ' % len(res['starting_points'])) + ('accuracy reproduced.' if res['status'] == 'reproduced' else 'needs checking by hand.' if res['status'] == 'manual' else 'does not match the chart.')
             results[key] = res

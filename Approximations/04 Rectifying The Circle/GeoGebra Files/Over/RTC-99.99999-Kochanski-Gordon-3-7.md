@@ -8,7 +8,7 @@ Kochanski / Gordon - 06-11-2026
 
 **Accuracy (%):**
 99.99999
-(precise readout: 99.99999650783769)
+(precise readout: 99.999996507837642052022699873957)
 
 **Oversized / Undersized:**
 Oversized.

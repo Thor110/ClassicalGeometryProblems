@@ -7,7 +7,8 @@ Kochanski Gordon Crossover Method
 Edward James Gordon, building on Adam Adamandy Kochański - 22-12-2025
 
 **Accuracy (%):**
-99.99968125157933
+99.9996
+(precise readout: 99.999681250573958688297476824688)
 
 **Oversized / Undersized:**
 Oversized

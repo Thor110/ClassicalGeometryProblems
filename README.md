@@ -10,6 +10,8 @@ It is my hope that this repository might be able to help alleviate the burden im
 
 The author has spent considerable time exploring these constructions both as an intellectual challenge and as a creative exercise in geometry.
 
+The [architectural vision](ARCHITECTURAL.md) imagines building the best oversized and best undersized constructions full size, as a pair of walkable lines with the perfect result lying between them.
+
 ## Geometry problems
 
 All approximations of these problems are intended to remain strictly Euclidean, adhering to the strict Euclidean ruleset of using only a straightedge and compass ( no measurements ).
@@ -72,7 +74,11 @@ An approximation chart for each problem exists to help people more easily sift t
 
 The charts live on the [website](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html), and their data is a single file, [pages/archive-data.js](pages/archive-data.js). The earlier PDF and spreadsheet versions are kept in the repository's history.
 
-[tools/verify.py](tools/verify.py) rebuilds every GeoGebra file and checks it against that data, so the numbers in the charts, the files and the notes cannot quietly drift apart. It also counts each construction under the [counting rules](SUBMISSION_RULESET.md#counting), applies the micro scale test, and measures angle methods across a sweep of angles. [tools/draw.py](tools/draw.py) draws every construction twice for the charts: once with only the steps that count, and once with everything in the file.
+[tools/verify.py](tools/verify.py) rebuilds every GeoGebra file and checks it against that data, so the numbers in the charts, the files and the notes cannot quietly drift apart. It also counts each construction under the [counting rules](SUBMISSION_RULESET.md#counting), applies the micro scale test, and measures angle methods across a sweep of angles. [tools/draw.py](tools/draw.py) draws every construction twice for the charts: once with only the steps that count, and once with everything in the file. [tools/geogebra_check.js](tools/geogebra_check.js) opens every file in GeoGebra itself and compares each point with the checker's rebuild.
+
+### Search finds
+
+At my request, Claude (an AI) searched millions of straightedge and compass constructions for short, accurate ones. Its finds are on the charts under its own name with an AI label, waiting for a person's verification like any other entry. They include 4 circles and 2 lines that double the cube to 99.99997%, 5 circles and 2 lines that rectify the circle to 99.99999997%, and 9 circles and 6 lines that square it to 99.9999997%. For the angle problems it found general methods, with nothing placed by eye, that hold across almost every angle: a trisection with 4 circles and 4 lines that is at least 99.05% accurate for every angle from 30° to 150° (and 95% from 5° to 179°), and an arc rectification with 4 circles and 1 line that is at least 99.75% accurate over the same range.
 
 ### Method names
 
@@ -197,6 +203,7 @@ Maintainer: Edward James Gordon
 - `/pages/` — The website, including the chart data (`archive-data.js`) and the papers.
 - `/tools/verify.py` — Rebuilds every GeoGebra file and checks it against the charts.
 - `VERIFICATION.md` — How entries are verified and disputed.
+- `ARCHITECTURAL.md` — The architectural vision: building the best approximations as walkable monuments.
 
 If you discover an error, typo, or have suggestions for improving this document, please feel free to open an issue or pull request.
 

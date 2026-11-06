@@ -6,7 +6,8 @@
 Adam Adamandy Kochanski
 
 **Accuracy (%):**
-99.99811194856672
+99.998
+(precise readout: 99.998111948580257765625961830433)
 
 **Oversized / Undersized:**
 Undersized

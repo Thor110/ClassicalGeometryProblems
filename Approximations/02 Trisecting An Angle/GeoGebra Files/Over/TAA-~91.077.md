@@ -8,7 +8,7 @@ Edward James Gordon - 01 December 2024
 
 **Accuracy (%):**
 ~91.077
-(precise readout: 91.07743117124372)
+(precise readout: 91.077431171243714272418485660140)
 
 **Oversized / Undersized:**
 Oversized.

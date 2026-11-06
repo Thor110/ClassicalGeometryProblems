@@ -21,8 +21,8 @@
 <circle cx="609.40" cy="430.61" r="42.74" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <circle cx="622.67" cy="412.90" r="42.74" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <circle cx="606.76" cy="452.57" r="42.74" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
+<line x1="746.65" y1="485.66" x2="197.74" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 <line x1="746.65" y1="485.66" x2="-0.00" y2="281.92" stroke="#178a62" stroke-width="2.5"/>
 <line x1="746.65" y1="485.66" x2="-0.00" y2="456.84" stroke="#178a62" stroke-width="2.5"/>
 <line x1="746.65" y1="485.66" x2="-0.00" y2="81.12" stroke="#178a62" stroke-width="2.5"/>
-<line x1="746.65" y1="485.66" x2="197.74" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 </svg>

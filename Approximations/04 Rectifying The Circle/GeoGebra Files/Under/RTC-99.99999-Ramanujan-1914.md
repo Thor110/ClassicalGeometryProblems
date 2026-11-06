@@ -8,7 +8,7 @@ Srinivasa Ramanujan - 1914
 
 **Accuracy (%):**
 99.99999
-(precise readout: 99.99999996794151)
+(precise readout: 99.999999967941511700895634629114)
 
 **Oversized / Undersized:**
 Undersized.
