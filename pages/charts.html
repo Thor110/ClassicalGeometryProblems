@@ -160,7 +160,7 @@ function render() {
     const links = [];
     if (e.geogebra) links.push(`<a class="link" href="${e.geogebra}" target="_blank" rel="noopener">GeoGebra</a>`);
     if (e.file) links.push(`<a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a>`);
-    if (e.file) links.push(`<a class="link" href="${repoBlob(e.file + '.md')}" target="_blank" rel="noopener">notes</a>`);
+    if (e.notesFile) links.push(`<a class="link" href="${repoBlob(e.notesFile + '.md')}" target="_blank" rel="noopener">notes</a>`);
     const title = [e.method, e.note].filter(Boolean).join(' · ');
     return `<tr data-key="${e.side}${e.rank}" title="${title.replace(/"/g, '&quot;')}">
       <td>${e.rank}</td>
@@ -280,6 +280,7 @@ function renderDetail() {
   $('detail').innerHTML = `<div class="box-title">${current.name} · ${e.side}sized #${e.rank}</div>
     <div class="box-text" style="text-align:center;"><b>${e.acc}%</b> · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''} · ${e.circles} circles, ${e.lines} lines ${badge(e)}</div>
     ${e.note ? `<div class="box-text" style="text-align:center;">${e.note}</div>` : ''}
+    ${e.square ? `<div class="small-text" style="text-align:center;">In GeoGebra, this is the square labelled <span class="mono">${e.square}</span> in the file.</div>` : ''}
     <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
     <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>

@@ -278,12 +278,12 @@ def rebuild(path):
 # ---------------------------------------------------------------- judging the result
 def acc(constructed, truth): return 100 - abs(constructed - truth) / truth * 100
 
-def judge(problem, r):
+def judge(problem, r, target=None):
     """Pick the result the file measures, and how far it is from the true value."""
     obj, M = r['objects'], r['measures']
     if problem == 'stc':
         circ = [m for m in M if m['tool'] == 'Area' and obj.get(m['of'][0], ('',))[0] == 'circle']
-        squares = [o for o in obj.values() if o and o[0] == 'polygon' and len(o[1]) == 4]
+        squares = [o for k, o in obj.items() if o and o[0] == 'polygon' and len(o[1]) == 4 and (target is None or k == target)]
         if circ and squares:
             area = circ[0]['value']; sq = shoelace(squares[-1][1])
             sqname = [k for k, o in obj.items() if o is squares[-1]][0]
@@ -353,10 +353,10 @@ def main():
             if not e.get('file'):
                 res['status'] = 'no-file'; res['summary'] = 'No GeoGebra file in the repository yet, so it cannot be rebuilt here.'
                 results[key] = res; continue
-            ggb = os.path.join(ROOT, p['folder'], e['file'] + '.ggb'); md = os.path.join(ROOT, p['folder'], e['file'] + '.md')
+            ggb = os.path.join(ROOT, p['folder'], e['file'] + '.ggb'); md = os.path.join(ROOT, p['folder'], e.get('notes') or e['file']) + '.md'
             charted.add(os.path.normpath(ggb))
             r = rebuild(ggb)
-            j = judge(p['id'], r)
+            j = judge(p['id'], r, e.get('square'))
             res['tools'] = r['tools']
             res['starting_points'] = sorted(k for k in r['free'] | r['given'] if r['objects'].get(k, ('num',))[0] != 'num')
             if r['mismatches']: ok = False; res['checks'].append('%d rebuilt points do not match the saved file' % r['mismatches'])

@@ -30,6 +30,7 @@ const PROBLEMS = ARCHIVE.problems.map(p => {
   const entries = p.entries.map(e => ({
     ...e,
     file: e.file ? p.folder + '/' + e.file : '',
+    notesFile: (e.notes || e.file) ? p.folder + '/' + (e.notes || e.file) : '',
     geogebra: e.geogebra ? 'https://www.geogebra.org/geometry/' + e.geogebra : '',
     value: parseFloat(String(e.acc).replace(/[^0-9.]/g, '')),
     exact: parseFloat(e.precise || String(e.acc).replace(/[^0-9.]/g, '')),

@@ -436,6 +436,476 @@ const AI_CHECKS = {
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
+  "stc-over-99.99996": {
+   "id": "stc-over-99.99996",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9999654415% reproduces the chart figure 99.99996%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 140,
+    "Segment": 6,
+    "Line": 2,
+    "Distance": 6,
+    "Area": 1,
+    "PointIn": 3,
+    "LineBisector": 60,
+    "Polygon": 2
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 68
+   },
+   "accuracy": 99.99996544150073,
+   "measured": "square area 27.668644 against circle area 27.668635",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-under-99.999": {
+   "id": "stc-under-99.999",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9991118667% reproduces the chart figure 99.999%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 140,
+    "Segment": 6,
+    "Line": 2,
+    "Distance": 6,
+    "Area": 1,
+    "PointIn": 3,
+    "LineBisector": 60,
+    "Polygon": 2
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 60
+   },
+   "accuracy": 99.99911186672259,
+   "measured": "square area 27.668389 against circle area 27.668635",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-over-99.993": {
+   "id": "stc-over-99.993",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9935456240% reproduces the chart figure 99.993%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 106,
+    "Segment": 5,
+    "Line": 6,
+    "Polygon": 8,
+    "PointIn": 8,
+    "Area": 1,
+    "LineBisector": 40
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 46
+   },
+   "accuracy": 99.99354562402134,
+   "measured": "square area 22.404772 against circle area 22.403326",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-over-99.944": {
+   "id": "stc-over-99.944",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9440071442% reproduces the chart figure 99.944%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 106,
+    "Segment": 5,
+    "Line": 6,
+    "Polygon": 8,
+    "PointIn": 8,
+    "Area": 1,
+    "LineBisector": 40
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 42
+   },
+   "accuracy": 99.94400714415852,
+   "measured": "square area 22.415870 against circle area 22.403326",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-under-99.956": {
+   "id": "stc-under-99.956",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.9569281626% reproduces the chart figure 99.956%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 106,
+    "Segment": 5,
+    "Line": 6,
+    "Polygon": 8,
+    "PointIn": 8,
+    "Area": 1,
+    "LineBisector": 40
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 38
+   },
+   "accuracy": 99.95692816255126,
+   "measured": "square area 22.393676 against circle area 22.403326",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-over-99.844": {
+   "id": "stc-over-99.844",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.8448933851% reproduces the chart figure 99.844%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 106,
+    "Segment": 5,
+    "Line": 6,
+    "Polygon": 8,
+    "PointIn": 8,
+    "Area": 1,
+    "LineBisector": 40
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 34
+   },
+   "accuracy": 99.84489338505863,
+   "measured": "square area 22.438075 against circle area 22.403326",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-under-99.758": {
+   "id": "stc-under-99.758",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.7589459738% reproduces the chart figure 99.758%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 106,
+    "Segment": 5,
+    "Line": 6,
+    "Polygon": 8,
+    "PointIn": 8,
+    "Area": 1,
+    "LineBisector": 40
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 30
+   },
+   "accuracy": 99.75894597375463,
+   "measured": "square area 22.349321 against circle area 22.403326",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-under-98.968": {
+   "id": "stc-under-98.968",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 98.9689798546% reproduces the chart figure 98.968%"
+   ],
+   "tools": {
+    "Circle": 7,
+    "Intersect": 106,
+    "Segment": 5,
+    "Line": 6,
+    "Polygon": 8,
+    "PointIn": 8,
+    "Area": 1,
+    "LineBisector": 40
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 7,
+    "lines": 18
+   },
+   "accuracy": 98.96897985456778,
+   "measured": "square area 22.172343 against circle area 22.403326",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-over-99.862": {
+   "id": "stc-over-99.862",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.8626095381% reproduces the chart figure 99.862%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Point": 1,
+    "Intersect": 63,
+    "Line": 28,
+    "Polygon": 4,
+    "PointIn": 5,
+    "Area": 1,
+    "LineBisector": 12
+   },
+   "starting_points": [
+    "A",
+    "B",
+    "c"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 28
+   },
+   "accuracy": 99.86260953814038,
+   "measured": "square area 78.647723 against circle area 78.539816",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
+  },
+  "stc-under-99.484": {
+   "id": "stc-under-99.484",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.4846351113% reproduces the chart figure 99.484%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Point": 1,
+    "Intersect": 63,
+    "Line": 28,
+    "Polygon": 4,
+    "PointIn": 5,
+    "Area": 1,
+    "LineBisector": 12
+   },
+   "starting_points": [
+    "A",
+    "B",
+    "c"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 24
+   },
+   "accuracy": 99.48463511131867,
+   "measured": "square area 78.135050 against circle area 78.539816",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
+  },
+  "stc-under-98.168": {
+   "id": "stc-under-98.168",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 98.1683373540% reproduces the chart figure 98.168%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Point": 1,
+    "Intersect": 63,
+    "Line": 28,
+    "Polygon": 4,
+    "PointIn": 5,
+    "Area": 1,
+    "LineBisector": 12
+   },
+   "starting_points": [
+    "A",
+    "B",
+    "c"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 20
+   },
+   "accuracy": 98.16833735399295,
+   "measured": "square area 77.101232 against circle area 78.539816",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 3 given object(s); accuracy reproduced."
+  },
+  "stc-under-99.377": {
+   "id": "stc-under-99.377",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.3779023260% reproduces the chart figure 99.377%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Intersect": 75,
+    "Segment": 25,
+    "Line": 6,
+    "Polygon": 4,
+    "Area": 1,
+    "PointIn": 5,
+    "LineBisector": 16
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 31
+   },
+   "accuracy": 99.37790232596545,
+   "measured": "square area 308.530861 against circle area 310.462239",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-over-99.414": {
+   "id": "stc-over-99.414",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 99.4146206566% reproduces the chart figure 99.414%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Intersect": 75,
+    "Segment": 25,
+    "Line": 6,
+    "Polygon": 4,
+    "Area": 1,
+    "PointIn": 5,
+    "LineBisector": 16
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 27
+   },
+   "accuracy": 99.41462065661072,
+   "measured": "square area 312.279621 against circle area 310.462239",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-over-96.977": {
+   "id": "stc-over-96.977",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 96.9777923953% reproduces the chart figure 96.977%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Intersect": 75,
+    "Segment": 25,
+    "Line": 6,
+    "Polygon": 4,
+    "Area": 1,
+    "PointIn": 5,
+    "LineBisector": 16
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 15
+   },
+   "accuracy": 96.97779239525616,
+   "measured": "square area 319.845053 against circle area 310.462239",
+   "side": "over",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
+  "stc-under-98.177": {
+   "id": "stc-under-98.177",
+   "checks": [
+    "every rebuilt point matches the saved file",
+    "no hand-placed point feeds the result",
+    "accuracy 98.1777167174% reproduces the chart figure 98.177%"
+   ],
+   "tools": {
+    "Circle": 13,
+    "Intersect": 75,
+    "Segment": 25,
+    "Line": 6,
+    "Polygon": 4,
+    "Area": 1,
+    "PointIn": 5,
+    "LineBisector": 16
+   },
+   "starting_points": [
+    "A",
+    "B"
+   ],
+   "steps_used": {
+    "circles": 13,
+    "lines": 11
+   },
+   "accuracy": 98.17771671737725,
+   "measured": "square area 304.804738 against circle area 310.462239",
+   "side": "under",
+   "status": "reproduced",
+   "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
+  },
   "taa-under-99.658": {
    "id": "taa-under-99.658",
    "checks": [

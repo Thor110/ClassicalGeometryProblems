@@ -82,6 +82,8 @@ The charts live on the [website](https://thor110.github.io/ClassicalGeometryProb
 
 Srinivasa Ramanujans method for approximating this problem is the most accurate and is listed in the approximation chart.
 
+Among my own methods, Circling the Square variants recovered from my GeoGebra files reach 99.99996% oversized and 99.9991% undersized, using micro scale steps (µ). All of them are on the [chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#stc).
+
 ### 2. Trisecting An Angle
 
 I wrote a paper on the three primary classic geometry problems which presents two different methods for approximating each problem.
