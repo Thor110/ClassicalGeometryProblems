@@ -89,17 +89,19 @@
 // One box per charted problem, with its best oversized and undersized entries.
 const list = document.getElementById('list');
 for (const p of PROBLEMS) {
-  const best = side => p.entries.filter(e => e.side === side).sort((a, b) => b.value - a.value)[0];
+  // Best by people and best by AI, kept apart.
+  const best = (side, kind) => p.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === (kind === 'ai')).sort((a, b) => b.exact - a.exact)[0];
   const line = (label, e) => e
     ? `<li>${label}: <b>${e.acc}%</b> by ${e.holder}${e.method ? ' (' + e.method + ')' : ''}</li>`
     : `<li>${label}: <span class="muted">none charted yet, the first could be yours</span></li>`;
+  const lines = side => line('Best ' + side + 'sized by people', best(side, 'person')) + (best(side, 'ai') ? line('Best ' + side + 'sized by AI', best(side, 'ai')) : '');
   const box = document.createElement('div');
   box.className = 'box';
   box.innerHTML = `
     <div class="box-title">${p.n}. ${p.name}</div>
     <div class="box-text">${p.task} <span class="muted">Target: ${p.target}</span></div>
     <div class="box-text">${p.why}</div>
-    <ul>${line('Best oversized', best('over'))}${line('Best undersized', best('under'))}</ul>
+    <ul>${lines('over')}${lines('under')}</ul>
     ${ARCHIVE.families.filter(f => f.problem === p.id).map(f => `<div class="box-text small-text"><b>${f.name}</b> on this chart is a method name, not the problem's name: ${f.about}</div>`).join('')}
     <div class="box-text">
       <a href="charts.html#${p.id}">Open the chart →</a>

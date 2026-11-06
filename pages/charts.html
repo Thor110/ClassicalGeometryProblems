@@ -10,6 +10,9 @@
   #tip{min-height:1.6em;margin-top:8px;font-size:14px;color:#888;text-align:center;letter-spacing:0.05em;}
   tr.hl td{background:#14141f;}
   tr[data-key]{cursor:pointer;}
+  .kind{display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:0 5px;margin-left:4px;vertical-align:1px;}
+  .kind.ai{color:#ca6;border-color:#4a3e2a;} .kind.person{color:#6ac;border-color:#2a3e4a;}
+  .controls .label{align-self:center;font-size:13px;color:#666;letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;}
   .badge{display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:1px 6px;white-space:nowrap;}
   .badge.verified{color:#4a9;border-color:#2a4a3a;} .badge.self-verified{color:#ca6;border-color:#4a3e2a;}
   .badge.unverified{color:#666;} .badge.disputed{color:#e55;border-color:#5a2a2a;}
@@ -50,6 +53,13 @@
 <div class="box">
   <div class="box-title">Chart</div>
   <div class="controls">
+    <span class="label">Results by</span>
+    <button class="small active" data-who="all">People And AI</button>
+    <button class="small" data-who="person">People</button>
+    <button class="small" data-who="ai">AI</button>
+  </div>
+  <div class="controls">
+    <span class="label">Show</span>
     <button class="small active" data-filter="all">All</button>
     <button class="small" data-filter="base">Base Ruleset Only</button>
     <button class="small" data-filter="nomicro">Hide µ Micro Scale</button>
@@ -111,10 +121,15 @@
 
 <script src="archive-data.js"></script>
 <script src="ai-checks.js"></script>
+<script src="crossref.js"></script>
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
-let current = PROBLEMS[0], filter = 'all', points = [], highlighted = null;
+let current = PROBLEMS[0], filter = 'all', who = 'all', points = [], highlighted = null;
+// Remember the viewer's choice of people, AI or both (browser storage can be unavailable; that is fine).
+try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
+const kindOf = e => e.holder_kind === 'ai' ? 'ai' : 'person';
+const byWho = e => who === 'all' || kindOf(e) === who;
 
 // Tabs, one per problem; the page's #hash picks one (charts.html#rtc).
 for (const p of PROBLEMS) {
@@ -128,6 +143,14 @@ document.querySelectorAll('[data-filter]').forEach(b => b.onclick = () => {
   document.querySelectorAll('[data-filter]').forEach(x => x.classList.toggle('active', x === b));
   render();
 });
+document.querySelectorAll('[data-who]').forEach(b => {
+  b.classList.toggle('active', b.dataset.who === who);
+  b.onclick = () => {
+    who = b.dataset.who; try { localStorage.setItem('cgp-who', who); } catch (e) {}
+    document.querySelectorAll('[data-who]').forEach(x => x.classList.toggle('active', x === b));
+    highlighted = null; render();
+  };
+});
 window.addEventListener('hashchange', pick);
 window.addEventListener('resize', drawLadder);
 
@@ -140,6 +163,7 @@ function pick() {
 
 function visible(e) {
   const n = x => typeof x === 'number' ? x : 0;
+  if (!byWho(e)) return false;
   if (filter === 'base') return n(e.circles) <= 25 && n(e.lines) <= 40;
   if (filter === 'nomicro') return !e.marks.includes('µ');
   if (filter === 'verified') return statusOf(e).status === 'verified';
@@ -147,40 +171,45 @@ function visible(e) {
 }
 
 function render() {
-  const p = current, all = p.entries, shown = all.filter(visible);
+  const p = current, pool = p.entries.filter(byWho), shown = pool.filter(visible), all = pool;
+  // Ranks within what is shown: among people, among AI finds, or among everyone.
+  for (const side of ['over', 'under'])
+    pool.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.vrank = i + 1; });
   $('title').textContent = p.n + '. ' + p.name;
   $('task').innerHTML = p.task + '<br><span class="muted">' + p.target + '</span>';
 
   const best = side => all.filter(e => e.side === side).sort((a, b) => b.value - a.value)[0];
   const bo = best('over'), bu = best('under');
+  const nPeople = p.entries.filter(e => kindOf(e) === 'person').length, nAI = p.entries.length - nPeople;
   const people = new Set(all.map(e => e.holder)).size;
   $('meters').innerHTML = [
-    ['Methods charted', all.length, ''],
+    ['Methods charted', who === 'all' ? `${all.length} (${nPeople} people, ${nAI} AI)` : all.length, ''],
     ['Best oversized', bo ? bo.acc + '%' : 'open', bo ? 'good' : 'warm'],
     ['Best undersized', bu ? bu.acc + '%' : 'open', bu ? 'good' : 'warm'],
     ['Method holders', people, ''],
   ].map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
 
   // The table mirrors the original charts: oversized ranks count down to perfection, undersized count up from it.
-  const over = shown.filter(e => e.side === 'over').sort((a, b) => b.rank - a.rank);
-  const under = shown.filter(e => e.side === 'under').sort((a, b) => a.rank - b.rank);
+  const over = shown.filter(e => e.side === 'over').sort((a, b) => b.vrank - a.vrank);
+  const under = shown.filter(e => e.side === 'under').sort((a, b) => a.vrank - b.vrank);
   const row = e => {
     const links = [];
     if (e.geogebra) links.push(`<a class="link" href="${e.geogebra}" target="_blank" rel="noopener">GeoGebra</a>`);
     if (e.file) links.push(`<a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a>`);
     if (e.notesFile) links.push(`<a class="link" href="${repoBlob(e.notesFile + '.md')}" target="_blank" rel="noopener">notes</a>`);
     const title = [e.method, e.note].filter(Boolean).join(' · ');
-    return `<tr data-key="${e.side}${e.rank}" title="${title.replace(/"/g, '&quot;')}">
-      <td>${e.rank}</td>
+    return `<tr data-key="${e.id}" title="${title.replace(/"/g, '&quot;')}">
+      <td>${e.vrank}</td>
       <td><span class="mark">${e.marks || ''}</span></td>
-      <td>${e.holder}${e.holder_kind === 'ai' ? ' <span class="badge">AI</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
+      <td>${e.holder}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
       <td>${e.circles}</td><td>${e.lines}</td>
       <td class="acc">${e.acc}%</td>
       <td class="precise">${e.precise ? e.precise + '%' : ''}</td>
       <td>${badge(e)}</td>
       <td>${links.join(' · ')}</td></tr>`;
   };
-  const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} ${n === 1 ? 'method' : 'methods'} · every new attempt is welcome</td></tr>`;
+  const whoLabel = {all: '', person: ' by people', ai: ' by AI'}[who];
+  const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} ${n === 1 ? 'method' : 'methods'}${whoLabel} · every new attempt is welcome</td></tr>`;
   $('table').innerHTML = `
     <tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr>
     ${group('↑ Oversized', all.filter(e => e.side === 'over').length)}
@@ -238,7 +267,7 @@ function drawLadder() {
     used[slot] = (used[slot] || 0) + 1;
     const dy = 18 + (used[slot] - 1) * 13;
     const y = e.side === 'over' ? mid - dy : mid + dy;
-    const key = e.side + e.rank, hl = key === highlighted;
+    const key = e.id, hl = key === highlighted;
     ctx.fillStyle = e.side === 'over' ? '#ca6' : '#6ac';
     ctx.globalAlpha = e.marks.includes('µ') ? 0.55 : 1;
     ctx.beginPath(); ctx.arc(x, y, hl ? 7 : 4.5, 0, 7); ctx.fill();
@@ -256,7 +285,7 @@ function nearest(ev) {
 }
 function describe(p) {
   const e = p.e;
-  return `${e.side === 'over' ? 'Oversized' : 'Undersized'} #${e.rank} · ${e.marks ? e.marks + ' ' : ''}${e.holder} · ${e.acc}% · ${e.circles} circles, ${e.lines} lines${e.method ? ' · ' + e.method : ''}`;
+  return `${e.side === 'over' ? 'Oversized' : 'Undersized'} #${e.vrank} · ${e.marks ? e.marks + ' ' : ''}${e.holder}${kindOf(e) === 'ai' ? ' (AI)' : ''} · ${e.acc}% · ${e.circles} circles, ${e.lines} lines${e.method ? ' · ' + e.method : ''}`;
 }
 $('ladder').addEventListener('mousemove', ev => { const p = nearest(ev); $('tip').textContent = p ? describe(p) : ' '; });
 $('ladder').addEventListener('click', ev => {
@@ -272,7 +301,7 @@ function badge(e) {
 }
 
 function renderDetail() {
-  const e = current.entries.find(x => x.side + x.rank === highlighted);
+  const e = current.entries.find(x => x.id === highlighted);
   if (!e) { $('detail').innerHTML = '<div class="box-title">Entry Details</div><div class="small-text" style="text-align:center;">Click a row or a point on the ladder to see who verified it, what the AI check found, and any disputes.</div>'; return; }
   const s = statusOf(e);
   const people = s.people.map(v => `<li>${v.by}${isHolder(v.by, e.holder) ? ' <span class="muted">(method holder: self-verification)</span>' : ''}${v.how ? ' · ' + v.how : ''}${v.date ? ' · ' + v.date : ''}</li>`).join('') || '<li class="muted">No person has verified it yet.</li>';
@@ -285,7 +314,7 @@ function renderDetail() {
   }
   const disputes = (e.disputes || []).map(d => `<li><b>${d.status}</b> · ${d.kind} · raised by ${d.by} · ${d.summary}${d.issue ? ` · <a href="${REPO}/issues/${d.issue}" target="_blank" rel="noopener">issue</a>` : ''}${d.outcome ? ' · outcome: ' + d.outcome : ''}</li>`).join('') || '<li class="muted">None.</li>';
   const ask = (t, tpl) => `${REPO}/issues/new?template=${tpl}&title=${encodeURIComponent(t + ': ' + e.id)}&entry=${encodeURIComponent(e.id)}`;
-  $('detail').innerHTML = `<div class="box-title">${current.name} · ${e.side}sized #${e.rank}</div>
+  $('detail').innerHTML = `<div class="box-title">${current.name} · ${e.side}sized #${e.vrank}${who === 'all' ? '' : who === 'ai' ? ' among AI finds' : ' among people'}${who !== 'all' ? ' · #' + e.rank + ' overall' : ''}</div>
     <div class="box-text" style="text-align:center;"><b>${e.acc}%</b> · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''} · ${e.circles} circles, ${e.lines} lines ${badge(e)}</div>
     ${e.note ? `<div class="box-text" style="text-align:center;">${e.note}</div>` : ''}
     ${e.count_history || e.micro_note ? `<div class="small-text" style="text-align:center;">${[e.count_history, e.micro_note].filter(Boolean).join(' ')}</div>` : ''}
@@ -299,12 +328,14 @@ function renderDetail() {
     ${s.ai && s.ai.sweep ? sweepPlot(s.ai) : ''}
     <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
     <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
+    <div class="rec"><div class="rec-title">Related entries</div><ul>${related(e)}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
     <div class="controls" style="margin-top:12px;">
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Verification', 'verification.yml')}" target="_blank" rel="noopener">I Verified This</a>
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Dispute', 'dispute.yml')}" target="_blank" rel="noopener">Dispute This</a>
     </div>
     <div class="small-text" style="text-align:center;">Entry id: <span class="mono">${e.id}</span></div>`;
+  $('detail').querySelectorAll('[data-goto]').forEach(a => a.onclick = ev => { ev.preventDefault(); highlighted = a.dataset.goto; mark(); drawLadder(); renderDetail(); });
   $('detail').querySelectorAll('[data-view]').forEach(b => b.onclick = () => {
     $('drawImg').src = $('drawLink').href = 'drawings/' + e.id + b.dataset.view + '.svg';
     $('detail').querySelectorAll('[data-view]').forEach(x => x.classList.toggle('active', x === b));
@@ -329,6 +360,20 @@ function sweepPlot(ai) {
       <path d="${path}" fill="none" stroke="#4a9" stroke-width="2"/>
       <line x1="${X(ai.sweep_angle)}" x2="${X(ai.sweep_angle)}" y1="8" y2="${H - B}" stroke="#ca6" stroke-dasharray="3 3"/></svg>
     <div class="legend" style="text-align:center;">The given angle is turned a degree at a time, keeping everything else as drawn. ${g ? `95% or better from <b>${g[0].toFixed(0)}°</b> to <b>${g[1].toFixed(0)}°</b>` : 'It does not reach 95% near the angle drawn'}; the dashed amber line is the angle in the file (${ai.sweep_angle.toFixed(1)}°). Accuracy under 80% sits on the bottom edge.</div></div>`;
+}
+
+function related(e) {
+  // From tools/crossref.py: entries that are identical, nearly identical, or build on one another.
+  const pairs = (typeof CROSSREF !== 'undefined' ? CROSSREF.pairs : []).filter(x => x.older === e.id || x.newer === e.id);
+  if (!pairs.length) return '<li class="muted">None found: no other entry shares this result or most of its construction.</li>';
+  const name = id => { const x = current.entries.find(y => y.id === id); return x ? `${x.acc}% ${x.side}sized by ${x.holder}` : id; };
+  return pairs.map(x => {
+    const other = x.older === e.id ? x.newer : x.older;
+    const what = {identical: 'Identical to', 'same result': 'The same result as', 'near identical': 'Nearly identical to',
+      'builds on': x.newer === e.id ? 'Builds on' : 'Is the base of', 'shares most steps': 'Shares most steps with',
+      'same file': 'In the same GeoGebra file as'}[x.kind];
+    return `<li>${what} <a class="link" href="#" data-goto="${other}">${name(other)}</a> <span class="muted">(score ${x.similarity.toFixed(2)})</span></li>`;
+  }).join('');
 }
 
 function renderBelow() {

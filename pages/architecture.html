@@ -64,16 +64,16 @@ const SCALES = {
 };
 const fmt = mm => Math.abs(mm) >= 10 ? mm.toFixed(0) + ' mm' : Math.abs(mm) >= 0.01 ? mm.toFixed(3) + ' mm' : (mm * 1000).toFixed(2) + ' µm';
 let rows = '<tr><th>Problem</th><th>Scale</th><th>Best oversized</th><th>Best undersized</th><th>Gap</th></tr>';
-for (const p of PROBLEMS) {
+for (const p of PROBLEMS) for (const who of ['everyone', 'people']) {
   const S = SCALES[p.id]; if (!S) continue;
-  const best = side => p.entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact)[0];
+  const best = side => p.entries.filter(e => e.side === side && (who === 'everyone' || e.holder_kind !== 'ai')).sort((a, b) => b.exact - a.exact)[0];
   const o = best('over'), u = best('under'); if (!o || !u) continue;
   // accuracy is by area for the square and by volume for the cube, so take roots for the length
   const len = (e, sign) => S.of(1 + sign * (100 - e.exact) / 100) * S.true;
   const lo = len(o, 1), lu = len(u, -1);
-  rows += `<tr><td>${p.name}</td><td>${S.label}<br><span class="muted" style="font-size:13px;">true ${S.unit} ${S.true.toFixed(4)} m</span></td>
-    <td>${o.acc}% · ${o.holder}<br><span class="muted" style="font-size:13px;">+${fmt((lo - S.true) * 1000)}</span></td>
-    <td>${u.acc}% · ${u.holder}<br><span class="muted" style="font-size:13px;">−${fmt((S.true - lu) * 1000)}</span></td>
+  rows += `<tr><td>${p.name}${who === 'people' ? '<br><span class="muted" style="font-size:13px;">people only</span>' : '<br><span class="muted" style="font-size:13px;">people and AI</span>'}</td><td>${S.label}<br><span class="muted" style="font-size:13px;">true ${S.unit} ${S.true.toFixed(4)} m</span></td>
+    <td>${o.acc}% · ${o.holder}${o.holder_kind === 'ai' ? ' (AI)' : ''}<br><span class="muted" style="font-size:13px;">+${fmt((lo - S.true) * 1000)}</span></td>
+    <td>${u.acc}% · ${u.holder}${u.holder_kind === 'ai' ? ' (AI)' : ''}<br><span class="muted" style="font-size:13px;">−${fmt((S.true - lu) * 1000)}</span></td>
     <td><b>${fmt((lo - lu) * 1000)}</b></td></tr>`;
 }
 document.getElementById('gaps').innerHTML = rows;

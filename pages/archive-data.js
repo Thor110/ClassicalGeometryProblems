@@ -632,7 +632,7 @@ const ARCHIVE = {
      "disputes": []
     },
     {
-     "id": "stc-under-99.99999",
+     "id": "stc-under-99.9999994",
      "side": "under",
      "marks": "",
      "holder": "Claude (Anthropic)",
@@ -640,11 +640,47 @@ const ARCHIVE = {
      "method": "Search find: 7 circles, 6 lines",
      "circles": 7,
      "lines": 6,
-     "acc": "99.99999",
+     "acc": "99.9999994",
      "precise": "99.999999410064833173310895356216",
      "date": "06-11-2026",
      "geogebra": "",
-     "file": "GeoGebra Files/Squared Circle Under/99.99999-Claude",
+     "file": "GeoGebra Files/Squared Circle Under/99.9999994-Claude",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
+     "verified": [],
+     "disputes": []
+    },
+    {
+     "id": "stc-over-99.99999157",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Search find: 8 circles, 4 lines",
+     "circles": 8,
+     "lines": 4,
+     "acc": "99.99999157",
+     "precise": "99.999991572722291224383932207322",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.99999157-Claude",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
+     "verified": [],
+     "disputes": []
+    },
+    {
+     "id": "stc-under-99.9999999",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Search find: 10 circles, 6 lines",
+     "circles": 10,
+     "lines": 6,
+     "acc": "99.9999999",
+     "precise": "99.999999998151908044486130554640",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.9999999-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
      "disputes": []
@@ -750,6 +786,24 @@ const ARCHIVE = {
      "geogebra": "",
      "file": "GeoGebra Files/Over/TAA-99.051-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 105.08°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
+     "verified": [],
+     "disputes": []
+    },
+    {
+     "id": "taa-under-99.467",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Search find: 4 circles, 3 lines (any angle)",
+     "circles": 4,
+     "lines": 3,
+     "acc": "99.467",
+     "precise": "99.467249472200414370533784321126",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.467-Claude",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 150.00°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
      "verified": [],
      "disputes": []
     }
@@ -905,6 +959,42 @@ const ARCHIVE = {
      "geogebra": "",
      "file": "GeoGebra Files/Over/DTC-99.999989-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request. One crossing it depends on is shallow (10.2°), so it is harder to place accurately on paper.",
+     "verified": [],
+     "disputes": []
+    },
+    {
+     "id": "dtc-over-99.999992",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Search find: 6 circles, 1 lines",
+     "circles": 6,
+     "lines": 1,
+     "acc": "99.999992",
+     "precise": "99.999992926501011321061449248517",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.999992-Claude",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
+     "verified": [],
+     "disputes": []
+    },
+    {
+     "id": "dtc-over-99.999998",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Search find: 7 circles, 2 lines",
+     "circles": 7,
+     "lines": 2,
+     "acc": "99.999998",
+     "precise": "99.999998292097228382557369094454",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.999998-Claude",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
      "disputes": []
     }
@@ -1740,6 +1830,29 @@ const ARCHIVE = {
      "result_path": [
       "P_{72}",
       "P_{2}"
+     ]
+    },
+    {
+     "id": "rtc-under-99.999997",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Search find: 6 circles, 2 lines (half the circumference)",
+     "circles": 6,
+     "lines": 2,
+     "acc": "99.999997",
+     "precise": "99.999997390897667828353489625170",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.999997-Claude",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request. It constructs half the circumference, so twice its length is compared with the circumference (one more circle would draw the doubled length).",
+     "verified": [],
+     "disputes": [],
+     "result_scale": 2,
+     "result_path": [
+      "P_{31}",
+      "P_{22}"
      ]
     }
    ]

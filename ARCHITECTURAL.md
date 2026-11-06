@@ -53,11 +53,11 @@ is worked out live from the charts.
 
 | Problem | Scale | Best oversized | Best undersized | Gap you would walk between |
 |---|---|---|---|---|
-| Rectifying The Circle | plaza 100 m across, circumference 314.159265 m | 99.999999% (Claude (Anthropic)): +0.10 µm | 99.99999% (Srinivasa Ramanujan): −0.10 µm | 0.20 µm |
+| Rectifying The Circle | plaza 100 m across, circumference 314.159265 m | 99.999999% (Claude (Anthropic), AI): +0.10 µm | 99.99999% (Srinivasa Ramanujan): −0.10 µm | 0.20 µm |
 | Rectifying The Circle (people only) | plaza 100 m across, circumference 314.159265 m | 99.99999% (Kochanski / Gordon): +0.011 mm | 99.99999% (Srinivasa Ramanujan): −0.10 µm | 0.011 mm |
-| Squaring The Circle | circle 100 m across, square side 88.622693 m | 99.999999% (Claude (Anthropic)): +0.13 µm | 99.99999% (Claude (Anthropic)): −0.26 µm | 0.39 µm |
+| Squaring The Circle | circle 100 m across, square side 88.622693 m | 99.999999% (Claude (Anthropic), AI): +0.13 µm | 99.9999999% (Claude (Anthropic), AI): −0.8 nm | 0.13 µm |
 | Squaring The Circle (people only) | circle 100 m across, square side 88.622693 m | 99.999% (Srinivasa Ramanujan): +3.76 µm | 99.999% (Edward James Gordon): −0.394 mm | 0.397 mm |
-| Doubling The Cube | given edge 10 m, doubled edge 12.599210 m | 99.999989% (Claude (Anthropic)): +0.43 µm | 99.999% (Claude (Anthropic)): −1.18 µm | 1.61 µm |
+| Doubling The Cube | given edge 10 m, doubled edge 12.599210 m | 99.999998% (Claude (Anthropic), AI): +0.07 µm | 99.999% (Claude (Anthropic), AI): −1.18 µm | 1.25 µm |
 | Doubling The Cube (people only) | given edge 10 m, doubled edge 12.599210 m | 98.076% (Edward James Gordon): +80 mm | 98.924% (Edward James Gordon): −45 mm | 126 mm |
 
 At the scale of a building, the best constructions for the circle are closer together than any
@@ -68,7 +68,7 @@ builder can lay a line. Two choices follow:
 - **Build a pair you can see**, using constructions further apart, or a much larger scale such as a
   landscape or a land-art piece kilometres across, so the gap is wide enough to walk between.
 
-With people's constructions alone, doubling the cube still leaves a gap you could stand in, about 126 mm on a 10 m cube; the search finds close it to under two thousandths of a millimetre.
+With people's constructions alone, doubling the cube still leaves a gap you could stand in, about 126 mm on a 10 m cube; the search finds close it to about a thousandth of a millimetre.
 
 ## Notes
 

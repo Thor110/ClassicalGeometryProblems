@@ -57,8 +57,24 @@
 <div class="box">
   <div class="box-title">Every Entry</div>
   <div class="small-text" style="text-align:center;margin-bottom:12px;" id="aiRun"></div>
+  <div class="controls"><button class="small active" data-who="all">People And AI</button><button class="small" data-who="person">People</button><button class="small" data-who="ai">AI</button></div>
   <div class="meters" id="tally" style="margin-bottom:16px;"></div>
   <div class="table-wrap"><table id="all"></table></div>
+</div>
+
+<div class="box" id="crossref">
+  <div class="box-title">Cross-Reference</div>
+  <div class="box-text">Every entry is compared with every other entry of its problem by <span class="mono">tools/crossref.py</span>, in two independent ways: whether they produce the same result, and how much of their constructions they share. A construction's fingerprint is every distance between the points its result depends on, and every circle's radius, scaled to the given figure. It does not change when a construction is moved, turned, mirrored or resized, so the same construction drawn twice is found however it was drawn. A new GeoGebra file can be checked against the whole archive before it is added: <span class="mono">python tools/crossref.py new.ggb stc</span>.</div>
+  <ul class="small-text">
+    <li><b>Identical</b>: the same result and the same construction.</li>
+    <li><b>Same result</b>: the same number, reached a different way.</li>
+    <li><b>Near identical</b>: most of both constructions is shared.</li>
+    <li><b>Builds on</b>: one construction lies whole inside another, as an adjustment or extension of it.</li>
+    <li><b>Shares most steps</b>: most of the smaller construction lies inside the larger.</li>
+    <li><b>Same file</b>: two squares drawn in one GeoGebra file, expected and listed for completeness.</li>
+  </ul>
+  <div class="meters" id="xtally" style="margin-bottom:12px;"></div>
+  <div class="table-wrap"><table id="xtable"></table></div>
 </div>
 
 <div class="box" id="disputes">
@@ -99,6 +115,7 @@
 
 <script src="archive-data.js"></script>
 <script src="ai-checks.js"></script>
+<script src="crossref.js"></script>
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
@@ -117,17 +134,38 @@ $('tally').innerHTML = [['Verified', n('verified'), 'good'], ['Self-verified', n
   ['AI reproduced', a('reproduced'), 'good'], ['AI: does not match', a('attention'), 'hot'], ['AI: check by hand', a('manual') + a('no-file'), 'warm']]
   .map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
 
-$('all').innerHTML = '<tr><th>Problem</th><th>Entry</th><th>Status</th><th>People</th><th>AI check</th><th>File measures</th><th>What the AI found</th></tr>' + all.map(e => {
+let who = 'all';
+try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
+document.querySelectorAll('[data-who]').forEach(b => {
+  b.classList.toggle('active', b.dataset.who === who);
+  b.onclick = () => { who = b.dataset.who; try { localStorage.setItem('cgp-who', who); } catch (e) {}
+    document.querySelectorAll('[data-who]').forEach(x => x.classList.toggle('active', x === b)); table(); };
+});
+function table() {
+$('all').innerHTML = '<tr><th>Problem</th><th>Entry</th><th>By</th><th>Status</th><th>People</th><th>AI check</th><th>File measures</th><th>What the AI found</th></tr>' + all.filter(e => who === 'all' || (e.holder_kind === 'ai' ? 'ai' : 'person') === who).map(e => {
   const s = statusOf(e), c = s.ai || {};
   const found = (c.checks || []).filter(x => !/^every rebuilt|^no hand-placed|reproduces the chart/.test(x)).join('; ') || (c.status === 'reproduced' ? 'All checks passed.' : '');
   return `<tr><td><a class="link" href="charts.html#${e.problem.id}">${e.problem.short}</a></td>
     <td>${e.archived ? 'below 95%' : e.side + ' #' + e.rank} · <b>${e.acc}%</b><br><span class="muted" style="font-size:13px;">${e.holder}</span></td>
+    <td>${e.holder_kind === 'ai' ? 'AI' : 'person'}</td>
     <td><span class="badge ${s.status}">${s.status.replace('-', ' ')}</span></td>
     <td>${s.people.map(v => v.by + (isHolder(v.by, e.holder) ? ' (self)' : '')).join('<br>') || '—'}</td>
     <td><span class="badge ${c.status || 'unverified'}">${{reproduced: 'reproduced', attention: 'does not match', manual: 'by hand', 'no-file': 'no file'}[c.status] || 'none'}</span></td>
     <td>${c.accuracy != null ? c.accuracy.toFixed(6) + '%' + (c.side ? '<br><span class="muted" style="font-size:13px;">' + c.side + 'sized</span>' : '') : '—'}</td>
     <td class="wrap">${found}</td></tr>`;
 }).join('');
+}
+table();
+
+// Cross-reference table
+const X = typeof CROSSREF !== 'undefined' ? CROSSREF : {pairs: [], run: ''};
+const kinds = ['identical', 'same result', 'near identical', 'builds on', 'shares most steps', 'same file'];
+$('xtally').innerHTML = kinds.map(k => `<div class="meter"><div class="mlabel">${k}</div><div class="mval ${k === 'identical' || k === 'same result' ? 'hot' : k === 'near identical' ? 'warm' : ''}">${X.pairs.filter(x => x.kind === k).length}</div></div>`).join('');
+const byId = Object.fromEntries(all.map(e => [e.id, e]));
+const nm = id => byId[id] ? `${byId[id].problem.short} ${byId[id].acc}% ${byId[id].side}<br><span class="muted" style="font-size:13px;">${byId[id].holder}${byId[id].holder_kind === 'ai' ? ' (AI)' : ''}</span>` : id;
+$('xtable').innerHTML = '<tr><th>Relation</th><th>Base or earlier entry</th><th>Later or larger entry</th><th>Score</th></tr>' +
+  (X.pairs.map(x => `<tr><td>${x.kind}</td><td>${nm(x.older)}</td><td>${nm(x.newer)}</td><td>${x.similarity.toFixed(2)}</td></tr>`).join('') || '<tr><td colspan="4" class="muted">No related entries.</td></tr>') +
+  `<tr><td colspan="4" class="muted" style="font-size:13px;">Run ${X.run}.</td></tr>`;
 
 const log = all.flatMap(e => (e.disputes || []).map(d => ({...d, e})));
 $('log').innerHTML = log.length ? log.map(d => `<li><b>${d.status}</b> · ${d.e.problem.short} ${d.e.acc}% · ${d.kind} · raised by ${d.by}: ${d.summary}${d.outcome ? ' · outcome: ' + d.outcome : ''}</li>`).join('') : '<li class="muted">No disputes have been raised yet.</li>';

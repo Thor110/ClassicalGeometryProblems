@@ -436,7 +436,16 @@ def given_size(problem, r, roots):
     rad = [x[2] for x in o.values() if x and x[0] == 'circle']
     return max(rad) if rad else None
 
-def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0):
+def sweep_at(problem, path, entry, targets, step=1.0):
+    """Accuracy at exact angles, each reached from the file's own angle in steps of at most `step`
+    degrees so every intersection follows the figure. Returns {degrees: accuracy or None}."""
+    out = {}
+    for t in targets:
+        pts, start = sweep(problem, path, entry, lo=min(t, 0), hi=max(t, 360), step=step, stop_at=t)
+        out[t] = dict(pts).get(round(t, 3))
+    return out
+
+def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None):
     """Measure an angle method across a range of angles, keeping everything else as drawn.
 
     The given angle is changed (trisection: the arm through C turns about the vertex B; arc
@@ -469,6 +478,17 @@ def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0):
         return []
     pts = lambda r: {k: o[1] for k, o in r['objects'].items() if o and o[0] == 'point'}
     out = {}
+    if stop_at is not None:
+        # walk straight from the file's angle to stop_at, landing on it exactly
+        n = max(1, int(math.ceil(abs(stop_at - start) / step)))
+        ref = pts(base)
+        for k in range(n + 1):
+            deg = start + (stop_at - start) * k / n
+            a, r = run(make(deg), ref)
+            if r is None: break
+            ref = pts(r)
+        out[round(stop_at, 3)] = a if r is not None else None
+        return sorted(out.items()), start
     for direction in (1, -1):
         ref, deg = pts(base), start
         while lo <= deg <= hi:
@@ -511,7 +531,7 @@ def md_fields(path):
 
 MARK_START, MARK_END = '<!-- maintainer-list:start -->', '<!-- maintainer-list:end -->'
 
-def maintainer_list(archive, results, today):
+def maintainer_list(archive, results, today, pairs=()):
     """What still needs the maintainer, written into VERIFICATION.md."""
     maint = archive['verifiers']['people'][0]['name']
     side = {'over': 'oversized', 'under': 'undersized'}
@@ -545,6 +565,8 @@ def maintainer_list(archive, results, today):
         ('Flagged by the AI check', attention, 'Each needs a decision: correct the entry, or explain why the check does not apply.'),
         ('Missing GeoGebra files', missing, ''),
         ('Step counts that differ from the counting rules', counts, 'Under SUBMISSION_RULESET.md, "Counting". Either update the chart, or say why the rule does not fit this entry.'),
+        ('Identical or near-identical entries', ['- [ ] %s: %s and %s (score %.2f)' % (x['kind'], x['older'], x['newer'], x['similarity']) for x in pairs if x['kind'] in ('identical', 'same result', 'near identical')],
+         'From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.'),
         ('µ marks to review', micro, 'The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry\'s micro_note.')]:
         if not items: continue
         out += ['### %s (%d)' % (title, len(items)), '']
@@ -647,9 +669,15 @@ def main():
     for g in stray: print('?? not on any chart: ' + os.path.relpath(g, ROOT)); bad += 1
     if write:
         out = {'tool': 'tools/verify.py', 'run': datetime.date.today().isoformat(), 'results': results}
+        try:
+            import crossref
+            pairs = crossref.run(archive); crossref.write(pairs)
+            print('%d related pairs written to pages/crossref.js' % len(pairs))
+        except Exception as ex:
+            pairs = []; print('cross-reference was not run: %s' % ex)
         vpath = os.path.join(ROOT, 'VERIFICATION.md')
         vtext = open(vpath, encoding='utf-8').read()
-        block = maintainer_list(archive, results, out['run'])
+        block = maintainer_list(archive, results, out['run'], pairs)
         if MARK_START in vtext:
             vtext = vtext[:vtext.index(MARK_START)] + block + vtext[vtext.index(MARK_END) + len(MARK_END):]
         else:

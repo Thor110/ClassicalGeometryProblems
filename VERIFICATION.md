@@ -112,7 +112,7 @@ recorded, but the entry stays self-verified until a person or another verifier r
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (56)
+### Not verified by a person yet (62)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -145,11 +145,14 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, oversized 99.9998% · Search find: 6 circles, 5 lines (stc-over-99.9998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9998-Claude.ggb`
 - [ ] Squaring The Circle, oversized 99.999999% · Search find: 9 circles, 6 lines (stc-over-99.999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.999999-Claude.ggb`
 - [ ] Squaring The Circle, undersized 99.99998% · Search find: 8 circles, 4 lines (stc-under-99.99998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.99998-Claude.ggb`
-- [ ] Squaring The Circle, undersized 99.99999% · Search find: 7 circles, 6 lines (stc-under-99.99999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.99999-Claude.ggb`
+- [ ] Squaring The Circle, undersized 99.9999994% · Search find: 7 circles, 6 lines (stc-under-99.9999994): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9999994-Claude.ggb`
+- [ ] Squaring The Circle, oversized 99.99999157% · Search find: 8 circles, 4 lines (stc-over-99.99999157): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99999157-Claude.ggb`
+- [ ] Squaring The Circle, undersized 99.9999999% · Search find: 10 circles, 6 lines (stc-under-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9999999-Claude.ggb`
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 99.051% · Search find: 4 circles, 4 lines (any angle) (taa-over-99.051): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.051-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.467% · Search find: 4 circles, 3 lines (any angle) (taa-under-99.467): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.467-Claude.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -158,6 +161,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, undersized 99.999% · Search find: 4 circles, 2 lines (dtc-under-99.999): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.999-Claude.ggb`
 - [ ] Doubling The Cube, oversized 99.999982% · Search find: 5 circles, 2 lines (dtc-over-99.999982): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999982-Claude.ggb`
 - [ ] Doubling The Cube, oversized 99.999989% · Search find: 5 circles, 3 lines (dtc-over-99.999989): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999989-Claude.ggb`
+- [ ] Doubling The Cube, oversized 99.999992% · Search find: 6 circles, 1 lines (dtc-over-99.999992): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999992-Claude.ggb`
+- [ ] Doubling The Cube, oversized 99.999998% · Search find: 7 circles, 2 lines (dtc-over-99.999998): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999998-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.99999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.99999% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
@@ -168,6 +173,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.999998% · Search find: 5 circles, 4 lines (rtc-under-99.999998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999998-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999990% · Search find: 7 circles, 4 lines (half the circumference) (rtc-under-99.9999990): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999990-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999998% · Search find: 8 circles, 4 lines (half the circumference) (rtc-under-99.9999998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999998-Claude.ggb`
+- [ ] Rectifying The Circle, undersized 99.999997% · Search find: 6 circles, 2 lines (half the circumference) (rtc-under-99.999997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999997-Claude.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
@@ -179,6 +185,13 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
+### Identical or near-identical entries (2)
+
+From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
+
+- [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
+- [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)
+
 ### µ marks to review (2)
 
 The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry's micro_note.
@@ -187,6 +200,23 @@ The micro scale test (a step under 5% of the given size) disagrees with the char
 - [ ] Rectifying The Circle, oversized 99.873% (rtc-over-99.873): the test finds its smallest step at 50.0% of the given size; the chart has µ
 
 <!-- maintainer-list:end -->
+
+## Cross-reference
+
+[tools/crossref.py](tools/crossref.py) compares every entry with every other entry of its problem, in two
+independent ways: whether they produce the same result (to 12 significant digits), and how much of
+their constructions they share. A construction's fingerprint is every distance between the points
+its result depends on, and every circle's radius, scaled to the given figure, so the same
+construction is found however it was drawn: moved, turned, mirrored or resized. Angle methods are
+also compared by their accuracy across a sweep of angles.
+
+Relations it reports: **identical**, **same result**, **near identical**, **builds on** (one
+construction lies whole inside another), **shares most steps**, and **same file**. Identical,
+same-result and near-identical pairs go on the maintainer's list above.
+
+To check a new submission against the archive before adding it:
+
+    python tools/crossref.py path/to/new.ggb stc
 
 ## Log
 

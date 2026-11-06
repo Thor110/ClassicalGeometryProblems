@@ -11,8 +11,8 @@
 <circle cx="534.34" cy="525.76" r="317.45" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <line x1="900.00" y1="48.52" x2="254.16" y2="891.42" stroke="#3a3a44" stroke-width="1.4"/>
 <line x1="240.79" y1="891.42" x2="561.38" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
+<line x1="372.30" y1="525.76" x2="230.63" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 <line x1="372.30" y1="525.76" x2="561.38" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 <line x1="372.30" y1="525.76" x2="900.00" y2="151.31" stroke="#178a62" stroke-width="2.5"/>
 <line x1="372.30" y1="525.76" x2="900.00" y2="525.76" stroke="#178a62" stroke-width="2.5"/>
-<line x1="372.30" y1="525.76" x2="230.63" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 </svg>
