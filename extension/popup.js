@@ -4,6 +4,7 @@
 const $ = id => document.getElementById(id);
 const PROBLEMS = {stc: 'Squaring the Circle', rtc: 'Rectifying the Circle', dtc: 'Doubling the Cube', taa: 'Trisecting an Angle', ar: 'Arc Rectification'};
 let C = null;              // the construction read from GeoGebra
+let TAB = null;            // the GeoGebra tab, to come back to after signing in
 
 // Runs inside the GeoGebra page (the page's own world, where GeoGebra's ggbApplet lives).
 function readConstruction() {
@@ -197,6 +198,7 @@ async function submitPR() {
   status('Sending…');
   try {
     const url = await GH.submit(token, files, title, body, 'submission-' + folder, status);
+    await chrome.storage.local.remove('draft');
     status(`Submitted. <a href="${url}" target="_blank">Your pull request</a> will be evaluated automatically in a minute or two.`);
   } catch (e) {
     if (e.status === 401) { await chrome.storage.local.remove(['token', 'login']); account(); }
@@ -233,18 +235,15 @@ async function account() {
     A.innerHTML = `Signed in to GitHub as <b>${login}</b>. <a href="#" id="signout">Sign out</a>`;
     $('signout').onclick = async e => { e.preventDefault(); await chrome.storage.local.remove(['token', 'login']); account(); check(); };
   } else {
-    A.innerHTML = `Pull requests need a GitHub account. <a href="#" id="signin">Sign in with GitHub</a>`;
+    // Sign-in runs in its own tab (signin.html): this popup closes as soon as GitHub's page is opened.
+    const {signin} = await chrome.storage.local.get('signin');
+    const waiting = signin && signin.expires_at > Date.now();
+    A.innerHTML = waiting
+      ? `Signing in with code <b class="good">${signin.user_code}</b>. <a href="#" id="signin">Open the sign-in tab</a>`
+      : `Pull requests need a GitHub account. <a href="#" id="signin">Sign in with GitHub</a>`;
     $('signin').onclick = async e => {
       e.preventDefault();
-      try {
-        const s = await GH.start();
-        A.innerHTML = `On the GitHub page that opened, enter this code:<div class="code">${s.user_code}</div>Waiting for GitHub…`;
-        chrome.tabs.create({url: s.verification_uri, active: true});
-        const t = await GH.poll(s);
-        const me = await GH.api(t, '/user');
-        await chrome.storage.local.set({token: t, login: me.login});
-        account(); check();
-      } catch (err) { A.innerHTML = `<span class="hot">${err.message}</span> <a href="#" id="retry">Try again</a>`; $('retry').onclick = ev => { ev.preventDefault(); account(); }; }
+      chrome.tabs.create({url: chrome.runtime.getURL('signin.html') + (TAB ? '?tab=' + TAB : '')});   // it reuses a code already shown
     };
   }
   check();
@@ -255,6 +254,7 @@ function status(html) { $('status').innerHTML = html; }
 // ----- start
 (async function start() {
   const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+  TAB = tab && tab.id;
   if (!tab || !/^https:\/\/([a-z0-9-]+\.)?geogebra\.org\//.test(tab.url || '')) {
     status(`Open your construction on <a href="https://www.geogebra.org/geometry" target="_blank">geogebra.org</a>, then click this button again.`); return;
   }
@@ -273,6 +273,16 @@ function status(html) { $('status').innerHTML = html; }
   $('form').hidden = false;
   for (const id of ['problem', 'result', 'truth', 'scale']) $(id).onchange = update;
   $('name').oninput = () => { chrome.storage.local.set({name: $('name').value}); check(); };
+  // Keep what was typed for this construction, so closing the popup (to sign in, say) loses nothing.
+  const DRAFT = ['method', 'description', 'notes'], TICKS = ['ai', 'agree'];
+  const {draft} = await chrome.storage.local.get('draft');
+  if (draft && draft.url === C.url) {
+    for (const id of DRAFT) if (draft[id]) $(id).value = draft[id];
+    for (const id of TICKS) $(id).checked = !!draft[id];
+  }
+  const keep = () => chrome.storage.local.set({draft: Object.fromEntries([['url', C.url], ...DRAFT.map(id => [id, $(id).value]), ...TICKS.map(id => [id, $(id).checked])])});
+  for (const id of DRAFT) $(id).addEventListener('input', keep);
+  for (const id of TICKS) $(id).addEventListener('change', keep);
   $('agree').onchange = check;
   $('submit').onclick = submitPR; $('download').onclick = download; $('issue').onclick = issue;
   $('site').onclick = e => { e.preventDefault(); chrome.tabs.create({url: CONFIG.SITE + 'pages/submit.html#extension'}); };

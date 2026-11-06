@@ -1,0 +1,5 @@
+/* The sign-in tab: the popup's look, centred on a full page. */
+body{width:auto;max-width:440px;margin:40px auto;}
+ol{color:#b0aca5;line-height:1.6;margin:14px 0 4px 22px;font-size:13px;}
+.code{font-size:30px;letter-spacing:0.25em;color:#4a9;text-align:center;margin:10px 0 2px;user-select:all;}
+#status{margin-top:16px;}

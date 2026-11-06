@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Classical Geometry Problems: Submit",
   "short_name": "CGP Submit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Submit a straightedge and compass construction from GeoGebra to the Classical Geometry Problems archive.",
   "action": {
     "default_title": "Submit this construction",

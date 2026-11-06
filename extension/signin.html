@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign in with GitHub · Classical Geometry Problems</title>
+<link rel="stylesheet" href="popup.css">
+<link rel="stylesheet" href="signin.css">
+</head>
+<body>
+<h1>Classical Geometry Problems</h1>
+<div class="sub">Sign in with GitHub to send pull requests</div>
+
+<div id="steps" hidden>
+  <ol>
+    <li>Copy this code:</li>
+  </ol>
+  <div class="code" id="code"></div>
+  <button id="copy" class="primary">Copy The Code</button>
+  <ol start="2">
+    <li>Open GitHub's sign-in page and paste it in. You may need to sign in to GitHub first.</li>
+  </ol>
+  <button id="open">Open GitHub's Sign-In Page</button>
+  <ol start="3">
+    <li>Choose <b>Authorize</b> on GitHub, then come back to this tab.</li>
+  </ol>
+  <div class="hint">This tab keeps the code and waits for GitHub, so you can switch tabs freely. The code works for <span id="left"></span> more minutes.</div>
+</div>
+
+<div id="status" class="status">Asking GitHub for a sign-in code…</div>
+
+<script src="config.js"></script>
+<script src="github.js"></script>
+<script src="signin.js"></script>
+</body>
+</html>

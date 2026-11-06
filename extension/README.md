@@ -24,8 +24,8 @@ without a GitHub account.
 
 ## Setting up GitHub sign-in (maintainer, once)
 
-Sign-in uses GitHub's device flow: the person is shown a short code to enter on github.com. It
-needs no server and no secret, only a public client ID.
+Sign-in uses GitHub's device flow: the person is shown a short code to enter on github.com, in a
+sign-in tab that stays open while they do it. It needs no server and no secret, only a public client ID.
 
 1. GitHub → Settings → Developer settings → **OAuth Apps** → New OAuth App.
    - Application name: Classical Geometry Problems
@@ -46,6 +46,7 @@ issue instead.
 | manifest.json | Permissions: `activeTab` and `scripting` to read the GeoGebra tab only when clicked, `storage` for the name and sign-in, and access to github.com's sign-in and api.github.com |
 | config.js | The archive's owner, repository, branch, the 95% minimum, and the OAuth client ID |
 | popup.html, popup.css, popup.js | The form, the preview and the three ways to send |
+| signin.html, signin.css, signin.js | The GitHub sign-in, in its own tab: the popup closes when the person goes to github.com to enter the code, so the tab keeps the code (even if reloaded), waits for GitHub, then returns to the GeoGebra tab |
 | github.js | Sign-in, forking, adding the files on a new branch and opening the pull request |
 | zip.js | Builds the zip for the download |
 | icons/ | The toolbar icons |
