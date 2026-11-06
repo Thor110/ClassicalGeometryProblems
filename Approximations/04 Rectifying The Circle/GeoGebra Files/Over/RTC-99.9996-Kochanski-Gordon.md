@@ -13,7 +13,7 @@ Edward James Gordon, building on Adam Adamandy Kochański - 22-12-2025
 Oversized
 
 **Number of Circles:**
-12
+11
 
 **Number of Lines:**
 10

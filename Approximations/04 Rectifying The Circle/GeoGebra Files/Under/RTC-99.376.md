@@ -14,7 +14,7 @@ Edward James Gordon
 Undersized.
 
 **Number of Circles:**
-8
+7
 
 **Number of Lines:**
 4

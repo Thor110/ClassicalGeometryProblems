@@ -14,10 +14,10 @@ Edward James Gordon - 01 December 2024
 Oversized.
 
 **Number of Circles:**
-~4-8+/-
+4
 
 **Number of Lines:**
-~3-6+/-
+1
 
 **Verification Method:**
 Rebuilt and recomputed by tools/verify.py. Re-measured at full precision in November 2026: the chart listed ~95.538% undersized. The worst of the three thirds now sets the accuracy, as every third must equal a third of the angle.

@@ -16,7 +16,7 @@ Undersized
 9
 
 **Number of Lines:**
-6
+7
 
 **Verification Method:**
 Verified using GeoGebra and https://percentagecalculator.net/

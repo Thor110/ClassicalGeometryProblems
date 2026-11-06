@@ -16,7 +16,7 @@ Oversized
 10
 
 **Number of Lines:**
-7
+6
 
 **Verification Method:**
 Verified using GeoGebra and https://percentagecalculator.net/

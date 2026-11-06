@@ -14,10 +14,10 @@ Edward James Gordon - 06 June 2024
 Undersized.
 
 **Number of Circles:**
-13
+7
 
 **Number of Lines:**
-30
+6
 
 **Verification Method:**
 All side lengths verified within GeoGebra using direct measurement tools.

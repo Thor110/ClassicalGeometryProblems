@@ -72,7 +72,7 @@ An approximation chart for each problem exists to help people more easily sift t
 
 The charts live on the [website](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html), and their data is a single file, [pages/archive-data.js](pages/archive-data.js). The earlier PDF and spreadsheet versions are kept in the repository's history.
 
-[tools/verify.py](tools/verify.py) rebuilds every GeoGebra file and checks it against that data, so the numbers in the charts, the files and the notes cannot quietly drift apart.
+[tools/verify.py](tools/verify.py) rebuilds every GeoGebra file and checks it against that data, so the numbers in the charts, the files and the notes cannot quietly drift apart. It also counts each construction under the [counting rules](SUBMISSION_RULESET.md#counting), applies the micro scale test, and measures angle methods across a sweep of angles. [tools/draw.py](tools/draw.py) draws every construction twice for the charts: once with only the steps that count, and once with everything in the file.
 
 ### Method names
 
@@ -96,6 +96,8 @@ I wrote a paper on the three primary classic geometry problems which presents tw
 
 [Read the paper](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-three-classic-geometry-problems.html)
 
+A simpler construction, Three Minus Root Three, reaches 98.076% (oversized) from five circles: three edges less the length √3, which can be drawn in the plane.
+
 ### 4. Rectifying The Circle
 
 I believe that the most accurate approximation of rectifying the circle would require using Kochanski's method for approximating π twice back to back.
@@ -103,6 +105,8 @@ I believe that the most accurate approximation of rectifying the circle would re
 However for the sake of presenting different methods and until a more accurate singular method is discovered, I have chosen to list my own approximation which I discovered recently.
 
 [Read the paper](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-euclidean-circumference-approximation.html)
+
+Ramanujan's 1914 construction is the most accurate on the chart at 99.99999996% (undersized). The crossover between my method and Kochański's reaches 99.99999% (oversized) when it takes the point three sevenths of the way between them instead of the midpoint.
 
 ### 5. Arc Rectification
 

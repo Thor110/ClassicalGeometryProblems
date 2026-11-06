@@ -17,7 +17,7 @@ Undersized.
 13
 
 **Number of Lines:**
-42
+20
 
 **Verification Method:**
 All side lengths verified within GeoGebra using direct measurement tools.

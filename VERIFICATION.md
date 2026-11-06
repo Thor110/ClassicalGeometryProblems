@@ -107,7 +107,7 @@ submission's notes. That keeps the record honest, and it is not held against the
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (29)
+### Not verified by a person yet (33)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -139,43 +139,24 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
+- [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
+- [ ] Rectifying The Circle, undersized 99.99999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
+- [ ] Rectifying The Circle, oversized 99.99999% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
+- [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 
-### Flagged by the AI check (2)
+### Flagged by the AI check (1)
 
 Each needs a decision: correct the entry, or explain why the check does not apply.
 
-- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z
-- [ ] Arc Rectification, oversized ~95% (ar-over-95): D' is made by rotating through an angle, which is not a compass step; the file does not record a measurement this script can match to the result; it needs checking by hand
+- [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): A_1, F, Z; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Step counts to review (24)
+### µ marks to review (2)
 
-Informational. The checker counts only the circles and lines the result is built from (a perpendicular bisector counts as one line; midpoints and intersections are not counted). Where your count is higher, the extra steps may be exploration that could be left out of the count, or the counting rules may differ.
+The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry's micro_note.
 
-- [ ] Squaring The Circle, oversized 99.109% · Circling the Square (additional) (stc-over-99.109): charted 1 circles, 20 lines; the result is built from 1 circles, 24 lines
-- [ ] Squaring The Circle, oversized 99.119% · Circling the Square (additional) (stc-over-99.119): charted 21 circles, 7 lines; the result is built from 17 circles, 7 lines
-- [ ] Squaring The Circle, oversized 99.356% · Circling the Square (additional) (stc-over-99.356): charted 13 circles, 17 lines; the result is built from 13 circles, 15 lines
-- [ ] Squaring The Circle, oversized 99.558% · Circling the Square (additional) (stc-over-99.558): charted 13 circles, 25 lines; the result is built from 13 circles, 17 lines
-- [ ] Squaring The Circle, oversized 99.696% · Circling the Square (additional) (stc-over-99.696): charted 25 circles, 8 lines; the result is built from 24 circles, 9 lines
-- [ ] Squaring The Circle, oversized 99.809% · Circling the Square (additional) (stc-over-99.809): charted 13 circles, 37 lines; the result is built from 13 circles, 29 lines
-- [ ] Squaring The Circle, oversized 99.999% · Ramanujan's Method (stc-over-99.999): charted 9 circles, 13 lines; the result is built from 9 circles, 15 lines
-- [ ] Squaring The Circle, undersized 99.932% · Circling the Square (additional) (stc-under-99.932): charted 13 circles, 29 lines; the result is built from 13 circles, 21 lines
-- [ ] Squaring The Circle, undersized 99.150% · Circling the Square (additional) (stc-under-99.150): charted 13 circles, 20 lines; the result is built from 13 circles, 16 lines
-- [ ] Squaring The Circle, undersized 99.015% · Circling the Square (additional) (stc-under-99.015): charted 13 circles, 11 lines; the result is built from 13 circles, 7 lines
-- [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): charted 13 circles, 30 lines; the result is built from 7 circles, 6 lines
-- [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): charted 13 circles, 42 lines; the result is built from 13 circles, 20 lines
-- [ ] Rectifying The Circle, oversized 98.538% (rtc-over-98.538): charted 6 circles, 7 lines; the result is built from 6 circles, 6 lines
-- [ ] Rectifying The Circle, oversized 99.596% (rtc-over-99.596): charted 13 circles, 9 lines; the result is built from 12 circles, 6 lines
-- [ ] Rectifying The Circle, oversized 99.607% (rtc-over-99.607): charted 9 circles, 4 lines; the result is built from 7 circles, 4 lines
-- [ ] Rectifying The Circle, oversized 99.802% (rtc-over-99.802): charted 11 circles, 4 lines; the result is built from 10 circles, 4 lines
-- [ ] Rectifying The Circle, oversized 99.806% · Euclidean Circumference Approximation (rtc-over-99.806): charted 1 circles, 10 lines; the result is built from 1 circles, 11 lines
-- [ ] Rectifying The Circle, oversized 99.9986% (rtc-over-99.9986): charted 10 circles, 7 lines; the result is built from 10 circles, 6 lines
-- [ ] Rectifying The Circle, oversized 99.9996% · Kochanski Gordon Crossover Method (rtc-over-99.9996): charted 12 circles, 10 lines; the result is built from 11 circles, 10 lines
-- [ ] Rectifying The Circle, undersized 99.999% · Microscale Trisection (rtc-under-99.999): charted 9 circles, 13 lines; the result is built from 9 circles, 12 lines
-- [ ] Rectifying The Circle, undersized 99.9874% (rtc-under-99.9874): charted 9 circles, 6 lines; the result is built from 9 circles, 7 lines
-- [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): charted 8 circles, 4 lines; the result is built from 7 circles, 4 lines
-- [ ] Rectifying The Circle, undersized 98.165% (rtc-under-98.165): charted 6 circles, 4 lines; the result is built from 6 circles, 5 lines
-- [ ] Rectifying The Circle, oversized 99.979% (rtc-over-99.979): charted 6 circles, 8 lines; the result is built from 6 circles, 7 lines
+- [ ] Rectifying The Circle, oversized 99.607% (rtc-over-99.607): the test finds its smallest step at 6.3% of the given size; the chart has µ
+- [ ] Rectifying The Circle, oversized 99.873% (rtc-over-99.873): the test finds its smallest step at 50.0% of the given size; the chart has µ
 
 <!-- maintainer-list:end -->
 

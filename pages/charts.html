@@ -14,6 +14,11 @@
   .badge.verified{color:#4a9;border-color:#2a4a3a;} .badge.self-verified{color:#ca6;border-color:#4a3e2a;}
   .badge.unverified{color:#666;} .badge.disputed{color:#e55;border-color:#5a2a2a;}
   #detail .rec{border-top:1px solid #1e1e2a;padding-top:10px;margin-top:10px;}
+  #detail .drawing{margin:12px auto 4px;max-width:640px;text-align:center;}
+  #detail .drawing img{width:100%;max-height:520px;object-fit:contain;background:#fff;border:1px solid #2a2a3a;cursor:zoom-in;}
+  #detail .legend{font-size:13px;color:#666;margin-top:6px;line-height:1.6;}
+  .sw{display:inline-block;width:14px;height:3px;vertical-align:middle;margin:0 4px 0 10px;}
+  #detail svg.sweep{width:100%;max-width:640px;display:block;margin:8px auto 0;background:#0a0a0f;border:1px solid #1e1e2a;}
   #detail .rec-title{font-size:13px;color:#666;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;}
   tr.hl td.acc{color:#4a9;}
 </style>
@@ -77,14 +82,15 @@
         <li><b>Base ruleset</b>: at most 25 circles and 40 lines.</li>
         <li><b>Extended ruleset</b>: at most 49 circles and 80 lines, for constructions at 99.91% and above.</li>
         <li><b>Accepted range</b>: 95% minimum, 100% maximum.</li>
-        <li><b>Counted</b>: circles and lines. <b>Not counted</b>: macro scale midpoints, those easy to reproduce on paper.</li>
+        <li><b>Counted</b>: only the circles and lines the result depends on. <b>Not counted</b>: exploration, intersections, macro scale midpoints, the given figure, and the result itself. <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md#counting" target="_blank" rel="noopener">Counting rules</a>.</li>
+        <li><b>Angle methods</b> are also measured across a sweep of angles; each entry's details show the range where it holds 95%.</li>
       </ul>
     </div>
     <div>
       <ul>
         <li><span class="mark">~</span> <b>Contested</b>: the original discoverer is being sought.</li>
         <li><span class="mark">@</span> <b>Too simple</b>: likely found many times before.</li>
-        <li><span class="mark">µ</span> <b>Micro scale edits</b>: some steps would be hard to reproduce on paper.</li>
+        <li><span class="mark">µ</span> <b>Micro scale edits</b>: a step smaller than 5% of the given figure, too small to reproduce reliably on paper.</li>
         <li><span class="badge verified">Verified</span> reproduced by someone other than its method holder, a person or an AI checker. <span class="badge self-verified">Self-verified</span> checked only by its method holder. <span class="badge disputed">Disputed</span> an open dispute. <a href="verification.html">The rules</a>.</li>
       </ul>
     </div>
@@ -282,7 +288,15 @@ function renderDetail() {
   $('detail').innerHTML = `<div class="box-title">${current.name} · ${e.side}sized #${e.rank}</div>
     <div class="box-text" style="text-align:center;"><b>${e.acc}%</b> · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''} · ${e.circles} circles, ${e.lines} lines ${badge(e)}</div>
     ${e.note ? `<div class="box-text" style="text-align:center;">${e.note}</div>` : ''}
+    ${e.count_history || e.micro_note ? `<div class="small-text" style="text-align:center;">${[e.count_history, e.micro_note].filter(Boolean).join(' ')}</div>` : ''}
     ${e.square ? `<div class="small-text" style="text-align:center;">In GeoGebra, this is the square labelled <span class="mono">${e.square}</span> in the file.</div>` : ''}
+    ${s.ai && s.ai.steps_used ? `<div class="drawing">
+      <div class="controls" style="margin-bottom:8px;"><button class="small active" data-view="">Steps That Count</button><button class="small" data-view="-full">Everything In The File</button></div>
+      <a id="drawLink" href="drawings/${e.id}.svg" target="_blank"><img id="drawImg" src="drawings/${e.id}.svg" alt="The construction for ${e.acc}%"></a>
+      <div class="legend"><span class="sw" style="background:#178a62"></span>the result<span class="sw" style="background:#b07a1a"></span>the given figure<span class="sw" style="background:#3a3a44"></span>steps that count<span class="sw" style="background:#d4d4da"></span>exploration (full view)
+        <br>${s.ai.steps_used.circles} circles and ${s.ai.steps_used.lines} lines lead to the result, counted under the <a class="link" href="${REPO}/blob/main/SUBMISSION_RULESET.md#counting" target="_blank" rel="noopener">counting rules</a>.${s.ai.micro ? ' Its smallest step is ' + (100 * s.ai.smallest_step).toPrecision(2) + '% of the given size, too small to see here.' : ''}</div>
+    </div>` : ''}
+    ${s.ai && s.ai.sweep ? sweepPlot(s.ai) : ''}
     <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
     <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
@@ -291,6 +305,30 @@ function renderDetail() {
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Dispute', 'dispute.yml')}" target="_blank" rel="noopener">Dispute This</a>
     </div>
     <div class="small-text" style="text-align:center;">Entry id: <span class="mono">${e.id}</span></div>`;
+  $('detail').querySelectorAll('[data-view]').forEach(b => b.onclick = () => {
+    $('drawImg').src = $('drawLink').href = 'drawings/' + e.id + b.dataset.view + '.svg';
+    $('detail').querySelectorAll('[data-view]').forEach(x => x.classList.toggle('active', x === b));
+  });
+}
+
+function sweepPlot(ai) {
+  // Accuracy against angle, from the AI check's sweep. The y axis runs from 80% to 100%.
+  const pts = ai.sweep.filter(p => p[1] !== null), W = 640, H = 200, L = 40, B = 24;
+  if (!pts.length) return '';
+  const x0 = Math.min(...pts.map(p => p[0])), x1 = Math.max(...pts.map(p => p[0]));
+  const X = d => L + (d - x0) / (x1 - x0 || 1) * (W - L - 10), Y = a => 8 + (100 - Math.max(80, Math.min(100, a))) / 20 * (H - B - 8);
+  let path = '', pen = false;
+  for (const [d, a] of ai.sweep) { if (a === null) { pen = false; continue; } path += (pen ? 'L' : 'M') + X(d).toFixed(1) + ' ' + Y(a).toFixed(1) + ' '; pen = true; }
+  const ticks = [80, 85, 90, 95, 100].map(a => `<line x1="${L}" x2="${W - 10}" y1="${Y(a)}" y2="${Y(a)}" stroke="${a === 95 ? '#4a4a2a' : '#1a1a24'}" ${a === 95 ? 'stroke-dasharray="4 4"' : ''}/><text x="${L - 6}" y="${Y(a) + 4}" fill="#55556a" font-size="11" text-anchor="end">${a}%</text>`).join('');
+  const step = (x1 - x0) > 120 ? 30 : 10, xt = [];
+  for (let d = Math.ceil(x0 / step) * step; d <= x1; d += step) xt.push(`<text x="${X(d)}" y="${H - 6}" fill="#55556a" font-size="11" text-anchor="middle">${d}°</text>`);
+  const g = ai.range95;
+  return `<div class="rec"><div class="rec-title">Accuracy across angles</div>
+    <svg class="sweep" viewBox="0 0 ${W} ${H}" role="img" aria-label="Accuracy against angle">${ticks}${xt.join('')}
+      ${g ? `<rect x="${X(g[0])}" y="8" width="${X(g[1]) - X(g[0])}" height="${H - B - 8}" fill="#4a9" fill-opacity="0.08"/>` : ''}
+      <path d="${path}" fill="none" stroke="#4a9" stroke-width="2"/>
+      <line x1="${X(ai.sweep_angle)}" x2="${X(ai.sweep_angle)}" y1="8" y2="${H - B}" stroke="#ca6" stroke-dasharray="3 3"/></svg>
+    <div class="legend" style="text-align:center;">The given angle is turned a degree at a time, keeping everything else as drawn. ${g ? `95% or better from <b>${g[0].toFixed(0)}°</b> to <b>${g[1].toFixed(0)}°</b>` : 'It does not reach 95% near the angle drawn'}; the dashed amber line is the angle in the file (${ai.sweep_angle.toFixed(1)}°). Accuracy under 80% sits on the bottom edge.</div></div>`;
 }
 
 function renderBelow() {

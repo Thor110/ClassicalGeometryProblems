@@ -13,7 +13,7 @@ Edward James Gordon
 Oversized
 
 **Number of Circles:**
-11
+10
 
 **Number of Lines:**
 4

@@ -16,7 +16,7 @@ Oversized
 6
 
 **Number of Lines:**
-7
+6
 
 **Verification Method:**
 

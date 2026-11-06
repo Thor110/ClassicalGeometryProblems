@@ -139,8 +139,13 @@ CONSTRUCT = {'Circle', 'Line', 'Segment', 'Ray', 'Intersect', 'OrthogonalLine', 
 MEASURE = {'Distance', 'Circumference', 'Area', 'Length', 'Angle', 'Perimeter'}
 HAND_PLACED = {'Point', 'PointIn'}            # a point dropped onto an object by hand
 
-def rebuild(path):
-    steps, els = read(path)
+_READ_CACHE = {}
+def rebuild(path, overrides=None, ref=None):
+    """Rebuild a construction. overrides moves given objects (label -> point or number); ref gives,
+    for each intersection, the point to stay nearest to (used to follow a figure as it moves)."""
+    if path not in _READ_CACHE: _READ_CACHE[path] = read(path)
+    steps, els = _READ_CACHE[path]
+    overrides = overrides or {}
     obj, deps, notes, tools = {}, {}, [], {}
     parents, kind_of = {}, {}            # which objects each object was made from, and by which tool
     free, hand, given, made = set(), set(), set(), []
@@ -152,6 +157,7 @@ def rebuild(path):
         except ValueError: raise KeyError(name)
     def check(label, rebuilt):
         nonlocal mismatches
+        if overrides: return
         s = saved_object(els.get(label, {}))
         if s is None or rebuilt is None: return
         if s[0] == 'point' and rebuilt[0] == 'point':
@@ -165,6 +171,9 @@ def rebuild(path):
             label = st[1]
             if label in obj or label in commanded: continue
             el = els[label]; s = saved_object(el)
+            if label in overrides:
+                ov = overrides[label]
+                obj[label] = ('num', ov) if isinstance(ov, (int, float)) else ('point', tuple(ov)); deps[label] = {label}; free.add(label); continue
             if s and s[0] == 'point': obj[label] = s; deps[label] = {label}; free.add(label)
             elif s and s[0] in ('line', 'circle'): obj[label] = s; deps[label] = {label}; free.add(label)
             elif 'value' in el and el['type'] in ('numeric', 'angle'): obj[label] = ('num', el['value']); deps[label] = set(); free.add(label)
@@ -222,7 +231,7 @@ def rebuild(path):
         elif name == 'Intersect':
             cands = intersections(args[0], args[1])
             for o in outs:
-                s = saved_object(els.get(o, {}))
+                s = ('point', ref[o]) if ref and o in ref else saved_object(els.get(o, {}))
                 if not cands: res[o] = None; continue
                 if s and s[0] == 'point': pick = min(cands, key=lambda c: dist(c, s[1]))
                 else: pick = cands[0]
@@ -236,6 +245,16 @@ def rebuild(path):
             res[outs[0]] = ('arc', args[0][1], dist(args[0][1], args[1][1]), args[1][1], args[2][1])
         elif name in HAND_PLACED:
             s = saved_object(els.get(outs[0], {}))
+            if overrides and s and args and args[0][0] in ('line', 'segment', 'circle'):
+                # When the figure moves, a point placed on an object slides with it: keep it on the object.
+                ref_pt = ref.get(outs[0], s[1]) if ref else s[1]
+                o0 = as_curve(args[0])
+                if o0[0] == 'line':
+                    a, b, c = o0[1], o0[2], o0[3]; n2 = a * a + b * b; t = (a * ref_pt[0] + b * ref_pt[1] + c) / n2
+                    s = ('point', (ref_pt[0] - a * t, ref_pt[1] - b * t))
+                else:
+                    (cx, cy), rr = o0[1], o0[2]; d = math.hypot(ref_pt[0] - cx, ref_pt[1] - cy) or 1
+                    s = ('point', (cx + (ref_pt[0] - cx) * rr / d, cy + (ref_pt[1] - cy) * rr / d))
             res[outs[0]] = s
             if name == 'Point' and ((ins and ins[0] in given and not typed) or (typed and not made)):
                 given.add(outs[0])          # a point on the given circle, or the given radius, chosen before anything is drawn
@@ -244,7 +263,7 @@ def rebuild(path):
         elif name == 'Rotate' and kinds[0] == 'point' and kinds[1] == 'num' and kinds[2] == 'point':
             (x, y), t, (cx, cy) = args[0][1], args[1][1], args[2][1]
             res[outs[0]] = ('point', (cx + (x - cx) * math.cos(t) - (y - cy) * math.sin(t), cy + (x - cx) * math.sin(t) + (y - cy) * math.cos(t)))
-            if all(i.strip('()-') in free | given for i in ins):
+            if ins[1].strip('()-') in free:
                 given.add(outs[0])          # sets up the given angle or arc from given points and a given angle
             else:
                 hand.add(outs[0]); notes.append('%s is made by rotating through an angle, which is not a compass step' % outs[0])
@@ -278,23 +297,32 @@ def rebuild(path):
 # ---------------------------------------------------------------- judging the result
 def acc(constructed, truth): return 100 - abs(constructed - truth) / truth * 100
 
-def judge(problem, r, target=None):
-    """Pick the result the file measures, and how far it is from the true value."""
+def judge(problem, r, target=None, path=None, scale=None):
+    """Pick the result the file measures, and how far it is from the true value.
+    path: for a result the file does not measure itself, the points whose joined length is the result."""
     obj, M = r['objects'], r['measures']
+    if path and problem == 'ar':
+        arcs = [m for m in M if m['tool'] == 'Length' and m['value']]
+        if arcs and all(x in obj for x in path):
+            L = sum(dist(obj[a][1], obj[b][1]) for a, b in zip(path, path[1:]))
+            d = set().union(*[r['deps'].get(x, set()) for x in path])
+            return L, arcs[0]['value'], 'path %s = %.6f against arc length %.6f' % ('-'.join(path), L, arcs[0]['value']), d, arcs[0]['depends'], list(path)
     if problem == 'stc':
         circ = [m for m in M if m['tool'] == 'Area' and obj.get(m['of'][0], ('',))[0] == 'circle']
         squares = [o for k, o in obj.items() if o and o[0] == 'polygon' and len(o[1]) == 4 and (target is None or k == target)]
         if circ and squares:
             area = circ[0]['value']; sq = shoelace(squares[-1][1])
             sqname = [k for k, o in obj.items() if o is squares[-1]][0]
-            return sq, area, 'square area %.6f against circle area %.6f' % (sq, area), r['deps'].get(sqname, set()), circ[0]['depends'], [sqname] + circ[0]['names']
+            return sq, area, 'square area %.6f against circle area %.6f' % (sq, area), r['deps'].get(sqname, set()), circ[0]['depends'], [sqname]
     if problem == 'rtc':
         circ = [m for m in M if m['tool'] in ('Circumference', 'Perimeter')]
         lens = [m for m in M if m['tool'] == 'Distance' and m['value']]
         if circ and lens:
-            C = circ[0]['value']
-            best = min(lens, key=lambda m: abs(m['value'] - C))
-            return best['value'], C, 'distance %s = %.6f against circumference %.6f' % ('-'.join(best['of']), best['value'], C), best['depends'], circ[0]['depends'], best['names'] + circ[0]['names']
+            C = circ[0]['value']; k = scale or 1     # scale: the construction gives a known fraction of the circumference
+            best = min(lens, key=lambda m: abs(k * m['value'] - C))
+            if scale:
+                return k * best['value'], C, '%d × distance %s = %.6f against circumference %.6f' % (k, '-'.join(best['of']), k * best['value'], C), best['depends'], circ[0]['depends'], best['names']
+            return best['value'], C, 'distance %s = %.6f against circumference %.6f' % ('-'.join(best['of']), best['value'], C), best['depends'], circ[0]['depends'], best['names']
     if problem == 'dtc':
         lens = sorted([m for m in M if m['tool'] == 'Distance' and m['value']], key=lambda m: m['value'])
         if len(lens) >= 2:
@@ -317,19 +345,105 @@ def judge(problem, r, target=None):
         if arcs and lens:
             L = arcs[0]['value']; best = min(lens, key=lambda m: abs(m['value'] - L))
             if abs(best['value'] - L) / L < 0.1:
-                return best['value'], L, 'distance %.6f against arc length %.6f' % (best['value'], L), best['depends'], arcs[0]['depends'], best['names'] + arcs[0]['names']
+                return best['value'], L, 'distance %.6f against arc length %.6f' % (best['value'], L), best['depends'], arcs[0]['depends'], best['names']
     return None
 
 LINE_TOOLS = {'Line', 'Segment', 'Ray', 'OrthogonalLine', 'LineBisector', 'AngularBisector'}
-def steps_used(r, roots):
-    """Circles and lines that the result actually comes from (Midpoint and Intersect are not counted)."""
+MICRO = 0.05          # SUBMISSION_RULESET.md, "Micro scale": a step under 5% of the given size
+
+def ancestry(r, roots):
     seen, stack = set(), list(roots)
     while stack:
         n = stack.pop()
         if n in seen: continue
         seen.add(n); stack += r['parents'].get(n, [])
-    kinds = [r['kind_of'].get(n) for n in seen]
-    return {'circles': sum(k in ('Circle', 'CircleArc') for k in kinds), 'lines': sum(k in LINE_TOOLS for k in kinds)}
+    return seen
+
+def is_given_line(r, n, problem):
+    """Rule 6: the given angle's arms or the given cube's edge are part of the problem, not steps."""
+    if problem not in ('taa', 'ar', 'dtc') or r['kind_of'].get(n) not in ('Line', 'Segment', 'Ray'): return False
+    ps = r['parents'].get(n, [])
+    return len(ps) == 2 and all(x in r['free'] | r['given'] for x in ps)
+
+def steps_used(r, roots, problem=None):
+    """Count the result under SUBMISSION_RULESET.md, "Counting": only the steps the result depends on."""
+    seen = ancestry(r, roots)
+    circles = sum(r['kind_of'].get(n) in ('Circle', 'CircleArc') for n in seen)
+    lines = sum(r['kind_of'].get(n) in LINE_TOOLS and not is_given_line(r, n, problem) for n in seen)
+    return {'circles': circles, 'lines': lines}
+
+def smallest_step(r, roots, problem, given_size):
+    """The smallest step the result depends on, as a fraction of the given figure's size."""
+    seen, o, sizes = ancestry(r, roots), r['objects'], []
+    for n in seen:
+        k = r['kind_of'].get(n); ps = [o[x][1] for x in r['parents'].get(n, []) if x in o and o[x] and o[x][0] == 'point']
+        if k in ('Circle', 'CircleArc') and o.get(n) and o[n][0] in ('circle', 'arc'): sizes.append(o[n][2])
+        elif k in ('Segment', 'Line', 'Ray', 'LineBisector', 'Midpoint') and len(ps) == 2 and not is_given_line(r, n, problem): sizes.append(dist(*ps))
+    sizes = [x for x in sizes if x > 0]
+    return min(sizes) / given_size if sizes and given_size else None
+
+def given_size(problem, r, roots):
+    o, M = r['objects'], r['measures']
+    if problem in ('stc', 'rtc'):
+        for m in M:
+            c = o.get(m['of'][0]) if m['of'] else None
+            if m['tool'] in ('Area', 'Circumference', 'Perimeter') and c and c[0] == 'circle': return c[2]
+    if problem == 'dtc':
+        d = sorted(m['value'] for m in M if m['tool'] == 'Distance' and m['value'])
+        if d: return d[0]
+    rad = [x[2] for x in o.values() if x and x[0] == 'circle']
+    return max(rad) if rad else None
+
+def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0):
+    """Measure an angle method across a range of angles, keeping everything else as drawn.
+
+    The given angle is changed (trisection: the arm through C turns about the vertex B; arc
+    rectification: the given angle β changes) a degree at a time, starting from the file's own
+    angle, and every intersection follows the figure smoothly from one step to the next.
+    Returns [(degrees, accuracy or None)].
+    """
+    base = rebuild(path)
+    def run(ov, ref):
+        try:
+            r = rebuild(path, ov, ref)
+            j = judge(problem, r, None, entry.get('result_path'))
+            if not j or any(o is None for o in r['objects'].values() if o is not None and o[0] == 'point' and None in o[1]): return None, r
+            return acc(j[0], j[1]), r
+        except (ValueError, ZeroDivisionError, KeyError, TypeError): return None, None
+    if problem == 'taa':
+        B, A, C = (base['objects'][k][1] for k in ('B', 'A', 'C'))
+        a0 = math.atan2(A[1] - B[1], A[0] - B[0]); rC = dist(B, C)
+        start = math.degrees((math.atan2(C[1] - B[1], C[0] - B[0]) - a0) % (2 * math.pi))
+        sgn = 1 if start <= 180 else -1            # the angle may open clockwise from arm BA
+        if sgn < 0: start = 360 - start
+        make = lambda deg: {'C': (B[0] + rC * math.cos(a0 + sgn * math.radians(deg)), B[1] + rC * math.sin(a0 + sgn * math.radians(deg)))}
+    elif problem == 'ar':
+        beta = [k for k in base['free'] if base['objects'].get(k, ('',))[0] == 'num'][0]
+        start = math.degrees(base['objects'][beta][1])
+        make = lambda deg: {beta: math.radians(deg)}
+    else:
+        return []
+    pts = lambda r: {k: o[1] for k, o in r['objects'].items() if o and o[0] == 'point'}
+    out = {}
+    for direction in (1, -1):
+        ref, deg = pts(base), start
+        while lo <= deg <= hi:
+            a, r = run(make(deg), ref)
+            out[round(deg, 3)] = a
+            if r is None: break
+            ref = pts(r); deg += direction * step
+    return sorted(out.items()), start
+
+def good_range(points, start, threshold=95.0):
+    """The unbroken run of angles around the file's own angle where accuracy stays at or above the threshold."""
+    pts = dict(points); degs = sorted(pts)
+    if not degs: return None
+    i = min(range(len(degs)), key=lambda k: abs(degs[k] - start))
+    if pts[degs[i]] is None or pts[degs[i]] < threshold: return None
+    lo = hi = i
+    while lo > 0 and pts[degs[lo - 1]] is not None and pts[degs[lo - 1]] >= threshold: lo -= 1
+    while hi < len(degs) - 1 and pts[degs[hi + 1]] is not None and pts[degs[hi + 1]] >= threshold: hi += 1
+    return (degs[lo], degs[hi])
 
 def load_archive():
     src = open(os.path.join(ROOT, 'pages', 'archive-data.js'), encoding='utf-8').read()
@@ -348,7 +462,7 @@ def maintainer_list(archive, results, today):
     side = {'over': 'oversized', 'under': 'undersized'}
     def name(p, e):
         return '%s, %s %s%%%s (%s)' % (p['name'], side[e['side']], e['acc'], ' · ' + e['method'] if e.get('method') else '', e['id'])
-    unverified, attention, missing, counts, disputes = [], [], [], [], []
+    unverified, attention, missing, counts, disputes, micro = [], [], [], [], [], []
     for p in archive['problems']:
         for e in p['entries']:
             if e.get('archived'): continue
@@ -364,6 +478,8 @@ def maintainer_list(archive, results, today):
             su = r.get('steps_used')
             if su and isinstance(e['circles'], int) and (su['circles'], su['lines']) != (e['circles'], e['lines']):
                 counts.append('- [ ] %s: charted %s circles, %s lines; the result is built from %d circles, %d lines' % (name(p, e), e['circles'], e['lines'], su['circles'], su['lines']))
+            if r.get('micro') is not None and ('µ' in e.get('marks', '')) != r['micro'] and not e.get('micro_note', '').startswith('Marked µ by hand') or ('micro_note' in e and 'needs describing' in e['micro_note']):
+                micro.append('- [ ] %s: the test finds its smallest step at %.1f%% of the given size; the chart %s µ' % (name(p, e), 100 * r['smallest_step'], 'has' if 'µ' in e.get('marks', '') else 'does not have'))
             for d in e.get('disputes', []):
                 if d.get('status') == 'open': disputes.append('- [ ] ' + name(p, e) + ': ' + d.get('summary', ''))
     out = [MARK_START, '', '## Waiting for the maintainer', '',
@@ -373,7 +489,8 @@ def maintainer_list(archive, results, today):
         ('Not verified by a person yet', unverified, 'Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.'),
         ('Flagged by the AI check', attention, 'Each needs a decision: correct the entry, or explain why the check does not apply.'),
         ('Missing GeoGebra files', missing, ''),
-        ('Step counts to review', counts, 'Informational. The checker counts only the circles and lines the result is built from (a perpendicular bisector counts as one line; midpoints and intersections are not counted). Where your count is higher, the extra steps may be exploration that could be left out of the count, or the counting rules may differ.')]:
+        ('Step counts that differ from the counting rules', counts, 'Under SUBMISSION_RULESET.md, "Counting". Either update the chart, or say why the rule does not fit this entry.'),
+        ('µ marks to review', micro, 'The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry\'s micro_note.')]:
         if not items: continue
         out += ['### %s (%d)' % (title, len(items)), '']
         if about: out += [about, '']
@@ -397,7 +514,7 @@ def main():
             ggb = os.path.join(ROOT, p['folder'], e['file'] + '.ggb'); md = os.path.join(ROOT, p['folder'], e.get('notes') or e['file']) + '.md'
             charted.add(os.path.normpath(ggb))
             r = rebuild(ggb)
-            j = judge(p['id'], r, e.get('square'))
+            j = judge(p['id'], r, e.get('square'), e.get('result_path'), e.get('result_scale'))
             res['tools'] = r['tools']
             res['starting_points'] = sorted(k for k in r['free'] | r['given'] if r['objects'].get(k, ('num',))[0] != 'num')
             if r['mismatches']: ok = False; res['checks'].append('%d rebuilt points do not match the saved file' % r['mismatches'])
@@ -405,7 +522,9 @@ def main():
             for n in r['notes']: res['checks'].append(n)
             if j:
                 c, t, how, d, dtrue, roots = j
-                res['steps_used'] = steps_used(r, roots)
+                res['steps_used'] = steps_used(r, roots, p['id'])
+                sm = smallest_step(r, roots, p['id'], given_size(p['id'], r, roots))
+                res['smallest_step'] = sm; res['micro'] = bool(sm is not None and sm < MICRO)
                 a = acc(c, t)
                 res['accuracy'] = a; res['measured'] = how; res['side'] = 'over' if c > t else 'under'
                 hand_used = sorted(h for h in r['hand'] if h in d)
@@ -429,6 +548,13 @@ def main():
                 f = md_fields(md)
                 for field, val in (('Number of Circles', e['circles']), ('Number of Lines', e['lines'])):
                     if f.get(field, '').strip() != str(val): ok = False; res['checks'].append('notes give %s = %r, chart gives %r' % (field, f.get(field, ''), val))
+            if p['id'] in ('taa', 'ar') and j:
+                pts, start = sweep(p['id'], ggb, e)
+                res['sweep'] = [[round(d, 2), None if a is None else round(a, 4)] for d, a in pts]
+                res['sweep_angle'] = round(start, 3)
+                g = good_range(pts, start)
+                res['range95'] = g
+                res['checks'].append('swept across angles: %s' % ('95%% or better from %.0f° to %.0f° (as drawn, %.1f° in the file)' % (g[0], g[1], start) if g else 'never reaches 95%% near the file\'s angle (%.1f°)' % start))
             res['status'] = ('manual' if res.get('manual') and ok else 'reproduced' if ok else 'attention')
             res['summary'] = ('Rebuilt from %d given object(s); ' % len(res['starting_points'])) + ('accuracy reproduced.' if res['status'] == 'reproduced' else 'needs checking by hand.' if res['status'] == 'manual' else 'does not match the chart.')
             results[key] = res
@@ -451,6 +577,10 @@ def main():
         else:
             vtext = vtext.replace('## Log', block + '\n\n## Log')
         open(vpath, 'w', encoding='utf-8').write(vtext)
+        try:
+            import draw; draw.main()
+        except Exception as ex:
+            print('drawings were not made: %s' % ex)
         with open(os.path.join(ROOT, 'pages', 'ai-checks.js'), 'w', encoding='utf-8') as f:
             f.write('// Written by tools/verify.py --write. Do not edit by hand: run the script again.\nconst AI_CHECKS = ')
             json.dump(out, f, indent=1, ensure_ascii=False)

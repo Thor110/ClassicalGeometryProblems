@@ -27,7 +27,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 1,
-     "lines": 20,
+     "lines": 24,
      "acc": "99.109",
      "precise": "99.10928741499923",
      "date": "04-11-2025",
@@ -35,7 +35,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.109",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.117% oversized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 1 circles, 20 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-over-99.119",
@@ -43,7 +44,7 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
-     "circles": 21,
+     "circles": 17,
      "lines": 7,
      "acc": "99.119",
      "precise": "99.11961460044009",
@@ -52,7 +53,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.119",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.139% oversized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 21 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-over-99.283",
@@ -86,7 +88,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
-     "lines": 17,
+     "lines": 15,
      "acc": "99.356",
      "precise": "",
      "date": "14-12-2024",
@@ -100,7 +102,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 17 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-over-99.558",
@@ -109,7 +112,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
-     "lines": 25,
+     "lines": 17,
      "acc": "99.558",
      "precise": "99.55870872457643",
      "date": "14-12-2024",
@@ -117,7 +120,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.558",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.563% oversized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 25 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-over-99.696",
@@ -125,8 +129,8 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
-     "circles": 25,
-     "lines": 8,
+     "circles": 24,
+     "lines": 9,
      "acc": "99.696",
      "precise": "99.69612973842727",
      "date": "14-12-2024",
@@ -134,7 +138,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.696",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.703% oversized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 25 circles, 8 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-over-99.809",
@@ -143,7 +148,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
-     "lines": 37,
+     "lines": 29,
      "acc": "99.809",
      "precise": "99.80950026343882",
      "date": "08-12-2024",
@@ -151,7 +156,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.809",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.816% oversized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 37 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-over-99.999",
@@ -160,7 +166,7 @@ const ARCHIVE = {
      "holder": "Srinivasa Ramanujan",
      "method": "Ramanujan's Method",
      "circles": 9,
-     "lines": 13,
+     "lines": 15,
      "acc": "99.999",
      "precise": "99.99999150859094",
      "date": "1913",
@@ -174,7 +180,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 9 circles, 13 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-under-99.932",
@@ -183,7 +190,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
-     "lines": 29,
+     "lines": 21,
      "acc": "99.932",
      "precise": "99.93219280033432",
      "date": "14-12-2024",
@@ -191,7 +198,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.932",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.929% undersized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 29 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-under-99.655",
@@ -217,7 +225,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
-     "lines": 20,
+     "lines": 16,
      "acc": "99.150",
      "precise": "99.15047322986365",
      "date": "14-12-2024",
@@ -225,7 +233,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.150",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.164% undersized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 20 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-under-99.015",
@@ -234,7 +243,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Circling the Square (additional)",
      "circles": 13,
-     "lines": 11,
+     "lines": 7,
      "acc": "99.015",
      "precise": "99.01556450524366",
      "date": "14-12-2024",
@@ -242,7 +251,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.015",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.009% undersized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 11 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "stc-under-95.492",
@@ -257,7 +267,7 @@ const ARCHIVE = {
      "date": "2020",
      "geogebra": "jyyqe7rj",
      "file": "GeoGebra Files/Squared Circle Under/95.492",
-     "note": "",
+     "note": "Marked too simple and contested: constructions this simple appear in ancient sources such as the Śulba Sūtras of Vedic India, and in architecture, so its first discoverer may never be known.",
      "verified": [
       {
        "by": "Edward James Gordon",
@@ -566,8 +576,8 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Array Casting v2.0",
-     "circles": "~6-12+/-",
-     "lines": "~2-3+/-",
+     "circles": 9,
+     "lines": 3,
      "acc": "~99.317",
      "precise": "99.31793149744919",
      "date": "01-12-2024",
@@ -575,7 +585,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/TAA-~99.317",
      "note": "Re-measured at full precision in November 2026: the chart listed ~99.658% undersized. The worst of the three thirds now sets the accuracy, as every third must equal a third of the angle.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted ~6-12+/- circles, ~2-3+/- lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "taa-over-91.077",
@@ -583,8 +594,8 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Array Casting v1.0",
-     "circles": "~4-8+/-",
-     "lines": "~3-6+/-",
+     "circles": 4,
+     "lines": 1,
      "acc": "~91.077",
      "precise": "91.07743117124372",
      "date": "01-12-2024",
@@ -594,7 +605,8 @@ const ARCHIVE = {
      "verified": [],
      "disputes": [],
      "archived": true,
-     "archive_reason": "Below the 95% minimum once the worst third is measured."
+     "archive_reason": "Below the 95% minimum once the worst third is measured.",
+     "count_history": "Counted ~4-8+/- circles, ~3-6+/- lines before the counting rules (version 1.0, November 2026) were written down."
     }
    ]
   },
@@ -614,8 +626,8 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "Cube 2 Tesseract v1.0",
-     "circles": 13,
-     "lines": 30,
+     "circles": 7,
+     "lines": 6,
      "acc": "97.656",
      "precise": "97.65625000000000",
      "date": "06-06-2024",
@@ -623,7 +635,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Under/DTC-97.656",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.227% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 30 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "dtc-under-98.924",
@@ -632,7 +645,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Cube 2 Tesseract v2.0",
      "circles": 13,
-     "lines": 42,
+     "lines": 20,
      "acc": "98.924",
      "precise": "98.92478916755539",
      "date": "07-12-2024",
@@ -640,7 +653,25 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Under/DTC-98.924",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.487% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 42 lines before the counting rules (version 1.0, November 2026) were written down."
+    },
+    {
+     "marks": "",
+     "geogebra": "",
+     "disputes": [],
+     "verified": [],
+     "precise": "98.07621135331597",
+     "id": "dtc-over-98.076",
+     "side": "over",
+     "holder": "Edward James Gordon",
+     "method": "Three Minus Root Three",
+     "circles": 5,
+     "lines": 0,
+     "acc": "98.076",
+     "date": "06-11-2026",
+     "file": "GeoGebra Files/Over/DTC-98.076",
+     "note": "Edward's idea: take three edges and subtract the cube's long diagonal (√3 edges). He thought it needed a 3D step, but √3 can be drawn in the plane, so this is a straightedge and compass construction. AI-assisted: Claude drew the plane construction and wrote the GeoGebra file; awaiting Edward's check in GeoGebra."
     }
    ]
   },
@@ -661,7 +692,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "",
      "circles": 6,
-     "lines": 7,
+     "lines": 6,
      "acc": "98.538",
      "precise": "",
      "date": "",
@@ -675,7 +706,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 6 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-over-99.596",
@@ -683,8 +715,8 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
-     "circles": 13,
-     "lines": 9,
+     "circles": 12,
+     "lines": 6,
      "acc": "99.596",
      "precise": "99.59619104296647",
      "date": "",
@@ -698,7 +730,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 13 circles, 9 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-over-99.607",
@@ -706,7 +739,7 @@ const ARCHIVE = {
      "marks": "µ",
      "holder": "Edward James Gordon",
      "method": "",
-     "circles": 9,
+     "circles": 7,
      "lines": 4,
      "acc": "99.607",
      "precise": "99.6074651519426",
@@ -721,7 +754,9 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 9 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "micro_note": "Marked µ by hand. The micro scale test finds no step under 5% of the radius (smallest 6.3%), so the adjustment needs describing here."
     },
     {
      "id": "rtc-over-99.65",
@@ -775,7 +810,7 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
-     "circles": 11,
+     "circles": 10,
      "lines": 4,
      "acc": "99.802",
      "precise": "99.80200241997315",
@@ -790,7 +825,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 11 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-over-99.806",
@@ -799,7 +835,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Euclidean Circumference Approximation",
      "circles": 1,
-     "lines": 10,
+     "lines": 11,
      "acc": "99.806",
      "precise": "99.806647622550144",
      "date": "",
@@ -813,7 +849,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 1 circles, 10 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-over-99.873",
@@ -836,7 +873,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "micro_note": "Marked µ by hand. The micro scale test finds no step under 5% of the radius (smallest 50.0%), so the adjustment needs describing here."
     },
     {
      "id": "rtc-over-99.9343",
@@ -937,7 +975,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "",
      "circles": 10,
-     "lines": 7,
+     "lines": 6,
      "acc": "99.9986",
      "precise": "99.99865760269533",
      "date": "",
@@ -951,7 +989,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 10 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-over-99.9987",
@@ -982,7 +1021,7 @@ const ARCHIVE = {
      "marks": "µ",
      "holder": "Kochanski / Gordon",
      "method": "Kochanski Gordon Crossover Method",
-     "circles": 12,
+     "circles": 11,
      "lines": 10,
      "acc": "99.9996",
      "precise": "99.99968125157933",
@@ -997,7 +1036,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 12 circles, 10 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-under-99.999",
@@ -1006,7 +1046,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "Microscale Trisection",
      "circles": 9,
-     "lines": 13,
+     "lines": 12,
      "acc": "99.999",
      "precise": "99.99948805479345",
      "date": "07-11-2025",
@@ -1020,7 +1060,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 9 circles, 13 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-under-99.998",
@@ -1075,7 +1116,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "",
      "circles": 9,
-     "lines": 6,
+     "lines": 7,
      "acc": "99.9874",
      "precise": "99.98745429466945",
      "date": "",
@@ -1089,7 +1130,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 9 circles, 6 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-under-99.812",
@@ -1166,7 +1208,7 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Edward James Gordon",
      "method": "",
-     "circles": 8,
+     "circles": 7,
      "lines": 4,
      "acc": "99.376",
      "precise": "99.37681013608419",
@@ -1175,7 +1217,8 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Under/RTC-99.376",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.374% undersized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 8 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "id": "rtc-under-98.165",
@@ -1184,7 +1227,7 @@ const ARCHIVE = {
      "holder": "Edward James Gordon",
      "method": "",
      "circles": 6,
-     "lines": 4,
+     "lines": 5,
      "acc": "98.165",
      "precise": "98.16518509675318",
      "date": "",
@@ -1198,7 +1241,8 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "count_history": "Counted 6 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "marks": "",
@@ -1219,9 +1263,10 @@ const ARCHIVE = {
      "id": "rtc-over-99.979",
      "side": "over",
      "circles": 6,
-     "lines": 8,
+     "lines": 7,
      "acc": "99.979",
-     "file": "GeoGebra Files/Over/RTC-99.979"
+     "file": "GeoGebra Files/Over/RTC-99.979",
+     "count_history": "Counted 6 circles, 8 lines before the counting rules (version 1.0, November 2026) were written down."
     },
     {
      "marks": "",
@@ -1268,6 +1313,41 @@ const ARCHIVE = {
      "lines": 7,
      "acc": "99.989",
      "file": "GeoGebra Files/Over/RTC-99.989"
+    },
+    {
+     "marks": "",
+     "geogebra": "",
+     "disputes": [],
+     "verified": [],
+     "precise": "99.99999996794151",
+     "id": "rtc-under-99.99999",
+     "side": "under",
+     "holder": "Srinivasa Ramanujan",
+     "method": "Ramanujan's 1914 construction",
+     "circles": 8,
+     "lines": 10,
+     "acc": "99.99999",
+     "date": "1914",
+     "file": "GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914",
+     "result_scale": 6,
+     "note": "π ≈ (9² + 19²/22)^¼. It constructs a sixth of the circumference (the mean proportional between OS and OB), so six times that length is compared with the circumference. Reconstructed from Ramanujan's description in “Modular equations and approximations to π” (1914); trisecting AO and the mean proportional use standard straightedge and compass steps. AI-assisted: the GeoGebra file was written by Claude; awaiting a person's check in GeoGebra."
+    },
+    {
+     "marks": "µ",
+     "geogebra": "",
+     "disputes": [],
+     "verified": [],
+     "precise": "99.99999650783769",
+     "id": "rtc-over-99.99999",
+     "side": "over",
+     "holder": "Kochanski / Gordon",
+     "method": "Kochanski Gordon Crossover (3/7)",
+     "circles": 18,
+     "lines": 13,
+     "acc": "99.99999",
+     "date": "06-11-2026",
+     "file": "GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7",
+     "note": "The crossover method, taking the point three sevenths of the way from Kochański's length to Edward's instead of the midpoint: seven equal compass steps up a perpendicular, then a parallel. AI-assisted: the 3/7 weighting was suggested by Claude, which also added the steps to Edward's GeoGebra file; awaiting Edward's check in GeoGebra."
     }
    ]
   },
@@ -1282,27 +1362,27 @@ const ARCHIVE = {
    "why": "Contains rectifying the circle as a special case, so it inherits the same wall. A single method would also have to work for every arc at once.",
    "entries": [
     {
-     "id": "ar-over-95",
+     "id": "ar-over-97.537",
      "side": "over",
      "marks": "",
      "holder": "Edward James Gordon",
-     "method": "",
+     "method": "Tangent Path",
      "circles": 1,
-     "lines": 6,
-     "acc": "~95",
-     "precise": "",
+     "lines": 4,
+     "acc": "97.537",
+     "precise": "97.53759409835416",
      "date": "",
      "geogebra": "nwxxhgju",
-     "file": "GeoGebra Files/Arc Rectification Over/AR~95.000",
-     "note": "Works for angles between 90° and 180°.",
-     "verified": [
-      {
-       "by": "Edward James Gordon",
-       "kind": "person",
-       "how": "GeoGebra measuring tools"
-      }
+     "file": "GeoGebra Files/Arc Rectification Over/AR-97.537",
+     "note": "Measured for the 135° arc in the file. 95% or better for arcs from 128° to 215°; the chart listed ~95%, the accuracy towards 180°. Re-measured in November 2026.",
+     "verified": [],
+     "disputes": [],
+     "result_path": [
+      "D",
+      "G",
+      "C"
      ],
-     "disputes": []
+     "count_history": "Counted 1 circles, 6 lines before the counting rules (version 1.0, November 2026) were written down."
     }
    ]
   }
@@ -1346,13 +1426,6 @@ const ARCHIVE = {
   }
  ],
  "wanted": [
-  {
-   "problem": "stc",
-   "who": "Srinivasa Ramanujan",
-   "year": "1914",
-   "value": "π ≈ (9² + 19²/22)^(1/4) = 3.14159265258…",
-   "source": "Ramanujan, “Modular equations and approximations to π”, Quarterly Journal of Mathematics, 1914."
-  },
   {
    "problem": "rtc",
    "who": "Jacob de Gelder",
