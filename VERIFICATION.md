@@ -131,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (65)
+### Not verified by a person yet (66)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -187,7 +187,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, undersized 99.214% · One Fifth Of The Circle (dtc-under-99.214): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.214-Kochanski-Gordon.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
-- [ ] Rectifying The Circle, oversized 99.99999% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
+- [ ] Rectifying The Circle, oversized 99.999996% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
 - [ ] Rectifying The Circle, oversized 99.992% · Search find: 4 circles, 1 lines (half the circumference) (rtc-over-99.992): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.992-Claude.ggb`
 - [ ] Rectifying The Circle, oversized 99.999999% · Search find: 5 circles, 2 lines (rtc-over-99.999999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999999-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.99994% · Search find: 5 circles, 1 lines (rtc-under-99.99994): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99994-Claude.ggb`
@@ -196,6 +196,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.9999990% · Search find: 7 circles, 4 lines (half the circumference) (rtc-under-99.9999990): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999990-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999998% · Search find: 8 circles, 4 lines (half the circumference) (rtc-under-99.9999998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999998-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.999997% · Search find: 6 circles, 2 lines (half the circumference) (rtc-under-99.999997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999997-Claude.ggb`
+- [ ] Rectifying The Circle, oversized 99.999991% · De Gelder's construction of 355/113 (rtc-over-99.999991): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999991-de-Gelder.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`

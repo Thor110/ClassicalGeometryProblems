@@ -2274,10 +2274,10 @@ const ARCHIVE = {
      "method": "Kochanski Gordon Crossover (3/7)",
      "circles": 18,
      "lines": 13,
-     "acc": "99.99999",
+     "acc": "99.999996",
      "date": "06-11-2026",
      "file": "GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7",
-     "note": "The crossover method, taking the point three sevenths of the way from Kochański's length to Edward's instead of the midpoint: seven equal compass steps up a perpendicular, then a parallel. AI-assisted: the 3/7 weighting was suggested by Claude, which also added the steps to Edward's GeoGebra file; awaiting Edward's check in GeoGebra.",
+     "note": "The crossover method, taking the point three sevenths of the way from Kochański's length to Edward's instead of the midpoint: seven equal compass steps up a perpendicular, then a parallel. AI-assisted: the 3/7 weighting was suggested by Claude, which also added the steps to Edward's GeoGebra file; awaiting Edward's check in GeoGebra. Shown to more places from November 2026 (it was 99.99999%) so that the chart reads in order beside de Gelder's 99.999991%: its precise value is 99.999996507%.",
      "origin": {
       "kind": "session",
       "evidence": [
@@ -2514,6 +2514,32 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
       ]
      }
+    },
+    {
+     "id": "rtc-over-99.999991",
+     "side": "over",
+     "marks": "",
+     "holder": "Jacob de Gelder",
+     "method": "De Gelder's construction of 355/113",
+     "circles": 5,
+     "lines": 6,
+     "acc": "99.999991",
+     "precise": "99.999991508632134162913741597801",
+     "date": "1849",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.999991-de-Gelder",
+     "note": "355/113 = 3 + 4²/(7² + 8²): CE = 7/8 of the radius, AF = 1/2 on AE, FG parallel to CD and FH parallel to EG give AH = 16/113, as Hobson (1913, p. 34) gives de Gelder's construction from Grünert's Archiv, vol. 7, 1849. The three radii that complete the half circumference are the archive's.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: de Gelder, Grünert's Archiv, vol. 7, 1849",
+       "described step by step in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, p. 34",
+       "the construction's steps redrawn from Hobson's description in November 2026; the last step, laying out the half circumference, is the archive's"
+      ]
+     },
+     "result_scale": 2
     }
    ]
   },
@@ -2685,26 +2711,21 @@ const ARCHIVE = {
  "wanted": [
   {
    "problem": "rtc",
-   "who": "Jacob de Gelder",
-   "year": "1849",
-   "value": "π ≈ 355/113 = 3.14159292…",
-   "source": "Construction of 355/113, cited in histories of π.",
-   "draft": "Wanted/De-Gelder-355-113-draft.ggb",
-   "draft_note": "A construction of the value is drafted, to be checked against de Gelder's own figure before it is charted."
-  },
-  {
-   "problem": "rtc",
    "who": "E. W. Hobson",
    "year": "1913",
    "value": "π ≈ 6/5 · (1 + φ) = 3.14164…",
-   "source": "Hobson, “Squaring the Circle: A History of the Problem”, 1913."
+   "source": "Hobson, “Squaring the Circle: A History of the Problem”, 1913.",
+   "draft": "Wanted/Hobson-6-5-golden-draft.ggb",
+   "draft_note": "A construction of Hobson's value is drafted (99.99847%), to be checked against his own steps before it is charted."
   },
   {
    "problem": "taa",
    "who": "Albrecht Dürer",
    "year": "1525",
    "value": "approximate trisection; accuracy depends on the angle",
-   "source": "Dürer, “Underweysung der Messung”, 1525."
+   "source": "Dürer, “Underweysung der Messung”, 1525.",
+   "draft": "Wanted/Durer-trisection-draft.ggb",
+   "draft_note": "Dürer's method is drafted from modern descriptions (99.396% at 150°, its weakest angle up to 150°), to be checked against his 1525 figure before it is charted."
   }
  ],
  "derived_pi": {
@@ -2759,6 +2780,10 @@ const ARCHIVE = {
   ],
   "Claude (Anthropic)": [
    "Claude (Anthropic)"
+  ],
+  "Jacob de Gelder": [
+   "Jacob de Gelder",
+   "Jakob de Gelder"
   ]
  }
 };

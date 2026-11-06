@@ -7,7 +7,7 @@ Kochanski Gordon Crossover (3/7)
 Kochanski / Gordon - 06-11-2026
 
 **Accuracy (%):**
-99.99999
+99.999996
 (precise readout: 99.999996507837642052022699873957)
 
 **Oversized / Undersized:**

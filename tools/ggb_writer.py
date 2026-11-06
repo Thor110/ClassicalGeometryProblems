@@ -123,6 +123,14 @@ class Builder:
         A, B = self.obj[a][1], self.obj[b][1]
         self.cmd('Midpoint', [a, b], [l]); self.point(l, ((A[0] + B[0]) / 2, (A[1] + B[1]) / 2), show=show)
 
+    def angle(self, l, a, b, c):
+        """The angle a b c (corner b), measured as GeoGebra's Angle tool does: from ba round to bc."""
+        import math
+        A, B, C = self.obj[a][1], self.obj[b][1], self.obj[c][1]
+        t = (math.atan2(C[1] - B[1], C[0] - B[0]) - math.atan2(A[1] - B[1], A[0] - B[0])) % (2 * math.pi)
+        self.cmd('Angle', [a, b, c], [l])
+        self.xml.append('<element type="angle" label="%s">\n\t<show object="true" label="true"/>\n\t<objColor r="0" g="100" b="0" alpha="0.1"/>\n\t<layer val="0"/>\n\t<labelMode val="2"/>\n\t<value val="%r"/>\n\t<angleStyle val="0"/>\n\t<arcSize val="30"/>\n\t<lineStyle thickness="2" type="0" typeHidden="1"/>\n</element>\n' % (l, t))
+
     def distance(self, l, a, b):
         self.cmd('Distance', [a, b], [l])
         self.xml.append(NUMERIC.format(l=l, v=v.dist(self.obj[a][1], self.obj[b][1])))
