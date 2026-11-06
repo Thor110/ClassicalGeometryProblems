@@ -3,40 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Step-by-step walkthroughs of classical approximations, from Kochański to the Euclidean circumference approximation, with their measured accuracy.">
+<meta name="description" content="Every construction on the approximation charts, played one circle and one line at a time, from its GeoGebra file, with its measured accuracy.">
 <title>Classical Geometry Problems // Step By Step Constructions</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  #cv{height:420px;}
-  #stepText{min-height:4.8em;margin-top:12px;color:#b0aca5;line-height:1.6;text-align:left;}
+  .box.wide{max-width:1240px;}
+  #cv{height:560px;touch-action:none;cursor:grab;background:#0a0a0f;border:1px solid #1e1e2a;}
+  #cv.drag{cursor:grabbing;}
   #stepNo{color:#4a9;letter-spacing:0.15em;text-transform:uppercase;font-size:14px;margin-top:12px;}
-  @media (max-width:720px){ #cv{height:300px;} }
+  #stepNo .tag{color:#666;margin-left:8px;} #stepNo .tag.hand{color:#ca6;}
+  #stepText{min-height:3.4em;margin-top:8px;color:#d0ccc5;line-height:1.6;text-align:left;font-size:17px;}
+  .picker{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;width:100%;}
+  .picker select{flex:1 1 420px;max-width:640px;background:#0a0a0f;color:#ccc;border:1px solid #2a2a3a;padding:8px;font-family:inherit;font-size:14px;}
+  .picker input{flex:0 1 260px;}
+  #entryHead{text-align:center;margin-top:4px;} #entryNote{text-align:center;}
+  .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-top:12px;font-size:14px;}
+  .keys{font-size:13px;color:#555;text-align:center;margin-top:10px;line-height:1.6;}
+  .keys kbd{border:1px solid #2a2a3a;padding:0 5px;color:#888;font-family:inherit;}
+  .box.wide .controls{max-width:none;align-items:center;}
+  label.check{color:#888;font-size:14px;display:inline-flex;gap:8px;align-items:center;cursor:pointer;white-space:nowrap;letter-spacing:0.05em;padding:0 6px;}
+  label.check input{width:auto;margin:0;padding:0;accent-color:#4a9;}
+  select.small-sel{width:auto;flex:0 0 auto;padding:7px 10px;font-size:14px;}
+  .picker select{width:100%;min-width:0;} .picker input{width:auto;min-width:0;}
+  @media (max-width:720px){ #cv{height:340px;} #stepText{font-size:15px;} .picker select,.picker input{flex:1 1 100%;width:100%;} .picker select{order:-1;} #prevEntry,#nextEntry{flex:1 1 40%;} }
 </style>
 </head>
 <body>
 
 <h1>Classical Geometry Problems // Step By Step Constructions</h1>
 <div class="sub">
-  Two approximations drawn one circle and one line at a time, computed live, with the remaining gap to the true value magnified.
+  Every construction on the charts, played one circle and one line at a time, straight from its GeoGebra file.
 </div>
 
 <div class="tabs" id="tabs"></div>
 
-<div class="box">
-  <div class="box-title" id="title"></div>
-  <div class="box-text" id="intro" style="text-align:center;"></div>
-  <canvas id="cv"></canvas>
+<div class="box wide">
+  <div class="picker">
+    <button class="small" id="prevEntry" title="Previous entry (↑)">▲ Previous</button>
+    <select id="entry" aria-label="Choose a construction"></select>
+    <button class="small" id="nextEntry" title="Next entry (↓)">Next ▼</button>
+    <input id="search" type="search" placeholder="search: name, method, accuracy" aria-label="Search this problem's constructions">
+  </div>
+  <div class="box-title" id="entryHead" style="margin-top:16px;"></div>
+  <div class="box-text" id="entryNote"></div>
+
+  <canvas id="cv" role="img" aria-label="The construction"></canvas>
   <div id="stepNo"></div>
-  <div id="stepText"></div>
+  <div id="stepText" aria-live="polite"></div>
+
   <div class="controls" style="margin-top:12px;">
     <button class="small" id="first">⏮ First</button>
     <button class="small" id="prev">◀ Back</button>
     <button class="small" id="play">▶ Play</button>
     <button class="small" id="next">Next ▶</button>
     <button class="small" id="last">Last ⏭</button>
+    <select class="small-sel" id="speed" aria-label="Playing speed">
+      <option value="2600">Slow</option><option value="1500" selected>Normal</option><option value="700">Fast</option><option value="250">Very fast</option>
+    </select>
+  </div>
+  <div class="controls">
+    <label class="check"><input type="checkbox" id="onlyUsed"> Only the steps that count</label>
+    <label class="check"><input type="checkbox" id="labels" checked> Labels</label>
+    <button class="small" id="zoomIn" title="Zoom in">＋</button>
+    <button class="small" id="zoomOut" title="Zoom out">－</button>
+    <button class="small" id="fit" title="Fit the whole construction">Fit</button>
   </div>
   <div class="meters" id="meters"></div>
-  <div class="small-text" id="source" style="margin-top:12px;text-align:center;"></div>
+  <div class="links" id="links"></div>
+  <div class="keys">
+    <kbd>←</kbd> <kbd>→</kbd> steps · <kbd>↑</kbd> <kbd>↓</kbd> constructions · <kbd>space</kbd> play · <kbd>Home</kbd> <kbd>End</kbd> first and last ·
+    drag to move, scroll or ＋ － to zoom, double-click to fit.
+    <br>Green: this step and the result · amber: the given figure · grey: earlier steps · faint: exploration the result does not use.
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">How These Are Made</div>
+  <div class="box-text">
+    Each construction is read from its GeoGebra file in the archive and rebuilt with the archive's own checker
+    (<a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/tools/verify.py" target="_blank" rel="noopener">tools/verify.py</a>),
+    in the order it was drawn. The sentences are written from the file itself, so they name the points as the file does.
+    "Steps that count" are the ones the result depends on: those are what the chart counts. The GeoGebra files stay the
+    second source of truth: open any of them in GeoGebra to check a step for yourself. Each entry's notes give its
+    history and its original source.
+  </div>
 </div>
 
 <div class="box">
@@ -57,201 +107,287 @@
 
 <script src="common.js"></script>
 <script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
-// ---- A little plane geometry. Points are [x, y]; the unit circle has radius 1. ----
-const sub = (a, b) => [a[0] - b[0], a[1] - b[1]], add = (a, b) => [a[0] + b[0], a[1] + b[1]];
-const mul = (a, k) => [a[0] * k, a[1] * k], dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
-const mid = (a, b) => mul(add(a, b), 0.5);
-function lineLine(a, b, c, d) {               // the lines ab and cd
-  const r = sub(b, a), s = sub(d, c), den = r[0] * s[1] - r[1] * s[0];
-  const t = ((c[0] - a[0]) * s[1] - (c[1] - a[1]) * s[0]) / den;
-  return add(a, mul(r, t));
-}
-function lineCircle(a, b, c, rad) {           // the line ab and circle (c, rad): both crossings
-  const d = sub(b, a), f = sub(a, c);
-  const A = d[0] * d[0] + d[1] * d[1], B = 2 * (f[0] * d[0] + f[1] * d[1]), C = f[0] * f[0] + f[1] * f[1] - rad * rad;
-  const q = Math.sqrt(B * B - 4 * A * C);
-  return [add(a, mul(d, (-B - q) / (2 * A))), add(a, mul(d, (-B + q) / (2 * A)))];
-}
-function circleCircle(c1, r1, c2, r2) {       // both crossings of two circles
-  const d = dist(c1, c2), a = (r1 * r1 - r2 * r2 + d * d) / (2 * d), h = Math.sqrt(r1 * r1 - a * a);
-  const m = add(c1, mul(sub(c2, c1), a / d)), n = [-(c2[1] - c1[1]) / d, (c2[0] - c1[0]) / d];
-  return [add(m, mul(n, h)), add(m, mul(n, -h))];
-}
+// The steps of every construction are written by tools/steps.py into steps/<problem>.js, one file per
+// problem, loaded the first time its tab is opened.
+window.STEPS = window.STEPS || {};
+const DEFAULT = 'rtc/rtc-over-99.806';                 // Gordon's circumference, the page's first walkthrough
+const OLD = {kochanski: 'rtc/rtc-under-99.998'};        // links to the page as it was
+const COL = {given: '#c9953a', fresh: '#5fd0a8', result: '#4a9', used: '#8a8a9c', usedPt: '#a8a8b8', explore: '#34343f', label: '#9a9aa8'};
 
-// ---- The constructions. Each step adds shapes; the last step's shapes are drawn in green. ----
-function circumference() {
-  const O = [0, 0], B = [1, 0], C = [-1, 0], D = [0, 1], E = [0, -1];
-  const H = [1, 1], F = [-1, 1], G = [-1, -1];
-  const J = lineCircle(O, H, O, 1)[1], L = lineLine(O, H, D, B);
-  const M = mid(L, J), Q = mid(M, J);                    // Q: the middle of MJ
-  const perp = add(Q, [-(J[1] - M[1]), J[0] - M[0]]);    // a second point on MJ's perpendicular bisector
-  const N = lineCircle(Q, perp, O, 1).sort((p, q) => q[0] - p[0])[0];
-  const K = lineLine(F, N, G, [2, -1]);
-  const alpha = dist(G, K), truth = 2 * Math.PI, T = [G[0] + truth, -1];
-  return {
-    title: 'Euclidean Circumference Approximation',
-    intro: 'Edward James Gordon\'s method for rectifying the circle: a straight line nearly as long as the circle\'s circumference. Oversized, 99.806%.',
-    source: `From the paper <a class="link" href="paper-euclidean-circumference-approximation.html">Euclidean Circumference Approximation</a> · chart entry: <a class="link" href="charts.html#rtc">Rectifying The Circle, oversized #${rankOf('rtc-over-99.806')}</a>`,
-    view: [-1.6, -1.55, 5.9, 1.4],
-    truthLabel: '2πr', result: alpha, truth, K, T,
-    steps: [
-      ['Draw a circle of any size about O. Call its radius r; here r = 1. Mark B and C on either side, on a line through O.',
-        [{t: 'circle', c: O, r: 1}, {t: 'seg', a: C, b: B}, {t: 'pt', p: O, l: 'O'}, {t: 'pt', p: B, l: 'B'}, {t: 'pt', p: C, l: 'C'}]],
-      ['Construct the perpendicular bisector of BC. It meets the circle at D (top) and E (bottom).',
-        [{t: 'line', a: D, b: E}, {t: 'pt', p: D, l: 'D'}, {t: 'pt', p: E, l: 'E'}]],
-      ['At B and at C draw the lines perpendicular to DE.',
-        [{t: 'line', a: B, b: [1, 1]}, {t: 'line', a: C, b: [-1, 1]}]],
-      ['At D and at E draw the lines perpendicular to BC. They complete the square around the circle, with corners F (top left), H (top right) and G (bottom left). The line through E, extended far to the right, is the baseline.',
-        [{t: 'line', a: D, b: H}, {t: 'line', a: E, b: [2, -1]}, {t: 'pt', p: F, l: 'F'}, {t: 'pt', p: H, l: 'H'}, {t: 'pt', p: G, l: 'G'}]],
-      ['Draw the line DB.',
-        [{t: 'line', a: D, b: B}]],
-      ['Draw the ray from O through the corner H. It meets the circle at J and the line DB at L.',
-        [{t: 'ray', a: O, b: H}, {t: 'pt', p: J, l: 'J'}, {t: 'pt', p: L, l: 'L'}]],
-      ['Let M be the midpoint of LJ. Then construct the perpendicular bisector of MJ.',
-        [{t: 'pt', p: M, l: 'M'}, {t: 'line', a: Q, b: perp}]],
-      ['That bisector meets the circle twice. Call the right-hand crossing N.',
-        [{t: 'pt', p: N, l: 'N'}]],
-      ['Draw the line from F through N, on until it meets the baseline at K.',
-        [{t: 'line', a: F, b: N}, {t: 'pt', p: K, l: 'K'}]],
-      [`GK is the constructed length: ${alpha.toFixed(9)} r. The circle's circumference is 2πr = ${truth.toFixed(9)} r, marked as the true point. GK overshoots it by ${(alpha - truth).toFixed(6)} r, about one part in ${Math.round(truth / (alpha - truth))}.`,
-        [{t: 'seg', a: G, b: K, w: 3}, {t: 'pt', p: T, l: '2π', truth: true}]],
-    ],
-  };
-}
+let prob = null, entries = [], entry = null, data = null, order = [], step = 0, timer = null, view = null;
 
-function kochanski() {
-  const O = [0, 0], A = [0, 1], B = [0, -1];
-  const E = circleCircle(O, 1, B, 1).sort((p, q) => q[0] - p[0])[0];  // 60° from OB
-  const F = circleCircle(B, 1, E, 1).sort((p, q) => p[1] - q[1])[0];       // the lower crossing (the other is O)
-  const C = lineLine(O, F, B, [1, -1]);                                 // tan 30° along the tangent
-  const C1 = [C[0] - 1, -1], C2 = [C[0] - 2, -1], D = [C[0] - 3, -1];
-  const len = dist(A, D), truth = Math.PI, T = [-Math.sqrt(truth * truth - 4), -1];
-  return {
-    title: "Kochański's Approximation Of π (1685)",
-    intro: 'Adam Adamandy Kochański\'s construction, in its common textbook form: a length of nearly π r. Double it to rectify the circle. Undersized, 99.998%.',
-    source: `Background: <a class="link" href="https://arxiv.org/pdf/1111.1739" target="_blank" rel="noopener">Henryk Fuks, reconstruction of Kochański's algorithm</a> · chart entry: <a class="link" href="charts.html#rtc">Rectifying The Circle, undersized #${rankOf('rtc-under-99.998')}</a>`,
-    view: [-3.0, -1.9, 1.7, 1.4],
-    truthLabel: 'πr', result: len, truth, K: D, T, measureFrom: A,
-    steps: [
-      ['Draw a circle of radius r about O, and the diameter AB through it. Here r = 1.',
-        [{t: 'circle', c: O, r: 1}, {t: 'seg', a: A, b: B}, {t: 'pt', p: O, l: 'O'}, {t: 'pt', p: A, l: 'A'}, {t: 'pt', p: B, l: 'B'}]],
-      ['Draw the tangent at B: the line through B perpendicular to AB.',
-        [{t: 'line', a: B, b: [1, -1]}]],
-      ['With the same radius, draw a circle about B. It cuts the first circle at E, 60° round from B.',
-        [{t: 'circle', c: B, r: 1}, {t: 'pt', p: E, l: 'E'}]],
-      ['Draw a circle about E with the same radius. Besides O, it meets the circle about B at a second point.',
-        [{t: 'circle', c: E, r: 1}, {t: 'pt', p: F, l: ''}]],
-      ['The line from O through that point makes 30° with OB. It meets the tangent at C, so BC = r · tan 30°.',
-        [{t: 'line', a: O, b: F}, {t: 'pt', p: C, l: 'C'}]],
-      ['From C, step the compass three radii along the tangent, back past B. The third step lands on D, so CD = 3r.',
-        [{t: 'circle', c: C, r: 1}, {t: 'circle', c: C1, r: 1}, {t: 'circle', c: C2, r: 1}, {t: 'pt', p: C1, l: ''}, {t: 'pt', p: C2, l: ''}, {t: 'pt', p: D, l: 'D'}]],
-      [`Draw AD. Its length is √(4 + (3 − tan 30°)²) r = ${len.toFixed(9)} r, against π r = ${truth.toFixed(9)} r. It falls short by ${(truth - len).toFixed(7)} r, about one part in ${Math.round(truth / (truth - len))}. For comparison, the true point is marked where the tangent would need to be met.`,
-        [{t: 'seg', a: A, b: D, w: 3}, {t: 'pt', p: T, l: 'π', truth: true}]],
-    ],
-  };
-}
-
-const BUILDS = [circumference(), kochanski()];
-let build = BUILDS[0], step = 0, timer = null;
-
-BUILDS.forEach((b, i) => {
+PROBLEMS.forEach(p => {
   const t = document.createElement('button');
-  t.className = 'tab'; t.textContent = b.title; t.onclick = () => choose(i);
+  t.className = 'tab'; t.textContent = p.name; t.dataset.id = p.id;
+  t.onclick = () => go(p.id);
   $('tabs').appendChild(t);
 });
 
-function choose(i) {
-  build = BUILDS[i]; step = 0; stop();
-  document.querySelectorAll('.tab').forEach((t, j) => t.classList.toggle('active', i === j));
-  $('title').textContent = build.title;
-  $('intro').textContent = build.intro;
-  $('source').innerHTML = build.source;
-  show();
+// ---- Choosing a problem and an entry ----
+function load(pid, then) {
+  if (STEPS[pid]) return then();
+  const s = document.createElement('script');
+  s.src = 'steps/' + pid + '.js'; s.onload = then;
+  s.onerror = () => { $('stepText').textContent = 'The steps for this problem could not be loaded.'; };
+  document.head.appendChild(s);
 }
 
+function go(pid, eid, keepStep) {
+  const p = PROBLEMS.find(x => x.id === pid) || PROBLEMS.find(x => x.id === 'rtc');
+  load(p.id, () => {
+    if (prob !== p) {
+      prob = p;
+      document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === p.id));
+      // Best first on each side, as on the charts; entries below the 95% minimum last.
+      const has = e => STEPS[p.id].entries[e.id];
+      const side = s => p.entries.filter(e => e.side === s && has(e)).sort((a, b) => a.rank - b.rank);
+      entries = [...side('over'), ...side('under'), ...(p.archived || []).filter(has)];
+      fillPicker();
+    }
+    choose(eid && entries.find(e => e.id === eid) ? eid : entries[0].id, keepStep);
+  });
+}
+
+function label(e) {
+  const where = e.archived ? 'Below 95%' : (e.side === 'over' ? 'Oversized' : 'Undersized') + ' #' + e.rank;
+  return `${where} · ${e.acc}% · ${e.holder}${e.method ? ' · ' + e.method : ''} · ${e.circles} circles, ${e.lines} lines`;
+}
+
+function fillPicker() {
+  const q = $('search').value.trim().toLowerCase();
+  const show = entries.filter(e => !q || label(e).toLowerCase().includes(q) || e.id.includes(q));
+  const group = (name, list) => list.length ? `<optgroup label="${esc(name)}">${list.map(e => `<option value="${e.id}">${esc(label(e))}</option>`).join('')}</optgroup>` : '';
+  $('entry').innerHTML = group('Oversized', show.filter(e => !e.archived && e.side === 'over')) +
+    group('Undersized', show.filter(e => !e.archived && e.side === 'under')) + group('Below the 95% minimum', show.filter(e => e.archived))
+    || '<option value="">Nothing matches</option>';
+  if (entry) $('entry').value = entry.id;
+}
+
+function choose(eid, keepStep) {
+  stop();
+  entry = entries.find(e => e.id === eid);
+  const S = STEPS[prob.id];
+  data = {e: S.entries[eid], f: S.files[S.entries[eid].file]};
+  $('entry').value = eid;
+  history.replaceState(null, '', '#' + prob.id + '/' + eid);
+  $('entryHead').innerHTML = `${esc(entry.acc)}% · ${esc(entry.holder)}${entry.method ? ' · ' + esc(entry.method) : ''}${entry.date ? ' · ' + esc(entry.date) : ''}`;
+  $('entryNote').textContent = entry.note || '';
+  const L = [`<a class="link" href="charts.html#${prob.id}/${entry.id}">◀ Back to the chart</a>`];
+  if (entry.file) L.push(`<a class="link" href="${repoFile(entry.file + '.ggb')}" download>.ggb file</a>`);
+  if (entry.notesFile) L.push(`<a class="link" href="${repoBlob(entry.notesFile + '.md')}" target="_blank" rel="noopener">notes and sources</a>`);
+  if (entry.geogebra) L.push(`<a class="link" href="${entry.geogebra}" target="_blank" rel="noopener">open in GeoGebra</a>`);
+  L.push(`<a class="link" href="drawings/${entry.id}.svg" target="_blank">drawing</a>`);
+  $('links').innerHTML = L.join('');
+  makeOrder(keepStep ? step : null);
+  fit(); show();
+}
+
+// The steps to play: all of them, or only the ones the result depends on. The result is the last step.
+function makeOrder(keep) {
+  const n = data.f.steps.length, only = $('onlyUsed').checked;
+  const was = keep != null ? order[keep] : null;
+  order = [];
+  for (let i = 0; i < n; i++) if (!only || data.e.u[i] === '1') order.push(i);
+  order.push(n);                                          // n: the result
+  step = was == null ? 0 : Math.max(0, order.findIndex(i => i >= was));
+}
+
+// ---- Showing a step ----
+const fmt = (x, unit) => (Math.abs(x) >= 1e4 ? x.toExponential(9) : x.toFixed(10)) + (unit ? ' ' + unit : '');
+
 function show() {
-  const n = build.steps.length, done = step === n - 1;
-  $('stepNo').textContent = `Step ${step + 1} of ${n}`;
-  $('stepText').textContent = build.steps[step][0];
+  const n = data.f.steps.length, i = order[step], last = i === n, R = data.e.result;
   $('first').disabled = $('prev').disabled = step === 0;
-  $('next').disabled = $('last').disabled = done;
-  const err = build.result - build.truth;
-  const acc = accuracyOf(build.result, build.truth);
+  $('next').disabled = $('last').disabled = step === order.length - 1;
+  let text, tags = '';
+  if (last) {
+    const gap = R.c - R.t, side = gap > 0 ? 'oversized' : 'undersized';
+    if (prob.id === 'taa') {
+      text = `The result: the angle of ${R.whole.toFixed(6)}° is cut into ${R.parts.map(x => x.toFixed(6) + '°').join(', ')}, against a third of ${R.t.toFixed(6)}°. The part furthest from a third sets the accuracy.`;
+    } else if (prob.id === 'dtc') {
+      text = `The result: the cube on the constructed edge has ${R.c.toFixed(10)} times the volume of the given cube, against 2.`;
+    } else {
+      text = `The result: ${R.what} is ${fmt(R.c, R.unit)}, against ${R.truth} = ${fmt(R.t, R.unit)}.`;
+    }
+    text += ` That is ${entry.acc}% accurate, ${side}.`;
+    tags = '<span class="tag">the result</span>';
+  } else {
+    const s = data.f.steps[i];
+    text = s.t;
+    tags = i === 0 ? '<span class="tag">given</span>' : data.e.u[i] === '1' ? '<span class="tag">counts towards the result</span>' : '<span class="tag">exploration: the result does not use it</span>';
+    if (s.h) tags += '<span class="tag hand">placed by eye</span>';
+  }
+  $('stepNo').innerHTML = `Step ${step + 1} of ${order.length}${tags}`;
+  $('stepText').textContent = text;
+  $('cv').setAttribute('aria-label', 'Step ' + (step + 1) + ': ' + text);
+  const err = R.c - R.t, rel = err / R.t;
+  const s = CHECKS[entry.id] && CHECKS[entry.id].steps_used;
   $('meters').innerHTML = meters([
-    ['Constructed', done ? build.result.toFixed(9) + ' r' : '…', ''],
-    ['True ' + build.truthLabel, build.truth.toFixed(9) + ' r', ''],
-    ['Gap', done ? (err > 0 ? '+' : '') + err.toExponential(3) + ' r' : '…', done ? (err > 0 ? 'warm' : '') : ''],
-    ['Accuracy', done ? truncate(acc, 3) + '%' : '…', done ? 'good' : ''],
-    ['Precise', done ? acc.toFixed(12) + '%' : '…', ''],
-    ['Side', done ? (err > 0 ? 'Oversized' : 'Undersized') : '…', ''],
+    ['Counted', `${entry.circles} circles, ${entry.lines} lines`, ''],
+    ['Constructed', last ? fmt(R.c, R.unit) : '…', ''],
+    ['True value', fmt(R.t, R.unit), ''],
+    ['Gap', last ? (err > 0 ? '+' : '') + err.toExponential(3) + (R.unit ? ' ' + R.unit : '') : '…', last ? (err > 0 ? 'warm' : '') : ''],
+    ['Accuracy', last ? entry.acc + '%' : '…', last ? 'good' : ''],
+    ['One part in', last ? Math.round(1 / Math.abs(rel)).toLocaleString('en') : '…', ''],
   ]);
   draw();
 }
 
+// ---- Drawing ----
+// view: the visible part of the plane, [x0, y0, x1, y1]; fit() frames the construction.
+function fit() {
+  const b = $('onlyUsed').checked ? data.e.used : data.f.view;
+  const w = b[2] - b[0], h = b[3] - b[1], m = 0.04 * Math.max(w, h);
+  view = [b[0] - m, b[1] - m, b[2] + m, b[3] + m];
+}
+
 function draw() {
   const cv = $('cv'), {ctx, W, H} = fitCanvas(cv);
-  const [x0, y0, x1, y1] = build.view;
-  const s = Math.min((W - 20) / (x1 - x0), (H - 20) / (y1 - y0));
-  const ox = (W - s * (x1 - x0)) / 2 - s * x0, oy = (H + s * (y1 - y0)) / 2 + s * y0;
+  const [x0, y0, x1, y1] = view;
+  const s = Math.min(W / (x1 - x0), H / (y1 - y0));
+  const ox = W / 2 - s * (x0 + x1) / 2, oy = H / 2 + s * (y0 + y1) / 2;
   const P = p => [ox + p[0] * s, oy - p[1] * s];
-  const far = (a, b, k) => add(a, mul(sub(b, a), k));
-  ctx.font = '13px Courier New';
+  const reach = (Math.hypot(W, H) / s) * 2 + Math.hypot((x0 + x1) / 2, (y0 + y1) / 2);
+  const n = data.f.steps.length, cur = order[step], showLabels = $('labels').checked;
+  const labels = [];
 
-  build.steps.slice(0, step + 1).forEach(([, shapes], i) => {
-    const fresh = i === step;
-    for (const sh of shapes) {
-      const col = sh.truth ? '#4a9' : fresh ? '#4a9' : '#4a4a5c';
-      ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = sh.w ? sh.w : fresh ? 1.6 : 1;
-      if (sh.w && !fresh) ctx.strokeStyle = '#ca6';
-      ctx.beginPath();
-      if (sh.t === 'circle') { const c = P(sh.c); ctx.arc(c[0], c[1], sh.r * s, 0, Math.PI * 2); }
-      if (sh.t === 'seg') { ctx.moveTo(...P(sh.a)); ctx.lineTo(...P(sh.b)); }
-      if (sh.t === 'line') { const k = 40 / dist(sh.a, sh.b); ctx.moveTo(...P(far(sh.a, sh.b, -k))); ctx.lineTo(...P(far(sh.a, sh.b, k))); }
-      if (sh.t === 'ray') { ctx.moveTo(...P(sh.a)); ctx.lineTo(...P(far(sh.a, sh.b, 40))); }
-      if (sh.t === 'pt') {
-        const p = P(sh.p); ctx.arc(p[0], p[1], sh.truth ? 4 : 3, 0, Math.PI * 2); ctx.fill();
-        if (sh.l) { ctx.fillStyle = sh.truth ? '#4a9' : fresh ? '#cfe' : '#888'; ctx.fillText(sh.l, p[0] + 6, sh.truth ? p[1] + 16 : p[1] - 6); }
-        continue;
-      }
-      ctx.stroke();
+  const stroke = (sh, col, w) => {
+    ctx.strokeStyle = col; ctx.lineWidth = w; ctx.beginPath();
+    if (sh.k === 'c') { const c = P(sh.c); ctx.arc(c[0], c[1], sh.r * s, 0, Math.PI * 2); }
+    else if (sh.k === 'l') {
+      const [a, b, c] = sh.e, p0 = [-a * c, -b * c], d = [-b, a];
+      ctx.moveTo(...P([p0[0] - d[0] * reach, p0[1] - d[1] * reach])); ctx.lineTo(...P([p0[0] + d[0] * reach, p0[1] + d[1] * reach]));
     }
-  });
+    else if (sh.k === 's') { ctx.moveTo(...P(sh.a)); ctx.lineTo(...P(sh.b)); }
+    else if (sh.k === 'r') {
+      const d = [sh.b[0] - sh.a[0], sh.b[1] - sh.a[1]], k = reach / (Math.hypot(...d) || 1);
+      ctx.moveTo(...P(sh.a)); ctx.lineTo(...P([sh.a[0] + d[0] * k, sh.a[1] + d[1] * k]));
+    }
+    else if (sh.k === 'a') {
+      const c = P(sh.c), ta = Math.atan2(sh.a[1] - sh.c[1], sh.a[0] - sh.c[0]), tb = Math.atan2(sh.b[1] - sh.c[1], sh.b[0] - sh.c[0]);
+      ctx.arc(c[0], c[1], sh.r * s, -ta, -tb, true);
+    }
+    else if (sh.k === 'g') { sh.pts.forEach((p, j) => j ? ctx.lineTo(...P(p)) : ctx.moveTo(...P(p))); ctx.closePath(); }
+    ctx.stroke();
+  };
+  const dot = (sh, col, r, named) => {
+    const p = P(sh.p); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, Math.PI * 2); ctx.fill();
+    if (named && sh.n && showLabels) labels.push([sh.n, p, col]);
+  };
 
-  // On the last step, a magnifier shows how far the constructed point lands from the true one.
-  if (step === build.steps.length - 1) {
-    const gap = build.K[0] - build.T[0];                       // along the baseline, in radii
-    const bw = Math.min(240, W * 0.42), bh = 64, bx = W - bw - 10, by = 10;
-    const want = (bw * 0.35) / (Math.abs(gap) * s), dec = Math.pow(10, Math.floor(Math.log10(want)));
-    const zoom = [5, 2, 1].map(m => m * dec).find(z => z <= want);   // a round magnification: 1, 2 or 5 × 10ⁿ
+  // Everything up to this step: exploration faint, steps that count grey, the given figure amber,
+  // and this step bright. Lines first, then points on top.
+  const drawn = order.slice(0, step + 1).filter(i => i < n);
+  for (const pass of ['shape', 'point']) {
+    for (const i of drawn) {
+      const fresh = i === cur, used = data.e.u[i] === '1';
+      for (const sh of data.f.steps[i].s) {
+        const col = fresh ? COL.fresh : sh.giv ? COL.given : used ? (sh.k === 'p' ? COL.usedPt : COL.used) : COL.explore;
+        if (pass === 'shape' && sh.k !== 'p') stroke(sh, col, fresh ? 2 : sh.giv ? 1.6 : used ? 1 : 0.8);
+        if (pass === 'point' && sh.k === 'p') dot(sh, col, fresh ? 4 : used || sh.giv ? 2.6 : 1.6, fresh || sh.giv || used);
+      }
+    }
+  }
+  // The result, in green, on the last step.
+  if (cur === n) {
+    for (const sh of data.e.result.shapes) {
+      if (sh.k === 'g') {
+        ctx.fillStyle = 'rgba(68,170,153,0.16)'; ctx.beginPath(); sh.pts.forEach((p, j) => j ? ctx.lineTo(...P(p)) : ctx.moveTo(...P(p))); ctx.closePath(); ctx.fill();
+      }
+      stroke(sh, sh.giv ? COL.given : COL.result, sh.giv ? 3 : 3.2);
+    }
+  }
+  ctx.font = '13px Courier New'; ctx.textBaseline = 'bottom';
+  for (const [t, p, col] of labels) { ctx.fillStyle = col === COL.fresh ? '#cfe' : COL.label; ctx.fillText(t, p[0] + 5, p[1] - 4); }
+
+  // On the last step, how far the result is from the true value, magnified until it can be seen.
+  if (cur === n) {
+    const R = data.e.result, rel = (R.c - R.t) / R.t;
+    const bw = Math.min(260, W * 0.44), bh = 64, bx = W - bw - 10, by = 10;
+    const want = 0.35 * bw / (Math.abs(rel) * bw), dec = Math.pow(10, Math.floor(Math.log10(want)));
+    const zoom = [5, 2, 1].map(m => m * dec).find(z => z <= want) || 1;
     ctx.fillStyle = '#0a0a0f'; ctx.strokeStyle = '#2a2a3a'; ctx.lineWidth = 1;
     ctx.fillRect(bx, by, bw, bh); ctx.strokeRect(bx, by, bw, bh);
-    const cx = bx + bw / 2, ly = by + 38, off = gap * s * zoom;
+    const cx = bx + bw / 2, ly = by + 38, off = rel * bw * zoom;
     ctx.strokeStyle = '#4a4a5c'; ctx.beginPath(); ctx.moveTo(bx + 8, ly); ctx.lineTo(bx + bw - 8, ly); ctx.stroke();
     ctx.fillStyle = '#4a9'; ctx.beginPath(); ctx.arc(cx, ly, 4, 0, 7); ctx.fill();
     ctx.fillStyle = '#ca6'; ctx.beginPath(); ctx.arc(cx + off, ly, 4, 0, 7); ctx.fill();
-    ctx.font = '11px Courier New'; ctx.textAlign = 'center';
+    ctx.font = '11px Courier New'; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
     ctx.fillStyle = '#4a9'; ctx.fillText('true', cx, ly + 16);
     ctx.fillStyle = '#ca6'; ctx.fillText('drawn', cx + off, ly - 9);
-    ctx.fillStyle = '#666'; ctx.fillText('gap magnified ×' + zoom.toLocaleString(), cx, by + 13);
+    ctx.fillStyle = '#666'; ctx.fillText('the gap, magnified to show', cx, by + 13);
     ctx.textAlign = 'left';
   }
 }
 
+// ---- Moving around the drawing: drag to move, wheel or buttons to zoom, double-click to fit ----
+function zoomAt(k, px, py) {
+  const cv = $('cv'), W = cv.clientWidth, H = cv.clientHeight, [x0, y0, x1, y1] = view;
+  const s = Math.min(W / (x1 - x0), H / (y1 - y0)), cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+  const mx = cx + ((px ?? W / 2) - W / 2) / s, my = cy - ((py ?? H / 2) - H / 2) / s;   // the plane point under the cursor stays put
+  view = [mx + (x0 - mx) / k, my + (y0 - my) / k, mx + (x1 - mx) / k, my + (y1 - my) / k];
+  draw();
+}
+(() => {
+  const cv = $('cv'), pts = new Map(); let pinch = null;
+  cv.addEventListener('wheel', ev => { ev.preventDefault(); const r = cv.getBoundingClientRect(); zoomAt(ev.deltaY < 0 ? 1.25 : 0.8, ev.clientX - r.left, ev.clientY - r.top); }, {passive: false});
+  cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); pts.set(ev.pointerId, [ev.clientX, ev.clientY]); cv.classList.add('drag'); });
+  cv.addEventListener('pointermove', ev => {
+    if (!pts.has(ev.pointerId)) return;
+    const [px, py] = pts.get(ev.pointerId); pts.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (pts.size === 2) {                                   // two fingers: pinch to zoom
+      const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+      if (pinch) { const r = cv.getBoundingClientRect(); zoomAt(d / pinch, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); }
+      pinch = d; return;
+    }
+    const W = cv.clientWidth, H = cv.clientHeight, [x0, y0, x1, y1] = view, s = Math.min(W / (x1 - x0), H / (y1 - y0));
+    const dx = (ev.clientX - px) / s, dy = (ev.clientY - py) / s;
+    view = [x0 - dx, y0 + dy, x1 - dx, y1 + dy]; draw();
+  });
+  const up = ev => { pts.delete(ev.pointerId); pinch = null; if (!pts.size) cv.classList.remove('drag'); };
+  cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+  cv.addEventListener('dblclick', () => { fit(); draw(); });
+})();
+$('zoomIn').onclick = () => zoomAt(1.5); $('zoomOut').onclick = () => zoomAt(1 / 1.5); $('fit').onclick = () => { fit(); draw(); };
+
+// ---- Controls ----
 function stop() { clearInterval(timer); timer = null; $('play').textContent = '▶ Play'; }
-$('first').onclick = () => { stop(); step = 0; show(); };
-$('prev').onclick = () => { stop(); step = Math.max(0, step - 1); show(); };
-$('next').onclick = () => { stop(); step = Math.min(build.steps.length - 1, step + 1); show(); };
-$('last').onclick = () => { stop(); step = build.steps.length - 1; show(); };
-$('play').onclick = () => {
+function to(k) { step = Math.max(0, Math.min(order.length - 1, k)); show(); }
+$('first').onclick = () => { stop(); to(0); };
+$('prev').onclick = () => { stop(); to(step - 1); };
+$('next').onclick = () => { stop(); to(step + 1); };
+$('last').onclick = () => { stop(); to(order.length - 1); };
+function play() {
   if (timer) return stop();
-  if (step === build.steps.length - 1) step = 0, show();
+  if (step === order.length - 1) to(0);
   $('play').textContent = '❚❚ Pause';
-  timer = setInterval(() => { if (step < build.steps.length - 1) { step++; show(); } else stop(); }, 1800);
-};
-window.addEventListener('resize', draw);
-choose(location.hash === '#kochanski' ? 1 : 0);
+  timer = setInterval(() => { if (step < order.length - 1) to(step + 1); else stop(); }, +$('speed').value);
+}
+$('play').onclick = play;
+$('speed').onchange = () => { if (timer) { stop(); play(); } };
+$('onlyUsed').onchange = () => { makeOrder(step); fit(); show(); };
+$('labels').onchange = draw;
+$('entry').onchange = () => $('entry').value && choose($('entry').value);
+$('search').oninput = fillPicker;
+const nextEntry = d => { const i = entries.findIndex(e => e.id === entry.id); const j = i + d; if (j >= 0 && j < entries.length) choose(entries[j].id); };
+$('prevEntry').onclick = () => nextEntry(-1); $('nextEntry').onclick = () => nextEntry(1);
+document.addEventListener('keydown', ev => {
+  if (ev.target.closest('input:not([type=checkbox]), select, textarea') || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+  const act = {ArrowRight: () => $('next').onclick(), ArrowLeft: () => $('prev').onclick(), ArrowUp: () => nextEntry(-1), ArrowDown: () => nextEntry(1),
+    ' ': play, Home: () => $('first').onclick(), End: () => $('last').onclick()}[ev.key];
+  if (act) { ev.preventDefault(); act(); }
+});
+window.addEventListener('resize', () => data && draw());
+
+function fromHash() {
+  const h = decodeURIComponent(location.hash.slice(1)), [pid, eid] = (OLD[h] || h || DEFAULT).split('/');
+  go(pid === 'pi' ? 'rtc' : pid, eid);
+}
+window.addEventListener('hashchange', () => { if (!entry || location.hash !== '#' + prob.id + '/' + entry.id) fromHash(); });
+fromHash();
 </script>
 </body>
 </html>

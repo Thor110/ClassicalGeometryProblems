@@ -17,7 +17,8 @@ Node.js and Playwright (`npm install playwright@1.63.0` and `npx playwright inst
   counts its circles and lines under the counting rules, and checks it against the chart. With
   `--write` it also writes what the website shows: `pages/ai-checks.js` (each entry's checks),
   `pages/crossref.js` (related entries, from `tools/crossref.py`), the drawings in `pages/drawings/`
-  (from `tools/draw.py`) and the maintainer's list in `VERIFICATION.md`.
+  (from `tools/draw.py`), every construction's steps for the step-by-step player in `pages/steps/`
+  (from `tools/steps.py`) and the maintainer's list in `VERIFICATION.md`.
 - **The website** is static: `index.html` and `pages/`. Every page loads `pages/common.js` (shared
   helpers); the chart pages also load the data files and `pages/data.js` (ranks, statuses, the π
   chart worked out from the circle rectifications). The paper pages share `pages/paper.js`. The look

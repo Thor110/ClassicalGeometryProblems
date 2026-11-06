@@ -795,6 +795,10 @@ def main():
             import draw; draw.main()
         except Exception as ex:
             print('drawings were not made: %s' % ex)
+        try:
+            import steps; steps.main()
+        except Exception as ex:
+            print('steps were not written: %s' % ex)
         write_js(os.path.join(ROOT, 'pages', 'ai-checks.js'), '// Written by tools/verify.py --write. Do not edit by hand: run the script again.', 'AI_CHECKS', out)
     ORIGINS = {'historical', 'maintainer', 'session', 'submitted'}
     for pr in archive['problems']:

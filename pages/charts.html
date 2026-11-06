@@ -14,7 +14,10 @@
   .kind{display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:0 5px;margin-left:4px;vertical-align:1px;}
   .kind.ai{color:#ca6;border-color:#4a3e2a;} .kind.person{color:#6ac;border-color:#2a3e4a;}
   /* The chart: a shared header, two halves that scroll on their own, and the line of perfection between. */
+  .box.wide{max-width:1240px;} .box.wide .controls{max-width:none;}
   .chart-x{width:100%;overflow-x:auto;}
+  .chart .links a{display:block;white-space:nowrap;line-height:1.7;}
+  .chart .links a.play{color:#4a9;}
   .chart{min-width:900px;}
   .chart table{table-layout:fixed;width:100%;}
   .chart td,.chart th{overflow-wrap:anywhere;white-space:normal;}
@@ -47,6 +50,7 @@
     .chart tr[data-key] td:first-child{grid-column:1;grid-row:1 / span 9;font-size:18px;color:#888;}
     .chart tr[data-key] td.keycell:empty,.chart tr[data-key] td.keycell:has(.mark:empty){display:none;}
     .chart td[data-label]::before{content:attr(data-label) ' ';color:#555;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;}
+    .chart .links a{display:inline-block;margin-right:16px;}
   }
 </style>
 </head>
@@ -74,7 +78,7 @@
   <div id="tip">&nbsp;</div>
 </div>
 
-<div class="box">
+<div class="box wide">
   <div class="box-title">Chart</div>
   <div class="controls">
     <span class="label">Results by</span>
@@ -290,6 +294,7 @@ function render() {
   // The table mirrors the original charts: oversized ranks count down to perfection, undersized count up from it.
   const row = e => {
     const links = [];
+    if (e.file && CHECKS[e.id] && CHECKS[e.id].steps_used) links.push(`<a class="link play" href="constructions.html#${current.derived || current.id}/${e.id}" title="Play this construction step by step">▶ steps</a>`);
     if (e.geogebra) links.push(`<a class="link" href="${e.geogebra}" target="_blank" rel="noopener">GeoGebra</a>`);
     if (e.file) links.push(`<a class="link" href="${repoFile(e.file + '.ggb')}" download>.ggb</a>`);
     if (e.notesFile) links.push(`<a class="link" href="${repoBlob(e.notesFile + '.md')}" target="_blank" rel="noopener">notes</a>`);
@@ -303,9 +308,9 @@ function render() {
       <td class="acc" data-label="Accuracy">${e.acc}%</td>
       <td class="precise" data-label="Precise">${e.precise ? e.precise + '%' : ''}</td>
       <td>${badge(e)}</td>
-      <td>${links.join(' · ')}</td></tr>`;
+      <td class="links">${links.join('')}</td></tr>`;
   };
-  const cols = '<colgroup><col style="width:40px"><col style="width:48px"><col style="width:196px"><col style="width:72px"><col style="width:60px"><col style="width:128px"><col style="width:164px"><col style="width:136px"><col style="width:106px"></colgroup>';
+  const cols = '<colgroup><col style="width:40px"><col style="width:48px"><col style="width:196px"><col style="width:72px"><col style="width:60px"><col style="width:120px"><col style="width:300px"><col style="width:136px"><col style="width:118px"></colgroup>';
   const whoLabel = {all: '', person: ' by people', ai: ' by AI'}[who];
   const count = side => { const n = shown.filter(e => e.side === side).length, m = all.filter(e => e.side === side).length; return n === m ? n : n + ' of ' + m; };
   const caption = (side, n, arrow) => `<div class="caption">${arrow} ${side === 'over' ? 'Oversized' : 'Undersized'} · ${n} ${n === 1 ? 'method' : 'methods'}${whoLabel} · every new attempt is welcome</div>`;
@@ -475,6 +480,7 @@ function renderDetail() {
     <div class="rec"><div class="rec-title">Related entries</div><ul>${related(e)}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
     <div class="controls" style="margin-top:12px;">
+      ${e.file && s.ai && s.ai.steps_used ? `<a class="btn-link small" style="padding:8px 14px;font-size:14px;border-color:#4a9;color:#4a9;" href="constructions.html#${current.derived || current.id}/${e.id}">▶ Step Through It</a>` : ''}
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Verification', 'verification.yml')}" target="_blank" rel="noopener">I Verified This</a>
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Dispute', 'dispute.yml')}" target="_blank" rel="noopener">Dispute This</a>
       <button class="small" id="linkBtn">Copy Link</button>

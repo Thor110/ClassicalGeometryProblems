@@ -5,9 +5,10 @@
 //
 // For every page: no script errors, nothing wider than a phone screen (390 px), every image described,
 // every link to a file in the repository pointing at a file that exists, and every link to a place on
-// a page (#...) landing on something there (the charts' own #problem/entry links included). Then every
-// chart tab is opened and an entry in it selected. Exits with an error if anything fails, so the
-// GitHub workflow (.github/workflows/site-check.yml) can stop a change that breaks the site.
+// a page (#...) landing on something there (the charts' and the player's #problem/entry links included).
+// Then every chart tab is opened and an entry in it selected, and every construction is played to its
+// result. Exits with an error if anything fails, so the GitHub workflow (.github/workflows/site-check.yml)
+// can stop a change that breaks the site.
 const { chromium } = require('playwright');
 const fs = require('fs'), path = require('path');
 
@@ -26,8 +27,9 @@ const fs = require('fs'), path = require('path');
     await p.goto('file://' + file + '#' + hash); await p.waitForTimeout(250);
     const ok = await p.evaluate(h => {
       if (document.getElementById(h)) return true;
-      if (typeof CHARTS !== 'undefined') {                                     // charts.html#rtc or #rtc/entry
-        const [pid, eid] = h.split('/'), c = CHARTS.find(x => x.id === pid);
+      const list = typeof CHARTS !== 'undefined' ? CHARTS : typeof PROBLEMS !== 'undefined' ? PROBLEMS : null;
+      if (list) {                                    // charts.html or constructions.html: #rtc or #rtc/entry
+        const [pid, eid] = h.split('/'), c = list.find(x => x.id === pid);
         return !!c && (!eid || c.entries.some(e => e.id === eid));
       }
       return false;
@@ -77,9 +79,30 @@ const fs = require('fs'), path = require('path');
     if (!(await p.evaluate(() => !!highlighted))) fail('charts.html#' + id, 'selecting a row did nothing');
   }
   errors.forEach(e => fail('charts.html', 'script error: ' + e));
+
+  // The step-by-step player: every construction on every chart, played to its result.
+  const q = await browser.newPage({viewport: {width: 1280, height: 900}}); const qerr = [];
+  q.on('pageerror', e => qerr.push(e.message));
+  let played = 0;
+  for (const pid of await p.evaluate(() => PROBLEMS.map(x => x.id))) {
+    await q.goto('file://' + path.join(root, 'pages/constructions.html#' + pid)); await q.waitForTimeout(500);
+    const out = await q.evaluate(pid => {
+      const bad = [];
+      if (!STEPS[pid]) return {n: 0, bad: ['no steps file for ' + pid]};
+      for (const e of entries) {
+        try { choose(e.id); to(order.length - 1); if (!/^The result/.test($('stepText').textContent)) bad.push(e.id + ': the last step is not the result'); }
+        catch (ex) { bad.push(e.id + ': ' + ex.message); }
+      }
+      const charted = PROBLEMS.find(x => x.id === pid).entries.filter(e => e.file && CHECKS[e.id] && CHECKS[e.id].steps_used);
+      charted.filter(e => !entries.some(x => x.id === e.id)).forEach(e => bad.push(e.id + ': on the chart but has no steps'));
+      return {n: entries.length, bad};
+    }, pid);
+    played += out.n; out.bad.forEach(b => fail('constructions.html#' + pid, b));
+  }
+  qerr.forEach(e => fail('constructions.html', 'script error: ' + e));
   await browser.close();
 
-  console.log('%d pages checked at desktop and phone widths; %d chart tabs opened.', pages.length, tabs.length);
+  console.log('%d pages checked at desktop and phone widths; %d chart tabs opened; %d constructions played step by step.', pages.length, tabs.length, played);
   if (problems.length) { console.log(problems.length + ' problem(s):\n  ' + problems.join('\n  ')); process.exit(1); }
   console.log('No problems found.');
 })();

@@ -2102,7 +2102,7 @@ const ARCHIVE = {
      "date": "1685",
      "geogebra": "hhjyc93h",
      "file": "GeoGebra Files/Under/RTC-99.998-Kochanski",
-     "note": "A textbook form of it is walked through on the Constructions page.",
+     "note": "Step through it, one circle and one line at a time, on the Constructions page.",
      "verified": [
       {
        "by": "Edward James Gordon",
