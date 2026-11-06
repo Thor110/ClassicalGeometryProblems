@@ -86,6 +86,8 @@ below against the current charts.
   large just to transfer its lines and circles to the ground. The walkable path is what made it so
   large.
 - Finding constructions that can actually be built may be a search of its own.
+- It would be built by old-world methods: every circle and line made for real, with cords, stakes
+  and a rope compass, not surveying instruments.
 
 ### Why the best constructions would need a planet
 
@@ -103,10 +105,73 @@ With the AI search finds included, the circle problems would need plazas hundred
 kilometres across, more than the distance to the Moon. So the early estimate was right: the better
 the construction, the larger the building, and the best ones need a planet.
 
+### The unified construction: the Architectural Plan
+
+Edward's Architectural Plan (GeoGebra `kyhvbkhh`, the Kochanski Gordon crossover, 11 circles and
+10 lines) builds both lines in one construction instead of two separate ones. Along one line from
+the point K it marks:
+
+- **S**, Kochański's undersized end, at 99.99811% of the circumference;
+- **P**, Edward's oversized end, at 100.00253%;
+- **T**, the midpoint of S and P, at 100.00032%: the chart's 99.9996% (shown as 99.999681%).
+
+The true end of the circumference lies between S and P, 0.4278 of the way from S, which is almost
+exactly 3/7 (0.4286). That is why the 3/7 crossover lands so close. The gap between the two lines is
+S to P, 0.0044% of the circumference:
+
+| Plaza across | Walkways (the circumference) | Gap S to P | T from the true end |
+|---|---|---|---|
+| 10 m | 31 m | 1.4 mm | 0.1 mm |
+| 50 m | 157 m | 6.9 mm | 0.5 mm |
+| 1 km | 3.1 km | 139 mm | 10 mm |
+| **8.65 km** | **27 km** | **1.2 m, walkable** | 87 mm |
+
+On paper the gap is there at any size. On the ground it disappears. Even with modern tapes, staking
+each point to ±5 mm moves S and P apart or together by about ±108 mm, whatever the size, because the error comes from
+the many crossing points before them. So on a 50 m plaza the 7 mm gap is lost entirely, and finding
+T means halving a 7 mm gap, a micro scale step. The gap only shows reliably once it is about three
+times that spread, a third of a metre, on a plaza about 2.4 km across. For the walkable 1.2 m path
+it needs a plaza 8.65 km across with walkways 27 km long, where the gap comes out at 1.2 m ± 0.11 m,
+and the midpoint T, the near-perfect marker, lands 87 mm from the true end, ± 54 mm.
+
+This is the construction the early estimate found too large to build with a visible gap. With
+modern surveying it would take a plaza the size of a town; built by old-world methods, it cannot
+show its gap at any size (below).
+
+### Old-world methods: the error grows with the work
+
+With every circle swung on a cord and every line stretched between stakes, the error is not a fixed
+few millimetres: it grows with the size of the work. A cord 4 km long sags, stretches and wanders far
+more than one 25 m long. The best builders of the ancient world worked to about one part in 5,000
+(the Great Pyramid's base, 230 m a side, is true to a few centimetres). Marking every crossing point
+of a construction with an error in that proportion, and rebuilding it 200 times:
+
+| Construction | Its error | Spread at 1 part in 5,000 | Spread at 1 part in 20,000 | Shows? |
+|---|---|---|---|---|
+| Architectural Plan: the gap S to P | 0.0044% | ±0.067% | ±0.017% | **no, at any size** |
+| Architectural Plan: T, the near-perfect marker | 0.0003% | ±0.033% | ±0.008% | **no, at any size** |
+| Rectifying 99.596% (oversized) | 0.40% | ±0.087% | ±0.022% | yes, 5 to 19 times |
+| Rectifying 99.376% (undersized) | 0.62% | ±0.044% | ±0.011% | yes, 14 to 57 times |
+| Rectifying 98.538% (oversized) | 1.46% | ±0.096% | ±0.024% | yes, 15 to 61 times |
+| Squaring 96.977% (oversized) | 3.0% | ±0.20% | ±0.050% | yes, 15 to 61 times |
+| Squaring 98.177% (undersized) | 1.8% | ±0.10% | ±0.026% | yes, 17 to 70 times |
+| Doubling 98.076% and 97.656% | 1.9% and 2.3% | ±0.005% | ±0.001% | yes, hundreds of times |
+
+Because the error grows with the work, building bigger never reveals a hidden gap: the Architectural
+Plan's gap stays fifteen times smaller than the wander of the rope work at 1 part in 5,000, and four
+times smaller even at 1 part in 20,000, whether the plaza is 50 m or 8 km across. It would need cords
+true to about one part in 226,000. By old-world methods, the near-perfect constructions can only be
+honoured, not shown: the gap between them is finer than any rope.
+
+What old-world methods can show is the pairs around 98% to 99.6%. With them the size is free to
+choose, so it can be set by the path: Edward's 99.596% and 99.376% from a plaza 37 m across give the
+1.2 m walkable gap, with every circle a cord of at most about three times the plaza's radius.
+
 ### Two kinds of accuracy
 
-A construction drawn on paper or in GeoGebra is exact. Built on the ground, every crossing point is
-staked out by hand. Marking each one to ±5 mm (tape, cord and pegs used with care) and rebuilding
+With modern tapes and pegs, the error is closer to a fixed amount instead. A construction drawn on
+paper or in GeoGebra is exact. Built on the ground, every crossing point is staked out by hand.
+Marking each one to ±5 mm (tape, cord and pegs used with care) and rebuilding
 each construction 120 times shows how far its result wanders once built:
 
 - On a 50 m plaza, every construction above about 99.9% has its error **hidden** by the stake-out:
