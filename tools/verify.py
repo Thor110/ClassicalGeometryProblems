@@ -533,25 +533,42 @@ def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None):
     else:
         return []
     pts = lambda r: {k: o[1] for k, o in r['objects'].items() if o and o[0] == 'point'}
+    scale = dist(B, A) if (problem == 'taa' or (problem == 'ar' and not nums)) else 1.0
+    def same(r1, r2):
+        p1, p2 = pts(r1), pts(r2)
+        return all(k in p2 and dist(p1[k], p2[k]) <= 1e-9 * scale for k in p1)
+    def step_to(d0, d1, ref, depth=0):
+        # Move the figure from angle d0 to d1. Where a step is too big for some crossing to be followed
+        # (two crossings closer together than the figure moves), one step and two half steps disagree:
+        # then the step is halved, as often as needed.
+        a, r = run(make(d1), ref)
+        if r is None or depth >= 8: return a, r
+        am, rm = run(make((d0 + d1) / 2), ref)
+        if rm is None: return a, r
+        a2, r2 = run(make(d1), pts(rm))
+        if r2 is None or same(r, r2): return a, r
+        am, rm = step_to(d0, (d0 + d1) / 2, ref, depth + 1)
+        if rm is None: return am, rm
+        return step_to((d0 + d1) / 2, d1, pts(rm), depth + 1)
     out = {}
     if stop_at is not None:
         # walk straight from the file's angle to stop_at, landing on it exactly
         n = max(1, int(math.ceil(abs(stop_at - start) / step)))
-        ref = pts(base)
+        ref, prev = pts(base), start
         for k in range(n + 1):
             deg = start + (stop_at - start) * k / n
-            a, r = run(make(deg), ref)
+            a, r = step_to(prev, deg, ref)
             if r is None: break
-            ref = pts(r)
+            ref, prev = pts(r), deg
         out[round(stop_at, 3)] = a if r is not None else None
         return sorted(out.items()), start
     for direction in (1, -1):
-        ref, deg = pts(base), start
+        ref, deg, prev = pts(base), start, start
         while lo <= deg <= hi:
-            a, r = run(make(deg), ref)
+            a, r = step_to(prev, deg, ref)
             out[round(deg, 3)] = a
             if r is None: break
-            ref = pts(r); deg += direction * step
+            ref, prev = pts(r), deg; deg += direction * step
     return sorted(out.items()), start
 
 def good_range(points, start, threshold=95.0):

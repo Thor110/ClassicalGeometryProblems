@@ -918,6 +918,31 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
       ]
      }
+    },
+    {
+     "id": "stc-over-99.998",
+     "side": "over",
+     "marks": "",
+     "holder": "E. W. Hobson",
+     "method": "Hobson's construction (the square on GH)",
+     "circles": 10,
+     "lines": 6,
+     "acc": "99.998",
+     "precise": "99.998467881887055614596084601667",
+     "date": "1913",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.998-Hobson",
+     "square": "q",
+     "note": "OD = 3/5, OF = 3/2 and OE = 1/2 of the radius; the semicircles on DE and AF cut the perpendicular through O at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Given by Hobson (1913) without naming its author.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, p. 35, construction (4)",
+       "redrawn in November 2026 from the book's text (Internet Archive scans), the three fractions read from the value GH = 1.77246 that Hobson gives"
+      ]
+     }
     }
    ]
   },
@@ -1130,6 +1155,31 @@ const ARCHIVE = {
       ]
      },
      "precise": "97.995491060509379984006623261114"
+    },
+    {
+     "id": "taa-over-99.395",
+     "side": "over",
+     "marks": "",
+     "holder": "Albrecht Dürer",
+     "method": "Dürer's trisection",
+     "circles": 12,
+     "lines": 9,
+     "acc": "99.395",
+     "precise": "99.395788009623285706993866023995",
+     "date": "1525",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.395-Durer",
+     "note": "Trisect the chord; raise a perpendicular to the arc; carry it down to the chord from the end; trisect the small gap; carry it back up to the arc. A general method, charted at 150°, its weakest angle up to 150°: 99.99996% at 30°, 99.997% at 60°, 99.97% at 90°, 99.84% at 120°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. Dürer, Underweysung der Messung, 1525",
+       "described step by step, with Dürer's letters, in G. H. Hughes, The Polygons of Albrecht Dürer, 2012 (arXiv:1205.0080), Appendix A, from Strauss's translation",
+       "redrawn in November 2026; how the chord and the gap are trisected is the archive's, as Dürer does not say"
+      ]
+     }
     }
    ]
   },
@@ -2540,6 +2590,31 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 2
+    },
+    {
+     "id": "rtc-under-99.99997",
+     "side": "under",
+     "marks": "",
+     "holder": "Specht",
+     "method": "Specht's construction",
+     "circles": 8,
+     "lines": 7,
+     "acc": "99.99997",
+     "precise": "99.999977703818357853546539562126",
+     "date": "1828",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.99997-Specht",
+     "note": "On the tangent at A, AB = 11/5 and BC = 2/5 of the radius; AD = OB on the diameter through A, and DE parallel to OC give AE = (13/25) √146 of the radius, short of the circumference by 1.4 millionths of the radius. Hobson gives no first name.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Specht, Crelle's Journal, vol. 3, p. 83",
+       "described in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, pp. 34-35, construction (3)",
+       "redrawn in November 2026 from the book's text (Internet Archive scans), BC read from the value AE = 6.2831839 that Hobson gives"
+      ]
+     }
     }
    ]
   },
@@ -2708,26 +2783,7 @@ const ARCHIVE = {
    "about": "Edward's methods for doubling the cube, grown from a pattern that doubles a cube's edge."
   }
  ],
- "wanted": [
-  {
-   "problem": "rtc",
-   "who": "E. W. Hobson",
-   "year": "1913",
-   "value": "π ≈ 6/5 · (1 + φ) = 3.14164…",
-   "source": "Hobson, “Squaring the Circle: A History of the Problem”, 1913.",
-   "draft": "Wanted/Hobson-6-5-golden-draft.ggb",
-   "draft_note": "A construction of Hobson's value is drafted (99.99847%), to be checked against his own steps before it is charted."
-  },
-  {
-   "problem": "taa",
-   "who": "Albrecht Dürer",
-   "year": "1525",
-   "value": "approximate trisection; accuracy depends on the angle",
-   "source": "Dürer, “Underweysung der Messung”, 1525.",
-   "draft": "Wanted/Durer-trisection-draft.ggb",
-   "draft_note": "Dürer's method is drafted from modern descriptions (99.396% at 150°, its weakest angle up to 150°), to be checked against his 1525 figure before it is charted."
-  }
- ],
+ "wanted": [],
  "derived_pi": {
   "folder": "Approximations/06 Pi Approximations",
   "about": "The π chart is worked out from the circle rectification chart: each rectification, halved, is a π approximation with the same accuracy and steps. These are the π versions drawn in GeoGebra, linked beside the rectification each comes from.",
@@ -2784,6 +2840,16 @@ const ARCHIVE = {
   "Jacob de Gelder": [
    "Jacob de Gelder",
    "Jakob de Gelder"
+  ],
+  "E. W. Hobson": [
+   "Ernest William Hobson",
+   "E. W. Hobson"
+  ],
+  "Albrecht Dürer": [
+   "Albrecht Dürer"
+  ],
+  "Specht": [
+   "Specht"
   ]
  }
 };
