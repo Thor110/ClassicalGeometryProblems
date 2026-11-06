@@ -58,6 +58,8 @@ If your GeoGebra file produces a more precise numeric readout, include that raw 
 
 Please refer to the file "SUBMISSION_TEMPLATE.md" for the submission template, or use the [submission page](https://thor110.github.io/ClassicalGeometryProblems/pages/submit.html), which works out your accuracy and opens a submission form for you.
 
+The easiest way to submit is the [browser extension](extension/README.md), which sends a construction straight from GeoGebra as a pull request and has it checked automatically within minutes. Submissions need to reach 95%. See [Submissions/README.md](Submissions/README.md) for what the automatic check reports.
+
 ## Existing Approximations
 
 This section summarizes verified or notable approximations. Each links to a detailed construction, accuracy analysis, and reproducible file (GeoGebra, Desmos, etc.).

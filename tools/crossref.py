@@ -47,15 +47,7 @@ def profile(problem, path, entry):
     j = v.judge(problem, r, entry.get('square'), entry.get('result_path'), entry.get('result_scale'))
     if not j: return None
     ratio = float(j[0] / j[1])
-    anc = v.ancestry(r, j[5]); o = r['objects']
-    size = v.given_size(problem, r, j[5]) or 1
-    pts = sorted({o[n][1] for n in anc if o.get(n) and o[n][0] == 'point'})
-    fp = collections.Counter()
-    for a in range(len(pts)):
-        for b in range(a + 1, len(pts)):
-            fp['d%.*f' % (ROUND, v.dist(pts[a], pts[b]) / size)] += 1
-    for n in anc:
-        if o.get(n) and o[n][0] == 'circle': fp['r%.*f' % (ROUND, o[n][2] / size)] += 1
+    fp = profile_of(r, j[5], problem, v.given_size(problem, r, j[5]))
     curve = None
     if problem in ('taa', 'ar'):
         try:
@@ -63,7 +55,20 @@ def profile(problem, path, entry):
             curve = [d.get(x) for x in SWEEP]
         except Exception:
             curve = None
-    return {'ratio': ratio, 'fp': fp, 'curve': curve, 'steps': len(anc)}
+    return {'ratio': ratio, 'fp': fp, 'curve': curve, 'steps': sum(fp.values())}
+
+def profile_of(r, roots, problem, size):
+    """The fingerprint of a rebuilt construction: distances between the points the result depends
+    on, and the radii of its circles, divided by the given figure's size and rounded."""
+    anc = v.ancestry(r, roots); o = r['objects']; size = size or 1
+    pts = sorted({o[n][1] for n in anc if o.get(n) and o[n][0] == 'point'})
+    fp = collections.Counter()
+    for a in range(len(pts)):
+        for b in range(a + 1, len(pts)):
+            fp['d%.*f' % (ROUND, v.dist(pts[a], pts[b]) / size)] += 1
+    for n in anc:
+        if o.get(n) and o[n][0] == 'circle': fp['r%.*f' % (ROUND, o[n][2] / size)] += 1
+    return fp
 
 def similarity(a, b):
     if not a or not b: return 0.0
@@ -104,7 +109,8 @@ def run(archive=None):
         entries = [e for e in p['entries'] if e.get('file')]
         for e in entries:
             try: profiles[e['id']] = profile(p['id'], os.path.join(v.ROOT, p['folder'], e['file'] + '.ggb'), e)
-            except Exception as ex: profiles[e['id']] = None
+            except Exception as ex:
+                profiles[e['id']] = None; print('crossref: could not profile %s: %s' % (e['id'], ex), file=sys.stderr)
         for i, a in enumerate(entries):
             for b in entries[i + 1:]:
                 pa, pb = profiles[a['id']], profiles[b['id']]

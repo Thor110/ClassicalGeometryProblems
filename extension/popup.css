@@ -1,0 +1,27 @@
+/* The archive's look: dark, Courier New, spaced uppercase labels, thin borders. */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{width:400px;background:#0a0a0f;color:#e0ddd8;font-family:'Courier New',monospace;font-size:14px;padding:16px;}
+h1{font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#888;text-align:center;font-weight:normal;}
+.sub{font-size:12px;color:#5c5c68;text-align:center;letter-spacing:0.1em;margin:4px 0 12px;}
+label{display:block;font-size:11px;color:#777;letter-spacing:0.12em;text-transform:uppercase;margin:10px 0 4px;}
+label.check{text-transform:none;letter-spacing:0.02em;font-size:12px;color:#b0aca5;display:flex;gap:8px;align-items:flex-start;line-height:1.4;}
+label.check input{width:auto;margin-top:2px;}
+.opt{color:#4a4a5c;text-transform:none;letter-spacing:0;}
+input,select,textarea{width:100%;background:#0d0d14;border:1px solid #2a2a3a;color:#e0ddd8;padding:6px 8px;font-family:inherit;font-size:13px;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#555;}
+textarea{min-height:52px;resize:vertical;}
+.hint{font-size:11px;color:#5c5c68;margin-top:4px;line-height:1.4;}
+.center{text-align:center;margin-top:10px;}
+a{color:#aaa;}
+button{display:block;width:100%;background:transparent;border:1px solid #2a2a3a;color:#999;padding:9px;font-family:inherit;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;margin-top:8px;}
+button:hover{border-color:#555;color:#ddd;background:#111;}
+button.primary{border-color:#2a4a3a;color:#4a9;margin-top:12px;}
+button:disabled{opacity:0.4;cursor:default;}
+.row{display:flex;gap:8px;} .row button{flex:1;}
+.preview{margin-top:12px;border:1px solid #1e1e2a;background:#0d0d14;padding:8px 10px;font-size:13px;line-height:1.5;}
+.good{color:#4a9;} .warm{color:#ca6;} .hot{color:#e55;}
+.status{font-size:12px;line-height:1.5;color:#b0aca5;}
+.status:empty{display:none;}
+.status{border:1px solid #2a2a3a;background:#0d0d14;padding:8px 10px;margin-bottom:8px;}
+.account{margin-top:12px;font-size:12px;color:#888;line-height:1.5;}
+.code{font-size:20px;letter-spacing:0.2em;color:#4a9;text-align:center;margin:6px 0;}

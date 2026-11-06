@@ -1,0 +1,23 @@
+# Submissions
+
+New constructions arrive here as pull requests, usually sent from GeoGebra with the archive's
+browser extension (see [extension/](../extension/)). Each submission is one folder:
+
+    Submissions/<date>-<problem>-<name>-<id>/
+        construction.ggb    the GeoGebra construction, exactly as it was in GeoGebra
+        submission.json     the details from the form: name, problem, chosen measurements, notes
+        submission.md       the same details in the archive's submission template
+
+Every submission pull request is evaluated automatically by
+[.github/workflows/evaluate-submission.yml](../.github/workflows/evaluate-submission.yml), which runs
+[tools/evaluate_submission.py](../tools/evaluate_submission.py) and comments with the result:
+
+- **ready-for-review**: the problem is confirmed, the accuracy reproduced, and the checks pass.
+  The maintainer verifies it and moves it into the charts.
+- **needs-manual-check**: the construction does not fit the chosen problem, the problem could not
+  be identified, or a check needs a person (for example a point placed by hand).
+- **possible-duplicate**: it is identical or nearly identical to an entry already in the archive.
+- **below-minimum**: under 95%. The pull request is closed with the figure and some encouragement.
+
+Submissions can also be sent without the extension: download the files from it, or fill in
+[SUBMISSION_TEMPLATE.md](../SUBMISSION_TEMPLATE.md), and open a pull request or an issue.

@@ -106,6 +106,20 @@ label on the chart, kept apart from people as verifiers are, and its entries nee
 verification like any other. An AI never verifies its own finds alone: its automated check is
 recorded, but the entry stays self-verified until a person or another verifier reproduces it.
 
+## New submissions
+
+Pull requests that add a folder to `Submissions/` are evaluated automatically and labelled
+(see [Submissions/README.md](Submissions/README.md)). For each one labelled **ready-for-review** or
+**needs-manual-check**, the maintainer:
+
+1. reads the evaluation comment, and opens the construction in GeoGebra;
+2. for a needs-manual-check, settles what the check could not (the problem, a hand-placed point, a shallow crossing);
+3. merges the pull request, then moves the files into the problem's folder under the archive's naming
+   (`RTC-99.806.ggb` and its `.md`), adds the entry to `pages/archive-data.js`, and runs
+   `python tools/verify.py --write`.
+
+The AI check then verifies it like any other entry, and it waits in the list below for a person.
+
 <!-- maintainer-list:start -->
 
 ## Waiting for the maintainer

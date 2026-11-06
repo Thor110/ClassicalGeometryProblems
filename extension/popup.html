@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Submit a construction</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<h1>Classical Geometry Problems</h1>
+<div class="sub">Submit this construction to the archive</div>
+
+<div id="status" class="status"></div>
+
+<form id="form" hidden>
+  <label for="name">Name</label>
+  <input id="name" placeholder="(real name)" autocomplete="name">
+  <div class="hint">Published with your construction, permanently.</div>
+
+  <label for="problem">Problem</label>
+  <select id="problem">
+    <option value="stc">Squaring the Circle</option>
+    <option value="rtc">Rectifying the Circle</option>
+    <option value="dtc">Doubling the Cube</option>
+    <option value="taa">Trisecting an Angle</option>
+    <option value="ar">Arc Rectification</option>
+  </select>
+
+  <label for="result" id="resultLabel">Your result</label>
+  <select id="result"></select>
+  <label for="truth" id="truthLabel">The true value it should match</label>
+  <select id="truth"></select>
+  <div id="scaleRow" hidden>
+    <label for="scale">Your length is</label>
+    <select id="scale"><option value="1">the circumference</option><option value="2">half the circumference</option></select>
+  </div>
+
+  <div class="preview" id="preview"></div>
+
+  <label for="method">Method name <span class="opt">(optional)</span></label>
+  <input id="method">
+  <label for="description">Description <span class="opt">(optional)</span></label>
+  <textarea id="description" placeholder="The idea behind the construction"></textarea>
+  <label for="notes">Notes or limitations <span class="opt">(optional)</span></label>
+  <textarea id="notes" placeholder="For example: only for angles under 90°"></textarea>
+
+  <label class="check"><input type="checkbox" id="ai"> An AI helped find or refine this construction</label>
+  <label class="check"><input type="checkbox" id="agree"> This is my own work (or I credit its discoverer in the notes), and it may be published in the archive</label>
+
+  <div id="account" class="account"></div>
+  <button type="button" id="submit" class="primary">Submit As A Pull Request</button>
+  <div class="row">
+    <button type="button" id="download">Download As Zip</button>
+    <button type="button" id="issue">Open As An Issue</button>
+  </div>
+  <div class="hint center">Every submission is evaluated automatically and checked by a person before it is charted. <a href="#" id="site">How submissions work</a></div>
+</form>
+<script src="config.js"></script>
+<script src="github.js"></script>
+<script src="zip.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
