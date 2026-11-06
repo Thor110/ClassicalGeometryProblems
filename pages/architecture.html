@@ -55,6 +55,13 @@
   <div class="box-text">Finding constructions that suit a building, accurate enough to mean something but not so accurate the gap disappears, is a search of its own. The measurements and the sun's tables are in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#building-it-for-real" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.</div>
 </div>
 
+<div class="box" id="finds">
+  <div class="box-title">Constructions A Building Can Show</div>
+  <div class="box-text">Found by the archive's architecture search: single constructions that lay out one length a little too long and one a little too short from the same threshold, with a gap that still stands out when every circle and line is built by hand. They are chosen to be built, not to be close to perfect. The search runs again as the charts grow.</div>
+  <div class="table-wrap"><table id="findsTable"></table></div>
+  <div class="box-text" id="findsNote" style="margin-top:12px;"></div>
+</div>
+
 <div class="nav-group">
   <a href="charts.html" class="btn-link">Approximation Charts</a>
   <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md" target="_blank" rel="noopener" class="btn-link">In The Repository</a>
@@ -68,6 +75,7 @@
 <script src="archive-data.js"></script>
 <script src="ai-checks.js"></script>
 <script src="data.js"></script>
+<script src="architecture-finds.js"></script>
 <script>
 // The gap between the best oversized and undersized entries, at a building's scale.
 const SCALES = {
@@ -90,6 +98,23 @@ for (const p of PROBLEMS) for (const who of ['everyone', 'people']) {
     <td><b>${fmt((lo - lu) * 1000)}</b></td></tr>`;
 }
 document.getElementById('gaps').innerHTML = rows;
+
+// The architecture search's finds (pages/architecture-finds.js, written by tools/architecture_search.py).
+(function () {
+  const T = document.getElementById('findsTable'), N = document.getElementById('findsNote');
+  if (typeof ARCHITECTURE_FINDS === 'undefined' || !ARCHITECTURE_FINDS.finds.length) { T.outerHTML = '<div class="box-text">No finds yet.</div>'; return; }
+  const F = ARCHITECTURE_FINDS, PATH = 1.2, fmt = (x, d) => x.toFixed(d);
+  const rows = F.finds.map(f => {
+    const plaza = PATH / (f.gap * Math.PI), cord = f.reach * plaza / 2;
+    return `<tr><td>${f.id}</td><td>${f.circles} circle${f.circles === 1 ? '' : 's'}, ${f.lines} line${f.lines === 1 ? '' : 's'}${f.scale === 2 ? ' (half, laid twice)' : ''}</td>` +
+      `<td>${fmt(100 * (1 - f.over_rel), 3)}% over</td><td>${fmt(100 * (1 + f.under_rel), 3)}% under</td><td>${fmt(100 * f.gap, 2)}%</td>` +
+      `<td>${Math.round(f.gap / f.rope)}×</td><td>${Math.round(plaza)} m</td><td>${Math.round(cord)} m</td>` +
+      `<td><a href="${repoBlob(f.file)}" target="_blank" rel="noopener">.ggb</a></td></tr>`;
+  });
+  T.innerHTML = '<tr><th>Find</th><th>Steps</th><th>Long</th><th>Short</th><th>Gap</th><th>Shows</th><th>Plaza for 1.2 m</th><th>Longest cord</th><th>File</th></tr>' + rows.join('');
+  const last = F.runs[F.runs.length - 1];
+  N.innerHTML = `Long and short give each length's accuracy, as on the charts: one oversized, one undersized, with the true end between them. "Shows" is how many times wider the gap is than its wander with rope work true to one part in 5,000. Last run ${last.date}, with ${last.entries} chart entries; ${F.runs.length} run${F.runs.length === 1 ? '' : 's'} so far. The full checklist is in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#the-checklist" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.`;
+})();
 </script>
 </body>
 </html>

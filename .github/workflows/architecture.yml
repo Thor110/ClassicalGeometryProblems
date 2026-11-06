@@ -1,0 +1,81 @@
+# Re-runs the architecture search and measurements (ARCHITECTURAL.md, "Running it again") when they
+# are due, and opens a pull request with the results for the maintainer to look over. Nothing is
+# merged automatically.
+#
+# Due is decided by tools/architecture_due.py: after X new chart entries, where X follows the pace
+# of submissions (about a month's worth, never fewer than 3 or more than 25), or after 180 days if
+# anything at all is new. It is checked whenever the chart data changes and once a month, and can be
+# run by hand from the Actions tab (with "force" to run it whether or not it is due).
+#
+# For the pull request to be opened, the repository must allow it: Settings, Actions, General,
+# "Allow GitHub Actions to create and approve pull requests". If it does not, the workflow opens an
+# issue instead, linking to the branch with the results.
+name: Architecture search
+
+on:
+  push:
+    branches: [main]
+    paths: ['pages/archive-data.js']
+  schedule:
+    - cron: '23 5 3 * *'          # the 3rd of each month, 05:23 UTC
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Run even if it is not due'
+        type: boolean
+        default: false
+      minutes:
+        description: 'Minutes to search'
+        default: '20'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: architecture-search
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install mpmath
+
+      - name: Is it due?
+        id: due
+        run: python tools/architecture_due.py || true
+
+      - name: Search and measure
+        if: steps.due.outputs.due == 'true' || inputs.force
+        env:
+          MINUTES: ${{ inputs.minutes || '20' }}
+        run: |
+          python tools/architecture_search.py --minutes "$MINUTES" --write
+          python tools/architecture.py --write
+
+      - name: Open a pull request with the results
+        if: steps.due.outputs.due == 'true' || inputs.force
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEW: ${{ steps.due.outputs.new }}
+          X: ${{ steps.due.outputs.x }}
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard Architecture)" ]; then echo "Nothing changed."; exit 0; fi
+          BRANCH="architecture-run-$(date -u +%Y-%m-%d-%H%M)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add ARCHITECTURAL.md pages/architecture-finds.js Architecture
+          git commit -m "Architecture search: re-run after $NEW new entries (X = $X)"
+          git push origin "$BRANCH"
+          BODY="The architecture search and measurements were due ($NEW new chart entries since the last run; X is currently $X). This updates the search finds in ARCHITECTURAL.md, pages/architecture-finds.js and Architecture/Finds/, and the measurements of the charted entries. Look the finds over before merging."
+          gh pr create --base main --head "$BRANCH" --title "Architecture search: $(date -u +%Y-%m-%d)" --body "$BODY" \
+            || gh issue create --title "Architecture search results: $(date -u +%Y-%m-%d)" \
+                 --body "$BODY Actions may not open pull requests in this repository, so the results are on the branch $BRANCH: https://github.com/$GITHUB_REPOSITORY/compare/main...$BRANCH"
