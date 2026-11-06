@@ -11,7 +11,9 @@ problem and the two measurements, previews the accuracy, and adds three files to
 The pull request is then evaluated by `.github/workflows/evaluate-submission.yml`
 (see [Submissions/README.md](../Submissions/README.md)).
 
-Constructions under 95% cannot be sent as a pull request; the preview says so kindly, and the zip
+Each construction is sent once: the button locks while sending, and a construction already sent
+shows a link to its pull request instead. The text boxes go through a word check first, and the
+name must look like a real name. Constructions under 95% cannot be sent as a pull request; the preview says so kindly, and the zip
 download still works so people can keep refining. **Download As Zip** and **Open As An Issue** work
 without a GitHub account.
 
@@ -49,6 +51,7 @@ issue instead.
 | signin.html, signin.css, signin.js | The GitHub sign-in, in its own tab: the popup closes when the person goes to github.com to enter the code, so the tab keeps the code (even if reloaded), waits for GitHub, then returns to the GeoGebra tab |
 | github.js | Sign-in, forking, adding the files on a new branch and opening the pull request |
 | zip.js | Builds the zip for the download |
+| language.js | The word check for the name and the text boxes; the evaluation workflow reads the same list |
 | icons/ | The toolbar icons |
 
 ## Publishing to the Chrome Web Store

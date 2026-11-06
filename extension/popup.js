@@ -5,6 +5,10 @@ const $ = id => document.getElementById(id);
 const PROBLEMS = {stc: 'Squaring the Circle', rtc: 'Rectifying the Circle', dtc: 'Doubling the Cube', taa: 'Trisecting an Angle', ar: 'Arc Rectification'};
 let C = null;              // the construction read from GeoGebra
 let TAB = null;            // the GeoGebra tab, to come back to after signing in
+let SENDING = false;       // a pull request is being sent: one click sends one pull request
+let SENT = null;           // this construction was already sent: the pull request's address
+let SIGNED_IN = false;
+let KEY = '';              // identifies this construction by its measurements, to know if it was sent
 
 // Runs inside the GeoGebra page (the page's own world, where GeoGebra's ggbApplet lives).
 function readConstruction() {
@@ -123,14 +127,42 @@ function update() {
   check();
 }
 
+// What still stops this being sent, or '' when it is ready. Shown when Submit is clicked too early.
+function missing() {
+  if (SENT) return 'sent';
+  if (current?.why) return current.why;
+  if (!(current?.acc >= CONFIG.MINIMUM)) return `This is below the ${CONFIG.MINIMUM}% minimum, so it cannot be charted yet. You can still download it and keep refining it.`;
+  if (!$('name').value.trim()) return 'Please enter your name.';
+  if (!$('agree').checked) return 'Please tick the box to confirm this is your own work (or that you credit its discoverer), and that it may be published.';
+  if (!SIGNED_IN) return 'Please sign in with GitHub first (the link just above), or download the zip instead.';
+  return '';
+}
 function check() {
-  const ok = !current?.why && current?.acc >= CONFIG.MINIMUM && $('name').value.trim() && $('agree').checked;
-  $('submit').disabled = !ok || !CONFIG.CLIENT_ID;
-  $('submit').title = !CONFIG.CLIENT_ID ? 'Sign-in is not set up yet: download the zip or open an issue instead.' :
-    !$('name').value.trim() ? 'Enter your name.' : !$('agree').checked ? 'Tick the agreement.' : current?.acc < CONFIG.MINIMUM ? 'Below the minimum.' : '';
+  const why = missing();
+  $('submit').disabled = !CONFIG.CLIENT_ID || SENDING || !!SENT;
+  $('submit').classList.toggle('waiting', !!why);
+  $('submit').textContent = SENT ? 'Already Sent' : SENDING ? 'Sending…' : 'Submit As A Pull Request';
+  $('submit').title = !CONFIG.CLIENT_ID ? 'Sign-in is not set up yet: download the zip or open an issue instead.' : why;
+  if ($('agree').checked) $('agreeLabel').classList.remove('remind');
+}
+// The words the language check does not accept, by box. Empty when all is well.
+function wording() {
+  const out = [];
+  for (const [id, label] of [['name', 'name'], ['method', 'method name'], ['description', 'description'], ['notes', 'notes']]) {
+    const bad = languageCheck($(id).value, id === 'name');
+    if (bad.length) out.push({id, label, bad});
+  }
+  return out;
+}
+function wordingMessage(w) {
+  const name = w.find(x => x.id === 'name');
+  return `<span class="hot">Please change the wording in the ${w.map(x => x.label).join(', ')}.</span> ` +
+    (name ? 'Your real name is published with your construction, so that the discovery stays credited to you. ' : '') +
+    'The archive is meant to be a welcoming place for everyone who tries these problems.';
 }
 
-// ----- the submission's files
+// A GeoGebra address that opens this construction for anyone, or '' (the app's blank page has none).
+const publicLink = () => /geogebra\.org\/(m|geometry|classic|graphing|calculator|3d|cas)\/[A-Za-z0-9]{6,}/.test(C.url || '') ? C.url : '';
 const slug = s => (s || 'anonymous').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30) || 'anonymous';
 function details() {
   return {
@@ -139,7 +171,7 @@ function details() {
     method: $('method').value.trim(), description: $('description').value.trim(), notes: $('notes').value.trim(),
     ai_assisted: $('ai').checked, agreed: $('agree').checked,
     preview_accuracy: current && !current.why ? current.acc : null, preview_side: current && current.side,
-    geogebra_url: C.url, submitted: new Date().toISOString(), extension_version: chrome.runtime.getManifest().version,
+    geogebra_url: publicLink(), submitted: new Date().toISOString(), extension_version: chrome.runtime.getManifest().version,
   };
 }
 function notesMarkdown(d) {
@@ -159,16 +191,16 @@ ${d.preview_accuracy != null ? (Math.floor(d.preview_accuracy * 1000) / 1000).to
 ${d.preview_side ? d.preview_side[0].toUpperCase() + d.preview_side.slice(1) + '.' : ''}
 
 **Number of Circles:**
-
+(counted by the archive's evaluation)
 
 **Number of Lines:**
-
+(counted by the archive's evaluation)
 
 **Verification Method:**
 GeoGebra, submitted with the archive's browser extension. Result: ${r ? r.command || r.name : d.result}; true value: ${t ? t.command || t.name : d.truth}.
 
 **File(s):**
-construction.ggb${C.url ? ', ' + C.url : ''}
+construction.ggb${publicLink() ? ', ' + publicLink() : ''}
 
 **Description:**
 ${d.description}
@@ -185,7 +217,25 @@ function folderName(d) {
 }
 
 // ----- the three ways to send it
+// The construction's measurements, hashed: the same construction gives the same key every time.
+async function constructionKey() {
+  const text = C.url.split('?')[0] + '|' + measurements().map(o => o.name + '=' + Number(o.value).toPrecision(12)).join('|');
+  const h = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(h)].slice(0, 12).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
 async function submitPR() {
+  if (SENDING || SENT) return;
+  const why = missing();
+  if (why) {
+    status(`<span class="warm">${why}</span>`);
+    if (why.includes('tick the box')) { $('agreeLabel').classList.add('remind'); $('agree').focus(); }
+    else if (why.includes('your name')) $('name').focus();
+    return;
+  }
+  const w = wording();
+  if (w.length) { status(wordingMessage(w)); $(w[0].id).focus(); return; }
+  SENDING = true; check();
   const d = details(), folder = folderName(d), dir = 'Submissions/' + folder;
   const files = [
     {path: dir + '/construction.ggb', base64: C.base64},
@@ -193,17 +243,21 @@ async function submitPR() {
     {path: dir + '/submission.md', base64: textB64(notesMarkdown(d))},
   ];
   const title = `Submission: ${PROBLEMS[d.problem]}${d.preview_accuracy != null ? ' · ' + (Math.floor(d.preview_accuracy * 1000) / 1000).toFixed(3) + '%' : ''}${d.method ? ' · ' + d.method : ''} · ${d.name}`;
-  const body = `A construction submitted from GeoGebra with the archive's browser extension.\n\n- **Name:** ${d.name}\n- **Problem:** ${PROBLEMS[d.problem]}\n- **Preview accuracy:** ${d.preview_accuracy != null ? d.preview_accuracy.toFixed(6) + '% ' + d.preview_side : 'not available'}\n- **GeoGebra:** ${C.url}\n- **AI-assisted:** ${d.ai_assisted ? 'yes' : 'no'}\n\n${d.description ? d.description + '\n\n' : ''}The evaluation workflow will comment with the archive's own measurement shortly.`;
+  const body = `A construction submitted from GeoGebra with the archive's browser extension.\n\n- **Name:** ${d.name}\n- **Problem:** ${PROBLEMS[d.problem]}\n- **Preview accuracy:** ${d.preview_accuracy != null ? d.preview_accuracy.toFixed(6) + '% ' + d.preview_side : 'not available'}\n- **GeoGebra:** ${publicLink() || 'not shared yet (the construction file is attached)'}\n- **AI-assisted:** ${d.ai_assisted ? 'yes' : 'no'}\n\n${d.description ? d.description + '\n\n' : ''}The evaluation workflow will comment with the archive's own measurement shortly.`;
   const {token} = await chrome.storage.local.get('token');
   status('Sending…');
   try {
     const url = await GH.submit(token, files, title, body, 'submission-' + folder, status);
     await chrome.storage.local.remove('draft');
+    const {sent} = await chrome.storage.local.get('sent');
+    await chrome.storage.local.set({sent: {...(sent || {}), [KEY]: url}});
+    SENT = url;
     status(`Submitted. <a href="${url}" target="_blank">Your pull request</a> will be evaluated automatically in a minute or two.`);
   } catch (e) {
-    if (e.status === 401) { await chrome.storage.local.remove(['token', 'login']); account(); }
+    if (e.status === 401) { await chrome.storage.local.remove(['token', 'login']); SIGNED_IN = false; account(); }
     status(`<span class="hot">GitHub said: ${e.message}</span><br>You can download the zip instead and send it another way.`);
   }
+  SENDING = false; check();
 }
 
 function download() {
@@ -218,9 +272,11 @@ function download() {
 }
 
 function issue() {
+  const w = wording();
+  if (w.length) { status(wordingMessage(w)); $(w[0].id).focus(); return; }
   const d = details();
   const q = {template: 'submission.yml', title: 'Submission: ' + PROBLEMS[d.problem] + (d.method ? ' · ' + d.method : ''),
-    method: d.method, author: d.name, accuracy: d.preview_accuracy != null ? String(d.preview_accuracy) : '', geogebra: C.url,
+    method: d.method, author: d.name, accuracy: d.preview_accuracy != null ? String(d.preview_accuracy) : '', geogebra: publicLink(),
     description: d.description, notes: d.notes};
   const url = `https://github.com/${CONFIG.OWNER}/${CONFIG.REPO}/issues/new?` + Object.entries(q).filter(([, v]) => v).map(([k, v]) => k + '=' + encodeURIComponent(v)).join('&');
   chrome.tabs.create({url});
@@ -231,9 +287,10 @@ async function account() {
   const A = $('account');
   if (!CONFIG.CLIENT_ID) { A.innerHTML = 'Pull requests need GitHub sign-in, which is not set up yet. Download the zip or open an issue instead.'; return; }
   const {token, login} = await chrome.storage.local.get(['token', 'login']);
+  SIGNED_IN = !!token;
   if (token) {
     A.innerHTML = `Signed in to GitHub as <b>${login}</b>. <a href="#" id="signout">Sign out</a>`;
-    $('signout').onclick = async e => { e.preventDefault(); await chrome.storage.local.remove(['token', 'login']); account(); check(); };
+    $('signout').onclick = async e => { e.preventDefault(); await chrome.storage.local.remove(['token', 'login']); SIGNED_IN = false; account(); check(); };
   } else {
     // Sign-in runs in its own tab (signin.html): this popup closes as soon as GitHub's page is opened.
     const {signin} = await chrome.storage.local.get('signin');
@@ -274,15 +331,24 @@ function status(html) { $('status').innerHTML = html; }
   for (const id of ['problem', 'result', 'truth', 'scale']) $(id).onchange = update;
   $('name').oninput = () => { chrome.storage.local.set({name: $('name').value}); check(); };
   // Keep what was typed for this construction, so closing the popup (to sign in, say) loses nothing.
-  const DRAFT = ['method', 'description', 'notes'], TICKS = ['ai', 'agree'];
-  const {draft} = await chrome.storage.local.get('draft');
-  if (draft && draft.url === C.url) {
+  // The choices (problem, result, true value) are kept too, for the same construction.
+  KEY = await constructionKey();
+  const DRAFT = ['method', 'description', 'notes'], TICKS = ['ai', 'agree'], CHOICES = ['problem', 'result', 'truth', 'scale'];
+  const {draft, sent} = await chrome.storage.local.get(['draft', 'sent']);
+  if (draft && draft.key === KEY) {
     for (const id of DRAFT) if (draft[id]) $(id).value = draft[id];
     for (const id of TICKS) $(id).checked = !!draft[id];
+    for (const id of CHOICES) if (draft[id] && [...$(id).options].some(o => o.value === draft[id])) $(id).value = draft[id];
   }
-  const keep = () => chrome.storage.local.set({draft: Object.fromEntries([['url', C.url], ...DRAFT.map(id => [id, $(id).value]), ...TICKS.map(id => [id, $(id).checked])])});
+  const keep = () => chrome.storage.local.set({draft: Object.fromEntries([['key', KEY], ...DRAFT.map(id => [id, $(id).value]), ...TICKS.map(id => [id, $(id).checked]), ...CHOICES.map(id => [id, $(id).value])])});
   for (const id of DRAFT) $(id).addEventListener('input', keep);
-  for (const id of TICKS) $(id).addEventListener('change', keep);
+  for (const id of [...TICKS, ...CHOICES]) $(id).addEventListener('change', keep);
+  if (sent && sent[KEY]) {
+    SENT = sent[KEY];
+    status(`This construction has already been sent: <a href="${SENT}" target="_blank">its pull request</a>. Change the construction in GeoGebra to send a new version.`);
+  } else if (!publicLink()) {
+    status('<span class="hint">Tip: save and share the construction in GeoGebra first, so its public link goes with it and anyone can open it. The file itself is sent either way.</span>');
+  }
   $('agree').onchange = check;
   $('submit').onclick = submitPR; $('download').onclick = download; $('issue').onclick = issue;
   $('site').onclick = e => { e.preventDefault(); chrome.tabs.create({url: CONFIG.SITE + 'pages/submit.html#extension'}); };

@@ -71,6 +71,7 @@ For information, the checker also reports each entry's **shallowest crossing**: 
 ## Submitting
 
 - The simplest way is the browser extension, which sends a construction from GeoGebra as a pull request: see [extension/README.md](extension/README.md) and the [submission page](https://thor110.github.io/ClassicalGeometryProblems/pages/submit.html#extension).
+- Each submission needs the submitter's real name, and the name, method, description and notes must pass the archive's word check (offensive wording, or a joke in place of a name, closes the pull request with a kind note). One copy of each construction is accepted at a time, and up to five submissions per person can wait for review at once.
 - Every submission pull request is evaluated by `tools/evaluate_submission.py`. It confirms the construction fits the problem chosen; one that fits a different problem, or none, is set aside for the maintainer rather than rejected. It reports the accuracy (the worst third, for trisection, and a sweep of angles for angle methods), the circles and lines counted, hand-placed points, micro scale, shallow crossings, and any match with an entry already charted. See [Submissions/README.md](Submissions/README.md).
 
 ## Verification

@@ -19,7 +19,7 @@ It works out:
 It writes OUT_DIR/report.md (the comment posted on the pull request), OUT_DIR/labels.txt (one
 label per line) and OUT_DIR/decision.txt (review, reject or manual).
 """
-import json, math, os, re, sys, zipfile
+import json, math, os, re, sys, unicodedata, zipfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import verify as v
 
@@ -58,6 +58,21 @@ def of_arc(r, name):
 def smaller_angle(a):
     a = float(a) % (2 * math.pi)
     return min(a, 2 * math.pi - a)
+
+def language_check(meta):
+    """The boxes whose wording the archive's word list (extension/language.js) does not accept."""
+    src = open(os.path.join(v.ROOT, 'extension', 'language.js'), encoding='utf-8').read()
+    L = json.loads(src[src.index('{', src.index('const LANGUAGE')):src.index('};') + 1])
+    look = str.maketrans('013457@$!', 'oieastasi')
+    flagged = []
+    for key, label in (('name', 'name'), ('method', 'method name'), ('description', 'description'), ('notes', 'notes')):
+        plain = unicodedata.normalize('NFKD', str(meta.get(key) or '').lower())
+        plain = ''.join(c for c in plain if not unicodedata.combining(c)).translate(look)
+        words = [w for w in re.split(r'[^a-z]+', plain) if w]
+        words += [re.sub(r'[^a-z]', '', m) for m in re.findall(r'\b(?:[a-z][^a-z0-9\n]{1,2}){2,}[a-z]\b', plain)]
+        if any(w in L['words'] or any(w.startswith(p) for p in L['prefixes']) or (key == 'name' and w in L['names']) for w in words):
+            flagged.append(label)
+    return flagged
 
 def fits(problem, r, res, tru, scale):
     """Does the chosen result and true value fit this problem? Returns (constructed, true) or a reason."""
@@ -112,6 +127,12 @@ def evaluate(sub_dir):
         return 'submission.json is too large.', labels | {'needs-manual-check'}, 'manual'
     meta = json.load(open(js, encoding='utf-8'))
     claimed, res, tru, scale = meta.get('problem'), meta.get('result'), meta.get('truth'), meta.get('scale')
+    bad = language_check(meta)
+    if bad:
+        return ('## Submission evaluation\n\nThe wording in the %s does not pass the archive\'s language check, so this pull request has been closed. '
+                'The archive is meant to be a welcoming place for everyone who tries these problems, and the name should be the real name '
+                'the discovery is credited to. Please send it again with the wording changed. If the check has made a mistake, say so here '
+                'and the maintainer will reopen it.' % ' and '.join(bad)), labels | {'language'}, 'language'
     try:
         r = v.rebuild(ggb)
     except Exception as ex:
