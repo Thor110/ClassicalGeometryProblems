@@ -7,8 +7,8 @@
 <circle cx="450.00" cy="450.00" r="401.79" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <line x1="329.42" y1="900.00" x2="570.58" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
 <line x1="335.96" y1="900.00" x2="162.26" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
-<line x1="249.11" y1="450.00" x2="602.62" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
-<line x1="249.11" y1="450.00" x2="0.00" y2="306.18" stroke="#178a62" stroke-width="2.5"/>
-<line x1="249.11" y1="450.00" x2="162.26" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
 <line x1="249.11" y1="450.00" x2="900.00" y2="450.00" stroke="#178a62" stroke-width="2.5"/>
+<line x1="249.11" y1="450.00" x2="0.00" y2="306.18" stroke="#178a62" stroke-width="2.5"/>
+<line x1="249.11" y1="450.00" x2="602.62" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
+<line x1="249.11" y1="450.00" x2="162.26" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
 </svg>

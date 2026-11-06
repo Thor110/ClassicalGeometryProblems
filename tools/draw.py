@@ -63,7 +63,7 @@ def result_shapes(problem, r, entry, j):
         if len(pts) >= 4: shapes += [('given', (pts[0], pts[1])), ('seg', (pts[2], pts[3]))]
     elif problem == 'taa':
         vertex = obj['B'][1]
-        for k in set(roots):
+        for k in sorted(set(roots)):
             if k != 'B' and obj.get(k) and obj[k][0] == 'point': shapes.append(('ray', (vertex, obj[k][1])))
     return shapes
 

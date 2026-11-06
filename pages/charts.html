@@ -12,6 +12,18 @@
   tr[data-key]{cursor:pointer;}
   .kind{display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:0 5px;margin-left:4px;vertical-align:1px;}
   .kind.ai{color:#ca6;border-color:#4a3e2a;} .kind.person{color:#6ac;border-color:#2a3e4a;}
+  /* The chart: a shared header, two halves that scroll on their own, and the line of perfection between. */
+  .chart-x{width:100%;overflow-x:auto;}
+  .chart{min-width:900px;}
+  .chart table{table-layout:fixed;width:100%;}
+  .chart td,.chart th{overflow-wrap:anywhere;white-space:normal;}
+  .chart th{letter-spacing:0.06em;overflow-wrap:normal;}
+  .chart td.acc{overflow-wrap:normal;white-space:nowrap;}
+  .chart .half{max-height:460px;overflow-y:auto;border-left:1px solid #16161f;border-right:1px solid #16161f;scrollbar-color:#2a2a3a #0a0a0f;}
+  .chart .caption{font-size:13px;color:#555;letter-spacing:0.15em;text-transform:uppercase;padding:10px 8px 6px;}
+  .chart .perfect-line{color:#4a9;border-top:1px solid #2a4a3a;border-bottom:1px solid #2a4a3a;text-align:center;letter-spacing:0.2em;text-transform:uppercase;padding:8px;}
+  .mark span{cursor:help;border-bottom:1px dotted #6a5a2a;margin-right:3px;}
+  #tooltip{position:fixed;z-index:20;pointer-events:none;background:#14141f;color:#e0ddd8;border:1px solid #4a3e2a;padding:5px 9px;font-size:13px;letter-spacing:0.05em;max-width:280px;display:none;}
   .controls .label{align-self:center;font-size:13px;color:#666;letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;}
   .badge{display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:1px 6px;white-space:nowrap;}
   .badge.verified{color:#4a9;border-color:#2a4a3a;} .badge.self-verified{color:#ca6;border-color:#4a3e2a;}
@@ -65,7 +77,13 @@
     <button class="small" data-filter="nomicro">Hide µ Micro Scale</button>
     <button class="small" data-filter="verified">Verified Only</button>
   </div>
-  <div class="table-wrap"><table id="table"></table></div>
+  <div class="controls">
+    <span class="label">Sides</span>
+    <button class="small active" data-side="over">Oversized</button>
+    <button class="small active" data-side="under">Undersized</button>
+    <button class="small" id="flip">⇅ Flip</button>
+  </div>
+  <div class="chart-x"><div class="chart" id="table"></div></div>
   <div class="small-text" style="margin-top:12px;" id="downloads"></div>
 </div>
 
@@ -98,9 +116,9 @@
     </div>
     <div>
       <ul>
-        <li><span class="mark">~</span> <b>Contested</b>: the original discoverer is being sought.</li>
-        <li><span class="mark">@</span> <b>Too simple</b>: likely found many times before.</li>
-        <li><span class="mark">µ</span> <b>Micro scale edits</b>: a step smaller than 5% of the given figure, too small to reproduce reliably on paper.</li>
+        <li><span class="mark"><span data-tip="Contested: the original discoverer is being sought">~</span></span> <b>Contested</b>: the original discoverer is being sought.</li>
+        <li><span class="mark"><span data-tip="Too Simple: likely found many times before">@</span></span> <b>Too simple</b>: likely found many times before.</li>
+        <li><span class="mark"><span data-tip="Micro Scale Adjustments Required">µ</span></span> <b>Micro scale edits</b>: a step smaller than 5% of the given figure, too small to reproduce reliably on paper.</li>
         <li><span class="badge verified">Verified</span> reproduced by someone other than its method holder, a person or an AI checker. <span class="badge self-verified">Self-verified</span> checked only by its method holder. <span class="badge disputed">Disputed</span> an open dispute. <a href="verification.html">The rules</a>.</li>
       </ul>
     </div>
@@ -115,6 +133,8 @@
   <a href="../index.html" class="btn-link">Return to Open Archive</a>
 </div>
 
+<div id="tooltip" role="tooltip"></div>
+
 <div class="footer">
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
@@ -128,6 +148,11 @@ const $ = id => document.getElementById(id);
 let current = PROBLEMS[0], filter = 'all', who = 'all', points = [], highlighted = null;
 // Remember the viewer's choice of people, AI or both (browser storage can be unavailable; that is fine).
 try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
+let sides = {over: true, under: true}, flipped = false;
+try { sides = JSON.parse(localStorage.getItem('cgp-sides')) || sides; flipped = localStorage.getItem('cgp-flip') === '1'; } catch (e) {}
+const saveView = () => { try { localStorage.setItem('cgp-sides', JSON.stringify(sides)); localStorage.setItem('cgp-flip', flipped ? '1' : '0'); } catch (e) {} };
+const MARKS = {'~': 'Contested: the original discoverer is being sought', '@': 'Too Simple: likely found many times before', 'µ': 'Micro Scale Adjustments Required'};
+const marksHTML = m => [...(m || '')].map(c => `<span data-tip="${MARKS[c] || c}" aria-label="${MARKS[c] || c}">${c}</span>`).join('');
 const kindOf = e => e.holder_kind === 'ai' ? 'ai' : 'person';
 const byWho = e => who === 'all' || kindOf(e) === who;
 
@@ -151,6 +176,30 @@ document.querySelectorAll('[data-who]').forEach(b => {
     highlighted = null; render();
   };
 });
+document.querySelectorAll('[data-side]').forEach(b => {
+  b.classList.toggle('active', sides[b.dataset.side]);
+  b.onclick = () => {
+    sides[b.dataset.side] = !sides[b.dataset.side];
+    if (!sides.over && !sides.under) sides[b.dataset.side === 'over' ? 'under' : 'over'] = true;   // always show one side
+    document.querySelectorAll('[data-side]').forEach(x => x.classList.toggle('active', sides[x.dataset.side]));
+    saveView(); render();
+  };
+});
+$('flip').classList.toggle('active', flipped);
+$('flip').onclick = () => { flipped = !flipped; $('flip').classList.toggle('active', flipped); saveView(); render(); };
+
+// One floating tooltip for the key marks (and anything else with data-tip), so scrolling halves cannot clip it.
+const tip = $('tooltip');
+function showTip(el) {
+  tip.textContent = el.dataset.tip; tip.style.display = 'block';
+  const r = el.getBoundingClientRect(), w = tip.offsetWidth;
+  tip.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + 'px';
+  tip.style.top = (r.top - tip.offsetHeight - 6 < 0 ? r.bottom + 6 : r.top - tip.offsetHeight - 6) + 'px';
+}
+document.addEventListener('mouseover', ev => { const el = ev.target.closest('[data-tip]'); if (el) showTip(el); });
+document.addEventListener('mouseout', ev => { if (ev.target.closest('[data-tip]')) tip.style.display = 'none'; });
+document.addEventListener('click', ev => { const el = ev.target.closest('[data-tip]'); if (el) { ev.stopPropagation(); showTip(el); setTimeout(() => tip.style.display = 'none', 2500); } }, true);
+addEventListener('scroll', () => tip.style.display = 'none', true);
 window.addEventListener('hashchange', pick);
 window.addEventListener('resize', drawLadder);
 
@@ -164,6 +213,7 @@ function pick() {
 function visible(e) {
   const n = x => typeof x === 'number' ? x : 0;
   if (!byWho(e)) return false;
+  if (!sides[e.side]) return false;
   if (filter === 'base') return n(e.circles) <= 25 && n(e.lines) <= 40;
   if (filter === 'nomicro') return !e.marks.includes('µ');
   if (filter === 'verified') return statusOf(e).status === 'verified';
@@ -200,7 +250,7 @@ function render() {
     const title = [e.method, e.note].filter(Boolean).join(' · ');
     return `<tr data-key="${e.id}" title="${title.replace(/"/g, '&quot;')}">
       <td>${e.vrank}</td>
-      <td><span class="mark">${e.marks || ''}</span></td>
+      <td class="keycell"><span class="mark">${marksHTML(e.marks)}</span></td>
       <td>${e.holder}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + e.method + '</span>' : ''}</td>
       <td>${e.circles}</td><td>${e.lines}</td>
       <td class="acc">${e.acc}%</td>
@@ -208,15 +258,25 @@ function render() {
       <td>${badge(e)}</td>
       <td>${links.join(' · ')}</td></tr>`;
   };
+  const cols = '<colgroup><col style="width:40px"><col style="width:48px"><col style="width:196px"><col style="width:72px"><col style="width:60px"><col style="width:128px"><col style="width:164px"><col style="width:136px"><col style="width:106px"></colgroup>';
   const whoLabel = {all: '', person: ' by people', ai: ' by AI'}[who];
-  const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} ${n === 1 ? 'method' : 'methods'}${whoLabel} · every new attempt is welcome</td></tr>`;
+  const count = side => all.filter(e => e.side === side).length;
+  const caption = (side, n, arrow) => `<div class="caption">${arrow} ${side === 'over' ? 'Oversized' : 'Undersized'} · ${n} ${n === 1 ? 'method' : 'methods'}${whoLabel} · every new attempt is welcome</div>`;
+  // Each half lists its side with the best result next to the line of perfection.
+  const sorted = (side, bestLast) => shown.filter(e => e.side === side).sort((a, b) => bestLast ? b.vrank - a.vrank : a.vrank - b.vrank);
+  const topSide = flipped ? 'under' : 'over', bottomSide = flipped ? 'over' : 'under';
+  const half = (side, bestLast) => {
+    const rows = sorted(side, bestLast);
+    return `<div class="half" data-half="${bestLast ? 'top' : 'bottom'}"><table>${cols}${rows.map(row).join('') || `<tr><td colspan="9" class="muted">No ${side}sized methods to show.</td></tr>`}</table></div>`;
+  };
   $('table').innerHTML = `
-    <tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr>
-    ${group('↑ Oversized', all.filter(e => e.side === 'over').length)}
-    ${over.map(row).join('') || '<tr><td colspan="9" class="muted">No oversized methods charted yet.</td></tr>'}
-    <tr class="perfect"><td colspan="9">0 · Perfection · 100% · impossible with straightedge and compass</td></tr>
-    ${under.map(row).join('') || '<tr><td colspan="9" class="muted">No undersized methods charted yet.</td></tr>'}
-    ${group('↓ Undersized', all.filter(e => e.side === 'under').length)}`;
+    <table>${cols}<tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr></table>
+    ${sides[topSide] ? caption(topSide, count(topSide), '↑') + half(topSide, true) : ''}
+    <div class="perfect-line">0 · Perfection · 100% · impossible with straightedge and compass</div>
+    ${sides[bottomSide] ? half(bottomSide, false) + caption(bottomSide, count(bottomSide), '↓') : ''}`;
+  // Start each half at its end nearest perfection, where the best results are.
+  const top = $('table').querySelector('[data-half="top"]'); if (top) top.scrollTop = top.scrollHeight;
+  const bottom = $('table').querySelector('[data-half="bottom"]'); if (bottom) bottom.scrollTop = 0;
   $('table').querySelectorAll('tr[data-key]').forEach(tr => tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); renderDetail(); });
 
   $('downloads').innerHTML = `Click a row for its full record, and to find it on the ladder. The chart's data is <a class="link" href="${REPO}/blob/main/pages/archive-data.js" target="_blank" rel="noopener">archive-data.js</a> in the repository.`;
@@ -256,8 +316,8 @@ function drawLadder() {
   const px = W - padR + 24;
   ctx.fillStyle = '#4a9'; ctx.beginPath(); ctx.arc(px, mid, 5, 0, 7); ctx.fill();
   ctx.save(); ctx.translate(px + 14, mid); ctx.rotate(-Math.PI / 2); ctx.fillText('100%', 0, 0); ctx.restore();
-  ctx.fillStyle = '#ca6'; ctx.textAlign = 'left'; ctx.fillText('↑ OVERSIZED', padL, 12);
-  ctx.fillStyle = '#6ac'; ctx.fillText('↓ UNDERSIZED', padL, H - 34 + 4);
+  ctx.fillStyle = flipped ? '#6ac' : '#ca6'; ctx.textAlign = 'left'; ctx.fillText(flipped ? '↑ UNDERSIZED' : '↑ OVERSIZED', padL, 12);
+  ctx.fillStyle = flipped ? '#ca6' : '#6ac'; ctx.fillText(flipped ? '↓ OVERSIZED' : '↓ UNDERSIZED', padL, H - 34 + 4);
 
   points = [];
   // Spread points that land on the same spot into a little column.
@@ -266,7 +326,7 @@ function drawLadder() {
     const x = xOf(errorOf(e)), slot = Math.round(x / 10) + e.side;
     used[slot] = (used[slot] || 0) + 1;
     const dy = 18 + (used[slot] - 1) * 13;
-    const y = e.side === 'over' ? mid - dy : mid + dy;
+    const y = (e.side === 'over') !== flipped ? mid - dy : mid + dy;
     const key = e.id, hl = key === highlighted;
     ctx.fillStyle = e.side === 'over' ? '#ca6' : '#6ac';
     ctx.globalAlpha = e.marks.includes('µ') ? 0.55 : 1;
@@ -291,7 +351,8 @@ $('ladder').addEventListener('mousemove', ev => { const p = nearest(ev); $('tip'
 $('ladder').addEventListener('click', ev => {
   const p = nearest(ev); if (!p) return;
   highlighted = p.key; $('tip').textContent = describe(p); mark(); drawLadder(); renderDetail();
-  const tr = document.querySelector(`#table tr[data-key="${p.key}"]`); if (tr) tr.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+  const tr = document.querySelector(`#table tr[data-key="${p.key}"]`);
+  if (tr) { const h = tr.closest('.half'); if (h) h.scrollTop = tr.offsetTop - h.clientHeight / 2; tr.closest('.chart-x').scrollIntoView({block: 'nearest', behavior: 'smooth'}); }
 });
 
 function badge(e) {

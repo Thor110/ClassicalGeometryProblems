@@ -171,6 +171,10 @@ These problems, while impossible under strict Euclidean rules, can be solved by 
 
 For completeness, this archive will also document notable non-Euclidean or mechanical methods.
 
+## How Many Approximations Are There?
+
+There are almost certainly infinitely many ways to approximate these problems: with no limit on the number of steps, or on how small a step may be, a construction can be refined forever. But with the number of circles and lines capped (the rulesets), only so many constructions can be made, because a fixed number of steps from a fixed starting figure can only be combined in a limited number of ways. Leaving out micro scale steps narrows the field further. So the approximations that need no micro scale adjustments and stay within the step limits are quite possibly a limited and calculable set, one that could in principle be counted and searched in full.
+
 ## Terminology
 
 Rational Numbers : a number expressible as a ratio of two integers.

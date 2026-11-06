@@ -5,8 +5,8 @@
 <circle cx="256.10" cy="308.13" r="186.21" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <circle cx="234.43" cy="493.08" r="186.21" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <circle cx="427.11" cy="234.43" r="186.21" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
-<line x1="851.79" y1="751.88" x2="0.00" y2="340.76" stroke="#178a62" stroke-width="2.5"/>
-<line x1="851.79" y1="751.88" x2="528.89" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
-<line x1="851.79" y1="751.88" x2="165.31" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 <line x1="851.79" y1="751.88" x2="0.00" y2="653.19" stroke="#178a62" stroke-width="2.5"/>
+<line x1="851.79" y1="751.88" x2="528.89" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
+<line x1="851.79" y1="751.88" x2="0.00" y2="340.76" stroke="#178a62" stroke-width="2.5"/>
+<line x1="851.79" y1="751.88" x2="165.31" y2="0.00" stroke="#178a62" stroke-width="2.5"/>
 </svg>

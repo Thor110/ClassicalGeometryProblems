@@ -9,8 +9,8 @@
 <line x1="0.00" y1="554.71" x2="900.00" y2="98.51" stroke="#3a3a44" stroke-width="1.4"/>
 <circle cx="453.78" cy="446.22" r="398.01" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
 <line x1="104.95" y1="892.45" x2="397.04" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
-<line x1="251.00" y1="446.22" x2="110.13" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
-<line x1="251.00" y1="446.22" x2="397.04" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
-<line x1="251.00" y1="446.22" x2="859.94" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
 <line x1="251.00" y1="446.22" x2="900.00" y2="446.22" stroke="#178a62" stroke-width="2.5"/>
+<line x1="251.00" y1="446.22" x2="110.13" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
+<line x1="251.00" y1="446.22" x2="859.94" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
+<line x1="251.00" y1="446.22" x2="397.04" y2="-0.00" stroke="#178a62" stroke-width="2.5"/>
 </svg>
