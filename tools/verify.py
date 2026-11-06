@@ -691,6 +691,11 @@ def main():
             f.write('// Written by tools/verify.py --write. Do not edit by hand: run the script again.\nconst AI_CHECKS = ')
             json.dump(out, f, indent=1, ensure_ascii=False)
             f.write(';\n')
+    ORIGINS = {'historical', 'maintainer', 'session', 'submitted'}
+    for pr in archive['problems']:
+        for e in pr['entries']:
+            if (e.get('origin') or {}).get('kind') not in ORIGINS:
+                print('?? %s has no origin (one of %s; see the note at the top of pages/archive-data.js)' % (e['id'], ', '.join(sorted(ORIGINS)))); bad += 1
     print('\n%d entries, %d need attention' % (len(results), bad))
     sys.exit(1 if bad else 0)
 

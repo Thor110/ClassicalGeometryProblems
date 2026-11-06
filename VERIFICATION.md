@@ -115,7 +115,8 @@ Pull requests that add a folder to `Submissions/` are evaluated automatically an
 1. reads the evaluation comment, and opens the construction in GeoGebra;
 2. for a needs-manual-check, settles what the check could not (the problem, a hand-placed point, a shallow crossing);
 3. merges the pull request, then moves the files into the problem's folder under the archive's naming
-   (`RTC-99.806.ggb` and its `.md`), adds the entry to `pages/archive-data.js`, and runs
+   (`RTC-99.806.ggb` and its `.md`), adds the entry to `pages/archive-data.js` with
+   `"origin": {"kind": "submitted", "evidence": ["pull request #N"]}`, and runs
    `python tools/verify.py --write`.
 
 The AI check then verifies it like any other entry, and it waits in the list below for a person.

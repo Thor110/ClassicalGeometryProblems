@@ -9,6 +9,11 @@
 // geogebra.org/geometry/), file (the .ggb/.md pair under the problem's folder, without extension),
 // note, verified (people who have checked it), disputes (open or closed; see VERIFICATION.md).
 // precise is worked out by tools/verify.py to 50 significant digits and shown to 32.
+// origin (not shown on the site): where the entry's point of origin can be traced, for the day
+// someone asks. kind is one of: historical (published, with the source), maintainer (the
+// maintainer's own work, backed by papers, his GeoGebra account and his files), session (found or
+// drawn in the maintainer's own sessions with Claude), submitted (sent in by someone else: the
+// construction can be checked, but who first found it cannot). evidence lists what backs it.
 const ARCHIVE = {
  "problems": [
   {
@@ -37,7 +42,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.117% oversized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 1 circles, 20 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 1 circles, 20 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/n2gbkesm",
+       "GeoGebra file in the archive, dated 04-11-2025"
+      ]
+     }
     },
     {
      "id": "stc-over-99.119",
@@ -55,7 +67,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.139% oversized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 21 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 21 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/gqncwvc3",
+       "GeoGebra file in the archive, dated 28-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.283",
@@ -80,7 +99,14 @@ const ARCHIVE = {
        "summary": "The undersized 99.253% entry and this entry are the same square, from the same starting points and the same circle. The undersized entry's file (recovered from GeoGebra, geogebra.org/geometry/anbgnhsq) draws it with 4 more lines and measures 99.283% oversized, not undersized.",
        "outcome": "Upheld: the undersized 99.253% entry was removed as a duplicate (November 2026)."
       }
-     ]
+     ],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/dvnhfe3u",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.356",
@@ -104,7 +130,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 13 circles, 17 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 17 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/mgpgm6gk",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.558",
@@ -122,7 +155,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.563% oversized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 25 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 25 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/pfzqcwgu",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.696",
@@ -140,7 +180,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.703% oversized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 25 circles, 8 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 25 circles, 8 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/dxrt3svk",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.809",
@@ -158,7 +205,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.816% oversized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 37 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 37 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/jb6rgjfa",
+       "GeoGebra file in the archive, dated 08-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.999",
@@ -182,7 +236,13 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 9 circles, 13 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 9 circles, 13 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Ramanujan, \"Squaring the circle\", Journal of the Indian Mathematical Society, 1913"
+      ]
+     }
     },
     {
      "id": "stc-under-99.932",
@@ -200,7 +260,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.929% undersized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 29 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 29 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/aw4nggwg",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.655",
@@ -217,7 +284,14 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.655",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.644% undersized.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/p2ast9yw",
+       "GeoGebra file in the archive, dated 28-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.150",
@@ -235,7 +309,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.164% undersized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 20 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 20 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/ajpnpmwa",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.015",
@@ -253,7 +334,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.009% undersized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 11 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 11 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/sjdede5r",
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-95.492",
@@ -276,7 +364,15 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "paper: Circling the Square (pages/paper-three-classic-geometry-problems.html)",
+       "maintainer's GeoGebra account: geogebra.org/geometry/jyyqe7rj",
+       "GeoGebra file in the archive, dated 2020"
+      ]
+     }
     },
     {
      "id": "stc-over-99.99996",
@@ -294,7 +390,13 @@ const ARCHIVE = {
      "square": "q1",
      "note": "The final square (q1) in its GeoGebra file. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 20-06-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.999",
@@ -313,7 +415,13 @@ const ARCHIVE = {
      "note": "Square q2 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/99.999"
+     "notes": "GeoGebra Files/Squared Circle Under/99.999",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 20-06-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.993",
@@ -331,7 +439,13 @@ const ARCHIVE = {
      "square": "q8",
      "note": "The final square (q8) in its GeoGebra file. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.944",
@@ -350,7 +464,13 @@ const ARCHIVE = {
      "note": "Square q7 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Over/99.944"
+     "notes": "GeoGebra Files/Squared Circle Over/99.944",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.956",
@@ -369,7 +489,13 @@ const ARCHIVE = {
      "note": "Square q6 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/99.956"
+     "notes": "GeoGebra Files/Squared Circle Under/99.956",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.844",
@@ -388,7 +514,13 @@ const ARCHIVE = {
      "note": "Square q5 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Over/99.844"
+     "notes": "GeoGebra Files/Squared Circle Over/99.844",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.758",
@@ -407,7 +539,13 @@ const ARCHIVE = {
      "note": "Square q4 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/99.758"
+     "notes": "GeoGebra Files/Squared Circle Under/99.758",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-98.968",
@@ -426,7 +564,13 @@ const ARCHIVE = {
      "note": "Square q3 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/98.968"
+     "notes": "GeoGebra Files/Squared Circle Under/98.968",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 14-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.862",
@@ -444,7 +588,13 @@ const ARCHIVE = {
      "square": "q4",
      "note": "The final square (q4) in its GeoGebra file. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 01-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.484",
@@ -463,7 +613,13 @@ const ARCHIVE = {
      "note": "Square q3 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/99.484"
+     "notes": "GeoGebra Files/Squared Circle Under/99.484",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 01-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-98.168",
@@ -482,7 +638,13 @@ const ARCHIVE = {
      "note": "Square q2 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/98.168"
+     "notes": "GeoGebra Files/Squared Circle Under/98.168",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 01-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-99.377",
@@ -500,7 +662,13 @@ const ARCHIVE = {
      "square": "q4",
      "note": "The final square (q4) in its GeoGebra file. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 07-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.414",
@@ -519,7 +687,13 @@ const ARCHIVE = {
      "note": "Square q3 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Over/99.414"
+     "notes": "GeoGebra Files/Squared Circle Over/99.414",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 07-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-96.977",
@@ -538,7 +712,13 @@ const ARCHIVE = {
      "note": "Square q2 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Over/96.977"
+     "notes": "GeoGebra Files/Squared Circle Over/96.977",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 07-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-under-98.177",
@@ -557,7 +737,13 @@ const ARCHIVE = {
      "note": "Square q1 in the GeoGebra file, one of the squares built on the way to its final square. Found among Edward's GeoGebra files in November 2026; circles and lines are the steps this square is built from.",
      "verified": [],
      "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/98.177"
+     "notes": "GeoGebra Files/Squared Circle Under/98.177",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 07-12-2024"
+      ]
+     }
     },
     {
      "id": "stc-over-99.922",
@@ -575,7 +761,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.922-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "stc-over-99.9998",
@@ -593,7 +785,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.9998-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "stc-over-99.999999",
@@ -611,7 +809,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.999999-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "stc-under-99.99998",
@@ -629,7 +833,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.99998-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request. One crossing it depends on is shallow (10.1°), so it is harder to place accurately on paper.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "stc-under-99.9999994",
@@ -647,7 +857,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.9999994-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "stc-over-99.99999157",
@@ -665,7 +881,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.99999157-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "stc-under-99.9999999",
@@ -683,7 +905,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Under/99.9999999-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     }
    ]
   },
@@ -713,7 +941,15 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed ~99.658% undersized. The worst of the three thirds now sets the accuracy, as every third must equal a third of the angle.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted ~6-12+/- circles, ~2-3+/- lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted ~6-12+/- circles, ~2-3+/- lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "paper: Circling the Square (pages/paper-three-classic-geometry-problems.html)",
+       "maintainer's GeoGebra account: geogebra.org/geometry/ydfkxavz",
+       "GeoGebra file in the archive, dated 01-12-2024"
+      ]
+     }
     },
     {
      "id": "taa-over-91.077",
@@ -733,7 +969,15 @@ const ARCHIVE = {
      "disputes": [],
      "archived": true,
      "archive_reason": "Below the 95% minimum once the worst third is measured.",
-     "count_history": "Counted ~4-8+/- circles, ~3-6+/- lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted ~4-8+/- circles, ~3-6+/- lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "paper: Circling the Square (pages/paper-three-classic-geometry-problems.html)",
+       "maintainer's GeoGebra account: geogebra.org/geometry/yj7tctaw",
+       "GeoGebra file in the archive, dated 01-12-2024"
+      ]
+     }
     },
     {
      "id": "taa-over-96.305",
@@ -751,7 +995,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/TAA-96.305-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 150.00°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "taa-over-98.902",
@@ -769,7 +1019,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/TAA-98.902-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 107.52°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "taa-over-99.051",
@@ -787,7 +1043,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/TAA-99.051-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 105.08°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "taa-under-99.467",
@@ -805,7 +1067,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/TAA-99.467-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 150.00°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     }
    ]
   },
@@ -835,7 +1103,15 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.227% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 30 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 30 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "paper: Circling the Square (pages/paper-three-classic-geometry-problems.html)",
+       "maintainer's GeoGebra account: geogebra.org/geometry/bmzy5bgb",
+       "GeoGebra file in the archive, dated 06-06-2024"
+      ]
+     }
     },
     {
      "id": "dtc-under-98.924",
@@ -853,7 +1129,15 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.487% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 13 circles, 42 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 42 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "paper: Circling the Square (pages/paper-three-classic-geometry-problems.html)",
+       "maintainer's GeoGebra account: geogebra.org/geometry/yx5e8wnu",
+       "GeoGebra file in the archive, dated 07-12-2024"
+      ]
+     }
     },
     {
      "marks": "",
@@ -870,7 +1154,13 @@ const ARCHIVE = {
      "acc": "98.076",
      "date": "06-11-2026",
      "file": "GeoGebra Files/Over/DTC-98.076",
-     "note": "Edward's idea: take three edges and subtract the cube's long diagonal (√3 edges). He thought it needed a 3D step, but √3 can be drawn in the plane, so this is a straightedge and compass construction. AI-assisted: Claude drew the plane construction and wrote the GeoGebra file; awaiting Edward's check in GeoGebra."
+     "note": "Edward's idea: take three edges and subtract the cube's long diagonal (√3 edges). He thought it needed a 3D step, but √3 can be drawn in the plane, so this is a straightedge and compass construction. AI-assisted: Claude drew the plane construction and wrote the GeoGebra file; awaiting Edward's check in GeoGebra.",
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "the maintainer's idea, drawn with Claude in the maintainer's own session (November 2026)"
+      ]
+     }
     },
     {
      "id": "dtc-over-99.919",
@@ -888,7 +1178,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/DTC-99.919-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "dtc-over-99.9998",
@@ -906,7 +1202,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/DTC-99.9998-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "dtc-under-99.999",
@@ -924,7 +1226,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Under/DTC-99.999-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "dtc-over-99.999982",
@@ -942,7 +1250,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/DTC-99.999982-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "dtc-over-99.999989",
@@ -960,7 +1274,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/DTC-99.999989-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request. One crossing it depends on is shallow (10.2°), so it is harder to place accurately on paper.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "dtc-over-99.999992",
@@ -978,7 +1298,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/DTC-99.999992-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "dtc-over-99.999998",
@@ -996,7 +1322,13 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Over/DTC-99.999998-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
      "verified": [],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     }
    ]
   },
@@ -1032,7 +1364,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 6 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 6 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/gmypmfqa",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.596",
@@ -1056,7 +1395,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 13 circles, 9 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 13 circles, 9 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/s5d6kgfs",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.607",
@@ -1081,7 +1427,14 @@ const ARCHIVE = {
      ],
      "disputes": [],
      "count_history": "Counted 9 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down.",
-     "micro_note": "Marked µ by hand. The micro scale test finds no step under 5% of the radius (smallest 6.3%), so the adjustment needs describing here."
+     "micro_note": "Marked µ by hand. The micro scale test finds no step under 5% of the radius (smallest 6.3%), so the adjustment needs describing here.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/ryhqksry",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.65",
@@ -1104,7 +1457,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/t5bqfckt",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.786",
@@ -1127,7 +1487,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/ju6jb78y",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.802",
@@ -1151,7 +1518,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 11 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 11 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/hsybvnu5",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.806",
@@ -1175,7 +1549,15 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 1 circles, 10 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 1 circles, 10 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "paper: Euclidean Circumference Approximation (pages/paper-euclidean-circumference-approximation.html)",
+       "maintainer's GeoGebra account: geogebra.org/geometry/rhqcddpf",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.873",
@@ -1199,7 +1581,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "micro_note": "Marked µ by hand. The micro scale test finds no step under 5% of the radius (smallest 50.0%), so the adjustment needs describing here."
+     "micro_note": "Marked µ by hand. The micro scale test finds no step under 5% of the radius (smallest 50.0%), so the adjustment needs describing here.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/rcjzsffq",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.9343",
@@ -1222,7 +1611,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/kycjvbnh",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.9347",
@@ -1245,7 +1641,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/g7rntemb",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.971",
@@ -1268,7 +1671,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/nk5h7gqf",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.997",
@@ -1291,7 +1701,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/px4rbkpy",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.9986",
@@ -1315,7 +1732,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 10 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 10 circles, 7 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/yrtbagqh",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.9987",
@@ -1338,7 +1762,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/nygms4nr",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.9996",
@@ -1362,7 +1793,15 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 12 circles, 10 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 12 circles, 10 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "builds on Kochański (1685), published",
+       "maintainer's GeoGebra account: geogebra.org/geometry/puardqtn",
+       "GeoGebra file in the archive, dated 22-12-2025"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.999",
@@ -1386,7 +1825,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 9 circles, 13 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 9 circles, 13 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/m6btgcyj",
+       "GeoGebra file in the archive, dated 07-11-2025"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.998",
@@ -1409,7 +1855,13 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Kochański, Acta Eruditorum, 1685"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.9875",
@@ -1432,7 +1884,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/cbmncq7h",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.9874",
@@ -1456,7 +1915,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 9 circles, 6 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 9 circles, 6 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/scvxwyva",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.812",
@@ -1479,7 +1945,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/zczfbfzp",
+       "GeoGebra file in the archive, dated 08-11-2025"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.809",
@@ -1502,7 +1975,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/hhks3r3z",
+       "GeoGebra file in the archive, dated 08-11-2025"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.443",
@@ -1525,7 +2005,14 @@ const ARCHIVE = {
        "how": "GeoGebra measuring tools"
       }
      ],
-     "disputes": []
+     "disputes": [],
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/at9txh3h",
+       "GeoGebra file in the archive, dated 08-11-2025"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.376",
@@ -1543,7 +2030,14 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.374% undersized.",
      "verified": [],
      "disputes": [],
-     "count_history": "Counted 8 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 8 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/mpnw4ssy",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "rtc-under-98.165",
@@ -1567,7 +2061,14 @@ const ARCHIVE = {
       }
      ],
      "disputes": [],
-     "count_history": "Counted 6 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 6 circles, 4 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/tzdubzms",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "marks": "",
@@ -1591,7 +2092,13 @@ const ARCHIVE = {
      "lines": 7,
      "acc": "99.979",
      "file": "GeoGebra Files/Over/RTC-99.979",
-     "count_history": "Counted 6 circles, 8 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 6 circles, 8 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "marks": "",
@@ -1614,7 +2121,13 @@ const ARCHIVE = {
      "circles": 9,
      "lines": 2,
      "acc": "99.982",
-     "file": "GeoGebra Files/Under/RTC-99.982"
+     "file": "GeoGebra Files/Under/RTC-99.982",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 11-11-2025"
+      ]
+     }
     },
     {
      "marks": "µ",
@@ -1637,7 +2150,13 @@ const ARCHIVE = {
      "circles": 20,
      "lines": 7,
      "acc": "99.989",
-     "file": "GeoGebra Files/Over/RTC-99.989"
+     "file": "GeoGebra Files/Over/RTC-99.989",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "GeoGebra file in the archive, dated 11-11-2025"
+      ]
+     }
     },
     {
      "marks": "",
@@ -1655,7 +2174,13 @@ const ARCHIVE = {
      "date": "1914",
      "file": "GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914",
      "result_scale": 6,
-     "note": "π ≈ (9² + 19²/22)^¼. It constructs a sixth of the circumference (the mean proportional between OS and OB), so six times that length is compared with the circumference. Reconstructed from Ramanujan's description in “Modular equations and approximations to π” (1914); trisecting AO and the mean proportional use standard straightedge and compass steps. AI-assisted: the GeoGebra file was written by Claude; awaiting a person's check in GeoGebra."
+     "note": "π ≈ (9² + 19²/22)^¼. It constructs a sixth of the circumference (the mean proportional between OS and OB), so six times that length is compared with the circumference. Reconstructed from Ramanujan's description in “Modular equations and approximations to π” (1914); trisecting AO and the mean proportional use standard straightedge and compass steps. AI-assisted: the GeoGebra file was written by Claude; awaiting a person's check in GeoGebra.",
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Ramanujan, \"Modular equations and approximations to π\", Quarterly Journal of Mathematics, 1914"
+      ]
+     }
     },
     {
      "marks": "µ",
@@ -1672,7 +2197,14 @@ const ARCHIVE = {
      "acc": "99.99999",
      "date": "06-11-2026",
      "file": "GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7",
-     "note": "The crossover method, taking the point three sevenths of the way from Kochański's length to Edward's instead of the midpoint: seven equal compass steps up a perpendicular, then a parallel. AI-assisted: the 3/7 weighting was suggested by Claude, which also added the steps to Edward's GeoGebra file; awaiting Edward's check in GeoGebra."
+     "note": "The crossover method, taking the point three sevenths of the way from Kochański's length to Edward's instead of the midpoint: seven equal compass steps up a perpendicular, then a parallel. AI-assisted: the 3/7 weighting was suggested by Claude, which also added the steps to Edward's GeoGebra file; awaiting Edward's check in GeoGebra.",
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "builds on Kochański (1685), published",
+       "the maintainer's idea, drawn with Claude in the maintainer's own session (November 2026)"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.992",
@@ -1695,7 +2227,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{9}",
       "P_{12}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-over-99.999999",
@@ -1717,7 +2255,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{23}",
       "P_{8}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.99994",
@@ -1739,7 +2283,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{17}",
       "P_{9}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.999992",
@@ -1762,7 +2312,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{22}",
       "P_{28}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.999998",
@@ -1784,7 +2340,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{33}",
       "P_{31}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.9999990",
@@ -1807,7 +2369,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{56}",
       "P_{61}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.9999998",
@@ -1830,7 +2398,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{72}",
       "P_{2}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "rtc-under-99.999997",
@@ -1853,7 +2427,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{31}",
       "P_{22}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     }
    ]
   },
@@ -1888,7 +2468,14 @@ const ARCHIVE = {
       "G",
       "C"
      ],
-     "count_history": "Counted 1 circles, 6 lines before the counting rules (version 1.0, November 2026) were written down."
+     "count_history": "Counted 1 circles, 6 lines before the counting rules (version 1.0, November 2026) were written down.",
+     "origin": {
+      "kind": "maintainer",
+      "evidence": [
+       "maintainer's GeoGebra account: geogebra.org/geometry/nwxxhgju",
+       "GeoGebra file in the archive"
+      ]
+     }
     },
     {
      "id": "ar-over-96.640",
@@ -1910,7 +2497,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{13}",
       "B"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "ar-over-98.689",
@@ -1932,7 +2525,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{20}",
       "A"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     },
     {
      "id": "ar-over-99.751",
@@ -1954,7 +2553,13 @@ const ARCHIVE = {
      "result_path": [
       "P_{21}",
       "P_{3}"
-     ]
+     ],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
+      ]
+     }
     }
    ]
   }
