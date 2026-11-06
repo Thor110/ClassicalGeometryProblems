@@ -148,10 +148,10 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="common.js"></script>
 <script src="archive-data.js"></script>
 <script src="data.js"></script>
 <script>
-const $ = id => document.getElementById(id);
 const PRESETS = [['π', Math.PI], ['2π', 2 * Math.PI], ['√π', Math.sqrt(Math.PI)], ['∛2', Math.cbrt(2)], ['π ÷ 4', Math.PI / 4]];
 for (const [label, v] of PRESETS) {
   const b = document.createElement('button');
@@ -189,14 +189,14 @@ function calc() {
     else { rules = 'over limits'; rc = 'hot'; }
   }
   result = {acc, side, circles, lines};
-  $('meters').innerHTML = [
+  $('meters').innerHTML = meters([
     ['Accuracy', truncate(acc, 3) + '%', acc >= 95 ? 'good' : 'hot'],
     ['Precise readout', acc.toFixed(12) + '%', ''],
     ['Side', side === 'over' ? 'Oversized' : side === 'under' ? 'Undersized' : 'Exact?', 'warm'],
     ['Relative gap', 'one part in ' + (side === 'exact' ? '∞' : Math.round(t / Math.abs(c - t)).toLocaleString()), ''],
     ['Would chart at', rank === '—' ? '—' : '#' + rank + ' ' + side + 'sized', rank === 1 ? 'good' : ''],
     ['Ruleset', rules, rc],
-  ].map(([l, v, cl]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${cl}">${v}</div></div>`).join('');
+  ]);
 
   const v = $('verdict');
   if (side === 'exact') { v.textContent = 'Exactly equal at this precision. Check more decimal places: GeoGebra rounds its readouts.'; v.className = 'warm'; }
@@ -248,11 +248,7 @@ ${f('fNotes')}
 
 document.querySelectorAll('input, select, textarea:not(#out)').forEach(el => el.addEventListener('input', calc));
 $('calcProblem').addEventListener('input', () => { $('fProblem').value = $('calcProblem').value; build(); });
-$('copy').onclick = async () => {
-  try { await navigator.clipboard.writeText(build()); $('copy').textContent = 'Copied'; }
-  catch { $('out').select(); document.execCommand('copy'); $('copy').textContent = 'Copied'; }
-  setTimeout(() => $('copy').textContent = 'Copy Markdown', 1500);
-};
+copyButton($('copy'), build, $('out'));
 $('issue').onclick = () => {
   const sel = $('fProblem'), title = 'Submission: ' + sel.options[sel.selectedIndex].text.replace(/^\d+\.\s*/, '') +
     (result ? ' · ' + truncate(result.acc, 3) + '%' : '') + ($('fMethod').value ? ' · ' + $('fMethod').value : '');

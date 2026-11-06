@@ -111,12 +111,12 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="common.js"></script>
 <script src="archive-data.js"></script>
 <script src="ai-checks.js"></script>
 <script src="crossref.js"></script>
 <script src="data.js"></script>
 <script>
-const $ = id => document.getElementById(id);
 const all = PROBLEMS.flatMap(p => p.entries.concat(p.archived || []).map(e => ({...e, problem: p})));
 const counted = name => all.filter(e => (e.verified || []).some(v => v.by === name)).length;
 
@@ -128,9 +128,8 @@ $('ai').innerHTML = '<tr><th>Name</th><th>Role</th><th>Since</th><th>Entries rep
 $('aiRun').textContent = `AI check last run ${AI_CHECKS.run}. Click an entry's problem to see it on its chart.`;
 const n = s => all.filter(e => statusOf(e).status === s).length;
 const a = s => Object.values(CHECKS).filter(c => c.status === s).length;
-$('tally').innerHTML = [['Verified', n('verified'), 'good'], ['Self-verified', n('self-verified'), 'warm'], ['Disputed', n('disputed'), 'hot'],
-  ['AI reproduced', a('reproduced'), 'good'], ['AI: does not match', a('attention'), 'hot'], ['AI: check by hand', a('manual') + a('no-file'), 'warm']]
-  .map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
+$('tally').innerHTML = meters([['Verified', n('verified'), 'good'], ['Self-verified', n('self-verified'), 'warm'], ['Disputed', n('disputed'), 'hot'],
+  ['AI reproduced', a('reproduced'), 'good'], ['AI: does not match', a('attention'), 'hot'], ['AI: check by hand', a('manual') + a('no-file'), 'warm']]);
 
 let who = 'all';
 try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
@@ -158,7 +157,7 @@ table();
 // Cross-reference table
 const X = typeof CROSSREF !== 'undefined' ? CROSSREF : {pairs: [], run: ''};
 const kinds = ['identical', 'same result', 'near identical', 'builds on', 'shares most steps', 'same file'];
-$('xtally').innerHTML = kinds.map(k => `<div class="meter"><div class="mlabel">${k}</div><div class="mval ${k === 'identical' || k === 'same result' ? 'hot' : k === 'near identical' ? 'warm' : ''}">${X.pairs.filter(x => x.kind === k).length}</div></div>`).join('');
+$('xtally').innerHTML = meters(kinds.map(k => [k, X.pairs.filter(x => x.kind === k).length, k === 'identical' || k === 'same result' ? 'hot' : k === 'near identical' ? 'warm' : '']));
 const byId = Object.fromEntries(all.map(e => [e.id, e]));
 const nm = id => byId[id] ? `${byId[id].problem.short} ${esc(byId[id].acc)}% ${byId[id].side}<br><span class="muted" style="font-size:13px;">${esc(byId[id].holder)}${byId[id].holder_kind === 'ai' ? ' (AI)' : ''}</span>` : esc(id);
 $('xtable').innerHTML = '<tr><th>Relation</th><th>Base or earlier entry</th><th>Later or larger entry</th><th>Score</th></tr>' +

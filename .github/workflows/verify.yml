@@ -4,9 +4,9 @@ name: Verify constructions
 
 on:
   push:
-    paths: ['Approximations/**', 'pages/archive-data.js', 'tools/verify.py']
+    paths: ['Approximations/**', 'pages/archive-data.js', 'tools/*.py']
   pull_request:
-    paths: ['Approximations/**', 'pages/archive-data.js', 'tools/verify.py']
+    paths: ['Approximations/**', 'pages/archive-data.js', 'tools/*.py']
   workflow_dispatch:
 
 jobs:
@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install mpmath
       - name: Rebuild and check every construction
-        # Some entries do not reproduce yet (see the verification page). Once they are resolved,
-        # delete the next line so any new disagreement fails the check.
-        continue-on-error: true
+        # Entries the maintainer has already looked at carry known_issue in pages/archive-data.js and are
+        # listed without failing; any new disagreement fails the check.
         run: python tools/verify.py

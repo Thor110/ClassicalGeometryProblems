@@ -35,6 +35,19 @@
   #detail .rec-title{font-size:13px;color:#666;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;}
   tr.hl td.acc{color:#4a9;}
   #table tr[data-key]:focus-visible{outline:1px solid #4a9;outline-offset:-1px;}
+  #ladder:focus-visible{outline:1px solid #4a9;}
+  #compare table{width:100%;} #compare td:first-child{color:#666;width:22%;} #compare td{vertical-align:top;}
+  /* On a phone each method becomes a small card: rank on the left, its details stacked beside it. */
+  @media (max-width:720px){
+    .chart{min-width:0;}
+    .chart table.head,.chart colgroup{display:none;}
+    .chart table,.chart tbody{display:block;}
+    .chart tr[data-key]{display:grid;grid-template-columns:34px 1fr;column-gap:8px;padding:8px 4px;border-bottom:1px solid #1e1e2a;}
+    .chart tr[data-key] td{display:block;border:0;padding:1px 0;grid-column:2;}
+    .chart tr[data-key] td:first-child{grid-column:1;grid-row:1 / span 9;font-size:18px;color:#888;}
+    .chart tr[data-key] td.keycell:empty,.chart tr[data-key] td.keycell:has(.mark:empty){display:none;}
+    .chart td[data-label]::before{content:attr(data-label) ' ';color:#555;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;}
+  }
 </style>
 </head>
 <body>
@@ -57,7 +70,7 @@
   <div class="small-text" style="text-align:center;margin-bottom:12px;">
     Each step right is ten times closer to the true value. Oversized above the line, undersized below. Hover or tap a point.
   </div>
-  <canvas id="ladder" role="img" aria-label="Accuracy ladder: every method on this chart, placed by how close it is to perfect. The table below lists the same methods."></canvas>
+  <canvas id="ladder" tabindex="0" role="img" aria-label="Accuracy ladder: every method on this chart, placed by how close it is to perfect. With the ladder focused, the left and right arrow keys step through the methods. The table below lists the same methods."></canvas>
   <div id="tip">&nbsp;</div>
 </div>
 
@@ -82,6 +95,10 @@
     <button class="small active" data-side="under">Undersized</button>
     <button class="small" id="flip">⇅ Flip</button>
   </div>
+  <div class="controls">
+    <span class="label">Search</span>
+    <input id="search" type="search" placeholder="name, method or accuracy" aria-label="Search this chart" style="max-width:340px;">
+  </div>
   <div class="chart-x"><div class="chart" id="table"></div></div>
   <div class="small-text" style="margin-top:12px;" id="downloads"></div>
 </div>
@@ -90,6 +107,8 @@
   <div class="box-title">Entry Details</div>
   <div class="small-text" style="text-align:center;">Click a row or a point on the ladder to see who verified it, what the AI check found, and any disputes.</div>
 </div>
+
+<div class="box" id="compare" style="display:none;"></div>
 
 <div class="box" id="below"></div>
 
@@ -138,15 +157,16 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="common.js"></script>
 <script src="archive-data.js"></script>
 <script src="ai-checks.js"></script>
 <script src="crossref.js"></script>
 <script src="data.js"></script>
 <script>
-const $ = id => document.getElementById(id);
 const CHARTS = PROBLEMS.concat(PI_CHART ? [PI_CHART] : []);   // the five problems, and π worked out from the circle
 // Headings are set in capitals; keep π itself lower case (a capital Π is a different symbol).
 const nameHTML = n => n.replace(/π/g, '<span style="text-transform:none">π</span>');
+let query = '', pinned = null;   // the search text, and the entry pinned for comparison
 let current = PROBLEMS[0], filter = 'all', who = 'all', points = [], highlighted = null;
 // Remember the viewer's choice of people, AI or both (browser storage can be unavailable; that is fine).
 try { who = localStorage.getItem('cgp-who') || 'all'; } catch (e) {}
@@ -157,7 +177,6 @@ if (!sides || typeof sides !== 'object' || (!sides.over && !sides.under)) sides 
 const saveView = () => { try { localStorage.setItem('cgp-sides', JSON.stringify(sides)); localStorage.setItem('cgp-flip', flipped ? '1' : '0'); } catch (e) {} };
 const MARKS = {'~': 'Contested: the original discoverer is being sought', '@': 'Too Simple: likely found many times before', 'µ': 'Micro Scale Adjustments Required'};
 const marksHTML = m => [...(m || '')].map(c => `<span data-tip="${MARKS[c] || c}" aria-label="${MARKS[c] || c}">${c}</span>`).join('');
-const kindOf = e => e.holder_kind === 'ai' ? 'ai' : 'person';
 const byWho = e => who === 'all' || kindOf(e) === who;
 
 // Tabs, one per problem; the page's #hash picks one (charts.html#rtc).
@@ -209,14 +228,36 @@ addEventListener('scroll', () => tip.style.display = 'none', true);
 window.addEventListener('hashchange', pick);
 window.addEventListener('resize', drawLadder);
 
+// The page's address picks the chart, and optionally an entry: charts.html#rtc or charts.html#rtc/rtc-over-99.806
 function pick() {
-  current = CHARTS.find(p => p.id === location.hash.slice(1)) || CHARTS[0];
+  const [pid, eid] = decodeURIComponent(location.hash.slice(1)).split('/');
+  const next = CHARTS.find(p => p.id === pid) || CHARTS[0];
+  if (next !== current) pinned = null;
+  current = next;
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === current.id));
-  highlighted = null;
+  highlighted = eid && current.entries.some(e => e.id === eid) ? eid : null;
   render();
+  if (highlighted) showRow(highlighted, true);
+}
+
+// Select an entry: highlight it everywhere, show its details, and put it in the page's address.
+function select(id) {
+  highlighted = id; mark(); drawLadder(); renderDetail(); renderCompare();
+  try { history.replaceState(null, '', '#' + current.id + '/' + id); } catch (e) {}
+}
+function showRow(id, page) {
+  const tr = document.querySelector(`#table tr[data-key="${id}"]`); if (!tr) return;
+  const h = tr.closest('.half'); if (h) h.scrollTop = tr.offsetTop - h.clientHeight / 2;
+  (page ? $('detail') : tr.closest('.chart-x')).scrollIntoView({block: page ? 'start' : 'nearest', behavior: 'smooth'});
+}
+
+function matches(e) {
+  if (!query) return true;
+  return [e.holder, e.method, e.acc + '%', e.precise, e.date].join(' ').toLowerCase().includes(query);   // what the row shows
 }
 
 function visible(e) {
+  if (!matches(e)) return false;
   const n = x => typeof x === 'number' ? x : 0;
   if (!byWho(e)) return false;
   if (!sides[e.side]) return false;
@@ -239,12 +280,12 @@ function render() {
   const bo = best('over'), bu = best('under');
   const nPeople = p.entries.filter(e => kindOf(e) === 'person').length, nAI = p.entries.length - nPeople;
   const people = new Set(all.map(e => e.holder)).size;
-  $('meters').innerHTML = [
+  $('meters').innerHTML = meters([
     ['Methods charted', who === 'all' ? `${all.length} (${nPeople} people, ${nAI} AI)` : all.length, ''],
     ['Best oversized', bo ? bo.acc + '%' : 'open', bo ? 'good' : 'warm'],
     ['Best undersized', bu ? bu.acc + '%' : 'open', bu ? 'good' : 'warm'],
     ['Method holders', people, ''],
-  ].map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
+  ]);
 
   // The table mirrors the original charts: oversized ranks count down to perfection, undersized count up from it.
   const row = e => {
@@ -258,9 +299,9 @@ function render() {
       <td>${e.vrank}</td>
       <td class="keycell"><span class="mark">${marksHTML(e.marks)}</span></td>
       <td>${esc(e.holder)}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + esc(e.method) + '</span>' : ''}${current.derived ? '<br><span class="mono" style="font-size:13px;">' + piText(e) + '</span>' : ''}</td>
-      <td>${e.circles}</td><td>${e.lines}</td>
-      <td class="acc">${e.acc}%</td>
-      <td class="precise">${e.precise ? e.precise + '%' : ''}</td>
+      <td data-label="Circles">${e.circles}</td><td data-label="Lines">${e.lines}</td>
+      <td class="acc" data-label="Accuracy">${e.acc}%</td>
+      <td class="precise" data-label="Precise">${e.precise ? e.precise + '%' : ''}</td>
       <td>${badge(e)}</td>
       <td>${links.join(' · ')}</td></tr>`;
   };
@@ -276,7 +317,7 @@ function render() {
     return `<div class="half" data-half="${bestLast ? 'top' : 'bottom'}"><table>${cols}${rows.map(row).join('') || `<tr><td colspan="9" class="muted">No ${side}sized methods to show.</td></tr>`}</table></div>`;
   };
   $('table').innerHTML = `
-    <table>${cols}<tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr></table>
+    <table class="head">${cols}<tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr></table>
     ${sides[topSide] ? caption(topSide, count(topSide), '↑') + half(topSide, true) : ''}
     <div class="perfect-line">0 · Perfection · 100% · impossible with straightedge and compass</div>
     ${sides[bottomSide] ? half(bottomSide, false) + caption(bottomSide, count(bottomSide), '↓') : ''}`;
@@ -284,12 +325,12 @@ function render() {
   const top = $('table').querySelector('[data-half="top"]'); if (top) top.scrollTop = top.scrollHeight;
   const bottom = $('table').querySelector('[data-half="bottom"]'); if (bottom) bottom.scrollTop = 0;
   $('table').querySelectorAll('tr[data-key]').forEach(tr => {
-    tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); renderDetail(); };
+    tr.onclick = () => select(tr.dataset.key);
     tr.onkeydown = ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); tr.onclick(); } };   // rows open from the keyboard too
   });
 
   $('downloads').innerHTML = `Click a row for its full record, and to find it on the ladder. The chart's data is <a class="link" href="${REPO}/blob/main/pages/archive-data.js" target="_blank" rel="noopener">archive-data.js</a> in the repository.`;
-  renderWanted(); renderDetail(); renderBelow();
+  renderWanted(); renderDetail(); renderCompare(); renderBelow();
   mark();
   drawLadder();
 }
@@ -302,10 +343,7 @@ function mark() {
 const errorOf = e => Math.max(100 - parseFloat(e.precise || e.value), 1e-9);
 
 function drawLadder() {
-  const cv = $('ladder'), ctx = cv.getContext('2d'), dpr = window.devicePixelRatio || 1;
-  const W = cv.clientWidth, H = cv.clientHeight;
-  cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.clearRect(0, 0, W, H);
+  const cv = $('ladder'), {ctx, W, H} = fitCanvas(cv);
   const shown = current.entries.filter(visible);
   // Fit the scale to this problem: from 90% to one decade past its closest method.
   const reach = Math.max(0, ...shown.map(e => -Math.log10(errorOf(e))));
@@ -359,10 +397,45 @@ function describe(p) {
 $('ladder').addEventListener('mousemove', ev => { const p = nearest(ev); $('tip').textContent = p ? describe(p) : ' '; });
 $('ladder').addEventListener('click', ev => {
   const p = nearest(ev); if (!p) return;
-  highlighted = p.key; $('tip').textContent = describe(p); mark(); drawLadder(); renderDetail();
-  const tr = document.querySelector(`#table tr[data-key="${p.key}"]`);
-  if (tr) { const h = tr.closest('.half'); if (h) h.scrollTop = tr.offsetTop - h.clientHeight / 2; tr.closest('.chart-x').scrollIntoView({block: 'nearest', behavior: 'smooth'}); }
+  $('tip').textContent = describe(p); select(p.key); showRow(p.key);
 });
+// The ladder from the keyboard: left and right step through the methods in order of accuracy.
+$('ladder').addEventListener('keydown', ev => {
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(ev.key) || !points.length) return;
+  ev.preventDefault();
+  const order = points.slice().sort((a, b) => a.x - b.x || a.y - b.y);
+  let i = order.findIndex(p => p.key === highlighted);
+  i = ev.key === 'Home' ? 0 : ev.key === 'End' ? order.length - 1 : i < 0 ? 0 : Math.max(0, Math.min(order.length - 1, i + (ev.key === 'ArrowRight' ? 1 : -1)));
+  $('tip').textContent = describe(order[i]); select(order[i].key); showRow(order[i].key);
+});
+
+$('search').addEventListener('input', () => { query = $('search').value.trim().toLowerCase(); render(); });
+
+// Two entries side by side: the one pinned, and the one selected.
+function renderCompare() {
+  const box = $('compare'), a = current.entries.find(e => e.id === pinned);
+  if (!a) { box.style.display = 'none'; return; }
+  box.style.display = '';
+  const b = current.entries.find(e => e.id === highlighted && e.id !== pinned);
+  if (!b) { box.innerHTML = `<div class="box-title">Compare</div><div class="box-text" style="text-align:center;">Pinned: <b>${esc(a.acc)}%</b> ${a.side}sized by ${esc(a.holder)}. Select another entry to compare it. <a class="link" href="#" id="unpin">Unpin</a></div>`; $('unpin').onclick = ev => { ev.preventDefault(); pinned = null; renderDetail(); renderCompare(); }; return; }
+  const ai = e => CHECKS[e.id] || {};
+  const pair = (typeof CROSSREF !== 'undefined' ? CROSSREF.pairs : []).find(x => (x.older === a.id && x.newer === b.id) || (x.older === b.id && x.newer === a.id));
+  const rows = [
+    ['Accuracy', e => `<b>${esc(e.acc)}%</b>`], ['Precise', e => esc(e.precise || '—')], ['Side', e => `${e.side}sized #${e.vrank}`],
+    ['Method holder', e => esc(e.holder) + (kindOf(e) === 'ai' ? ' (AI)' : '')], ['Method', e => esc(e.method || '—')],
+    ['Circles and lines', e => `${esc(e.circles)} and ${esc(e.lines)} (${(+e.circles || 0) + (+e.lines || 0)} steps)`],
+    ['Key marks', e => e.marks ? marksHTML(e.marks) : '—'],
+    ['Smallest step', e => ai(e).smallest_step != null ? (100 * ai(e).smallest_step).toPrecision(3) + '% of the given size' : '—'],
+    ['Shallowest crossing', e => ai(e).shallowest_crossing != null ? ai(e).shallowest_crossing + '°' : '—'],
+    ['Verification', e => badge(e)], ['Date', e => esc(e.date || '—')],
+  ];
+  box.innerHTML = `<div class="box-title">Compare</div>
+    <div class="table-wrap"><table><tr><th></th><th>${esc(a.acc)}% (pinned)</th><th>${esc(b.acc)}%</th></tr>
+    ${rows.map(([l, f]) => `<tr><td>${l}</td><td>${f(a)}</td><td>${f(b)}</td></tr>`).join('')}
+    <tr><td>Related</td><td colspan="2">${pair ? esc(pair.kind) + ' (score ' + pair.similarity.toFixed(2) + ')' : 'not related by the cross-reference'}</td></tr></table></div>
+    <div class="small-text" style="text-align:center;"><a class="link" href="#" id="unpin">Unpin</a></div>`;
+  $('unpin').onclick = ev => { ev.preventDefault(); pinned = null; renderDetail(); renderCompare(); };
+}
 
 function badge(e) {
   const s = statusOf(e);
@@ -404,9 +477,13 @@ function renderDetail() {
     <div class="controls" style="margin-top:12px;">
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Verification', 'verification.yml')}" target="_blank" rel="noopener">I Verified This</a>
       <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Dispute', 'dispute.yml')}" target="_blank" rel="noopener">Dispute This</a>
+      <button class="small" id="linkBtn">Copy Link</button>
+      <button class="small${pinned === e.id ? ' active' : ''}" id="pinBtn">${pinned === e.id ? 'Unpin' : 'Compare With Another'}</button>
     </div>
     <div class="small-text" style="text-align:center;">Entry id: <span class="mono">${e.id}</span></div>`;
-  $('detail').querySelectorAll('[data-goto]').forEach(a => a.onclick = ev => { ev.preventDefault(); highlighted = a.dataset.goto; mark(); drawLadder(); renderDetail(); });
+  $('detail').querySelectorAll('[data-goto]').forEach(a => a.onclick = ev => { ev.preventDefault(); select(a.dataset.goto); showRow(a.dataset.goto); });
+  copyButton($('linkBtn'), () => location.href);
+  $('pinBtn').onclick = () => { pinned = pinned === e.id ? null : e.id; renderDetail(); renderCompare(); };
   $('detail').querySelectorAll('[data-view]').forEach(b => b.onclick = () => {
     $('drawImg').src = $('drawLink').href = 'drawings/' + e.id + b.dataset.view + '.svg';
     $('detail').querySelectorAll('[data-view]').forEach(x => x.classList.toggle('active', x === b));
@@ -461,7 +538,7 @@ function renderWanted() {
   $('wanted').style.display = w.length ? '' : 'none';
   $('wanted').innerHTML = `<div class="box-title">Wanted: Historical Constructions</div>
     <div class="box-text">Known approximations from history that are not on this chart yet, because nobody has reconstructed and verified them here. Reconstruct one in GeoGebra from its original source and <a href="submit.html">submit it</a>, credited to its discoverer.</div>
-    <ul>${w.map(x => `<li><b>${esc(x.who)}</b> (${esc(x.year)}): ${esc(x.value)}. <span class="muted">${esc(x.source)}</span></li>`).join('')}</ul>`;
+    <ul>${w.map(x => `<li><b>${esc(x.who)}</b> (${esc(x.year)}): ${esc(x.value)}. <span class="muted">${esc(x.source)}</span>${x.draft ? ` <span class="warm">${esc(x.draft_note || 'Drafted.')}</span> <a class="link" href="${repoFile(x.draft)}" download>draft .ggb</a>` : ''}</li>`).join('')}</ul>`;
 }
 
 $('families').innerHTML = ARCHIVE.families.map(f => `<li><b>${esc(f.name)}</b> (${esc((PROBLEMS.find(p => p.id === f.problem) || {}).name || f.problem)}): ${esc(f.about)}</li>`).join('');

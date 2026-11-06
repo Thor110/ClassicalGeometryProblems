@@ -1,11 +1,9 @@
-// Helpers shared by the website's pages. The numbers themselves live in archive-data.js (the
-// charts) and ai-checks.js (written by tools/verify.py), which must be loaded before this file.
+// Helpers for the pages that show the charts. The numbers themselves live in archive-data.js (the
+// charts) and ai-checks.js (written by tools/verify.py), which must be loaded before this file, and
+// common.js (the helpers every page uses) before them.
 
 const REPO = 'https://github.com/Thor110/ClassicalGeometryProblems';
 
-// Text from the data (names, methods, notes, verifications, disputes) is written into pages as
-// HTML, and some of it comes from public submissions, so it is escaped first.
-const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 // The best entry on one side, by the full-precision figure (the chart figure is shortened).
 const bestOf = (entries, side) => entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact)[0];
 const CHECKS = (typeof AI_CHECKS !== 'undefined') ? AI_CHECKS.results : {};
@@ -15,11 +13,12 @@ const CHECKS = (typeof AI_CHECKS !== 'undefined') ? AI_CHECKS.results : {};
 //   verified      reproduced by someone other than its method holder, a person or an AI checker
 //   self-verified checked only by its method holder
 //   unverified    no checks yet
-function holderNames(holder) { return holder.split('/').map(s => s.trim().toLowerCase()); }
-function isHolder(name, holder) {
-  const n = name.toLowerCase();
-  return holderNames(holder).some(h => h === n || n.endsWith(' ' + h) || h.endsWith(' ' + n.split(' ').pop()));
-}
+// The full names behind a method holder (ARCHIVE.holders), or the holder's name itself. A verification
+// is self-verification only when its full name is one of these: matching by surname alone would count
+// anyone who shares a surname.
+const plainName = s => String(s || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+function holderNames(holder) { return ((ARCHIVE.holders || {})[holder] || [holder]).map(plainName); }
+function isHolder(name, holder) { return holderNames(holder).includes(plainName(name)); }
 function statusOf(e) {
   const people = (e.verified || []).filter(v => v.kind === 'person');
   const independent = people.filter(v => !isHolder(v.by, e.holder));

@@ -8,6 +8,10 @@
 // figure, truncated), precise (a fuller readout, if any), date, geogebra (the id after
 // geogebra.org/geometry/), file (the .ggb/.md pair under the problem's folder, without extension),
 // note, verified (people who have checked it), disputes (open or closed; see VERIFICATION.md).
+// known_issue: why an entry is flagged by tools/verify.py and what is being done; it is listed but no
+// longer fails the site check, so that only new problems do.
+// holders: the full names behind each method holder, so a verification is counted as self-verification
+// only when it is by one of those people (full names, compared without regard to case or accents).
 // derived_pi: the π chart is worked out from the circle rectifications (see Approximations/06 Pi
 // Approximations); it lists only the π versions drawn in GeoGebra, by the rectification they come from.
 // precise is worked out by tools/verify.py to 50 significant digits and shown to 32.
@@ -224,12 +228,12 @@ const ARCHIVE = {
      "method": "Ramanujan's Method",
      "circles": 9,
      "lines": 15,
-     "acc": "99.999",
+     "acc": "99.99999",
      "precise": "99.999991508632134162913741597801",
      "date": "1913",
      "geogebra": "f9sfp9mg",
      "file": "GeoGebra Files/Squared Circle Over/99.999-Ramanujan",
-     "note": "",
+     "note": "Shown to more places from November 2026 (it was 99.999%), so that the chart reads in order: its precise value is 99.999991508%.",
      "verified": [
       {
        "by": "Edward James Gordon",
@@ -951,7 +955,8 @@ const ARCHIVE = {
        "maintainer's GeoGebra account: geogebra.org/geometry/ydfkxavz",
        "GeoGebra file in the archive, dated 01-12-2024"
       ]
-     }
+     },
+     "known_issue": "its result depends on points placed by hand (Array Casting adjusts its array by eye, as the paper describes); waiting for the maintainer to decide how it is charted"
     },
     {
      "id": "taa-over-91.077",
@@ -979,7 +984,8 @@ const ARCHIVE = {
        "maintainer's GeoGebra account: geogebra.org/geometry/yj7tctaw",
        "GeoGebra file in the archive, dated 01-12-2024"
       ]
-     }
+     },
+     "known_issue": "its result depends on points placed by hand (Array Casting adjusts its array by eye, as the paper describes); waiting for the maintainer to decide how it is charted"
     },
     {
      "id": "taa-over-96.305",
@@ -1098,7 +1104,8 @@ const ARCHIVE = {
        "maintainer's GeoGebra account: geogebra.org/geometry/fhbn5sry",
        "GeoGebra file in the archive (re-saved from the account in November 2026, so its original date is not recorded)"
       ]
-     }
+     },
+     "precise": "99.726139137270493529120934945039"
     },
     {
      "id": "taa-over-97.995",
@@ -1121,7 +1128,8 @@ const ARCHIVE = {
        "maintainer's GeoGebra account: geogebra.org/geometry/mknfrgkm",
        "GeoGebra file in the archive (re-saved from the account in November 2026, so its original date is not recorded)"
       ]
-     }
+     },
+     "precise": "97.995491060509379984006623261114"
     }
    ]
   },
@@ -1377,6 +1385,30 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), by the search tools, with the maintainer watching"
       ]
      }
+    },
+    {
+     "id": "dtc-under-99.214",
+     "side": "under",
+     "marks": "",
+     "holder": "Kochanski / Gordon",
+     "method": "One Fifth Of The Circle",
+     "circles": 7,
+     "lines": 5,
+     "acc": "99.214",
+     "date": "06-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.214-Kochanski-Gordon",
+     "note": "Edward's near-coincidence put to use: the doubled cube's edge is one fifth of the circle around the original cube, rectified by Kochański's method. Its accuracy is set by the coincidence itself (∛2 ≈ 2π/5), so no better rectification can take it past 99.22%.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "the link noticed by the maintainer in his Cube 2 Tesseract v2.0 (geogebra.org/geometry/yx5e8wnu)",
+       "drawn with Claude in the maintainer's own session (November 2026), using Kochański's rectification (1685)"
+      ]
+     },
+     "precise": "99.214465504374956832682628789287"
     }
    ]
   },
@@ -2218,11 +2250,11 @@ const ARCHIVE = {
      "method": "Ramanujan's 1914 construction",
      "circles": 8,
      "lines": 10,
-     "acc": "99.99999",
+     "acc": "99.9999999",
      "date": "1914",
      "file": "GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914",
      "result_scale": 6,
-     "note": "π ≈ (9² + 19²/22)^¼. It constructs a sixth of the circumference (the mean proportional between OS and OB), so six times that length is compared with the circumference. Reconstructed from Ramanujan's description in “Modular equations and approximations to π” (1914); trisecting AO and the mean proportional use standard straightedge and compass steps. AI-assisted: the GeoGebra file was written by Claude; awaiting a person's check in GeoGebra.",
+     "note": "π ≈ (9² + 19²/22)^¼. It constructs a sixth of the circumference (the mean proportional between OS and OB), so six times that length is compared with the circumference. Reconstructed from Ramanujan's description in “Modular equations and approximations to π” (1914); trisecting AO and the mean proportional use standard straightedge and compass steps. AI-assisted: the GeoGebra file was written by Claude; awaiting a person's check in GeoGebra. Shown to more places from November 2026 (it was 99.99999%), so that the chart reads in order: its precise value is 99.999999967%.",
      "origin": {
       "kind": "historical",
       "evidence": [
@@ -2656,7 +2688,9 @@ const ARCHIVE = {
    "who": "Jacob de Gelder",
    "year": "1849",
    "value": "π ≈ 355/113 = 3.14159292…",
-   "source": "Construction of 355/113, cited in histories of π."
+   "source": "Construction of 355/113, cited in histories of π.",
+   "draft": "Wanted/De-Gelder-355-113-draft.ggb",
+   "draft_note": "A construction of the value is drafted, to be checked against de Gelder's own figure before it is charted."
   },
   {
    "problem": "rtc",
@@ -2707,6 +2741,24 @@ const ARCHIVE = {
     "file": "GeoGebra Files/PA-99.998-Kochanski",
     "geogebra": "a8ama49f"
    }
+  ]
+ },
+ "holders": {
+  "Kochanski / Gordon": [
+   "Adam Adamandy Kochański",
+   "Edward James Gordon"
+  ],
+  "Adam Adamandy Kochanski": [
+   "Adam Adamandy Kochański"
+  ],
+  "Edward James Gordon": [
+   "Edward James Gordon"
+  ],
+  "Srinivasa Ramanujan": [
+   "Srinivasa Ramanujan"
+  ],
+  "Claude (Anthropic)": [
+   "Claude (Anthropic)"
   ]
  }
 };

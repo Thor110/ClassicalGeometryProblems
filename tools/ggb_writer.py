@@ -119,6 +119,10 @@ class Builder:
         self.cmd('Intersect', ins, [l]); self.point(l, pick, colour, show)
         return pick
 
+    def midpoint(self, l, a, b, show=False):
+        A, B = self.obj[a][1], self.obj[b][1]
+        self.cmd('Midpoint', [a, b], [l]); self.point(l, ((A[0] + B[0]) / 2, (A[1] + B[1]) / 2), show=show)
+
     def distance(self, l, a, b):
         self.cmd('Distance', [a, b], [l])
         self.xml.append(NUMERIC.format(l=l, v=v.dist(self.obj[a][1], self.obj[b][1])))

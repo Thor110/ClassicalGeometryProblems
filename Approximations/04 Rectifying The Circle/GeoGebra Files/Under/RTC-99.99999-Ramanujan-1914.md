@@ -7,7 +7,7 @@ Ramanujan's 1914 construction
 Srinivasa Ramanujan - 1914
 
 **Accuracy (%):**
-99.99999
+99.9999999
 (precise readout: 99.999999967941511700895634629114)
 
 **Oversized / Undersized:**

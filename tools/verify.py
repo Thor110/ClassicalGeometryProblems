@@ -740,10 +740,15 @@ def main():
             results[key] = res
     stray = [g for g in glob.glob(os.path.join(ROOT, 'Approximations', '*', 'GeoGebra Files', '*', '*.ggb')) if os.path.normpath(g) not in charted]
     bad = 0
+    # An entry the maintainer has already looked at can carry known_issue (why it is flagged, and what is
+    # being done): it is still listed, but does not fail the check, so only new problems do.
+    known = {e['id']: e['known_issue'] for p in archive['problems'] for e in p['entries'] if e.get('known_issue')}
     for k, v in results.items():
         mark = {'reproduced': 'OK ', 'attention': '!! ', 'no-file': '-- ', 'manual': '.. '}[v['status']]
-        if v['status'] == 'attention': bad += 1
-        print(mark + k.ljust(16) + ' ' + (('%.10f%%  ' % v['accuracy']) if 'accuracy' in v else '') + v['summary'])
+        if v['status'] == 'attention':
+            if k in known: mark = '!~ '
+            else: bad += 1
+        print(mark + k.ljust(16) + ' ' + (('%.10f%%  ' % v['accuracy']) if 'accuracy' in v else '') + v['summary'] + (('  [known: %s]' % known[k]) if k in known and v['status'] == 'attention' else ''))
         if v['status'] in ('attention', 'manual'):
             for c in v['checks']: print('      ' + c)
     for g in stray: print('?? not on any chart: ' + os.path.relpath(g, ROOT)); bad += 1
@@ -773,7 +778,7 @@ def main():
         for e in pr['entries']:
             if (e.get('origin') or {}).get('kind') not in ORIGINS:
                 print('?? %s has no origin (one of %s; see the note at the top of pages/archive-data.js)' % (e['id'], ', '.join(sorted(ORIGINS)))); bad += 1
-    print('\n%d entries, %d need attention' % (len(results), bad))
+    print('\n%d entries, %d need attention%s' % (len(results), bad, (', %d known issue%s' % (len(known), '' if len(known) == 1 else 's')) if known else ''))
     sys.exit(1 if bad else 0)
 
 if __name__ == '__main__':

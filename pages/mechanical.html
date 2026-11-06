@@ -86,8 +86,8 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="common.js"></script>
 <script>
-const $ = id => document.getElementById(id);
 const PHASES = [
   ['Measure', 'Lay the rope around the circular template from A to B. Its length is the arc: r × θ.'],
   ['Divide', 'Weave the rope on the jig and pull the boards apart. It settles into three equal lengths; mark the two division points.'],
@@ -109,10 +109,7 @@ function draw() {
   $('phaseText').textContent = PHASES[phase][1] + `  (θ = ${deg}°, each third ${(deg / 3).toFixed(2)}°)`;
   document.querySelectorAll('#phases button').forEach((b, i) => b.classList.toggle('active', i === phase));
 
-  const cv = $('cv'), ctx = cv.getContext('2d'), dpr = window.devicePixelRatio || 1;
-  const W = cv.clientWidth, H = cv.clientHeight;
-  cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.clearRect(0, 0, W, H);
+  const cv = $('cv'), {ctx, W, H} = fitCanvas(cv);
   ctx.font = '13px Courier New'; ctx.lineCap = 'round';
 
   const wide = W > 600;

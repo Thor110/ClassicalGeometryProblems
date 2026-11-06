@@ -50,6 +50,10 @@ What the AI check can and cannot do:
 - **People:** verify any entry and post your reproduction in a [verification issue](https://github.com/Thor110/ClassicalGeometryProblems/issues/new?template=verification.yml).
   Once the maintainer has checked it, you are added to the register and credited on that entry.
   Verifying your own method counts as **self-verification** (see below).
+  Give your **full name**. A verification counts as self-verification only when it is by one of the
+  people who hold the method, matched by full name (`holders` in `pages/archive-data.js` lists the
+  full names behind each holder, such as Kochański and Gordon for the crossover methods), so someone
+  who merely shares a surname with a holder is counted as independent.
 - **AI systems:** open an issue naming the system, its maker and its method. The method must be
   reproducible by others. AI systems are listed by name and method, never as people.
 
@@ -127,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-06). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (64)
+### Not verified by a person yet (65)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -180,8 +184,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, oversized 99.999989% · Search find: 5 circles, 3 lines (dtc-over-99.999989): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999989-Claude.ggb`
 - [ ] Doubling The Cube, oversized 99.999992% · Search find: 6 circles, 1 lines (dtc-over-99.999992): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999992-Claude.ggb`
 - [ ] Doubling The Cube, oversized 99.999998% · Search find: 7 circles, 2 lines (dtc-over-99.999998): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.999998-Claude.ggb`
+- [ ] Doubling The Cube, undersized 99.214% · One Fifth Of The Circle (dtc-under-99.214): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.214-Kochanski-Gordon.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
-- [ ] Rectifying The Circle, undersized 99.99999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
+- [ ] Rectifying The Circle, undersized 99.9999999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.99999% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
 - [ ] Rectifying The Circle, oversized 99.992% · Search find: 4 circles, 1 lines (half the circumference) (rtc-over-99.992): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.992-Claude.ggb`
 - [ ] Rectifying The Circle, oversized 99.999999% · Search find: 5 circles, 2 lines (rtc-over-99.999999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999999-Claude.ggb`

@@ -138,16 +138,9 @@ Repository: https://github.com/Thor110/ClassicalGeometryProblems</textarea>
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="common.js"></script>
 <script>
-document.querySelectorAll('[data-copy]').forEach(b => {
-  const label = b.textContent;          // kept once, so quick repeat clicks cannot leave it saying "Copied"
-  let timer = null;
-  b.onclick = async () => {
-    const t = document.getElementById(b.dataset.copy);
-    try { await navigator.clipboard.writeText(t.value); } catch { t.select(); document.execCommand('copy'); }
-    b.textContent = 'Copied'; clearTimeout(timer); timer = setTimeout(() => b.textContent = label, 1500);
-  };
-});
+document.querySelectorAll('[data-copy]').forEach(b => { const t = document.getElementById(b.dataset.copy); copyButton(b, () => t.value, t); });
 </script>
 </body>
 </html>
