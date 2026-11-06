@@ -312,12 +312,6 @@ const AI_CHECKS = {
    "status": "reproduced",
    "summary": "Rebuilt from 2 given object(s); accuracy reproduced."
   },
-  "stc-under-99.253": {
-   "id": "stc-under-99.253",
-   "checks": [],
-   "status": "no-file",
-   "summary": "No GeoGebra file in the repository yet, so it cannot be rebuilt here."
-  },
   "stc-under-99.150": {
    "id": "stc-under-99.150",
    "checks": [

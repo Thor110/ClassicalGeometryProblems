@@ -69,7 +69,15 @@ const ARCHIVE = {
      "file": "GeoGebra Files/Squared Circle Over/99.283",
      "note": "Re-measured at full precision in November 2026: the chart listed 99.253% oversized.",
      "verified": [],
-     "disputes": []
+     "disputes": [
+      {
+       "status": "closed",
+       "kind": "duplicate",
+       "by": "Claude (Anthropic), AI checker",
+       "summary": "The undersized 99.253% entry and this entry are the same square, from the same starting points and the same circle. The undersized entry's file (recovered from GeoGebra, geogebra.org/geometry/anbgnhsq) draws it with 4 more lines and measures 99.283% oversized, not undersized.",
+       "outcome": "Upheld: the undersized 99.253% entry was removed as a duplicate (November 2026)."
+      }
+     ]
     },
     {
      "id": "stc-over-99.356",
@@ -201,24 +209,6 @@ const ARCHIVE = {
      "note": "Re-measured at full precision in November 2026: the chart listed 99.644% undersized.",
      "verified": [],
      "disputes": []
-    },
-    {
-     "id": "stc-under-99.253",
-     "side": "under",
-     "marks": "",
-     "holder": "Edward James Gordon",
-     "method": "Circling the Square (additional)",
-     "circles": 13,
-     "lines": 17,
-     "acc": "99.253",
-     "precise": "",
-     "date": "14-12-2024",
-     "geogebra": "anbgnhsq",
-     "file": "",
-     "note": "The GeoGebra file for this entry turned out to be a copy of the oversized 99.253% construction, so it was removed. The construction is still on GeoGebra (link), and needs saving to the repository again.",
-     "verified": [],
-     "disputes": [],
-     "notes": "GeoGebra Files/Squared Circle Under/99.253"
     },
     {
      "id": "stc-under-99.150",
