@@ -16,23 +16,23 @@ All approximations of these problems are intended to remain strictly Euclidean, 
 
 1. Squaring The Circle - This is the problem of constructing a square with the same area as any given circle.
 
-[Squaring The Circle - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/01%20Squaring%20The%20Circle/STC-ApproximationChart.pdf)
+[Squaring The Circle - Approximation Chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#stc)
 
 2. Trisecting An Angle - This is the problem of trisecting any given angle.
 
-[Trisecting An Angle - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/02%20Trisecting%20An%20Angle/TAA-ApproximationChart.pdf)
+[Trisecting An Angle - Approximation Chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#taa)
 
 3. Doubling The Cube - This is the problem of doubling the volume of any given cube.
 
-[Doubling The Cube - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/03%20Doubling%20The%20Cube/DTC-ApproximationChart.pdf)
+[Doubling The Cube - Approximation Chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#dtc)
 
 4. Rectifying The Circle - This is a problem similar to arc rectification, but instead of transferring the length of a given arc, it is intended to transfer the length of the circumference of any given circle.
 
-[Rectifying The Circle - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/04%20Rectifying%20The%20Circle/RTC-ApproximationChart.pdf)
+[Rectifying The Circle - Approximation Chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#rtc)
 
 5. Arc Rectification - This is the problem of rectifying the length of any given arc, that is to transfer the length of any given arc to a newly constructed line (Sometimes referred to as “rectifying the circle” when applied to the entire circumference).
 
-[Arc Rectification - Approximation Chart](https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Approximations/05%20Arc%20Rectification/AR-ApproximationChart.pdf)
+[Arc Rectification - Approximation Chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#ar)
 
 It is my belief that rectification of any given arc is actually impossible, due to the inherent differences present in any given arc that would result in a generalised method being inapplicable to any other given arc.
 
@@ -54,7 +54,7 @@ All geometric approximations should report measured accuracy to three decimal pl
 
 If your GeoGebra file produces a more precise numeric readout, include that raw value in the submission for reference.
 
-Please refer to the file "SUBMISSION_TEMPLATE.md" for the submission template.
+Please refer to the file "SUBMISSION_TEMPLATE.md" for the submission template, or use the [submission page](https://thor110.github.io/ClassicalGeometryProblems/pages/submit.html), which works out your accuracy and opens a submission form for you.
 
 ## Existing Approximations
 
@@ -70,8 +70,13 @@ When approximations with higher degrees of accuracy are presented to me, I will 
 
 An approximation chart for each problem exists to help people more easily sift through approximations, this helps to keep things organised.
 
-Both a formatted PDF version and the editable OpenDocument Spreadsheet (.ods) source file are included.  
-Users are encouraged to reference the PDF for readability and the .ods file for data verification or contribution.
+The charts live on the [website](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html), and their data is a single file, [pages/archive-data.js](pages/archive-data.js). The earlier PDF and spreadsheet versions are kept in the repository's history.
+
+[tools/verify.py](tools/verify.py) rebuilds every GeoGebra file and checks it against that data, so the numbers in the charts, the files and the notes cannot quietly drift apart.
+
+### Method names
+
+**Circling the Square**, **Array Casting** and **Cube 2 Tesseract** are the names I gave my own families of methods (for squaring the circle, trisecting an angle and doubling the cube), and the chapter titles of my paper. They are not standard terms. "Circling the Square (additional)" marks later variants that came after the paper's v1.0 and v2.0.
 
 ### 1. Squaring The Circle
 
@@ -81,15 +86,13 @@ Srinivasa Ramanujans method for approximating this problem is the most accurate 
 
 I wrote a paper on the three primary classic geometry problems which presents two different methods for approximating each problem.
 
-- `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
-[Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf) · [Read online](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-three-classic-geometry-problems.html)
+[Read the paper](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-three-classic-geometry-problems.html)
 
 ### 3. Doubling The Cube
 
 I wrote a paper on the three primary classic geometry problems which presents two different methods for approximating each problem.
 
-- `/Approximations/07 Accompanying Papers/Three Classic Geometry Problems v8.pdf`
-[Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/Three%20Classic%20Geometry%20Problems%20v8.pdf) · [Read online](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-three-classic-geometry-problems.html)
+[Read the paper](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-three-classic-geometry-problems.html)
 
 ### 4. Rectifying The Circle
 
@@ -97,8 +100,7 @@ I believe that the most accurate approximation of rectifying the circle would re
 
 However for the sake of presenting different methods and until a more accurate singular method is discovered, I have chosen to list my own approximation which I discovered recently.
 
-- `/Approximations/07 Accompanying Papers/EuclideanCircumferenceApproximation.pdf`
-[Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Approximations/07%20Accompanying%20Papers/EuclideanCircumferenceApproximation.pdf) · [Read online](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-euclidean-circumference-approximation.html)
+[Read the paper](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-euclidean-circumference-approximation.html)
 
 ### 5. Arc Rectification
 
@@ -125,8 +127,7 @@ Currently, no verified or submitted mechanical solutions exist for this problem.
 
 I devised a mechanical solution which lies outside the Euclidean rules for triscting an angle.
 
-- `/Mechanical Solutions/07 Accompanying Papers/Rope Around The Clock.pdf`
-[Paper](https://github.com/Thor110/ClassicalGeometryProblems/tree/main/Mechanical%20Solutions/07%20Accompanying%20Papers/Rope%20Around%20The%20Clock.pdf) · [Read online](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-rope-around-the-clock.html)
+[Read the paper](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-rope-around-the-clock.html)
 
 ### 3. Doubling The Cube <a name="mech-3-doubling-the-cube"></a>
 
@@ -146,9 +147,9 @@ My mechanical method for trisecting an angle can be adapted for approximating Pi
 
 ## Understanding Impossibility
 
-The impossibility of these problems under Euclidean rules arises from the transcendental nature of π and cube roots of non-rational numbers.
+Straightedge-and-compass constructions generate only numbers obtainable through nested square roots of rationals, and every such number is a root of a polynomial whose degree is a power of two.
 
-Straightedge-and-compass constructions generate only numbers obtainable through nested square roots of rationals. Hence exact solutions are impossible; only approximations exist.
+Squaring and rectifying the circle need π, which is transcendental (Lindemann, 1882): it is not the root of any such polynomial. Doubling the cube needs ∛2, and trisecting a general angle needs the root of a cubic (for 60°, 8x³ − 6x − 1 = 0). Neither cubic factors, so their degree is 3, not a power of two (Wantzel, 1837). Hence exact solutions are impossible; only approximations exist.
 
 As such, one can only approximate the problems with varying degrees of accuracy.
 
@@ -170,22 +171,29 @@ GeoGebra provides an excellent suite of tools for exploring and discovering geom
 
 Euclid's Postulates : https://people.math.harvard.edu/~ctm/home/text/class/harvard/113/97/html/euclid.html
 
-## Community Verification
+## Verification
 
-Instructions for independent verification of submitted constructions (under development).
+Every entry is checked and its record is public: who verified it, whether they are a person or an AI, and any disputes. People and AI verifiers are listed separately, and anyone can join.
+
+- The rules, how to request a verification, and how to dispute an entry: [VERIFICATION.md](VERIFICATION.md)
+- The registers and every entry's current status: [the verification page](https://thor110.github.io/ClassicalGeometryProblems/pages/verification.html)
+- Submissions, verifications and disputes are GitHub issues, with a form for each: [open an issue](https://github.com/Thor110/ClassicalGeometryProblems/issues/new/choose)
 
 ---
 
-Last updated: [07-11-2025]
+Last updated: [06-11-2026]
 
 Maintainer: Edward James Gordon
 
 📁 Repository structure:
-- `/Approximations/` — Verified Euclidean constructions.
+- `/Approximations/` — Euclidean constructions: a GeoGebra file and notes for each.
 - `/Mechanical Solutions/` — Non-Euclidean or mechanical methods.
+- `/pages/` — The website, including the chart data (`archive-data.js`) and the papers.
+- `/tools/verify.py` — Rebuilds every GeoGebra file and checks it against the charts.
+- `VERIFICATION.md` — How entries are verified and disputed.
 
 If you discover an error, typo, or have suggestions for improving this document, please feel free to open an issue or pull request.
 
-All constructions listed in this archive have been independently verified by the author using GeoGebra’s measurement tools.
+All constructions listed in this archive have been checked by the author using GeoGebra’s measurement tools, and rebuilt and recomputed by an independent automated check. Each entry's record is on the [verification page](https://thor110.github.io/ClassicalGeometryProblems/pages/verification.html).
 
 Contributors are encouraged to verify each construction independently and report any discrepancies or improvements via issue or submission.

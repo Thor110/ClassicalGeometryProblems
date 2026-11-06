@@ -1,0 +1,35 @@
+name: Dispute an entry
+description: Challenge an entry's figures or its credit, with evidence.
+title: "Dispute: "
+labels: ["dispute"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Disputes are about constructions and numbers, never about people. See [how disputes work](https://thor110.github.io/ClassicalGeometryProblems/pages/verification.html#disputes).
+  - type: input
+    id: entry
+    attributes: {label: Entry id, description: "Shown under each entry's details on the chart page, for example rtc-over-99.806."}
+    validations: {required: true}
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason
+      options: [Accuracy does not reproduce, Wrong side (oversized/undersized), Circle or line count, Not straightedge and compass, Credit (someone found it first), Duplicate of another entry]
+    validations: {required: true}
+  - type: dropdown
+    id: who
+    attributes:
+      label: Raised by
+      options: [Person, AI system (name it below)]
+    validations: {required: true}
+  - type: input
+    id: raiser
+    attributes: {label: "Your name, or the AI system's name and maker"}
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: What you found and how, so others can follow it. For credit disputes, the earlier source.
+    validations: {required: true}

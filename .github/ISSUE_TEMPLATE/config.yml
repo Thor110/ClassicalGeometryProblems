@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Verification rules
+    url: https://thor110.github.io/ClassicalGeometryProblems/pages/verification.html
+    about: How entries are checked, who checks them, and how disputes work.

@@ -13,7 +13,7 @@ Mechanical Solution - 100% accurate, not accounting for human error.
 Verification can be inferred from the simplicity of the mechanism: a rope laid around a circle naturally measures the circumference, enabling direct transfer or division of arc lengths.
 
 **File(s):**
-"/Mechanical Solutions/07 Accompanying Papers/Rope Around The Clock.pdf"
+[Rope Around The Clock](https://thor110.github.io/ClassicalGeometryProblems/pages/paper-rope-around-the-clock.html)
 
 **Description:**
 This paper details the development of the "Rope Around The Clock" method, a mechanical approach that can be applied to multiple classical geometry problems.

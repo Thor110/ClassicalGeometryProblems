@@ -9,6 +9,12 @@
   #ladder{height:260px;cursor:crosshair;}
   #tip{min-height:1.6em;margin-top:8px;font-size:14px;color:#888;text-align:center;letter-spacing:0.05em;}
   tr.hl td{background:#14141f;}
+  tr[data-key]{cursor:pointer;}
+  .badge{display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #2a2a3a;padding:1px 6px;white-space:nowrap;}
+  .badge.verified{color:#4a9;border-color:#2a4a3a;} .badge.self-verified{color:#ca6;border-color:#4a3e2a;}
+  .badge.unverified{color:#666;} .badge.disputed{color:#e55;border-color:#5a2a2a;}
+  #detail .rec{border-top:1px solid #1e1e2a;padding-top:10px;margin-top:10px;}
+  #detail .rec-title{font-size:13px;color:#666;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;}
   tr.hl td.acc{color:#4a9;}
 </style>
 </head>
@@ -42,9 +48,23 @@
     <button class="small active" data-filter="all">All</button>
     <button class="small" data-filter="base">Base Ruleset Only</button>
     <button class="small" data-filter="nomicro">Hide µ Micro Scale</button>
+    <button class="small" data-filter="verified">Verified Only</button>
   </div>
   <div class="table-wrap"><table id="table"></table></div>
   <div class="small-text" style="margin-top:12px;" id="downloads"></div>
+</div>
+
+<div class="box" id="detail">
+  <div class="box-title">Entry Details</div>
+  <div class="small-text" style="text-align:center;">Click a row or a point on the ladder to see who verified it, what the AI check found, and any disputes.</div>
+</div>
+
+<div class="box" id="wanted"></div>
+
+<div class="box">
+  <div class="box-title">Method Names</div>
+  <div class="box-text">Names such as <b>Circling the Square</b>, <b>Array Casting</b> and <b>Cube 2 Tesseract</b> are the names Edward James Gordon gave his own families of methods, and the chapter titles of his paper. They are not standard terms, and not the names of the problems themselves:</div>
+  <ul id="families"></ul>
 </div>
 
 <div class="box">
@@ -63,7 +83,7 @@
         <li><span class="mark">~</span> <b>Contested</b>: the original discoverer is being sought.</li>
         <li><span class="mark">@</span> <b>Too simple</b>: likely found many times before.</li>
         <li><span class="mark">µ</span> <b>Micro scale edits</b>: some steps would be hard to reproduce on paper.</li>
-        <li><b>Verified</b>: checked with GeoGebra's measuring tools. Every construction listed so far is verified.</li>
+        <li><span class="badge verified">Verified</span> reproduced by someone other than its method holder, a person or an AI checker. <span class="badge self-verified">Self-verified</span> checked only by its method holder. <span class="badge disputed">Disputed</span> an open dispute. <a href="verification.html">The rules</a>.</li>
       </ul>
     </div>
   </div>
@@ -81,6 +101,8 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
@@ -112,6 +134,7 @@ function visible(e) {
   const n = x => typeof x === 'number' ? x : 0;
   if (filter === 'base') return n(e.circles) <= 25 && n(e.lines) <= 40;
   if (filter === 'nomicro') return !e.marks.includes('µ');
+  if (filter === 'verified') return statusOf(e).status === 'verified';
   return true;
 }
 
@@ -130,7 +153,7 @@ function render() {
     ['Method holders', people, ''],
   ].map(([l, v, c]) => `<div class="meter"><div class="mlabel">${l}</div><div class="mval ${c}">${v}</div></div>`).join('');
 
-  // The table mirrors the .ods charts: oversized ranks count down to perfection, undersized count up from it.
+  // The table mirrors the original charts: oversized ranks count down to perfection, undersized count up from it.
   const over = shown.filter(e => e.side === 'over').sort((a, b) => b.rank - a.rank);
   const under = shown.filter(e => e.side === 'under').sort((a, b) => a.rank - b.rank);
   const row = e => {
@@ -146,20 +169,21 @@ function render() {
       <td>${e.circles}</td><td>${e.lines}</td>
       <td class="acc">${e.acc}%</td>
       <td class="precise">${e.precise ? e.precise + '%' : ''}</td>
-      <td class="muted">${e.date}</td>
+      <td>${badge(e)}</td>
       <td>${links.join(' · ')}</td></tr>`;
   };
   const group = (label, n) => `<tr class="group"><td colspan="9">${label} · ${n} of 15 places filled${n < 15 ? ' · every open place is an invitation' : ''}</td></tr>`;
   $('table').innerHTML = `
-    <tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Date</th><th>Links</th></tr>
+    <tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr>
     ${group('↑ Oversized', all.filter(e => e.side === 'over').length)}
     ${over.map(row).join('') || '<tr><td colspan="9" class="muted">No oversized methods charted yet.</td></tr>'}
     <tr class="perfect"><td colspan="9">0 · Perfection · 100% · impossible with straightedge and compass</td></tr>
     ${under.map(row).join('') || '<tr><td colspan="9" class="muted">No undersized methods charted yet.</td></tr>'}
     ${group('↓ Undersized', all.filter(e => e.side === 'under').length)}`;
-  $('table').querySelectorAll('tr[data-key]').forEach(tr => tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); });
+  $('table').querySelectorAll('tr[data-key]').forEach(tr => tr.onclick = () => { highlighted = tr.dataset.key; mark(); drawLadder(); renderDetail(); });
 
-  $('downloads').innerHTML = `Source chart: <a class="link" href="${repoFile(p.folder + '/' + p.chart + '.pdf')}" target="_blank">PDF</a> · <a class="link" href="${repoFile(p.folder + '/' + p.chart + '.ods')}">OpenDocument spreadsheet</a>. Hover a row for its method name and notes; click it to find it on the ladder.`;
+  $('downloads').innerHTML = `Click a row for its full record, and to find it on the ladder. The chart's data is <a class="link" href="${REPO}/blob/main/pages/archive-data.js" target="_blank" rel="noopener">archive-data.js</a> in the repository.`;
+  renderWanted(); renderDetail();
   mark();
   drawLadder();
 }
@@ -229,9 +253,52 @@ function describe(p) {
 $('ladder').addEventListener('mousemove', ev => { const p = nearest(ev); $('tip').textContent = p ? describe(p) : ' '; });
 $('ladder').addEventListener('click', ev => {
   const p = nearest(ev); if (!p) return;
-  highlighted = p.key; $('tip').textContent = describe(p); mark(); drawLadder();
+  highlighted = p.key; $('tip').textContent = describe(p); mark(); drawLadder(); renderDetail();
   const tr = document.querySelector(`#table tr[data-key="${p.key}"]`); if (tr) tr.scrollIntoView({block: 'nearest', behavior: 'smooth'});
 });
+
+function badge(e) {
+  const s = statusOf(e);
+  const by = s.status === 'verified' ? (s.independent.length ? ' · person' : '') + (s.ai && s.ai.status === 'reproduced' ? ' · AI' : '') : '';
+  return `<span class="badge ${s.status}">${s.status.replace('-', ' ')}${by}</span>`;
+}
+
+function renderDetail() {
+  const e = current.entries.find(x => x.side + x.rank === highlighted);
+  if (!e) { $('detail').innerHTML = '<div class="box-title">Entry Details</div><div class="small-text" style="text-align:center;">Click a row or a point on the ladder to see who verified it, what the AI check found, and any disputes.</div>'; return; }
+  const s = statusOf(e);
+  const people = s.people.map(v => `<li>${v.by}${isHolder(v.by, e.holder) ? ' <span class="muted">(method holder: self-verification)</span>' : ''}${v.how ? ' · ' + v.how : ''}${v.date ? ' · ' + v.date : ''}</li>`).join('') || '<li class="muted">No person has verified it yet.</li>';
+  let ai = '<li class="muted">No AI check yet.</li>';
+  if (s.ai) {
+    const head = {reproduced: '<span class="good">Reproduced</span>', attention: '<span class="hot">Does not match the chart</span>', manual: '<span class="warm">Needs checking by hand</span>', 'no-file': '<span class="muted">No GeoGebra file to rebuild</span>'}[s.ai.status];
+    ai = `<li>Claude (Anthropic), running tools/verify.py on ${AI_CHECKS.run}: ${head}${s.ai.accuracy != null ? ' · file measures <b>' + s.ai.accuracy.toFixed(10) + '%</b>' : ''}</li>` +
+      (s.ai.measured ? `<li class="muted">${s.ai.measured}</li>` : '') +
+      (s.ai.checks || []).map(c => `<li class="muted">${c}</li>`).join('');
+  }
+  const disputes = (e.disputes || []).map(d => `<li><b>${d.status}</b> · ${d.kind} · raised by ${d.by} · ${d.summary}${d.issue ? ` · <a href="${REPO}/issues/${d.issue}" target="_blank" rel="noopener">issue</a>` : ''}${d.outcome ? ' · outcome: ' + d.outcome : ''}</li>`).join('') || '<li class="muted">None.</li>';
+  const ask = (t, tpl) => `${REPO}/issues/new?template=${tpl}&title=${encodeURIComponent(t + ': ' + e.id)}&entry=${encodeURIComponent(e.id)}`;
+  $('detail').innerHTML = `<div class="box-title">${current.name} · ${e.side}sized #${e.rank}</div>
+    <div class="box-text" style="text-align:center;"><b>${e.acc}%</b> · ${e.holder}${e.method ? ' · ' + e.method : ''}${e.date ? ' · ' + e.date : ''} · ${e.circles} circles, ${e.lines} lines ${badge(e)}</div>
+    ${e.note ? `<div class="box-text" style="text-align:center;">${e.note}</div>` : ''}
+    <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
+    <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
+    <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
+    <div class="controls" style="margin-top:12px;">
+      <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Verification', 'verification.yml')}" target="_blank" rel="noopener">I Verified This</a>
+      <a class="btn-link small" style="padding:8px 14px;font-size:14px;" href="${ask('Dispute', 'dispute.yml')}" target="_blank" rel="noopener">Dispute This</a>
+    </div>
+    <div class="small-text" style="text-align:center;">Entry id: <span class="mono">${e.id}</span></div>`;
+}
+
+function renderWanted() {
+  const w = ARCHIVE.wanted.filter(x => x.problem === current.id);
+  $('wanted').style.display = w.length ? '' : 'none';
+  $('wanted').innerHTML = `<div class="box-title">Wanted: Historical Constructions</div>
+    <div class="box-text">Known approximations from history that are not on this chart yet, because nobody has reconstructed and verified them here. Reconstruct one in GeoGebra from its original source and <a href="submit.html">submit it</a>, credited to its discoverer.</div>
+    <ul>${w.map(x => `<li><b>${x.who}</b> (${x.year}): ${x.value}. <span class="muted">${x.source}</span></li>`).join('')}</ul>`;
+}
+
+$('families').innerHTML = ARCHIVE.families.map(f => `<li><b>${f.name}</b> (${PROBLEMS.find(p => p.id === f.problem).name}): ${f.about}</li>`).join('');
 
 pick();
 </script>

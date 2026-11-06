@@ -1,0 +1,61 @@
+name: Submit an approximation
+description: Add a straightedge and compass approximation to the charts.
+title: "Submission: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting. Every honest attempt is welcome, whatever its accuracy.
+        The [submission page](https://thor110.github.io/ClassicalGeometryProblems/pages/submit.html) has a calculator that works out your accuracy and can fill this form in for you.
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem
+      options: [Squaring the Circle, Trisecting an Angle, Doubling the Cube, Rectifying the Circle, Arc Rectification, π Approximation]
+    validations: {required: true}
+  - type: input
+    id: method
+    attributes: {label: Method name}
+  - type: input
+    id: author
+    attributes: {label: "Author (name or pseudonym) and date, DD-MM-YYYY"}
+    validations: {required: true}
+  - type: input
+    id: accuracy
+    attributes: {label: "Accuracy (%)", description: "Three decimal places, truncated (never rounded). Add the full readout too if you have it."}
+    validations: {required: true}
+  - type: dropdown
+    id: side
+    attributes:
+      label: Oversized or undersized
+      options: [Oversized, Undersized]
+    validations: {required: true}
+  - type: input
+    id: circles
+    attributes: {label: Number of circles}
+  - type: input
+    id: lines
+    attributes: {label: Number of lines}
+  - type: input
+    id: geogebra
+    attributes: {label: Public GeoGebra link, description: "So anyone can check it. You can also attach the .ggb file below."}
+    validations: {required: true}
+  - type: input
+    id: verify
+    attributes: {label: Verification method, value: GeoGebra measuring tools}
+  - type: textarea
+    id: description
+    attributes: {label: Description, description: The geometric idea behind the construction, and how it differs from existing methods.}
+  - type: textarea
+    id: notes
+    attributes: {label: Notes and limitations}
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: The construction uses only a straightedge and compass, apart from the given figure.
+          required: true
+        - label: I have said in the notes if an AI helped find or refine it.
+          required: false

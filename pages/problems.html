@@ -82,6 +82,8 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
 // One box per charted problem, with its best oversized and undersized entries.
@@ -98,10 +100,9 @@ for (const p of PROBLEMS) {
     <div class="box-text">${p.task} <span class="muted">Target: ${p.target}</span></div>
     <div class="box-text">${p.why}</div>
     <ul>${line('Best oversized', best('over'))}${line('Best undersized', best('under'))}</ul>
+    ${ARCHIVE.families.filter(f => f.problem === p.id).map(f => `<div class="box-text small-text"><b>${f.name}</b> on this chart is a method name, not the problem's name: ${f.about}</div>`).join('')}
     <div class="box-text">
-      <a href="charts.html#${p.id}">Open the chart →</a> &nbsp;
-      <a href="${repoFile(p.folder + '/' + p.chart + '.pdf')}" target="_blank">Chart PDF</a> &nbsp;
-      <a href="${repoFile(p.folder + '/' + p.chart + '.ods')}">Chart .ods</a>
+      <a href="charts.html#${p.id}">Open the chart →</a>
     </div>`;
   list.appendChild(box);
 }

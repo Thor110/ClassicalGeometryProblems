@@ -25,7 +25,8 @@
     <li>Draw your construction in <a href="https://www.geogebra.org/geometry" target="_blank" rel="noopener">GeoGebra</a> using only circles and lines: straightedge and compass, no measuring.</li>
     <li>Measure the constructed value and the true value with GeoGebra's tools, and work out the accuracy with the calculator below.</li>
     <li>Fill in the form below. It writes your submission in the archive's <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_TEMPLATE.md" target="_blank" rel="noopener">template</a>.</li>
-    <li>Open it as a GitHub issue with the button below, or as a pull request adding your <code>.ggb</code> and <code>.md</code> files beside the others. Include a public GeoGebra link so anyone can check it.</li>
+    <li>Open the submission form with the button below (it fills in what it can), or send a pull request adding your <code>.ggb</code> and <code>.md</code> files beside the others. Include a public GeoGebra link so anyone can check it.</li>
+    <li>Your entry is then verified under the <a href="verification.html">verification rules</a>, by people and by the automated check, and its record is shown on the chart.</li>
   </ol>
   <div class="box-text">
     Not sure it's good enough? Submit it anyway. A first attempt at 95% teaches as much as a record, and the charts have 15 places on each side for a reason.
@@ -76,7 +77,7 @@
     <div><label for="fAuthor">Author (name or pseudonym)</label><input id="fAuthor"></div>
     <div><label for="fDate">Date (DD-MM-YYYY)</label><input id="fDate"></div>
     <div><label for="fVerify">Verification method</label><input id="fVerify" value="GeoGebra measuring tools"></div>
-    <div><label for="fFiles">File(s) and GeoGebra link</label><input id="fFiles" placeholder="method.ggb, https://www.geogebra.org/geometry/..."></div>
+    <div><label for="fFiles">Public GeoGebra link</label><input id="fFiles" placeholder="https://www.geogebra.org/geometry/..."></div>
   </div>
   <label for="fDesc">Description</label>
   <textarea id="fDesc" placeholder="The geometric idea behind the construction, and how it differs from existing methods."></textarea>
@@ -87,7 +88,7 @@
   <textarea id="out" readonly></textarea>
   <div class="controls" style="margin-top:12px;">
     <button class="small" id="copy">Copy Markdown</button>
-    <button class="small" id="issue">Open As GitHub Issue</button>
+    <button class="small" id="issue">Open The Submission Form</button>
     <button class="small" id="save">Download .md</button>
   </div>
 </div>
@@ -115,6 +116,8 @@
   Straightedge &amp; Compass · Open Archive v1.0
 </div>
 
+<script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
@@ -221,7 +224,13 @@ $('copy').onclick = async () => {
 $('issue').onclick = () => {
   const sel = $('fProblem'), title = 'Submission: ' + sel.options[sel.selectedIndex].text.replace(/^\d+\.\s*/, '') +
     (result ? ' · ' + truncate(result.acc, 3) + '%' : '') + ($('fMethod').value ? ' · ' + $('fMethod').value : '');
-  window.open(REPO + '/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(build()), '_blank', 'noopener');
+  // Opens the submission form with what can be filled in already; the problem and side are picked there.
+  const q = {template: 'submission.yml', title,
+    method: $('fMethod').value, author: [$('fAuthor').value, $('fDate').value].filter(Boolean).join(' - '),
+    accuracy: result ? truncate(result.acc, 3) + ' (precise readout ' + result.acc.toFixed(12) + ')' : '',
+    circles: result && !isNaN(result.circles) ? result.circles : '', lines: result && !isNaN(result.lines) ? result.lines : '',
+    geogebra: $('fFiles').value, verify: $('fVerify').value, description: $('fDesc').value, notes: $('fNotes').value};
+  window.open(REPO + '/issues/new?' + Object.entries(q).filter(([, v]) => v !== '').map(([k, v]) => k + '=' + encodeURIComponent(v)).join('&'), '_blank', 'noopener');
 };
 $('save').onclick = () => {
   const a = document.createElement('a');

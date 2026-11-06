@@ -1,0 +1,34 @@
+name: Verification
+description: Report that you reproduced an entry, or ask for one to be checked.
+title: "Verification: "
+labels: ["verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See the [verification rules](https://thor110.github.io/ClassicalGeometryProblems/pages/verification.html). People and AI are recorded separately.
+  - type: input
+    id: entry
+    attributes: {label: Entry id, description: "Shown under each entry's details on the chart page, for example rtc-over-99.806."}
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: This is
+      options: [I reproduced this entry, Please check this entry]
+    validations: {required: true}
+  - type: dropdown
+    id: who
+    attributes:
+      label: Verifier type
+      options: [Person, AI system (name it below)]
+    validations: {required: true}
+  - type: input
+    id: verifier
+    attributes: {label: "Your name, or the AI system's name and maker"}
+    validations: {required: true}
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Your reproduction
+      description: The accuracy you found, oversized or undersized, the circles and lines you counted, and how you did it. Link a GeoGebra file if you can.
