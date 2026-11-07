@@ -1097,6 +1097,78 @@ const ARCHIVE = {
       ]
      },
      "square": "q"
+    },
+    {
+     "id": "stc-under-99.318",
+     "side": "under",
+     "marks": "",
+     "holder": "A. H. Anglin",
+     "method": "Anglin's second quadrature",
+     "circles": 4,
+     "lines": 14,
+     "acc": "99.318",
+     "precise": "99.318851152342512046872017519779",
+     "date": "1884",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.318-Anglin",
+     "note": "E a corner of the inscribed square; the circle about E with the circle's radius cuts the two sides of the inscribed square through E at I and J; IJ produced meets the circle at P; the parallel to a side of the square about the circle, through P and between the diagonals, is the side: √2 − 1 + √(2√2 − 1) = 1.76640701 radii.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 165-167, construction 2, read from a second scan of the volume (Internet Archive, messengermathem00taylgoog), whose text is cleaner than the first (messengermathem06glaigoog)",
+       "redrawn in November 2026; the scan names the circle's radius as \"EA\", but only the circle's own radius gives Anglin's ON = √2 − 1 and his value 1.76640701, which the rebuilt figure gives"
+      ]
+     }
+    },
+    {
+     "id": "stc-under-99.985",
+     "side": "under",
+     "marks": "",
+     "holder": "A. H. Anglin",
+     "method": "Anglin's third quadrature",
+     "circles": 7,
+     "lines": 13,
+     "acc": "99.985",
+     "precise": "99.985544613161501618784908496277",
+     "date": "1884",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.985-Anglin",
+     "note": "The circles about two neighbouring points of contact, with the circle's radius, cut the lines of the inscribed square's sides at E and F; a quarter of FE is laid off from F towards the corner K of the inscribed square, to I; IK is laid off from the corner B of the square about the circle along the diagonal, to X; the parallel to the side through X, between the diagonals, is the side: 1.77232578 radii.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 165-167, construction 3, read from a second scan of the volume (Internet Archive, messengermathem00taylgoog), whose text is cleaner than the first (messengermathem06glaigoog)",
+       "redrawn in November 2026; E and F fall on the inscribed square's sides produced, the one reading that gives Anglin's EG = √(√2 − ½), FE = √(2√2 − 1) − 1 and his value 1.77232578, which the rebuilt figure gives"
+      ]
+     }
+    },
+    {
+     "id": "stc-over-99.977",
+     "side": "over",
+     "marks": "",
+     "holder": "Lorenzo Mascheroni",
+     "method": "Mascheroni's quadrature with the compass alone",
+     "circles": 12,
+     "lines": 3,
+     "acc": "99.977",
+     "precise": "99.977076809959006127820162728019",
+     "date": "1797",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.977-Mascheroni",
+     "note": "With the compass alone: the radius stepped round the circle; arcs about the second and third points with the radius DB, and the unit arcs about the first and fourth, give N, L and M; two chords AN and one chord LM laid round the circle from B end at R, and BR is the side, 1.7726566 radii by Mascheroni's working.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. Mascheroni, La geometria del compasso, Pavia 1797, art. 269; French translation, Géométrie du compas, Paris 1798, pp. 250-252 (Internet Archive, gomtrieducompas00masc)",
+       "redrawn in November 2026 from the French text; the rebuilt AN = (√11 − √3)/2 = 0.7922870 and LM = (9 − √33)/6 = 0.5425729 are Mascheroni's values, and BR = 1.772657 radii, his 1.7726566"
+      ]
+     }
     }
    ]
   },
@@ -4194,8 +4266,8 @@ const ARCHIVE = {
    "problem": "stc",
    "who": "A. H. Anglin",
    "year": "1884",
-   "value": "three more quadratures: sides 1.76640701, 1.77232578 and 1.768191052 of the radius",
-   "source": "Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 166-167, constructions 2-4 (his first is charted). The figures are not in the scanned text, and his letters do not give his values in any reading tried."
+   "value": "his fourth quadrature: side 1.768191052 of the radius",
+   "source": "Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), p. 167, construction 4 (his first three are charted). His figure is not in the scanned text, and no placement of his centre C tried gives his value."
   },
   {
    "problem": "stc",
@@ -4210,6 +4282,13 @@ const ARCHIVE = {
    "year": "1911",
    "value": "∛2 ≈ 1.2599275, from the unit square, by similar triangles",
    "source": "Vahlen, Konstruktionen und Approximationen (1911), pp. 282-283. The scan garbles the fractions of BF and CE and the formula; it needs a clean page."
+  },
+  {
+   "problem": "rtc",
+   "who": "E. Lemoine",
+   "year": "1895",
+   "value": "π ≈ √51 − 4, the same value as Pleskot's rectification (rtc-under-99.994)",
+   "source": "Lemoine, Bulletin de la Société mathématique de France XXIII (1895), p. 242, as cited by Vahlen (1911), p. 311. Not reachable from here; if it is the same construction as Pleskot's, Lemoine is listed on that entry as having also found it, and whichever was published first holds it."
   }
  ],
  "derived_pi": {

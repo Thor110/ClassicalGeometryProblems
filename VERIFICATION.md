@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (123)
+### Not verified by a person yet (126)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -176,6 +176,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, undersized 99.9993% · Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5 (stc-under-99.9993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9993-Claude.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.9999999% · Chu's construction of Ramanujan's number (stc-over-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9999999-Chu.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.886% · Anglin's first quadrature (stc-over-99.886): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.886-Anglin.ggb`, square q
+- [ ] Squaring The Circle, undersized 99.318% · Anglin's second quadrature (stc-under-99.318): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.318-Anglin.ggb`
+- [ ] Squaring The Circle, undersized 99.985% · Anglin's third quadrature (stc-under-99.985): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.985-Anglin.ggb`
+- [ ] Squaring The Circle, oversized 99.977% · Mascheroni's quadrature with the compass alone (stc-over-99.977): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.977-Mascheroni.ggb`
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`

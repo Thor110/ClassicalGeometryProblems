@@ -16,9 +16,10 @@ beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
 | Construction | Chart | Why it is not charted yet |
 |---|---|---|
 | Kopf and Perron (1919): trisection from the limaçon, within 15" up to 90° | Trisecting an angle | The scanned text of Yates, "The Trisection Problem" (1942), ch. 4 §5, garbles the construction; it needs Perron's paper (1933) or a clean copy of Yates' figure 37. |
-| A. H. Anglin (1884): constructions 2-4, sides 1.76640701, 1.77232578 and 1.768191052 | Squaring the circle | Messenger of Mathematics XIII, pp. 166-167: no figures in the scan, and no reading of the letters tried gives his values. |
+| A. H. Anglin (1884): construction 4, side 1.768191052 | Squaring the circle | Messenger of Mathematics XIII, p. 167: no figure in either scan, and no placement of his centre C tried gives his value. |
 | Ernst Lakenmacher (1890): the side 0.8862279 of the diameter | Squaring the circle | Archiv der Mathematik und Physik (2) IX, p. 214 is missing from the scan. |
 | K. T. Vahlen (1911): ∛2 ≈ 1.2599275 from the unit square | Doubling the cube | Vahlen (1911), pp. 282-283: the scan garbles the fractions and the formula. |
+| E. Lemoine (1895): π ≈ √51 − 4, Pleskot's value | Rectifying the circle | Bulletin de la Société mathématique de France XXIII, p. 242 (Vahlen 1911, p. 311): not reachable from here. If it is Pleskot's construction, it is recorded as also found by whichever of the two came later. |
 | Christiaan Huygens: AE = cosec 52.5° = 1.2605 | Doubling the cube | Vahlen (1911), p. 284, gives only the angles; needs *Varia opera mathematica* I, p. 1. |
 | Baudhayana (about 800 BC): π ≈ 3.0883 | Squaring the circle | Vahlen (1911), p. 177; which of two rules is his needs a translation of the Sulba Sutra. |
 
@@ -57,6 +58,8 @@ given there.
 | C. G. Specht (1828): his second construction, Cd = 5√(439/278) | Rectifying the circle, 99.9999995% under | Crelle's Journal 3 (1828), pp. 405-406 |
 | W. J. M. Rankine (1867): two rectifications of any arc, and their combination | Arc rectification, 95.243% under, 98.685% and 99.899% over (at 150°) | F. J. van den Berg, Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 |
 | A. H. Anglin (1884): his first quadrature | Squaring the circle, 99.886% over | Messenger of Mathematics XIII, pp. 165-166 |
+| A. H. Anglin (1884): his second and third quadratures | Squaring the circle, 99.318% and 99.985% under | Messenger of Mathematics XIII, pp. 166-167, from a second scan (messengermathem00taylgoog) |
+| Lorenzo Mascheroni (1797): a quadrature with the compass alone, art. 269 | Squaring the circle, 99.977% over | "Géométrie du compas" (1798), pp. 250-252 |
 | Maurice d'Ocagne (1895), after Bioche: √2 + √3 | Rectifying the circle, 99.851% over | Journal de mathématiques élémentaires 1895, pp. 77-78 |
 | A. Pleskot (1895): 2vb = √51 − 4 | Rectifying the circle, 99.994% under | Journal de mathématiques élémentaires 1895, pp. 125-126 |
 | K. T. Vahlen (1911): Cusa's trisection point moved 2/9 of the versine | Trisecting an angle, 99.147% under (at 90°) | Vahlen (1911), pp. 290-291 |
