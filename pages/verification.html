@@ -52,6 +52,16 @@
   <div class="box-text" style="margin-top:12px;">The AI check rebuilds each GeoGebra file and recomputes it. It cannot check drawings on paper, count steps under the counting rules, or judge who found a construction first. It may raise a dispute, but people resolve them. It is reproducible: anyone can run <span class="mono">python tools/verify.py</span> in the repository and get the same answer.</div>
 </div>
 
+<div class="box" id="wantedChecks">
+  <div class="box-title">Second Pair Of Eyes Wanted</div>
+  <div class="box-text">These entries have been reproduced by the AI check but not yet by a person, most important first: historical
+    constructions to check against their original source, ones where a garbled or missing part of the source had to be read
+    back from the numbers it gives, and the best on each side of each chart. Step through one, compare it with its notes and
+    source, and post what you find. Ten minutes with one of these is the most useful check anyone can make.</div>
+  <div class="table-wrap"><table id="wantlist"></table></div>
+  <div class="controls" style="margin-top:12px;"><button class="small" id="wantMore">Show All</button></div>
+</div>
+
 <div class="box">
   <div class="box-title">Every Entry</div>
   <div class="small-text" style="text-align:center;margin-bottom:12px;" id="aiRun"></div>
@@ -153,6 +163,30 @@ $('all').innerHTML = '<tr><th>Problem</th><th>Entry</th><th>By</th><th>Status</t
 }).join('');
 }
 table();
+
+// Entries most worth a person's check: no person has verified them yet.
+const reasonsFor = e => {
+  const r = [], ev = ((e.origin || {}).evidence || []).join(' ') + ' ' + (e.note || '');
+  if ((e.origin || {}).kind === 'historical') r.push([3, 'historical: check it against its source']);
+  if (/garble|only (value|reading|choice|one reading)|read back|read from the value|not in the (scanned )?text|placed from/i.test(ev)) r.push([2, 'part of the source was read back from its numbers']);
+  if (e.rank === 1) r.push([2, 'the best ' + e.side + 'sized on its chart']);
+  if ((e.origin || {}).kind === 'session' || e.holder_kind === 'ai') r.push([1, 'found by an AI: a person has not looked yet']);
+  return r;
+};
+const want = all.filter(e => !e.archived && e.file && !statusOf(e).people.length)
+  .map(e => ({e, r: reasonsFor(e)})).filter(x => x.r.length)
+  .sort((a, b) => b.r.reduce((s, x) => s + x[0], 0) - a.r.reduce((s, x) => s + x[0], 0) || b.e.exact - a.e.exact);
+let wantAll = false;
+function wantTable() {
+  const ask = e => `${REPO}/issues/new?template=verification.yml&title=${encodeURIComponent('Verification: ' + e.id)}&entry=${encodeURIComponent(e.id)}`;
+  $('wantlist').innerHTML = '<tr><th>Entry</th><th>Why</th><th>Check it</th></tr>' + want.slice(0, wantAll ? want.length : 12).map(({e, r}) =>
+    `<tr><td><a class="link" href="charts.html#${e.problem.id}/${e.id}">${e.problem.short}</a> · <b>${esc(e.acc)}%</b> ${e.side}<br><span class="muted" style="font-size:13px;">${esc(e.holder)}${e.method ? ' · ' + esc(e.method) : ''}</span></td>
+      <td class="wrap">${r.map(x => esc(x[1])).join('; ')}</td>
+      <td style="white-space:nowrap;"><a class="link" href="constructions.html#${e.problem.id}/${e.id}">▶ steps</a><br><a class="link" href="${repoBlob(e.notesFile + '.md')}" target="_blank" rel="noopener">notes and source</a><br><a class="link" href="${ask(e)}" target="_blank" rel="noopener">I checked it</a></td></tr>`).join('');
+  $('wantMore').textContent = wantAll ? 'Show The First 12' : 'Show All ' + want.length;
+}
+$('wantMore').onclick = () => { wantAll = !wantAll; wantTable(); };
+wantTable();
 
 // Cross-reference table
 const X = typeof CROSSREF !== 'undefined' ? CROSSREF : {pairs: [], run: ''};

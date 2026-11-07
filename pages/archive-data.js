@@ -995,6 +995,32 @@ const ARCHIVE = {
       ]
      },
      "square": "q"
+    },
+    {
+     "id": "stc-under-99.946",
+     "side": "under",
+     "marks": "",
+     "holder": "C. M. Willich",
+     "method": "Willich's quadrature",
+     "circles": 4,
+     "lines": 5,
+     "acc": "99.946",
+     "precise": "99.946649846525578302470585791786",
+     "date": "1855",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.946-Willich",
+     "note": "A chord equal to the radius from B, a quadrant from A; its midpoint E; the line from A through E meets the circle again at F. AF is the side of the square. Willich says the side is out by \"somewhat less than one four-thousandth\"; it is one part in 3,748.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. M. Willich, \"On a simple Geometrical construction, giving a very approximate Quadrature of the Circle\", Proceedings of the Royal Society of London 7 (1854-55), received April 17, 1855, communicated by G. G. Stokes",
+       "read from the Internet Archive scan (philtrans08545474); the text gives every step",
+       "redrawn in November 2026; the quadrant AB is found with a perpendicular, as Willich does not say how"
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -1149,7 +1175,7 @@ const ARCHIVE = {
      "precise": "99.467249472200414370533784321126",
      "date": "06-11-2026",
      "geogebra": "",
-     "file": "GeoGebra Files/Over/TAA-99.467-Claude",
+     "file": "GeoGebra Files/Under/TAA-99.467-Claude",
      "note": "Found by Claude (Anthropic), an AI, with a computer search, at Edward James Gordon's request. A general method: it works for any angle, with no point placed by eye. The chart figure is its worst case between 30° and 150°, which is at 150.00°, the angle the file is drawn at. Its sweep shows the full range where it holds 95%.",
      "verified": [],
      "disputes": [],
@@ -1245,7 +1271,7 @@ const ARCHIVE = {
      "precise": "99.838643849960773986145409607430",
      "date": "1928",
      "geogebra": "",
-     "file": "GeoGebra Files/Over/TAA-99.838-Karajordanoff",
+     "file": "GeoGebra Files/Under/TAA-99.838-Karajordanoff",
      "note": "Circles of radius 1 and 2 about the corner; the tangent at A meets the chord from B to the middle of the arc in D; the parallel to OB through D meets the larger circle at T. Exact at 90°. Charted at 65.57°, its weakest angle up to 90°; the rest of the angle is bisected.",
      "verified": [],
      "disputes": [],
@@ -1425,12 +1451,12 @@ const ARCHIVE = {
      "method": "Search find: 4 circles, 2 lines",
      "circles": 4,
      "lines": 2,
-     "acc": "99.999",
+     "acc": "99.99997",
      "precise": "99.999971963388894199932730272647",
      "date": "06-11-2026",
      "geogebra": "",
      "file": "GeoGebra Files/Under/DTC-99.999-Claude",
-     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request.",
+     "note": "Found by Claude (Anthropic), an AI, with a computer search over constructions, at Edward James Gordon's request. Shown to more places from November 2026 (it was 99.999%), so that the chart reads in order beside Mascheroni's 99.9995%: its precise value is 99.99997196%.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -1582,6 +1608,106 @@ const ARCHIVE = {
        "published: W. Hayden, \"Approximate Geometrical Solutions of the Problems of the Duplication of the Cube and of the Quadrature of the Circle\", Proceedings of the Royal Society of London 20 (1871-72), p. 525, communicated by G. G. Stokes",
        "read from the Internet Archive scan (paper-doi-10_1098_rspl_1871_0099); the text and Hayden's worked figures fix every step",
        "redrawn in November 2026; how CD is trisected is the archive's, as Hayden does not say"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.847",
+     "side": "under",
+     "marks": "",
+     "holder": "Lorenzo Mascheroni",
+     "method": "Mascheroni's duplication (first solution)",
+     "circles": 8,
+     "lines": 0,
+     "acc": "99.847",
+     "precise": "99.847467308643382343474121533684",
+     "date": "1797",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.847-Mascheroni",
+     "note": "With the compass alone: B, C, D, E a radius apart round the circle about A; a, where the circles of radius BD about B and E meet; F with BF = Aa; N with FN = FA. aN is the edge of the doubled cube, 1.2592800.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. Mascheroni, La geometria del compasso, Pavia 1797, art. 275; French translation by A.-M. Carette, Géométrie du compas, Paris 1798",
+       "read from the 1798 translation (Internet Archive, gomtrieducompas00masc), first solution, with Mascheroni's letters; cited in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 284",
+       "redrawn in November 2026"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.9995",
+     "side": "under",
+     "marks": "",
+     "holder": "Lorenzo Mascheroni",
+     "method": "Mascheroni's duplication (second solution)",
+     "circles": 15,
+     "lines": 0,
+     "acc": "99.9995",
+     "precise": "99.999573393292400074345606623000",
+     "date": "1797",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.9995-Mascheroni",
+     "note": "With the compass alone, continuing the first solution: d and c a radius on from E; b where the circles of radius Aa about D and d meet; M and P with cM = MP = aN; Q with FQ = Fb. PQ is the edge, 1.2599190: \"à peine de deux millionièmes de rayon\".",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. Mascheroni, La geometria del compasso, Pavia 1797, art. 275, second solution; French translation, Géométrie du compas, Paris 1798",
+       "read from the 1798 translation (Internet Archive, gomtrieducompas00masc), with Mascheroni's letters; the sides on which M, P and Q fall are the only ones that give his PQ = 1.2599190",
+       "redrawn in November 2026"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.693",
+     "side": "under",
+     "marks": "",
+     "holder": "G. Buonafalce",
+     "method": "Buonafalce's first solution",
+     "circles": 8,
+     "lines": 6,
+     "acc": "99.693",
+     "precise": "99.693049863695430646242604077127",
+     "date": "1876",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.693-Buonafalce",
+     "note": "In the square ABCD on the edge, lay a sixth of the diagonal BD from D along DA, to E. BE is the edge of the doubled cube, 1.25863.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. Buonafalce, Sulla scoperta di un nuovo rapporto geometrico che serve alla soluzione del problema della duplicazione del cubo, Pisa 1876",
+       "as given in F. Enriques (ed.), Fragen der Elementargeometrie II, article VII by U. Amaldi, § 9, Leipzig 1907, fig. 96 (Internet Archive, rcin.org.pl); proof by Father Secchi",
+       "redrawn in November 2026; how BD is divided into six is the archive's"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.997",
+     "side": "under",
+     "marks": "",
+     "holder": "G. Buonafalce",
+     "method": "Buonafalce's third solution",
+     "circles": 5,
+     "lines": 4,
+     "acc": "99.997",
+     "precise": "99.997229820539562647649966428078",
+     "date": "1876",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.997-Buonafalce",
+     "note": "The quarter circle DKB about C in the square on the edge; BE = AK/2 on BA, CF = BC/4 on CA; the line from F through E meets the arc at G. DG is the edge, 1.2599093.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. Buonafalce, Pisa 1876-78 (third of his four solutions)",
+       "as given in F. Enriques (ed.), Fragen der Elementargeometrie II, article VII by U. Amaldi, § 9, Leipzig 1907, fig. 97, with the proof (Internet Archive, rcin.org.pl)",
+       "redrawn in November 2026; reproduces Amaldi's DG = 1.2599093"
       ]
      }
     }
@@ -2740,6 +2866,31 @@ const ARCHIVE = {
        "redrawn in November 2026 from the book's text (Internet Archive scans), BC read from the value AE = 6.2831839 that Hobson gives"
       ]
      }
+    },
+    {
+     "id": "rtc-over-99.998",
+     "side": "over",
+     "marks": "",
+     "holder": "A. Kunze",
+     "method": "Kunze's triangle",
+     "circles": 10,
+     "lines": 4,
+     "acc": "99.998",
+     "precise": "99.998467881887055614596084601667",
+     "date": "1851",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.998-Kunze",
+     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. The same number as Hobson's squaring, 6/5 · (1 + φ), 62 years earlier.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. Kunze, Lehrbuch der Planimetrie I, 2nd edition, Jena 1851, p. 278",
+       "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 311 (Internet Archive, konstruktionenun00vahluoft)",
+       "redrawn in November 2026; the fifths of the radius and the laying out of the perimeter on one line are the archive's"
+      ]
+     }
     }
    ]
   },
@@ -2891,6 +3042,55 @@ const ARCHIVE = {
        "redrawn in November 2026"
       ]
      }
+    },
+    {
+     "id": "ar-under-99.029",
+     "side": "under",
+     "marks": "",
+     "holder": "Johann Heinrich Lambert",
+     "method": "Lambert's rectification",
+     "circles": 8,
+     "lines": 5,
+     "acc": "99.029",
+     "precise": "99.029742368290431396014389916235",
+     "date": "1765",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-99.029-Lambert",
+     "note": "Snellius' point P, a radius beyond the far end of the diameter, moved a fifth of the versine BC towards O; the line from it through A meets the tangent at B in D. BD gives Newton's x ≈ sin x (14 + cos x)/(9 + 6 cos x). Charted at 90°, its weakest angle up to 90°, like Cusa's.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: J. H. Lambert, Beyträge zum Gebrauche der Mathematik und deren Anwendung II, Berlin 1765, p. 312",
+       "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 203 (Internet Archive, konstruktionenun00vahluoft); the scan garbles the fraction, which is the one value (1/5) that gives the formula Vahlen states",
+       "redrawn in November 2026; the fifth of BC is laid out the archive's way"
+      ]
+     }
+    },
+    {
+     "id": "ar-over-99.831",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Lambert's rectification, a quarter versine",
+     "circles": 3,
+     "lines": 3,
+     "acc": "99.831",
+     "precise": "99.831476501635185766850937397931",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.831-Claude",
+     "note": "Lambert's rectification with one fraction changed: Snellius' point P, a radius beyond the far end of the diameter, is moved towards O by a quarter of the versine BC instead of a fifth. A quarter is two midpoints, so it is both simpler and better than Lambert's: at its weakest up to 90° (76.17°, where the file is drawn) it is 99.831%, against Lambert's 99.03% at 90°. Found by Claude (Anthropic), an AI, with tools/variants.py, which keeps a historical construction's steps and tries other fractions.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Lambert's rectification (ar-under-99.029)"
+      ]
+     }
     }
    ]
   }
@@ -2931,6 +3131,12 @@ const ARCHIVE = {
    "problem": "dtc",
    "by": "Edward James Gordon",
    "about": "Edward's methods for doubling the cube, grown from a pattern that doubles a cube's edge."
+  },
+  {
+   "name": "Snellius' rectification point",
+   "problem": "ar",
+   "by": "Nicholas of Cusa, Willebrord Snellius, Johann Heinrich Lambert",
+   "about": "The arc read off the tangent through a point on the diameter beyond the circle: Cusa and Snellius put it a radius beyond the far end; Lambert moves it in by a fifth of the versine (Newton's formula); the variant search found a quarter better still."
   }
  ],
  "wanted": [
@@ -2947,6 +3153,34 @@ const ARCHIVE = {
    "year": "2019",
    "value": "√(63/25 · (1 + 5/2 · (15√5 − 7)/269)), Ramanujan's number, π correct to nine decimal places",
    "source": "H. V. Chu, \"Squaring the Circle Revisited\", arXiv:1908.01202, section 3: every step is given, but it is long (three figures combined)."
+  },
+  {
+   "problem": "dtc",
+   "who": "G. J. Vargiù",
+   "year": "1877",
+   "value": "seven mean proportionals in a row, starting from the edge and the diagonal: 2^(85/256), 99.73% by volume",
+   "source": "Vargiù, Sulla duplicazione del cubo (Oristano 1877), as given by Amaldi in Enriques, Fragen der Elementargeometrie II (1907), § 9. Fully described; long to draw."
+  },
+  {
+   "problem": "dtc",
+   "who": "G. Boccali",
+   "year": "1884",
+   "value": "from the side of the regular decagon and a semicircle; about 1.26",
+   "source": "Boccali, Doppio cubo (Camerino 1884), via Amaldi (1907), § 9, fig. 98. The scan garbles the final combination of lengths."
+  },
+  {
+   "problem": "dtc",
+   "who": "Christiaan Huygens",
+   "year": "1650s",
+   "value": "AE = cosec 52.5° = 1.2605",
+   "source": "Huygens, Varia opera mathematica I, p. 1, as cited by Vahlen (1911), p. 284. Vahlen gives only the angles; the figure is needed."
+  },
+  {
+   "problem": "stc",
+   "who": "Baudhayana",
+   "year": "about 800 BC",
+   "value": "the square on 1 − 1/8 + 1/(8·29) − 1/(8·29·6) + 1/(8·29·6·8) of the diameter, π ≈ 3.0883",
+   "source": "Baudhayana Sulba Sutra, as given by Vahlen (1911), p. 177. Vahlen also credits him with 7:8; which rule is his needs a translation of the Sutra."
   }
  ],
  "derived_pi": {
@@ -3034,6 +3268,21 @@ const ARCHIVE = {
   "Maurice d'Ocagne": [
    "Maurice d'Ocagne",
    "Philbert Maurice d'Ocagne"
+  ],
+  "C. M. Willich": [
+   "C. M. Willich"
+  ],
+  "A. Kunze": [
+   "A. Kunze"
+  ],
+  "Johann Heinrich Lambert": [
+   "Johann Heinrich Lambert"
+  ],
+  "Lorenzo Mascheroni": [
+   "Lorenzo Mascheroni"
+  ],
+  "G. Buonafalce": [
+   "G. Buonafalce"
   ]
  }
 };

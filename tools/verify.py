@@ -487,8 +487,8 @@ def angle_parts(r, problem):
             if all(x in o and o[x][0] == 'point' for x in (c, fixed, turning)):
                 if 'C' in (p, q) and fixed == 'C': fixed, turning = turning, fixed
                 return c, fixed, turning
-    if problem == 'ar' and not all(x in o for x in ('B', 'A', 'C')):
-        # no B, A, C: the measured arc names the angle: CircleArc(centre, start, end), the end on the turning arm
+    if problem == 'ar':
+        # the measured arc names the angle: CircleArc(centre, start, end), the end on the turning arm
         arcs = [n for n, k in r['kind_of'].items() if k == 'CircleArc' and len(r['parents'].get(n, [])) == 3]
         if arcs:
             c, fixed, turning = r['parents'][arcs[0]]
@@ -504,13 +504,14 @@ def sweep_at(problem, path, entry, targets, step=1.0):
         out[t] = dict(pts).get(round(t, 3))
     return out
 
-def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None):
+def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None, on_step=None):
     """Measure an angle method across a range of angles, keeping everything else as drawn.
 
     The given angle is changed (trisection: the arm through C turns about the vertex B; arc
     rectification: the given angle β changes) a degree at a time, starting from the file's own
     angle, and every intersection follows the figure smoothly from one step to the next.
-    Returns [(degrees, accuracy or None)].
+    Returns [(degrees, accuracy or None)]. on_step(degrees, rebuild, accuracy), if given, is called at
+    each angle reached, with the figure as rebuilt there (tools/steps.py uses it for the angle slider).
     """
     base = rebuild(path)
     def run(ov, ref):
@@ -574,6 +575,7 @@ def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None):
             a, r = step_to(prev, deg, ref)
             out[round(deg, 3)] = a
             if r is None: break
+            if on_step: on_step(deg, r, a)
             ref, prev = pts(r), deg; deg += direction * step
     return sorted(out.items()), start
 

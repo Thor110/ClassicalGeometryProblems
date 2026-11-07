@@ -18,7 +18,8 @@ Node.js and Playwright (`npm install playwright@1.63.0` and `npx playwright inst
   `--write` it also writes what the website shows: `pages/ai-checks.js` (each entry's checks),
   `pages/crossref.js` (related entries, from `tools/crossref.py`), the drawings in `pages/drawings/`
   (from `tools/draw.py`), every construction's steps for the step-by-step player in `pages/steps/`
-  (from `tools/steps.py`) and the maintainer's list in `VERIFICATION.md`.
+  (from `tools/steps.py`, with the angle methods rebuilt every 5° for its angle slider in
+  `pages/steps/<problem>-angles.js`) and the maintainer's list in `VERIFICATION.md`.
 - **The website** is static: `index.html` and `pages/`. Every page loads `pages/common.js` (shared
   helpers); the chart pages also load the data files and `pages/data.js` (ranks, statuses, the π
   chart worked out from the circle rectifications). The paper pages share `pages/paper.js`. The look
@@ -62,6 +63,10 @@ by itself when due (`.github/workflows/architecture.yml`) and opens a pull reque
 
 **Historical constructions:** drafts in progress are in [Wanted/](Wanted/README.md). One is charted
 under its discoverer's name only after it has been checked against the original source.
+
+**Variants of historical constructions:** `python tools/variants.py` keeps each historical skeleton
+and tries other small fractions in it, writing what beats the original to [Variants/](Variants/README.md).
+Nothing there is charted by itself: draw a promising variant in GeoGebra and add it like any other entry.
 
 ## Checks that run by themselves
 

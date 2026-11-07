@@ -25,6 +25,8 @@
   label.check input{width:auto;margin:0;padding:0;accent-color:#4a9;}
   select.small-sel{width:auto;flex:0 0 auto;padding:7px 10px;font-size:14px;}
   .picker select{width:100%;min-width:0;} .picker input{width:auto;min-width:0;}
+  #angle{flex:1 1 260px;max-width:420px;padding:0;accent-color:#4a9;}
+  #selInfo{text-align:center;min-height:1.5em;margin-top:6px;color:#9ab;}
   @media (max-width:720px){ #cv{height:340px;} #stepText{font-size:15px;} .picker select,.picker input{flex:1 1 100%;width:100%;} .picker select{order:-1;} #prevEntry,#nextEntry{flex:1 1 40%;} }
 </style>
 </head>
@@ -68,12 +70,21 @@
     <button class="small" id="zoomOut" title="Zoom out">－</button>
     <button class="small" id="fit" title="Fit the whole construction">Fit</button>
   </div>
+  <div class="controls" id="angleRow" style="display:none;">
+    <button class="small" id="angleOpen" title="Rebuild this construction at other angles">∠ Change The Angle</button>
+    <span class="label" id="angleLabel" style="display:none;">Angle</span>
+    <input type="range" id="angle" min="0" max="0" step="1" aria-label="The given angle" style="display:none;">
+    <span id="angleVal" class="mono" style="color:#aaa;"></span>
+    <button class="small" id="angleReset" style="display:none;">As Drawn</button>
+  </div>
+  <div class="small-text" id="selInfo" aria-live="polite"></div>
   <div class="meters" id="meters"></div>
   <div class="links" id="links"></div>
   <div class="keys">
     <kbd>←</kbd> <kbd>→</kbd> steps · <kbd>↑</kbd> <kbd>↓</kbd> constructions · <kbd>space</kbd> play · <kbd>Home</kbd> <kbd>End</kbd> first and last ·
-    drag to move, scroll or ＋ － to zoom, double-click to fit.
-    <br>Green: this step and the result · amber: the given figure · grey: earlier steps · faint: exploration the result does not use.
+    drag to move, scroll or ＋ － to zoom, double-click to fit · click a circle, line or point to see what it is drawn from and what it leads to (<kbd>Esc</kbd> clears).
+    <br>Green: this step and the result · amber: the given figure · grey: earlier steps · faint: exploration the result does not use ·
+    blue: the step you clicked and the steps it is drawn from · violet: the steps it leads to.
   </div>
 </div>
 
@@ -115,9 +126,14 @@
 window.STEPS = window.STEPS || {};
 const DEFAULT = 'rtc/rtc-over-99.806';                 // Gordon's circumference, the page's first walkthrough
 const OLD = {kochanski: 'rtc/rtc-under-99.998'};        // links to the page as it was
-const COL = {given: '#c9953a', fresh: '#5fd0a8', result: '#4a9', used: '#8a8a9c', usedPt: '#a8a8b8', explore: '#34343f', label: '#9a9aa8'};
+const COL = {given: '#c9953a', fresh: '#5fd0a8', result: '#4a9', used: '#8a8a9c', usedPt: '#a8a8b8', explore: '#34343f', label: '#9a9aa8',
+  sel: '#8fd3ff', from: '#3f8fc4', to: '#b28ae0', dim: '#2a2a33'};
 
 let prob = null, entries = [], entry = null, data = null, order = [], step = 0, timer = null, view = null;
+let frames = null, frame = null, sel = null;               // the angle slider's rebuilt figures, the one shown, the clicked step
+window.ANGLES = window.ANGLES || {};
+const shapesOf = i => frame ? frame.s[i] : data.f.steps[i].s;
+const RES = () => frame ? frame.r : data.e.result;
 
 PROBLEMS.forEach(p => {
   const t = document.createElement('button');
@@ -181,9 +197,47 @@ function choose(eid, keepStep) {
   if (entry.geogebra) L.push(`<a class="link" href="${entry.geogebra}" target="_blank" rel="noopener">open in GeoGebra</a>`);
   L.push(`<a class="link" href="drawings/${entry.id}.svg" target="_blank">drawing</a>`);
   $('links').innerHTML = L.join('');
+  frame = null; frames = null; sel = null; $('selInfo').textContent = '';
+  setupAngle();
   makeOrder(keepStep ? step : null);
   fit(); show();
 }
+
+// ---- The angle slider: angle methods rebuilt every 5°, from tools/steps.py, loaded when first asked for ----
+function setupAngle() {
+  const on = prob.id === 'taa' || prob.id === 'ar';
+  $('angleRow').style.display = on ? '' : 'none';
+  ['angleLabel', 'angle', 'angleReset'].forEach(id => $(id).style.display = 'none');
+  $('angleOpen').style.display = ''; $('angleVal').textContent = '';
+}
+function openAngle() {
+  const pid = prob.id, eid = entry.id;
+  const ready = () => {
+    if (!entry || entry.id !== eid) return;
+    const A = (ANGLES[pid] || {})[eid];
+    if (!A || !A.frames.length) { $('angleVal').textContent = 'No other angles for this one.'; return; }
+    frames = A.frames;
+    const at = frames.findIndex(f => Math.abs(f.deg - A.start) < 1e-6);
+    $('angle').max = frames.length - 1; $('angle').value = at < 0 ? 0 : at; $('angle').dataset.start = at;
+    ['angleLabel', 'angle', 'angleReset'].forEach(id => $(id).style.display = '');
+    $('angleOpen').style.display = 'none';
+    setAngle(+$('angle').value);
+  };
+  if (ANGLES[pid]) return ready();
+  $('angleVal').textContent = 'loading…';
+  const sc = document.createElement('script'); sc.src = 'steps/' + pid + '-angles.js'; sc.onload = ready;
+  sc.onerror = () => { $('angleVal').textContent = 'The other angles could not be loaded.'; };
+  document.head.appendChild(sc);
+}
+function setAngle(k) {
+  const f = frames[k], start = +$('angle').dataset.start;
+  frame = k === start ? null : f;
+  $('angleVal').textContent = f.deg.toFixed(2) + '° · ' + truncate(f.r.acc, 3) + '%' + (k === start ? ' (as drawn)' : '');
+  fit(); show();
+}
+$('angleOpen').onclick = openAngle;
+$('angle').oninput = () => setAngle(+$('angle').value);
+$('angleReset').onclick = () => { $('angle').value = $('angle').dataset.start; setAngle(+$('angle').value); };
 
 // The steps to play: all of them, or only the ones the result depends on. The result is the last step.
 function makeOrder(keep) {
@@ -199,7 +253,8 @@ function makeOrder(keep) {
 const fmt = (x, unit) => (Math.abs(x) >= 1e4 ? x.toExponential(9) : x.toFixed(10)) + (unit ? ' ' + unit : '');
 
 function show() {
-  const n = data.f.steps.length, i = order[step], last = i === n, R = data.e.result;
+  const n = data.f.steps.length, i = order[step], last = i === n, R = RES();
+  const accText = frame ? truncate(frame.r.acc, 3) : entry.acc;
   $('first').disabled = $('prev').disabled = step === 0;
   $('next').disabled = $('last').disabled = step === order.length - 1;
   let text, tags = '';
@@ -212,7 +267,7 @@ function show() {
     } else {
       text = `The result: ${R.what} is ${fmt(R.c, R.unit)}, against ${R.truth} = ${fmt(R.t, R.unit)}.`;
     }
-    text += ` That is ${entry.acc}% accurate, ${side}.`;
+    text += ` That is ${accText}% accurate, ${side}${frame ? ', at ' + frame.deg.toFixed(2) + '° (the chart figure is for the angle as drawn)' : ''}.`;
     tags = '<span class="tag">the result</span>';
   } else {
     const s = data.f.steps[i];
@@ -230,7 +285,7 @@ function show() {
     ['Constructed', last ? fmt(R.c, R.unit) : '…', ''],
     ['True value', fmt(R.t, R.unit), ''],
     ['Gap', last ? (err > 0 ? '+' : '') + err.toExponential(3) + (R.unit ? ' ' + R.unit : '') : '…', last ? (err > 0 ? 'warm' : '') : ''],
-    ['Accuracy', last ? entry.acc + '%' : '…', last ? 'good' : ''],
+    ['Accuracy', last ? accText + '%' : '…', last ? 'good' : ''],
     ['One part in', last ? Math.round(1 / Math.abs(rel)).toLocaleString('en') : '…', ''],
   ]);
   draw();
@@ -239,7 +294,7 @@ function show() {
 // ---- Drawing ----
 // view: the visible part of the plane, [x0, y0, x1, y1]; fit() frames the construction.
 function fit() {
-  const b = $('onlyUsed').checked ? data.e.used : data.f.view;
+  const b = frame ? ($('onlyUsed').checked ? frame.used : frame.view) : $('onlyUsed').checked ? data.e.used : data.f.view;
   const w = b[2] - b[0], h = b[3] - b[1], m = 0.04 * Math.max(w, h);
   view = [b[0] - m, b[1] - m, b[2] + m, b[3] + m];
 }
@@ -280,20 +335,30 @@ function draw() {
 
   // Everything up to this step: exploration faint, steps that count grey, the given figure amber,
   // and this step bright. Lines first, then points on top.
+  // With a step clicked, it and the steps it is drawn from are blue, the steps it leads to violet,
+  // and the rest dimmed.
   const drawn = order.slice(0, step + 1).filter(i => i < n);
+  const rel = sel == null ? null : related(sel);
   for (const pass of ['shape', 'point']) {
     for (const i of drawn) {
-      const fresh = i === cur, used = data.e.u[i] === '1';
-      for (const sh of data.f.steps[i].s) {
-        const col = fresh ? COL.fresh : sh.giv ? COL.given : used ? (sh.k === 'p' ? COL.usedPt : COL.used) : COL.explore;
-        if (pass === 'shape' && sh.k !== 'p') stroke(sh, col, fresh ? 2 : sh.giv ? 1.6 : used ? 1 : 0.8);
-        if (pass === 'point' && sh.k === 'p') dot(sh, col, fresh ? 4 : used || sh.giv ? 2.6 : 1.6, fresh || sh.giv || used);
+      const fresh = i === cur && sel == null, used = data.e.u[i] === '1';
+      for (const sh of shapesOf(i)) {
+        let col = fresh ? COL.fresh : sh.giv ? COL.given : used ? (sh.k === 'p' ? COL.usedPt : COL.used) : COL.explore, w = fresh ? 2 : sh.giv ? 1.6 : used ? 1 : 0.8;
+        let named = fresh || sh.giv || used;
+        if (rel) {
+          if (i === sel) { col = COL.sel; w = 2.6; named = true; }
+          else if (rel.from.has(i)) { col = COL.from; w = 1.6; named = true; }
+          else if (rel.to.has(i)) { col = COL.to; w = 1.4; named = true; }
+          else { col = sh.giv ? '#5a4a30' : COL.dim; w = 0.8; named = false; }
+        }
+        if (pass === 'shape' && sh.k !== 'p') stroke(sh, col, w);
+        if (pass === 'point' && sh.k === 'p') dot(sh, col, (rel ? i === sel : fresh) ? 4 : named ? 2.6 : 1.6, named);
       }
     }
   }
   // The result, in green, on the last step.
   if (cur === n) {
-    for (const sh of data.e.result.shapes) {
+    for (const sh of RES().shapes) {
       if (sh.k === 'g') {
         ctx.fillStyle = 'rgba(68,170,153,0.16)'; ctx.beginPath(); sh.pts.forEach((p, j) => j ? ctx.lineTo(...P(p)) : ctx.moveTo(...P(p))); ctx.closePath(); ctx.fill();
       }
@@ -301,11 +366,11 @@ function draw() {
     }
   }
   ctx.font = '13px Courier New'; ctx.textBaseline = 'bottom';
-  for (const [t, p, col] of labels) { ctx.fillStyle = col === COL.fresh ? '#cfe' : COL.label; ctx.fillText(t, p[0] + 5, p[1] - 4); }
+  for (const [t, p, col] of labels) { ctx.fillStyle = col === COL.fresh ? '#cfe' : col === COL.sel ? '#cdeeff' : rel && (col === COL.from || col === COL.to) ? col : COL.label; ctx.fillText(t, p[0] + 5, p[1] - 4); }
 
   // On the last step, how far the result is from the true value, magnified until it can be seen.
   if (cur === n) {
-    const R = data.e.result, rel = (R.c - R.t) / R.t;
+    const R = RES(), rel = (R.c - R.t) / R.t;
     const bw = Math.min(260, W * 0.44), bh = 64, bx = W - bw - 10, by = 10;
     const want = 0.35 * bw / (Math.abs(rel) * bw), dec = Math.pow(10, Math.floor(Math.log10(want)));
     const zoom = [5, 2, 1].map(m => m * dec).find(z => z <= want) || 1;
@@ -323,6 +388,39 @@ function draw() {
   }
 }
 
+// ---- Clicking a step: what it is drawn from, and what it leads to ----
+function related(k) {
+  const steps = data.f.steps, from = new Set(), stack = [...steps[k].f];
+  while (stack.length) { const i = stack.pop(); if (from.has(i)) continue; from.add(i); stack.push(...steps[i].f); }
+  const to = new Set([k]);
+  for (let i = k + 1; i < steps.length; i++) if (steps[i].f.some(j => to.has(j))) to.add(i);
+  to.delete(k);
+  return {from, to};
+}
+function hit(px, py) {
+  const cv = $('cv'), W = cv.clientWidth, H = cv.clientHeight, [x0, y0, x1, y1] = view;
+  const s = Math.min(W / (x1 - x0), H / (y1 - y0)), X = (x0 + x1) / 2 + (px - W / 2) / s, Y = (y0 + y1) / 2 - (py - H / 2) / s;
+  const seg = (a, b, ray) => { const d = [b[0] - a[0], b[1] - a[1]], L = d[0] * d[0] + d[1] * d[1] || 1;
+    let t = ((X - a[0]) * d[0] + (Y - a[1]) * d[1]) / L; t = Math.max(0, ray ? t : Math.min(1, t)); return Math.hypot(X - a[0] - t * d[0], Y - a[1] - t * d[1]); };
+  const far = sh => sh.k === 'p' ? Math.hypot(X - sh.p[0], Y - sh.p[1]) * 0.5            // points win over the lines through them
+    : sh.k === 'c' || sh.k === 'a' ? Math.abs(Math.hypot(X - sh.c[0], Y - sh.c[1]) - sh.r)
+    : sh.k === 'l' ? Math.abs(sh.e[0] * X + sh.e[1] * Y + sh.e[2])
+    : sh.k === 's' ? seg(sh.a, sh.b) : sh.k === 'r' ? seg(sh.a, sh.b, true)
+    : sh.k === 'g' ? Math.min(...sh.pts.map((p, j) => seg(p, sh.pts[(j + 1) % sh.pts.length]))) : Infinity;
+  let best = null, bd = 9 / s;
+  for (const i of order.slice(0, step + 1)) if (i < data.f.steps.length) for (const sh of shapesOf(i)) { const d = far(sh); if (d < bd) { bd = d; best = i; } }
+  return best;
+}
+function select(k) {
+  sel = k;
+  if (k == null) { $('selInfo').textContent = ''; return draw(); }
+  const r = related(k), at = i => order.indexOf(i) + 1 || 'file step ' + (i + 1);
+  const from = [...r.from].sort((a, b) => a - b).map(at), to = [...r.to].filter(i => order.indexOf(i) >= 0 && order.indexOf(i) <= step);
+  $('selInfo').textContent = `Step ${at(k)}: ${data.f.steps[k].t} ` + (from.length ? `Drawn from step${from.length > 1 ? 's' : ''} ${from.join(', ')}. ` : 'Part of the given figure. ') +
+    (r.to.size ? `${r.to.size} later step${r.to.size > 1 ? 's' : ''} use${r.to.size > 1 ? '' : 's'} it${to.length < r.to.size ? ' (' + to.length + ' drawn so far)' : ''}.` : 'Nothing later uses it.');
+  draw();
+}
+
 // ---- Moving around the drawing: drag to move, wheel or buttons to zoom, double-click to fit ----
 function zoomAt(k, px, py) {
   const cv = $('cv'), W = cv.clientWidth, H = cv.clientHeight, [x0, y0, x1, y1] = view;
@@ -334,7 +432,8 @@ function zoomAt(k, px, py) {
 (() => {
   const cv = $('cv'), pts = new Map(); let pinch = null;
   cv.addEventListener('wheel', ev => { ev.preventDefault(); const r = cv.getBoundingClientRect(); zoomAt(ev.deltaY < 0 ? 1.25 : 0.8, ev.clientX - r.left, ev.clientY - r.top); }, {passive: false});
-  cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); pts.set(ev.pointerId, [ev.clientX, ev.clientY]); cv.classList.add('drag'); });
+  let down = null;
+  cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); pts.set(ev.pointerId, [ev.clientX, ev.clientY]); cv.classList.add('drag'); down = pts.size === 1 ? [ev.clientX, ev.clientY] : null; });
   cv.addEventListener('pointermove', ev => {
     if (!pts.has(ev.pointerId)) return;
     const [px, py] = pts.get(ev.pointerId); pts.set(ev.pointerId, [ev.clientX, ev.clientY]);
@@ -347,7 +446,12 @@ function zoomAt(k, px, py) {
     const dx = (ev.clientX - px) / s, dy = (ev.clientY - py) / s;
     view = [x0 - dx, y0 + dy, x1 - dx, y1 + dy]; draw();
   });
-  const up = ev => { pts.delete(ev.pointerId); pinch = null; if (!pts.size) cv.classList.remove('drag'); };
+  const up = ev => {
+    if (down && ev.type === 'pointerup' && Math.hypot(ev.clientX - down[0], ev.clientY - down[1]) < 5) {   // a click, not a drag: select
+      const r = cv.getBoundingClientRect(); select(hit(ev.clientX - r.left, ev.clientY - r.top));
+    }
+    down = null; pts.delete(ev.pointerId); pinch = null; if (!pts.size) cv.classList.remove('drag');
+  };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
   cv.addEventListener('dblclick', () => { fit(); draw(); });
 })();
@@ -368,7 +472,7 @@ function play() {
 }
 $('play').onclick = play;
 $('speed').onchange = () => { if (timer) { stop(); play(); } };
-$('onlyUsed').onchange = () => { makeOrder(step); fit(); show(); };
+$('onlyUsed').onchange = () => { makeOrder(step); sel = null; $('selInfo').textContent = ''; fit(); show(); };
 $('labels').onchange = draw;
 $('entry').onchange = () => $('entry').value && choose($('entry').value);
 $('search').oninput = fillPicker;
@@ -377,7 +481,7 @@ $('prevEntry').onclick = () => nextEntry(-1); $('nextEntry').onclick = () => nex
 document.addEventListener('keydown', ev => {
   if (ev.target.closest('input:not([type=checkbox]), select, textarea') || ev.altKey || ev.ctrlKey || ev.metaKey) return;
   const act = {ArrowRight: () => $('next').onclick(), ArrowLeft: () => $('prev').onclick(), ArrowUp: () => nextEntry(-1), ArrowDown: () => nextEntry(1),
-    ' ': play, Home: () => $('first').onclick(), End: () => $('last').onclick()}[ev.key];
+    ' ': play, Home: () => $('first').onclick(), End: () => $('last').onclick(), Escape: () => select(null)}[ev.key];
   if (act) { ev.preventDefault(); act(); }
 });
 window.addEventListener('resize', () => data && draw());

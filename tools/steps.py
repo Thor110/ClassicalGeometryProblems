@@ -180,7 +180,9 @@ def final(problem, r, entry, j, d):
     return out
 
 
-def build(problem, folder, entry):
+def build(problem, folder, entry, frames=False):
+    """The entry's steps: (the file's steps, the entry's own part); with frames, also the figure rebuilt at
+    every 5° for angle methods, for the player's angle slider (None if it is not an angle method)."""
     if not entry.get('file'): return None
     path = os.path.join(v.ROOT, folder, entry['file'] + '.ggb')
     r = v.rebuild(path)
@@ -189,11 +191,6 @@ def build(problem, folder, entry):
     steps_xml = v._READ_CACHE[path][0]
     W = Writer(problem, r, steps_xml)
     used = v.ancestry(r, j[5])
-    res_shapes = draw.result_shapes(problem, r, entry, j)
-    everything = [n for n in r['objects'] if r['objects'][n] and r['objects'][n][0] != 'num']
-    box = draw.bounds(r, everything, res_shapes)
-    steps_used = [n for n in r['kind_of'] if n in used and r['objects'].get(n) and r['objects'][n][0] != 'num']
-    ubox = draw.bounds(r, steps_used, res_shapes) or box
     d = 7                                                      # significant figures: far finer than a screen
 
     def is_given_cmd(st):
@@ -201,11 +198,10 @@ def build(problem, folder, entry):
         return any(o in r['given'] for o in outs) or any(v.is_given_line(r, o, problem) for o in outs) \
             or (problem == 'ar' and name == 'CircleArc')
 
-    given_shapes, given_words, out = [], [], []
+    # The plan: which objects each step draws, fixed from the file as drawn. Step 0 is the given figure.
+    given_words, plan, given_names = [], [], []
     free = [n for n in r['objects'] if n in r['free'] and r['objects'][n] and r['objects'][n][0] != 'num']
-    for n in free:
-        s = shape(r['objects'][n], n, d)
-        if s: s['giv'] = 1; given_shapes.append(s)
+    given_names += free
     pts = [pretty(n) for n in free if r['objects'][n][0] == 'point']
     if pts: given_words.append(('the point ' if len(pts) == 1 else 'the points ') + and_list(pts))
     for n in free:
@@ -213,46 +209,94 @@ def build(problem, folder, entry):
     for st in steps_xml:
         if st[0] != 'cmd' or st[1] not in DRAWN: continue
         _, name, ins, outs = st
-        objs = [(o, r['objects'].get(o)) for o in outs if r['objects'].get(o) and r['objects'][o][0] != 'num']
-        if not objs: continue
-        if name == 'Polygon': objs = objs[:1]                     # the polygon, not its sides one by one
-        shapes = [s for s in (shape(o, n, d) for n, o in objs) if s]
+        names = [o for o in outs if r['objects'].get(o) and r['objects'][o][0] != 'num']
+        if not names: continue
+        if name == 'Polygon': names = names[:1]                   # the polygon, not its sides one by one
         if is_given_cmd(st):
-            for s in shapes: s['giv'] = 1
-            given_shapes += shapes
-            given_words.append(noun(W.sentence(st)))
-            continue
-        counts = any(o in used for o in outs)
-        hand = any(o in r['hand'] for o in outs)
-        out.append({'t': W.sentence(st), 'u': 1 if counts else 0, 'h': 1 if hand else 0, 's': shapes})
-    first = {'t': 'The given figure: ' + '; '.join(given_words) + '.', 'u': 1, 'h': 0, 's': given_shapes}
-    fin = final(problem, r, entry, j, d)
-    steps = [first] + out
-    return ({'view': [num(x, d) for x in box], 'steps': [{k: x[k] for k in ('t', 'h', 's')} for x in steps]},
-            {'file': entry['file'], 'used': [num(x, d) for x in ubox], 'u': ''.join(str(x['u']) for x in steps), 'result': fin})
+            given_names += names; given_words.append(noun(W.sentence(st))); continue
+        plan.append({'t': W.sentence(st), 'u': 1 if any(o in used for o in outs) else 0,
+                     'h': 1 if any(o in r['hand'] for o in outs) else 0, 'n': names,
+                     'p': sorted({x for o in outs for x in r['parents'].get(o, [])})})
+    plan.insert(0, {'t': 'The given figure: ' + '; '.join(given_words) + '.', 'u': 1, 'h': 0, 'n': given_names, 'p': [], 'giv': 1})
+
+    def geometry(rr, jj):
+        steps = []
+        for st in plan:
+            sh = [x for x in (shape(rr['objects'].get(n), n, d) for n in st['n']) if x]
+            if st.get('giv'):
+                for x in sh: x['giv'] = 1
+            steps.append(sh)
+        res_shapes = draw.result_shapes(problem, rr, entry, jj)
+        everything = [n for n in rr['objects'] if rr['objects'][n] and rr['objects'][n][0] != 'num']
+        box = draw.bounds(rr, everything, res_shapes)
+        users = [n for n in rr['kind_of'] if n in used and rr['objects'].get(n) and rr['objects'][n][0] != 'num']
+        ubox = draw.bounds(rr, users, res_shapes) or box
+        return steps, final(problem, rr, entry, jj, d), [num(x, d) for x in box], [num(x, d) for x in ubox]
+
+    shapes, fin, box, ubox = geometry(r, j)
+    # For each step, the earlier steps whose objects it is drawn from (for highlighting in the player).
+    index = {}
+    for i, st in enumerate(plan):
+        for n in st['n']: index.setdefault(n, i)
+    def from_steps(st, i):
+        out = set()
+        for pnm in st['p']:
+            k = index.get(pnm)
+            if k is None:                                         # an unnamed or undrawn helper: follow its parents
+                stack, seen = list(r['parents'].get(pnm, [])), set()
+                while stack:
+                    q = stack.pop()
+                    if q in seen: continue
+                    seen.add(q)
+                    if q in index: out.add(index[q])
+                    else: stack += r['parents'].get(q, [])
+            else: out.add(k)
+        return sorted(x for x in out if x < i)
+    file_part = {'view': box, 'steps': [{'t': st['t'], 'h': st['h'], 's': sh, 'f': from_steps(st, i)} for i, (st, sh) in enumerate(zip(plan, shapes))]}
+    entry_part = {'file': entry['file'], 'used': ubox, 'u': ''.join(str(st['u']) for st in plan), 'result': fin}
+    if not frames: return file_part, entry_part, None
+    if problem not in ('taa', 'ar'): return file_part, entry_part, None
+    got = {}
+    def keep(deg, rr, a):
+        jj = v.judge(problem, rr, entry.get('square'), entry.get('result_path'), entry.get('result_scale'))
+        if not jj or a is None: return
+        sh, fn, bx, ub = geometry(rr, jj)
+        fn['acc'] = a
+        got[round(deg, 2)] = {'s': sh, 'r': fn, 'view': bx, 'used': ub}
+    start = v.sweep(problem, path, entry, lo=5.0, hi=180.0, step=5.0, on_step=keep)[1]
+    return file_part, entry_part, {'start': round(start, 2), 'frames': [dict(deg=k, **x) for k, x in sorted(got.items())]}
 
 
 def main():
     archive = v.load_archive()
     os.makedirs(OUT, exist_ok=True)
     made, keep = 0, set()
+    dump = lambda x: json.dumps(x, ensure_ascii=False, separators=(',', ':'))
+    head = '// Written by tools/steps.py (python tools/verify.py --write). Do not edit by hand: run the script again.\n'
     for p in archive['problems']:
-        files, entries = {}, {}
+        files, entries, angles = {}, {}, {}
         for e in p['entries']:
-            try: b = build(p['id'], p['folder'], e)
+            try: b = build(p['id'], p['folder'], e, frames=True)
             except Exception as ex: print('steps for %s were not written: %s' % (e['id'], ex)); b = None
             if b:
                 files.setdefault(e['file'], b[0]); entries[e['id']] = b[1]; made += 1
+                if b[2]: angles[e['id']] = b[2]
         name = p['id'] + '.js'; keep.add(name)
-        dump = lambda x: json.dumps(x, ensure_ascii=False, separators=(',', ':'))
         with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
-            f.write('// Written by tools/steps.py (python tools/verify.py --write). Do not edit by hand: run the script again.\n')
-            f.write('// files: each GeoGebra file\'s steps, once; entries: which steps count towards each charted result (u), and the result.\n')
+            f.write(head + '// files: each GeoGebra file\'s steps, once (f: the steps each is drawn from); entries: which steps count\n'
+                    '// towards each charted result (u), and the result.\n')
             f.write('window.STEPS = window.STEPS || {};\nSTEPS[%s] = {\n"files": {\n' % json.dumps(p['id']))
             f.write(',\n'.join('%s: %s' % (json.dumps(k), dump(x)) for k, x in files.items()))
             f.write('\n},\n"entries": {\n')
             f.write(',\n'.join('%s: %s' % (json.dumps(k), dump(x)) for k, x in entries.items()))
             f.write('\n}};\n')
+        if angles:
+            name = p['id'] + '-angles.js'; keep.add(name)
+            with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
+                f.write(head + '// Each angle method rebuilt every 5 degrees from its own angle, for the player\'s angle slider.\n')
+                f.write('window.ANGLES = window.ANGLES || {};\nANGLES[%s] = {\n' % json.dumps(p['id']))
+                f.write(',\n'.join('%s: %s' % (json.dumps(k), dump(x)) for k, x in angles.items()))
+                f.write('\n};\n')
     for f in os.listdir(OUT):
         if f.endswith('.js') and f not in keep: os.remove(os.path.join(OUT, f))
     print('%d constructions written as steps into pages/steps' % made)

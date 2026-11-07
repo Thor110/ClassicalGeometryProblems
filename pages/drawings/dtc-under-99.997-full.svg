@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900.0 900.0" role="img" aria-label="dtc-under-99.997 99.997% (everything in the file)">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="316.07" y1="316.07" x2="528.67" y2="578.17" stroke="#d4d4da" stroke-width="1"/>
+<line x1="316.07" y1="583.93" x2="583.93" y2="583.93" stroke="#b07a1a" stroke-width="2.2"/>
+<line x1="316.07" y1="900.00" x2="316.07" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
+<line x1="583.93" y1="900.00" x2="583.93" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
+<circle cx="316.07" cy="583.93" r="267.86" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
+<circle cx="583.93" cy="583.93" r="267.86" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
+<circle cx="583.93" cy="316.07" r="267.86" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
+<line x1="0.00" y1="900.00" x2="900.00" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
+<circle cx="583.93" cy="583.93" r="55.48" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
+<circle cx="583.93" cy="316.07" r="66.96" fill="none" stroke="#7a7a86" stroke-width="1.4"/>
+<line x1="516.81" y1="900.00" x2="549.97" y2="0.00" stroke="#3a3a44" stroke-width="1.4"/>
+<line x1="316.07" y1="583.93" x2="583.93" y2="583.93" stroke="#b07a1a" stroke-width="4" stroke-linecap="round"/>
+<line x1="316.07" y1="316.07" x2="528.67" y2="578.17" stroke="#178a62" stroke-width="4" stroke-linecap="round"/>
+</svg>

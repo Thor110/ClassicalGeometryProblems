@@ -1,0 +1,207 @@
+{
+ "max_q": 12,
+ "results": [
+  {
+   "id": "hayden-dtc",
+   "name": "Hayden's duplication (1871)",
+   "entry": "dtc-under-99.989",
+   "problem": "dtc",
+   "about": "F a fraction f of the way from C to D (Hayden: a third).",
+   "original": {
+    "values": {
+     "f": "1/3"
+    },
+    "accuracy": 99.98915168416518,
+    "cost": [
+     3,
+     2
+    ]
+   },
+   "better": 0,
+   "front": []
+  },
+  {
+   "id": "hobson-stc",
+   "name": "Hobson's quadrature (1913)",
+   "entry": "stc-over-99.998",
+   "problem": "stc",
+   "about": "OD, OE and OF as fractions of the radius (Hobson: 3/5, 1/2, 3/2).",
+   "original": {
+    "values": {
+     "OD": "3/5",
+     "OE": "1/2",
+     "OF": "3/2"
+    },
+    "accuracy": 99.99846788188707,
+    "cost": [
+     5,
+     2
+    ]
+   },
+   "better": 22,
+   "front": [
+    {
+     "values": {
+      "OD": "1/3",
+      "OE": "11/8",
+      "OF": "6/5"
+     },
+     "accuracy": 99.99937538568837,
+     "cost": [
+      8,
+      4
+     ],
+     "extra": [
+      3,
+      2
+     ]
+    },
+    {
+     "values": {
+      "OD": "3/8",
+      "OE": "11/9",
+      "OF": "6/5"
+     },
+     "accuracy": 99.9993753856884,
+     "cost": [
+      14,
+      4
+     ],
+     "extra": [
+      9,
+      2
+     ]
+    },
+    {
+     "values": {
+      "OD": "1/3",
+      "OE": "2/7",
+      "OF": "15/7"
+     },
+     "accuracy": 99.99966617534947,
+     "cost": [
+      17,
+      6
+     ],
+     "extra": [
+      12,
+      4
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rhind-stc",
+   "name": "Rhind papyrus (about 1700 BC)",
+   "entry": "stc-over-99.398",
+   "problem": "stc",
+   "about": "The square on a fraction of the diameter (Ahmes: 8/9).",
+   "original": {
+    "values": {
+     "side": "8/9"
+    },
+    "accuracy": 99.39835695919703,
+    "cost": [
+     9,
+     2
+    ]
+   },
+   "better": 0,
+   "front": []
+  },
+  {
+   "id": "kunze-rtc",
+   "name": "Kunze's triangle (1851)",
+   "entry": "rtc-over-99.998",
+   "problem": "rtc",
+   "about": "The legs of the right triangle as fractions of the diameter (Kunze: 3/5 and 6/5).",
+   "original": {
+    "values": {
+     "leg 1": "3/5",
+     "leg 2": "6/5"
+    },
+    "accuracy": 99.99846788188705,
+    "cost": [
+     10,
+     4
+    ]
+   },
+   "better": 0,
+   "front": []
+  },
+  {
+   "id": "lambert-ar",
+   "name": "Cusa's and Lambert's rectification (1765)",
+   "entry": "ar-under-99.029",
+   "problem": "ar",
+   "about": "Where the rectification point sits (OP radii beyond O) and how many versines it moves in (Cusa: 2 and 0; Lambert: 2 and 1/5). Scored at its worst up to 90°.",
+   "original": {
+    "values": {
+     "OP": "2",
+     "shift": "1/5"
+    },
+    "accuracy": 99.02974236829043,
+    "cost": [
+     5,
+     2
+    ]
+   },
+   "better": 102,
+   "front": [
+    {
+     "values": {
+      "OP": "2",
+      "shift": "1/4"
+     },
+     "accuracy": 99.83148772233953,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      -5,
+      -2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "buonafalce1-dtc",
+   "name": "Buonafalce's first solution (1876)",
+   "entry": "dtc-under-99.693",
+   "problem": "dtc",
+   "about": "DE as a fraction of the diagonal BD (Buonafalce: a sixth).",
+   "original": {
+    "values": {
+     "DE": "1/6"
+    },
+    "accuracy": 99.69304986369542,
+    "cost": [
+     6,
+     2
+    ]
+   },
+   "better": 0,
+   "front": []
+  },
+  {
+   "id": "willich-stc",
+   "name": "Willich's quadrature (1855)",
+   "entry": "stc-under-99.946",
+   "problem": "stc",
+   "about": "E as a fraction of the way from B to D (Willich: the midpoint).",
+   "original": {
+    "values": {
+     "E": "1/2"
+    },
+    "accuracy": 99.94664984652559,
+    "cost": [
+     0,
+     0
+    ]
+   },
+   "better": 0,
+   "front": []
+  }
+ ]
+}
