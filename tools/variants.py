@@ -242,6 +242,22 @@ def monti_third(theta, g=0.5, m=1/6):
     return phi-x
 
 
+def cominotto_third(theta):
+    """Cominotto: B the corner, BC = 1 along one arm, trisected at D and E, BF = BD beyond B; the arc CH on the semicircle
+    about E equal to the arc DG; DI = DC on DH, FK = FC on FI; the circle through K, I, C meets the arc at T. Returns CBT."""
+    C, D, E, F = (1, 0), (1 / 3, 0), (2 / 3, 0), (-1 / 3, 0)
+    H = (E[0] + math.cos(theta) / 3, E[1] + math.sin(theta) / 3); L = math.dist(D, H)
+    I = (D[0] + (H[0] - D[0]) / L * 2 / 3, D[1] + (H[1] - D[1]) / L * 2 / 3)
+    L = math.dist(F, I); K = (F[0] + (I[0] - F[0]) / L * 4 / 3, F[1] + (I[1] - F[1]) / L * 4 / 3)
+    (ax, ay), (bx, by), (cx, cy) = K, I, C
+    q = 2 * (ax * (by - cy) + bx * (cy - ay) + cx * (ay - by))
+    ux = ((ax*ax+ay*ay)*(by-cy)+(bx*bx+by*by)*(cy-ay)+(cx*cx+cy*cy)*(ay-by))/q
+    uy = ((ax*ax+ay*ay)*(cx-bx)+(bx*bx+by*by)*(ax-cx)+(cx*cx+cy*cy)*(bx-ax))/q
+    R2 = (ux - cx) ** 2 + (uy - cy) ** 2; d = math.hypot(ux, uy); a = (1 + d * d - R2) / (2 * d)
+    base, h = math.atan2(uy, ux), math.acos(max(-1, min(1, a)))
+    return max((base + h, base - h), key=lambda t: math.dist((math.cos(t), math.sin(t)), C))
+
+
 def _cusa(x, shift):
     P = -(2 - shift * (1 - math.cos(x))); BD = math.sin(x) * (1 - P) / (math.cos(x) - P)
     dx, dy = 1 - P, BD / 3; a = dx*dx + dy*dy; b = 2 * P * dx; c = P*P - 1
@@ -377,7 +393,7 @@ def report(results, max_q):
           'fractions of their own, like Cusa\'s, can go deepest. At their weakest from 30° to 150°:', '',
           '| Method | As it is | Halved once | Twice | Three times | Four times | Five times |', '|---|---|---|---|---|---|---|']
     charted = {"Dürer's trisection, from one side": 0, "Karajordanoff's trisection": 3, "d'Ocagne's trisection": 4, "Cusa's trisection": 4,
-               "Vahlen's trisection": 1, "Cusa's trisection with a quarter versine": 2, "Monti's trisection": 3,
+               "Vahlen's trisection": 1, "Cusa's trisection with a quarter versine": 2, "Monti's trisection": 3, "Cominotto's trisection": 2,
                "Cusa's rectification": 5, "Lambert's rectification": 1, "Lambert's with a quarter versine": 1}
     def rect(k):
         def f(x):
@@ -392,7 +408,7 @@ def report(results, max_q):
     rows = [("Dürer's trisection, from one side", lambda p: durer_third(p, 1/3), 'taa'), ("Karajordanoff's trisection", lambda p: kara_third(p, 2), 'taa'),
             ("d'Ocagne's trisection", lambda p: ocagne_third(p, 0.5), 'taa'), ("Cusa's trisection", lambda p: _cusa(p, 0), 'taa'),
             ("Vahlen's trisection", lambda p: _cusa(p, 2/9), 'taa'), ("Cusa's trisection with a quarter versine", lambda p: _cusa(p, 0.25), 'taa'),
-            ("Monti's trisection", lambda p: monti_third(p), 'taa'),
+            ("Monti's trisection", lambda p: monti_third(p), 'taa'), ("Cominotto's trisection", cominotto_third, 'taa'),
             ("Cusa's rectification", rect(0), 'ar'),
             ("Rankine's first rectification", rank1, 'ar'), ("Rankine's second rectification", rank2, 'ar'),
             ("Rankine's two combined", lambda t: 0.8 * rank2(t) + 0.2 * rank1(t), 'ar'), ("Lambert's rectification", rect(0.2), 'ar'), ("Lambert's with a quarter versine", rect(0.25), 'ar')]

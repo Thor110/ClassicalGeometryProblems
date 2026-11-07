@@ -1698,6 +1698,55 @@ const ARCHIVE = {
       ]
      },
      "holder_kind": "ai"
+    },
+    {
+     "id": "taa-over-99.177",
+     "side": "over",
+     "marks": "",
+     "holder": "E. Cominotto",
+     "method": "Cominotto's trisection",
+     "circles": 9,
+     "lines": 7,
+     "acc": "99.177",
+     "precise": "99.177435279698193381485327921422",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.177-Cominotto",
+     "note": "BC trisected at D and E; the arc DG about B carried to the semicircle about E as CH; DI = DC along DH, FK = FC along FI; the circle through K, I and C meets the arc AC at T, the third. A general method, good to 180°: its weakest from 30° to 150° is at 150°, where the file is drawn.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Cominotto, Trisezione approssimata dell'angolo, Padova 1895",
+       "as given in A. Conti, \"Problemi di 3° grado: duplicazione del cubo, trisezione dell'angolo\", article XIII of F. Enriques (ed.), Questioni riguardanti la geometria elementare, Bologna 1900 (Internet Archive, questioniriguard00enri), § 17, pp. 459-461, figs. 21-22, with the check at 180°; also in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 17",
+       "redrawn in November 2026 from the Italian text; at 180° the rebuilt figure puts T at the height 2√2(1 + √2)/(5 + 2√2) = 0.872260 of the radius, exactly the value the text derives, so the chord CT is 1.0109 radii, 43 minutes of arc over a third. The text's rounded arithmetic (x = 0.485) makes the chord look closer to the radius than it is"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-99.950",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Cominotto's trisection, on the angle halved twice",
+     "circles": 11,
+     "lines": 10,
+     "acc": "99.950",
+     "precise": "99.950309494646427174346660185630",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.950-Claude",
+     "note": "Cominotto's trisection worked on the angle halved twice and doubled back: 99.950% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale. Credit for the method is Cominotto's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Cominotto's trisection"
+      ]
+     },
+     "holder_kind": "ai"
     }
    ]
   },
@@ -1724,7 +1773,7 @@ const ARCHIVE = {
      "date": "06-06-2024",
      "geogebra": "bmzy5bgb",
      "file": "GeoGebra Files/Under/DTC-97.656",
-     "note": "Re-measured at full precision in November 2026: the chart listed 99.227% oversized. The earlier figure came from edge lengths rounded to one decimal place.",
+     "note": "Re-measured at full precision in November 2026: the chart listed 99.227% oversized. The earlier figure came from edge lengths rounded to one decimal place. The edge comes out at exactly 5/4, the value of Stifel's circle on Plato's figure (1544, dtc-under-97.65625).",
      "verified": [],
      "disputes": [],
      "count_history": "Counted 13 circles, 30 lines before the counting rules (version 1.0, November 2026) were written down.",
@@ -2125,6 +2174,81 @@ const ARCHIVE = {
        "published: G. J. Vargiù, Sulla duplicazione del cubo e sulla multiplicazione di esso, Oristano 1877",
        "as given in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 9; also cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 292, after Buteo (1554)",
        "redrawn in November 2026; the scan garbles Amaldi's figures, and the value is the one the construction gives, 2^(85/256)"
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.972",
+     "side": "over",
+     "marks": "",
+     "holder": "Gaetano Boccali",
+     "method": "Boccali's duplication",
+     "circles": 6,
+     "lines": 3,
+     "acc": "99.972",
+     "precise": "99.972684147537496573633387496366",
+     "date": "1884",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.972-Boccali",
+     "note": "The side of the regular star decagon in the circle of radius AB, laid along AB, and the semicircle on it: two thirds of A'C + UB' is the edge, (2/3)((√5 − 1)/2 + √φ) = 1.2600358 against ∛2 = 1.2599210, over by less than a ten-thousandth, as Conti states.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Gaetano Boccali, Doppio cubo ed altre nuove scoperte geometriche in una semplice spirale poligona, Camerino 1884",
+       "as re-derived (Conti found Boccali's own route artificial and badly explained, and gives the same result by a different way) in A. Conti, \"Problemi di 3° grado: duplicazione del cubo, trisezione dell'angolo\", article XIII of F. Enriques (ed.), Questioni riguardanti la geometria elementare, Bologna 1900 (Internet Archive, questioniriguard00enri), § 11, pp. 442-445; also in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 9",
+       "redrawn in November 2026 from the Italian text, whose numbers survive the scan: A'C = 0.6180339887, UB' = 1.2720196495, two thirds of the sum 1.2600357588; the rebuilt figure gives the same",
+       "the value 1.260035 confirmed independently by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 284, note 1"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.9976",
+     "side": "under",
+     "marks": "",
+     "holder": "K. T. Vahlen",
+     "method": "Vahlen's external division",
+     "circles": 10,
+     "lines": 4,
+     "acc": "99.9976",
+     "precise": "99.997673552813946002460021205064",
+     "date": "1911",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.9976-Vahlen",
+     "note": "The length 8 divided externally so that the parts multiply to 35/3: the smaller part is the edge, the root of 3x² + 24x = 35, an approximate equation for ∛2 from Jacobi's algorithm. 1.2599112 against ∛2 = 1.2599210, the value Vahlen gives.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), pp. 283-284, where Vahlen calls it simpler and more accurate than Buonafalce's, Boccali's and Mascheroni's",
+       "redrawn in November 2026; the scan garbles the fraction, read back as 35/3 because it alone gives Vahlen's printed value 1.2599112 (the root of x² + 8x = 35/3 is 1.25991128)"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-97.65625",
+     "side": "under",
+     "marks": "",
+     "holder": "Michael Stifel",
+     "method": "Stifel's circle on Plato's figure",
+     "circles": 3,
+     "lines": 1,
+     "acc": "97.65625",
+     "precise": "97.656250000000000000000000000000",
+     "date": "1544",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-97.65625-Stifel",
+     "note": "Plato's figure for two mean proportionals between OA = 1 and OB = 2, set at right angles: the circle about M, three eighths of the way along OB, through B, meets OB's line beyond O at D and OA's line near C. OD = 5/4 stands for ∛2 (and OC = 1.581 for ∛4). Exactly the value of Gordon's Cube 2 Tesseract v1.0 (dtc-under-97.656), which also lands on the edge 5/4; charted with the full value, which ends there, so the two keep separate labels.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Michael Stifel, Arithmetica integra, Nürnberg 1544, fol. 119",
+       "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 284, who notes that it gives only ∛2 = 5/4 but can be improved at will (OM = 0.37 instead)",
+       "redrawn in November 2026; the scan garbles the fractions, read back as OM = 3/8 and ∛2 = 5/4, the only pair that agrees with each other and with Vahlen's \"besser 0,37\""
       ]
      }
     }
@@ -3978,6 +4102,12 @@ const ARCHIVE = {
    "problem": "ar",
    "by": "W. J. Macquorn Rankine",
    "about": "Rankine's two constructions for the length of any arc (1867), with errors θ⁵/1080 short and θ⁵/4320 long, and their combination, four fifths and one fifth, which leaves only θ⁷/870912. On the arc halved four times the combination holds 99.9999999982% from 30° to 150°."
+  },
+  {
+   "name": "Cominotto's trisection",
+   "problem": "taa",
+   "by": "E. Cominotto",
+   "about": "Cominotto's construction (1895), through a circle on three points: good to 180° as it stands (43' out at 180°, 25' at 150°), and 99.950% from 30° to 150° on the angle halved twice."
   }
  ],
  "wanted": [
@@ -3987,13 +4117,6 @@ const ARCHIVE = {
    "year": "1919",
    "value": "a trisection from the limaçon of Pascal, at most 15 seconds of arc out up to 90° (Perron's table), exact at 90°",
    "source": "R. C. Yates, The Trisection Problem (1942), ch. 4, section 5; O. Perron, Sitzungsberichte der Bayerischen Akademie der Wissenschaften, 1933. The scanned text of Yates garbles the construction, so it needs the original figure."
-  },
-  {
-   "problem": "dtc",
-   "who": "G. Boccali",
-   "year": "1884",
-   "value": "from the side of the regular decagon and a semicircle; about 1.26",
-   "source": "Boccali, Doppio cubo (Camerino 1884), via Amaldi (1907), § 9, fig. 98. The scan garbles the final combination of lengths."
   },
   {
    "problem": "dtc",
@@ -4010,13 +4133,6 @@ const ARCHIVE = {
    "source": "Baudhayana Sulba Sutra, as given by Vahlen (1911), p. 177. Vahlen also credits him with 7:8; which rule is his needs a translation of the Sutra."
   },
   {
-   "problem": "taa",
-   "who": "E. Cominotto",
-   "year": "1895",
-   "value": "a trisection through a circle on three points, which Amaldi shows is within a thousandth of the radius at 180°",
-   "source": "Cominotto, Trisezione approssimata dell'angolo (Padova 1895), as given by Amaldi in Enriques, Fragen der Elementargeometrie II (1907), § 17, fig. 125. The scan garbles which arc is carried to which."
-  },
-  {
    "problem": "stc",
    "who": "A. H. Anglin",
    "year": "1884",
@@ -4029,6 +4145,13 @@ const ARCHIVE = {
    "year": "1890",
    "value": "the side 0.8862279 of the diameter, too big by one part in 654498 by area",
    "source": "Lakenmacher, Archiv der Mathematik und Physik, 2nd series, IX (1890), pp. 214-215. The scan lacks p. 214, where the construction begins."
+  },
+  {
+   "problem": "dtc",
+   "who": "K. T. Vahlen",
+   "year": "1911",
+   "value": "∛2 ≈ 1.2599275, from the unit square, by similar triangles",
+   "source": "Vahlen, Konstruktionen und Approximationen (1911), pp. 282-283. The scan garbles the fractions of BF and CE and the formula; it needs a clean page."
   }
  ],
  "derived_pi": {
@@ -4134,10 +4257,11 @@ const ARCHIVE = {
    "G. Buonafalce"
   ],
   "K. T. Vahlen": [
-   "Karl Theodor Vahlen",
-   "K. T. Vahlen"
+   "K. T. Vahlen",
+   "Karl Theodor Vahlen"
   ],
   "P. Monti": [
+   "Pompeo Monti",
    "P. Monti"
   ],
   "Nicholas of Cusa": [
@@ -4145,6 +4269,7 @@ const ARCHIVE = {
    "Nikolaus von Kues"
   ],
   "G. J. Vargiù": [
+   "Giuseppe Vargiù",
    "G. J. Vargiù"
   ],
   "Fontana": [
@@ -4168,6 +4293,16 @@ const ARCHIVE = {
   "W. J. Macquorn Rankine": [
    "W. J. Macquorn Rankine",
    "William John Macquorn Rankine"
+  ],
+  "Gaetano Boccali": [
+   "G. Boccali",
+   "Gaetano Boccali"
+  ],
+  "E. Cominotto": [
+   "E. Cominotto"
+  ],
+  "Michael Stifel": [
+   "Michael Stifel"
   ]
  }
 };

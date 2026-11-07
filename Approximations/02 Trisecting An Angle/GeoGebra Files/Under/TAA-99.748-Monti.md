@@ -4,7 +4,7 @@
 Monti's trisection
 
 **Author:**
-P. Monti - 1895 ("Regola generale per la soluzione grafica della trisezione dell'angolo", Il Politecnico, with the proof by G. Schiaparelli), as given by U. Amaldi in F. Enriques, "Fragen der Elementargeometrie" II (1907), § 17
+Pompeo Monti, a draughtsman at the Technical Office in Milan - 1895 ("Regola generale per la soluzione grafica della trisezione dell'angolo", Il Politecnico, with the proof by G. Schiaparelli), as given by U. Amaldi in F. Enriques, "Fragen der Elementargeometrie" II (1907), § 17
 
 **Accuracy (%):**
 99.748
