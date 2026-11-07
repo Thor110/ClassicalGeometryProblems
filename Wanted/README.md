@@ -13,10 +13,7 @@ beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
 
 ## Still wanted
 
-| Construction | Chart | Why it is not charted yet |
-|---|---|---|
-| Ernst Lakenmacher (1890): the side 0.8862279 of the diameter | Squaring the circle | Archiv der Mathematik und Physik (2) IX: pp. 213-214 are blank white images in the only scan on the Internet Archive; needs another copy (HathiTrust refuses automated access). |
-| Baudhayana (about 800 BC): π ≈ 3.0883 | Squaring the circle | Vahlen (1911), p. 177; which of two rules is his needs a translation of the Sulba Sutra. |
+Nothing at present: every construction that was on this list has been charted. New finds are added here while they are checked.
 
 No drafts are in progress.
 
@@ -28,6 +25,7 @@ given there.
 | Construction | Chart | From |
 |---|---|---|
 | Ahmes, Rhind papyrus (about 1700 BC): 8/9 of the diameter | Squaring the circle, 99.398% over | Hobson, "Squaring the Circle" (1913), "Earliest traces" |
+| Baudhāyana (about 800 BC): the Sulba Sutra's two rules, 7/8 + 1/(8·29) − 1/(8·29·6) + 1/(8·29·6·8) and 13/15 of the diameter | Squaring the circle, 98.304% (µ) and 95.634% under | G. Thibaut, "On the Śulvasútras" (1875), pp. 27-28 |
 | Nicholas of Cusa / Snellius (15th century, 1621): 3 sin θ / (2 + cos θ) | Arc rectification, 95.492% under (at 90°) | Yates, "The Trisection Problem" (1942), ch. 4 §2; Hobson (1913), pp. 27-30 |
 | Nicholas of Cusa / Snellius: the same point used to trisect | Trisecting an angle, 95.527% under (at 90°) | Yates (1942), ch. 4 §2; Vahlen (1911), p. 189 |
 | Albrecht Dürer (1525): trisection | Trisecting an angle, 99.395% over (at 150°) | G. H. Hughes, "The Polygons of Albrecht Dürer" (2012), Appendix A |
@@ -67,6 +65,7 @@ given there.
 | A. L. Crelle (1846): the cosine equal to its tangent, 8 cos x | Rectifying the circle, 99.904% over | Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92 |
 | Émile Lemoine (1895): two shorter ways to draw √2 + √3, and the golden chord for a quarter | Rectifying the circle, 99.851% over (twice, tying d'Ocagne) and 99.904% over (tying Crelle) | Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 |
 | Kopf (1919), refined by Perron (1933): the arc about F and the angle at P | Trisecting an angle, 99.981% under (at 63.95°) | Yates (1942), ch. 4 § 5, fig. 37, from the page image |
+| Ernst Lakenmacher (1890): the side 0.8862278 of the diameter | Squaring the circle, 99.99981% over | Archiv der Mathematik und Physik (2) IX, pp. 214-215, as described in the Jahrbuch über die Fortschritte der Mathematik 22 (JFM 22.0578.01) |
 | K. T. Vahlen (1911): 39/4 divided externally to the product 81/2 | Rectifying the circle, 99.9997% under | Vahlen (1911), p. 312 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,

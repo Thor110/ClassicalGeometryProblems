@@ -1193,6 +1193,80 @@ const ARCHIVE = {
        "redrawn in November 2026; the plate is folded and shows only part of fig. 10, which places C on the side of the square about the circle, above E; with it the circle about C through I meets the arc at the J Anglin's working gives. The rebuilt side is 1.76818858 radii against his printed 1.768191052, a difference in the sixth decimal, which a 30-digit solution of the same figure confirms"
       ]
      }
+    },
+    {
+     "id": "stc-under-98.304",
+     "side": "under",
+     "marks": "µ",
+     "holder": "Baudhayana",
+     "method": "Baudhayana's rule: 7/8 + 1/(8·29) − 1/(8·29·6) + 1/(8·29·6·8)",
+     "circles": 14,
+     "lines": 10,
+     "acc": "98.304",
+     "precise": "98.304485395422055210411175561859",
+     "date": "about 800 BC",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/98.304-Baudhayana",
+     "note": "The Sulba Sutra's rule for turning a circle into a square: the diameter in eight parts, one of them in twenty-nine; of these twenty-nine remove twenty-eight, and the sixth part of the one left, less the eighth part of that sixth. The side is 0.878682 of the diameter (π ≈ 3.0883). Drawn step for step; its last corrections are a ten-thousandth of the diameter, so it is micro scale.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Baudhāyana Śulba Sūtra I.59 (Thibaut's numbering), as translated in G. Thibaut, \"On the Śulvasútras\", Journal of the Asiatic Society of Bengal 44 (1875), pp. 227-275 (Internet Archive, ulvastras00ktgoog), pp. 27-28 of the offprint",
+       "Thibaut shows it is the reverse of Baudhāyana's rule for turning a square into a circle, put into numbers (1224 : 1393); also given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 177",
+       "redrawn in November 2026 from Thibaut's translation; the rebuilt side is 0.8786817 of the diameter, the rule's value"
+      ]
+     }
+    },
+    {
+     "id": "stc-under-95.634",
+     "side": "under",
+     "marks": "",
+     "holder": "Baudhayana",
+     "method": "The Sulba Sutras' thirteen fifteenths",
+     "circles": 11,
+     "lines": 7,
+     "acc": "95.634",
+     "precise": "95.634436915663330648680376924284",
+     "date": "about 800 BC",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/95.634-Baudhayana",
+     "note": "The Sulba Sutras' simpler rule, common to Baudhayana, Apastamba and Katyayana: divide the diameter into fifteen parts and remove two; the remaining thirteen are the side of the square (π ≈ 3.004).",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Baudhāyana Śulba Sūtra I.60 (Thibaut's numbering), and in the Śulba Sūtras of Āpastamba and Kātyāyana, as translated in G. Thibaut, \"On the Śulvasútras\", Journal of the Asiatic Society of Bengal 44 (1875), pp. 227-275 (Internet Archive, ulvastras00ktgoog), pp. 27-28 of the offprint",
+       "redrawn in November 2026 from Thibaut's translation"
+      ]
+     }
+    },
+    {
+     "id": "stc-over-99.99981",
+     "side": "over",
+     "marks": "",
+     "holder": "Ernst Lakenmacher",
+     "method": "Lakenmacher's quadrature",
+     "circles": 4,
+     "lines": 6,
+     "acc": "99.99981",
+     "precise": "99.999810304910761512401523664230",
+     "date": "1890",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.99981-Lakenmacher",
+     "note": "Two lines from the end of a diameter, through the quarter and three-quarter points of the perpendicular radius, meet the circle at y and i; half the foot of i's perpendicular, plus the chord dy, laid on from the centre, gives az, the side: 0.8862278 of the diameter against 0.8862269.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Lakenmacher, \"Verwandlung einer Kreisfläche in ein annähernd gleich grosses Quadrat\", Archiv der Mathematik und Physik (2) IX (1890), pp. 214-215; cited by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
+       "as described step by step in the review by Maynz, Jahrbuch über die Fortschritte der Mathematik 22 (JFM 22.0578.01, zbMATH Open), since p. 214 of the only scan of the Archiv (Internet Archive, archivdermathem49unkngoog) is a blank image",
+       "redrawn in November 2026 from the review; the rebuilt az is 0.8862278 of the diameter, the value Vahlen gives (0.8862279)"
+      ]
+     }
     }
    ]
   },
@@ -4413,22 +4487,7 @@ const ARCHIVE = {
    "about": "Cominotto's construction (1895), through a circle on three points: good to 180° as it stands (43' out at 180°, 25' at 150°), and 99.950% from 30° to 150° on the angle halved twice."
   }
  ],
- "wanted": [
-  {
-   "problem": "stc",
-   "who": "Baudhayana",
-   "year": "about 800 BC",
-   "value": "the square on 1 − 1/8 + 1/(8·29) − 1/(8·29·6) + 1/(8·29·6·8) of the diameter, π ≈ 3.0883",
-   "source": "Baudhayana Sulba Sutra, as given by Vahlen (1911), p. 177. Vahlen also credits him with 7:8; which rule is his needs a translation of the Sutra."
-  },
-  {
-   "problem": "stc",
-   "who": "Ernst Lakenmacher",
-   "year": "1890",
-   "value": "the side 0.8862279 of the diameter, too big by one part in 654498 by area",
-   "source": "Lakenmacher, Archiv der Mathematik und Physik, 2nd series, IX (1890), pp. 214-215. In the only scan on the Internet Archive (archivdermathem49unkngoog) pages 213 and 214 are blank white images, so the start of the construction is lost; another copy (HathiTrust, a library) is needed."
-  }
- ],
+ "wanted": [],
  "derived_pi": {
   "folder": "Approximations/06 Pi Approximations",
   "about": "The π chart is worked out from the circle rectification chart: each rectification, halved, is a π approximation with the same accuracy and steps. These are the π versions drawn in GeoGebra, linked beside the rectification each comes from.",
@@ -4594,6 +4653,14 @@ const ARCHIVE = {
    "Kopf",
    "O. Perron",
    "Oskar Perron"
+  ],
+  "Baudhayana": [
+   "Baudhayana",
+   "Baudhāyana"
+  ],
+  "Ernst Lakenmacher": [
+   "E. Lakenmacher",
+   "Ernst Lakenmacher"
   ]
  }
 };
