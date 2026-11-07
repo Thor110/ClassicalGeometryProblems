@@ -7,7 +7,7 @@ Specht's construction
 Specht - 1828 (Crelle's Journal, vol. 3, p. 83), as given by E. W. Hobson, "Squaring the Circle: A History of the Problem" (1913), pp. 34-35, construction (3)
 
 **Accuracy (%):**
-99.99997
+99.999977
 (precise readout: 99.999977703818357853546539562126)
 
 **Oversized / Undersized:**

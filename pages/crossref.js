@@ -1,8 +1,8 @@
 // Written by tools/crossref.py. Do not edit by hand: run it again.
 const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-07","pairs":[
-{"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796","newer":"taa-over-96.305","older_holder":"Maurice d'Ocagne","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
+{"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796","newer":"taa-over-96.305","older_holder":"H. Schoeler","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-96.305","older_holder":"Gaetano Baratto","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
-{"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-98.796","older_holder":"Gaetano Baratto","newer_holder":"Maurice d'Ocagne","kinds":["person","person"]},
+{"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-98.796","older_holder":"Gaetano Baratto","newer_holder":"H. Schoeler","kinds":["person","person"]},
 {"problem":"ar","kind":"identical","similarity":1.0,"older":"ar-over-99.592","newer":"ar-over-99.592-burmester","older_holder":"Maurice d'Ocagne","newer_holder":"Ludwig Burmester","kinds":["person","person"]},
 {"problem":"rtc","kind":"same result","similarity":0.568,"older":"rtc-over-99.851-lemoine-a","newer":"rtc-over-99.851-lemoine-b","older_holder":"Émile Lemoine","newer_holder":"Émile Lemoine","kinds":["person","person"]},
 {"problem":"rtc","kind":"same result","similarity":0.205,"older":"rtc-over-99.851","newer":"rtc-over-99.851-lemoine-a","older_holder":"Maurice d'Ocagne","newer_holder":"Émile Lemoine","kinds":["person","person"]},

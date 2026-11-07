@@ -449,10 +449,10 @@
   },
   {
    "id": "ocagne-taa",
-   "name": "d'Ocagne's trisection (1934)",
+   "name": "Schoeler's trisection (1902; d'Ocagne 1934)",
    "entry": "taa-over-98.796",
    "problem": "taa",
-   "about": "How far behind the centre C is, in radii (d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted.",
+   "about": "How far behind the centre C is, in radii (Schoeler and d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted.",
    "original": {
     "values": {
      "OC": "1/2"

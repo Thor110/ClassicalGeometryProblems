@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (146)
+### Not verified by a person yet (156)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -174,7 +174,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, oversized 99.398% · Eight ninths of the diameter (stc-over-99.398): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.398-Rhind-Papyrus.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.946% · Willich's quadrature (stc-under-99.946): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.946-Willich.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.9993% · Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5 (stc-under-99.9993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9993-Claude.ggb`, square q
-- [ ] Squaring The Circle, oversized 99.9999999% · Chu's construction of Ramanujan's number (stc-over-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9999999-Chu.ggb`, square q
+- [ ] Squaring The Circle, oversized 99.99999999% · Chu's construction of Ramanujan's number (stc-over-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9999999-Chu.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.886% · Anglin's first quadrature (stc-over-99.886): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.886-Anglin.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.318% · Anglin's second quadrature (stc-under-99.318): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.318-Anglin.ggb`
 - [ ] Squaring The Circle, undersized 99.985% · Anglin's third quadrature (stc-under-99.985): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.985-Anglin.ggb`
@@ -184,6 +184,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, undersized 95.634% · The Sulba Sutras' thirteen fifteenths (stc-under-95.634): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/95.634-Baudhayana.ggb`
 - [ ] Squaring The Circle, oversized 99.99981% · Lakenmacher's quadrature (stc-over-99.99981): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99981-Lakenmacher.ggb`
 - [ ] Squaring The Circle, undersized 99.9996% · Lampe's 44 : 23 triangle (stc-under-99.9996): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9996-Lampe.ggb`
+- [ ] Squaring The Circle, oversized 99.99986% · Gregori's quadrature (stc-over-99.99986): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99986-Gregori.ggb`
+- [ ] Squaring The Circle, oversized 99.99999998% · Storchi's quadrature (stc-over-99.99999998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99999998-Storchi.ggb`
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
@@ -193,7 +195,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, oversized 97.995% · Incorrect Proof (taa-over-97.995): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-97.995.ggb`
 - [ ] Trisecting An Angle, oversized 99.395% · Dürer's trisection (taa-over-99.395): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.395-Durer.ggb`
 - [ ] Trisecting An Angle, undersized 99.838% · Karajordanoff's trisection (taa-under-99.838): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.838-Karajordanoff.ggb`
-- [ ] Trisecting An Angle, oversized 98.796% · d'Ocagne's trisection (taa-over-98.796): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.796-dOcagne.ggb`
+- [ ] Trisecting An Angle, oversized 98.796% · Schoeler's trisection (taa-over-98.796): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.796-dOcagne.ggb`
 - [ ] Trisecting An Angle, undersized 95.527% · Cusa's trisection (taa-under-95.527): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-95.527-Cusa-Snellius.ggb`
 - [ ] Trisecting An Angle, undersized 99.147% · Vahlen's trisection (taa-under-99.147): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.147-Vahlen.ggb`
 - [ ] Trisecting An Angle, undersized 99.660% · Cusa's trisection, a quarter versine (taa-under-99.660): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.660-Claude.ggb`
@@ -203,7 +205,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 99.9996% · Cusa's trisection, on the angle halved four times (taa-under-99.999): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.999-Claude.ggb`
 - [ ] Trisecting An Angle, undersized 99.697% · Dürer's trisection from one side (taa-under-99.697): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.697-Claude.ggb`
 - [ ] Trisecting An Angle, undersized 99.976% · Karajordanoff's trisection, on the angle halved three times (taa-under-99.976): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.976-Claude.ggb`
-- [ ] Trisecting An Angle, oversized 99.987% · d'Ocagne's trisection, on the angle halved four times (taa-over-99.987): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.987-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 99.987% · Schoeler's trisection, on the angle halved four times (taa-over-99.987): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.987-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 99.990% · Cusa's trisection, a quarter versine, on the angle halved twice (taa-over-99.990): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.990-Claude.ggb`
 - [ ] Trisecting An Angle, undersized 99.748% · Monti's trisection (taa-under-99.748): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.748-Monti.ggb`
 - [ ] Trisecting An Angle, undersized 99.990% · Monti's trisection, on the angle halved three times (taa-under-99.990): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.990-Claude.ggb`
@@ -212,6 +214,11 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 99.981% · Kopf's second trisection (taa-under-99.981): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.981-Kopf-Perron.ggb`
 - [ ] Trisecting An Angle, oversized 98.796% · Baratto's trisection (taa-over-98.796-baratto): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.796-Baratto.ggb`
 - [ ] Trisecting An Angle, undersized 99.9991% · Stoyanoff's trisection (taa-under-99.9991): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.9991-Stoyanoff.ggb`
+- [ ] Trisecting An Angle, undersized 97.592% · Blasendorff's division of the arc (taa-under-97.592): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-97.592-Blasendorff.ggb`
+- [ ] Trisecting An Angle, oversized 98.934% · Kummell's multisection, for thirds (taa-over-98.934): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.934-Kummell.ggb`
+- [ ] Trisecting An Angle, undersized 99.855% · van der Corput and Mooij's division, r = 1/3 (taa-under-99.855): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.855-vanderCorput.ggb`
+- [ ] Trisecting An Angle, undersized 99.584% · Visser's trisection (taa-under-99.584): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.584-Visser.ggb`
+- [ ] Trisecting An Angle, oversized 98.678% · Sauerbeck's trisection (taa-over-98.678): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.678-Sauerbeck.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -247,14 +254,14 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.9999998% · Search find: 8 circles, 4 lines (half the circumference) (rtc-under-99.9999998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999998-Claude.ggb`
 - [ ] Rectifying The Circle, undersized 99.999997% · Search find: 6 circles, 2 lines (half the circumference) (rtc-under-99.999997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999997-Claude.ggb`
 - [ ] Rectifying The Circle, oversized 99.999991% · De Gelder's construction of 355/113 (rtc-over-99.999991): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999991-de-Gelder.ggb`
-- [ ] Rectifying The Circle, undersized 99.99997% · Specht's construction (rtc-under-99.99997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99997-Specht.ggb`
+- [ ] Rectifying The Circle, undersized 99.999977% · Specht's construction (rtc-under-99.99997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99997-Specht.ggb`
 - [ ] Rectifying The Circle, oversized 99.998% · Kunze's triangle (rtc-over-99.998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.998-Kunze.ggb`
 - [ ] Rectifying The Circle, undersized 99.826% · Cusa's triangle (rtc-under-99.826): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.826-Cusa.ggb`
 - [ ] Rectifying The Circle, undersized 99.999996% · Pioche's rectification (rtc-under-99.999996): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999996-Pioche.ggb`
 - [ ] Rectifying The Circle, oversized 99.974% · Mascheroni's quarter of the circle (rtc-over-99.974): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.974-Mascheroni.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999995% · Specht's second construction (rtc-under-99.9999995): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999995-Specht.ggb`
 - [ ] Rectifying The Circle, oversized 99.851% · d'Ocagne's √2 + √3 (after Bioche) (rtc-over-99.851): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.851-dOcagne.ggb`
-- [ ] Rectifying The Circle, undersized 99.994% · Pleskot's rectification (rtc-under-99.994): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.994-Pleskot.ggb`
+- [ ] Rectifying The Circle, undersized 99.9947% · Pleskot's rectification (rtc-under-99.994): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.994-Pleskot.ggb`
 - [ ] Rectifying The Circle, oversized 99.904% · The cosine equal to its tangent (rtc-over-99.904): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.904-Crelle.ggb`
 - [ ] Rectifying The Circle, undersized 99.9997% · Vahlen's external division for π (rtc-under-99.9997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9997-Vahlen.ggb`
 - [ ] Rectifying The Circle, oversized 99.851% · Lemoine's √2 + √3, first way (rtc-over-99.851-lemoine-a): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.851-Lemoine-a.ggb`
@@ -263,6 +270,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, oversized 99.962% · Peirce's curious construction (rtc-over-99.962): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.962-Peirce.ggb`
 - [ ] Rectifying The Circle, undersized 99.993% · Bojko's construction (rtc-under-99.993): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.993-Bojko.ggb`
 - [ ] Rectifying The Circle, oversized 99.999% · Heiseler's difference of two legs (rtc-over-99.999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999-Heiseler.ggb`
+- [ ] Rectifying The Circle, oversized 99.959% · Busch's three diameters and a seventh (rtc-over-99.959): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.959-Busch.ggb`
+- [ ] Rectifying The Circle, undersized 99.9945% · Busch's three diameters and a fifth of the square's side (rtc-under-99.9945): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9945-Busch.ggb`
+- [ ] Rectifying The Circle, undersized 99.999976% · Hagge's rectification by the compass (rtc-under-99.999976): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999976-Hagge.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`

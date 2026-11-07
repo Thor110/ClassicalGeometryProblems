@@ -7,7 +7,7 @@ Pleskot's rectification
 A. Pleskot (Prague) - 1895 ("Sur la rectification approchée du cercle", Journal de mathématiques élémentaires, pp. 125-126)
 
 **Accuracy (%):**
-99.994
+99.9947
 (precise readout: 99.994772554399896944801333187340)
 
 **Oversized / Undersized:**

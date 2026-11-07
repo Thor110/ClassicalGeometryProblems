@@ -1,10 +1,10 @@
 **Problem:** Trisecting An Angle
 
 **Method Name:**
-d'Ocagne's trisection, on the angle halved four times
+Schoeler's trisection, on the angle halved four times
 
 **Author:**
-Claude (Anthropic), an AI - 07-11-2026, as a variant of d'Ocagne's trisection (taa-over-98.796), by Maurice d'Ocagne
+Claude (Anthropic), an AI - 07-11-2026, as a variant of H. Schoeler's trisection (taa-over-98.796; 1902, also given by Maurice d'Ocagne in 1934)
 
 **Accuracy (%):**
 99.987
@@ -26,7 +26,7 @@ Found by testing the historical methods on the angle halved again and again. Reb
 TAA-99.987-Claude.ggb
 
 **Description:**
-d'Ocagne's trisection (see the entry taa-over-98.796), worked on the angle halved four times and then multiplied back:
+Schoeler's trisection (see the entry taa-over-98.796, long credited to d'Ocagne), worked on the angle halved four times and then multiplied back:
 
 1. Bisect the angle four times from B: H₁ to H_4, so the arc BH is 1/16 of the arc BA.
 2. On the arc BH: C the middle of OE, the radius opposite B; M the middle of the arc BH; the parallel to CM through O meets the circle at S. The arc BS is very nearly a third of BH.

@@ -21,7 +21,7 @@ fractions of their own, like Cusa's, can go deepest. At their weakest from 30° 
 |---|---|---|---|---|---|---|
 | Dürer's trisection, from one side | 99.697894% * | 99.995194% | 99.999925% | 99.999999% | 100.000000% | 100.000000% |
 | Karajordanoff's trisection | 93.511039% | 99.838644% | 99.914694% | 99.976049% * | 99.993855% | 99.998454% |
-| d'Ocagne's trisection | 96.305454% | 99.177435% | 99.799897% | 99.950309% | 99.987598% * | 99.996901% |
+| Schoeler's trisection | 96.305454% | 99.177435% | 99.799897% | 99.950309% | 99.987598% * | 99.996901% |
 | Cusa's trisection | 50.537381% | 98.022886% | 99.893987% | 99.993626% | 99.999605% * | 99.999975% |
 | Vahlen's trisection | 68.027502% | 99.742875% * | 99.996621% | 99.999949% | 99.999999% | 100.000000% |
 | Cusa's trisection with a quarter versine | 71.657208% | 99.971180% | 99.990311% * | 99.999257% | 99.999952% | 99.999997% |
@@ -201,9 +201,9 @@ The radius of the larger circle, in radii, and which point of the arc the chord 
 
 0 variants beat the original in all.
 
-## d'Ocagne's trisection (1934)
+## Schoeler's trisection (1902; d'Ocagne 1934)
 
-How far behind the centre C is, in radii (d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted. Chart entry: `taa-over-98.796`.
+How far behind the centre C is, in radii (Schoeler and d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted. Chart entry: `taa-over-98.796`.
 
 | Fractions | Accuracy | Cost (circles, lines) | Extra |
 |---|---|---|---|

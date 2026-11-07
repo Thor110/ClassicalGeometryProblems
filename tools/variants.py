@@ -317,9 +317,9 @@ SKELETONS = [
     dict(id='karajordanoff-taa', name="Karajordanoff's trisection (1928)", entry='taa-under-99.838', problem='taa',
          slots=[('outer circle', Fr(2), (Fr(3, 2), Fr(4))), ('C on the arc', Fr(1, 2), None, ARC)], fn=lambda k, a: worst_bisected(lambda p: kara_third(p, float(k), float(a))),
          about='The radius of the larger circle, in radii, and which point of the arc the chord from B goes to (Karajordanoff: 2, and the middle). Scored at its worst up to 90°, the rest bisected, as charted.'),
-    dict(id='ocagne-taa', name="d'Ocagne's trisection (1934)", entry='taa-over-98.796', problem='taa',
+    dict(id='ocagne-taa', name="Schoeler's trisection (1902; d'Ocagne 1934)", entry='taa-over-98.796', problem='taa',
          slots=[('OC', Fr(1, 2), (Fr(0), Fr(2)))], fn=lambda c: worst_bisected(lambda p: ocagne_third(p, float(c))),
-         about="How far behind the centre C is, in radii (d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted."),
+         about="How far behind the centre C is, in radii (Schoeler and d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted."),
     dict(id='cusa-taa', name="Cusa's trisection, and Vahlen's (1911)", entry='taa-under-95.527', problem='taa',
          slots=[('shift', Fr(0), (Fr(0), Fr(1, 2)))], fn=lambda k: cusa_trisection(float(k)),
          about="How many versines Snellius' point is moved in towards O (Cusa: none; Vahlen: 2/9). Scored at its worst up to 90°, the rest bisected, as charted."),
@@ -392,7 +392,7 @@ def report(results, max_q):
           'each at the deepest halving whose steps all stay at macro scale (marked * below); the methods without small',
           'fractions of their own, like Cusa\'s, can go deepest. At their weakest from 30° to 150°:', '',
           '| Method | As it is | Halved once | Twice | Three times | Four times | Five times |', '|---|---|---|---|---|---|---|']
-    charted = {"Dürer's trisection, from one side": 0, "Karajordanoff's trisection": 3, "d'Ocagne's trisection": 4, "Cusa's trisection": 4,
+    charted = {"Dürer's trisection, from one side": 0, "Karajordanoff's trisection": 3, "Schoeler's trisection": 4, "Cusa's trisection": 4,
                "Vahlen's trisection": 1, "Cusa's trisection with a quarter versine": 2, "Monti's trisection": 3, "Cominotto's trisection": 2,
                "Cusa's rectification": 5, "Lambert's rectification": 1, "Lambert's with a quarter versine": 1}
     def rect(k):
@@ -406,7 +406,7 @@ def report(results, max_q):
     def rank2(t): return math.tan(t / 4) + math.dist((1, math.tan(t / 4)), (math.cos(t), math.sin(t)))
     charted.update({"Rankine's first rectification": 4, "Rankine's second rectification": 4, "Rankine's two combined": 4})
     rows = [("Dürer's trisection, from one side", lambda p: durer_third(p, 1/3), 'taa'), ("Karajordanoff's trisection", lambda p: kara_third(p, 2), 'taa'),
-            ("d'Ocagne's trisection", lambda p: ocagne_third(p, 0.5), 'taa'), ("Cusa's trisection", lambda p: _cusa(p, 0), 'taa'),
+            ("Schoeler's trisection", lambda p: ocagne_third(p, 0.5), 'taa'), ("Cusa's trisection", lambda p: _cusa(p, 0), 'taa'),
             ("Vahlen's trisection", lambda p: _cusa(p, 2/9), 'taa'), ("Cusa's trisection with a quarter versine", lambda p: _cusa(p, 0.25), 'taa'),
             ("Monti's trisection", lambda p: monti_third(p), 'taa'), ("Cominotto's trisection", cominotto_third, 'taa'),
             ("Cusa's rectification", rect(0), 'ar'),

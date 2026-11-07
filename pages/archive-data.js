@@ -1055,12 +1055,12 @@ const ARCHIVE = {
      "method": "Chu's construction of Ramanujan's number",
      "circles": 29,
      "lines": 15,
-     "acc": "99.9999999",
+     "acc": "99.99999999",
      "precise": "99.999999993127849876111384378950",
      "date": "2019",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/99.9999999-Chu",
-     "note": "π ≈ (63/25)(1 + (5/2)(15√5 − 7)/269) = 3.1415926538, a number Ramanujan gave (1914), constructed by Chu from three lengths: √63/5, √(15√5 − 7)/5 and √269/8. Correct to nine decimal places; long (29 circles and 15 lines), within the extended ruleset.",
+     "note": "π ≈ (63/25)(1 + (5/2)(15√5 − 7)/269) = 3.1415926538, a number Ramanujan gave (1914), constructed by Chu from three lengths: √63/5, √(15√5 − 7)/5 and √269/8. Correct to nine decimal places; long (29 circles and 15 lines), within the extended ruleset. Relabelled 99.99999999 in November 2026 so the chart reads in order beside Storchi's (stc-over-99.99999998); the id is unchanged.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -1290,6 +1290,56 @@ const ARCHIVE = {
        "published: E. Lampe, \"Angenäherte Kreisquadraturen\", Sitzungsberichte der Berliner Mathematischen Gesellschaft 15 (1916), pp. 150-158",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 46.0857.01 (zbMATH Open)",
        "redrawn in November 2026 from the review; 44/23 is a convergent of √(π/(4 − π)) = 1.9130585, as Lampe explains; the rebuilt square is 99.99967% of the circle"
+      ]
+     }
+    },
+    {
+     "id": "stc-over-99.99986",
+     "side": "over",
+     "marks": "",
+     "holder": "Eduard Gregori",
+     "method": "Gregori's quadrature",
+     "circles": 5,
+     "lines": 9,
+     "acc": "99.99986",
+     "precise": "99.999862471591152244281880096479",
+     "date": "1947",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.99986-Gregori",
+     "note": "In the square about the circle, AE (corner to circle along the diagonal) laid on the side from A to F; the circle about F with the radius meets the next side at G; a quarter of AG cut off from A at H; HB is the side: 2r − (r/4)√(2(√2 − 1)), and b² = 3.1415970 r².",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. Innerebner, \"Zur Quadratur des Kreises\", Der Schlern (Bozen) 1947, pp. 329-331, who received it from Eduard Gregori, a merchant of Bolzano, and added the proof",
+       "as described in the review in the Zentralblatt, Zbl 0032.17902 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt square is 3.1415970 r², the review's 3.1415969739"
+      ]
+     }
+    },
+    {
+     "id": "stc-over-99.99999998",
+     "side": "over",
+     "marks": "",
+     "holder": "Edoardo Storchi",
+     "method": "Storchi's quadrature",
+     "circles": 16,
+     "lines": 13,
+     "acc": "99.99999998",
+     "precise": "99.999999989443959073843245880505",
+     "date": "1947",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.99999998-Storchi",
+     "note": "A long construction on two axes (lengths of r/5, 3r/5, r, 2r and 5r, two semicircles, two right triangles and a parallel) that gives the side √(104348/33215) r. 104348/33215 is a convergent of π; the square is within 10⁻⁸ of the circle.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Storchi, \"Sulla quadratura approssimata del cerchio\", Periodico di Matematiche (4) 25 (1947), pp. 224-227",
+       "as described step by step in the review in the Zentralblatt, Zbl 0029.31002 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt side is √(104348/33215) = 1.7724538510 radii"
       ]
      }
     }
@@ -1558,26 +1608,39 @@ const ARCHIVE = {
      "id": "taa-over-98.796",
      "side": "over",
      "marks": "",
-     "holder": "Maurice d'Ocagne",
-     "method": "d'Ocagne's trisection",
+     "holder": "H. Schoeler",
+     "method": "Schoeler's trisection",
      "circles": 1,
      "lines": 4,
      "acc": "98.796",
      "precise": "98.796021983927621116053226297479",
-     "date": "1934",
+     "date": "1902",
      "geogebra": "",
      "file": "GeoGebra Files/Over/TAA-98.796-dOcagne",
-     "note": "From the middle of the radius opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected. The same construction (a point a radius beyond the middle of the arc, joined to the point opposite the other end) was already quoted as known by E. Cominotto in 1895, as Amaldi reports: it gives exactly the same third. Baratto's rule of 1869 (taa-over-98.796-baratto) gives exactly the same line for every angle, by other steps: the tangent at B and the chord from A through the middle of the arc.",
+     "note": "Schoeler's rule for dividing an angle into n parts, with n = 3: from the point half a radius beyond the centre, opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected. Long credited here to d'Ocagne, who gave the same steps in 1934; Schoeler's of 1902 is the earliest publication of these steps found, so the credit moved to him (November 2026), and d'Ocagne is listed as having also found it. Cominotto (1895) already quoted, as known, a construction that gives exactly the same third by other steps, and Baratto's rule of 1869 (taa-over-98.796-baratto) gives exactly the same line for every angle by other steps again.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: M. d'Ocagne, \"Étude rationnelle du problème de la trisection de l'angle\", L'Enseignement mathématique, 1934, pp. 49-63, as cited in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 6, with his error table",
-       "redrawn in November 2026; Yates' error table (45\" at 30°, 6'14\" at 60°, 21'41\" at 90°) is reproduced",
+       "published: H. Schoeler, \"Angenäherte n-Teilung eines beliebigen Winkels mit Zirkel und Lineal\", Archiv der Mathematik und Physik (3) 4 (1902), pp. 128-129, as described in the Jahrbuch über die Fortschritte der Mathematik, JFM 33.0517.05 (zbMATH Open): the (n + 1)-th part of 2α as the central angle (for n = 3, the middle of the arc), the diameter through one end, the (n + 1)-th part of the diameter laid off inwards from its far end (half a radius beyond the centre), and the line to the other end",
+       "its error examined by E. Lampe, Archiv der Mathematik und Physik (3) 4 (1902), pp. 130-133 (Jahrbuch über die Fortschritte der Mathematik, JFM 33.0518.01 (zbMATH Open)): always slightly larger than α/n",
+       "the same steps given by M. d'Ocagne, \"Étude rationnelle du problème de la trisection de l'angle\", L'Enseignement mathématique 33 (1934), pp. 49-63, as cited in R. C. Yates, The Trisection Problem, 1942 (ERIC ED058058), ch. 4, section 6, with his error table, which the file reproduces: 45\" at 30°, 6'14\" at 60°, 21'41\" at 90°",
        "the same third as the construction E. Cominotto quotes as known in \"Trisezione approssimata dell'angolo\" (Padova 1895), as given by U. Amaldi in F. Enriques, Fragen der Elementargeometrie II (1907), § 17, fig. 127; checked equal in November 2026"
       ]
-     }
+     },
+     "rediscovered": [
+      {
+       "name": "Maurice d'Ocagne",
+       "date": "1934",
+       "note": "in L'Enseignement mathématique 33 (1934), pp. 49-63, as given by Yates (1942); charted under his name until Schoeler's paper of 1902 was found"
+      },
+      {
+       "name": "Ig. Hajek",
+       "date": "1936",
+       "note": "\"Die Dreiteilung des Winkels. Eine für den Zeichner praktische Methode\" (Znaim 1936): the same approximation, cot(α/3) ≈ (1/2 + cos(α/2)) : sin(α/2), as the Jahrbuch notes (JFM 62.0698.01)"
+      }
+     ]
     },
     {
      "id": "taa-under-95.527",
@@ -1803,7 +1866,7 @@ const ARCHIVE = {
      "marks": "",
      "holder": "Claude (Anthropic)",
      "holder_kind": "ai",
-     "method": "d'Ocagne's trisection, on the angle halved four times",
+     "method": "Schoeler's trisection, on the angle halved four times",
      "circles": 5,
      "lines": 8,
      "acc": "99.987",
@@ -1811,13 +1874,13 @@ const ARCHIVE = {
      "date": "07-11-2026",
      "geogebra": "",
      "file": "GeoGebra Files/Over/TAA-99.987-Claude",
-     "note": "d'Ocagne's trisection (taa-over-98.796) worked on the angle halved four times and doubled back: 99.987% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Maurice d'Ocagne's. Found by Claude (Anthropic), an AI, as a variant.",
+     "note": "Schoeler's trisection (taa-over-98.796, long credited to d'Ocagne) worked on the angle halved four times and doubled back: 99.987% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is H. Schoeler's (1902). Found by Claude (Anthropic), an AI, as a variant.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "session",
       "evidence": [
-       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of d'Ocagne's trisection (taa-over-98.796)"
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Schoeler's trisection (taa-over-98.796)"
       ]
      }
     },
@@ -1982,7 +2045,7 @@ const ARCHIVE = {
      "date": "1869",
      "geogebra": "",
      "file": "GeoGebra Files/Over/TAA-98.796-Baratto",
-     "note": "C the middle of the arc AB; the tangent at B meets the chord AC at D; DOB is nearly a third of AOB. Practical up to 90°, as Schiaparelli's report shows; charted at 90°, its weakest there. It gives the same point at every angle as d'Ocagne's construction (taa-over-98.796) by other steps.",
+     "note": "C the middle of the arc AB; the tangent at B meets the chord AC at D; DOB is nearly a third of AOB. Practical up to 90°, as Schiaparelli's report shows; charted at 90°, its weakest there. It gives the same point at every angle as Schoeler's construction (taa-over-98.796, also d'Ocagne's) by other steps.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -2023,6 +2086,131 @@ const ARCHIVE = {
        "published: A. Stoyanoff, \"Sur la trisection de l'angle\", Annuaire de l'Université de Sofia, Faculté physico-mathématique, Livre 1, 31 (1935), pp. 171-176",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 62.1417.04 (zbMATH Open)",
        "redrawn in November 2026 from the review; with k a quarter of the radius, the rebuilt error is 0.004\" at 30° and 0.894\" at 90°, under the 1 second the review gives"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-97.592",
+     "side": "under",
+     "marks": "",
+     "holder": "M. Blasendorff",
+     "method": "Blasendorff's division of the arc",
+     "circles": 4,
+     "lines": 3,
+     "acc": "97.592",
+     "precise": "97.592043967855242232106452594959",
+     "date": "1896",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-97.592-Blasendorff",
+     "note": "With m = 1/3: the diameters through both ends of the arc; J on the line from the far end of one diameter through the end of the arc, twice the diameter beyond it; JG meets the arc at H, nearly a third of the way. Charted at 90°, its weakest up to 90°. For every angle α its point H is Cominotto's trisecting point (taa-over-99.177) of the angle 2α.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: M. Blasendorff, \"Ueber die Teilung des Kreisbogens\", Programm der 8. Realschule Berlin (No. 122), 1896, 29 pp., with a table of the errors",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 27.0394.06 (zbMATH Open)",
+       "redrawn in November 2026 from the review, with m = 1/3; the rebuilt arc AH is 29.2776° at 90°"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-98.934",
+     "side": "over",
+     "marks": "",
+     "holder": "C. H. Kummell",
+     "method": "Kummell's multisection, for thirds",
+     "circles": 4,
+     "lines": 6,
+     "acc": "98.934",
+     "precise": "98.934697052405248983598145375485",
+     "date": "1878",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-98.934-Kummell",
+     "note": "The semicircle about the corner; E on the arm produced with AE = AA' (the equilateral triangle on the perpendicular diameter); ED meets AA' at F; CF divided into three; the line from E through the first point meets the circle on the trisecting line. Good up to 90° (exact there); charted at 66.23°, its weakest up to 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. H. Kummell, \"Approximate multisection of an angle and hints for reducing the unavoidable error to the smallest amount\", The Analyst 5 (1878), pp. 172-176",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 10.0363.04 (zbMATH Open)",
+       "redrawn in November 2026 from the review, with n = 3; it is exact at 90°"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.855",
+     "side": "under",
+     "marks": "",
+     "holder": "J. G. van der Corput and H. Mooij",
+     "method": "van der Corput and Mooij's division, r = 1/3",
+     "circles": 6,
+     "lines": 3,
+     "acc": "99.855",
+     "precise": "99.855260800469933045572892767482",
+     "date": "1949",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.855-vanderCorput",
+     "note": "From the middle C of the chord AB, D on AB produced with CD = (3 + r²)/(4r) · AC = 7/3 AC, and the circle about D with radius 3(1 − r²)/(4r) · AC = 2 AC: it meets the arc at the point that cuts off r = 1/3 of it. Their simpler form of two; charted at 90°, its weakest up to 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: J. G. van der Corput and H. Mooij, \"Approximate division of an angle into equal parts\", Proceedings of the Koninklijke Nederlandse Akademie van Wetenschappen 52 (1949), pp. 317-328",
+       "as described in the review in the Zentralblatt, Zbl 0032.29801 (zbMATH Open)",
+       "redrawn in November 2026 from the review, with r = 1/3, the first of their two constructions"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.584",
+     "side": "under",
+     "marks": "",
+     "holder": "D. Visser",
+     "method": "Visser's trisection",
+     "circles": 6,
+     "lines": 6,
+     "acc": "99.584",
+     "precise": "99.584611351392127806854709089838",
+     "date": "1950",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.584-Visser",
+     "note": "Built on a circle three radii about a point a radius behind the corner, with a parallel and two more circles: the angle CDJ is a third. Visser gives it for acute angles; charted at 90°, its weakest up to 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: D. Visser, \"Eine Näherungskonstruktion für die Trisektion eines Winkels\", Simon Stevin 27 (1950), pp. 69-70",
+       "as described in the review in the Zentralblatt, Zbl 0037.37802 (zbMATH Open)",
+       "redrawn in November 2026 from the review"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-98.678",
+     "side": "over",
+     "marks": "",
+     "holder": "Sauerbeck",
+     "method": "Sauerbeck's trisection",
+     "circles": 4,
+     "lines": 4,
+     "acc": "98.678",
+     "precise": "98.678051586226728249690596289170",
+     "date": "1951",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-98.678-Sauerbeck",
+     "note": "Bisect the angle, and the half next to OB; the chord from B to the middle of the arc meets the quarter line at E; EF = BE towards O; the equilateral triangle on BF gives G, and BOG is the third. Its error stays under 8'12\" up to 180° but does not shrink for small angles, so it is charted at its weakest from 30° to 150°, at 30°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: J. Lense, \"Die Winkeldreiteilung des Herrn Sauerbeck\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Klasse, 1950 (1951), pp. 107-110",
+       "as described in the review in the Zentralblatt, Zbl 0043.35403 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt error is 7.93' at 30°, 6.24' at 60°, 0 at 90° and 180°, under the 8'12\" Lense gives"
       ]
      }
     }
@@ -3751,12 +3939,12 @@ const ARCHIVE = {
      "method": "Specht's construction",
      "circles": 8,
      "lines": 7,
-     "acc": "99.99997",
+     "acc": "99.999977",
      "precise": "99.999977703818357853546539562126",
      "date": "1828",
      "geogebra": "",
      "file": "GeoGebra Files/Under/RTC-99.99997-Specht",
-     "note": "On the tangent at A, AB = 11/5 and BC = 2/5 of the radius; AD = OB on the diameter through A, and DE parallel to OC give AE = (13/25) √146 of the radius, short of the circumference by 1.4 millionths of the radius. Hobson gives no first name.",
+     "note": "On the tangent at A, AB = 11/5 and BC = 2/5 of the radius; AD = OB on the diameter through A, and DE parallel to OC give AE = (13/25) √146 of the radius, short of the circumference by 1.4 millionths of the radius. Hobson gives no first name. Relabelled 99.999977 in November 2026 so the chart reads in order beside Hagge's (rtc-under-99.999976); the id is unchanged.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3781,7 +3969,7 @@ const ARCHIVE = {
      "date": "1851",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.998-Kunze",
-     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. The same number as Hobson's squaring, 6/5 · (1 + φ), 62 years earlier.",
+     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. The same number as Hobson's squaring, 6/5 · (1 + φ), 62 years earlier. The value itself, 1.8 + √1.8 = (3/5)(3 + √5), is older: it is called Vieta's in the Jahrbuch (JFM 62.0698.03, on Lambacher 1936), and A. Busch constructed it in his Vorschule der darstellenden Geometrie (1846), as the Jahrbuch notes on G. Peirce's rediscovery of it in 1907 (JFM 38.0535.01); Lakenmacher (1888) gave it again as a formula. Whether Busch's construction is Kunze's triangle is not known yet (see Wanted).",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3927,12 +4115,12 @@ const ARCHIVE = {
      "method": "Pleskot's rectification",
      "circles": 5,
      "lines": 3,
-     "acc": "99.994",
+     "acc": "99.9947",
      "precise": "99.994772554399896944801333187340",
      "date": "1895",
      "geogebra": "",
      "file": "GeoGebra Files/Under/RTC-99.994-Pleskot",
-     "note": "The circle about one end m of a diameter cuts the circle at a and b; ab crosses the diameter at s; sl = 2ab along the diameter, lv = 2r along lb: vb is nearly a quarter of the circumference, 2vb = √51 − 4 = 3.1414284.",
+     "note": "The circle about one end m of a diameter cuts the circle at a and b; ab crosses the diameter at s; sl = 2ab along the diameter, lv = 2r along lb: vb is nearly a quarter of the circumference, 2vb = √51 − 4 = 3.1414284. Relabelled 99.9947 in November 2026 so the chart reads in order beside Busch's second construction (rtc-under-99.9945); the id is unchanged.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -4145,6 +4333,81 @@ const ARCHIVE = {
        "published: A. Heiseler, \"Eine einfache Methode zur approximativen Rektifikation der Kreisperipherie\", Commentationes Physico-Mathematicae, Societas Scientiarum Fennica 5, No. 17 (1931), pp. 1-5",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 57.0692.02 and Zbl 0003.16605 (zbMATH Open)",
        "redrawn in November 2026 from the review; the reviews give the formula, not the figure; the file draws it in the most direct way: CT = r/√3 on the tangent at C, the circles about T with radii r and 4r meet the diameter at Q and R, and QR is the difference"
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-over-99.959",
+     "side": "over",
+     "marks": "",
+     "holder": "August Ludwig Busch",
+     "method": "Busch's three diameters and a seventh",
+     "circles": 11,
+     "lines": 4,
+     "acc": "99.959",
+     "precise": "99.959750056522931802415920165848",
+     "date": "1868",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.959-Busch",
+     "note": "Archimedes' 22/7 drawn as Busch gives it: three diameters laid along a line and a seventh of the diameter added. 3.14287 diameters, too large by 0.00128, as Busch says.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, first solution (\"Aufl. 1\"); the first edition is of 1846",
+       "redrawn in November 2026 from the scanned text; the rebuilt length is 22/7 diameters, Busch's 3.14287"
+      ]
+     }
+    },
+    {
+     "id": "rtc-under-99.9945",
+     "side": "under",
+     "marks": "",
+     "holder": "August Ludwig Busch",
+     "method": "Busch's three diameters and a fifth of the square's side",
+     "circles": 9,
+     "lines": 6,
+     "acc": "99.9945",
+     "precise": "99.994547435922731809106253978542",
+     "date": "1868",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.9945-Busch",
+     "note": "Three diameters and a fifth of the side of the inscribed square: 3 + √2/10 = 3.14142 diameters, the value Vahlen credits to Huygens. Too small by 0.00017 of the diameter (Busch gives 3.14125 and 0.00034).",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, second solution (\"Aufl. 2\"); the first edition is of 1846",
+       "the value 3 + √2/10 = 3.14142 is also given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, among Huygens' values",
+       "redrawn in November 2026 from the scanned text; the rebuilt length is 3.1414214 diameters; the 3.14125 printed in the 1868 edition does not match its own description, which gives 3.14142"
+      ]
+     }
+    },
+    {
+     "id": "rtc-under-99.999976",
+     "side": "under",
+     "marks": "",
+     "holder": "K. Hagge",
+     "method": "Hagge's rectification by the compass",
+     "circles": 10,
+     "lines": 1,
+     "acc": "99.999976",
+     "precise": "99.999976035727103851204681002871",
+     "date": "1914",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.999976-Hagge",
+     "note": "A rectification with the compass alone: equal circles about the centre and a point of the circle, circles with radii DE and 2r, and the middles of two arcs, J and L; JL is the half circumference, 3.1415919 radii. In the file the two arc middles, which Hagge finds with the compass (by Mascheroni's method), are taken where the line DE meets the arcs, since both lie on it.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: K. Hagge, Revista matemática Hispano-Americana 3 (1913-14), p. 284, without proof",
+       "explained and compared with Mascheroni by F. Cebrián, \"Über die Methode von Hagge für die Rektifikation des Kreises allein mit dem Zirkel\", Euclides (Madrid) 9 (1949), pp. 223-225, as described in the review in the Zentralblatt, Zbl 0033.39002 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt JL is 3.1415919 radii"
       ]
      },
      "result_scale": 2
@@ -4748,7 +5011,15 @@ const ARCHIVE = {
    "about": "Cominotto's construction (1895), through a circle on three points: good to 180° as it stands (43' out at 180°, 25' at 150°), and 99.950% from 30° to 150° on the angle halved twice."
   }
  ],
- "wanted": [],
+ "wanted": [
+  {
+   "problem": "rtc",
+   "who": "August Ludwig Busch",
+   "year": "1846",
+   "value": "π ≈ (3/5)(3 + √5): the right triangle with legs 3/5 and 6/5 of the diameter, exactly Kunze's triangle (rtc-over-99.998)",
+   "source": "Busch, Vorschule der darstellenden Geometrie, Aufgabe 67, third solution: in the edition of 1868 (Internet Archive) it is Kunze's construction step for step; the Jahrbuch (JFM 38.0535.01) dates it to the first edition, 1846. Kunze's is charted from the second edition of his Lehrbuch der Planimetrie (1851). Which came first depends on the dates of the first editions of both books, which are not online; if Busch's is earlier, the credit moves to him and Kunze is listed as having also found it."
+  }
+ ],
  "derived_pi": {
   "folder": "Approximations/06 Pi Approximations",
   "about": "The π chart is worked out from the circle rectification chart: each rectification, halved, is a π approximation with the same accuracy and steps. These are the π versions drawn in GeoGebra, linked beside the rectification each comes from.",
@@ -4957,6 +5228,42 @@ const ARCHIVE = {
    "Eugen Kopf",
    "E. Kopf",
    "Kopf"
+  ],
+  "M. Blasendorff": [
+   "M. Blasendorff"
+  ],
+  "H. Schoeler": [
+   "H. Schoeler"
+  ],
+  "August Ludwig Busch": [
+   "A. Busch",
+   "A. L. Busch",
+   "August Ludwig Busch"
+  ],
+  "C. H. Kummell": [
+   "C. H. Kummell",
+   "Charles H. Kummell"
+  ],
+  "J. G. van der Corput and H. Mooij": [
+   "H. Mooij",
+   "J. G. van der Corput",
+   "Johannes van der Corput"
+  ],
+  "D. Visser": [
+   "D. Visser"
+  ],
+  "Sauerbeck": [
+   "Sauerbeck"
+  ],
+  "Eduard Gregori": [
+   "Eduard Gregori"
+  ],
+  "Edoardo Storchi": [
+   "E. Storchi",
+   "Edoardo Storchi"
+  ],
+  "K. Hagge": [
+   "K. Hagge"
   ]
  }
 };

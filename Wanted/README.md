@@ -13,7 +13,9 @@ beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
 
 ## Still wanted
 
-Nothing at present: every construction that was on this list has been charted. New finds are added here while they are checked.
+| Construction | Chart | Why it is not charted yet |
+|---|---|---|
+| August Ludwig Busch: the triangle with legs 3/5 and 6/5 of the diameter, Kunze's triangle step for step | Rectifying the circle (priority) | Vorschule der darstellenden Geometrie, Aufgabe 67, third solution (1868 edition seen; the Jahrbuch dates it to the first edition, 1846). Kunze is charted from his second edition (1851); the first editions of both are needed to settle who came first. |
 
 No drafts are in progress.
 
@@ -21,7 +23,9 @@ Found in the Jahrbuch but not charted:
 
 | Construction | Why |
 |---|---|
-| Kopf's first trisection (1929) | The review leaves the distance of the two circles open, and no reading gives Perron's largest error, 8' 12". |
+| Kopf's first trisection (1929) | The review leaves the distance of the two circles open, and no reading gives Perron's largest error, 8' 12". Sauerbeck's (1951) has the same largest error and may be the same construction. |
+| Selmer (1957), Finsler (1959), Schröder (1957), Srůtek (1892), Jičínský (1872) | The reviews give the value only (8 − √62 for ∛2/10; 3/2 + √97/6; and others). |
+| Kopf-style hyperbola and limaçon substitutes (Kübl 1906, Franceschi 1913, Hartmann 1938) | Families of constructions; the reviews give the error formulas, not one construction to draw. |
 | d'Ocagne's trisection of 1931 (HD = HB/3, DC = 2HB) | Under 95% at 90° (94.7%). |
 | Bilimowitsch's rectification (1908) | Good for small arcs (error θ⁵/20), but under 90% by 60°. |
 | Reichenbächer (1901), Sorgner (1915, 1917), Heiseler (1935), Kerzdörfer (1938), Harris (1933) and others | The reviews give a value or a claim, not the construction. |
@@ -44,7 +48,7 @@ given there.
 | William Hayden (1871): duplication, AL : AB = 1.2598754 | Doubling the cube, 99.989% under | Proceedings of the Royal Society 20 (1871-72), p. 525 |
 | E. W. Hobson (1913): the square on GH, 6/5 · (1 + φ) | Squaring the circle, 99.998% over | Hobson (1913), p. 35 |
 | Karajordanoff (1928): trisection, exact at 90° | Trisecting an angle, 99.838% under (at 65.57°) | Yates (1942), ch. 4 §4 |
-| Maurice d'Ocagne (1934): trisection | Trisecting an angle, 98.796% over (at 90°) | Yates (1942), ch. 4 §6 |
+| H. Schoeler (1902): the n-section with n = 3 (also given by d'Ocagne, 1934) | Trisecting an angle, 98.796% over (at 90°) | Archiv (3) 4, via the Jahrbuch (JFM 33.0517.05); Yates (1942), ch. 4 §6 for d'Ocagne |
 | Johann Heinrich Lambert (1765): Snellius' point moved a fifth of the versine | Arc rectification, 99.029% under (at 90°) | Vahlen, "Konstruktionen und Approximationen" (1911), p. 203 |
 | Lorenzo Mascheroni (1797): two duplications with the compass alone | Doubling the cube, 99.847% and 99.9995% under | "Géométrie du compas" (1798), art. 275 |
 | A. Kunze (1851): the triangle with legs 3/5 and 6/5 of the diameter | Rectifying the circle, 99.998% over | Vahlen (1911), p. 311 |
@@ -75,7 +79,7 @@ given there.
 | Émile Lemoine (1895): two shorter ways to draw √2 + √3, and the golden chord for a quarter | Rectifying the circle, 99.851% over (twice, tying d'Ocagne) and 99.904% over (tying Crelle) | Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 |
 | Eugen Kopf (1933, his second construction, published by Perron): the arc about F and the angle at P | Trisecting an angle, 99.981% under (at 63.95°) | Yates (1942), ch. 4 § 5, fig. 37, from the page image; Perron (1933) and Nehring (1936) via the Jahrbuch |
 | Ernst Lakenmacher (1890): the side 0.8862278 of the diameter | Squaring the circle, 99.99981% over | Archiv der Mathematik und Physik (2) IX, pp. 214-215, as described in the Jahrbuch über die Fortschritte der Mathematik 22 (JFM 22.0578.01) |
-| Gaetano Baratto (1869): the tangent at B and the chord from the middle of the arc | Trisecting an angle, 98.796% over (at 90°), the same line as d'Ocagne's | Schiaparelli's report, via the Jahrbuch (JFM 02.0362.01) |
+| Gaetano Baratto (1869): the tangent at B and the chord from the middle of the arc | Trisecting an angle, 98.796% over (at 90°), the same line as Schoeler's | Schiaparelli's report, via the Jahrbuch (JFM 02.0362.01) |
 | A. Stoyanoff (1935): circles of 5k and 20k about the corner | Trisecting an angle, 99.9991% under (at 90°) | Annuaire Univ. Sofia 31, via the Jahrbuch (JFM 62.1417.04) |
 | Maurice d'Ocagne (1907): the two-thirds chord | Arc rectification, 99.592% over (at 90°) | Nouvelles Annales (4) 7, via the Jahrbuch (JFM 38.0535.03) |
 | Ludwig Burmester (1919): the same length another way | Arc rectification, 99.592% over (at 90°) | Sitzungsberichte München 1919, via the Jahrbuch (JFM 47.0547.04) |
@@ -85,6 +89,16 @@ given there.
 | Artur Heiseler (1931): √(16 − 1/3) − √(1 − 1/3) | Rectifying the circle, 99.999% over | Commentationes Fennica 5, via the Jahrbuch and Zentralblatt |
 | Emil Lampe (1916): the 44 : 23 triangle | Squaring the circle, 99.9996% under | Sitzungsberichte Berliner Math. Ges. 15, via the Jahrbuch (JFM 46.0857.01) |
 | A. A. Dmitrovskij (1910): 1.26 as 1.2 (1 + 1/4 − 1/5) | Doubling the cube, 99.981% over | Kagan's Bote 1910, via the Jahrbuch (JFM 41.0569.01) |
+| M. Blasendorff (1896): the division of the arc, m = 1/3 | Trisecting an angle, 97.592% under (at 90°) | Programm Berlin 1896, via the Jahrbuch (JFM 27.0394.06) |
+| H. Schoeler (1902): his n-section with n = 3, the construction long charted as d'Ocagne's | Trisecting an angle, 98.796% over (at 90°); d'Ocagne (1934) and Hajek (1936) listed as having also found it | Archiv (3) 4, via the Jahrbuch (JFM 33.0517.05) |
+| C. H. Kummell (1878): multisection, n = 3 | Trisecting an angle, 98.934% over (at 66.23°) | The Analyst 5, via the Jahrbuch (JFM 10.0363.04) |
+| J. G. van der Corput and H. Mooij (1949): division in a ratio r, r = 1/3 | Trisecting an angle, 99.855% under (at 90°) | Proc. Akad. Amsterdam 52, via the Zentralblatt (Zbl 0032.29801) |
+| D. Visser (1950) | Trisecting an angle, 99.584% under (at 90°) | Simon Stevin 27, via the Zentralblatt (Zbl 0037.37802) |
+| Sauerbeck (Lense 1951) | Trisecting an angle, 98.678% over (at 30°) | Sitzungsberichte München 1950, via the Zentralblatt (Zbl 0043.35403) |
+| Eduard Gregori (Innerebner 1947) | Squaring the circle, 99.99986% over | Der Schlern 1947, via the Zentralblatt (Zbl 0032.17902) |
+| Edoardo Storchi (1947): √(104348/33215) | Squaring the circle, 99.99999998% over | Periodico di Matematiche (4) 25, via the Zentralblatt (Zbl 0029.31002) |
+| K. Hagge (1913-14): by the compass | Rectifying the circle, 99.999976% under | Revista mat. Hispano-Americana 3, explained by Cebrián (1949), via the Zentralblatt (Zbl 0033.39002) |
+| August Ludwig Busch: 22/7 and 3 + √2/10 | Rectifying the circle, 99.959% over and 99.9945% under | Vorschule der darstellenden Geometrie (1868 edition), Aufgabe 67 |
 | K. T. Vahlen (1911): 39/4 divided externally to the product 81/2 | Rectifying the circle, 99.9997% under | Vahlen (1911), p. 312 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,
@@ -96,7 +110,7 @@ whose chapter by Alberto Conti keeps the formulas the German scan garbles, as qu
 garble some fractions and leave out the figures; the page images (and folded plates) are read where the text fails; where something had to be read back from the values
 the author gives, each entry's notes say so.
 
-The Jahrbuch über die Fortschritte der Mathematik (1868-1942), searchable on zbMATH Open, reviews almost every paper
+The Jahrbuch über die Fortschritte der Mathematik (1868-1942) and the Zentralblatt (from 1931), both searchable on zbMATH Open, review almost every paper
 on these approximations, often with the construction step for step; where a review gives every step, the entry is drawn from
 it and cites it. Reviews that give only a value or a formula are not charted.
 
@@ -118,8 +132,8 @@ d'Ocagne and Dürer, with only halving fractions finer than a sixteenth beating 
 Worked on the angle halved again and again and then multiplied back (a line and a circle for each halving), the
 historical trisections and arc rectifications hold from 30° to 150° about as well as they do on small angles. Each is
 charted at the deepest halving whose steps stay at macro scale: Cusa's rectification halved five times (99.99997%) and
-his trisection four times (99.9996%), d'Ocagne's four times, Karajordanoff's three, the quarter-versine trisection twice,
+his trisection four times (99.9996%), Schoeler's (d'Ocagne's) four times, Karajordanoff's three, the quarter-versine trisection twice,
 Vahlen's, Lambert's and the quarter-versine rectification once, and Dürer's from one side (with his halved once, at
 micro scale). The simplest methods go furthest, because they have no small fractions of their own. Ramanujan's 1913 and
-1914 constructions are at their best already, as is d'Ocagne's point: its exact place drifts only a fiftieth of the
+1914 constructions are at their best already, as is Schoeler's (d'Ocagne's) point: its exact place drifts only a fiftieth of the
 versine. The full table is in [Variants/](../Variants/README.md).
