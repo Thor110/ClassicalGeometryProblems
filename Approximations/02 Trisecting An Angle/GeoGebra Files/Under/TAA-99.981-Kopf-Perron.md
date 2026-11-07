@@ -1,10 +1,10 @@
 **Problem:** Trisecting An Angle
 
 **Method Name:**
-The Kopf-Perron trisection
+Kopf's second trisection
 
 **Author:**
-Kopf - 1919, refined by Oskar Perron (Sitzungsberichte der Bayerischen Akademie der Wissenschaften, 1933), as given by R. C. Yates, "The Trisection Problem" (1942), ch. 4, § 5
+Eugen Kopf, master tailor (Schneidermeister) of Ludwigshafen - 1933, his second construction, as published by Oskar Perron ("Eine neue Winkeldreiteilung des Schneidermeisters Kopf", Sitzungsberichte der Bayerischen Akademie der Wissenschaften 1933, pp. 439-445), with its largest error found by O. Nehring (1936); as given by R. C. Yates, "The Trisection Problem" (1942), ch. 4, § 5
 
 **Accuracy (%):**
 99.981
@@ -32,3 +32,5 @@ In the file: C is where the circle meets the diameter through B, beyond O; D is 
 
 **Notes / Limitations:**
 Charted at 63.95°, its weakest angle up to 90°, the range of Perron's table; it is exact at 90°. On larger angles it weakens: 99.60% at 150°. The figure in Yates is the refined form; Kopf's original of 1919 and Perron's paper of 1933 are not in the archive's sources.
+
+The Jahrbuch über die Fortschritte der Mathematik (JFM 60.1233.02) describes Perron's 1933 paper step for step, and it is this construction; Nehring's largest error, 14.86" at 69.934°, is what the rebuilt figure gives. Yates' date of 1919 is for Kopf's earliest work. Kopf's first published construction (1929) is a different one, with errors up to 8' 12".

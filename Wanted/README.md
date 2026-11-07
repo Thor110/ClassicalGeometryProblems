@@ -17,6 +17,15 @@ Nothing at present: every construction that was on this list has been charted. N
 
 No drafts are in progress.
 
+Found in the Jahrbuch but not charted:
+
+| Construction | Why |
+|---|---|
+| Kopf's first trisection (1929) | The review leaves the distance of the two circles open, and no reading gives Perron's largest error, 8' 12". |
+| d'Ocagne's trisection of 1931 (HD = HB/3, DC = 2HB) | Under 95% at 90° (94.7%). |
+| Bilimowitsch's rectification (1908) | Good for small arcs (error θ⁵/20), but under 90% by 60°. |
+| Reichenbächer (1901), Sorgner (1915, 1917), Heiseler (1935), Kerzdörfer (1938), Harris (1933) and others | The reviews give a value or a claim, not the construction. |
+
 ## Charted from here
 
 Each was redrawn from its published description in November 2026 and checked against the figures
@@ -64,8 +73,18 @@ given there.
 | Christiaan Huygens: AE = cosec 52.5° | Doubling the cube, 99.868% over | Varia opera mathematica I, p. 1, via Vahlen (1911), p. 284, from the page image |
 | A. L. Crelle (1846): the cosine equal to its tangent, 8 cos x | Rectifying the circle, 99.904% over | Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92 |
 | Émile Lemoine (1895): two shorter ways to draw √2 + √3, and the golden chord for a quarter | Rectifying the circle, 99.851% over (twice, tying d'Ocagne) and 99.904% over (tying Crelle) | Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 |
-| Kopf (1919), refined by Perron (1933): the arc about F and the angle at P | Trisecting an angle, 99.981% under (at 63.95°) | Yates (1942), ch. 4 § 5, fig. 37, from the page image |
+| Eugen Kopf (1933, his second construction, published by Perron): the arc about F and the angle at P | Trisecting an angle, 99.981% under (at 63.95°) | Yates (1942), ch. 4 § 5, fig. 37, from the page image; Perron (1933) and Nehring (1936) via the Jahrbuch |
 | Ernst Lakenmacher (1890): the side 0.8862278 of the diameter | Squaring the circle, 99.99981% over | Archiv der Mathematik und Physik (2) IX, pp. 214-215, as described in the Jahrbuch über die Fortschritte der Mathematik 22 (JFM 22.0578.01) |
+| Gaetano Baratto (1869): the tangent at B and the chord from the middle of the arc | Trisecting an angle, 98.796% over (at 90°), the same line as d'Ocagne's | Schiaparelli's report, via the Jahrbuch (JFM 02.0362.01) |
+| A. Stoyanoff (1935): circles of 5k and 20k about the corner | Trisecting an angle, 99.9991% under (at 90°) | Annuaire Univ. Sofia 31, via the Jahrbuch (JFM 62.1417.04) |
+| Maurice d'Ocagne (1907): the two-thirds chord | Arc rectification, 99.592% over (at 90°) | Nouvelles Annales (4) 7, via the Jahrbuch (JFM 38.0535.03) |
+| Ludwig Burmester (1919): the same length another way | Arc rectification, 99.592% over (at 90°) | Sitzungsberichte München 1919, via the Jahrbuch (JFM 47.0547.04) |
+| Fr. Strempel (1903): his first rectification | Arc rectification, 99.986% under (at 90°) | Programm Rostock 1903, via the Jahrbuch (JFM 34.0553.05) |
+| G. Peirce (1901): FC + BG | Rectifying the circle, 99.962% over | Bulletin AMS (2) 7, via the Jahrbuch (JFM 32.0504.04) |
+| G. Bojko (1909): the chord of 150° and three radii | Rectifying the circle, 99.993% under | Zeitschrift für Mathematik und Physik 57, via the Jahrbuch (JFM 40.0560.03) |
+| Artur Heiseler (1931): √(16 − 1/3) − √(1 − 1/3) | Rectifying the circle, 99.999% over | Commentationes Fennica 5, via the Jahrbuch and Zentralblatt |
+| Emil Lampe (1916): the 44 : 23 triangle | Squaring the circle, 99.9996% under | Sitzungsberichte Berliner Math. Ges. 15, via the Jahrbuch (JFM 46.0857.01) |
+| A. A. Dmitrovskij (1910): 1.26 as 1.2 (1 + 1/4 − 1/5) | Doubling the cube, 99.981% over | Kagan's Bote 1910, via the Jahrbuch (JFM 41.0569.01) |
 | K. T. Vahlen (1911): 39/4 divided externally to the product 81/2 | Rectifying the circle, 99.9997% under | Vahlen (1911), p. 312 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,
@@ -76,6 +95,10 @@ whose chapter by Alberto Conti keeps the formulas the German scan garbles, as qu
 (1846) as sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32. The scans
 garble some fractions and leave out the figures; the page images (and folded plates) are read where the text fails; where something had to be read back from the values
 the author gives, each entry's notes say so.
+
+The Jahrbuch über die Fortschritte der Mathematik (1868-1942), searchable on zbMATH Open, reviews almost every paper
+on these approximations, often with the construction step for step; where a review gives every step, the entry is drawn from
+it and cites it. Reviews that give only a value or a formula are not charted.
 
 Angle methods from Yates are charted at their weakest angle up to 90°, the range Yates tabulates
 them over; each method gives one trisecting line, and the rest of the angle is bisected.

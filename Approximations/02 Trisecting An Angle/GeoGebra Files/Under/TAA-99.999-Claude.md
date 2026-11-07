@@ -7,7 +7,7 @@ Cusa's trisection, on the angle halved four times
 Claude (Anthropic), an AI - 07-11-2026, as a variant of Cusa's trisection (taa-under-95.527), by Nicholas of Cusa and Snellius
 
 **Accuracy (%):**
-99.999
+99.9996
 (precise readout: 99.999605427632536815092150558559; the worst case from 30° to 150°, at 150°)
 
 **Oversized / Undersized:**

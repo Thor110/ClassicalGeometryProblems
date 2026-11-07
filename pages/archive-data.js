@@ -1267,6 +1267,31 @@ const ARCHIVE = {
        "redrawn in November 2026 from the review; the rebuilt az is 0.8862278 of the diameter, the value Vahlen gives (0.8862279)"
       ]
      }
+    },
+    {
+     "id": "stc-under-99.9996",
+     "side": "under",
+     "marks": "",
+     "holder": "Emil Lampe",
+     "method": "Lampe's 44 : 23 triangle",
+     "circles": 6,
+     "lines": 6,
+     "acc": "99.9996",
+     "precise": "99.999665663581134295678366211501",
+     "date": "1916",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.9996-Lampe",
+     "note": "The right triangle with legs 44 and 23: the circle on its hypotenuse as diameter has the area of the square on the longer leg, 1936.00647 against 1936. On the given diameter, the point of the circle with AZ : ZC = 44 : 23 gives the side AZ.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Lampe, \"Angenäherte Kreisquadraturen\", Sitzungsberichte der Berliner Mathematischen Gesellschaft 15 (1916), pp. 150-158",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 46.0857.01 (zbMATH Open)",
+       "redrawn in November 2026 from the review; 44/23 is a convergent of √(π/(4 − π)) = 1.9130585, as Lampe explains; the rebuilt square is 99.99967% of the circle"
+      ]
+     }
     }
    ]
   },
@@ -1542,7 +1567,7 @@ const ARCHIVE = {
      "date": "1934",
      "geogebra": "",
      "file": "GeoGebra Files/Over/TAA-98.796-dOcagne",
-     "note": "From the middle of the radius opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected. The same construction (a point a radius beyond the middle of the arc, joined to the point opposite the other end) was already quoted as known by E. Cominotto in 1895, as Amaldi reports: it gives exactly the same third.",
+     "note": "From the middle of the radius opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected. The same construction (a point a radius beyond the middle of the arc, joined to the point opposite the other end) was already quoted as known by E. Cominotto in 1895, as Amaldi reports: it gives exactly the same third. Baratto's rule of 1869 (taa-over-98.796-baratto) gives exactly the same line for every angle, by other steps: the tangent at B and the chord from A through the middle of the arc.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -1709,12 +1734,12 @@ const ARCHIVE = {
      "method": "Cusa's trisection, on the angle halved four times",
      "circles": 6,
      "lines": 10,
-     "acc": "99.999",
+     "acc": "99.9996",
      "precise": "99.999605427632536815092150558559",
      "date": "07-11-2026",
      "geogebra": "",
      "file": "GeoGebra Files/Under/TAA-99.999-Claude",
-     "note": "Cusa's trisection (taa-under-95.527) worked on the angle halved four times and doubled back: 99.999% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Nicholas of Cusa and Snellius's. Found by Claude (Anthropic), an AI, as a variant.",
+     "note": "Cusa's trisection (taa-under-95.527) worked on the angle halved four times and doubled back: 99.999% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Nicholas of Cusa and Snellius's. Found by Claude (Anthropic), an AI, as a variant. Relabelled 99.9996 in November 2026 so the chart reads in order beside Stoyanoff's trisection (taa-under-99.9991); the id is unchanged.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -1922,24 +1947,82 @@ const ARCHIVE = {
      "id": "taa-under-99.981",
      "side": "under",
      "marks": "",
-     "holder": "Kopf / Perron",
-     "method": "The Kopf-Perron trisection",
+     "holder": "Eugen Kopf",
+     "method": "Kopf's second trisection",
      "circles": 4,
      "lines": 7,
      "acc": "99.981",
      "precise": "99.981561196717939443595306981259",
-     "date": "1919",
+     "date": "1933",
      "geogebra": "",
      "file": "GeoGebra Files/Under/TAA-99.981-Kopf-Perron",
-     "note": "From a comparison of the circle with the trisecting limaçon: P two radii beyond the centre; the arc about F, on the diameter at (3 + √3)/6 of the radius, through B, meets the line CA at A'; the angle A'PB is a third of AOB to within 15 seconds up to 90°, and exact at 90°. Charted at its weakest angle up to 90°, the range Perron tabulates, which is 63.95°; the trisecting line is carried to the corner by a parallel and the rest bisected.",
+     "note": "Kopf's second construction, as Perron published it in 1933: P two radii beyond the centre; the arc about F, on the diameter at (3 + √3)/6 of the radius, through B, meets the line CA at A'; the angle A'PB is a third of AOB to within 15 seconds up to 90°, exact at 90°. Its largest error, 14.87\" at 69.93°, is Nehring's (1936). Charted at its weakest angle up to 90°, 63.95°; the trisecting line is carried to the corner by a parallel and the rest bisected.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: Kopf (1919), refined by O. Perron, Sitzungsberichte der Bayerischen Akademie der Wissenschaften (1933), and by M. d'Ocagne",
-       "as given, with Perron's table of errors, in R. C. Yates, The Trisection Problem (1942; reprinted 1971), ch. 4, § 5, fig. 37 (Internet Archive, ERIC_ED058058)",
-       "redrawn in November 2026 from the page image (the scanned text garbles it); the rebuilt errors are Perron's to the hundredth of a second: 0.18\" at 12°, 1.38\" at 24°, 4.23\" at 36°, 8.57\" at 48°, 13.08\" at 60°, 14.76\" at 72°, 8.47\" at 84°, 0 at 90°"
+       "published: O. Perron, \"Eine neue Winkeldreiteilung des Schneidermeisters Kopf\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Abt., 1933, pp. 439-445 (Jahrbuch über die Fortschritte der Mathematik, JFM 60.1233.02 (zbMATH Open), which describes the construction step for step)",
+       "its largest error found by O. Nehring, \"Über die Dreiteilung des Winkels nach Eugen Kopf\", ibid. 1936, pp. 77-79 (Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)): 14.86\" at the angle with cos x = 181/(266 + 151√3), 69.934°, which the rebuilt figure gives exactly",
+       "as given, with Perron's table, in R. C. Yates, The Trisection Problem (1942), ch. 4, § 5, fig. 37 (Internet Archive, ERIC_ED058058), who dates Kopf's work to 1919 and mentions refinements by Perron and d'Ocagne",
+       "Kopf's first construction (E. Kopf, Die Dreiteilung des Winkels, Ludwigshafen 1929; Perron, Sitzungsberichte München 59 (1929), pp. 341-343) is a different one, with errors up to 8' 12\" for acute angles"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-98.796-baratto",
+     "side": "over",
+     "marks": "",
+     "holder": "Gaetano Baratto",
+     "method": "Baratto's trisection",
+     "circles": 1,
+     "lines": 5,
+     "acc": "98.796",
+     "precise": "98.796021983927621116053226297479",
+     "date": "1869",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-98.796-Baratto",
+     "note": "C the middle of the arc AB; the tangent at B meets the chord AC at D; DOB is nearly a third of AOB. Practical up to 90°, as Schiaparelli's report shows; charted at 90°, its weakest there. It gives the same point at every angle as d'Ocagne's construction (taa-over-98.796) by other steps.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. Baratto (Naples), as reported by G. V. Schiaparelli, \"Relazione sopra una regola proposta per la trisezione dell'angolo dal Sig. Gaetano Baratto\", Rendiconti del Reale Istituto Lombardo (2) II (1869)",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 02.0362.01 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt third is 30.3612° at 90°, and its errors grow beyond 90° as the report says"
+      ]
+     },
+     "rediscovered": [
+      {
+       "name": "J. Kornbrekke",
+       "date": "1919",
+       "note": "as the case n = 2 of his \"tilnærmet vinkeldelingskonstruktion\" (Norsk Matematisk Tidsskrift 1 (1919), pp. 27, 71; JFM 47.0548.01): the point at the middle of the arc, the line through it from the far end to the tangent at the near end, and the line from the centre, step for step"
+      }
+     ]
+    },
+    {
+     "id": "taa-under-99.9991",
+     "side": "under",
+     "marks": "",
+     "holder": "A. Stoyanoff",
+     "method": "Stoyanoff's trisection",
+     "circles": 7,
+     "lines": 5,
+     "acc": "99.9991",
+     "precise": "99.999172631613137856008523657779",
+     "date": "1935",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.9991-Stoyanoff",
+     "note": "The bisector produced beyond the corner by 4k; circles about the corner with 5k and 20k; the bisector of the half next to one arm meets the smaller circle, and the line to it from the end of the 4k meets the larger: the line from the corner is a third of the angle less a positive error under 1 second up to 90°. Charted at 90°, its weakest in that range.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. Stoyanoff, \"Sur la trisection de l'angle\", Annuaire de l'Université de Sofia, Faculté physico-mathématique, Livre 1, 31 (1935), pp. 171-176",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 62.1417.04 (zbMATH Open)",
+       "redrawn in November 2026 from the review; with k a quarter of the radius, the rebuilt error is 0.004\" at 30° and 0.894\" at 90°, under the 1 second the review gives"
       ]
      }
     }
@@ -2492,6 +2575,31 @@ const ARCHIVE = {
       "evidence": [
        "published: C. Huygens, Varia opera mathematica I (Leiden 1724), p. 1, as given with its figure in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 284",
        "redrawn in November 2026 from the page image of Vahlen; the rebuilt AE is cosec 52.5° = 1.260472 radii, Vahlen's 1.2605"
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.981",
+     "side": "over",
+     "marks": "",
+     "holder": "A. A. Dmitrovskij",
+     "method": "Dmitrovskij's 1.26",
+     "circles": 8,
+     "lines": 5,
+     "acc": "99.981",
+     "precise": "99.981200000000000000000000000000",
+     "date": "1910",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.981-Dmitrovskij",
+     "note": "∛2 ≈ 1.26, drawn as b = 1.2 a and x = b + b/4 − b/5: exact to a/12500 in the edge.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. A. Dmitrovskij, \"Angenäherte Lösung der Aufgabe der Würfelverdoppelung\" (in Russian), Vestnik opytnoj fiziki i elementarnoj matematiki (Kagan's Bote) Nr. 526-527 (1910), pp. 269-291",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 41.0569.01 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt edge is 1.26 exactly"
       ]
      }
     }
@@ -3962,6 +4070,84 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.962",
+     "side": "over",
+     "marks": "",
+     "holder": "G. Peirce",
+     "method": "Peirce's curious construction",
+     "circles": 3,
+     "lines": 4,
+     "acc": "99.962",
+     "precise": "99.962524072952331442795540172689",
+     "date": "1901",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.962-Peirce",
+     "note": "AC and BD perpendicular diameters; DE = DO on DA; CE meets BD at G and the circle at F; FC + BG = r(4 − 2√2 + 2√3/3 + √6/3) = 3.142777 r, nearly the half circumference.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. Peirce, \"A curious approximate construction for π\", Bulletin of the American Mathematical Society (2) 7 (1901), pp. 426-427",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 32.0504.04 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt FC + BG is 3.142770 radii; the review prints 3.142777, but its own formula gives 3.1427700"
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-under-99.993",
+     "side": "under",
+     "marks": "",
+     "holder": "G. Bojko",
+     "method": "Bojko's construction",
+     "circles": 5,
+     "lines": 3,
+     "acc": "99.993",
+     "precise": "99.993632274177976716212291039908",
+     "date": "1909",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.993-Bojko",
+     "note": "The chord of 150° laid off along a diameter from one end, to L; OM three radii up the perpendicular at the centre; LM = r√(12 + √3 − 2√(2 + √3)) = 3.1414 r, nearly the half circumference.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. Bojko, \"Eine neue Näherungskonstruktion für π\", Zeitschrift für Mathematik und Physik 57 (1909), p. 196",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 40.0560.03 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt LM is 3.141393 radii, Bojko's 3.1414"
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-over-99.999",
+     "side": "over",
+     "marks": "",
+     "holder": "Artur Heiseler",
+     "method": "Heiseler's difference of two legs",
+     "circles": 5,
+     "lines": 3,
+     "acc": "99.999",
+     "precise": "99.999210766708042967127387157496",
+     "date": "1931",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.999-Heiseler",
+     "note": "π ≈ √(4² − (√3/3)²) − √(1² − (√3/3)²) = 3.141617: two right triangles on the same leg r/√3, with hypotenuses 4r and r, and the difference of their other legs.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. Heiseler, \"Eine einfache Methode zur approximativen Rektifikation der Kreisperipherie\", Commentationes Physico-Mathematicae, Societas Scientiarum Fennica 5, No. 17 (1931), pp. 1-5",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 57.0692.02 and Zbl 0003.16605 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the reviews give the formula, not the figure; the file draws it in the most direct way: CT = r/√3 on the tangent at C, the circles about T with radii r and 4r meet the diameter at Q and R, and QR is the difference"
+      ]
+     },
+     "result_scale": 2
     }
    ]
   },
@@ -4409,6 +4595,81 @@ const ARCHIVE = {
       ]
      },
      "holder_kind": "ai"
+    },
+    {
+     "id": "ar-over-99.592",
+     "side": "over",
+     "marks": "",
+     "holder": "Maurice d'Ocagne",
+     "method": "d'Ocagne's two-thirds chord",
+     "circles": 3,
+     "lines": 4,
+     "acc": "99.592",
+     "precise": "99.592753722848533646649098273646",
+     "date": "1907",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.592-dOcagne",
+     "note": "Divide the chord AB from A in the ratio 2 : 1 and draw the radius through the point; the chord from A to its end is nearly two thirds of the arc AB. Here laid off one and a half times. Charted at 90°, its weakest up to 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: M. d'Ocagne, \"Sur la rectification approchée des arcs de cercle\", Nouvelles Annales de Mathématiques (4) 7 (1907), pp. 1-6",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 38.0535.03 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt error stays under 0.001 of the radius up to 70°, as the review states"
+      ]
+     }
+    },
+    {
+     "id": "ar-over-99.592-burmester",
+     "side": "over",
+     "marks": "",
+     "holder": "Ludwig Burmester",
+     "method": "Burmester's chord",
+     "circles": 2,
+     "lines": 1,
+     "acc": "99.592",
+     "precise": "99.592753722848533646649098273646",
+     "date": "1919",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.592-Burmester",
+     "note": "The arc as completed to the semicircle asb about m; the circle about the middle of bm through a meets the line from that middle through s at a point whose chord from a is the arc. Charted at 90°. It gives exactly d'Ocagne's length of 1907 (ar-over-99.592) at every angle, by other steps.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. Burmester, \"Angenäherte Geradstreckung der Kreisbögen\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, München 1919, pp. 431-437",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 47.0547.04 (zbMATH Open)",
+       "redrawn in November 2026 from the review; with its own steps it gives exactly the length of d'Ocagne's two-thirds chord (1907) for every arc"
+      ]
+     }
+    },
+    {
+     "id": "ar-under-99.986",
+     "side": "under",
+     "marks": "",
+     "holder": "Fr. Strempel",
+     "method": "Strempel's first rectification",
+     "circles": 3,
+     "lines": 4,
+     "acc": "99.986",
+     "precise": "99.986543313648394920762252347666",
+     "date": "1903",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-99.986-Strempel",
+     "note": "AM to the middle of the arc meets the perpendicular to the chord at B in C; the circle about A through C meets AB produced at K; BL = 3/2 BC beyond C; LK meets AC at N, and AN is the arc: under 7 millionths of the radius up to 45°. Charted at 90°, its weakest up to 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Fr. Strempel, \"Neue, sehr genaue und einfache Methoden der Rektifikation sowie der Teilung von Kreisbogen\", Programm des Gymnasiums und Realgymnasiums Rostock (Nr. 748), 1903, 23 pp.",
+       "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 34.0553.05 (zbMATH Open)",
+       "redrawn in November 2026 from the review; the rebuilt error at 45° is 6.5 millionths of the radius, under the 7 the review gives"
+      ]
+     }
     }
    ]
   }
@@ -4661,6 +4922,41 @@ const ARCHIVE = {
   "Ernst Lakenmacher": [
    "E. Lakenmacher",
    "Ernst Lakenmacher"
+  ],
+  "Gaetano Baratto": [
+   "Gaetano Baratto"
+  ],
+  "A. Stoyanoff": [
+   "A. Stoyanoff"
+  ],
+  "Ludwig Burmester": [
+   "L. Burmester",
+   "Ludwig Burmester"
+  ],
+  "Fr. Strempel": [
+   "Fr. Strempel"
+  ],
+  "G. Peirce": [
+   "G. Peirce"
+  ],
+  "G. Bojko": [
+   "G. Bojko"
+  ],
+  "Artur Heiseler": [
+   "A. Heiseler",
+   "Artur Heiseler"
+  ],
+  "Emil Lampe": [
+   "E. Lampe",
+   "Emil Lampe"
+  ],
+  "A. A. Dmitrovskij": [
+   "A. A. Dmitrovskij"
+  ],
+  "Eugen Kopf": [
+   "Eugen Kopf",
+   "E. Kopf",
+   "Kopf"
   ]
  }
 };
