@@ -19,6 +19,11 @@ Current version: **1.6 (November 2026)**
 - 49 circles maximum
 - 80 lines maximum
 
+**Slots.** Every budget of c circles and l lines is a slot, on each side of a chart (oversized and undersized), and each slot
+has one best construction to find: the most accurate that uses exactly that budget. With at most C circles and L lines there
+are (C + 1)(L + 1) slots per side: 26 × 41 = 1,066 under the base ruleset and 50 × 81 = 4,050 under the extended one. Each
+chart page counts how many are filled and how many are still open.
+
 ## Accuracy
 
 - 95% minimum, 100% maximum. New submissions below 95% are not accepted: the extension will not send them, and a pull request below 95% is closed automatically with its figures and some encouragement. Older entries below 95% stay on record, listed under their chart as below the minimum, but not ranked.

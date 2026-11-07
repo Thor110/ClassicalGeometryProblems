@@ -25,6 +25,9 @@
   .chart td.acc,.chart td.err{overflow-wrap:normal;white-space:nowrap;}
   .chart td.err{font-size:13px;color:#9a9aa6;}
   .tie{margin-left:3px;color:#c9a;cursor:help;}
+  table.slots{width:100%;border-collapse:collapse;font-size:14px;}
+  table.slots td,table.slots th{padding:6px 8px;text-align:center;border-bottom:1px solid #2a2a33;}
+  table.slots td:first-child,table.slots th:first-child{text-align:left;}
   .chart .half{max-height:460px;overflow-y:auto;border-left:1px solid #16161f;border-right:1px solid #16161f;scrollbar-color:#2a2a3a #0a0a0f;}
   .chart .caption{font-size:13px;color:#555;letter-spacing:0.15em;text-transform:uppercase;padding:9px 8px;border-top:1px solid #2a2a3a;border-bottom:1px solid #2a2a3a;}
   .chart table.head + .caption{border-top:0;}         /* the header's own line is already above it */
@@ -71,6 +74,7 @@
   <div class="box-text" id="task" style="text-align:center;"></div>
   <div class="meters" id="meters"></div>
 </div>
+<div class="box" id="slots"></div>
 
 <div class="box">
   <div class="box-title">Accuracy Ladder</div>
@@ -278,6 +282,23 @@ function visible(e) {
   return true;
 }
 
+// Open slots: every budget of c circles and l lines is a slot, on each side of the chart, and each slot has one best
+// construction to find. Slots per side = (C + 1)(L + 1) for a ruleset's caps C and L; a slot is filled when an entry
+// uses exactly that budget (SUBMISSION_RULESET.md, "Slots").
+const RULESETS = [['Base ruleset', 25, 40], ['Extended ruleset', 49, 80]];
+function renderSlots(entries) {
+  const n = x => parseInt(x, 10), fmt = x => x.toLocaleString('en-GB');
+  const filled = (side, C, L) => new Set(entries.filter(e => e.side === side && n(e.circles) <= C && n(e.lines) <= L && !isNaN(n(e.circles)) && !isNaN(n(e.lines))).map(e => n(e.circles) + ',' + n(e.lines))).size;
+  const rows = RULESETS.map(([name, C, L]) => {
+    const per = (C + 1) * (L + 1), fo = filled('over', C, L), fu = filled('under', C, L);
+    return `<tr><td>${name}</td><td class="mono">(${C} + 1) × (${L} + 1) = ${fmt(per)}</td><td>${fmt(fo)} of ${fmt(per)}</td><td>${fmt(fu)} of ${fmt(per)}</td><td><b>${fmt(2 * per - fo - fu)}</b></td></tr>`;
+  }).join('');
+  $('slots').innerHTML = `<div class="box-title">Open Slots</div>
+    <div class="box-text">Every budget of circles and lines is a slot on each side of the chart, and each slot has one best construction waiting to be found: the most accurate one that uses exactly that many circles and lines. With at most C circles and L lines there are (C + 1) × (L + 1) slots per side. A slot is filled when an entry on the chart uses its budget; a cheaper or more accurate construction can still take it over.</div>
+    <div class="table-wrap"><table class="slots"><tr><th>Ruleset</th><th>Slots per side</th><th>Filled oversized</th><th>Filled undersized</th><th>Open</th></tr>${rows}</table></div>
+    <div class="small-text muted" style="text-align:center;">Some of the smallest budgets may have no construction at 95% or better at all; the extended ruleset is for entries of 99.91% and above. ${who === 'all' ? '' : 'Counted among ' + (who === 'ai' ? 'AI finds' : 'people') + ' only.'}</div>`;
+}
+
 function render() {
   const p = current, pool = p.entries.filter(byWho), shown = pool.filter(visible), all = pool;
   // Ranks within what is shown: among people, among AI finds, or among everyone.
@@ -297,6 +318,7 @@ function render() {
     ['Best undersized', bu ? bu.acc + '%' : 'open', bu ? 'good' : 'warm'],
     ['Method holders', people, ''],
   ]);
+  renderSlots(all);
 
   // The table mirrors the original charts: oversized ranks count down to perfection, undersized count up from it.
   const row = e => {
