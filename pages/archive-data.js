@@ -1046,6 +1046,32 @@ const ARCHIVE = {
      },
      "holder_kind": "ai",
      "square": "q"
+    },
+    {
+     "id": "stc-over-99.9999999",
+     "side": "over",
+     "marks": "",
+     "holder": "Hung Viet Chu",
+     "method": "Chu's construction of Ramanujan's number",
+     "circles": 29,
+     "lines": 15,
+     "acc": "99.9999999",
+     "precise": "99.999999993127849876111384378950",
+     "date": "2019",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.9999999-Chu",
+     "note": "π ≈ (63/25)(1 + (5/2)(15√5 − 7)/269) = 3.1415926538, a number Ramanujan gave (1914), constructed by Chu from three lengths: √63/5, √(15√5 − 7)/5 and √269/8. Correct to nine decimal places; long (29 circles and 15 lines), within the extended ruleset.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: H. V. Chu, \"Squaring the Circle Revisited\", 2019, arXiv:1908.01202, section 3",
+       "the number is Ramanujan's, from \"Modular equations and approximations to π\" (1914)",
+       "redrawn in November 2026 from Chu's steps; his left figure is drawn on the circle's own diameter (his AB = AC = 1) and his right figure on the perpendicular one, and the three lengths are put together the archive's way, as Chu leaves that to \"basic constructions\""
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -2606,7 +2632,8 @@ const ARCHIVE = {
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: Kochański, Acta Eruditorum, 1685"
+       "published: Kochański, Acta Eruditorum, 1685",
+       "it reappeared without its author's name in the Bibliothèque universelle III (1816), as Gergonne reports in the Annales de mathématiques VIII (1818), construction II, giving π = 3.14153334; Vahlen (1911, p. 310) identifies it as Kochański's"
       ]
      }
     },
@@ -3282,6 +3309,56 @@ const ARCHIVE = {
        "redrawn in November 2026; the triangle's three sides are laid end to end on one line, as Beutel compares its perimeter with the circumference"
       ]
      }
+    },
+    {
+     "id": "rtc-under-99.999996",
+     "side": "under",
+     "marks": "",
+     "holder": "Pioche",
+     "method": "Pioche's rectification",
+     "circles": 9,
+     "lines": 6,
+     "acc": "99.999996",
+     "precise": "99.999996810524326040993991303189",
+     "date": "1818",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.999996-Pioche",
+     "note": "A radius up from A, three along the line to D; BD; the perpendicular at the first division meets BD at E; DE carried on beyond D; then 7/8 of a radius beyond that and 3/10 of one beyond A. KL = (501 + 80√10)/120 radii, short of the circumference by two ten-millionths of the radius. \"Le plus exact\", Gergonne says, of the graphical rectifications.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: J. D. Gergonne, \"Sur quelques rectifications approchées de la circonférence du cercle\", Annales de mathématiques pures et appliquées VIII (1817-18), pp. 245-253 (Internet Archive, annalesdemathma06unkngoog), construction III, \"dû à M. Pioche, militaire distingué, résidant à Metz\", communicated by Servois",
+       "redrawn in November 2026 from Gergonne's text; the scan garbles the two fractions, FK = 7/8 of FG and AL = 3/10 of AH, which are the ones that give Gergonne's KL = (501 + 80√10)/120 (their sum must be 47/40); also cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311"
+      ]
+     }
+    },
+    {
+     "id": "rtc-over-99.974",
+     "side": "over",
+     "marks": "",
+     "holder": "Lorenzo Mascheroni",
+     "method": "Mascheroni's quarter of the circle",
+     "circles": 7,
+     "lines": 0,
+     "acc": "99.974",
+     "precise": "99.974327715793193754982284378486",
+     "date": "1797",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.974-Mascheroni",
+     "note": "With the compass alone: the radius carried round from A to E and E to D; the circles about A and B of radii AD and BE meet at F; the circle about E through F meets the circle at G. AG is very nearly a quarter of the circumference: π ≈ 3.14239917.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. Mascheroni, La geometria del compasso, Pavia 1797; Géométrie du compas, Paris 1798, p. 248",
+       "as given, with its value π = 3.14239917, in J. D. Gergonne, \"Sur quelques rectifications approchées de la circonférence du cercle\", Annales de mathématiques pures et appliquées VIII (1817-18), pp. 245-253 (Internet Archive, annalesdemathma06unkngoog), construction I",
+       "redrawn in November 2026; the scan reads \"B\" for the centre of the last arc, but only E (or D, the same by symmetry) gives Gergonne's value"
+      ]
+     },
+     "result_scale": 4
     }
    ]
   },
@@ -3653,13 +3730,6 @@ const ARCHIVE = {
    "source": "R. C. Yates, The Trisection Problem (1942), ch. 4, section 5; O. Perron, Sitzungsberichte der Bayerischen Akademie der Wissenschaften, 1933. The scanned text of Yates garbles the construction, so it needs the original figure."
   },
   {
-   "problem": "stc",
-   "who": "Hung Viet Chu",
-   "year": "2019",
-   "value": "√(63/25 · (1 + 5/2 · (15√5 − 7)/269)), Ramanujan's number, π correct to nine decimal places",
-   "source": "H. V. Chu, \"Squaring the Circle Revisited\", arXiv:1908.01202, section 3: every step is given, but it is long (three figures combined)."
-  },
-  {
    "problem": "dtc",
    "who": "G. Boccali",
    "year": "1884",
@@ -3806,6 +3876,13 @@ const ARCHIVE = {
   "Fontana": [
    "Fontana",
    "Gregorio Fontana"
+  ],
+  "Hung Viet Chu": [
+   "Hung Viet Chu",
+   "H. V. Chu"
+  ],
+  "Pioche": [
+   "Pioche"
   ]
  }
 };

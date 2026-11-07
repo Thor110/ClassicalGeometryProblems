@@ -131,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (103)
+### Not verified by a person yet (106)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -172,6 +172,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, oversized 99.398% · Eight ninths of the diameter (stc-over-99.398): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.398-Rhind-Papyrus.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.946% · Willich's quadrature (stc-under-99.946): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.946-Willich.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.9993% · Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5 (stc-under-99.9993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9993-Claude.ggb`, square q
+- [ ] Squaring The Circle, oversized 99.9999999% · Chu's construction of Ramanujan's number (stc-over-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9999999-Chu.ggb`, square q
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
@@ -227,6 +228,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.99997% · Specht's construction (rtc-under-99.99997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99997-Specht.ggb`
 - [ ] Rectifying The Circle, oversized 99.998% · Kunze's triangle (rtc-over-99.998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.998-Kunze.ggb`
 - [ ] Rectifying The Circle, undersized 99.826% · Cusa's triangle (rtc-under-99.826): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.826-Cusa.ggb`
+- [ ] Rectifying The Circle, undersized 99.999996% · Pioche's rectification (rtc-under-99.999996): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999996-Pioche.ggb`
+- [ ] Rectifying The Circle, oversized 99.974% · Mascheroni's quarter of the circle (rtc-over-99.974): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.974-Mascheroni.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
