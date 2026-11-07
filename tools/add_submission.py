@@ -18,8 +18,14 @@ Then run `python tools/verify.py --write` to check it and update the website.
 
 It refuses, and says why, if the construction does not fit the problem it was submitted for, if the
 archive's own checker would measure it differently, if an entry with the same id exists, or if the
-cross-reference finds it identical to (or with the same result as) an entry already charted; add
---allow-duplicate to record an independent rediscovery anyway.
+cross-reference finds it identical to (or with the same result as) an entry already charted.
+
+  --rediscovery     the same construction as an entry already charted, found later: no new entry is made,
+                    and the submitter is added to that entry's "rediscovered" list, shown on the charts
+                    as "Also found by ... possibly an independent rediscovery" (SUBMISSION_RULESET.md,
+                    "Earlier discoveries"). Whether a later find was independent can never be checked,
+                    so the name is kept either way.
+  --allow-duplicate the same result by a different construction: charted as an entry of its own.
 """
 import datetime, json, math, os, re, shutil, sys, unicodedata
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -60,6 +66,22 @@ def chart_label(precise, problem, side, archive):
     return str(P)[:12]
 
 
+def add_rediscovery(eid, problem, meta, pr, dry):
+    """List the submitter on the earlier entry as a possible independent rediscovery, instead of a new entry."""
+    submitted = (meta.get('submitted') or datetime.date.today().isoformat())[:10]
+    rec = {'name': meta.get('name') or 'Anonymous', 'date': '-'.join(reversed(submitted.split('-'))),
+           'note': 'submitted%s' % (' in pull request #%s' % pr if pr else '')}
+    print('The same construction as %s: %s is listed on it as a possible independent rediscovery.' % (eid, rec['name']))
+    if dry:
+        print(json.dumps(rec, ensure_ascii=False, indent=1)); print('Dry run: nothing written.'); return
+    s = open(DATA, encoding='utf-8').read(); i = s.index('{', s.index('const ARCHIVE')); head = s[:i]
+    D = json.loads(s[i:s.rindex('}') + 1])
+    e = [x for p in D['problems'] if p['id'] == problem for x in p['entries'] if x['id'] == eid][0]
+    e.setdefault('rediscovered', []).append(rec)
+    open(DATA, 'w', encoding='utf-8').write(head + json.dumps(D, ensure_ascii=False, indent=1) + s[s.rindex('}') + 1:])
+    print('Recorded. Now run: python tools/verify.py --write')
+
+
 def main():
     args = sys.argv[1:]
     if not args or args[0].startswith('-'): print(__doc__); sys.exit(1)
@@ -96,11 +118,15 @@ def main():
         if not e.get('file'): continue
         old = X.profile(problem, os.path.join(v.ROOT, pp['folder'], e['file'] + '.ggb'), e)
         verdict = old and X.compare(problem, mine, old)
+        if verdict and verdict[0] == 'identical' and '--rediscovery' in args:
+            return add_rediscovery(e['id'], problem, meta, pr, dry)
         if verdict and verdict[0] in ('identical', 'same result'):
             msg = '%s %s (%s%% by %s).' % (verdict[0].capitalize(), e['id'], e['acc'], e['holder'])
             if '--allow-duplicate' not in args:
-                sys.exit(msg + ' Not added. If it is an independent rediscovery to record, run again with --allow-duplicate.')
+                sys.exit(msg + ' Not added. The same construction found later: run again with --rediscovery to list the submitter on that entry.'
+                         ' The same result by a different construction: run again with --allow-duplicate to chart it as its own entry.')
             print('Note: ' + msg)
+    if '--rediscovery' in args: sys.exit('No charted entry has the same construction, so there is nothing to record it against. Not added.')
     label = chart_label(precise, problem, side, archive)
     eid = '%s-%s-%s' % (problem, side, label)
     if any(e['id'] == eid for p in archive['problems'] for e in p['entries']): sys.exit('An entry %s already exists.' % eid)

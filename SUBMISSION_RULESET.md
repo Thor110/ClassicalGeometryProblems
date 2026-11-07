@@ -5,7 +5,7 @@ These are the rules behind the keys and figures in the approximation charts.
 **Rules are subject to change.** Each change is listed under [Changes](#changes) with its date, and
 entries are re-checked against the current rules by `tools/verify.py`.
 
-Current version: **1.4 (November 2026)**
+Current version: **1.5 (November 2026)**
 
 ## Rulesets
 
@@ -39,6 +39,31 @@ Key marks are added to the left of the method holder's name.
 - `~` **Contested**: proof of the original discoverer is being sought. Some constructions, such as very simple ones, may appear in ancient sources (for example the Śulba Sūtras of Vedic India, or in architecture), so their first discoverer may never be identified.
 - `@` **Too simple**: the construction is simple enough that it has almost certainly been found many times before.
 - `µ` **Micro scale edits**: the construction relies on steps too small to reproduce reliably on paper. See [Micro scale](#micro-scale) for the exact test.
+
+## Earlier discoveries
+
+Credit goes to the earliest known author of a construction, and nobody who found it is ever removed.
+
+- **The same construction found earlier.** When a published source shows that a construction already on the charts was
+  found before, the entry is credited to the earliest author the source supports. The person it was credited to stays
+  on the entry, listed under **Also found by** with their own date, as a **possible independent rediscovery**. The entry
+  keeps its id and its file, and the notes record the source and when the credit moved.
+- **Found later.** A submission that turns out to be the same construction as one already charted is not charted again:
+  its author is added to that entry's **Also found by** list in the same way.
+- **Independence can never be proven.** The archive cannot tell whether a later find was made without knowledge of the
+  earlier one, so it never says either way: every later finder is listed as *possibly* having rediscovered it
+  independently, which keeps their name and makes no claim about them.
+- **The same result is not the same construction.** Two constructions that land on the same value by different steps
+  are separate methods and keep separate entries. Stifel's circle on Plato's figure (1544) and Gordon's Cube 2
+  Tesseract v1.0 (2024) both give the edge 5/4 of the original, by unrelated constructions, so both are charted.
+- **Variants are not rediscoveries.** A historical construction with its fractions changed, or worked on a halved angle,
+  is a variant: it is charted as its own entry, credited to the original's author for the method and to its finder for
+  the variant.
+- **While a source is being sought**, the entry carries the `~` mark (above). Once the source is checked, the mark is
+  removed and the credit settled as described here.
+
+People who also found a method are shown in the entry's details on the charts and are found by the chart's search.
+If they verify the entry, it counts as self-verification, as for a method holder.
 
 ## Counting
 
@@ -81,6 +106,7 @@ Each entry is **verified**, **self-verified**, **unverified** or **disputed**. P
 
 ## Changes
 
+- **1.5 (November 2026)**: earlier discoveries. Credit goes to the earliest known author; everyone who found a construction later is kept on its entry as a possible independent rediscovery.
 - **1.4 (November 2026)**: points placed freely that only set the size are not counted against a construction; angle sweeps find the angle's corner from the file.
 - **1.3 (November 2026)**: submissions through the browser extension, evaluated automatically; new submissions below 95% are no longer accepted.
 - **1.2 (November 2026)**: chart figures for general angle methods, and the shallow crossing report.

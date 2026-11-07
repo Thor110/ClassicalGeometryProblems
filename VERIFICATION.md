@@ -53,7 +53,9 @@ What the AI check can and cannot do:
   Give your **full name**. A verification counts as self-verification only when it is by one of the
   people who hold the method, matched by full name (`holders` in `pages/archive-data.js` lists the
   full names behind each holder, such as Kochański and Gordon for the crossover methods), so someone
-  who merely shares a surname with a holder is counted as independent.
+  who merely shares a surname with a holder is counted as independent. Someone listed on the entry as having
+  also found the construction ("Also found by", see [Earlier discoveries](SUBMISSION_RULESET.md#earlier-discoveries))
+  counts as self-verification too.
 - **AI systems:** open an issue naming the system, its maker and its method. The method must be
   reproducible by others. AI systems are listed by name and method, never as people.
 
@@ -131,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (121)
+### Not verified by a person yet (123)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -239,6 +241,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.9999995% · Specht's second construction (rtc-under-99.9999995): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9999995-Specht.ggb`
 - [ ] Rectifying The Circle, oversized 99.851% · d'Ocagne's √2 + √3 (after Bioche) (rtc-over-99.851): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.851-dOcagne.ggb`
 - [ ] Rectifying The Circle, undersized 99.994% · Pleskot's rectification (rtc-under-99.994): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.994-Pleskot.ggb`
+- [ ] Rectifying The Circle, oversized 99.904% · The cosine equal to its tangent (rtc-over-99.904): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.904-Crelle.ggb`
+- [ ] Rectifying The Circle, undersized 99.9997% · Vahlen's external division for π (rtc-under-99.9997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9997-Vahlen.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`

@@ -2782,9 +2782,17 @@ const ARCHIVE = {
       "kind": "historical",
       "evidence": [
        "published: Kochański, Acta Eruditorum, 1685",
-       "it reappeared without its author's name in the Bibliothèque universelle III (1816), as Gergonne reports in the Annales de mathématiques VIII (1818), construction II, giving π = 3.14153334; Vahlen (1911, p. 310) identifies it as Kochański's"
+       "it reappeared without its author's name in the Bibliothèque universelle III (1816), as Gergonne reports in the Annales de mathématiques VIII (1818), construction II, giving π = 3.14153334; Vahlen (1911, p. 310) identifies it as Kochański's",
+       "again, under the name of Nicolai Nuwrotzki, in Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92, \"Zur näherungsweisen Kreis-Quadratur\" (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32); the same construction step for step (the tangent at one end of the diameter, the 30° line from the centre, three radii along the tangent, and the line to the other end)"
       ]
-     }
+     },
+     "rediscovered": [
+      {
+       "name": "Nicolai Nuwrotzki",
+       "date": "before 1846",
+       "note": "in \"Über die Rectification der Peripherie des Kreises\" (Hamburg, Nestler und Melle), without mention of Kochański, as reported in Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92, \"Zur näherungsweisen Kreis-Quadratur\" (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.9875",
@@ -3585,6 +3593,56 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.904",
+     "side": "over",
+     "marks": "",
+     "holder": "A. L. Crelle",
+     "method": "The cosine equal to its tangent",
+     "circles": 4,
+     "lines": 5,
+     "acc": "99.904",
+     "precise": "99.904097769121747403630174171380",
+     "date": "1846",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.904-Crelle",
+     "note": "The angle whose cosine equals its tangent: its sine is (√5 − 1)/2, and its cosine, √((√5 − 1)/2) = 0.786151 radii, is nearly an eighth of the circumference, 0.785398. Drawn as the perpendicular from the centre to a chord √5 − 1 long, taken off the line from one end of the diameter to the tangent at the other.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published (unsigned, \"Berlin im März 1846\") in Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92, \"Zur näherungsweisen Kreis-Quadratur\" (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32); attributed to Crelle, the journal's editor, by Vahlen",
+       "cited in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 312: \"der aus cos x = tg x folgende Wert 0,786151 statt 0,785398\"",
+       "redrawn in November 2026 from the journal text, which gives the figure step by step; the rebuilt OP is 0.786151 radii, the value printed"
+      ]
+     },
+     "result_scale": 8
+    },
+    {
+     "id": "rtc-under-99.9997",
+     "side": "under",
+     "marks": "",
+     "holder": "K. T. Vahlen",
+     "method": "Vahlen's external division for π",
+     "circles": 12,
+     "lines": 3,
+     "acc": "99.9997",
+     "precise": "99.999736401923321241913021808841",
+     "date": "1911",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.9997-Vahlen",
+     "note": "39/4 diameters divided externally so that the parts multiply to 81/2: the smaller part is the root of 4x² + 39x = 162, 3.1415844 diameters, Vahlen's 3.14158. Found, like his ∛2 (dtc-under-99.9976), as a small-integer quadratic equation nearly satisfied by π.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 312: \"Man teile (10 − 1/4) von außen zum Produkte 81/2, der kleinere Abschnitt ist 3,14158 ≈ π\"",
+       "redrawn in November 2026; the scan garbles the fractions, read back as 39/4 and 81/2 because they alone give the printed 3.14158 and the coefficients 2, 39, 81 of the equation the scan keeps (2x² + 39x/2 = 81)"
+      ]
+     }
     }
    ]
   },
@@ -4303,6 +4361,10 @@ const ARCHIVE = {
   ],
   "Michael Stifel": [
    "Michael Stifel"
+  ],
+  "A. L. Crelle": [
+   "August Leopold Crelle",
+   "A. L. Crelle"
   ]
  }
 };

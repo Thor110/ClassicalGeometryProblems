@@ -21,7 +21,9 @@ function holderNames(holder) { return ((ARCHIVE.holders || {})[holder] || [holde
 function isHolder(name, holder) { return holderNames(holder).includes(plainName(name)); }
 function statusOf(e) {
   const people = (e.verified || []).filter(v => v.kind === 'person');
-  const independent = people.filter(v => !isHolder(v.by, e.holder));
+  // Someone listed as having also found the construction is not independent of it either.
+  const finders = (e.rediscovered || []).map(r => plainName(r.name));
+  const independent = people.filter(v => !isHolder(v.by, e.holder) && !finders.includes(plainName(v.by)));
   const ai = CHECKS[e.id] || null;
   const open = (e.disputes || []).filter(d => d.status === 'open');
   let status = 'unverified';

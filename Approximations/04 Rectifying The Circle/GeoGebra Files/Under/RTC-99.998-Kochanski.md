@@ -36,3 +36,6 @@ Because the paper omits part of the required steps for the construction, I had t
 
 **Inference performed:**
 - I used circles to get the relavant angle for "IAC = 60°" this should be clearly visible in the GeoGebra construction.
+
+**Also found by:**
+Nicolai Nuwrotzki (before 1846), in "Über die Rectification der Peripherie des Kreises" (Hamburg), without mention of Kochański, as reported in Journal für die reine und angewandte Mathematik 32 (1846), p. 91: the same construction step for step. Listed as a possible independent rediscovery (see "Earlier discoveries" in SUBMISSION_RULESET.md).

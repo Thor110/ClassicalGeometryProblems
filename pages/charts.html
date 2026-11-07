@@ -148,7 +148,7 @@
     </div>
   </div>
   <div class="box-text">
-    A contested or too-simple mark is not a judgement of the person. It records that a construction may have been found before, so credit can go to whoever found it first. <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md" target="_blank" rel="noopener">Full ruleset</a>.
+    A contested or too-simple mark is not a judgement of the person. It records that a construction may have been found before, so credit can go to whoever found it first. When an earlier source turns up, the entry is credited to its earliest known author, and everyone who found it later stays on the entry under "Also found by", as a possible independent rediscovery: no name is ever removed. <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md" target="_blank" rel="noopener">Full ruleset</a>.
   </div>
 </div>
 
@@ -259,7 +259,7 @@ function showRow(id, page) {
 
 function matches(e) {
   if (!query) return true;
-  return [e.holder, e.method, e.acc + '%', e.precise, e.date].join(' ').toLowerCase().includes(query);   // what the row shows
+  return [e.holder, e.method, e.acc + '%', e.precise, e.date, ...(e.rediscovered || []).map(r => r.name)].join(' ').toLowerCase().includes(query);   // what the row shows, and who also found it
 }
 
 function visible(e) {
@@ -434,6 +434,7 @@ function renderCompare() {
     ['Circles and lines', e => `${esc(e.circles)} and ${esc(e.lines)}`],
     ['Steps', e => playSteps(e) ? `${playSteps(e).counted} that lead to the result, of ${playSteps(e).all} in its playthrough` : '—'],
     ['Key marks', e => e.marks ? marksHTML(e.marks) : '—'],
+    ['Also found by', e => (e.rediscovered || []).map(r => esc(r.name) + (r.date ? ' (' + esc(r.date) + ')' : '')).join(', ') || '—'],
     ['Smallest step', e => ai(e).smallest_step != null ? (100 * ai(e).smallest_step).toPrecision(3) + '% of the given size' : '—'],
     ['Shallowest crossing', e => ai(e).shallowest_crossing != null ? ai(e).shallowest_crossing + '°' : '—'],
     ['Verification', e => badge(e)], ['Date', e => esc(e.date || '—')],
@@ -456,6 +457,12 @@ function badge(e) {
 // too), from tools/steps.py; all: every step in the file. Written into ai-checks.js by tools/verify.py.
 const playSteps = e => (CHECKS[e.id] || {}).steps_played || null;
 const stepsText = e => { const p = playSteps(e); return p ? p.counted + ' steps' : ''; };
+
+// People who found the same construction later, kept on the entry of its earliest known author. Whether a later find
+// was independent can never be checked, so each is listed as a possible independent rediscovery (SUBMISSION_RULESET.md).
+function alsoFound(e) {
+  return e.rediscovered.map(r => `<li>${esc(r.name)}${r.date ? ' · ' + esc(r.date) : ''} · possibly an independent rediscovery${r.note ? ' · ' + esc(r.note) : ''}</li>`).join('');
+}
 
 function renderDetail() {
   const e = current.entries.find(x => x.id === highlighted);
@@ -486,6 +493,7 @@ function renderDetail() {
     ${s.ai && s.ai.sweep ? sweepPlot(s.ai) : ''}
     <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
     <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
+    ${(e.rediscovered || []).length ? `<div class="rec"><div class="rec-title">Also found by</div><ul>${alsoFound(e)}</ul></div>` : ''}
     <div class="rec"><div class="rec-title">Related entries</div><ul>${related(e)}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
     <div class="controls" style="margin-top:12px;">

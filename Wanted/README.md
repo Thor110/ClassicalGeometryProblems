@@ -5,6 +5,12 @@ chart. A construction is charted under a historical name only once it has been c
 original source, or a faithful published description of it, step by step, so that the credit is for
 what that person actually drew. Drafts in progress are kept here.
 
+If a historical construction turns out to be one already charted under a later name, the credit moves to
+the earliest author, and the later finder stays on the entry under "Also found by", as a possible
+independent rediscovery ([Earlier discoveries](../SUBMISSION_RULESET.md#earlier-discoveries)). A
+historical method that only reaches the same value by other steps is charted beside it, as Stifel's is
+beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
+
 ## Still wanted
 
 | Construction | Chart | Why it is not charted yet |
@@ -58,12 +64,15 @@ given there.
 | E. Cominotto (1895): trisection through the circle on K, I, C | Trisecting an angle, 99.177% over (at 150°) | Conti in Enriques (1900), § 17 |
 | Michael Stifel (1544): Plato's figure with OM = 3/8, ∛2 = 5/4 | Doubling the cube, 97.656% under | Vahlen (1911), p. 284 |
 | K. T. Vahlen (1911): 8 divided externally to the product 35/3 | Doubling the cube, 99.998% under | Vahlen (1911), pp. 283-284 |
+| A. L. Crelle (1846): the cosine equal to its tangent, 8 cos x | Rectifying the circle, 99.904% over | Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92 |
+| K. T. Vahlen (1911): 39/4 divided externally to the product 81/2 | Rectifying the circle, 99.9997% under | Vahlen (1911), p. 312 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,
 Yates as ERIC_ED058058 (the 1971 reprint), Hayden as paper-doi-10_1098_rspl_1871_0099, Beutel as diequadraturdes01beutgoog, Gergonne's Annales VIII as annalesdemathma06unkngoog, Vahlen as
 konstruktionenun00vahluoft, Mascheroni as gomtrieducompas00masc, Willich as philtrans08545474, and Amaldi's chapter of
 Enriques as rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454, and the Italian original of Enriques (Bologna 1900),
-whose chapter by Alberto Conti keeps the formulas the German scan garbles, as questioniriguard00enri. The scans
+whose chapter by Alberto Conti keeps the formulas the German scan garbles, as questioniriguard00enri, and Crelle's Journal 32
+(1846) as sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32. The scans
 garble some fractions and leave out the figures; where something had to be read back from the values
 the author gives, each entry's notes say so.
 

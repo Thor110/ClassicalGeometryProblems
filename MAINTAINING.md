@@ -47,7 +47,9 @@ fail the check.
 The first shows what it will do. The second moves the file into the problem's folder under the
 archive's naming, fills in its notes, and adds the entry, with its origin recorded as a submission.
 It refuses a construction that does not fit its problem, that the checker would measure differently,
-or that duplicates an entry already charted (`--allow-duplicate` records an independent rediscovery).
+or that duplicates an entry already charted. For the same construction found later, run it again with
+`--rediscovery`: no new entry is made, and the submitter is added to that entry's `rediscovered` list.
+For the same result by a different construction, `--allow-duplicate` charts it as an entry of its own.
 Then delete the `Submissions/<folder>` once the entry is charted.
 
 **Recording a verification:** add it to the entry's `verified` list in the data, with the verifier's
@@ -63,6 +65,17 @@ by itself when due (`.github/workflows/architecture.yml`) and opens a pull reque
 
 **Historical constructions:** drafts in progress are in [Wanted/](Wanted/README.md). One is charted
 under its discoverer's name only after it has been checked against the original source.
+
+**When a source shows a charted construction was found earlier** (the same construction, not just the same
+value: `python tools/crossref.py <file> <problem>` compares the steps), move the credit and keep the name.
+Set the entry's `holder`, `date` and `origin` to the earliest author the source supports, add the earlier
+holder to its `rediscovered` list, and say what happened in its `note`. Keep its `id` and `file`, so links
+and the GeoGebra file stay where they were. Each `rediscovered` record is
+
+    {"name": "A. N. Other", "date": "06-06-2024", "note": "charted under this name until the earlier source was found"}
+
+with `name` and `date` required, and `note` for how they came to it. The charts list each as "possibly an independent rediscovery", since
+independence can never be checked (SUBMISSION_RULESET.md, "Earlier discoveries").
 
 **Variants of historical constructions:** `python tools/variants.py` keeps each historical skeleton
 and tries other small fractions in it, writing what beats the original to [Variants/](Variants/README.md).
