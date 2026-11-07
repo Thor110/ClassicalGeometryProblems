@@ -354,14 +354,33 @@ def report(results, max_q):
          'A variant is charted only once it is drawn in GeoGebra and added like any other entry, credited to the',
          "original's author and to whoever found the variant (Lambert's with a quarter versine is: `ar-over-99.831`).", '']
     L += ['## Halving the angle first', '',
-          'The historical trisections are best on small angles. Worked on half the angle and doubled (one more line and one',
-          'more circle), they hold from 30° to 150° about as well as they did up to 75°. At their weakest from 30° to 150°:', '',
-          '| Trisection | As it is | On half the angle |', '|---|---|---|']
-    for name, f in (("Dürer's, from one side", lambda p: durer_third(p, 1/3)), ("Karajordanoff's", lambda p: kara_third(p, 2)),
-                    ("d'Ocagne's", lambda p: ocagne_third(p, 0.5)), ("Cusa's", lambda p: _cusa(p, 0)), ("Vahlen's", lambda p: _cusa(p, 2/9)),
-                    ("Cusa's with a quarter versine", lambda p: _cusa(p, 0.25))):
-        L.append('| %s | %.4f%% | %.4f%% |' % (name, worst_over(f), worst_over(lambda p, f=f: 2 * f(p / 2))))
-    L += ['', "Charted: Dürer's (taa-under-99.995), Vahlen's (taa-under-99.742) and the quarter versine (taa-over-99.971) on half the angle.", '']
+          'The historical trisections and arc rectifications are best on small angles. Worked on the angle halved n times',
+          'and multiplied back (n more lines and n more circles), they hold from 30° to 150° about as well as they did on',
+          'the small angle. Each halving also makes the steps smaller, and in the end micro scale, so the archive charts',
+          'each at the deepest halving whose steps all stay at macro scale (marked * below); the methods without small',
+          'fractions of their own, like Cusa\'s, can go deepest. At their weakest from 30° to 150°:', '',
+          '| Method | As it is | Halved once | Twice | Three times | Four times | Five times |', '|---|---|---|---|---|---|---|']
+    charted = {"Dürer's trisection, from one side": 0, "Karajordanoff's trisection": 3, "d'Ocagne's trisection": 4, "Cusa's trisection": 4,
+               "Vahlen's trisection": 1, "Cusa's trisection with a quarter versine": 2,
+               "Cusa's rectification": 5, "Lambert's rectification": 1, "Lambert's with a quarter versine": 1}
+    def rect(k):
+        def f(x):
+            P = 2 - k * (1 - math.cos(x)); return math.sin(x) * (P + 1) / (P + math.cos(x))
+        return f
+    def worst_rect(f, n, lo=30, hi=150):
+        return min(acc(2 ** n * f(math.radians(i / 4) / 2 ** n), math.radians(i / 4)) for i in range(lo * 4, hi * 4 + 1))
+    rows = [("Dürer's trisection, from one side", lambda p: durer_third(p, 1/3), 'taa'), ("Karajordanoff's trisection", lambda p: kara_third(p, 2), 'taa'),
+            ("d'Ocagne's trisection", lambda p: ocagne_third(p, 0.5), 'taa'), ("Cusa's trisection", lambda p: _cusa(p, 0), 'taa'),
+            ("Vahlen's trisection", lambda p: _cusa(p, 2/9), 'taa'), ("Cusa's trisection with a quarter versine", lambda p: _cusa(p, 0.25), 'taa'),
+            ("Cusa's rectification", rect(0), 'ar'), ("Lambert's rectification", rect(0.2), 'ar'), ("Lambert's with a quarter versine", rect(0.25), 'ar')]
+    for name, f, kind in rows:
+        cells = []
+        for n in range(6):
+            a = worst_over(lambda p, f=f, n=n: 2 ** n * f(p / 2 ** n)) if kind == 'taa' else worst_rect(f, n)
+            cells.append(('%.6f%%' % a if a > 0 else 'below 0') + (' *' if charted.get(name) == n else ''))
+        L.append('| %s | %s |' % (name, ' | '.join(cells)))
+    L += ['', 'Beyond the starred column the steps are micro scale: still better, and listed here, but not charted. Dürer\'s',
+          'from one side, halved once, is charted with the µ mark (taa-under-99.995), as it was found first.', '']
     for r in results:
         o = r['original']
         L += ['## ' + r['name'], '', r['about'] + ' Chart entry: `%s`.' % r['entry'], '',

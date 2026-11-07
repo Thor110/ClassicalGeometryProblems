@@ -11,19 +11,26 @@ original's author and to whoever found the variant (Lambert's with a quarter ver
 
 ## Halving the angle first
 
-The historical trisections are best on small angles. Worked on half the angle and doubled (one more line and one
-more circle), they hold from 30° to 150° about as well as they did up to 75°. At their weakest from 30° to 150°:
+The historical trisections and arc rectifications are best on small angles. Worked on the angle halved n times
+and multiplied back (n more lines and n more circles), they hold from 30° to 150° about as well as they did on
+the small angle. Each halving also makes the steps smaller, and in the end micro scale, so the archive charts
+each at the deepest halving whose steps all stay at macro scale (marked * below); the methods without small
+fractions of their own, like Cusa's, can go deepest. At their weakest from 30° to 150°:
 
-| Trisection | As it is | On half the angle |
-|---|---|---|
-| Dürer's, from one side | 99.6979% | 99.9952% |
-| Karajordanoff's | 93.5110% | 99.8386% |
-| d'Ocagne's | 96.3055% | 99.1774% |
-| Cusa's | 50.5374% | 98.0229% |
-| Vahlen's | 68.0275% | 99.7429% |
-| Cusa's with a quarter versine | 71.6572% | 99.9712% |
+| Method | As it is | Halved once | Twice | Three times | Four times | Five times |
+|---|---|---|---|---|---|---|
+| Dürer's trisection, from one side | 99.697894% * | 99.995194% | 99.999925% | 99.999999% | 100.000000% | 100.000000% |
+| Karajordanoff's trisection | 93.511039% | 99.838644% | 99.914694% | 99.976049% * | 99.993855% | 99.998454% |
+| d'Ocagne's trisection | 96.305454% | 99.177435% | 99.799897% | 99.950309% | 99.987598% * | 99.996901% |
+| Cusa's trisection | 50.537381% | 98.022886% | 99.893987% | 99.993626% | 99.999605% * | 99.999975% |
+| Vahlen's trisection | 68.027502% | 99.742875% * | 99.996621% | 99.999949% | 99.999999% | 100.000000% |
+| Cusa's trisection with a quarter versine | 71.657208% | 99.971180% | 99.990311% * | 99.999257% | 99.999952% | 99.999997% |
+| Cusa's rectification | 50.526511% | 98.004262% | 99.892728% | 99.993547% | 99.999601% | 99.999975% * |
+| Lambert's rectification | 65.943872% | 99.704852% * | 99.996063% | 99.999941% | 99.999999% | 100.000000% |
+| Lambert's with a quarter versine | 72.492085% | 99.832008% * | 99.977617% | 99.998453% | 99.999901% | 99.999994% |
 
-Charted: Dürer's (taa-under-99.995), Vahlen's (taa-under-99.742) and the quarter versine (taa-over-99.971) on half the angle.
+Beyond the starred column the steps are micro scale: still better, and listed here, but not charted. Dürer's
+from one side, halved once, is charted with the µ mark (taa-under-99.995), as it was found first.
 
 ## Hayden's duplication (1871)
 

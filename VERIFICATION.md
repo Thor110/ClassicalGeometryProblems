@@ -131,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (90)
+### Not verified by a person yet (98)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -188,6 +188,11 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, oversized 99.971% · Cusa's trisection, a quarter versine, on half the angle (taa-over-99.971): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.971-Claude.ggb`
 - [ ] Trisecting An Angle, undersized 99.742% · Vahlen's trisection, on half the angle (taa-under-99.742): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.742-Claude.ggb`
 - [ ] Trisecting An Angle, undersized 99.995% · Dürer's trisection, on half the angle (taa-under-99.995): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.995-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.999% · Cusa's trisection, on the angle halved four times (taa-under-99.999): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.999-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.697% · Dürer's trisection from one side (taa-under-99.697): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.697-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.976% · Karajordanoff's trisection, on the angle halved three times (taa-under-99.976): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.976-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 99.987% · d'Ocagne's trisection, on the angle halved four times (taa-over-99.987): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.987-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 99.990% · Cusa's trisection, a quarter versine, on the angle halved twice (taa-over-99.990): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.990-Claude.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -225,6 +230,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Arc Rectification, undersized 95.492% · Cusa's rectification (ar-under-95.492): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-95.492-Cusa-Snellius.ggb`
 - [ ] Arc Rectification, undersized 99.029% · Lambert's rectification (ar-under-99.029): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.029-Lambert.ggb`
 - [ ] Arc Rectification, oversized 99.831% · Lambert's rectification, a quarter versine (ar-over-99.831): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.831-Claude.ggb`
+- [ ] Arc Rectification, oversized 99.832% · Lambert's rectification, a quarter versine, on the arc halved once (ar-over-99.832): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.832-Claude.ggb`
+- [ ] Arc Rectification, undersized 99.704% · Lambert's rectification, on the arc halved once (ar-under-99.704): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.704-Claude.ggb`
+- [ ] Arc Rectification, undersized 99.999% · Cusa's rectification, on the arc halved five times (ar-under-99.999): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.999-Claude.ggb`
 
 ### Flagged by the AI check (1)
 
@@ -240,11 +248,10 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)
 
-### µ marks to review (3)
+### µ marks to review (2)
 
 The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry's micro_note.
 
-- [ ] Trisecting An Angle, undersized 99.995% · Dürer's trisection, on half the angle (taa-under-99.995): the test finds its smallest step at 4.1% of the given size; the chart does not have µ
 - [ ] Rectifying The Circle, oversized 99.607% (rtc-over-99.607): the test finds its smallest step at 6.3% of the given size; the chart has µ
 - [ ] Rectifying The Circle, oversized 99.873% (rtc-over-99.873): the test finds its smallest step at 50.0% of the given size; the chart has µ
 

@@ -65,7 +65,11 @@ The search also shows how far the historical authors' own choices hold up: for m
 does better (Hayden, Kunze, Willich, Buonafalce's first, the Rhind papyrus, Kochański, Specht, de Gelder, Karajordanoff,
 d'Ocagne and Dürer, with only halving fractions finer than a sixteenth beating some of them, at micro scale).
 
-Worked on half the angle and then doubled, one line and one circle more, the historical trisections hold from 30° to
-150° about as well as they did up to 75°. Three are charted that way: Dürer's from one side (99.995% from 30° to 150°,
-with fewer steps than his own), Vahlen's (99.742%) and the quarter-versine one (99.971%). Ramanujan's 1913 and 1914
-constructions are at their best already, as is d'Ocagne's point: its exact place drifts only a fiftieth of the versine.
+Worked on the angle halved again and again and then multiplied back (a line and a circle for each halving), the
+historical trisections and arc rectifications hold from 30° to 150° about as well as they do on small angles. Each is
+charted at the deepest halving whose steps stay at macro scale: Cusa's rectification halved five times (99.99997%) and
+his trisection four times (99.9996%), d'Ocagne's four times, Karajordanoff's three, the quarter-versine trisection twice,
+Vahlen's, Lambert's and the quarter-versine rectification once, and Dürer's from one side (with his halved once, at
+micro scale). The simplest methods go furthest, because they have no small fractions of their own. Ramanujan's 1913 and
+1914 constructions are at their best already, as is d'Ocagne's point: its exact place drifts only a fiftieth of the
+versine. The full table is in [Variants/](../Variants/README.md).

@@ -1477,6 +1477,126 @@ const ARCHIVE = {
       ]
      },
      "holder_kind": "ai"
+    },
+    {
+     "id": "taa-under-99.999",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Cusa's trisection, on the angle halved four times",
+     "circles": 6,
+     "lines": 10,
+     "acc": "99.999",
+     "precise": "99.999605427632536815092150558559",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.999-Claude",
+     "note": "Cusa's trisection (taa-under-95.527) worked on the angle halved four times and doubled back: 99.999% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Nicholas of Cusa and Snellius's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Cusa's trisection (taa-under-95.527)"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.697",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Dürer's trisection from one side",
+     "circles": 7,
+     "lines": 6,
+     "acc": "99.697",
+     "precise": "99.697894004811645265610227911151",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.697-Claude",
+     "note": "Dürer's trisection (taa-over-99.395) from one side only, with the rest of the angle bisected: better than his own two-sided finish (99.698% against 99.395% at 150°, its weakest angle from 30° to 150°, where the file is drawn), with fewer steps. Credit for the method is Dürer's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Dürer's trisection (taa-over-99.395)"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.976",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Karajordanoff's trisection, on the angle halved three times",
+     "circles": 6,
+     "lines": 10,
+     "acc": "99.976",
+     "precise": "99.976048632523529419602494256588",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.976-Claude",
+     "note": "Karajordanoff's trisection (taa-under-99.838) worked on the angle halved three times and doubled back: 99.976% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Karajordanoff's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Karajordanoff's trisection (taa-under-99.838)"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-99.987",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "d'Ocagne's trisection, on the angle halved four times",
+     "circles": 5,
+     "lines": 8,
+     "acc": "99.987",
+     "precise": "99.987598168331336117327650941445",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.987-Claude",
+     "note": "d'Ocagne's trisection (taa-over-98.796) worked on the angle halved four times and doubled back: 99.987% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Maurice d'Ocagne's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of d'Ocagne's trisection (taa-over-98.796)"
+      ]
+     }
+    },
+    {
+     "id": "taa-over-99.990",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Cusa's trisection, a quarter versine, on the angle halved twice",
+     "circles": 5,
+     "lines": 9,
+     "acc": "99.990",
+     "precise": "99.990311452044343569799788499864",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.990-Claude",
+     "note": "Cusa's trisection, a quarter versine (taa-under-99.660) worked on the angle halved twice and doubled back: 99.990% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Cusa, Snellius and Vahlen's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Cusa's trisection, a quarter versine (taa-under-99.660)"
+      ]
+     }
     }
    ]
   },
@@ -3262,6 +3382,78 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Lambert's rectification (ar-under-99.029)"
       ]
      }
+    },
+    {
+     "id": "ar-over-99.832",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Lambert's rectification, a quarter versine, on the arc halved once",
+     "circles": 4,
+     "lines": 4,
+     "acc": "99.832",
+     "precise": "99.832007744310389221700592257082",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.832-Claude",
+     "note": "Lambert's rectification, a quarter versine (ar-over-99.831) worked on the arc halved once and the length multiplied back by 2: 99.832% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Lambert (with a quarter of the versine)'s. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Lambert's rectification, a quarter versine (ar-over-99.831)"
+      ]
+     }
+    },
+    {
+     "id": "ar-under-99.704",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Lambert's rectification, on the arc halved once",
+     "circles": 9,
+     "lines": 6,
+     "acc": "99.704",
+     "precise": "99.704852329096862320666372863498",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-99.704-Claude",
+     "note": "Lambert's rectification (ar-under-99.029) worked on the arc halved once and the length multiplied back by 2: 99.704% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale; this is the deepest that stays at macro scale. Credit for the method is Lambert's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Lambert's rectification (ar-under-99.029)"
+      ]
+     }
+    },
+    {
+     "id": "ar-under-99.999",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "holder_kind": "ai",
+     "method": "Cusa's rectification, on the arc halved five times",
+     "circles": 7,
+     "lines": 7,
+     "acc": "99.999",
+     "precise": "99.999975091467696212367969507633",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-99.999-Claude",
+     "note": "Cusa's rectification (ar-under-95.492) worked on the arc halved five times and the length multiplied back by 32: 99.999% from 30° to 150°, at its weakest at 150°, where the file is drawn. Its steps stay at macro scale through all five halvings (the smallest is 6.25% of the radius); a sixth would not. Credit for the method is Nicholas of Cusa and Snellius's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Cusa's rectification (ar-under-95.492)"
+      ]
+     }
     }
    ]
   }
@@ -3307,13 +3499,13 @@ const ARCHIVE = {
    "name": "Snellius' rectification point",
    "problem": "ar",
    "by": "Nicholas of Cusa, Willebrord Snellius, Johann Heinrich Lambert",
-   "about": "The arc read off the tangent through a point on the diameter beyond the circle: Cusa and Snellius put it a radius beyond the far end; Lambert moves it in by a fifth of the versine (Newton's formula); the variant search found a quarter better still."
+   "about": "The arc read off the tangent through a point on the diameter beyond the circle: Cusa and Snellius put it a radius beyond the far end; Lambert moves it in by a fifth of the versine (Newton's formula); the variant search found a quarter better still. Worked on the arc halved again and again, Cusa's simple point does best of all: halved five times, 99.99997% from 30° to 150°."
   },
   {
    "name": "Snellius' trisection point",
    "problem": "taa",
    "by": "Nicholas of Cusa, Willebrord Snellius, K. T. Vahlen",
-   "about": "Cusa's rectification turned into a trisection: a third of the tangent length, read back through the same point. Cusa and Snellius put the point a radius beyond the far end of the diameter; Vahlen moves it in by 2/9 of the versine, towards the exact point 2 cos(x/3); the variant search found a quarter better still. Worked on half the angle and then doubled, the same constructions hold from 30° to 150°."
+   "about": "Cusa's rectification turned into a trisection: a third of the tangent length, read back through the same point. Cusa and Snellius put the point a radius beyond the far end of the diameter; Vahlen moves it in by 2/9 of the versine, towards the exact point 2 cos(x/3); the variant search found a quarter better still. Worked on half the angle and then doubled, the same constructions hold from 30° to 150°. Halved four times, Cusa's own point holds 99.9996%."
   },
   {
    "name": "Dürer's trisection",
