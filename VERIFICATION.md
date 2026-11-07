@@ -131,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (98)
+### Not verified by a person yet (103)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -193,6 +193,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 99.976% · Karajordanoff's trisection, on the angle halved three times (taa-under-99.976): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.976-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 99.987% · d'Ocagne's trisection, on the angle halved four times (taa-over-99.987): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.987-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 99.990% · Cusa's trisection, a quarter versine, on the angle halved twice (taa-over-99.990): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.990-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.748% · Monti's trisection (taa-under-99.748): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.748-Monti.ggb`
+- [ ] Trisecting An Angle, undersized 99.990% · Monti's trisection, on the angle halved three times (taa-under-99.990): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.990-Claude.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -209,6 +211,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, undersized 99.9995% · Mascheroni's duplication (second solution) (dtc-under-99.9995): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.9995-Mascheroni.ggb`
 - [ ] Doubling The Cube, undersized 99.693% · Buonafalce's first solution (dtc-under-99.693): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.693-Buonafalce.ggb`
 - [ ] Doubling The Cube, undersized 99.997% · Buonafalce's third solution (dtc-under-99.997): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.997-Buonafalce.ggb`
+- [ ] Doubling The Cube, undersized 99.729% · Vargiù's mean proportionals (dtc-under-99.729): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.729-Vargiu.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.999996% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
@@ -223,6 +226,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, oversized 99.999991% · De Gelder's construction of 355/113 (rtc-over-99.999991): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999991-de-Gelder.ggb`
 - [ ] Rectifying The Circle, undersized 99.99997% · Specht's construction (rtc-under-99.99997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99997-Specht.ggb`
 - [ ] Rectifying The Circle, oversized 99.998% · Kunze's triangle (rtc-over-99.998): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.998-Kunze.ggb`
+- [ ] Rectifying The Circle, undersized 99.826% · Cusa's triangle (rtc-under-99.826): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.826-Cusa.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
@@ -233,6 +237,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Arc Rectification, oversized 99.832% · Lambert's rectification, a quarter versine, on the arc halved once (ar-over-99.832): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.832-Claude.ggb`
 - [ ] Arc Rectification, undersized 99.704% · Lambert's rectification, on the arc halved once (ar-under-99.704): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.704-Claude.ggb`
 - [ ] Arc Rectification, undersized 99.999% · Cusa's rectification, on the arc halved five times (ar-under-99.999): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.999-Claude.ggb`
+- [ ] Arc Rectification, oversized 99.097% · Fontana's rectification (ar-over-99.097): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.097-Fontana.ggb`
 
 ### Flagged by the AI check (1)
 

@@ -229,6 +229,19 @@ def worst_halved(shift, lo=30, hi=150):
     return worst
 
 
+def _mmeet(P,d,Q,e):
+    det=d[0]*(-e[1])-d[1]*(-e[0]); s=((Q[0]-P[0])*(-e[1])-(Q[1]-P[1])*(-e[0]))/det; return (P[0]+s*d[0],P[1]+s*d[1])
+def monti_third(theta, g=0.5, m=1/6):
+    """Monti: the angle theta = ABC with BD its bisector; returns the angle CBT (the third next to BC)."""
+    phi=theta/2; B=(0,0); D=(1,0); C=(math.cos(phi),math.sin(phi)); u=C
+    G=(D[0]+g*u[0],D[1]+g*u[1]); H=_mmeet(C,(D[0]-C[0],D[1]-C[1]),B,G)
+    aG=math.atan2(G[1],G[0]); L=(math.cos(-aG),math.sin(-aG)); M=(m,0); N=_mmeet(M,(0,1),B,L)
+    d=(H[0]-N[0],H[1]-N[1]); a=d[0]**2+d[1]**2; b=2*(N[0]*d[0]+N[1]*d[1]); c=N[0]**2+N[1]**2-1
+    Ts=[(N[0]+t*d[0],N[1]+t*d[1]) for t in ((-b+s*math.sqrt(b*b-4*a*c))/(2*a) for s in (1,-1))]
+    x=min((math.atan2(T[1],T[0]) for T in Ts), key=lambda z: abs(z-phi/3))
+    return phi-x
+
+
 def _cusa(x, shift):
     P = -(2 - shift * (1 - math.cos(x))); BD = math.sin(x) * (1 - P) / (math.cos(x) - P)
     dx, dy = 1 - P, BD / 3; a = dx*dx + dy*dy; b = 2 * P * dx; c = P*P - 1
@@ -303,6 +316,9 @@ SKELETONS = [
     dict(id='cusa-half-taa', name="Cusa's trisection on half the angle", entry='taa-over-99.971', problem='taa',
          slots=[('shift', Fr(1, 4), (Fr(0), Fr(1, 2)))], fn=lambda k: worst_halved(float(k)),
          about="Cusa's trisection worked on half the angle and doubled, with Snellius' point moved in by `shift` versines (Cusa: none; Vahlen: 2/9; the charted variant: 1/4). Scored at its worst from 30° to 150°, as charted."),
+    dict(id='monti-taa', name="Monti's trisection (1895)", entry='taa-under-99.748', problem='taa',
+         slots=[('DG', Fr(1, 2), (Fr(1, 8), Fr(1))), ('BM', Fr(1, 6), (Fr(1, 16), Fr(1, 2)))], fn=lambda g, m: worst_over(lambda p: monti_third(p, float(g), float(m))),
+         about='DG along the parallel, in radii, and where M sits on BD (Monti: a half, and a sixth). Scored at its worst from 30° to 150°, as charted.'),
     dict(id='hayden-stc', name="Hayden's quadrature (1871)", entry='stc-over-99.999998', problem='stc',
          slots=[('C', Fr(1, 2), (Fr(1, 8), Fr(1))), ('EG', Fr(1, 2), (Fr(1, 8), Fr(2))), ('DI', Fr(1, 2), (Fr(1, 8), Fr(2)))], fn=hayden_stc,
          about='Where C sits along the top half side, and EG and DI as fractions of DE (Hayden: a half each).'),
@@ -361,7 +377,7 @@ def report(results, max_q):
           'fractions of their own, like Cusa\'s, can go deepest. At their weakest from 30° to 150°:', '',
           '| Method | As it is | Halved once | Twice | Three times | Four times | Five times |', '|---|---|---|---|---|---|---|']
     charted = {"Dürer's trisection, from one side": 0, "Karajordanoff's trisection": 3, "d'Ocagne's trisection": 4, "Cusa's trisection": 4,
-               "Vahlen's trisection": 1, "Cusa's trisection with a quarter versine": 2,
+               "Vahlen's trisection": 1, "Cusa's trisection with a quarter versine": 2, "Monti's trisection": 3,
                "Cusa's rectification": 5, "Lambert's rectification": 1, "Lambert's with a quarter versine": 1}
     def rect(k):
         def f(x):
@@ -372,6 +388,7 @@ def report(results, max_q):
     rows = [("Dürer's trisection, from one side", lambda p: durer_third(p, 1/3), 'taa'), ("Karajordanoff's trisection", lambda p: kara_third(p, 2), 'taa'),
             ("d'Ocagne's trisection", lambda p: ocagne_third(p, 0.5), 'taa'), ("Cusa's trisection", lambda p: _cusa(p, 0), 'taa'),
             ("Vahlen's trisection", lambda p: _cusa(p, 2/9), 'taa'), ("Cusa's trisection with a quarter versine", lambda p: _cusa(p, 0.25), 'taa'),
+            ("Monti's trisection", lambda p: monti_third(p), 'taa'),
             ("Cusa's rectification", rect(0), 'ar'), ("Lambert's rectification", rect(0.2), 'ar'), ("Lambert's with a quarter versine", rect(0.25), 'ar')]
     for name, f, kind in rows:
         cells = []
@@ -379,6 +396,9 @@ def report(results, max_q):
             a = worst_over(lambda p, f=f, n=n: 2 ** n * f(p / 2 ** n)) if kind == 'taa' else worst_rect(f, n)
             cells.append(('%.6f%%' % a if a > 0 else 'below 0') + (' *' if charted.get(name) == n else ''))
         L.append('| %s | %s |' % (name, ' | '.join(cells)))
+    L += ['', "Fontana's rectification (1784, ar-over-99.097) is a halving process of its own: with k bisections it gives",
+          '2^(k+1) tan(x/2^(k+1)), so each bisection makes it four times closer. Cusa\'s point worked on the halved arc gains',
+          'thirty-two times with each halving, which is why it goes so much further for the same number of steps.']
     L += ['', 'Beyond the starred column the steps are micro scale: still better, and listed here, but not charted. Dürer\'s',
           'from one side, halved once, is charted with the µ mark (taa-under-99.995), as it was found first.', '']
     for r in results:

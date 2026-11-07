@@ -11,7 +11,7 @@ what that person actually drew. Drafts in progress are kept here.
 |---|---|---|
 | Kopf and Perron (1919): trisection from the limaçon, within 15" up to 90° | Trisecting an angle | The scanned text of Yates, "The Trisection Problem" (1942), ch. 4 §5, garbles the construction; it needs Perron's paper (1933) or a clean copy of Yates' figure 37. |
 | H. V. Chu (2019): Ramanujan's number, π to nine places | Squaring the circle | Every step is published (arXiv:1908.01202, §3), but it combines three figures; not drawn yet. |
-| G. J. Vargiù (1877): seven mean proportionals, 99.73% | Doubling the cube | Fully described by Amaldi in Enriques, *Fragen der Elementargeometrie* II (1907), § 9; long to draw. |
+| E. Cominotto (1895): trisection through a circle on three points, within a thousandth at 180° | Trisecting an angle | Amaldi in Enriques (1907), § 17, fig. 125: the scan garbles which arc is carried to which. |
 | G. Boccali (1884): from the regular decagon | Doubling the cube | Amaldi (1907), § 9: the scan garbles the final combination of lengths. |
 | Christiaan Huygens: AE = cosec 52.5° = 1.2605 | Doubling the cube | Vahlen (1911), p. 284, gives only the angles; needs *Varia opera mathematica* I, p. 1. |
 | Baudhayana (about 800 BC): π ≈ 3.0883 | Squaring the circle | Vahlen (1911), p. 177; which of two rules is his needs a translation of the Sulba Sutra. |
@@ -41,10 +41,14 @@ given there.
 | A. Kunze (1851): the triangle with legs 3/5 and 6/5 of the diameter | Rectifying the circle, 99.998% over | Vahlen (1911), p. 311 |
 | C. M. Willich (1855): quadrature | Squaring the circle, 99.946% under | Proceedings of the Royal Society 7 (1854-55) |
 | G. Buonafalce (1876): first and third solutions | Doubling the cube, 99.693% and 99.997% under | Amaldi in Enriques, "Fragen der Elementargeometrie" II (1907), § 9 |
+| G. J. Vargiù (1877): seven mean proportionals, 2^(85/256) | Doubling the cube, 99.729% under | Amaldi in Enriques (1907), § 9 |
+| P. Monti (1895): trisection, good to 180°, with Schiaparelli's proof | Trisecting an angle, 99.748% under (at 129.13°) | Amaldi in Enriques (1907), § 17 |
+| Nicholas of Cusa: the triangle in the circle on OA plus the square's side | Rectifying the circle, 99.826% under | E. Beutel, "Die Quadratur des Kreises" (1913), p. 26 |
+| Fontana (1784): repeated bisection, from Euler's product | Arc rectification, 99.097% over (at 150°) | Beutel (1913), pp. 56-58 |
 | K. T. Vahlen (1911): Cusa's trisection point moved 2/9 of the versine | Trisecting an angle, 99.147% under (at 90°) | Vahlen (1911), pp. 290-291 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,
-Yates as ERIC_ED058058 (the 1971 reprint), Hayden as paper-doi-10_1098_rspl_1871_0099, Vahlen as
+Yates as ERIC_ED058058 (the 1971 reprint), Hayden as paper-doi-10_1098_rspl_1871_0099, Beutel as diequadraturdes01beutgoog, Vahlen as
 konstruktionenun00vahluoft, Mascheroni as gomtrieducompas00masc, Willich as philtrans08545474, and Amaldi's chapter of
 Enriques as rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454. The scans
 garble some fractions and leave out the figures; where something had to be read back from the values

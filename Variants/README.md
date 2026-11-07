@@ -25,9 +25,14 @@ fractions of their own, like Cusa's, can go deepest. At their weakest from 30° 
 | Cusa's trisection | 50.537381% | 98.022886% | 99.893987% | 99.993626% | 99.999605% * | 99.999975% |
 | Vahlen's trisection | 68.027502% | 99.742875% * | 99.996621% | 99.999949% | 99.999999% | 100.000000% |
 | Cusa's trisection with a quarter versine | 71.657208% | 99.971180% | 99.990311% * | 99.999257% | 99.999952% | 99.999997% |
+| Monti's trisection | 99.748544% | 99.863939% | 99.961698% | 99.990168% * | 99.997526% | 99.999381% |
 | Cusa's rectification | 50.526511% | 98.004262% | 99.892728% | 99.993547% | 99.999601% | 99.999975% * |
 | Lambert's rectification | 65.943872% | 99.704852% * | 99.996063% | 99.999941% | 99.999999% | 100.000000% |
 | Lambert's with a quarter versine | 72.492085% | 99.832008% * | 99.977617% | 99.998453% | 99.999901% | 99.999994% |
+
+Fontana's rectification (1784, ar-over-99.097) is a halving process of its own: with k bisections it gives
+2^(k+1) tan(x/2^(k+1)), so each bisection makes it four times closer. Cusa's point worked on the halved arc gains
+thirty-two times with each halving, which is why it goes so much further for the same number of steps.
 
 Beyond the starred column the steps are micro scale: still better, and listed here, but not charted. Dürer's
 from one side, halved once, is charted with the µ mark (taa-under-99.995), as it was found first.
@@ -249,6 +254,18 @@ Cusa's trisection worked on half the angle and doubled, with Snellius' point mov
 | no variant with these denominators beats it | | | |
 
 0 variants beat the original in all.
+
+## Monti's trisection (1895)
+
+DG along the parallel, in radii, and where M sits on BD (Monti: a half, and a sixth). Scored at its worst from 30° to 150°, as charted. Chart entry: `taa-under-99.748`.
+
+| Fractions | Accuracy | Cost (circles, lines) | Extra |
+|---|---|---|---|
+| DG = 1/2, BM = 1/6 (original) | 99.748543621% | 6, 2 | |
+| no variant with these denominators beats it | | | |
+| µ DG = 1/2, BM = 5/32 | 99.917960728% | 0, 0 | -6, -2 |
+
+1 variants beat the original in all.
 
 ## Hayden's quadrature (1871)
 

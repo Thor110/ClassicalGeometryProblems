@@ -1321,14 +1321,15 @@ const ARCHIVE = {
      "date": "1934",
      "geogebra": "",
      "file": "GeoGebra Files/Over/TAA-98.796-dOcagne",
-     "note": "From the middle of the radius opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected.",
+     "note": "From the middle of the radius opposite B, the line to the middle of the arc makes a third of the angle with OB; carried to the corner by a parallel. Charted at 90°, its weakest angle up to 90°; the rest of the angle is bisected. The same construction (a point a radius beyond the middle of the arc, joined to the point opposite the other end) was already quoted as known by E. Cominotto in 1895, as Amaldi reports: it gives exactly the same third.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
        "published: M. d'Ocagne, \"Étude rationnelle du problème de la trisection de l'angle\", L'Enseignement mathématique, 1934, pp. 49-63, as cited in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 6, with his error table",
-       "redrawn in November 2026; Yates' error table (45\" at 30°, 6'14\" at 60°, 21'41\" at 90°) is reproduced"
+       "redrawn in November 2026; Yates' error table (45\" at 30°, 6'14\" at 60°, 21'41\" at 90°) is reproduced",
+       "the same third as the construction E. Cominotto quotes as known in \"Trisezione approssimata dell'angolo\" (Padova 1895), as given by U. Amaldi in F. Enriques, Fragen der Elementargeometrie II (1907), § 17, fig. 127; checked equal in November 2026"
       ]
      }
     },
@@ -1597,6 +1598,55 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Cusa's trisection, a quarter versine (taa-under-99.660)"
       ]
      }
+    },
+    {
+     "id": "taa-under-99.748",
+     "side": "under",
+     "marks": "",
+     "holder": "P. Monti",
+     "method": "Monti's trisection",
+     "circles": 5,
+     "lines": 11,
+     "acc": "99.748",
+     "precise": "99.748542671518520132616598217433",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.748-Monti",
+     "note": "Bisect the angle; half a radius along the parallel to one arm from the middle of the arc; reflect, and raise a perpendicular at a sixth of the bisector; the line through the two crossings meets the arc at the third. A general method, good to 180°: its weakest from 30° to 150° is at 129.13°, where the file is drawn. Monti's own fractions, a half and a sixth, are the best of all small fractions.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Monti, \"Regola generale per la soluzione grafica della trisezione dell'angolo\", with the proof by G. Schiaparelli, Il Politecnico, 1895",
+       "as given, with Schiaparelli's proof and error table, in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 17, fig. 128",
+       "redrawn in November 2026; the scan garbles the table, but the rebuilt figure keeps under the 7 minutes Amaldi gives as its largest error up to 180° (6'47\")"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.990",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Monti's trisection, on the angle halved three times",
+     "circles": 8,
+     "lines": 14,
+     "acc": "99.990",
+     "precise": "99.990168391355510168329012859325",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.990-Claude",
+     "note": "Monti's trisection worked on the angle halved three times and doubled back: 99.990% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale. Credit for the method is Monti's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Monti's trisection"
+      ]
+     },
+     "holder_kind": "ai"
     }
    ]
   },
@@ -1999,6 +2049,31 @@ const ARCHIVE = {
        "published: G. Buonafalce, Pisa 1876-78 (third of his four solutions)",
        "as given in F. Enriques (ed.), Fragen der Elementargeometrie II, article VII by U. Amaldi, § 9, Leipzig 1907, fig. 97, with the proof (Internet Archive, rcin.org.pl)",
        "redrawn in November 2026; reproduces Amaldi's DG = 1.2599093"
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.729",
+     "side": "under",
+     "marks": "",
+     "holder": "G. J. Vargiù",
+     "method": "Vargiù's mean proportionals",
+     "circles": 16,
+     "lines": 2,
+     "acc": "99.729",
+     "precise": "99.729605608547012625765991384792",
+     "date": "1877",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.729-Vargiu",
+     "note": "From the edge and the face diagonal, each length the mean proportional of the two before it; the seventh is the edge of the doubled cube, 2^(85/256) = 1.258784 against ∛2 = 1.259921. A convergent construction: more of them come closer still.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: G. J. Vargiù, Sulla duplicazione del cubo e sulla multiplicazione di esso, Oristano 1877",
+       "as given in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 9; also cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 292, after Buteo (1554)",
+       "redrawn in November 2026; the scan garbles Amaldi's figures, and the value is the one the construction gives, 2^(85/256)"
       ]
      }
     }
@@ -3182,6 +3257,31 @@ const ARCHIVE = {
        "redrawn in November 2026; the fifths of the radius and the laying out of the perimeter on one line are the archive's"
       ]
      }
+    },
+    {
+     "id": "rtc-under-99.826",
+     "side": "under",
+     "marks": "",
+     "holder": "Nicholas of Cusa",
+     "method": "Cusa's triangle",
+     "circles": 8,
+     "lines": 2,
+     "acc": "99.826",
+     "precise": "99.826927249160111806289591143967",
+     "date": "15th century",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.826-Cusa",
+     "note": "Extend the radius OA by the side of the inscribed square, to B; the perimeter of the equilateral triangle in the circle on OB is very nearly the circumference: π ≈ (3√3/4)(1 + √2) = 3.1361. One of Cusa's many constructions, as Beutel gives it.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "Nicholas of Cusa (1401-1464), \"De mathematica perfectione\" and his other writings on the quadrature",
+       "as given, with its value 3.1361, in E. Beutel, Die Quadratur des Kreises, Leipzig 1913 (Internet Archive, diequadraturdes01beutgoog), p. 26, fig. 6",
+       "redrawn in November 2026; the triangle's three sides are laid end to end on one line, as Beutel compares its perimeter with the circumference"
+      ]
+     }
     }
    ]
   },
@@ -3454,6 +3554,30 @@ const ARCHIVE = {
        "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the angle halved again and again, as a variant of Cusa's rectification (ar-under-95.492)"
       ]
      }
+    },
+    {
+     "id": "ar-over-99.097",
+     "side": "over",
+     "marks": "",
+     "holder": "Fontana",
+     "method": "Fontana's rectification",
+     "circles": 1,
+     "lines": 8,
+     "acc": "99.097",
+     "precise": "99.097904189838359778036458433897",
+     "date": "1784",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.097-Fontana",
+     "note": "Draw the chord BA; bisect the angle between it and the tangent at B again and again, raising a perpendicular each time; the last meets the tangent at Z, and BZ is nearly the arc: Euler's product sin x / x = cos(x/2) cos(x/4) cos(x/8) ... Drawn with three bisections (C, D, E), as in Beutel's figure; at 150°, its weakest angle from 30° to 150°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "first given by Fontana in 1784, according to E. Beutel, Die Quadratur des Kreises, Leipzig 1913 (Internet Archive, diequadraturdes01beutgoog), pp. 56-58, fig. 12 (\"zuerst von Fontana 1784 angegeben ..., jedoch bis in die neueste Zeit in nur wenig verschiedenen Formen wiederholt aufgefunden\")",
+       "redrawn in November 2026 from Beutel's description, with the three bisections his figure shows"
+      ]
+     }
     }
    ]
   }
@@ -3512,6 +3636,12 @@ const ARCHIVE = {
    "problem": "taa",
    "by": "Albrecht Dürer",
    "about": "Dürer's averaging of the three chords (1525): a third of the chord, a perpendicular to the arc, carried back down, and a third of the gap. Worked from one side on half the angle and doubled, it holds 99.995% from 30° to 150°."
+  },
+  {
+   "name": "Monti's trisection",
+   "problem": "taa",
+   "by": "P. Monti",
+   "about": "Monti's construction (1895), with Schiaparelli's proof: good to 180° as it stands, and 99.990% from 30° to 150° on the angle halved three times."
   }
  ],
  "wanted": [
@@ -3528,13 +3658,6 @@ const ARCHIVE = {
    "year": "2019",
    "value": "√(63/25 · (1 + 5/2 · (15√5 − 7)/269)), Ramanujan's number, π correct to nine decimal places",
    "source": "H. V. Chu, \"Squaring the Circle Revisited\", arXiv:1908.01202, section 3: every step is given, but it is long (three figures combined)."
-  },
-  {
-   "problem": "dtc",
-   "who": "G. J. Vargiù",
-   "year": "1877",
-   "value": "seven mean proportionals in a row, starting from the edge and the diagonal: 2^(85/256), 99.73% by volume",
-   "source": "Vargiù, Sulla duplicazione del cubo (Oristano 1877), as given by Amaldi in Enriques, Fragen der Elementargeometrie II (1907), § 9. Fully described; long to draw."
   },
   {
    "problem": "dtc",
@@ -3556,6 +3679,13 @@ const ARCHIVE = {
    "year": "about 800 BC",
    "value": "the square on 1 − 1/8 + 1/(8·29) − 1/(8·29·6) + 1/(8·29·6·8) of the diameter, π ≈ 3.0883",
    "source": "Baudhayana Sulba Sutra, as given by Vahlen (1911), p. 177. Vahlen also credits him with 7:8; which rule is his needs a translation of the Sutra."
+  },
+  {
+   "problem": "taa",
+   "who": "E. Cominotto",
+   "year": "1895",
+   "value": "a trisection through a circle on three points, which Amaldi shows is within a thousandth of the radius at 180°",
+   "source": "Cominotto, Trisezione approssimata dell'angolo (Padova 1895), as given by Amaldi in Enriques, Fragen der Elementargeometrie II (1907), § 17, fig. 125. The scan garbles which arc is carried to which."
   }
  ],
  "derived_pi": {
@@ -3662,6 +3792,20 @@ const ARCHIVE = {
   "K. T. Vahlen": [
    "Karl Theodor Vahlen",
    "K. T. Vahlen"
+  ],
+  "P. Monti": [
+   "P. Monti"
+  ],
+  "Nicholas of Cusa": [
+   "Nicholas of Cusa",
+   "Nikolaus von Kues"
+  ],
+  "G. J. Vargiù": [
+   "G. J. Vargiù"
+  ],
+  "Fontana": [
+   "Fontana",
+   "Gregorio Fontana"
   ]
  }
 };

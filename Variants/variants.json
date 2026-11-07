@@ -614,6 +614,44 @@
    "micro_front": []
   },
   {
+   "id": "monti-taa",
+   "name": "Monti's trisection (1895)",
+   "entry": "taa-under-99.748",
+   "problem": "taa",
+   "about": "DG along the parallel, in radii, and where M sits on BD (Monti: a half, and a sixth). Scored at its worst from 30° to 150°, as charted.",
+   "original": {
+    "values": {
+     "DG": "1/2",
+     "BM": "1/6"
+    },
+    "accuracy": 99.74854362068595,
+    "cost": [
+     6,
+     2
+    ]
+   },
+   "better": 1,
+   "front": [],
+   "micro_front": [
+    {
+     "values": {
+      "DG": "1/2",
+      "BM": "5/32"
+     },
+     "accuracy": 99.9179607284611,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      -6,
+      -2
+     ],
+     "micro": true
+    }
+   ]
+  },
+  {
    "id": "hayden-stc",
    "name": "Hayden's quadrature (1871)",
    "entry": "stc-over-99.999998",
