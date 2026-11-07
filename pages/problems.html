@@ -150,7 +150,7 @@
 const list = document.getElementById('list');
 for (const p of PROBLEMS) {
   // Best by people and best by AI, kept apart.
-  const best = (side, kind) => p.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === (kind === 'ai')).sort((a, b) => b.exact - a.exact)[0];
+  const best = (side, kind) => p.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === (kind === 'ai')).sort(byExact)[0];
   const line = (label, e) => e
     ? `<li>${label}: <b>${esc(e.acc)}%</b> by ${esc(e.holder)}${e.method ? ' (' + esc(e.method) + ')' : ''}</li>`
     : `<li>${label}: <span class="muted">none charted yet, the first could be yours</span></li>`;
@@ -172,7 +172,7 @@ for (const p of PROBLEMS) {
 // Problem 6: the best values of π, from the π chart (worked out from the circle rectifications).
 (function () {
   if (!PI_CHART) return;
-  const best = (side, ai) => PI_CHART.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === ai).sort((a, b) => b.exact - a.exact)[0];
+  const best = (side, ai) => PI_CHART.entries.filter(e => e.side === side && (e.holder_kind === 'ai') === ai).sort(byExact)[0];
   const li = (label, e) => e ? `<li>${label}: <b>${esc(e.acc)}%</b> by ${esc(e.holder)}, <span class="mono">${piText(e)}</span></li>` : '';
   document.getElementById('piBest').innerHTML = li('Best oversized by people', best('over', false)) + li('Best undersized by people', best('under', false)) +
     li('Best oversized by AI', best('over', true)) + li('Best undersized by AI', best('under', true));
@@ -182,8 +182,8 @@ for (const p of PROBLEMS) {
 (function () {
   const rtc = PROBLEMS.find(p => p.id === 'rtc'), stc = PROBLEMS.find(p => p.id === 'stc');
     const rankAmong = (e, ai) => 1 + stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai && x.exact > e.exact).length;
-  const rows = rtc.entries.slice().sort((a, b) => b.exact - a.exact).map(e => {
-    const ai = e.holder_kind === 'ai', r = rankAmong(e, ai), best = stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai).sort((a, b) => b.exact - a.exact)[0];
+  const rows = rtc.entries.slice().sort(byExact).map(e => {
+    const ai = e.holder_kind === 'ai', r = rankAmong(e, ai), best = stc.entries.filter(x => x.side === e.side && (x.holder_kind === 'ai') === ai).sort(byExact)[0];
     return `<tr><td>${esc(e.holder)}${ai ? ' <span class="muted">(AI)</span>' : ''}${e.method ? '<br><span class="muted" style="font-size:13px;">' + esc(e.method) + '</span>' : ''}</td>
       <td>${e.acc}% ${e.side}sized</td><td>${e.circles} + 3</td><td>${e.lines} + 3</td>
       <td>${r === 1 ? '<b class="good">#1</b>, ahead of ' + (best ? best.acc + '%' : 'nothing yet') : '#' + r}</td></tr>`;

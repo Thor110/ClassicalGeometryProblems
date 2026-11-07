@@ -22,7 +22,9 @@
   .chart table{table-layout:fixed;width:100%;}
   .chart td,.chart th{overflow-wrap:anywhere;white-space:normal;}
   .chart th{letter-spacing:0.06em;overflow-wrap:normal;}
-  .chart td.acc{overflow-wrap:normal;white-space:nowrap;}
+  .chart td.acc,.chart td.err{overflow-wrap:normal;white-space:nowrap;}
+  .chart td.err{font-size:13px;color:#9a9aa6;}
+  .tie{margin-left:3px;color:#c9a;cursor:help;}
   .chart .half{max-height:460px;overflow-y:auto;border-left:1px solid #16161f;border-right:1px solid #16161f;scrollbar-color:#2a2a3a #0a0a0f;}
   .chart .caption{font-size:13px;color:#555;letter-spacing:0.15em;text-transform:uppercase;padding:9px 8px;border-top:1px solid #2a2a3a;border-bottom:1px solid #2a2a3a;}
   .chart table.head + .caption{border-top:0;}         /* the header's own line is already above it */
@@ -142,6 +144,7 @@
       <ul>
         <li><span class="mark"><span data-tip="Contested: the original discoverer is being sought">~</span></span> <b>Contested</b>: the original discoverer is being sought.</li>
         <li><span class="mark"><span data-tip="Too Simple: likely found many times before">@</span></span> <b>Too simple</b>: likely found many times before.</li>
+        <li><span class="tie" style="margin:0 6px 0 2px;">≈</span> <b>Alike at the display limit</b>: chart figures show at most ten decimal places; entries alike at ten places share the figure, the precise readout orders them, and the error column gives the gap from perfection.</li>
         <li><span class="mark"><span data-tip="Micro Scale Adjustments Required">µ</span></span> <b>Micro scale edits</b>: a step smaller than 5% of the given figure, too small to reproduce reliably on paper.</li>
         <li><span class="badge verified">Verified</span> reproduced by someone other than its method holder, a person or an AI checker. <span class="badge self-verified">Self-verified</span> checked only by its method holder. <span class="badge disputed">Disputed</span> an open dispute. <a href="verification.html">The rules</a>.</li>
       </ul>
@@ -184,6 +187,8 @@ const saveView = () => { try { localStorage.setItem('cgp-sides', JSON.stringify(
 const MARKS = {'~': 'Contested: the original discoverer is being sought', '@': 'Too Simple: likely found many times before', 'µ': 'Micro Scale Adjustments Required'};
 const marksHTML = m => [...(m || '')].map(c => `<span data-tip="${MARKS[c] || c}" aria-label="${MARKS[c] || c}">${c}</span>`).join('');
 const byWho = e => who === 'all' || kindOf(e) === who;
+// The chart figure, with ≈ where it is alike with another entry's at the ten-place display limit (the precise readout tells them apart).
+const accHTML = e => `${esc(e.acc)}%${e.capTie ? '<span class="tie" data-tip="Alike with another entry at the ten-place display limit; the precise readout orders them">≈</span>' : ''}`;
 
 // Tabs, one per problem; the page's #hash picks one (charts.html#rtc).
 for (const p of CHARTS) {
@@ -277,7 +282,7 @@ function render() {
   const p = current, pool = p.entries.filter(byWho), shown = pool.filter(visible), all = pool;
   // Ranks within what is shown: among people, among AI finds, or among everyone.
   for (const side of ['over', 'under'])
-    pool.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.vrank = i + 1; });
+    pool.filter(e => e.side === side).sort(byExact).forEach((e, i) => { e.vrank = i + 1; });
   $('title').innerHTML = p.n + '. ' + nameHTML(p.name);
   $('task').innerHTML = p.task + '<br><span class="muted">' + p.target + '</span>' +
     (p.derived ? `<br><span class="muted">So it ranks the same constructions as the <a href="#${p.derived}">circle rectification chart</a>; how the six problems are linked is on <a href="problems.html#links">the problems page</a>.</span>` : '');
@@ -308,12 +313,13 @@ function render() {
       <td>${esc(e.holder)}<span class="kind ${kindOf(e)}">${kindOf(e) === 'ai' ? 'AI' : 'person'}</span>${e.method ? '<br><span class="muted" style="font-size:13px;">' + esc(e.method) + '</span>' : ''}${current.derived ? '<br><span class="mono" style="font-size:13px;">' + piText(e) + '</span>' : ''}</td>
       <td data-label="Circles">${e.circles}</td><td data-label="Lines">${e.lines}</td>
       <td data-label="Steps"${playSteps(e) ? ` title="${playSteps(e).counted} of the ${playSteps(e).all} steps in its step-by-step playthrough lead to the result"` : ''}>${playSteps(e) ? playSteps(e).counted : '—'}</td>
-      <td class="acc" data-label="Accuracy">${e.acc}%</td>
+      <td class="acc" data-label="Accuracy" title="${esc(e.precise ? e.precise + '%, the precise readout' : '')}">${accHTML(e)}</td>
+      <td class="err mono" data-label="Error" title="The gap from perfection, 1 − accuracy/100">${errorText(e)}</td>
       <td class="precise" data-label="Precise">${e.precise ? e.precise + '%' : ''}</td>
       <td>${badge(e)}</td>
       <td class="links">${links.join('')}</td></tr>`;
   };
-  const cols = '<colgroup><col style="width:40px"><col style="width:48px"><col style="width:196px"><col style="width:72px"><col style="width:60px"><col style="width:64px"><col style="width:120px"><col style="width:300px"><col style="width:136px"><col style="width:118px"></colgroup>';
+  const cols = '<colgroup><col style="width:40px"><col style="width:48px"><col style="width:196px"><col style="width:72px"><col style="width:60px"><col style="width:64px"><col style="width:132px"><col style="width:104px"><col style="width:300px"><col style="width:136px"><col style="width:118px"></colgroup>';
   const whoLabel = {all: '', person: ' by people', ai: ' by AI'}[who];
   const count = side => { const n = shown.filter(e => e.side === side).length, m = all.filter(e => e.side === side).length; return n === m ? n : n + ' of ' + m; };
   const caption = (side, n, arrow) => `<div class="caption">${arrow} ${side === 'over' ? 'Oversized' : 'Undersized'} · ${n} ${n === 1 ? 'method' : 'methods'}${whoLabel} · every new attempt is welcome</div>`;
@@ -322,10 +328,10 @@ function render() {
   const topSide = flipped ? 'under' : 'over', bottomSide = flipped ? 'over' : 'under';
   const half = (side, bestLast) => {
     const rows = sorted(side, bestLast);
-    return `<div class="half" data-half="${bestLast ? 'top' : 'bottom'}"><table>${cols}${rows.map(row).join('') || `<tr><td colspan="10" class="muted">No ${side}sized methods to show.</td></tr>`}</table></div>`;
+    return `<div class="half" data-half="${bestLast ? 'top' : 'bottom'}"><table>${cols}${rows.map(row).join('') || `<tr><td colspan="11" class="muted">No ${side}sized methods to show.</td></tr>`}</table></div>`;
   };
   $('table').innerHTML = `
-    <table class="head">${cols}<tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Steps</th><th>Accuracy</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr></table>
+    <table class="head">${cols}<tr><th>#</th><th>Key</th><th>Method holder</th><th>Circles</th><th>Lines</th><th>Steps</th><th>Accuracy</th><th>Error</th><th>Precise readout</th><th>Verification</th><th>Links</th></tr></table>
     ${sides[topSide] ? caption(topSide, count(topSide), '↑') + half(topSide, true) : ''}
     <div class="perfect-line">0 · Perfection · 100% · impossible with straightedge and compass</div>
     ${sides[bottomSide] ? half(bottomSide, false) + caption(bottomSide, count(bottomSide), '↓') : ''}`;
@@ -400,7 +406,7 @@ function nearest(ev) {
 }
 function describe(p) {
   const e = p.e;
-  return `${e.side === 'over' ? 'Oversized' : 'Undersized'} #${e.vrank} · ${e.marks ? e.marks + ' ' : ''}${e.holder}${kindOf(e) === 'ai' ? ' (AI)' : ''} · ${e.acc}% · ${e.circles} circles, ${e.lines} lines${playSteps(e) ? ', ' + stepsText(e) : ''}${e.method ? ' · ' + e.method : ''}`;
+  return `${e.side === 'over' ? 'Oversized' : 'Undersized'} #${e.vrank} · ${e.marks ? e.marks + ' ' : ''}${e.holder}${kindOf(e) === 'ai' ? ' (AI)' : ''} · ${e.acc}%${e.capTie ? ' ≈' : ''} (error ${errorText(e)}) · ${e.circles} circles, ${e.lines} lines${playSteps(e) ? ', ' + stepsText(e) : ''}${e.method ? ' · ' + e.method : ''}`;
 }
 $('ladder').addEventListener('mousemove', ev => { const p = nearest(ev); $('tip').textContent = p ? describe(p) : ' '; });
 $('ladder').addEventListener('click', ev => {
@@ -429,7 +435,7 @@ function renderCompare() {
   const ai = e => CHECKS[e.id] || {};
   const pair = (typeof CROSSREF !== 'undefined' ? CROSSREF.pairs : []).find(x => (x.older === a.id && x.newer === b.id) || (x.older === b.id && x.newer === a.id));
   const rows = [
-    ['Accuracy', e => `<b>${esc(e.acc)}%</b>`], ['Precise', e => esc(e.precise || '—')], ['Side', e => `${e.side}sized #${e.vrank}`],
+    ['Accuracy', e => `<b>${accHTML(e)}</b>`], ['Error', e => errorText(e)], ['Precise', e => esc(e.precise || '—')], ['Side', e => `${e.side}sized #${e.vrank}`],
     ['Method holder', e => esc(e.holder) + (kindOf(e) === 'ai' ? ' (AI)' : '')], ['Method', e => esc(e.method || '—')],
     ['Circles and lines', e => `${esc(e.circles)} and ${esc(e.lines)}`],
     ['Steps', e => playSteps(e) ? `${playSteps(e).counted} that lead to the result, of ${playSteps(e).all} in its playthrough` : '—'],
@@ -479,7 +485,7 @@ function renderDetail() {
   const disputes = (e.disputes || []).map(d => `<li><b>${esc(d.status)}</b> · ${esc(d.kind)} · raised by ${esc(d.by)} · ${esc(d.summary)}${d.issue ? ` · <a href="${REPO}/issues/${encodeURIComponent(d.issue)}" target="_blank" rel="noopener">issue</a>` : ''}${d.outcome ? ' · outcome: ' + esc(d.outcome) : ''}</li>`).join('') || '<li class="muted">None.</li>';
   const ask = (t, tpl) => `${REPO}/issues/new?template=${tpl}&title=${encodeURIComponent(t + ': ' + e.id)}&entry=${encodeURIComponent(e.id)}`;
   $('detail').innerHTML = `<div class="box-title">${nameHTML(current.name)} · ${e.side}sized #${e.vrank}${who === 'all' ? '' : who === 'ai' ? ' among AI finds' : ' among people'}${who !== 'all' ? ' · #' + e.rank + ' overall' : ''}</div>
-    <div class="box-text" style="text-align:center;"><b>${esc(e.acc)}%</b> · ${esc(e.holder)}${e.method ? ' · ' + esc(e.method) : ''}${e.date ? ' · ' + esc(e.date) : ''} · ${esc(e.circles)} circles, ${esc(e.lines)} lines${playSteps(e) ? ', ' + stepsText(e) : ''} ${badge(e)}</div>
+    <div class="box-text" style="text-align:center;"><b>${accHTML(e)}</b> <span class="muted mono" title="The gap from perfection, 1 − accuracy/100">(error ${errorText(e)})</span> · ${esc(e.holder)}${e.method ? ' · ' + esc(e.method) : ''}${e.date ? ' · ' + esc(e.date) : ''} · ${esc(e.circles)} circles, ${esc(e.lines)} lines${playSteps(e) ? ', ' + stepsText(e) : ''} ${badge(e)}</div>
     ${current.derived ? `<div class="box-text mono" style="text-align:center;">${piText(e)}${e.piFile ? ` · <a class="link" href="${repoFile(e.piFile + '.ggb')}" download>π .ggb</a>` : ''}${e.piGeogebra ? ` · <a class="link" href="${e.piGeogebra}" target="_blank" rel="noopener">π in GeoGebra</a>` : ''}</div>` : ''}
     ${e.note ? `<div class="box-text" style="text-align:center;">${esc(e.note)}</div>` : ''}
     ${e.count_history || e.micro_note ? `<div class="small-text" style="text-align:center;">${esc([e.count_history, e.micro_note].filter(Boolean).join(' '))}</div>` : ''}

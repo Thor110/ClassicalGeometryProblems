@@ -15,6 +15,7 @@ Then run `python tools/verify.py --write` to check it and update the website.
 
   python tools/add_submission.py Submissions/<folder> --pr 12             add it
   python tools/add_submission.py Submissions/<folder> --pr 12 --dry-run   show what it would do
+  python tools/add_submission.py --check-labels                          check every chart figure against the label rule
 
 It refuses, and says why, if the construction does not fit the problem it was submitted for, if the
 archive's own checker would measure it differently, if an entry with the same id exists, or if the
@@ -53,17 +54,43 @@ def side_folder(problem, side):
     return p, 'GeoGebra Files/' + names.get(problem, '') + side.capitalize()
 
 
-def chart_label(precise, problem, side, archive):
-    """Three decimal places, or more if needed so the chart still reads in order on its side."""
+LABEL_CAP = 10          # the most decimal places a chart figure shows; the precise readout (32 digits) is always kept in full
+
+
+def chart_label(precise, problem, side, archive, skip=None):
+    """The chart figure: the precise readout truncated (never rounded) to three decimal places, or more where needed so the
+    chart still reads in order on its side, but never more than LABEL_CAP. Entries still alike at the cap share the figure
+    and the charts mark them with ≈; the precise readout orders them. `skip` leaves one entry (by id) out of the comparison."""
     from decimal import Decimal
     P = Decimal(precise)
-    others = [e for p in archive['problems'] if p['id'] == problem for e in p['entries'] if e['side'] == side and e.get('precise')]
-    for places in range(3, 12):
+    others = [e for p in archive['problems'] if p['id'] == problem for e in p['entries']
+              if e['side'] == side and e.get('precise') and e['id'] != skip and Decimal(e['precise']) != P]
+    for places in range(3, LABEL_CAP + 1):
         q = Decimal(1).scaleb(-places); label = (P // q * q).quantize(q)
         clash = [e for e in others if (Decimal(e['precise']) > P) != (Decimal(re.sub(r'[^0-9.]', '', e['acc'])) > label)
                  or Decimal(re.sub(r'[^0-9.]', '', e['acc'])) == label]
         if not clash: return str(label)
-    return str(P)[:12]
+    return str(label)
+
+
+def check_labels(archive):
+    """Each chart figure against the label rule: at most LABEL_CAP places, a truncation of its precise readout, and in order."""
+    from decimal import Decimal
+    out = []
+    for p in archive['problems']:
+        for e in p['entries']:
+            a = re.sub(r'[^0-9.]', '', e['acc'])
+            if not e.get('precise') or not a: continue
+            places = len(a.split('.')[1]) if '.' in a else 0
+            if places > LABEL_CAP: out.append('%s: %d places, more than %d' % (e['id'], places, LABEL_CAP))
+            q = Decimal(1).scaleb(-places); P = Decimal(e['precise'])
+            if (P // q * q).quantize(q) != Decimal(a): out.append('%s: %s is not the precise readout %s truncated' % (e['id'], e['acc'], e['precise'][:16]))
+        for side in ('over', 'under'):
+            es = sorted([e for e in p['entries'] if e['side'] == side and e.get('precise') and re.sub(r'[^0-9.]', '', e['acc'])], key=lambda e: Decimal(e['precise']))
+            for a, b in zip(es, es[1:]):
+                if Decimal(re.sub(r'[^0-9.]', '', a['acc'])) > Decimal(re.sub(r'[^0-9.]', '', b['acc'])):
+                    out.append('%s (%s) above %s (%s): out of order' % (a['id'], a['acc'], b['id'], b['acc']))
+    return out
 
 
 def add_rediscovery(eid, problem, meta, pr, dry):
@@ -84,6 +111,8 @@ def add_rediscovery(eid, problem, meta, pr, dry):
 
 def main():
     args = sys.argv[1:]
+    if args and args[0] == '--check-labels':
+        bad = check_labels(v.load_archive()); print('\n'.join(bad) or 'Every chart figure follows the label rule.'); sys.exit(1 if bad else 0)
     if not args or args[0].startswith('-'): print(__doc__); sys.exit(1)
     sub, dry = args[0].rstrip('/\\'), '--dry-run' in args
     pr = args[args.index('--pr') + 1] if '--pr' in args else None
@@ -129,6 +158,8 @@ def main():
     if '--rediscovery' in args: sys.exit('No charted entry has the same construction, so there is nothing to record it against. Not added.')
     label = chart_label(precise, problem, side, archive)
     eid = '%s-%s-%s' % (problem, side, label)
+    if any(e['id'] == eid for p in archive['problems'] for e in p['entries']):
+        eid += '-' + surname(meta.get('name') or 'anonymous').lower()   # a tie: the entry charted second carries its holder's name
     if any(e['id'] == eid for p in archive['problems'] for e in p['entries']): sys.exit('An entry %s already exists.' % eid)
 
     p, folder = side_folder(problem, side)

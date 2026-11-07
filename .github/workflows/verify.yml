@@ -23,3 +23,6 @@ jobs:
         # Entries the maintainer has already looked at carry known_issue in pages/archive-data.js and are
         # listed without failing; any new disagreement fails the check.
         run: python tools/verify.py
+      - name: Check every chart figure against the label rule
+        # At most ten decimal places, a truncation of the precise readout, and in order on each side (SUBMISSION_RULESET.md).
+        run: python tools/add_submission.py --check-labels

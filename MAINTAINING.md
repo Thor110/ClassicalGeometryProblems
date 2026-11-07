@@ -57,7 +57,10 @@ full name, how they checked it and the date. A verification by one of the full n
 holder in `holders` counts as self-verification; anyone else's counts as independent.
 
 **Changing a chart figure:** the chart figure (`acc`) is the precise readout truncated, never
-rounded, to three decimal places, or more where needed so each side of the chart reads in order.
+rounded, to three decimal places, or more where needed so each side of the chart reads in order, up to ten
+places at most (entries alike at ten places share the figure and the charts mark them ≈). When a new entry would
+break the order, relabel the neighbour to more places (its id stays) rather than giving the new one a long label.
+`python tools/add_submission.py --check-labels` checks every figure against the rule.
 An exact tie (two constructions of the same number) keeps the same figure, and the id of the entry charted
 second ends with its holder's name, as `rtc-over-99.851-lemoine-a` and `taa-over-98.796-baratto` do.
 `tools/add_submission.py` chooses it that way for new entries.

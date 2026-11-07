@@ -5,7 +5,27 @@
 const REPO = 'https://github.com/Thor110/ClassicalGeometryProblems';
 
 // The best entry on one side, by the full-precision figure (the chart figure is shortened).
-const bestOf = (entries, side) => entries.filter(e => e.side === side).sort((a, b) => b.exact - a.exact)[0];
+// The precise readout as an exact whole number (in units of 10^-34 percent), so that entries agreeing to more digits
+// than a floating-point number holds still sort correctly.
+const PRECISE_PLACES = 34;
+function preciseUnits(e) {
+  const t = String(e.precise || e.acc || '').replace(/[^0-9.]/g, '') || '0', [i, f = ''] = t.split('.');
+  return BigInt(i || '0') * 10n ** BigInt(PRECISE_PLACES) + BigInt((f + '0'.repeat(PRECISE_PLACES)).slice(0, PRECISE_PLACES) || '0');
+}
+// Closest to perfection first; an exact tie puts the construction with fewer circles and lines first.
+const steps_ = e => (parseInt(e.circles, 10) || 0) + (parseInt(e.lines, 10) || 0);
+const byExact = (a, b) => (b.units > a.units) - (b.units < a.units) || steps_(a) - steps_(b);
+// The gap from perfection, 1 − accuracy/100, as 1.1 × 10⁻¹⁰: two significant figures, worked out from the 32-digit readout.
+const SUP = {'-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'};
+function errorText(e) {
+  const d = 100n * 10n ** BigInt(PRECISE_PLACES) - e.units;
+  if (d <= 0n) return d === 0n ? '0' : '—';
+  const ds = d.toString(), exp = ds.length - 1 - (PRECISE_PLACES + 2);
+  const m = (Number(ds.slice(0, 3).padEnd(3, '0')) / 100).toFixed(1);
+  const mm = m === '10.0' ? ['1.0', exp + 1] : [m, exp];
+  return mm[0] + ' × 10' + String(mm[1]).split('').map(c => SUP[c]).join('');
+}
+const bestOf = (entries, side) => entries.filter(e => e.side === side).sort(byExact)[0];
 const CHECKS = (typeof AI_CHECKS !== 'undefined') ? AI_CHECKS.results : {};
 
 // Status of an entry under the verification rules (VERIFICATION.md):
@@ -42,12 +62,18 @@ const PROBLEMS = ARCHIVE.problems.map(p => {
     geogebra: e.geogebra ? 'https://www.geogebra.org/geometry/' + e.geogebra : '',
     value: parseFloat(String(e.acc).replace(/[^0-9.]/g, '')),
     exact: parseFloat(e.precise || String(e.acc).replace(/[^0-9.]/g, '')),
+    units: preciseUnits(e),
   }));
+  // Chart figures that are alike at the ten-place display limit but not exactly equal are marked ≈.
+  const key = e => e.side + ' ' + String(e.acc).replace(/[^0-9.]/g, '');
+  const units = {};
+  entries.forEach(e => { (units[key(e)] = units[key(e)] || new Set()).add(e.units.toString()); });
+  entries.forEach(e => { e.capTie = units[key(e)].size > 1; });
   // Rank each side by accuracy: 1 is closest to perfect. Entries below the 95% minimum are kept
   // on record but not charted.
   const charted = entries.filter(e => !e.archived);
   for (const side of ['over', 'under'])
-    charted.filter(e => e.side === side).sort((a, b) => b.exact - a.exact).forEach((e, i) => { e.rank = i + 1; });
+    charted.filter(e => e.side === side).sort(byExact).forEach((e, i) => { e.rank = i + 1; });
   return {...p, entries: charted, archived: entries.filter(e => e.archived)};
 });
 

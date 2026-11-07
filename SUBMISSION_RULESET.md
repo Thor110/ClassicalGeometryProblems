@@ -5,7 +5,7 @@ These are the rules behind the keys and figures in the approximation charts.
 **Rules are subject to change.** Each change is listed under [Changes](#changes) with its date, and
 entries are re-checked against the current rules by `tools/verify.py`.
 
-Current version: **1.5 (November 2026)**
+Current version: **1.6 (November 2026)**
 
 ## Rulesets
 
@@ -23,6 +23,7 @@ Current version: **1.5 (November 2026)**
 
 - 95% minimum, 100% maximum. New submissions below 95% are not accepted: the extension will not send them, and a pull request below 95% is closed automatically with its figures and some encouragement. Older entries below 95% stay on record, listed under their chart as below the minimum, but not ranked.
 - Accuracy is `100 − |constructed − true| ÷ true × 100`, worked out from full-precision values and truncated (never rounded) to three decimal places, or more where two entries would otherwise tie. Two different constructions that give exactly the same value (for example two ways of drawing √2 + √3) share the chart figure, since no number of places would tell them apart; the id of the one charted second carries its holder's name. Exactly the same result at every angle counts as the same value for an angle method.
+- **The chart figure has at most ten decimal places.** It is lengthened from three only as far as needed to keep each side of the chart in order. Entries still alike at ten places share the figure, marked `≈` on the charts, and are ordered by their precise readouts; the full readout is shown beside the figure and on hover. Next to it, the **error** column gives the gap from perfection, 1 − accuracy/100, to two significant figures (for example 1.1 × 10⁻¹⁰), which stays short however close an entry comes.
 - Every entry also records a **precise readout**, as many digits as can be trusted. `tools/verify.py` rebuilds the construction from its GeoGebra file in 50-digit arithmetic and records 32 significant digits. Where a starting point was placed on the given figure by hand (for example "a point on the circle"), GeoGebra stores it to about 16 digits, so for those entries the digits after about the fifteenth reflect where that point was stored rather than the construction itself.
 - **Squaring the circle** compares the square's area with the circle's area.
 - **Doubling the cube** compares the constructed cube's volume with twice the given cube's volume.
@@ -31,6 +32,15 @@ Current version: **1.5 (November 2026)**
 - **Trisecting an angle**: every one of the three parts must be a third of the angle, so the worst of the three sets the accuracy.
 - **Angle methods** (trisection, arc rectification) must work for any angle. Their accuracy is also measured across a sweep of angles, and the chart notes the range over which the method holds. The chart figure is the accuracy at the angle the file is drawn at. A general method, one with no point placed by eye, can be drawn at its worst angle between 30° and 150°, so that its figure holds for the whole of that range. The angle's corner and arms are read from the file's measurement of the whole angle, whatever they are labelled.
 - **Points placed freely to set the size.** A point dropped anywhere on a line or circle (for example any point on the angle's bisector, used as the radius of the first circle) is not counted against a construction when it only sets the size: sliding it along its line or circle leaves the accuracy unchanged. `tools/verify.py` tests this for every such point.
+
+## Precision and its limits
+
+No accuracy is too high to accept. What keeps the charts finite is the effort a construction may take, not how close it comes:
+
+- **The rulesets cap the steps** (25 circles and 40 lines, or 49 and 80 for the extended ruleset), and every halving or subdivision costs steps, so a construction cannot be refined without end.
+- **Files are capped in size**: a submitted GeoGebra file at 5 MB (20 MB unpacked), its details at 256 KB. Anything larger is set aside for a person to look at, not processed.
+- **The precise readout is 32 significant digits**, worked out in 50-digit arithmetic, whatever the construction. Two entries equal to 32 digits are an exact tie. Nothing stored for an entry can grow beyond that.
+- **The display is capped** at ten decimal places for the chart figure (above), with the full readout beside it and the error in its own column.
 
 ## Key
 
@@ -106,6 +116,7 @@ Each entry is **verified**, **self-verified**, **unverified** or **disputed**. P
 
 ## Changes
 
+- **1.6 (November 2026)**: chart figures capped at ten decimal places, with `≈` for entries alike at the cap; an error column; the limits on precision written down; exact ties ordered by fewer circles and lines.
 - **1.5 (November 2026)**: earlier discoveries. Credit goes to the earliest known author; everyone who found a construction later is kept on its entry as a possible independent rediscovery.
 - **1.4 (November 2026)**: points placed freely that only set the size are not counted against a construction; angle sweeps find the angle's corner from the file.
 - **1.3 (November 2026)**: submissions through the browser extension, evaluated automatically; new submissions below 95% are no longer accepted.
