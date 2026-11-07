@@ -36,3 +36,6 @@ Starting from the angle AOB:
 
 **Notes / Limitations:**
 Credit for the construction is Cusa's, Snellius' and Vahlen's; only the fraction is new. The exact point is 2 cos(x/3) radii from O; Vahlen moves it by 2/9 of the versine, which is right for small angles; a quarter overshoots there slightly and gains at larger ones (99.66% at 90°, against Vahlen's 99.15%; 95.5% at 120°, against 93.7%).
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

@@ -38,3 +38,9 @@ Maurice d'Ocagne (1934), in L'Enseignement mathématique, as given by Yates (194
 
 **Schoeler's rule:**
 The Jahrbuch: "Das beschriebene Verfahren zur n-Teilung (n ungerade) eines beliebigen Winkels α setzt voraus, daß man die (n + 1)-Teilung vollziehen kann. Man mache den (n + 1)-ten Teil von 2α zum Zentriwinkel eines beliebigen Kreises, verlängere einen Schenkel über den Mittelpunkt bis zum Schnitt mit der Peripherie, trage auf der Verlängerung von ihrem Endpunkte aus den (n + 1)-ten Teil des Durchmessers ab und verbinde den erhaltenen Teilpunkt mit dem Endpunkte des anderen Radius des Zentriwinkels. Der Winkel zwischen dem Durchmesser und dieser Verbindungslinie ist angenähert gleich α/n." For n = 3 the central angle is half the given angle (the middle of the arc), and the quarter of the diameter laid inwards from the far end is the middle of the radius opposite B: d'Ocagne's construction, step for step.
+
+**Sources:**
+- [R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)](https://archive.org/details/ERIC_ED058058)
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 33.0517.05 (zbMATH Open)](https://zbmath.org/?q=an%3A33.0517.05)
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 33.0518.01 (zbMATH Open)](https://zbmath.org/?q=an%3A33.0518.01)

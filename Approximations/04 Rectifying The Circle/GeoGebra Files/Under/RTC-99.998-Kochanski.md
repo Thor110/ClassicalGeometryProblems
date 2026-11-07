@@ -39,3 +39,8 @@ Because the paper omits part of the required steps for the construction, I had t
 
 **Also found by:**
 Nicolai Nuwrotzki (before 1846), in "Über die Rectification der Peripherie des Kreises" (Hamburg), without mention of Kochański, as reported in Journal für die reine und angewandte Mathematik 32 (1846), p. 91: the same construction step for step. Listed as a possible independent rediscovery (see "Earlier discoveries" in SUBMISSION_RULESET.md).
+
+**Sources:**
+- [Crelle's Journal für die reine und angewandte Mathematik 32 (1846)](https://archive.org/details/sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)
+- [Gergonne's Annales de mathématiques VIII (1817-18)](https://archive.org/details/annalesdemathma06unkngoog)

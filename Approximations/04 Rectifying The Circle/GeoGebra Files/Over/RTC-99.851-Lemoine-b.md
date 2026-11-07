@@ -32,3 +32,6 @@ In the file the steps are his, with his letters.
 
 **Notes / Limitations:**
 Over by 0.149%. One line only: every length is laid off along PO. It ties d'Ocagne's construction and Lemoine's first way exactly.
+
+**Sources:**
+- [Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)](https://www.numdam.org/item/BSMF_1895__23__242_0/)

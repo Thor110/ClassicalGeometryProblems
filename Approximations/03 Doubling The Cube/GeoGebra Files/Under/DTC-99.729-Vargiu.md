@@ -32,3 +32,7 @@ In the file: the square's corner C gives the diagonal AC. Every mean proportiona
 
 **Notes / Limitations:**
 Each step halves the gap in the exponent: l and d are 2^0 and 2^(1/2) of the edge, and the k-th mean is 2 to the power a_k, with a_k the average of the two before, closing in on 1/3; the seventh is 85/256. Short by 0.09% of the edge (0.27% by volume). The scan garbles Amaldi's numerical check. Vahlen traces the idea to Buteo (1554).
+
+**Sources:**
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

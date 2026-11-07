@@ -247,6 +247,12 @@ const ARCHIVE = {
       "kind": "historical",
       "evidence": [
        "published: Ramanujan, \"Squaring the circle\", Journal of the Indian Mathematical Society, 1913"
+      ],
+      "links": [
+       {
+        "label": "Collected Papers of Srinivasa Ramanujan (1927)",
+        "url": "https://archive.org/details/pli.kerala.rare.28155"
+       }
       ]
      }
     },
@@ -933,7 +939,7 @@ const ARCHIVE = {
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/99.998-Hobson",
      "square": "q",
-     "note": "OD = 3/5, OF = 3/2 and OE = 1/2 of the radius; the semicircles on DE and AF cut the perpendicular through O at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Given by Hobson (1913) without naming its author. A variant with OD = 1/3, OE = 11/8 and OF = 6/5 (one more circle, two more lines) is charted as stc-under-99.9993.",
+     "note": "OD = 3/5, OF = 3/2 and OE = 1/2 of the radius; the semicircles on DE and AF cut the perpendicular through O at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Given by Hobson (1913) without naming its author. A variant with OD = 1/3, OE = 11/8 and OF = 6/5 (one more circle, two more lines) is charted as stc-under-99.9993. Viète had the same number, 1.2φ², in 1593 (stc-over-99.998-viete), by other steps.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -941,6 +947,12 @@ const ARCHIVE = {
       "evidence": [
        "published: E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, p. 35, construction (4)",
        "redrawn in November 2026 from the book's text (Internet Archive scans), the three fractions read from the value GH = 1.77246 that Hobson gives"
+      ],
+      "links": [
+       {
+        "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
+        "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       }
       ]
      }
     },
@@ -966,6 +978,12 @@ const ARCHIVE = {
        "published: W. Hayden, \"Approximate Geometrical Solutions of the Problems of the Duplication of the Cube and of the Quadrature of the Circle\", Proceedings of the Royal Society of London 20 (1871-72), pp. 525-526, communicated by G. G. Stokes",
        "read from the Internet Archive scan (paper-doi-10_1098_rspl_1871_0099); the figure is not in the text, so B, D, G and I were placed from Hayden's stated r = 3(√10 − √5)/20 and m = 0.322999477, which only one reading of the text gives",
        "redrawn in November 2026"
+      ],
+      "links": [
+       {
+        "label": "W. Hayden, Proceedings of the Royal Society 20 (1871-72)",
+        "url": "https://archive.org/details/paper-doi-10_1098_rspl_1871_0099"
+       }
       ]
      },
      "square": "q"
@@ -992,6 +1010,12 @@ const ARCHIVE = {
        "published: the Rhind Mathematical Papyrus (British Museum), copied by the scribe Ahmes, problem 50",
        "the rule as described in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, \"The first period: earliest traces of the problem\" (Internet Archive scans), which dates it \"probably about 1700 B.C.\"",
        "drawn in November 2026: the papyrus gives no drawing, so the ninths are laid out the archive's way"
+      ],
+      "links": [
+       {
+        "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
+        "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       }
       ]
      },
      "square": "q"
@@ -1018,6 +1042,12 @@ const ARCHIVE = {
        "published: C. M. Willich, \"On a simple Geometrical construction, giving a very approximate Quadrature of the Circle\", Proceedings of the Royal Society of London 7 (1854-55), received April 17, 1855, communicated by G. G. Stokes",
        "read from the Internet Archive scan (philtrans08545474); the text gives every step",
        "redrawn in November 2026; the quadrant AB is found with a perpendicular, as Willich does not say how"
+      ],
+      "links": [
+       {
+        "label": "C. M. Willich, Proceedings of the Royal Society 7 (1854-55)",
+        "url": "https://archive.org/details/philtrans08545474"
+       }
       ]
      },
      "square": "q"
@@ -1042,6 +1072,12 @@ const ARCHIVE = {
       "kind": "session",
       "evidence": [
        "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Hobson's construction (stc-over-99.998)"
+      ],
+      "links": [
+       {
+        "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
+        "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       }
       ]
      },
      "holder_kind": "ai",
@@ -1069,6 +1105,12 @@ const ARCHIVE = {
        "published: H. V. Chu, \"Squaring the Circle Revisited\", 2019, arXiv:1908.01202, section 3",
        "the number is Ramanujan's, from \"Modular equations and approximations to π\" (1914)",
        "redrawn in November 2026 from Chu's steps; his left figure is drawn on the circle's own diameter (his AB = AC = 1) and his right figure on the perpendicular one, and the three lengths are put together the archive's way, as Chu leaves that to \"basic constructions\""
+      ],
+      "links": [
+       {
+        "label": "H. V. Chu, Squaring the Circle Revisited (arXiv)",
+        "url": "https://arxiv.org/abs/1908.01202"
+       }
       ]
      },
      "square": "q"
@@ -1094,6 +1136,12 @@ const ARCHIVE = {
       "evidence": [
        "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 165-167, construction 1 (Internet Archive, messengermathem06glaigoog)",
        "redrawn in November 2026; the figure is not in the text, and the letters are placed by the one reading that gives Anglin's HF = 1.77345908 (the tangent at K meets AB with AG equal to the side of the inscribed square, as Anglin says it does)"
+      ],
+      "links": [
+       {
+        "label": "The Messenger of Mathematics XIII (1884), first scan",
+        "url": "https://archive.org/details/messengermathem06glaigoog"
+       }
       ]
      },
      "square": "q"
@@ -1119,6 +1167,16 @@ const ARCHIVE = {
       "evidence": [
        "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 165-167, construction 2, read from a second scan of the volume (Internet Archive, messengermathem00taylgoog), whose text is cleaner than the first (messengermathem06glaigoog)",
        "redrawn in November 2026; the scan names the circle's radius as \"EA\", but only the circle's own radius gives Anglin's ON = √2 − 1 and his value 1.76640701, which the rebuilt figure gives"
+      ],
+      "links": [
+       {
+        "label": "The Messenger of Mathematics XIII (1884), second scan, with the plates",
+        "url": "https://archive.org/details/messengermathem00taylgoog"
+       },
+       {
+        "label": "The Messenger of Mathematics XIII (1884), first scan",
+        "url": "https://archive.org/details/messengermathem06glaigoog"
+       }
       ]
      }
     },
@@ -1143,6 +1201,16 @@ const ARCHIVE = {
       "evidence": [
        "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 165-167, construction 3, read from a second scan of the volume (Internet Archive, messengermathem00taylgoog), whose text is cleaner than the first (messengermathem06glaigoog)",
        "redrawn in November 2026; E and F fall on the inscribed square's sides produced, the one reading that gives Anglin's EG = √(√2 − ½), FE = √(2√2 − 1) − 1 and his value 1.77232578, which the rebuilt figure gives"
+      ],
+      "links": [
+       {
+        "label": "The Messenger of Mathematics XIII (1884), second scan, with the plates",
+        "url": "https://archive.org/details/messengermathem00taylgoog"
+       },
+       {
+        "label": "The Messenger of Mathematics XIII (1884), first scan",
+        "url": "https://archive.org/details/messengermathem06glaigoog"
+       }
       ]
      }
     },
@@ -1167,6 +1235,12 @@ const ARCHIVE = {
       "evidence": [
        "published: L. Mascheroni, La geometria del compasso, Pavia 1797, art. 269; French translation, Géométrie du compas, Paris 1798, pp. 250-252 (Internet Archive, gomtrieducompas00masc)",
        "redrawn in November 2026 from the French text; the rebuilt AN = (√11 − √3)/2 = 0.7922870 and LM = (9 − √33)/6 = 0.5425729 are Mascheroni's values, and BR = 1.772657 radii, his 1.7726566"
+      ],
+      "links": [
+       {
+        "label": "L. Mascheroni, Géométrie du compas (1798)",
+        "url": "https://archive.org/details/gomtrieducompas00masc"
+       }
       ]
      }
     },
@@ -1191,6 +1265,16 @@ const ARCHIVE = {
       "evidence": [
        "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), p. 167, construction 4, with fig. 10 on the plate to the volume (Internet Archive, messengermathem00taylgoog, leaf 203)",
        "redrawn in November 2026; the plate is folded and shows only part of fig. 10, which places C on the side of the square about the circle, above E; with it the circle about C through I meets the arc at the J Anglin's working gives. The rebuilt side is 1.76818858 radii against his printed 1.768191052, a difference in the sixth decimal, which a 30-digit solution of the same figure confirms"
+      ],
+      "links": [
+       {
+        "label": "The Messenger of Mathematics XIII (1884), second scan, with the plates",
+        "url": "https://archive.org/details/messengermathem00taylgoog"
+       },
+       {
+        "label": "The Messenger of Mathematics XIII (1884), first scan",
+        "url": "https://archive.org/details/messengermathem06glaigoog"
+       }
       ]
      }
     },
@@ -1216,6 +1300,16 @@ const ARCHIVE = {
        "published: Baudhāyana Śulba Sūtra I.59 (Thibaut's numbering), as translated in G. Thibaut, \"On the Śulvasútras\", Journal of the Asiatic Society of Bengal 44 (1875), pp. 227-275 (Internet Archive, ulvastras00ktgoog), pp. 27-28 of the offprint",
        "Thibaut shows it is the reverse of Baudhāyana's rule for turning a square into a circle, put into numbers (1224 : 1393); also given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 177",
        "redrawn in November 2026 from Thibaut's translation; the rebuilt side is 0.8786817 of the diameter, the rule's value"
+      ],
+      "links": [
+       {
+        "label": "G. Thibaut, On the Śulvasútras (1875)",
+        "url": "https://archive.org/details/ulvastras00ktgoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -1240,6 +1334,12 @@ const ARCHIVE = {
       "evidence": [
        "published: Baudhāyana Śulba Sūtra I.60 (Thibaut's numbering), and in the Śulba Sūtras of Āpastamba and Kātyāyana, as translated in G. Thibaut, \"On the Śulvasútras\", Journal of the Asiatic Society of Bengal 44 (1875), pp. 227-275 (Internet Archive, ulvastras00ktgoog), pp. 27-28 of the offprint",
        "redrawn in November 2026 from Thibaut's translation"
+      ],
+      "links": [
+       {
+        "label": "G. Thibaut, On the Śulvasútras (1875)",
+        "url": "https://archive.org/details/ulvastras00ktgoog"
+       }
       ]
      }
     },
@@ -1265,6 +1365,20 @@ const ARCHIVE = {
        "published: E. Lakenmacher, \"Verwandlung einer Kreisfläche in ein annähernd gleich grosses Quadrat\", Archiv der Mathematik und Physik (2) IX (1890), pp. 214-215; cited by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
        "as described step by step in the review by Maynz, Jahrbuch über die Fortschritte der Mathematik 22 (JFM 22.0578.01, zbMATH Open), since p. 214 of the only scan of the Archiv (Internet Archive, archivdermathem49unkngoog) is a blank image",
        "redrawn in November 2026 from the review; the rebuilt az is 0.8862278 of the diameter, the value Vahlen gives (0.8862279)"
+      ],
+      "links": [
+       {
+        "label": "Archiv der Mathematik und Physik, 2nd series, IX (1890)",
+        "url": "https://archive.org/details/archivdermathem49unkngoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 22.0578.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A22.0578.01"
+       }
       ]
      }
     },
@@ -1290,6 +1404,12 @@ const ARCHIVE = {
        "published: E. Lampe, \"Angenäherte Kreisquadraturen\", Sitzungsberichte der Berliner Mathematischen Gesellschaft 15 (1916), pp. 150-158",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 46.0857.01 (zbMATH Open)",
        "redrawn in November 2026 from the review; 44/23 is a convergent of √(π/(4 − π)) = 1.9130585, as Lampe explains; the rebuilt square is 99.99967% of the circle"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 46.0857.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A46.0857.01"
+       }
       ]
      }
     },
@@ -1315,6 +1435,12 @@ const ARCHIVE = {
        "published: G. Innerebner, \"Zur Quadratur des Kreises\", Der Schlern (Bozen) 1947, pp. 329-331, who received it from Eduard Gregori, a merchant of Bolzano, and added the proof",
        "as described in the review in the Zentralblatt, Zbl 0032.17902 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt square is 3.1415970 r², the review's 3.1415969739"
+      ],
+      "links": [
+       {
+        "label": "Zentralblatt, Zbl 0032.17902 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0032.17902"
+       }
       ]
      }
     },
@@ -1340,8 +1466,50 @@ const ARCHIVE = {
        "published: E. Storchi, \"Sulla quadratura approssimata del cerchio\", Periodico di Matematiche (4) 25 (1947), pp. 224-227",
        "as described step by step in the review in the Zentralblatt, Zbl 0029.31002 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt side is √(104348/33215) = 1.7724538510 radii"
+      ],
+      "links": [
+       {
+        "label": "Zentralblatt, Zbl 0029.31002 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0029.31002"
+       }
       ]
      }
+    },
+    {
+     "id": "stc-over-99.998-viete",
+     "side": "over",
+     "marks": "",
+     "holder": "François Viète",
+     "method": "Viète's square",
+     "circles": 7,
+     "lines": 11,
+     "acc": "99.998",
+     "precise": "99.998467881887055614596084601667",
+     "date": "1593",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.998-Viete",
+     "note": "AF on the radius AD equal to half the chord CE, so that BF² = 3/2 of the radius squared; AC cut in extreme and mean ratio at H; CI parallel to HF meets BF produced at I: as BH to BC, so BF to BI, and BI is the side of the square. Its area is 1.2φ² times the radius squared, the same number as Hobson's square.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: F. Viète, Variorum de rebus mathematicis responsorum liber VIII (Tours 1593), chapter XV, in Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646), pp. 392-393 (Internet Archive, bub_gb_25iHrtJpy9oC), Proposition IV, with its figure",
+       "also given by J. E. Montucla, Histoire des recherches sur la quadrature du cercle (new edition, Paris 1831), p. 76, note (Internet Archive, histoiredesreche00montuoft)",
+       "redrawn in November 2026 from the page image of the 1646 edition; the cut of AC in extreme and mean ratio, which Viète takes as known, is made as in his Proposition III"
+      ],
+      "links": [
+       {
+        "label": "Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)",
+        "url": "https://archive.org/details/bub_gb_25iHrtJpy9oC"
+       },
+       {
+        "label": "J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)",
+        "url": "https://archive.org/details/histoiredesreche00montuoft"
+       }
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -1577,6 +1745,12 @@ const ARCHIVE = {
        "published: A. Dürer, Underweysung der Messung, 1525",
        "described step by step, with Dürer's letters, in G. H. Hughes, The Polygons of Albrecht Dürer, 2012 (arXiv:1205.0080), Appendix A, from Strauss's translation",
        "redrawn in November 2026; how the chord and the gap are trisected is the archive's, as Dürer does not say"
+      ],
+      "links": [
+       {
+        "label": "G. H. Hughes, The Polygons of Albrecht Dürer, 1525 (arXiv)",
+        "url": "https://arxiv.org/abs/1205.0080"
+       }
       ]
      }
     },
@@ -1601,6 +1775,12 @@ const ARCHIVE = {
       "evidence": [
        "published: Karajordanoff, 1928, from W. Breidenbach, Die Dreiteilung des Winkels, Leipzig, 1933, as cited in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 4, with his error table",
        "redrawn in November 2026; Yates' error table (21\" at 30°, 1'53\" at 60°, 2'12\" at 70°, none at 90°) is reproduced exactly"
+      ],
+      "links": [
+       {
+        "label": "R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)",
+        "url": "https://archive.org/details/ERIC_ED058058"
+       }
       ]
      }
     },
@@ -1627,6 +1807,24 @@ const ARCHIVE = {
        "its error examined by E. Lampe, Archiv der Mathematik und Physik (3) 4 (1902), pp. 130-133 (Jahrbuch über die Fortschritte der Mathematik, JFM 33.0518.01 (zbMATH Open)): always slightly larger than α/n",
        "the same steps given by M. d'Ocagne, \"Étude rationnelle du problème de la trisection de l'angle\", L'Enseignement mathématique 33 (1934), pp. 49-63, as cited in R. C. Yates, The Trisection Problem, 1942 (ERIC ED058058), ch. 4, section 6, with his error table, which the file reproduces: 45\" at 30°, 6'14\" at 60°, 21'41\" at 90°",
        "the same third as the construction E. Cominotto quotes as known in \"Trisezione approssimata dell'angolo\" (Padova 1895), as given by U. Amaldi in F. Enriques, Fragen der Elementargeometrie II (1907), § 17, fig. 127; checked equal in November 2026"
+      ],
+      "links": [
+       {
+        "label": "R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)",
+        "url": "https://archive.org/details/ERIC_ED058058"
+       },
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 33.0517.05 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A33.0517.05"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 33.0518.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A33.0518.01"
+       }
       ]
      },
      "rediscovered": [
@@ -1664,6 +1862,16 @@ const ARCHIVE = {
        "the trisection as given in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 2: \"For the approximate trisection of angle AOB we need only locate the point M so that BM = BD/3 and join it to P. The line PM will cut the unit circle in T.\"",
        "the point is Snellius' approximate trisection point, as in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 189 (PB = 1)",
        "redrawn in November 2026; BM = BD/3 is laid off with the parallel through O to PD (BO is a third of BP), and the rest of the angle bisected, as for the archive's other one-line trisections"
+      ],
+      "links": [
+       {
+        "label": "R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)",
+        "url": "https://archive.org/details/ERIC_ED058058"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -1689,6 +1897,12 @@ const ARCHIVE = {
        "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, pp. 290-291 (\"woraus sich eine sehr einfache und sehr genaue Konstruktion ergibt\")",
        "read from the Internet Archive scan (konstruktionenun00vahluoft); the scan garbles the fraction, which is 2/9: Vahlen gives the exact point as OP = 2 cos(x/3) and the shift as the second approximation of 2 − 2 cos(x/3), which is (2/9) of the versine, and the rebuilt figure confirms that the exact point is 2 cos(x/3)",
        "redrawn in November 2026; how 2/9 of BC is laid off is the archive's"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -1712,6 +1926,12 @@ const ARCHIVE = {
       "kind": "session",
       "evidence": [
        "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Cusa's and Vahlen's trisections (taa-under-95.527, taa-under-99.147)"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      },
      "holder_kind": "ai"
@@ -1736,6 +1956,12 @@ const ARCHIVE = {
       "kind": "session",
       "evidence": [
        "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Cusa's, Snellius' and Vahlen's trisections (taa-under-95.527, taa-under-99.147, taa-under-99.660), worked on half the angle"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      },
      "holder_kind": "ai"
@@ -1760,6 +1986,12 @@ const ARCHIVE = {
       "kind": "session",
       "evidence": [
        "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Vahlen's trisection (taa-under-99.147), worked on half the angle"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      },
      "holder_kind": "ai"
@@ -1930,6 +2162,12 @@ const ARCHIVE = {
        "published: P. Monti, \"Regola generale per la soluzione grafica della trisezione dell'angolo\", with the proof by G. Schiaparelli, Il Politecnico, 1895",
        "as given, with Schiaparelli's proof and error table, in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 17, fig. 128",
        "redrawn in November 2026; the scan garbles the table, but the rebuilt figure keeps under the 7 minutes Amaldi gives as its largest error up to 180° (6'47\")"
+      ],
+      "links": [
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       }
       ]
      }
     },
@@ -1979,6 +2217,16 @@ const ARCHIVE = {
        "published: E. Cominotto, Trisezione approssimata dell'angolo, Padova 1895",
        "as given in A. Conti, \"Problemi di 3° grado: duplicazione del cubo, trisezione dell'angolo\", article XIII of F. Enriques (ed.), Questioni riguardanti la geometria elementare, Bologna 1900 (Internet Archive, questioniriguard00enri), § 17, pp. 459-461, figs. 21-22, with the check at 180°; also in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 17",
        "redrawn in November 2026 from the Italian text; at 180° the rebuilt figure puts T at the height 2√2(1 + √2)/(5 + 2√2) = 0.872260 of the radius, exactly the value the text derives, so the chord CT is 1.0109 radii, 43 minutes of arc over a third. The text's rounded arithmetic (x = 0.485) makes the chord look closer to the radius than it is"
+      ],
+      "links": [
+       {
+        "label": "F. Enriques (ed.), Questioni riguardanti la geometria elementare (1900)",
+        "url": "https://archive.org/details/questioniriguard00enri"
+       },
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       }
       ]
      }
     },
@@ -2029,6 +2277,20 @@ const ARCHIVE = {
        "its largest error found by O. Nehring, \"Über die Dreiteilung des Winkels nach Eugen Kopf\", ibid. 1936, pp. 77-79 (Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)): 14.86\" at the angle with cos x = 181/(266 + 151√3), 69.934°, which the rebuilt figure gives exactly",
        "as given, with Perron's table, in R. C. Yates, The Trisection Problem (1942), ch. 4, § 5, fig. 37 (Internet Archive, ERIC_ED058058), who dates Kopf's work to 1919 and mentions refinements by Perron and d'Ocagne",
        "Kopf's first construction (E. Kopf, Die Dreiteilung des Winkels, Ludwigshafen 1929; Perron, Sitzungsberichte München 59 (1929), pp. 341-343) is a different one, with errors up to 8' 12\" for acute angles"
+      ],
+      "links": [
+       {
+        "label": "R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)",
+        "url": "https://archive.org/details/ERIC_ED058058"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 60.1233.02 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A60.1233.02"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A62.0698.02"
+       }
       ]
      }
     },
@@ -2054,6 +2316,12 @@ const ARCHIVE = {
        "published: G. Baratto (Naples), as reported by G. V. Schiaparelli, \"Relazione sopra una regola proposta per la trisezione dell'angolo dal Sig. Gaetano Baratto\", Rendiconti del Reale Istituto Lombardo (2) II (1869)",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 02.0362.01 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt third is 30.3612° at 90°, and its errors grow beyond 90° as the report says"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 02.0362.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A02.0362.01"
+       }
       ]
      },
      "rediscovered": [
@@ -2086,6 +2354,12 @@ const ARCHIVE = {
        "published: A. Stoyanoff, \"Sur la trisection de l'angle\", Annuaire de l'Université de Sofia, Faculté physico-mathématique, Livre 1, 31 (1935), pp. 171-176",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 62.1417.04 (zbMATH Open)",
        "redrawn in November 2026 from the review; with k a quarter of the radius, the rebuilt error is 0.004\" at 30° and 0.894\" at 90°, under the 1 second the review gives"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 62.1417.04 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A62.1417.04"
+       }
       ]
      }
     },
@@ -2111,6 +2385,12 @@ const ARCHIVE = {
        "published: M. Blasendorff, \"Ueber die Teilung des Kreisbogens\", Programm der 8. Realschule Berlin (No. 122), 1896, 29 pp., with a table of the errors",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 27.0394.06 (zbMATH Open)",
        "redrawn in November 2026 from the review, with m = 1/3; the rebuilt arc AH is 29.2776° at 90°"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 27.0394.06 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A27.0394.06"
+       }
       ]
      }
     },
@@ -2136,6 +2416,12 @@ const ARCHIVE = {
        "published: C. H. Kummell, \"Approximate multisection of an angle and hints for reducing the unavoidable error to the smallest amount\", The Analyst 5 (1878), pp. 172-176",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 10.0363.04 (zbMATH Open)",
        "redrawn in November 2026 from the review, with n = 3; it is exact at 90°"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 10.0363.04 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A10.0363.04"
+       }
       ]
      }
     },
@@ -2161,6 +2447,12 @@ const ARCHIVE = {
        "published: J. G. van der Corput and H. Mooij, \"Approximate division of an angle into equal parts\", Proceedings of the Koninklijke Nederlandse Akademie van Wetenschappen 52 (1949), pp. 317-328",
        "as described in the review in the Zentralblatt, Zbl 0032.29801 (zbMATH Open)",
        "redrawn in November 2026 from the review, with r = 1/3, the first of their two constructions"
+      ],
+      "links": [
+       {
+        "label": "Zentralblatt, Zbl 0032.29801 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0032.29801"
+       }
       ]
      }
     },
@@ -2186,6 +2478,12 @@ const ARCHIVE = {
        "published: D. Visser, \"Eine Näherungskonstruktion für die Trisektion eines Winkels\", Simon Stevin 27 (1950), pp. 69-70",
        "as described in the review in the Zentralblatt, Zbl 0037.37802 (zbMATH Open)",
        "redrawn in November 2026 from the review"
+      ],
+      "links": [
+       {
+        "label": "Zentralblatt, Zbl 0037.37802 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0037.37802"
+       }
       ]
      }
     },
@@ -2211,6 +2509,12 @@ const ARCHIVE = {
        "published: J. Lense, \"Die Winkeldreiteilung des Herrn Sauerbeck\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Klasse, 1950 (1951), pp. 107-110",
        "as described in the review in the Zentralblatt, Zbl 0043.35403 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt error is 7.93' at 30°, 6.24' at 60°, 0 at 90° and 180°, under the 8'12\" Lense gives"
+      ],
+      "links": [
+       {
+        "label": "Zentralblatt, Zbl 0043.35403 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0043.35403"
+       }
       ]
      }
     }
@@ -2515,6 +2819,12 @@ const ARCHIVE = {
        "published: W. Hayden, \"Approximate Geometrical Solutions of the Problems of the Duplication of the Cube and of the Quadrature of the Circle\", Proceedings of the Royal Society of London 20 (1871-72), p. 525, communicated by G. G. Stokes",
        "read from the Internet Archive scan (paper-doi-10_1098_rspl_1871_0099); the text and Hayden's worked figures fix every step",
        "redrawn in November 2026; how CD is trisected is the archive's, as Hayden does not say"
+      ],
+      "links": [
+       {
+        "label": "W. Hayden, Proceedings of the Royal Society 20 (1871-72)",
+        "url": "https://archive.org/details/paper-doi-10_1098_rspl_1871_0099"
+       }
       ]
      }
     },
@@ -2540,6 +2850,16 @@ const ARCHIVE = {
        "published: L. Mascheroni, La geometria del compasso, Pavia 1797, art. 275; French translation by A.-M. Carette, Géométrie du compas, Paris 1798",
        "read from the 1798 translation (Internet Archive, gomtrieducompas00masc), first solution, with Mascheroni's letters; cited in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 284",
        "redrawn in November 2026"
+      ],
+      "links": [
+       {
+        "label": "L. Mascheroni, Géométrie du compas (1798)",
+        "url": "https://archive.org/details/gomtrieducompas00masc"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2565,6 +2885,12 @@ const ARCHIVE = {
        "published: L. Mascheroni, La geometria del compasso, Pavia 1797, art. 275, second solution; French translation, Géométrie du compas, Paris 1798",
        "read from the 1798 translation (Internet Archive, gomtrieducompas00masc), with Mascheroni's letters; the sides on which M, P and Q fall are the only ones that give his PQ = 1.2599190",
        "redrawn in November 2026"
+      ],
+      "links": [
+       {
+        "label": "L. Mascheroni, Géométrie du compas (1798)",
+        "url": "https://archive.org/details/gomtrieducompas00masc"
+       }
       ]
      }
     },
@@ -2590,6 +2916,12 @@ const ARCHIVE = {
        "published: G. Buonafalce, Sulla scoperta di un nuovo rapporto geometrico che serve alla soluzione del problema della duplicazione del cubo, Pisa 1876",
        "as given in F. Enriques (ed.), Fragen der Elementargeometrie II, article VII by U. Amaldi, § 9, Leipzig 1907, fig. 96 (Internet Archive, rcin.org.pl); proof by Father Secchi",
        "redrawn in November 2026; how BD is divided into six is the archive's"
+      ],
+      "links": [
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       }
       ]
      }
     },
@@ -2615,6 +2947,12 @@ const ARCHIVE = {
        "published: G. Buonafalce, Pisa 1876-78 (third of his four solutions)",
        "as given in F. Enriques (ed.), Fragen der Elementargeometrie II, article VII by U. Amaldi, § 9, Leipzig 1907, fig. 97, with the proof (Internet Archive, rcin.org.pl)",
        "redrawn in November 2026; reproduces Amaldi's DG = 1.2599093"
+      ],
+      "links": [
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       }
       ]
      }
     },
@@ -2640,6 +2978,16 @@ const ARCHIVE = {
        "published: G. J. Vargiù, Sulla duplicazione del cubo e sulla multiplicazione di esso, Oristano 1877",
        "as given in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 9; also cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 292, after Buteo (1554)",
        "redrawn in November 2026; the scan garbles Amaldi's figures, and the value is the one the construction gives, 2^(85/256)"
+      ],
+      "links": [
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2666,6 +3014,20 @@ const ARCHIVE = {
        "as re-derived (Conti found Boccali's own route artificial and badly explained, and gives the same result by a different way) in A. Conti, \"Problemi di 3° grado: duplicazione del cubo, trisezione dell'angolo\", article XIII of F. Enriques (ed.), Questioni riguardanti la geometria elementare, Bologna 1900 (Internet Archive, questioniriguard00enri), § 11, pp. 442-445; also in U. Amaldi, \"Aufgaben dritten Grades\", article VII of F. Enriques (ed.), Fragen der Elementargeometrie II, Leipzig 1907 (Internet Archive, rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454), § 9",
        "redrawn in November 2026 from the Italian text, whose numbers survive the scan: A'C = 0.6180339887, UB' = 1.2720196495, two thirds of the sum 1.2600357588; the rebuilt figure gives the same",
        "the value 1.260035 confirmed independently by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 284, note 1"
+      ],
+      "links": [
+       {
+        "label": "F. Enriques (ed.), Questioni riguardanti la geometria elementare (1900)",
+        "url": "https://archive.org/details/questioniriguard00enri"
+       },
+       {
+        "label": "U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)",
+        "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2690,6 +3052,12 @@ const ARCHIVE = {
       "evidence": [
        "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), pp. 283-284, where Vahlen calls it simpler and more accurate than Buonafalce's, Boccali's and Mascheroni's",
        "redrawn in November 2026; the scan garbles the fraction, read back as 35/3 because it alone gives Vahlen's printed value 1.2599112 (the root of x² + 8x = 35/3 is 1.25991128)"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2715,6 +3083,12 @@ const ARCHIVE = {
        "published: Michael Stifel, Arithmetica integra, Nürnberg 1544, fol. 119",
        "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 284, who notes that it gives only ∛2 = 5/4 but can be improved at will (OM = 0.37 instead)",
        "redrawn in November 2026; the scan garbles the fractions, read back as OM = 3/8 and ∛2 = 5/4, the only pair that agrees with each other and with Vahlen's \"besser 0,37\""
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2739,6 +3113,12 @@ const ARCHIVE = {
       "evidence": [
        "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), pp. 282-283, with its figure",
        "redrawn in November 2026 from the page image (the scanned text garbles the fractions): DF = 5/9 on AD beyond D, CE = 1 on DC beyond C, FJ = 1 and FG = FE on FB, GH parallel to BE, JK parallel to BH; FK = 349/277, Vahlen's 1.2599275"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2763,6 +3143,12 @@ const ARCHIVE = {
       "evidence": [
        "published: C. Huygens, Varia opera mathematica I (Leiden 1724), p. 1, as given with its figure in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 284",
        "redrawn in November 2026 from the page image of Vahlen; the rebuilt AE is cosec 52.5° = 1.260472 radii, Vahlen's 1.2605"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -2788,6 +3174,12 @@ const ARCHIVE = {
        "published: A. A. Dmitrovskij, \"Angenäherte Lösung der Aufgabe der Würfelverdoppelung\" (in Russian), Vestnik opytnoj fiziki i elementarnoj matematiki (Kagan's Bote) Nr. 526-527 (1910), pp. 269-291",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 41.0569.01 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt edge is 1.26 exactly"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 41.0569.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A41.0569.01"
+       }
       ]
      }
     }
@@ -3323,6 +3715,20 @@ const ARCHIVE = {
        "published: Kochański, Acta Eruditorum, 1685",
        "it reappeared without its author's name in the Bibliothèque universelle III (1816), as Gergonne reports in the Annales de mathématiques VIII (1818), construction II, giving π = 3.14153334; Vahlen (1911, p. 310) identifies it as Kochański's",
        "again, under the name of Nicolai Nuwrotzki, in Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92, \"Zur näherungsweisen Kreis-Quadratur\" (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32); the same construction step for step (the tangent at one end of the diameter, the 30° line from the centre, three radii along the tangent, and the line to the other end)"
+      ],
+      "links": [
+       {
+        "label": "Crelle's Journal für die reine und angewandte Mathematik 32 (1846)",
+        "url": "https://archive.org/details/sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       },
+       {
+        "label": "Gergonne's Annales de mathématiques VIII (1817-18)",
+        "url": "https://archive.org/details/annalesdemathma06unkngoog"
+       }
       ]
      },
      "rediscovered": [
@@ -3649,6 +4055,12 @@ const ARCHIVE = {
       "kind": "historical",
       "evidence": [
        "published: Ramanujan, \"Modular equations and approximations to π\", Quarterly Journal of Mathematics, 1914"
+      ],
+      "links": [
+       {
+        "label": "Collected Papers of Srinivasa Ramanujan (1927)",
+        "url": "https://archive.org/details/pli.kerala.rare.28155"
+       }
       ]
      }
     },
@@ -3927,6 +4339,12 @@ const ARCHIVE = {
        "published: de Gelder, Grünert's Archiv, vol. 7, 1849",
        "described step by step in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, p. 34",
        "the construction's steps redrawn from Hobson's description in November 2026; the last step, laying out the half circumference, is the archive's"
+      ],
+      "links": [
+       {
+        "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
+        "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       }
       ]
      },
      "result_scale": 2
@@ -3953,6 +4371,12 @@ const ARCHIVE = {
        "published: Specht, Crelle's Journal, vol. 3, p. 83",
        "described in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, pp. 34-35, construction (3)",
        "redrawn in November 2026 from the book's text (Internet Archive scans), BC read from the value AE = 6.2831839 that Hobson gives"
+      ],
+      "links": [
+       {
+        "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
+        "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       }
       ]
      }
     },
@@ -3969,7 +4393,7 @@ const ARCHIVE = {
      "date": "1851",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.998-Kunze",
-     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. The same number as Hobson's squaring, 6/5 · (1 + φ), 62 years earlier. The value itself, 1.8 + √1.8 = (3/5)(3 + √5), is older: it is called Vieta's in the Jahrbuch (JFM 62.0698.03, on Lambacher 1936), and A. Busch constructed it in his Vorschule der darstellenden Geometrie (1846), as the Jahrbuch notes on G. Peirce's rediscovery of it in 1907 (JFM 38.0535.01); Lakenmacher (1888) gave it again as a formula. Whether Busch's construction is Kunze's triangle is not known yet (see Wanted).",
+     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. The same number as Hobson's squaring, 6/5 · (1 + φ), 62 years earlier. The value itself, 1.8 + √1.8 = (3/5)(3 + √5), is older: it is called Vieta's in the Jahrbuch (JFM 62.0698.03, on Lambacher 1936), and A. Busch constructed it in his Vorschule der darstellenden Geometrie (1846), as the Jahrbuch notes on G. Peirce's rediscovery of it in 1907 (JFM 38.0535.01); Lakenmacher (1888) gave it again as a formula. Whether Busch's construction is Kunze's triangle is not known yet (see Wanted). Viète had the same number, 1.2φ², in 1593 (rtc-over-99.998-viete), by other steps.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3978,6 +4402,12 @@ const ARCHIVE = {
        "published: A. Kunze, Lehrbuch der Planimetrie I, 2nd edition, Jena 1851, p. 278",
        "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 311 (Internet Archive, konstruktionenun00vahluoft)",
        "redrawn in November 2026; the fifths of the radius and the laying out of the perimeter on one line are the archive's"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -4003,6 +4433,12 @@ const ARCHIVE = {
        "Nicholas of Cusa (1401-1464), \"De mathematica perfectione\" and his other writings on the quadrature",
        "as given, with its value 3.1361, in E. Beutel, Die Quadratur des Kreises, Leipzig 1913 (Internet Archive, diequadraturdes01beutgoog), p. 26, fig. 6",
        "redrawn in November 2026; the triangle's three sides are laid end to end on one line, as Beutel compares its perimeter with the circumference"
+      ],
+      "links": [
+       {
+        "label": "E. Beutel, Die Quadratur des Kreises (1913)",
+        "url": "https://archive.org/details/diequadraturdes01beutgoog"
+       }
       ]
      }
     },
@@ -4027,6 +4463,16 @@ const ARCHIVE = {
       "evidence": [
        "published: J. D. Gergonne, \"Sur quelques rectifications approchées de la circonférence du cercle\", Annales de mathématiques pures et appliquées VIII (1817-18), pp. 245-253 (Internet Archive, annalesdemathma06unkngoog), construction III, \"dû à M. Pioche, militaire distingué, résidant à Metz\", communicated by Servois",
        "redrawn in November 2026 from Gergonne's text; the scan garbles the two fractions, FK = 7/8 of FG and AL = 3/10 of AH, which are the ones that give Gergonne's KL = (501 + 80√10)/120 (their sum must be 47/40); also cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311"
+      ],
+      "links": [
+       {
+        "label": "Gergonne's Annales de mathématiques VIII (1817-18)",
+        "url": "https://archive.org/details/annalesdemathma06unkngoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -4052,6 +4498,16 @@ const ARCHIVE = {
        "published: L. Mascheroni, La geometria del compasso, Pavia 1797; Géométrie du compas, Paris 1798, p. 248",
        "as given, with its value π = 3.14239917, in J. D. Gergonne, \"Sur quelques rectifications approchées de la circonférence du cercle\", Annales de mathématiques pures et appliquées VIII (1817-18), pp. 245-253 (Internet Archive, annalesdemathma06unkngoog), construction I",
        "redrawn in November 2026; the scan reads \"B\" for the centre of the last arc, but only E (or D, the same by symmetry) gives Gergonne's value"
+      ],
+      "links": [
+       {
+        "label": "Gergonne's Annales de mathématiques VIII (1817-18)",
+        "url": "https://archive.org/details/annalesdemathma06unkngoog"
+       },
+       {
+        "label": "L. Mascheroni, Géométrie du compas (1798)",
+        "url": "https://archive.org/details/gomtrieducompas00masc"
+       }
       ]
      },
      "result_scale": 4
@@ -4078,6 +4534,16 @@ const ARCHIVE = {
        "published: C. G. Specht, \"Zweite Annäherungs-Construction des Kreis-Umfanges\", Journal für die reine und angewandte Mathematik 3 (1828), pp. 405-406 (Internet Archive, journalfrdierei14crelgoog)",
        "cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
        "redrawn in November 2026; the thirds are laid off the archive's way"
+      ],
+      "links": [
+       {
+        "label": "Crelle's Journal für die reine und angewandte Mathematik 3 (1828)",
+        "url": "https://archive.org/details/journalfrdierei14crelgoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -4103,6 +4569,16 @@ const ARCHIVE = {
        "published: M. d'Ocagne, \"Rectification approchée du cercle\", Journal de mathématiques élémentaires, 4th series, IV (1895) (Internet Archive, journaldemathma34unkngoog), pp. 77-78, after a remark of Ch. Bioche to the Société mathématique de France; Mannheim's proof follows on p. 103",
        "cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
        "redrawn in November 2026 from d'Ocagne's text"
+      ],
+      "links": [
+       {
+        "label": "Journal de mathématiques élémentaires (1895)",
+        "url": "https://archive.org/details/journaldemathma34unkngoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      },
      "result_scale": 2
@@ -4129,6 +4605,16 @@ const ARCHIVE = {
        "published: A. Pleskot (Prague), \"Sur la rectification approchée du cercle\", Journal de mathématiques élémentaires, 4th series, IV (1895) (Internet Archive, journaldemathma34unkngoog), pp. 125-126, first in the Časopis pro pěstování mathematiky a fysiky",
        "cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
        "redrawn in November 2026; the scan reads \"si = 206\" for sl = 2ab, which the proof fixes as 2√3"
+      ],
+      "links": [
+       {
+        "label": "Journal de mathématiques élémentaires (1895)",
+        "url": "https://archive.org/details/journaldemathma34unkngoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      },
      "result_scale": 4
@@ -4155,6 +4641,16 @@ const ARCHIVE = {
        "published (unsigned, \"Berlin im März 1846\") in Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92, \"Zur näherungsweisen Kreis-Quadratur\" (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32); attributed to Crelle, the journal's editor, by Vahlen",
        "cited in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 312: \"der aus cos x = tg x folgende Wert 0,786151 statt 0,785398\"",
        "redrawn in November 2026 from the journal text, which gives the figure step by step; the rebuilt OP is 0.786151 radii, the value printed"
+      ],
+      "links": [
+       {
+        "label": "Crelle's Journal für die reine und angewandte Mathematik 32 (1846)",
+        "url": "https://archive.org/details/sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      },
      "result_scale": 8
@@ -4180,6 +4676,12 @@ const ARCHIVE = {
       "evidence": [
        "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 312: \"Man teile (10 − 1/4) von außen zum Produkte 81/2, der kleinere Abschnitt ist 3,14158 ≈ π\"",
        "redrawn in November 2026; the scan garbles the fractions, read back as 39/4 and 81/2 because they alone give the printed 3.14158 and the coefficients 2, 39, 81 of the equation the scan keeps (2x² + 39x/2 = 81)"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -4204,6 +4706,12 @@ const ARCHIVE = {
       "evidence": [
        "published: E. Lemoine, \"Note sur une construction approchée du développement de la circonférence et remarques diverses\", Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 (NUMDAM, BSMF_1895__23__242_0), § I, construction (a), with its geometrographic count: 2 lines, 3 circles, simplicity 14, against 43 for d'Ocagne's",
        "redrawn in November 2026 from the text; the rebuilt KI is √2 + √3 = 3.1462644 radii"
+      ],
+      "links": [
+       {
+        "label": "Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)",
+        "url": "https://www.numdam.org/item/BSMF_1895__23__242_0/"
+       }
       ]
      },
      "result_scale": 2
@@ -4229,6 +4737,12 @@ const ARCHIVE = {
       "evidence": [
        "published: E. Lemoine, \"Note sur une construction approchée du développement de la circonférence et remarques diverses\", Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 (NUMDAM, BSMF_1895__23__242_0), § I, construction (b): 1 line, 4 circles, simplicity 14",
        "redrawn in November 2026 from the text; the rebuilt EJ is √2 + √3 = 3.1462644 radii"
+      ],
+      "links": [
+       {
+        "label": "Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)",
+        "url": "https://www.numdam.org/item/BSMF_1895__23__242_0/"
+       }
       ]
      },
      "result_scale": 2
@@ -4255,6 +4769,12 @@ const ARCHIVE = {
        "published: E. Lemoine, \"Note sur une construction approchée du développement de la circonférence et remarques diverses\", Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 (NUMDAM, BSMF_1895__23__242_0), § II, with its geometrographic count: 1 line, 5 circles, simplicity 16",
        "redrawn in November 2026 from the text; the rebuilt AG is (√5 − 1)/2 of AB and BH = 0.7861514 of AB, his 0.7861",
        "the same value as the unsigned note of 1846 in Crelle's Journal 32 (rtc-over-99.904), which Lemoine does not mention; the constructions differ"
+      ],
+      "links": [
+       {
+        "label": "Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)",
+        "url": "https://www.numdam.org/item/BSMF_1895__23__242_0/"
+       }
       ]
      },
      "result_scale": 4
@@ -4281,6 +4801,12 @@ const ARCHIVE = {
        "published: G. Peirce, \"A curious approximate construction for π\", Bulletin of the American Mathematical Society (2) 7 (1901), pp. 426-427",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 32.0504.04 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt FC + BG is 3.142770 radii; the review prints 3.142777, but its own formula gives 3.1427700"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 32.0504.04 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A32.0504.04"
+       }
       ]
      },
      "result_scale": 2
@@ -4307,6 +4833,12 @@ const ARCHIVE = {
        "published: G. Bojko, \"Eine neue Näherungskonstruktion für π\", Zeitschrift für Mathematik und Physik 57 (1909), p. 196",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 40.0560.03 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt LM is 3.141393 radii, Bojko's 3.1414"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 40.0560.03 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A40.0560.03"
+       }
       ]
      },
      "result_scale": 2
@@ -4333,6 +4865,16 @@ const ARCHIVE = {
        "published: A. Heiseler, \"Eine einfache Methode zur approximativen Rektifikation der Kreisperipherie\", Commentationes Physico-Mathematicae, Societas Scientiarum Fennica 5, No. 17 (1931), pp. 1-5",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 57.0692.02 and Zbl 0003.16605 (zbMATH Open)",
        "redrawn in November 2026 from the review; the reviews give the formula, not the figure; the file draws it in the most direct way: CT = r/√3 on the tangent at C, the circles about T with radii r and 4r meet the diameter at Q and R, and QR is the difference"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 57.0692.02 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A57.0692.02"
+       },
+       {
+        "label": "Zentralblatt, Zbl 0003.16605 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0003.16605"
+       }
       ]
      },
      "result_scale": 2
@@ -4358,6 +4900,12 @@ const ARCHIVE = {
       "evidence": [
        "published: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, first solution (\"Aufl. 1\"); the first edition is of 1846",
        "redrawn in November 2026 from the scanned text; the rebuilt length is 22/7 diameters, Busch's 3.14287"
+      ],
+      "links": [
+       {
+        "label": "A. L. Busch, Vorschule der darstellenden Geometrie (1868 edition)",
+        "url": "https://archive.org/details/vorschule-der-darstellenden-geometrie"
+       }
       ]
      }
     },
@@ -4365,26 +4913,48 @@ const ARCHIVE = {
      "id": "rtc-under-99.9945",
      "side": "under",
      "marks": "",
-     "holder": "August Ludwig Busch",
-     "method": "Busch's three diameters and a fifth of the square's side",
+     "holder": "Christiaan Huygens",
+     "method": "Huygens' six radii and a fifth of the square's side",
      "circles": 9,
      "lines": 6,
      "acc": "99.9945",
      "precise": "99.994547435922731809106253978542",
-     "date": "1868",
+     "date": "1654",
      "geogebra": "",
      "file": "GeoGebra Files/Under/RTC-99.9945-Busch",
-     "note": "Three diameters and a fifth of the side of the inscribed square: 3 + √2/10 = 3.14142 diameters, the value Vahlen credits to Huygens. Too small by 0.00017 of the diameter (Busch gives 3.14125 and 0.00034).",
+     "note": "Six radii and a fifth of the side of the inscribed square: 3 + √2/10 = 3.14142 diameters. Huygens (1654) gives it as the third solution of his Problem II, short by less than 1/10000 of the diameter for the half circumference; Busch's textbook gives the same construction in 1868. Too small by 0.00017 of the diameter.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, second solution (\"Aufl. 2\"); the first edition is of 1846",
-       "the value 3 + √2/10 = 3.14142 is also given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, among Huygens' values",
+       "published: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem II (§ 11, pp. 105-106), third solution: \"Um daher eine der ganzen Kreisperipherie gleiche Strecke zu erhalten, füge man zu sechs Halbmessern 1/5 jener Seite des eingeschriebenen Quadrates hinzu\"",
+       "the value 3 + √2/10 = 3.14142 is given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, among Huygens' values",
+       "also in: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, second solution (\"Aufl. 2\"); the first edition is of 1846",
        "redrawn in November 2026 from the scanned text; the rebuilt length is 3.1414214 diameters; the 3.14125 printed in the 1868 edition does not match its own description, which gives 3.14142"
+      ],
+      "links": [
+       {
+        "label": "F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)",
+        "url": "https://archive.org/details/archimedeshuygen00rudiuoft"
+       },
+       {
+        "label": "A. L. Busch, Vorschule der darstellenden Geometrie (1868 edition)",
+        "url": "https://archive.org/details/vorschule-der-darstellenden-geometrie"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
-     }
+     },
+     "rediscovered": [
+      {
+       "name": "August Ludwig Busch",
+       "date": "1868",
+       "note": "Vorschule der darstellenden Geometrie, Aufgabe 67, second solution, as three diameters and a fifth of the square's side (edition of 1868; first edition 1846); charted under his name until Huygens' text was found"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.999976",
@@ -4408,9 +4978,113 @@ const ARCHIVE = {
        "published: K. Hagge, Revista matemática Hispano-Americana 3 (1913-14), p. 284, without proof",
        "explained and compared with Mascheroni by F. Cebrián, \"Über die Methode von Hagge für die Rektifikation des Kreises allein mit dem Zirkel\", Euclides (Madrid) 9 (1949), pp. 223-225, as described in the review in the Zentralblatt, Zbl 0033.39002 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt JL is 3.1415919 radii"
+      ],
+      "links": [
+       {
+        "label": "Zentralblatt, Zbl 0033.39002 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A0033.39002"
+       }
       ]
      },
      "result_scale": 2
+    },
+    {
+     "id": "rtc-under-99.984",
+     "side": "under",
+     "marks": "",
+     "holder": "Christiaan Huygens",
+     "method": "Huygens' eight sides of the twelve-gon",
+     "circles": 7,
+     "lines": 2,
+     "acc": "99.984",
+     "precise": "99.984468643670162097530629233452",
+     "date": "1654",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.984-Huygens",
+     "note": "Eight sides of the inscribed regular twelve-gon less the radius: very nearly half the circumference, too short by less than 1/4000 of the diameter, as Huygens shows. 8·2 sin 15° − 1 = 3.14110 radii.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem II (§ 11, pp. 104-105), first solution",
+       "redrawn in November 2026 from the translation; the rebuilt length is 3.1411047 radii, half the circumference being 3.1415927"
+      ],
+      "links": [
+       {
+        "label": "F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)",
+        "url": "https://archive.org/details/archimedeshuygen00rudiuoft"
+       }
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-over-99.975",
+     "side": "over",
+     "marks": "",
+     "holder": "Christiaan Huygens",
+     "method": "Huygens' quadrant from the twelve-gon",
+     "circles": 4,
+     "lines": 4,
+     "acc": "99.975",
+     "precise": "99.975920590659667948662886975188",
+     "date": "1654",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.975-Huygens",
+     "note": "D halves one semicircle over the diameter, E and F divide the other into three; DE and DF cut the diameter at G and H. DG + GH is a little more than the quadrant, by less than 1/5000 of the diameter: DG is two sides of the inscribed twelve-gon and GH a side of the circumscribed one.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem II (§ 11, pp. 104-105), second solution",
+       "redrawn in November 2026 from the translation; the rebuilt DG + GH is 1.5717 radii, against the quadrant 1.5708"
+      ],
+      "links": [
+       {
+        "label": "F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)",
+        "url": "https://archive.org/details/archimedeshuygen00rudiuoft"
+       }
+      ]
+     },
+     "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.998-viete",
+     "side": "over",
+     "marks": "",
+     "holder": "François Viète",
+     "method": "Viète's quadrant",
+     "circles": 4,
+     "lines": 7,
+     "acc": "99.998",
+     "precise": "99.998467881887055614596084601667",
+     "date": "1593",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.998-Viete",
+     "note": "The radius halved at F; BF meets the circle at G, and the foot H of the perpendicular from G gives AH = 3/5 of the radius. BZ = BF − FA, the side of the decagon, is laid from E along EA, to I, cutting the radius in extreme and mean ratio. As AI is to AE, so AH to AK: AK = (3/5)φ² radii, nearly the quadrant. The same number as Kunze's triangle, π ≈ 1.2φ², 258 years earlier.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: F. Viète, Variorum de rebus mathematicis responsorum liber VIII (Tours 1593), chapter XV, in Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646), pp. 392-393 (Internet Archive, bub_gb_25iHrtJpy9oC), Proposition III, with its figure",
+       "also given by J. E. Montucla, Histoire des recherches sur la quadrature du cercle (new edition, Paris 1831), p. 76, note (Internet Archive, histoiredesreche00montuoft)",
+       "redrawn in November 2026 from the page image of the 1646 edition; the rebuilt AK is 1.5708204 radii, against the quadrant 1.5707963"
+      ],
+      "links": [
+       {
+        "label": "Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)",
+        "url": "https://archive.org/details/bub_gb_25iHrtJpy9oC"
+       },
+       {
+        "label": "J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)",
+        "url": "https://archive.org/details/histoiredesreche00montuoft"
+       }
+      ]
+     },
+     "result_scale": 4
     }
    ]
   },
@@ -4560,6 +5234,16 @@ const ARCHIVE = {
        "found by Nicholas of Cusa (15th century); proved by Snellius, Cyclometricus, 1621, and Huygens, De circuli magnitudine inventa, 1654, theorem XIII",
        "the construction with its letters: R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 2; the formula and its history: E. W. Hobson, Squaring the Circle, 1913, pp. 27-30",
        "redrawn in November 2026"
+      ],
+      "links": [
+       {
+        "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
+        "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       },
+       {
+        "label": "R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)",
+        "url": "https://archive.org/details/ERIC_ED058058"
+       }
       ]
      }
     },
@@ -4585,6 +5269,12 @@ const ARCHIVE = {
        "published: J. H. Lambert, Beyträge zum Gebrauche der Mathematik und deren Anwendung II, Berlin 1765, p. 312",
        "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 203 (Internet Archive, konstruktionenun00vahluoft); the scan garbles the fraction, which is the one value (1/5) that gives the formula Vahlen states",
        "redrawn in November 2026; the fifth of BC is laid out the archive's way"
+      ],
+      "links": [
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
       ]
      }
     },
@@ -4705,6 +5395,12 @@ const ARCHIVE = {
       "evidence": [
        "first given by Fontana in 1784, according to E. Beutel, Die Quadratur des Kreises, Leipzig 1913 (Internet Archive, diequadraturdes01beutgoog), pp. 56-58, fig. 12 (\"zuerst von Fontana 1784 angegeben ..., jedoch bis in die neueste Zeit in nur wenig verschiedenen Formen wiederholt aufgefunden\")",
        "redrawn in November 2026 from Beutel's description, with the three bisections his figure shows"
+      ],
+      "links": [
+       {
+        "label": "E. Beutel, Die Quadratur des Kreises (1913)",
+        "url": "https://archive.org/details/diequadraturdes01beutgoog"
+       }
       ]
      }
     },
@@ -4730,6 +5426,12 @@ const ARCHIVE = {
        "published: W. J. M. Rankine, Philosophical Magazine, 4th series, vol. 34 (1867), pp. 284-286 and 381-382; also in his \"Machinery and Millwork\" (1869), pp. 28-29, construction I",
        "as given, with its error series, in F. J. van den Berg, \"Over de benaderde rectificatie van een cirkelboog\", Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 (Internet Archive, nieuwarchiefvoo00amstgoog), and in L. Cremona, Elemente des graphischen Calculs (German by M. Curtze, 1875), p. 101",
        "redrawn in November 2026; the scan garbles the fraction of the chord, which is the half that gives van den Berg's error θ⁵/1080"
+      ],
+      "links": [
+       {
+        "label": "Nieuw Archief voor Wiskunde IV (1878)",
+        "url": "https://archive.org/details/nieuwarchiefvoo00amstgoog"
+       }
       ]
      }
     },
@@ -4755,6 +5457,12 @@ const ARCHIVE = {
        "published: W. J. M. Rankine, Philosophical Magazine, 4th series, vol. 34 (1867), pp. 284-286 and 381-382; also in his \"Machinery and Millwork\" (1869), pp. 28-29, construction II",
        "as given, with its error series (correcting Rankine's last term), in F. J. van den Berg, \"Over de benaderde rectificatie van een cirkelboog\", Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 (Internet Archive, nieuwarchiefvoo00amstgoog)",
        "redrawn in November 2026"
+      ],
+      "links": [
+       {
+        "label": "Nieuw Archief voor Wiskunde IV (1878)",
+        "url": "https://archive.org/details/nieuwarchiefvoo00amstgoog"
+       }
       ]
      },
      "result_path": [
@@ -4784,6 +5492,12 @@ const ARCHIVE = {
       "evidence": [
        "the combination as given with Rankine's two constructions in F. J. van den Berg, \"Over de benaderde rectificatie van een cirkelboog\", Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 (Internet Archive, nieuwarchiefvoo00amstgoog) (\"door 4/5 de van de tweede op te tellen bij 1/5 de van de eerste, eene meer benaderde waarde\"), from Cremona-Curtze (1875) and Rankine (1867)",
        "redrawn in November 2026; the laying of both lengths on the tangent and the fifth are the archive's"
+      ],
+      "links": [
+       {
+        "label": "Nieuw Archief voor Wiskunde IV (1878)",
+        "url": "https://archive.org/details/nieuwarchiefvoo00amstgoog"
+       }
       ]
      }
     },
@@ -4881,6 +5595,12 @@ const ARCHIVE = {
        "published: M. d'Ocagne, \"Sur la rectification approchée des arcs de cercle\", Nouvelles Annales de Mathématiques (4) 7 (1907), pp. 1-6",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 38.0535.03 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt error stays under 0.001 of the radius up to 70°, as the review states"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 38.0535.03 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A38.0535.03"
+       }
       ]
      }
     },
@@ -4906,6 +5626,12 @@ const ARCHIVE = {
        "published: L. Burmester, \"Angenäherte Geradstreckung der Kreisbögen\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, München 1919, pp. 431-437",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 47.0547.04 (zbMATH Open)",
        "redrawn in November 2026 from the review; with its own steps it gives exactly the length of d'Ocagne's two-thirds chord (1907) for every arc"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 47.0547.04 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A47.0547.04"
+       }
       ]
      }
     },
@@ -4931,6 +5657,42 @@ const ARCHIVE = {
        "published: Fr. Strempel, \"Neue, sehr genaue und einfache Methoden der Rektifikation sowie der Teilung von Kreisbogen\", Programm des Gymnasiums und Realgymnasiums Rostock (Nr. 748), 1903, 23 pp.",
        "as described in the review in the Jahrbuch über die Fortschritte der Mathematik, JFM 34.0553.05 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt error at 45° is 6.5 millionths of the radius, under the 7 the review gives"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 34.0553.05 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A34.0553.05"
+       }
+      ]
+     }
+    },
+    {
+     "id": "ar-under-99.922",
+     "side": "under",
+     "marks": "µ",
+     "holder": "Christiaan Huygens",
+     "method": "Huygens' rectification",
+     "circles": 7,
+     "lines": 4,
+     "acc": "99.922",
+     "precise": "99.922170582020817042221417181743",
+     "date": "1654",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-99.922-Huygens",
+     "note": "The arc halved; to two chords of the half arc add a third of their excess over the chord of the whole: (8 sin(θ/4) − 2 sin(θ/2))/3 radii. Always a little short; at the quadrant by less than 1/1200, as Huygens shows. Given for arcs up to the quadrant; charted at 90°, its weakest there.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem III (§ 12, pp. 106-107)",
+       "redrawn in November 2026 from the translation; at 90° the rebuilt length is 1.5695738 radii against the arc 1.5707963"
+      ],
+      "links": [
+       {
+        "label": "F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)",
+        "url": "https://archive.org/details/archimedeshuygen00rudiuoft"
+       }
       ]
      }
     }
@@ -5175,6 +5937,7 @@ const ARCHIVE = {
    "A. L. Crelle"
   ],
   "Christiaan Huygens": [
+   "C. Huygens",
    "Christiaan Huygens"
   ],
   "Émile Lemoine": [
@@ -5264,6 +6027,11 @@ const ARCHIVE = {
   ],
   "K. Hagge": [
    "K. Hagge"
+  ],
+  "François Viète": [
+   "F. Viète",
+   "Franciscus Vieta",
+   "François Viète"
   ]
  }
 };

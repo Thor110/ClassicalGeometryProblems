@@ -34,3 +34,8 @@ In the file: C is where the circle meets the diameter through B, beyond O; D is 
 Charted at 63.95°, its weakest angle up to 90°, the range of Perron's table; it is exact at 90°. On larger angles it weakens: 99.60% at 150°. The figure in Yates is the refined form; Kopf's original of 1919 and Perron's paper of 1933 are not in the archive's sources.
 
 The Jahrbuch über die Fortschritte der Mathematik (JFM 60.1233.02) describes Perron's 1933 paper step for step, and it is this construction; Nehring's largest error, 14.86" at 69.934°, is what the rebuilt figure gives. Yates' date of 1919 is for Kopf's earliest work. Kopf's first published construction (1929) is a different one, with errors up to 8' 12".
+
+**Sources:**
+- [R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)](https://archive.org/details/ERIC_ED058058)
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 60.1233.02 (zbMATH Open)](https://zbmath.org/?q=an%3A60.1233.02)
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)](https://zbmath.org/?q=an%3A62.0698.02)

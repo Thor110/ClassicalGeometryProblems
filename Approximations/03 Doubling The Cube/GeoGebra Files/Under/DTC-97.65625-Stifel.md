@@ -32,3 +32,6 @@ In Plato's figure D and C are where the right angles ADC and DCB fall, so the ci
 
 **Notes / Limitations:**
 Short by 0.8% of the edge (2.3% by volume). Vahlen's improvement, OM = 0.37, gives OD = 1.26 (99.98% over by volume), but 0.37 is a decimal setting, not a construction step, so only Stifel's 3/8 is charted. The scan garbles the fractions; 3/8 and 5/4 are the only reading that fits both each other and the 0.37. The edge 5/4 is also what Gordon's Cube 2 Tesseract v1.0 gives (dtc-under-97.656), by a different construction; the label carries the whole value, 97.65625, to keep the two apart.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

@@ -70,6 +70,9 @@ by itself when due (`.github/workflows/architecture.yml`) and opens a pull reque
 
 **Historical constructions:** drafts in progress are in [Wanted/](Wanted/README.md). One is charted
 under its discoverer's name only after it has been checked against the original source.
+Cite each source in the entry's evidence by its identifier ("Internet Archive, <id>", "JFM 12.0345.06", "Zbl 0012.34501",
+"arXiv:1234.56789", a NUMDAM item) and run `python tools/source_links.py`: it writes the links into the data and the
+notes. `python tools/source_links.py --check` (run by the verify workflow) fails if a historical entry has no link.
 
 **When a source shows a charted construction was found earlier** (the same construction, not just the same
 value: `python tools/crossref.py <file> <problem>` compares the steps), move the credit and keep the name.

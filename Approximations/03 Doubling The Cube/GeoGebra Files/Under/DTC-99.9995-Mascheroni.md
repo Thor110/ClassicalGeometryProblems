@@ -32,3 +32,6 @@ d and c continue round the circle from E a radius at a time; b is where the circ
 
 **Notes / Limitations:**
 The letters' sides are not all stated: M, P and Q are placed where they give Mascheroni's PQ = 1.2599190, the only choice that does (the others give 1.088 or 1.415). Short by 0.0000018 of the edge (0.0004% by volume).
+
+**Sources:**
+- [L. Mascheroni, Géométrie du compas (1798)](https://archive.org/details/gomtrieducompas00masc)

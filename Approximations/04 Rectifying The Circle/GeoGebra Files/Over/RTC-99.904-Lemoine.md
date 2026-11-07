@@ -32,3 +32,6 @@ In the file the steps are his, with his letters: the given circle is on the diam
 
 **Notes / Limitations:**
 Over by 0.096%. It rests on the same remark as the unsigned note in Crelle's Journal of 1846 (rtc-over-99.904), which draws the same length as the perpendicular from the centre to a chord; the two constructions are different, so both are charted, with the same figure.
+
+**Sources:**
+- [Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)](https://www.numdam.org/item/BSMF_1895__23__242_0/)

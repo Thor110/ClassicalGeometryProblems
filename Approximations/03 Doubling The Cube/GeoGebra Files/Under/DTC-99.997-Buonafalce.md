@@ -32,3 +32,6 @@ The quarter circle is about C, from D to B; K is where the diagonal CA meets it,
 
 **Notes / Limitations:**
 Short by 0.0000116 of the edge (0.0028% by volume), with five circles and four lines.
+
+**Sources:**
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)

@@ -32,3 +32,6 @@ In the file Blasendorff's M is O and his E is B; m = 1/3, so EJ is twice the dia
 
 **Notes / Limitations:**
 Under by 2.4% at 90°; Blasendorff gives it for small arcs and a table of errors. A curiosity found while checking it: for every angle α, H is exactly the point Cominotto's construction gives for the angle 2α, so Blasendorff's two-thirds point of α is Cominotto's third of 2α. He also gives a second form, with the Apollonian circle on the chord, and in 1901 a generalisation.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 27.0394.06 (zbMATH Open)](https://zbmath.org/?q=an%3A27.0394.06)

@@ -32,3 +32,7 @@ Every step is a circle; B, the other end of the diameter, is one more step of th
 
 **Notes / Limitations:**
 Gergonne: "fautif de plus d'une demi-unité décimale du troisième ordre; mais il présente cet avantage qu'on l'obtient par le seul usage du compas." Charted as four times AG against the circumference (result_scale 4). The scan's "B" for the centre of the last arc is read as E, the only point that gives Gergonne's value.
+
+**Sources:**
+- [Gergonne's Annales de mathématiques VIII (1817-18)](https://archive.org/details/annalesdemathma06unkngoog)
+- [L. Mascheroni, Géométrie du compas (1798)](https://archive.org/details/gomtrieducompas00masc)

@@ -32,3 +32,6 @@ In the file k is a quarter of the radius OB, so OA′ = 4k is the radius (A′ o
 
 **Notes / Limitations:**
 Charted at 90°, the end of the range the review states; at 150° it is still 99.993%. The choice k = r/4 is the file's; k is arbitrary.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 62.1417.04 (zbMATH Open)](https://zbmath.org/?q=an%3A62.1417.04)

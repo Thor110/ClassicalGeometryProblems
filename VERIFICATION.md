@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (156)
+### Not verified by a person yet (161)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -186,6 +186,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, undersized 99.9996% · Lampe's 44 : 23 triangle (stc-under-99.9996): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9996-Lampe.ggb`
 - [ ] Squaring The Circle, oversized 99.99986% · Gregori's quadrature (stc-over-99.99986): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99986-Gregori.ggb`
 - [ ] Squaring The Circle, oversized 99.99999998% · Storchi's quadrature (stc-over-99.99999998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99999998-Storchi.ggb`
+- [ ] Squaring The Circle, oversized 99.998% · Viète's square (stc-over-99.998-viete): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.998-Viete.ggb`, square q
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
@@ -271,8 +272,11 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.993% · Bojko's construction (rtc-under-99.993): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.993-Bojko.ggb`
 - [ ] Rectifying The Circle, oversized 99.999% · Heiseler's difference of two legs (rtc-over-99.999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999-Heiseler.ggb`
 - [ ] Rectifying The Circle, oversized 99.959% · Busch's three diameters and a seventh (rtc-over-99.959): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.959-Busch.ggb`
-- [ ] Rectifying The Circle, undersized 99.9945% · Busch's three diameters and a fifth of the square's side (rtc-under-99.9945): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9945-Busch.ggb`
+- [ ] Rectifying The Circle, undersized 99.9945% · Huygens' six radii and a fifth of the square's side (rtc-under-99.9945): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9945-Busch.ggb`
 - [ ] Rectifying The Circle, undersized 99.999976% · Hagge's rectification by the compass (rtc-under-99.999976): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999976-Hagge.ggb`
+- [ ] Rectifying The Circle, undersized 99.984% · Huygens' eight sides of the twelve-gon (rtc-under-99.984): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.984-Huygens.ggb`
+- [ ] Rectifying The Circle, oversized 99.975% · Huygens' quadrant from the twelve-gon (rtc-over-99.975): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.975-Huygens.ggb`
+- [ ] Rectifying The Circle, oversized 99.998% · Viète's quadrant (rtc-over-99.998-viete): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.998-Viete.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
@@ -293,6 +297,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Arc Rectification, oversized 99.592% · d'Ocagne's two-thirds chord (ar-over-99.592): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.592-dOcagne.ggb`
 - [ ] Arc Rectification, oversized 99.592% · Burmester's chord (ar-over-99.592-burmester): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-99.592-Burmester.ggb`
 - [ ] Arc Rectification, undersized 99.986% · Strempel's first rectification (ar-under-99.986): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.986-Strempel.ggb`
+- [ ] Arc Rectification, undersized 99.922% · Huygens' rectification (ar-under-99.922): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Under/AR-99.922-Huygens.ggb`
 
 ### Flagged by the AI check (1)
 
@@ -300,7 +305,7 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Identical or near-identical entries (11)
+### Identical or near-identical entries (13)
 
 From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
 
@@ -311,7 +316,9 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] same result: rtc-over-99.851-lemoine-a and rtc-over-99.851-lemoine-b (score 0.57)
 - [ ] same result: rtc-over-99.851 and rtc-over-99.851-lemoine-a (score 0.20)
 - [ ] same result: rtc-over-99.851 and rtc-over-99.851-lemoine-b (score 0.20)
+- [ ] same result: stc-over-99.998-viete and stc-over-99.998 (score 0.15)
 - [ ] same result: rtc-over-99.904 and rtc-over-99.904-lemoine (score 0.13)
+- [ ] same result: rtc-over-99.998-viete and rtc-over-99.998 (score 0.08)
 - [ ] same result: dtc-under-97.65625 and dtc-under-97.656 (score 0.08)
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)

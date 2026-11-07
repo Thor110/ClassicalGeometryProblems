@@ -32,3 +32,6 @@ Then AE/AD = AC/AO, so AE = (13/5) · (√146 / 5) = (13/25) √146 of the radiu
 
 **Notes / Limitations:**
 The scans of Hobson's book garble BC; 2/5 of the radius is the only value that gives his AE = 6.2831839. Hobson adds that the rectangle with sides AE and half the radius has very nearly the area of the circle, so the same construction squares the circle as a rectangle. Hobson gives no first name for Specht.
+
+**Sources:**
+- [E. W. Hobson, Squaring the Circle: A History of the Problem (1913)](https://archive.org/details/squaringcirclehi00hobsuoft)

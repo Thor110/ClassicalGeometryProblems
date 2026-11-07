@@ -32,3 +32,6 @@ In the file the radius BC is the edge, and A the other end of the diameter. F is
 
 **Notes / Limitations:**
 Over by 0.044% of the edge (0.13% by volume). Huygens' remark, EF = CD, describes the exact point, which is a neusis and not a ruler and compass step, so only the construction with the round angles is charted. The date is that of the work's author; it was printed in 1724.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

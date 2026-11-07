@@ -30,3 +30,6 @@ Let AB be a diameter of a circle with centre O. Bisect the arc ACB at C and tris
 
 **Notes / Limitations:**
 Gives π ≈ (9² + 19²/22)^¼ = 3.14159265258. The GeoGebra file was written by Claude (AI-assisted) from Ramanujan's description.
+
+**Sources:**
+- [Collected Papers of Srinivasa Ramanujan (1927)](https://archive.org/details/pli.kerala.rare.28155)

@@ -32,3 +32,6 @@ In the file: a fifth of the radius, OX, by five radii up the perpendicular at O 
 
 **Notes / Limitations:**
 Kunze's perimeter is 6/5 · (1 + φ) diameters, where φ is the golden ratio: the same number that Hobson's squaring of 1913 gives as an area and Dixon found again in 1991, so the two entries share their precise readout. Kunze gives the triangle; how its sides are drawn and laid end to end is the archive's.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

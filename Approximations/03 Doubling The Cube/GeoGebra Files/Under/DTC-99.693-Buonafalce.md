@@ -32,3 +32,6 @@ In the file: the square on AB; the diagonal BD; six steps of the side along DC, 
 
 **Notes / Limitations:**
 Buonafalce gave four solutions in three papers (1876-78); this first one is the simplest. Amaldi's text also gives his third, which is far more accurate (charted separately).
+
+**Sources:**
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)

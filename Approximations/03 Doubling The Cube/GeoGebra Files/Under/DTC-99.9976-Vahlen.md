@@ -32,3 +32,6 @@ In the file AB is the edge. AP₈ = 8 by doubling (circles about B, P₂ and P�
 
 **Notes / Limitations:**
 Short by 0.0008% of the edge (0.0023% by volume). How to lay off the product is left to the reader in Vahlen; the file uses the tangent and secant from T. The scan garbles the fraction; 35/3 is the only reading that gives Vahlen's value.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

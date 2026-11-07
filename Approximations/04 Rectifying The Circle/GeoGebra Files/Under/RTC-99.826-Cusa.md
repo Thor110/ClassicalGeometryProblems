@@ -32,3 +32,6 @@ In the file: the side of the inscribed square is AQ, Q a quarter turn from A; th
 
 **Notes / Limitations:**
 Beutel says Cusa gave a whole series of constructions, none as good as his value 3.1423; this one gives 3.1361, short by 0.17%. The laying out of the perimeter on one line is the archive's.
+
+**Sources:**
+- [E. Beutel, Die Quadratur des Kreises (1913)](https://archive.org/details/diequadraturdes01beutgoog)

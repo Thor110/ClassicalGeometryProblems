@@ -32,3 +32,7 @@ In the file: the circle about E through O gives P; the tangent at B; PA meets it
 
 **Notes / Limitations:**
 Very good for small angles (0.1" at 10°) and falling off with size: charted at 90°, its weakest angle up to 90°, the range Yates tabulates. Past 90° it drops fast (82% at 120°). Yates' printed error table does not match his own construction (his 30° entry is 6'20"; the construction gives 15"); the figures here are computed from the construction.
+
+**Sources:**
+- [R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)](https://archive.org/details/ERIC_ED058058)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

@@ -32,3 +32,7 @@ In the file: the 30° line from O meets the tangent at C at T, so CT = r/√3. T
 
 **Notes / Limitations:**
 Over by 0.0008%. Heiseler's own figure is not in the reviews; the file draws his formula directly, with the leg √3/3 taken from the tangent at C.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 57.0692.02 (zbMATH Open)](https://zbmath.org/?q=an%3A57.0692.02)
+- [Zentralblatt, Zbl 0003.16605 (zbMATH Open)](https://zbmath.org/?q=an%3A0003.16605)

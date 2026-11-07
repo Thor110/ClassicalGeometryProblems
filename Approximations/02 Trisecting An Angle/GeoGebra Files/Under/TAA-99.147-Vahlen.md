@@ -32,3 +32,6 @@ In the file: Cusa's trisection (see TAA-95.527-Cusa-Snellius) with P moved to P'
 
 **Notes / Limitations:**
 The scan garbles the fraction; it is the one that follows from Vahlen's own formula, and the rebuilt figure confirms that the exact point is at 2 cos(x/3) from O, as he says. Vahlen gives no construction for the 2/9; the archive's uses three radii and two parallels. A quarter of the versine does better still (TAA-99.660-Claude).
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

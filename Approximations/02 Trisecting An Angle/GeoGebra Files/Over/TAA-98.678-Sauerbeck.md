@@ -32,3 +32,6 @@ In the file the letters are Sauerbeck's; OG meets the circle at S and the rest, 
 
 **Notes / Limitations:**
 An error of up to about 8 minutes of arc at every size of angle, exact at 90° and 180°: good for large angles, poor for small ones. Charted at 30°, its weakest from 30° to 150°. Perron gave the same largest error, 8'12", for Kopf's first construction (1929); whether the two are the same has not been settled.
+
+**Sources:**
+- [Zentralblatt, Zbl 0043.35403 (zbMATH Open)](https://zbmath.org/?q=an%3A0043.35403)

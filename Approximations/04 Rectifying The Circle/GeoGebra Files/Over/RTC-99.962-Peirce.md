@@ -32,3 +32,6 @@ In the file Peirce's B is Bt. BG is laid on beyond F along CF, to X, so CX = FC 
 
 **Notes / Limitations:**
 Over by 0.037%. The review's 3.142777 is a misprint or slip: its own formula, and the figure, give 3.1427700. Lemoine (1902) worked out its geometrographic count.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 32.0504.04 (zbMATH Open)](https://zbmath.org/?q=an%3A32.0504.04)

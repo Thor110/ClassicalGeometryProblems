@@ -36,3 +36,6 @@ Cusa's trisection (see TAA-95.527-Cusa-Snellius), with Snellius' point moved a q
 
 **Notes / Limitations:**
 These trisections are best on small angles, so halving first keeps them there: at 118.5°, its weakest angle from 30° to 150°, it works on 59.2°. It is a general method, charted, like Dürer's and the search finds, at its weakest angle from 30° to 150°. Up to 180° it holds 99.66%.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

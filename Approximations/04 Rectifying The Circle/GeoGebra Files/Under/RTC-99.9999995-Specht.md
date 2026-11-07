@@ -32,3 +32,7 @@ In the file the point r is labelled rr and c is c₁. The thirds of mp and qB ar
 
 **Notes / Limitations:**
 Specht's "second" construction, after the first in the same volume (RTC-99.99997-Specht). His 3² + 6² + 13² + 15² = 439 is how he writes the radicand. The thirds are the archive's way of drawing them.
+
+**Sources:**
+- [Crelle's Journal für die reine und angewandte Mathematik 3 (1828)](https://archive.org/details/journalfrdierei14crelgoog)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

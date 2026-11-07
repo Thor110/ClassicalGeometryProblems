@@ -32,3 +32,7 @@ In the file: AB is a diameter, and F is a radius up the tangent at B, so AF = ‚à
 
 **Notes / Limitations:**
 Over by 0.096%, the 1343rd part the note gives. The note also remarks that BP is twice the side of the regular inscribed decagon. Unsigned in the journal; Vahlen credits it to Crelle.
+
+**Sources:**
+- [Crelle's Journal f√ºr die reine und angewandte Mathematik 32 (1846)](https://archive.org/details/sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

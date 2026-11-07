@@ -32,3 +32,7 @@ The file keeps Cominotto's letters. BC is trisected at D and E (three radii up t
 
 **Notes / Limitations:**
 A general method for any angle up to 180°; Conti checks it at 180°: his formula for T, height 2√2(1 + √2)/(5 + 2√2) = 0.872260 of the radius, is exactly what the rebuilt figure gives, which puts the chord CT at 1.0109 radii (43' over a third). His rounded arithmetic, x = 0.485 for 0.489, makes it look closer than it is; it is a little over a hundredth out at 180°, and 25' at 150°. Cominotto also gives a simpler, older construction (the bisector carried a radius beyond the arc), which he and Conti set aside as too rough. Halved twice it holds 99.950% (see the Claude variant).
+
+**Sources:**
+- [F. Enriques (ed.), Questioni riguardanti la geometria elementare (1900)](https://archive.org/details/questioniriguard00enri)
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)

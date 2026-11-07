@@ -32,3 +32,6 @@ In the file AB is the edge and ABCD the square on it. DF = 5/9 is laid off below
 
 **Notes / Limitations:**
 Over by 0.0005% of the edge (0.0016% by volume). 349/277 is a convergent of the continued fraction of ∛2; Vahlen's point is that it can be written as a ratio of two sums of squares, and so drawn with two right triangles and two parallels.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

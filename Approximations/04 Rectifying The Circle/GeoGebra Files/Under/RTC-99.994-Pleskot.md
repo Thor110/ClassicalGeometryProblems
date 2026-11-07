@@ -32,3 +32,7 @@ In the file: ab = √3 radii is carried twice along the diameter from s, away fr
 
 **Notes / Limitations:**
 Short by about one part in 19,000; Pleskot wrote it as a better answer to d'Ocagne's √2 + √3 of the same year.
+
+**Sources:**
+- [Journal de mathématiques élémentaires (1895)](https://archive.org/details/journaldemathma34unkngoog)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

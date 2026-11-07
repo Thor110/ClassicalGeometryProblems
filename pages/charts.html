@@ -520,6 +520,7 @@ function renderDetail() {
     <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
     <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
     ${(e.rediscovered || []).length ? `<div class="rec"><div class="rec-title">Also found by</div><ul>${alsoFound(e)}</ul></div>` : ''}
+    ${(e.origin && e.origin.links || []).length ? `<div class="rec"><div class="rec-title">Sources</div><ul>${e.origin.links.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a></li>`).join('')}</ul></div>` : ''}
     <div class="rec"><div class="rec-title">Related entries</div><ul>${related(e)}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
     <div class="controls" style="margin-top:12px;">

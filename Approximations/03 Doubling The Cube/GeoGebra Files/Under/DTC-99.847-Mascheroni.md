@@ -32,3 +32,7 @@ Every step is a circle: C, D and E step round the circle a radius at a time; a i
 
 **Notes / Limitations:**
 Short by 0.00064 of the edge (0.15% by volume). A construction of the compass alone, from Mascheroni's book showing that every straightedge and compass construction can be done without the straightedge.
+
+**Sources:**
+- [L. Mascheroni, Géométrie du compas (1798)](https://archive.org/details/gomtrieducompas00masc)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

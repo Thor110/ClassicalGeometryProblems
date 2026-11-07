@@ -32,3 +32,7 @@ In the file: OB bisects the right angle between OA' and the perpendicular OU; th
 
 **Notes / Limitations:**
 Long by 0.15%. The number is Bioche's; the direct construction is d'Ocagne's. A year later Pleskot answered with a better one (RTC-99.994-Pleskot).
+
+**Sources:**
+- [Journal de mathématiques élémentaires (1895)](https://archive.org/details/journaldemathma34unkngoog)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

@@ -38,3 +38,6 @@ Steps 1 to 4 are de Gelder's, as Hobson gives them. De Gelder needed only the le
 
 **Notes / Limitations:**
 355/113 is the value known in China since the fifth century as Milü (Zu Chongzhi). Ramanujan's 1913 squaring of the circle on the squaring chart is built on the same value.
+
+**Sources:**
+- [E. W. Hobson, Squaring the Circle: A History of the Problem (1913)](https://archive.org/details/squaringcirclehi00hobsuoft)

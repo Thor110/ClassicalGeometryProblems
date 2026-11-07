@@ -32,3 +32,6 @@ In the file AB is the edge. Five edges up the perpendicular at A and a parallel 
 
 **Notes / Limitations:**
 Over by 0.006% in the edge. 1.26 is a decimal approximation; the construction is the review's.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 41.0569.01 (zbMATH Open)](https://zbmath.org/?q=an%3A41.0569.01)

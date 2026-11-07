@@ -32,3 +32,8 @@ In the file A is Conti's A' and B his B'. The side of the star decagon in a circ
 
 **Notes / Limitations:**
 Boccali called his way "vere nuove scoperte geometriche", and preferred it to more accurate but "noiose e complicate costruzioni". Conti could not follow Boccali's own derivation and gives this one instead, which reaches the same value; the file follows Conti. Over by 0.009% of the edge (0.027% by volume).
+
+**Sources:**
+- [F. Enriques (ed.), Questioni riguardanti la geometria elementare (1900)](https://archive.org/details/questioniriguard00enri)
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

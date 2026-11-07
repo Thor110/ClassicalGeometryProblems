@@ -32,3 +32,6 @@ In the file the steps are his, with his letters. KD is the side of the inscribed
 
 **Notes / Limitations:**
 Over by 0.149%. The value is Bioche's (1893), and was set as an exercise earlier in Amiot's Géométrie, revised by Vintéjoux, as Lemoine reports; the construction is Lemoine's. It ties d'Ocagne's construction exactly, so the two share the chart figure.
+
+**Sources:**
+- [Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)](https://www.numdam.org/item/BSMF_1895__23__242_0/)

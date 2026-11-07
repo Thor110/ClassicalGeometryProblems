@@ -32,3 +32,6 @@ For r = 1/3, CD = 7/3 AC and R = 2 AC = AB. In the file C is the middle of the c
 
 **Notes / Limitations:**
 Charted at 90°. Their second form adds a correction in AC³ and is closer still; the review gives it, but it is longer, and only the first is drawn here.
+
+**Sources:**
+- [Zentralblatt, Zbl 0032.29801 (zbMATH Open)](https://zbmath.org/?q=an%3A0032.29801)

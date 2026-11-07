@@ -36,3 +36,6 @@ Cusa's trisection (see TAA-95.527-Cusa-Snellius), with Vahlen's 2/9 of the versi
 
 **Notes / Limitations:**
 Vahlen's own trisection is meant for angles up to 90°; halving first carries it to 150° and beyond. It is a general method, charted at its weakest angle from 30° to 150°. The quarter-versine version (taa-over-99.971) is better and cheaper.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

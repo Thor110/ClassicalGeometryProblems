@@ -32,3 +32,6 @@ In the file the diameter is the unit. From A, one end of the diameter, AB = 39/4
 
 **Notes / Limitations:**
 Short by 0.00026%. Vahlen leaves the drawing of the product to the reader; the file uses the tangent AT. The scan garbles the fractions; 39/4 and 81/2 are the only reading that gives the printed value.
+
+**Sources:**
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

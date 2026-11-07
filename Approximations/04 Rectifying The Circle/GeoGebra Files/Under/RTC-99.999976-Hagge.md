@@ -32,3 +32,6 @@ In the file the letters are Hagge's; 2r is taken as CB and C′A. F is the inter
 
 **Notes / Limitations:**
 Under by 0.0000024%. Hagge's construction uses the compass alone; the file's one line, DE, only replaces the two compass bisections of arcs and does not change the result.
+
+**Sources:**
+- [Zentralblatt, Zbl 0033.39002 (zbMATH Open)](https://zbmath.org/?q=an%3A0033.39002)

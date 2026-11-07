@@ -32,3 +32,6 @@ In the file the diameter runs from A to C. Three diameters are laid along it fro
 
 **Notes / Limitations:**
 Over by 0.040%. The value is Archimedes' upper bound, 22/7; the construction is the textbook's. The date is that of the edition seen; the book first appeared in 1846.
+
+**Sources:**
+- [A. L. Busch, Vorschule der darstellenden Geometrie (1868 edition)](https://archive.org/details/vorschule-der-darstellenden-geometrie)

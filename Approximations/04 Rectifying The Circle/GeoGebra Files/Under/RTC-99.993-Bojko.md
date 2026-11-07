@@ -32,3 +32,6 @@ In the file the diameter runs from A (Bojko's D) to C. The point C₃ at 30° fr
 
 **Notes / Limitations:**
 Short by 0.0063%.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 40.0560.03 (zbMATH Open)](https://zbmath.org/?q=an%3A40.0560.03)

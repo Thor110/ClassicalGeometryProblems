@@ -32,3 +32,6 @@ In the file the radius-2 circle goes through G, a radius beyond B; C is where th
 
 **Notes / Limitations:**
 Exact at 90°, with its largest error, 2'20", near 70° (Yates); with the bisected remainder the weakest angle up to 90° is 65.57°, where the file is drawn. It is meant for angles up to 90°: past that the error grows (98.7% at 120°, 93.5% at 150°); it holds 95% up to about 144°. Yates gives no first name.
+
+**Sources:**
+- [R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)](https://archive.org/details/ERIC_ED058058)

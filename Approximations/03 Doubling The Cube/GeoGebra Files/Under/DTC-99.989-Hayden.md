@@ -32,3 +32,6 @@ With AB = 3: CB = 1.5, BD = 0.75, BF = 1.25 (so F is the point of trisection nea
 
 **Notes / Limitations:**
 Hayden does not say how CD is trisected; the stepping used here is the archive's. Accuracy is measured as the doubled cube's volume, (AL/AB)³ = 1.999783 against 2.
+
+**Sources:**
+- [W. Hayden, Proceedings of the Royal Society 20 (1871-72)](https://archive.org/details/paper-doi-10_1098_rspl_1871_0099)

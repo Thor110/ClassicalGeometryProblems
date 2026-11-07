@@ -32,3 +32,7 @@ In the file: the circle about A through B gives C and H on the line; two more ra
 
 **Notes / Limitations:**
 KL = 3 + DE + 7/8 + 3/10 radii, with DE = (2/3)√10: (501 + 80√10)/120 = 6.2831851, against 2π = 6.2831853. The scan garbles both fractions; only their sum matters, and it must be 47/40 to give Gergonne's own value, which 7/8 and 3/10 do.
+
+**Sources:**
+- [Gergonne's Annales de mathématiques VIII (1817-18)](https://archive.org/details/annalesdemathma06unkngoog)
+- [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

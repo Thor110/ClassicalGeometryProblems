@@ -32,3 +32,6 @@ In the file the corner is O, Monti's arm BC is OB, and his A is A: D is the midd
 
 **Notes / Limitations:**
 A general method for any angle up to 180°. The scanned error table is garbled, but its stated bound (under 7 minutes) holds. Monti's fractions (a half and a sixth) are the best of all small fractions (tools/variants.py). Halved three times it holds 99.990% (taa-under-99.990).
+
+**Sources:**
+- [U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)](https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454)

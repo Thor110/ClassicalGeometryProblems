@@ -32,3 +32,6 @@ In the file Visser's OA is the arm OB, and his OB is OA. The angle at D is carri
 
 **Notes / Limitations:**
 Under by 0.42% at 90°.
+
+**Sources:**
+- [Zentralblatt, Zbl 0037.37802 (zbMATH Open)](https://zbmath.org/?q=an%3A0037.37802)

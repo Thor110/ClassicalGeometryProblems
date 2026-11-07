@@ -32,3 +32,6 @@ In the file the letters are Baratto's. C is found by bisecting the angle; OD mee
 
 **Notes / Limitations:**
 Charted at 90°, the end of the range Schiaparelli tabulates; at 150° it is 96.3%. For every angle it gives exactly the trisecting line of Schoeler's construction (taa-over-98.796, also given by d'Ocagne), which reaches it another way, so the two share the chart figure. J. Kornbrekke gave the same steps in 1919 as the case n = 2 of a rule for any division (listed under Also found by).
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 02.0362.01 (zbMATH Open)](https://zbmath.org/?q=an%3A02.0362.01)

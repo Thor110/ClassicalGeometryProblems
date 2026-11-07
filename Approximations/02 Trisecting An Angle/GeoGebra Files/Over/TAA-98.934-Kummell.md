@@ -32,3 +32,6 @@ In the file Kummell's C is O, his D is A, and his A and A' are A' and A₂. E is
 
 **Notes / Limitations:**
 It works only up to 90° (beyond, the line no longer meets the right half of the semicircle) and is exact at 90°. Charted at its weakest angle up to 90°.
+
+**Sources:**
+- [Jahrbuch über die Fortschritte der Mathematik, JFM 10.0363.04 (zbMATH Open)](https://zbmath.org/?q=an%3A10.0363.04)
