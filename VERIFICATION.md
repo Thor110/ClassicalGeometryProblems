@@ -131,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (87)
+### Not verified by a person yet (90)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -185,6 +185,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 95.527% · Cusa's trisection (taa-under-95.527): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-95.527-Cusa-Snellius.ggb`
 - [ ] Trisecting An Angle, undersized 99.147% · Vahlen's trisection (taa-under-99.147): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.147-Vahlen.ggb`
 - [ ] Trisecting An Angle, undersized 99.660% · Cusa's trisection, a quarter versine (taa-under-99.660): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.660-Claude.ggb`
+- [ ] Trisecting An Angle, oversized 99.971% · Cusa's trisection, a quarter versine, on half the angle (taa-over-99.971): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.971-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.742% · Vahlen's trisection, on half the angle (taa-under-99.742): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.742-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.995% · Dürer's trisection, on half the angle (taa-under-99.995): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.995-Claude.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -237,10 +240,11 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)
 
-### µ marks to review (2)
+### µ marks to review (3)
 
 The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry's micro_note.
 
+- [ ] Trisecting An Angle, undersized 99.995% · Dürer's trisection, on half the angle (taa-under-99.995): the test finds its smallest step at 4.1% of the given size; the chart does not have µ
 - [ ] Rectifying The Circle, oversized 99.607% (rtc-over-99.607): the test finds its smallest step at 6.3% of the given size; the chart has µ
 - [ ] Rectifying The Circle, oversized 99.873% (rtc-over-99.873): the test finds its smallest step at 50.0% of the given size; the chart has µ
 

@@ -64,3 +64,8 @@ under, at 90°), and Hobson's construction with OD = 1/3, OE = 11/8 and OF = 6/5
 The search also shows how far the historical authors' own choices hold up: for most of them no other small fraction
 does better (Hayden, Kunze, Willich, Buonafalce's first, the Rhind papyrus, Kochański, Specht, de Gelder, Karajordanoff,
 d'Ocagne and Dürer, with only halving fractions finer than a sixteenth beating some of them, at micro scale).
+
+Worked on half the angle and then doubled, one line and one circle more, the historical trisections hold from 30° to
+150° about as well as they did up to 75°. Three are charted that way: Dürer's from one side (99.995% from 30° to 150°,
+with fewer steps than his own), Vahlen's (99.742%) and the quarter-versine one (99.971%). Ramanujan's 1913 and 1914
+constructions are at their best already, as is d'Ocagne's point: its exact place drifts only a fiftieth of the versine.

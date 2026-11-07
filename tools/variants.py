@@ -186,6 +186,65 @@ def cusa_trisection(shift):
     return worst_bisected(third)
 
 
+def ramanujan1914(t, a, b):
+    # A, O, B on the diameter, C the middle of the arc; AT = t; CM = a and MN = b along CB; AP = AM on AN; PQ parallel
+    # to MN; TR parallel to OQ: AR = t AM²/AN; AS = AR on the perpendicular at A. √OS against a sixth of the circumference.
+    A, B, C = (-1, 0), (1, 0), (0, 1)
+    L = math.dist(B, C); u = ((B[0]-C[0])/L, (B[1]-C[1])/L)
+    M = (C[0]+a*u[0], C[1]+a*u[1]); N = (C[0]+(a+b)*u[0], C[1]+(a+b)*u[1])
+    AR = t * math.dist(A, M)**2 / math.dist(A, N)
+    return acc(math.sqrt(math.sqrt(1 + AR*AR)), PI/3)
+
+
+def _meet(P, d, Q, e):
+    det = d[0]*(-e[1]) - d[1]*(-e[0]); s = ((Q[0]-P[0])*(-e[1]) - (Q[1]-P[1])*(-e[0]))/det; return (P[0]+s*d[0], P[1]+s*d[1])
+
+
+def ramanujan1913(h, t):
+    # PR a diameter, O the centre; OH = h towards P; OT = t towards R; TQ perpendicular; the chord RS = TQ; OM and TN
+    # parallel to RS meet PS; the chord PK = PM; the tangent PL = MN; RC = RH on RK; CD parallel to KL meets RL at D.
+    if not 0 < t < 1: return None
+    O, P, R = (0, 0), (-1, 0), (1, 0)
+    TQ = math.sqrt(1 - t*t); a = 2*math.asin(TQ/2); S = (math.cos(a), math.sin(a))
+    d = (S[0]-R[0], S[1]-R[1]); e = (S[0]-P[0], S[1]-P[1])
+    M = _meet(O, d, P, e); N = _meet((t, 0), d, P, e)
+    PM, MN = math.dist(P, M), math.dist(M, N)
+    if PM >= 2: return None
+    k = math.pi - 2*math.asin(PM/2); K = (math.cos(k), math.sin(k)); L = (-1, MN)
+    RH = 1 + h; u = ((K[0]-R[0])/math.dist(R, K), (K[1]-R[1])/math.dist(R, K)); Cp = (R[0]+RH*u[0], R[1]+RH*u[1])
+    D = _meet(Cp, (L[0]-K[0], L[1]-K[1]), R, (L[0]-R[0], L[1]-R[1]))
+    return acc(math.dist(R, D)**2, PI)
+
+
+def worst_halved(shift, lo=30, hi=150):
+    """Cusa's trisection with the shifted point, on half the angle and doubled; the rest bisected."""
+    def third(x):
+        P = -(2 - shift * (1 - math.cos(x))); BD = math.sin(x) * (1 - P) / (math.cos(x) - P)
+        dx, dy = 1 - P, BD / 3; a = dx*dx + dy*dy; b = 2 * P * dx; c = P*P - 1
+        t = (-b + math.sqrt(b*b - 4*a*c)) / (2*a); return math.atan2(t * dy, P + t * dx)
+    worst = 101
+    for i in range(lo * 4, hi * 4 + 1):
+        p = math.radians(i / 4); t = 2 * third(p / 2)
+        parts = (t, (p - t) / 2, (p - t) / 2); w = max(parts, key=lambda x: abs(x - p / 3)); worst = min(worst, acc(w, p / 3))
+    return worst
+
+
+def _cusa(x, shift):
+    P = -(2 - shift * (1 - math.cos(x))); BD = math.sin(x) * (1 - P) / (math.cos(x) - P)
+    dx, dy = 1 - P, BD / 3; a = dx*dx + dy*dy; b = 2 * P * dx; c = P*P - 1
+    t = (-b + math.sqrt(b*b - 4*a*c)) / (2*a); return math.atan2(t * dy, P + t * dx)
+
+
+def worst_over(third, lo=30, hi=150):
+    """The worst of a one-line trisection (the rest bisected) over lo..hi degrees, every quarter degree."""
+    worst = 101
+    for i in range(lo * 4, hi * 4 + 1):
+        p = math.radians(i / 4); t = third(p)
+        if t is None: return float('nan')
+        parts = (t, (p - t) / 2, (p - t) / 2); w = max(parts, key=lambda x: abs(x - p / 3)); worst = min(worst, acc(w, p / 3))
+    return worst
+
+
 SKELETONS = [
     dict(id='hayden-dtc', name="Hayden's duplication (1871)", entry='dtc-under-99.989', problem='dtc',
          slots=[('f', Fr(1, 3), (Fr(0), Fr(1)))], fn=hayden_dtc,
@@ -235,6 +294,15 @@ SKELETONS = [
     dict(id='cusa-taa', name="Cusa's trisection, and Vahlen's (1911)", entry='taa-under-95.527', problem='taa',
          slots=[('shift', Fr(0), (Fr(0), Fr(1, 2)))], fn=lambda k: cusa_trisection(float(k)),
          about="How many versines Snellius' point is moved in towards O (Cusa: none; Vahlen: 2/9). Scored at its worst up to 90°, the rest bisected, as charted."),
+    dict(id='ramanujan1913-stc', name="Ramanujan's 355/113 (1913)", entry='stc-over-99.999', problem='stc',
+         slots=[('OH', Fr(1, 2), (Fr(1, 8), Fr(1))), ('OT', Fr(2, 3), (Fr(1, 8), Fr(15, 16)))], fn=ramanujan1913,
+         about='Where H and T sit on the diameter (Ramanujan: OH = 1/2 towards P, OT = 2/3 towards R).'),
+    dict(id='ramanujan1914-rtc', name="Ramanujan's 1914 construction", entry='rtc-under-99.99999', problem='rtc',
+         slots=[('AT', Fr(1, 3), (Fr(1, 8), Fr(2, 3))), ('CM', Fr(1, 3), (Fr(1, 8), Fr(1))), ('MN', Fr(1, 3), (Fr(1, 8), Fr(1)))], fn=ramanujan1914,
+         about='AT, and the two steps CM and MN along CB, as fractions of the radius (Ramanujan: a third each).'),
+    dict(id='cusa-half-taa', name="Cusa's trisection on half the angle", entry='taa-over-99.971', problem='taa',
+         slots=[('shift', Fr(1, 4), (Fr(0), Fr(1, 2)))], fn=lambda k: worst_halved(float(k)),
+         about="Cusa's trisection worked on half the angle and doubled, with Snellius' point moved in by `shift` versines (Cusa: none; Vahlen: 2/9; the charted variant: 1/4). Scored at its worst from 30° to 150°, as charted."),
     dict(id='hayden-stc', name="Hayden's quadrature (1871)", entry='stc-over-99.999998', problem='stc',
          slots=[('C', Fr(1, 2), (Fr(1, 8), Fr(1))), ('EG', Fr(1, 2), (Fr(1, 8), Fr(2))), ('DI', Fr(1, 2), (Fr(1, 8), Fr(2)))], fn=hayden_stc,
          about='Where C sits along the top half side, and EG and DI as fractions of DE (Hayden: a half each).'),
@@ -285,6 +353,15 @@ def report(results, max_q):
          'than a sixteenth: a step under 5% of the given size, micro scale under the counting rules, as the charts mark them.', '',
          'A variant is charted only once it is drawn in GeoGebra and added like any other entry, credited to the',
          "original's author and to whoever found the variant (Lambert's with a quarter versine is: `ar-over-99.831`).", '']
+    L += ['## Halving the angle first', '',
+          'The historical trisections are best on small angles. Worked on half the angle and doubled (one more line and one',
+          'more circle), they hold from 30° to 150° about as well as they did up to 75°. At their weakest from 30° to 150°:', '',
+          '| Trisection | As it is | On half the angle |', '|---|---|---|']
+    for name, f in (("Dürer's, from one side", lambda p: durer_third(p, 1/3)), ("Karajordanoff's", lambda p: kara_third(p, 2)),
+                    ("d'Ocagne's", lambda p: ocagne_third(p, 0.5)), ("Cusa's", lambda p: _cusa(p, 0)), ("Vahlen's", lambda p: _cusa(p, 2/9)),
+                    ("Cusa's with a quarter versine", lambda p: _cusa(p, 0.25))):
+        L.append('| %s | %.4f%% | %.4f%% |' % (name, worst_over(f), worst_over(lambda p, f=f: 2 * f(p / 2))))
+    L += ['', "Charted: Dürer's (taa-under-99.995), Vahlen's (taa-under-99.742) and the quarter versine (taa-over-99.971) on half the angle.", '']
     for r in results:
         o = r['original']
         L += ['## ' + r['name'], '', r['about'] + ' Chart entry: `%s`.' % r['entry'], '',
@@ -304,7 +381,7 @@ def main():
     results = [search(sk, max_q) for sk in SKELETONS]
     for r in results:
         o = r['original']
-        print('%-44s original %.6f%%, %d better; best cheap ones:' % (r['name'], o['accuracy'], r['better']))
+        print('%-44s original %.9f%%, %d better; best cheap ones:' % (r['name'], o['accuracy'], r['better']))
         for x in r['front'][:4]:
             print('    %-40s %.9f%%  cost %s' % (', '.join('%s=%s' % kv for kv in x['values'].items()), x['accuracy'], x['cost']))
         for x in r['micro_front'][:2]:

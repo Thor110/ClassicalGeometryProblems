@@ -9,6 +9,22 @@ than a sixteenth: a step under 5% of the given size, micro scale under the count
 A variant is charted only once it is drawn in GeoGebra and added like any other entry, credited to the
 original's author and to whoever found the variant (Lambert's with a quarter versine is: `ar-over-99.831`).
 
+## Halving the angle first
+
+The historical trisections are best on small angles. Worked on half the angle and doubled (one more line and one
+more circle), they hold from 30° to 150° about as well as they did up to 75°. At their weakest from 30° to 150°:
+
+| Trisection | As it is | On half the angle |
+|---|---|---|
+| Dürer's, from one side | 99.6979% | 99.9952% |
+| Karajordanoff's | 93.5110% | 99.8386% |
+| d'Ocagne's | 96.3055% | 99.1774% |
+| Cusa's | 50.5374% | 98.0229% |
+| Vahlen's | 68.0275% | 99.7429% |
+| Cusa's with a quarter versine | 71.6572% | 99.9712% |
+
+Charted: Dürer's (taa-under-99.995), Vahlen's (taa-under-99.742) and the quarter versine (taa-over-99.971) on half the angle.
+
 ## Hayden's duplication (1871)
 
 F a fraction f of the way from C to D (Hayden: a third). Chart entry: `dtc-under-99.989`.
@@ -193,6 +209,39 @@ How many versines Snellius' point is moved in towards O (Cusa: none; Vahlen: 2/9
 | µ shift = 17/64 | 99.889672059% | 0, 0 | +0, +0 |
 
 49 variants beat the original in all.
+
+## Ramanujan's 355/113 (1913)
+
+Where H and T sit on the diameter (Ramanujan: OH = 1/2 towards P, OT = 2/3 towards R). Chart entry: `stc-over-99.999`.
+
+| Fractions | Accuracy | Cost (circles, lines) | Extra |
+|---|---|---|---|
+| OH = 1/2, OT = 2/3 (original) | 99.999991509% | 3, 2 | |
+| no variant with these denominators beats it | | | |
+
+0 variants beat the original in all.
+
+## Ramanujan's 1914 construction
+
+AT, and the two steps CM and MN along CB, as fractions of the radius (Ramanujan: a third each). Chart entry: `rtc-under-99.99999`.
+
+| Fractions | Accuracy | Cost (circles, lines) | Extra |
+|---|---|---|---|
+| AT = 1/3, CM = 1/3, MN = 1/3 (original) | 99.999999968% | 9, 6 | |
+| no variant with these denominators beats it | | | |
+
+0 variants beat the original in all.
+
+## Cusa's trisection on half the angle
+
+Cusa's trisection worked on half the angle and doubled, with Snellius' point moved in by `shift` versines (Cusa: none; Vahlen: 2/9; the charted variant: 1/4). Scored at its worst from 30° to 150°, as charted. Chart entry: `taa-over-99.971`.
+
+| Fractions | Accuracy | Cost (circles, lines) | Extra |
+|---|---|---|---|
+| shift = 1/4 (original) | 99.971180002% | 0, 0 | |
+| no variant with these denominators beats it | | | |
+
+0 variants beat the original in all.
 
 ## Hayden's quadrature (1871)
 

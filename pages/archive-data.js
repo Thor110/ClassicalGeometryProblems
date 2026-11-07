@@ -1405,6 +1405,78 @@ const ARCHIVE = {
       ]
      },
      "holder_kind": "ai"
+    },
+    {
+     "id": "taa-over-99.971",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Cusa's trisection, a quarter versine, on half the angle",
+     "circles": 4,
+     "lines": 8,
+     "acc": "99.971",
+     "precise": "99.971180001497493623918615186807",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.971-Claude",
+     "note": "The quarter-versine trisection (taa-under-99.660) worked on half the angle and doubled: one line and one circle more, and it holds 99.97% from 30° to 150°, at its weakest at 118.5°, where the file is drawn. Credit for the method is Cusa's, Snellius' and Vahlen's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Cusa's, Snellius' and Vahlen's trisections (taa-under-95.527, taa-under-99.147, taa-under-99.660), worked on half the angle"
+      ]
+     },
+     "holder_kind": "ai"
+    },
+    {
+     "id": "taa-under-99.742",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Vahlen's trisection, on half the angle",
+     "circles": 7,
+     "lines": 12,
+     "acc": "99.742",
+     "precise": "99.742875188451430783278999456128",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.742-Claude",
+     "note": "Vahlen's trisection (taa-under-99.147) worked on half the angle and doubled: one line and one circle more, and it holds 99.74% from 30° to 150°, at its weakest at 150°, where the file is drawn. Credit for the method is Cusa's, Snellius' and Vahlen's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Vahlen's trisection (taa-under-99.147), worked on half the angle"
+      ]
+     },
+     "holder_kind": "ai"
+    },
+    {
+     "id": "taa-under-99.995",
+     "side": "under",
+     "marks": "µ",
+     "holder": "Claude (Anthropic)",
+     "method": "Dürer's trisection, on half the angle",
+     "circles": 8,
+     "lines": 8,
+     "acc": "99.995",
+     "precise": "99.995193858045165405865040800401",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.995-Claude",
+     "note": "Dürer's trisection (taa-over-99.395), from one side only, worked on half the angle and doubled: 99.995% from 30° to 150°, at its weakest at 150°, where the file is drawn, with fewer steps than Dürer's own. Credit for the method is Dürer's. Found by Claude (Anthropic), an AI, as a variant. Marked µ: on half the angle Dürer's gap from D to K is small, and its smallest step is 4% of the radius, under the 5% of the micro scale rule.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Dürer's trisection (taa-over-99.395), worked on half the angle"
+      ]
+     },
+     "holder_kind": "ai"
     }
    ]
   },
@@ -3241,7 +3313,13 @@ const ARCHIVE = {
    "name": "Snellius' trisection point",
    "problem": "taa",
    "by": "Nicholas of Cusa, Willebrord Snellius, K. T. Vahlen",
-   "about": "Cusa's rectification turned into a trisection: a third of the tangent length, read back through the same point. Cusa and Snellius put the point a radius beyond the far end of the diameter; Vahlen moves it in by 2/9 of the versine, towards the exact point 2 cos(x/3); the variant search found a quarter better still."
+   "about": "Cusa's rectification turned into a trisection: a third of the tangent length, read back through the same point. Cusa and Snellius put the point a radius beyond the far end of the diameter; Vahlen moves it in by 2/9 of the versine, towards the exact point 2 cos(x/3); the variant search found a quarter better still. Worked on half the angle and then doubled, the same constructions hold from 30° to 150°."
+  },
+  {
+   "name": "Dürer's trisection",
+   "problem": "taa",
+   "by": "Albrecht Dürer",
+   "about": "Dürer's averaging of the three chords (1525): a third of the chord, a perpendicular to the arc, carried back down, and a third of the gap. Worked from one side on half the angle and doubled, it holds 99.995% from 30° to 150°."
   }
  ],
  "wanted": [
