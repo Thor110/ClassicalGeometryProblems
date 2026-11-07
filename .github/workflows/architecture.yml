@@ -7,6 +7,11 @@
 # anything at all is new. It is checked whenever the chart data changes and once a month, and can be
 # run by hand from the Actions tab (with "force" to run it whether or not it is due).
 #
+# Only one set of results waits for review at a time: while an architecture pull request is open, the
+# search is not run again (the record of a run reaches main only when its pull request is merged, so
+# otherwise every change to the chart data would open another). Merge or close it and the next change
+# runs the search again; "force" runs it regardless.
+#
 # For the pull request to be opened, the repository must allow it: Settings, Actions, General,
 # "Allow GitHub Actions to create and approve pull requests". If it does not, the workflow opens an
 # issue instead, linking to the branch with the results.
@@ -50,7 +55,16 @@ jobs:
 
       - name: Is it due?
         id: due
-        run: python tools/architecture_due.py || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          OPEN=$(gh pr list --state open --json number,headRefName --jq '[.[] | select(.headRefName | startswith("architecture-run-")) | .number] | first // empty')
+          if [ -n "$OPEN" ]; then
+            echo "Results from an earlier run are waiting for review in pull request #$OPEN; not running again until it is merged or closed."
+            echo "due=false" >> "$GITHUB_OUTPUT"
+          else
+            python tools/architecture_due.py || true
+          fi
 
       - name: Search and measure
         if: steps.due.outputs.due == 'true' || inputs.force

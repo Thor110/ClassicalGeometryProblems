@@ -131,7 +131,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (83)
+### Not verified by a person yet (87)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -171,6 +171,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, oversized 99.999998% · Hayden's quadrature (stc-over-99.999998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.999998-Hayden.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.398% · Eight ninths of the diameter (stc-over-99.398): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.398-Rhind-Papyrus.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.946% · Willich's quadrature (stc-under-99.946): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.946-Willich.ggb`, square q
+- [ ] Squaring The Circle, undersized 99.9993% · Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5 (stc-under-99.9993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9993-Claude.ggb`, square q
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
@@ -181,6 +182,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, oversized 99.395% · Dürer's trisection (taa-over-99.395): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.395-Durer.ggb`
 - [ ] Trisecting An Angle, undersized 99.838% · Karajordanoff's trisection (taa-under-99.838): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.838-Karajordanoff.ggb`
 - [ ] Trisecting An Angle, oversized 98.796% · d'Ocagne's trisection (taa-over-98.796): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.796-dOcagne.ggb`
+- [ ] Trisecting An Angle, undersized 95.527% · Cusa's trisection (taa-under-95.527): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-95.527-Cusa-Snellius.ggb`
+- [ ] Trisecting An Angle, undersized 99.147% · Vahlen's trisection (taa-under-99.147): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.147-Vahlen.ggb`
+- [ ] Trisecting An Angle, undersized 99.660% · Cusa's trisection, a quarter versine (taa-under-99.660): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.660-Claude.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`

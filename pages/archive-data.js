@@ -933,7 +933,7 @@ const ARCHIVE = {
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/99.998-Hobson",
      "square": "q",
-     "note": "OD = 3/5, OF = 3/2 and OE = 1/2 of the radius; the semicircles on DE and AF cut the perpendicular through O at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Given by Hobson (1913) without naming its author.",
+     "note": "OD = 3/5, OF = 3/2 and OE = 1/2 of the radius; the semicircles on DE and AF cut the perpendicular through O at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Given by Hobson (1913) without naming its author. A variant with OD = 1/3, OE = 11/8 and OF = 6/5 (one more circle, two more lines) is charted as stc-under-99.9993.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -1020,6 +1020,31 @@ const ARCHIVE = {
        "redrawn in November 2026; the quadrant AB is found with a perpendicular, as Willich does not say how"
       ]
      },
+     "square": "q"
+    },
+    {
+     "id": "stc-under-99.9993",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5",
+     "circles": 11,
+     "lines": 8,
+     "acc": "99.9993",
+     "precise": "99.999375385688373920001839233307",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.9993-Claude",
+     "note": "Hobson's construction step for step, with D, E and F at other places on the diameter: OD = 1/3, OE = 11/8 and OF = 6/5 of the radius, instead of 3/5, 1/2 and 3/2. One more circle and two more lines than Hobson's; two and a half times closer. Found by Claude (Anthropic), an AI, with tools/variants.py.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Hobson's construction (stc-over-99.998)"
+      ]
+     },
+     "holder_kind": "ai",
      "square": "q"
     }
    ]
@@ -1306,6 +1331,80 @@ const ARCHIVE = {
        "redrawn in November 2026; Yates' error table (45\" at 30°, 6'14\" at 60°, 21'41\" at 90°) is reproduced"
       ]
      }
+    },
+    {
+     "id": "taa-under-95.527",
+     "side": "under",
+     "marks": "",
+     "holder": "Nicholas of Cusa / Snellius",
+     "method": "Cusa's trisection",
+     "circles": 2,
+     "lines": 6,
+     "acc": "95.527",
+     "precise": "95.527186296506171817958010663952",
+     "date": "15th century; 1621",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-95.527-Cusa-Snellius",
+     "note": "Cusa's rectification used to trisect: P a radius beyond the far end of the diameter; PA meets the tangent at B in D; M a third of the way from B to D; PM meets the circle at T. BOT is the third; the rest is bisected. Charted at 90°, its weakest angle up to 90°: 99.93% at 30°, 99.24% at 60°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "the trisection as given in R. C. Yates, The Trisection Problem, 1942 (NCTM reprint 1971, ERIC ED058058), ch. 4, section 2: \"For the approximate trisection of angle AOB we need only locate the point M so that BM = BD/3 and join it to P. The line PM will cut the unit circle in T.\"",
+       "the point is Snellius' approximate trisection point, as in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 189 (PB = 1)",
+       "redrawn in November 2026; BM = BD/3 is laid off with the parallel through O to PD (BO is a third of BP), and the rest of the angle bisected, as for the archive's other one-line trisections"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.147",
+     "side": "under",
+     "marks": "",
+     "holder": "K. T. Vahlen",
+     "method": "Vahlen's trisection",
+     "circles": 6,
+     "lines": 11,
+     "acc": "99.147",
+     "precise": "99.147614362567587602235412731664",
+     "date": "1911",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.147-Vahlen",
+     "note": "Cusa's trisection with Snellius' point moved towards O by 2/9 of the versine BC, Vahlen's second approximation to the exact point 2 cos(x/3). Charted at 90°, its weakest angle up to 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, pp. 290-291 (\"woraus sich eine sehr einfache und sehr genaue Konstruktion ergibt\")",
+       "read from the Internet Archive scan (konstruktionenun00vahluoft); the scan garbles the fraction, which is 2/9: Vahlen gives the exact point as OP = 2 cos(x/3) and the shift as the second approximation of 2 − 2 cos(x/3), which is (2/9) of the versine, and the rebuilt figure confirms that the exact point is 2 cos(x/3)",
+       "redrawn in November 2026; how 2/9 of BC is laid off is the archive's"
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.660",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Cusa's trisection, a quarter versine",
+     "circles": 3,
+     "lines": 7,
+     "acc": "99.660",
+     "precise": "99.660468370396310721960919001643",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.660-Claude",
+     "note": "Cusa's trisection with Snellius' point moved towards O by a quarter of the versine (two midpoints), as in the quarter-versine rectification (ar-over-99.831): better than Vahlen's 2/9 and cheaper. Charted at 90°, its weakest angle up to 90°. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Cusa's and Vahlen's trisections (taa-under-95.527, taa-under-99.147)"
+      ]
+     },
+     "holder_kind": "ai"
     }
    ]
   },
@@ -3137,6 +3236,12 @@ const ARCHIVE = {
    "problem": "ar",
    "by": "Nicholas of Cusa, Willebrord Snellius, Johann Heinrich Lambert",
    "about": "The arc read off the tangent through a point on the diameter beyond the circle: Cusa and Snellius put it a radius beyond the far end; Lambert moves it in by a fifth of the versine (Newton's formula); the variant search found a quarter better still."
+  },
+  {
+   "name": "Snellius' trisection point",
+   "problem": "taa",
+   "by": "Nicholas of Cusa, Willebrord Snellius, K. T. Vahlen",
+   "about": "Cusa's rectification turned into a trisection: a third of the tangent length, read back through the same point. Cusa and Snellius put the point a radius beyond the far end of the diameter; Vahlen moves it in by 2/9 of the versine, towards the exact point 2 cos(x/3); the variant search found a quarter better still."
   }
  ],
  "wanted": [
@@ -3283,6 +3388,10 @@ const ARCHIVE = {
   ],
   "G. Buonafalce": [
    "G. Buonafalce"
+  ],
+  "K. T. Vahlen": [
+   "Karl Theodor Vahlen",
+   "K. T. Vahlen"
   ]
  }
 };

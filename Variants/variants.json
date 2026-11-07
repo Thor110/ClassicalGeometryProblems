@@ -18,7 +18,8 @@
     ]
    },
    "better": 0,
-   "front": []
+   "front": [],
+   "micro_front": []
   },
   {
    "id": "hobson-stc",
@@ -38,7 +39,7 @@
      2
     ]
    },
-   "better": 22,
+   "better": 184,
    "front": [
     {
      "values": {
@@ -54,7 +55,8 @@
      "extra": [
       3,
       2
-     ]
+     ],
+     "micro": false
     },
     {
      "values": {
@@ -70,7 +72,8 @@
      "extra": [
       9,
       2
-     ]
+     ],
+     "micro": false
     },
     {
      "values": {
@@ -86,7 +89,44 @@
      "extra": [
       12,
       4
-     ]
+     ],
+     "micro": false
+    }
+   ],
+   "micro_front": [
+    {
+     "values": {
+      "OD": "9/32",
+      "OE": "51/64",
+      "OF": "27/16"
+     },
+     "accuracy": 99.99983624481499,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      -5,
+      -2
+     ],
+     "micro": true
+    },
+    {
+     "values": {
+      "OD": "1/10",
+      "OE": "7/12",
+      "OF": "75/32"
+     },
+     "accuracy": 99.99997922611031,
+     "cost": [
+      22,
+      4
+     ],
+     "extra": [
+      17,
+      2
+     ],
+     "micro": true
     }
    ]
   },
@@ -107,7 +147,8 @@
     ]
    },
    "better": 0,
-   "front": []
+   "front": [],
+   "micro_front": []
   },
   {
    "id": "kunze-rtc",
@@ -127,7 +168,8 @@
     ]
    },
    "better": 0,
-   "front": []
+   "front": [],
+   "micro_front": []
   },
   {
    "id": "lambert-ar",
@@ -146,14 +188,14 @@
      2
     ]
    },
-   "better": 102,
+   "better": 490,
    "front": [
     {
      "values": {
-      "OP": "2",
-      "shift": "1/4"
+      "OP": "33/16",
+      "shift": "5/16"
      },
-     "accuracy": 99.83148772233953,
+     "accuracy": 99.87166631573541,
      "cost": [
       0,
       0
@@ -161,7 +203,26 @@
      "extra": [
       -5,
       -2
-     ]
+     ],
+     "micro": false
+    }
+   ],
+   "micro_front": [
+    {
+     "values": {
+      "OP": "65/32",
+      "shift": "9/32"
+     },
+     "accuracy": 99.91842105019337,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      -5,
+      -2
+     ],
+     "micro": true
     }
    ]
   },
@@ -182,7 +243,8 @@
     ]
    },
    "better": 0,
-   "front": []
+   "front": [],
+   "micro_front": []
   },
   {
    "id": "willich-stc",
@@ -201,7 +263,314 @@
     ]
    },
    "better": 0,
-   "front": []
+   "front": [],
+   "micro_front": []
+  },
+  {
+   "id": "willich-angles-stc",
+   "name": "Willich's quadrature: its two angles",
+   "entry": "stc-under-99.946",
+   "problem": "stc",
+   "about": "The arc from A to B and the chord BD, in degrees, from the angles that can be drawn exactly (Willich: 90° and 60°).",
+   "original": {
+    "values": {
+     "arc AB": "90",
+     "chord BD": "60"
+    },
+    "accuracy": 99.94664984652559,
+    "cost": [
+     1,
+     1
+    ]
+   },
+   "better": 0,
+   "front": [],
+   "micro_front": []
+  },
+  {
+   "id": "kochanski-rtc",
+   "name": "Kochański's rectification (1685)",
+   "entry": "rtc-under-99.998",
+   "problem": "rtc",
+   "about": "How many radii are stepped along the tangent from C (Kochański: 3), and the angle of the line from O (Kochański: 30°).",
+   "original": {
+    "values": {
+     "steps": "3",
+     "angle": "30"
+    },
+    "accuracy": 99.99811194858026,
+    "cost": [
+     5,
+     1
+    ]
+   },
+   "better": 0,
+   "front": [],
+   "micro_front": []
+  },
+  {
+   "id": "specht-rtc",
+   "name": "Specht's rectification (1828)",
+   "entry": "rtc-under-99.99997",
+   "problem": "rtc",
+   "about": "AB and BC on the tangent at A, in radii (Specht: 11/5 and 2/5).",
+   "original": {
+    "values": {
+     "AB": "11/5",
+     "BC": "2/5"
+    },
+    "accuracy": 99.99997770381837,
+    "cost": [
+     10,
+     4
+    ]
+   },
+   "better": 0,
+   "front": [],
+   "micro_front": []
+  },
+  {
+   "id": "degelder-rtc",
+   "name": "de Gelder's 355/113 (1849)",
+   "entry": "rtc-over-99.999991",
+   "problem": "rtc",
+   "about": "CE and AF, in radii (de Gelder: 7/8 and 1/2), giving AH = AF² / (1 + CE²) beyond three radii.",
+   "original": {
+    "values": {
+     "CE": "7/8",
+     "AF": "1/2"
+    },
+    "accuracy": 99.99999150863212,
+    "cost": [
+     0,
+     0
+    ]
+   },
+   "better": 0,
+   "front": [],
+   "micro_front": []
+  },
+  {
+   "id": "buonafalce3-dtc",
+   "name": "Buonafalce's third solution (1876)",
+   "entry": "dtc-under-99.997",
+   "problem": "dtc",
+   "about": "BE as a fraction of AK, and CF as a fraction of the edge (Buonafalce: 1/2 and 1/4).",
+   "original": {
+    "values": {
+     "BE": "1/2",
+     "CF": "1/4"
+    },
+    "accuracy": 99.99722982053956,
+    "cost": [
+     0,
+     0
+    ]
+   },
+   "better": 1,
+   "front": [
+    {
+     "values": {
+      "BE": "3/7",
+      "CF": "11/12"
+     },
+     "accuracy": 99.99948632130415,
+     "cost": [
+      19,
+      4
+     ],
+     "extra": [
+      19,
+      4
+     ],
+     "micro": false
+    }
+   ],
+   "micro_front": []
+  },
+  {
+   "id": "durer-taa",
+   "name": "Dürer's trisection (1525)",
+   "entry": "taa-over-99.395",
+   "problem": "taa",
+   "about": "How far X goes from K back towards D, and where D sits on the chord (Dürer: a third each). Scored at its worst from 30° to 150°, as charted.",
+   "original": {
+    "values": {
+     "X": "1/3",
+     "D": "1/3"
+    },
+    "accuracy": 99.3957880096233,
+    "cost": [
+     6,
+     4
+    ]
+   },
+   "better": 1,
+   "front": [],
+   "micro_front": [
+    {
+     "values": {
+      "X": "21/64",
+      "D": "1/3"
+     },
+     "accuracy": 99.78856203089893,
+     "cost": [
+      3,
+      2
+     ],
+     "extra": [
+      -3,
+      -2
+     ],
+     "micro": true
+    }
+   ]
+  },
+  {
+   "id": "karajordanoff-taa",
+   "name": "Karajordanoff's trisection (1928)",
+   "entry": "taa-under-99.838",
+   "problem": "taa",
+   "about": "The radius of the larger circle, in radii, and which point of the arc the chord from B goes to (Karajordanoff: 2, and the middle). Scored at its worst up to 90°, the rest bisected, as charted.",
+   "original": {
+    "values": {
+     "outer circle": "2",
+     "C on the arc": "1/2"
+    },
+    "accuracy": 99.838644565635,
+    "cost": [
+     0,
+     1
+    ]
+   },
+   "better": 0,
+   "front": [],
+   "micro_front": []
+  },
+  {
+   "id": "ocagne-taa",
+   "name": "d'Ocagne's trisection (1934)",
+   "entry": "taa-over-98.796",
+   "problem": "taa",
+   "about": "How far behind the centre C is, in radii (d'Ocagne: a half). Scored at its worst up to 90°, the rest bisected, as charted.",
+   "original": {
+    "values": {
+     "OC": "1/2"
+    },
+    "accuracy": 98.7960219839276,
+    "cost": [
+     0,
+     0
+    ]
+   },
+   "better": 1,
+   "front": [],
+   "micro_front": [
+    {
+     "values": {
+      "OC": "33/64"
+     },
+     "accuracy": 98.96920874207083,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      0,
+      0
+     ],
+     "micro": true
+    }
+   ]
+  },
+  {
+   "id": "cusa-taa",
+   "name": "Cusa's trisection, and Vahlen's (1911)",
+   "entry": "taa-under-95.527",
+   "problem": "taa",
+   "about": "How many versines Snellius' point is moved in towards O (Cusa: none; Vahlen: 2/9). Scored at its worst up to 90°, the rest bisected, as charted.",
+   "original": {
+    "values": {
+     "shift": "0"
+    },
+    "accuracy": 95.52718629650619,
+    "cost": [
+     0,
+     0
+    ]
+   },
+   "better": 49,
+   "front": [
+    {
+     "values": {
+      "shift": "1/4"
+     },
+     "accuracy": 99.6604683703963,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      0,
+      0
+     ],
+     "micro": false
+    },
+    {
+     "values": {
+      "shift": "3/11"
+     },
+     "accuracy": 99.825630925621,
+     "cost": [
+      11,
+      2
+     ],
+     "extra": [
+      11,
+      2
+     ],
+     "micro": false
+    }
+   ],
+   "micro_front": [
+    {
+     "values": {
+      "shift": "17/64"
+     },
+     "accuracy": 99.8896720586384,
+     "cost": [
+      0,
+      0
+     ],
+     "extra": [
+      0,
+      0
+     ],
+     "micro": true
+    }
+   ]
+  },
+  {
+   "id": "hayden-stc",
+   "name": "Hayden's quadrature (1871)",
+   "entry": "stc-over-99.999998",
+   "problem": "stc",
+   "about": "Where C sits along the top half side, and EG and DI as fractions of DE (Hayden: a half each).",
+   "original": {
+    "values": {
+     "C": "1/2",
+     "EG": "1/2",
+     "DI": "1/2"
+    },
+    "accuracy": 99.99999810031028,
+    "cost": [
+     0,
+     0
+    ]
+   },
+   "better": 0,
+   "front": [],
+   "micro_front": []
   }
  ]
 }
