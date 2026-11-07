@@ -1072,6 +1072,31 @@ const ARCHIVE = {
       ]
      },
      "square": "q"
+    },
+    {
+     "id": "stc-over-99.886",
+     "side": "over",
+     "marks": "",
+     "holder": "A. H. Anglin",
+     "method": "Anglin's first quadrature",
+     "circles": 3,
+     "lines": 11,
+     "acc": "99.886",
+     "precise": "99.886539840133838032137557365892",
+     "date": "1884",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.886-Anglin",
+     "note": "In the square about the circle, the tangent at K, where the diagonal DB meets the circle, cuts AB at G (AG is the side of the inscribed square); GC meets DB at H; HF, from H to the far corner F of the inscribed square on the same diagonal, is the side: 1.77345908 radii.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 165-167, construction 1 (Internet Archive, messengermathem06glaigoog)",
+       "redrawn in November 2026; the figure is not in the text, and the letters are placed by the one reading that gives Anglin's HF = 1.77345908 (the tangent at K meets AB with AG equal to the side of the inscribed square, as Anglin says it does)"
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -3359,6 +3384,83 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 4
+    },
+    {
+     "id": "rtc-under-99.9999995",
+     "side": "under",
+     "marks": "",
+     "holder": "Specht",
+     "method": "Specht's second construction",
+     "circles": 14,
+     "lines": 11,
+     "acc": "99.9999995",
+     "precise": "99.999999571702204190564752606934",
+     "date": "1828",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.9999995-Specht",
+     "note": "Five radii along one arm of a right angle, two of them trisected; the distances Mm and Rr carried to the other arm; a parallel from c. Cd = 5√(439/278) radii, short of the circumference by about a seventh of a millionth of the radius: Specht's \"second approximate construction\", accurate to the eighth decimal, as he says.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. G. Specht, \"Zweite Annäherungs-Construction des Kreis-Umfanges\", Journal für die reine und angewandte Mathematik 3 (1828), pp. 405-406 (Internet Archive, journalfrdierei14crelgoog)",
+       "cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
+       "redrawn in November 2026; the thirds are laid off the archive's way"
+      ]
+     }
+    },
+    {
+     "id": "rtc-over-99.851",
+     "side": "over",
+     "marks": "",
+     "holder": "Maurice d'Ocagne",
+     "method": "d'Ocagne's √2 + √3 (after Bioche)",
+     "circles": 1,
+     "lines": 7,
+     "acc": "99.851",
+     "precise": "99.851294649965491571107390618366",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.851-dOcagne",
+     "note": "Bioche noticed that √2 + √3 = 3.1463 is close to π; d'Ocagne drew it in one go: OB at 45°, the parallel through B to the tangent at A', and the bisector of the angle COA cuts off AD = √2 + √3 on the tangent at A, nearly the half circumference.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: M. d'Ocagne, \"Rectification approchée du cercle\", Journal de mathématiques élémentaires, 4th series, IV (1895) (Internet Archive, journaldemathma34unkngoog), pp. 77-78, after a remark of Ch. Bioche to the Société mathématique de France; Mannheim's proof follows on p. 103",
+       "cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
+       "redrawn in November 2026 from d'Ocagne's text"
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-under-99.994",
+     "side": "under",
+     "marks": "",
+     "holder": "A. Pleskot",
+     "method": "Pleskot's rectification",
+     "circles": 5,
+     "lines": 3,
+     "acc": "99.994",
+     "precise": "99.994772554399896944801333187340",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.994-Pleskot",
+     "note": "The circle about one end m of a diameter cuts the circle at a and b; ab crosses the diameter at s; sl = 2ab along the diameter, lv = 2r along lb: vb is nearly a quarter of the circumference, 2vb = √51 − 4 = 3.1414284.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. Pleskot (Prague), \"Sur la rectification approchée du cercle\", Journal de mathématiques élémentaires, 4th series, IV (1895) (Internet Archive, journaldemathma34unkngoog), pp. 125-126, first in the Časopis pro pěstování mathematiky a fysiky",
+       "cited in K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 311",
+       "redrawn in November 2026; the scan reads \"si = 206\" for sl = 2ab, which the proof fixes as 2√3"
+      ]
+     },
+     "result_scale": 4
     }
    ]
   },
@@ -3617,12 +3719,12 @@ const ARCHIVE = {
      "method": "Cusa's rectification, on the arc halved five times",
      "circles": 7,
      "lines": 7,
-     "acc": "99.999",
+     "acc": "99.99997",
      "precise": "99.999975091467696212367969507633",
      "date": "07-11-2026",
      "geogebra": "",
      "file": "GeoGebra Files/Arc Rectification Under/AR-99.999-Claude",
-     "note": "Cusa's rectification (ar-under-95.492) worked on the arc halved five times and the length multiplied back by 32: 99.999% from 30° to 150°, at its weakest at 150°, where the file is drawn. Its steps stay at macro scale through all five halvings (the smallest is 6.25% of the radius); a sixth would not. Credit for the method is Nicholas of Cusa and Snellius's. Found by Claude (Anthropic), an AI, as a variant.",
+     "note": "Cusa's rectification (ar-under-95.492) worked on the arc halved five times and the length multiplied back by 32: 99.999% from 30° to 150°, at its weakest at 150°, where the file is drawn. Its steps stay at macro scale through all five halvings (the smallest is 6.25% of the radius); a sixth would not. Credit for the method is Nicholas of Cusa and Snellius's. Found by Claude (Anthropic), an AI, as a variant. Shown to more places from November 2026 (it was 99.999%), so the chart reads in order beside Rankine's halved first rectification (99.99993%): its precise value is 99.99997509%.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3655,6 +3757,157 @@ const ARCHIVE = {
        "redrawn in November 2026 from Beutel's description, with the three bisections his figure shows"
       ]
      }
+    },
+    {
+     "id": "ar-under-95.243",
+     "side": "under",
+     "marks": "",
+     "holder": "W. J. Macquorn Rankine",
+     "method": "Rankine's first rectification",
+     "circles": 2,
+     "lines": 1,
+     "acc": "95.243",
+     "precise": "95.243357050517822955557596074333",
+     "date": "1867",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-95.243-Rankine",
+     "note": "The chord AB extended beyond B by half of itself, to C; the arc about C through A meets the tangent at B in D; BD is nearly the arc, short by θ⁵/1080 of the radius. A general method, at its weakest from 30° to 150° at 150°, where the file is drawn (99.41% at 90°).",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: W. J. M. Rankine, Philosophical Magazine, 4th series, vol. 34 (1867), pp. 284-286 and 381-382; also in his \"Machinery and Millwork\" (1869), pp. 28-29, construction I",
+       "as given, with its error series, in F. J. van den Berg, \"Over de benaderde rectificatie van een cirkelboog\", Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 (Internet Archive, nieuwarchiefvoo00amstgoog), and in L. Cremona, Elemente des graphischen Calculs (German by M. Curtze, 1875), p. 101",
+       "redrawn in November 2026; the scan garbles the fraction of the chord, which is the half that gives van den Berg's error θ⁵/1080"
+      ]
+     }
+    },
+    {
+     "id": "ar-over-98.685",
+     "side": "over",
+     "marks": "",
+     "holder": "W. J. Macquorn Rankine",
+     "method": "Rankine's second rectification",
+     "circles": 1,
+     "lines": 3,
+     "acc": "98.685",
+     "precise": "98.685638416550806522083823795251",
+     "date": "1867",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-98.685-Rankine",
+     "note": "A quarter of the arc, by two bisections, to E; the radius OE meets the tangent at B in C; BC + CA is nearly the arc, long by θ⁵/4320. A general method, at its weakest from 30° to 150° at 150°, where the file is drawn (99.85% at 90°).",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: W. J. M. Rankine, Philosophical Magazine, 4th series, vol. 34 (1867), pp. 284-286 and 381-382; also in his \"Machinery and Millwork\" (1869), pp. 28-29, construction II",
+       "as given, with its error series (correcting Rankine's last term), in F. J. van den Berg, \"Over de benaderde rectificatie van een cirkelboog\", Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 (Internet Archive, nieuwarchiefvoo00amstgoog)",
+       "redrawn in November 2026"
+      ]
+     },
+     "result_path": [
+      "B",
+      "C_2",
+      "A"
+     ]
+    },
+    {
+     "id": "ar-over-99.899",
+     "side": "over",
+     "marks": "",
+     "holder": "W. J. Macquorn Rankine",
+     "method": "Rankine's two rectifications combined",
+     "circles": 9,
+     "lines": 6,
+     "acc": "99.899",
+     "precise": "99.899839323137080626555539821335",
+     "date": "1867",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.899-Rankine",
+     "note": "Four fifths of the second and one fifth of the first, which cancels their θ⁵ errors and leaves θ⁷/870912: both laid on the tangent from B, and the point a fifth of the way from the second to the first. 99.90% at 150°, its weakest from 30° to 150°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "the combination as given with Rankine's two constructions in F. J. van den Berg, \"Over de benaderde rectificatie van een cirkelboog\", Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 (Internet Archive, nieuwarchiefvoo00amstgoog) (\"door 4/5 de van de tweede op te tellen bij 1/5 de van de eerste, eene meer benaderde waarde\"), from Cremona-Curtze (1875) and Rankine (1867)",
+       "redrawn in November 2026; the laying of both lengths on the tangent and the fifth are the archive's"
+      ]
+     }
+    },
+    {
+     "id": "ar-under-99.99993",
+     "side": "under",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Rankine's first rectification, on the arc halved four times",
+     "circles": 7,
+     "lines": 6,
+     "acc": "99.99993",
+     "precise": "99.999933594932761848121953201198",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Under/AR-99.99993-Claude",
+     "note": "Rankine's first rectification (ar-under-95.243) worked on the arc halved four times and the length multiplied back by 16: 99.99993% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale. Credit for the method is Rankine's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the arc halved again and again, as a variant of Rankine's first rectification (ar-under-95.243)"
+      ]
+     },
+     "holder_kind": "ai"
+    },
+    {
+     "id": "ar-over-99.999",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Rankine's second rectification, on the arc halved four times",
+     "circles": 6,
+     "lines": 7,
+     "acc": "99.999",
+     "precise": "99.999983396512446742465957327970",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.999-Claude",
+     "note": "Rankine's second rectification (ar-over-98.685) worked on the arc halved four times and the length multiplied back by 16: 99.99998% from 30° to 150°, at its weakest at 150°, where the file is drawn. Halved once more it would be micro scale. Credit for the method is Rankine's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the arc halved again and again, as a variant of Rankine's second rectification (ar-over-98.685)"
+      ]
+     },
+     "holder_kind": "ai"
+    },
+    {
+     "id": "ar-over-99.9999",
+     "side": "over",
+     "marks": "",
+     "holder": "Claude (Anthropic)",
+     "method": "Rankine's two rectifications combined, on the arc halved four times",
+     "circles": 13,
+     "lines": 11,
+     "acc": "99.9999",
+     "precise": "99.999999998223405024348375222136",
+     "date": "07-11-2026",
+     "geogebra": "",
+     "file": "GeoGebra Files/Arc Rectification Over/AR-99.9999-Claude",
+     "note": "Rankine's combination of his two rectifications (ar-over-99.899) worked on the arc halved four times and the length multiplied back by 16: 99.9999999982% from 30° to 150°, at its weakest at 150°, where the file is drawn, with every step at macro scale. Credit for the method is Rankine's. Found by Claude (Anthropic), an AI, as a variant.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "session",
+      "evidence": [
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), testing the historical methods on the arc halved again and again, as a variant of Rankine's combined rectification (ar-over-99.899)"
+      ]
+     },
+     "holder_kind": "ai"
     }
    ]
   }
@@ -3719,6 +3972,12 @@ const ARCHIVE = {
    "problem": "taa",
    "by": "P. Monti",
    "about": "Monti's construction (1895), with Schiaparelli's proof: good to 180° as it stands, and 99.990% from 30° to 150° on the angle halved three times."
+  },
+  {
+   "name": "Rankine's rectifications",
+   "problem": "ar",
+   "by": "W. J. Macquorn Rankine",
+   "about": "Rankine's two constructions for the length of any arc (1867), with errors θ⁵/1080 short and θ⁵/4320 long, and their combination, four fifths and one fifth, which leaves only θ⁷/870912. On the arc halved four times the combination holds 99.9999999982% from 30° to 150°."
   }
  ],
  "wanted": [
@@ -3756,6 +4015,20 @@ const ARCHIVE = {
    "year": "1895",
    "value": "a trisection through a circle on three points, which Amaldi shows is within a thousandth of the radius at 180°",
    "source": "Cominotto, Trisezione approssimata dell'angolo (Padova 1895), as given by Amaldi in Enriques, Fragen der Elementargeometrie II (1907), § 17, fig. 125. The scan garbles which arc is carried to which."
+  },
+  {
+   "problem": "stc",
+   "who": "A. H. Anglin",
+   "year": "1884",
+   "value": "three more quadratures: sides 1.76640701, 1.77232578 and 1.768191052 of the radius",
+   "source": "Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), pp. 166-167, constructions 2-4 (his first is charted). The figures are not in the scanned text, and his letters do not give his values in any reading tried."
+  },
+  {
+   "problem": "stc",
+   "who": "Ernst Lakenmacher",
+   "year": "1890",
+   "value": "the side 0.8862279 of the diameter, too big by one part in 654498 by area",
+   "source": "Lakenmacher, Archiv der Mathematik und Physik, 2nd series, IX (1890), pp. 214-215. The scan lacks p. 214, where the construction begins."
   }
  ],
  "derived_pi": {
@@ -3823,6 +4096,7 @@ const ARCHIVE = {
    "Albrecht Dürer"
   ],
   "Specht": [
+   "C. G. Specht",
    "Specht"
   ],
   "William Hayden": [
@@ -3883,6 +4157,17 @@ const ARCHIVE = {
   ],
   "Pioche": [
    "Pioche"
+  ],
+  "A. H. Anglin": [
+   "A. H. Anglin"
+  ],
+  "A. Pleskot": [
+   "A. Pleskot",
+   "Antonín Pleskot"
+  ],
+  "W. J. Macquorn Rankine": [
+   "W. J. Macquorn Rankine",
+   "William John Macquorn Rankine"
   ]
  }
 };

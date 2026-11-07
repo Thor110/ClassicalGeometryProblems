@@ -10,6 +10,8 @@ what that person actually drew. Drafts in progress are kept here.
 | Construction | Chart | Why it is not charted yet |
 |---|---|---|
 | Kopf and Perron (1919): trisection from the limaçon, within 15" up to 90° | Trisecting an angle | The scanned text of Yates, "The Trisection Problem" (1942), ch. 4 §5, garbles the construction; it needs Perron's paper (1933) or a clean copy of Yates' figure 37. |
+| A. H. Anglin (1884): constructions 2-4, sides 1.76640701, 1.77232578 and 1.768191052 | Squaring the circle | Messenger of Mathematics XIII, pp. 166-167: no figures in the scan, and no reading of the letters tried gives his values. |
+| Ernst Lakenmacher (1890): the side 0.8862279 of the diameter | Squaring the circle | Archiv der Mathematik und Physik (2) IX, p. 214 is missing from the scan. |
 | E. Cominotto (1895): trisection through a circle on three points, within a thousandth at 180° | Trisecting an angle | Amaldi in Enriques (1907), § 17, fig. 125: the scan garbles which arc is carried to which. |
 | G. Boccali (1884): from the regular decagon | Doubling the cube | Amaldi (1907), § 9: the scan garbles the final combination of lengths. |
 | Christiaan Huygens: AE = cosec 52.5° = 1.2605 | Doubling the cube | Vahlen (1911), p. 284, gives only the angles; needs *Varia opera mathematica* I, p. 1. |
@@ -47,6 +49,11 @@ given there.
 | H. V. Chu (2019): Ramanujan's number, π to nine places | Squaring the circle, 99.9999999% over | Chu, "Squaring the Circle Revisited", arXiv:1908.01202, § 3 |
 | Lorenzo Mascheroni (1797): a quarter of the circumference, compass alone | Rectifying the circle, 99.974% over | Gergonne, Annales de mathématiques VIII (1818), construction I |
 | Pioche (1818): KL = (501 + 80√10)/120 | Rectifying the circle, 99.999996% under | Gergonne (1818), construction III |
+| C. G. Specht (1828): his second construction, Cd = 5√(439/278) | Rectifying the circle, 99.9999995% under | Crelle's Journal 3 (1828), pp. 405-406 |
+| W. J. M. Rankine (1867): two rectifications of any arc, and their combination | Arc rectification, 95.243% under, 98.685% and 99.899% over (at 150°) | F. J. van den Berg, Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 |
+| A. H. Anglin (1884): his first quadrature | Squaring the circle, 99.886% over | Messenger of Mathematics XIII, pp. 165-166 |
+| Maurice d'Ocagne (1895), after Bioche: √2 + √3 | Rectifying the circle, 99.851% over | Journal de mathématiques élémentaires 1895, pp. 77-78 |
+| A. Pleskot (1895): 2vb = √51 − 4 | Rectifying the circle, 99.994% under | Journal de mathématiques élémentaires 1895, pp. 125-126 |
 | K. T. Vahlen (1911): Cusa's trisection point moved 2/9 of the versine | Trisecting an angle, 99.147% under (at 90°) | Vahlen (1911), pp. 290-291 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,

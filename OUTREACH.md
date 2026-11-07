@@ -29,9 +29,10 @@ A few habits that help these get read:
 > while giving the sender's work a fair hearing and a place on the charts with their name on it, as
 > the tradition from Kochański to Ramanujan deserves.
 >
-> The charts hold 133 constructions across five problems. Every GeoGebra file is rebuilt and
-> measured automatically, the counting rules are published, and new submissions are checked by an
-> automated workflow before a person reviews them. People's work and AI search finds are kept apart.
+> The charts hold well over a hundred constructions across five problems, among them historical
+> ones rebuilt and checked against their original sources, from Dürer to Ramanujan. Every GeoGebra
+> file is rebuilt and measured automatically, the counting rules are published, and new submissions
+> are checked by an automated workflow before a person reviews them. People's work and AI search finds are kept apart.
 >
 > For anyone who receives these claims, there is a short referral message on the site that can be
 > sent back as a reply, so that a claim can be answered in a minute without being checked by hand:

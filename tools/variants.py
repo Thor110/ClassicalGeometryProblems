@@ -385,11 +385,17 @@ def report(results, max_q):
         return f
     def worst_rect(f, n, lo=30, hi=150):
         return min(acc(2 ** n * f(math.radians(i / 4) / 2 ** n), math.radians(i / 4)) for i in range(lo * 4, hi * 4 + 1))
+    def rank1(t):
+        Bp = (math.cos(t), math.sin(t)); C = (1.5 - 0.5 * Bp[0], -0.5 * Bp[1]); return C[1] + math.sqrt(math.dist(C, Bp) ** 2 - (1 - C[0]) ** 2)
+    def rank2(t): return math.tan(t / 4) + math.dist((1, math.tan(t / 4)), (math.cos(t), math.sin(t)))
+    charted.update({"Rankine's first rectification": 4, "Rankine's second rectification": 4, "Rankine's two combined": 4})
     rows = [("Dürer's trisection, from one side", lambda p: durer_third(p, 1/3), 'taa'), ("Karajordanoff's trisection", lambda p: kara_third(p, 2), 'taa'),
             ("d'Ocagne's trisection", lambda p: ocagne_third(p, 0.5), 'taa'), ("Cusa's trisection", lambda p: _cusa(p, 0), 'taa'),
             ("Vahlen's trisection", lambda p: _cusa(p, 2/9), 'taa'), ("Cusa's trisection with a quarter versine", lambda p: _cusa(p, 0.25), 'taa'),
             ("Monti's trisection", lambda p: monti_third(p), 'taa'),
-            ("Cusa's rectification", rect(0), 'ar'), ("Lambert's rectification", rect(0.2), 'ar'), ("Lambert's with a quarter versine", rect(0.25), 'ar')]
+            ("Cusa's rectification", rect(0), 'ar'),
+            ("Rankine's first rectification", rank1, 'ar'), ("Rankine's second rectification", rank2, 'ar'),
+            ("Rankine's two combined", lambda t: 0.8 * rank2(t) + 0.2 * rank1(t), 'ar'), ("Lambert's rectification", rect(0.2), 'ar'), ("Lambert's with a quarter versine", rect(0.25), 'ar')]
     for name, f, kind in rows:
         cells = []
         for n in range(6):

@@ -17,6 +17,8 @@ const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-07","pairs":[
 {"problem":"rtc","kind":"builds on","similarity":1.0,"older":"rtc-over-99.997","newer":"rtc-over-99.9996","older_holder":"Edward James Gordon","newer_holder":"Kochanski / Gordon","kinds":["person","person"]},
 {"problem":"rtc","kind":"builds on","similarity":1.0,"older":"rtc-over-99.997","newer":"rtc-over-99.99999","older_holder":"Edward James Gordon","newer_holder":"Kochanski / Gordon","kinds":["person","person"]},
 {"problem":"rtc","kind":"builds on","similarity":1.0,"older":"rtc-under-99.812","newer":"rtc-over-99.9986","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
+{"problem":"ar","kind":"builds on","similarity":1.0,"older":"ar-under-95.243","newer":"ar-over-99.899","older_holder":"W. J. Macquorn Rankine","newer_holder":"W. J. Macquorn Rankine","kinds":["person","person"]},
+{"problem":"ar","kind":"builds on","similarity":0.959,"older":"ar-over-99.999","newer":"ar-over-99.9999","older_holder":"Claude (Anthropic)","newer_holder":"Claude (Anthropic)","kinds":["ai","ai"]},
 {"problem":"rtc","kind":"shares most steps","similarity":0.92,"older":"rtc-over-99.9996","newer":"rtc-over-99.99999","older_holder":"Kochanski / Gordon","newer_holder":"Kochanski / Gordon","kinds":["person","person"]},
 {"problem":"taa","kind":"shares most steps","similarity":0.878,"older":"taa-under-99.697","newer":"taa-over-99.395","older_holder":"Claude (Anthropic)","newer_holder":"Albrecht Dürer","kinds":["ai","person"]},
 {"problem":"rtc","kind":"shares most steps","similarity":0.87,"older":"rtc-under-99.982","newer":"rtc-over-99.989","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
