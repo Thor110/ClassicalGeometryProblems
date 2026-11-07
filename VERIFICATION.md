@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-07). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (126)
+### Not verified by a person yet (133)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -179,6 +179,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, undersized 99.318% · Anglin's second quadrature (stc-under-99.318): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.318-Anglin.ggb`
 - [ ] Squaring The Circle, undersized 99.985% · Anglin's third quadrature (stc-under-99.985): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.985-Anglin.ggb`
 - [ ] Squaring The Circle, oversized 99.977% · Mascheroni's quadrature with the compass alone (stc-over-99.977): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.977-Mascheroni.ggb`
+- [ ] Squaring The Circle, undersized 99.519% · Anglin's fourth quadrature (stc-under-99.519): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.519-Anglin.ggb`
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
@@ -204,6 +205,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 99.990% · Monti's trisection, on the angle halved three times (taa-under-99.990): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.990-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 99.177% · Cominotto's trisection (taa-over-99.177): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.177-Cominotto.ggb`
 - [ ] Trisecting An Angle, oversized 99.950% · Cominotto's trisection, on the angle halved twice (taa-over-99.950): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.950-Claude.ggb`
+- [ ] Trisecting An Angle, undersized 99.981% · The Kopf-Perron trisection (taa-under-99.981): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.981-Kopf-Perron.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -224,6 +226,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, oversized 99.972% · Boccali's duplication (dtc-over-99.972): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.972-Boccali.ggb`
 - [ ] Doubling The Cube, undersized 99.9976% · Vahlen's external division (dtc-under-99.9976): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.9976-Vahlen.ggb`
 - [ ] Doubling The Cube, undersized 97.65625% · Stifel's circle on Plato's figure (dtc-under-97.65625): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.65625-Stifel.ggb`
+- [ ] Doubling The Cube, oversized 99.998% · Vahlen's square: 349/277 (dtc-over-99.998): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.998-Vahlen.ggb`
+- [ ] Doubling The Cube, oversized 99.868% · Huygens' chords: cosec 52.5° (dtc-over-99.868): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.868-Huygens.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.999996% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
@@ -246,6 +250,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.994% · Pleskot's rectification (rtc-under-99.994): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.994-Pleskot.ggb`
 - [ ] Rectifying The Circle, oversized 99.904% · The cosine equal to its tangent (rtc-over-99.904): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.904-Crelle.ggb`
 - [ ] Rectifying The Circle, undersized 99.9997% · Vahlen's external division for π (rtc-under-99.9997): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9997-Vahlen.ggb`
+- [ ] Rectifying The Circle, oversized 99.851% · Lemoine's √2 + √3, first way (rtc-over-99.851-lemoine-a): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.851-Lemoine-a.ggb`
+- [ ] Rectifying The Circle, oversized 99.851% · Lemoine's √2 + √3, second way (rtc-over-99.851-lemoine-b): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.851-Lemoine-b.ggb`
+- [ ] Rectifying The Circle, oversized 99.904% · Lemoine's quarter: the golden chord (rtc-over-99.904-lemoine): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.904-Lemoine.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
@@ -270,11 +277,15 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Identical or near-identical entries (4)
+### Identical or near-identical entries (8)
 
 From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
 
 - [ ] identical: taa-over-98.796 and taa-over-96.305 (score 1.00)
+- [ ] same result: rtc-over-99.851-lemoine-a and rtc-over-99.851-lemoine-b (score 0.57)
+- [ ] same result: rtc-over-99.851 and rtc-over-99.851-lemoine-a (score 0.20)
+- [ ] same result: rtc-over-99.851 and rtc-over-99.851-lemoine-b (score 0.20)
+- [ ] same result: rtc-over-99.904 and rtc-over-99.904-lemoine (score 0.13)
 - [ ] same result: dtc-under-97.65625 and dtc-under-97.656 (score 0.08)
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)

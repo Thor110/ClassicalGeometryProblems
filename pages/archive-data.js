@@ -1169,6 +1169,30 @@ const ARCHIVE = {
        "redrawn in November 2026 from the French text; the rebuilt AN = (√11 − √3)/2 = 0.7922870 and LM = (9 − √33)/6 = 0.5425729 are Mascheroni's values, and BR = 1.772657 radii, his 1.7726566"
       ]
      }
+    },
+    {
+     "id": "stc-under-99.519",
+     "side": "under",
+     "marks": "",
+     "holder": "A. H. Anglin",
+     "method": "Anglin's fourth quadrature",
+     "circles": 6,
+     "lines": 14,
+     "acc": "99.519",
+     "precise": "99.519295054699646643790257755199",
+     "date": "1884",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.519-Anglin",
+     "note": "E and F as in his third; I where FE meets the diagonal; the circle about C, where the inscribed square's side through E meets the side of the square about the circle, through I meets the arc about the point of contact at J; the parallel to that side through J, between the diagonals, is the side: 1.7681886 radii.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. H. Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), p. 167, construction 4, with fig. 10 on the plate to the volume (Internet Archive, messengermathem00taylgoog, leaf 203)",
+       "redrawn in November 2026; the plate is folded and shows only part of fig. 10, which places C on the side of the square about the circle, above E; with it the circle about C through I meets the arc at the J Anglin's working gives. The rebuilt side is 1.76818858 radii against his printed 1.768191052, a difference in the sixth decimal, which a 30-digit solution of the same figure confirms"
+      ]
+     }
     }
    ]
   },
@@ -1819,6 +1843,31 @@ const ARCHIVE = {
       ]
      },
      "holder_kind": "ai"
+    },
+    {
+     "id": "taa-under-99.981",
+     "side": "under",
+     "marks": "",
+     "holder": "Kopf / Perron",
+     "method": "The Kopf-Perron trisection",
+     "circles": 4,
+     "lines": 7,
+     "acc": "99.981",
+     "precise": "99.981561196717939443595306981259",
+     "date": "1919",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.981-Kopf-Perron",
+     "note": "From a comparison of the circle with the trisecting limaçon: P two radii beyond the centre; the arc about F, on the diameter at (3 + √3)/6 of the radius, through B, meets the line CA at A'; the angle A'PB is a third of AOB to within 15 seconds up to 90°, and exact at 90°. Charted at its weakest angle up to 90°, the range Perron tabulates, which is 63.95°; the trisecting line is carried to the corner by a parallel and the rest bisected.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Kopf (1919), refined by O. Perron, Sitzungsberichte der Bayerischen Akademie der Wissenschaften (1933), and by M. d'Ocagne",
+       "as given, with Perron's table of errors, in R. C. Yates, The Trisection Problem (1942; reprinted 1971), ch. 4, § 5, fig. 37 (Internet Archive, ERIC_ED058058)",
+       "redrawn in November 2026 from the page image (the scanned text garbles it); the rebuilt errors are Perron's to the hundredth of a second: 0.18\" at 12°, 1.38\" at 24°, 4.23\" at 36°, 8.57\" at 48°, 13.08\" at 60°, 14.76\" at 72°, 8.47\" at 84°, 0 at 90°"
+      ]
+     }
     }
    ]
   },
@@ -2321,6 +2370,54 @@ const ARCHIVE = {
        "published: Michael Stifel, Arithmetica integra, Nürnberg 1544, fol. 119",
        "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 284, who notes that it gives only ∛2 = 5/4 but can be improved at will (OM = 0.37 instead)",
        "redrawn in November 2026; the scan garbles the fractions, read back as OM = 3/8 and ∛2 = 5/4, the only pair that agrees with each other and with Vahlen's \"besser 0,37\""
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.998",
+     "side": "over",
+     "marks": "",
+     "holder": "K. T. Vahlen",
+     "method": "Vahlen's square: 349/277",
+     "circles": 10,
+     "lines": 11,
+     "acc": "99.998",
+     "precise": "99.998393238559658581778723025051",
+     "date": "1911",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.998-Vahlen",
+     "note": "The convergent 349/277 of ∛2's continued fraction, written as (2² + (5/9)²) / (1² + (1 + 5/9)²) = FE² / FB² and drawn on the unit square with two parallels: 1.2599275 against ∛2 = 1.2599210.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), pp. 282-283, with its figure",
+       "redrawn in November 2026 from the page image (the scanned text garbles the fractions): DF = 5/9 on AD beyond D, CE = 1 on DC beyond C, FJ = 1 and FG = FE on FB, GH parallel to BE, JK parallel to BH; FK = 349/277, Vahlen's 1.2599275"
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.868",
+     "side": "over",
+     "marks": "",
+     "holder": "Christiaan Huygens",
+     "method": "Huygens' chords: cosec 52.5°",
+     "circles": 2,
+     "lines": 4,
+     "acc": "99.868",
+     "precise": "99.868657142249619300891080153953",
+     "date": "before 1695",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.868-Huygens",
+     "note": "On the semicircle over AC = 2, the arc AF = 60° and the arc CD = 45°; AD and CF meet at E, and AE = cosec 52.5° = 1.2605 radii. Huygens remarks that the exact point would need EF = CD.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. Huygens, Varia opera mathematica I (Leiden 1724), p. 1, as given with its figure in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911 (Internet Archive, konstruktionenun00vahluoft), p. 284",
+       "redrawn in November 2026 from the page image of Vahlen; the rebuilt AE is cosec 52.5° = 1.260472 radii, Vahlen's 1.2605"
       ]
      }
     }
@@ -3627,7 +3724,7 @@ const ARCHIVE = {
      "date": "1895",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.851-dOcagne",
-     "note": "Bioche noticed that √2 + √3 = 3.1463 is close to π; d'Ocagne drew it in one go: OB at 45°, the parallel through B to the tangent at A', and the bisector of the angle COA cuts off AD = √2 + √3 on the tangent at A, nearly the half circumference.",
+     "note": "Bioche noticed that √2 + √3 = 3.1463 is close to π; d'Ocagne drew it in one go: OB at 45°, the parallel through B to the tangent at A', and the bisector of the angle COA cuts off AD = √2 + √3 on the tangent at A, nearly the half circumference. Lemoine drew the same value more simply the same year (rtc-over-99.851-lemoine-a and -b), and reports that it had been set as an exercise earlier, in Amiot's Géométrie revised by Vintéjoux.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3679,7 +3776,7 @@ const ARCHIVE = {
      "date": "1846",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.904-Crelle",
-     "note": "The angle whose cosine equals its tangent: its sine is (√5 − 1)/2, and its cosine, √((√5 − 1)/2) = 0.786151 radii, is nearly an eighth of the circumference, 0.785398. Drawn as the perpendicular from the centre to a chord √5 − 1 long, taken off the line from one end of the diameter to the tangent at the other.",
+     "note": "The angle whose cosine equals its tangent: its sine is (√5 − 1)/2, and its cosine, √((√5 − 1)/2) = 0.786151 radii, is nearly an eighth of the circumference, 0.785398. Drawn as the perpendicular from the centre to a chord √5 − 1 long, taken off the line from one end of the diameter to the tangent at the other. Lemoine (1895) drew the same length another way, as the leg of a right triangle on the diameter (rtc-over-99.904-lemoine).",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3715,6 +3812,82 @@ const ARCHIVE = {
        "redrawn in November 2026; the scan garbles the fractions, read back as 39/4 and 81/2 because they alone give the printed 3.14158 and the coefficients 2, 39, 81 of the equation the scan keeps (2x² + 39x/2 = 81)"
       ]
      }
+    },
+    {
+     "id": "rtc-over-99.851-lemoine-a",
+     "side": "over",
+     "marks": "",
+     "holder": "Émile Lemoine",
+     "method": "Lemoine's √2 + √3, first way",
+     "circles": 4,
+     "lines": 2,
+     "acc": "99.851",
+     "precise": "99.851294649965491571107390618366",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.851-Lemoine-a",
+     "note": "Bioche's value √2 + √3 for the half circumference, drawn in Lemoine's geometrography with 2 lines and 3 circles: the circle about a point B of the circle through the centre gives C and D, sixty degrees either side; the circle about C gives P; PO meets the circle at K; on KD (√2) the circle about D through C carries DC (√3) on to I. KI is the half circumference. Exactly the value of d'Ocagne's construction (rtc-over-99.851), by other steps.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Lemoine, \"Note sur une construction approchée du développement de la circonférence et remarques diverses\", Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 (NUMDAM, BSMF_1895__23__242_0), § I, construction (a), with its geometrographic count: 2 lines, 3 circles, simplicity 14, against 43 for d'Ocagne's",
+       "redrawn in November 2026 from the text; the rebuilt KI is √2 + √3 = 3.1462644 radii"
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-over-99.851-lemoine-b",
+     "side": "over",
+     "marks": "",
+     "holder": "Émile Lemoine",
+     "method": "Lemoine's √2 + √3, second way",
+     "circles": 5,
+     "lines": 1,
+     "acc": "99.851",
+     "precise": "99.851294649965491571107390618366",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.851-Lemoine-b",
+     "note": "Bioche's value √2 + √3 again, with 1 line and 4 circles: from K, as in the first way, the circle with radius CD (√3) meets the line PO towards O at E, and the circle through D (√2) meets it beyond K at J. EJ is the half circumference.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Lemoine, \"Note sur une construction approchée du développement de la circonférence et remarques diverses\", Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 (NUMDAM, BSMF_1895__23__242_0), § I, construction (b): 1 line, 4 circles, simplicity 14",
+       "redrawn in November 2026 from the text; the rebuilt EJ is √2 + √3 = 3.1462644 radii"
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-over-99.904-lemoine",
+     "side": "over",
+     "marks": "",
+     "holder": "Émile Lemoine",
+     "method": "Lemoine's quarter: the golden chord",
+     "circles": 6,
+     "lines": 2,
+     "acc": "99.904",
+     "precise": "99.904097769121747403630174171380",
+     "date": "1895",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.904-Lemoine",
+     "note": "On the diameter AB, Lemoine divides AB in extreme and mean ratio with the compass (AG = (√5 − 1)/2 · AB), lays AG as a chord AH, and takes BH: √((√5 − 1)/2) of the diameter, nearly a quarter of the circumference. The same value as Crelle's cosine equal to its tangent (rtc-over-99.904), by other steps; Lemoine says he found it long before and that it is perhaps not known.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: E. Lemoine, \"Note sur une construction approchée du développement de la circonférence et remarques diverses\", Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 (NUMDAM, BSMF_1895__23__242_0), § II, with its geometrographic count: 1 line, 5 circles, simplicity 16",
+       "redrawn in November 2026 from the text; the rebuilt AG is (√5 − 1)/2 of AB and BH = 0.7861514 of AB, his 0.7861",
+       "the same value as the unsigned note of 1846 in Crelle's Journal 32 (rtc-over-99.904), which Lemoine does not mention; the constructions differ"
+      ]
+     },
+     "result_scale": 4
     }
    ]
   },
@@ -4242,20 +4415,6 @@ const ARCHIVE = {
  ],
  "wanted": [
   {
-   "problem": "taa",
-   "who": "Kopf and Perron",
-   "year": "1919",
-   "value": "a trisection from the limaçon of Pascal, at most 15 seconds of arc out up to 90° (Perron's table), exact at 90°",
-   "source": "R. C. Yates, The Trisection Problem (1942), ch. 4, section 5; O. Perron, Sitzungsberichte der Bayerischen Akademie der Wissenschaften, 1933. The scanned text of Yates garbles the construction, so it needs the original figure."
-  },
-  {
-   "problem": "dtc",
-   "who": "Christiaan Huygens",
-   "year": "1650s",
-   "value": "AE = cosec 52.5° = 1.2605",
-   "source": "Huygens, Varia opera mathematica I, p. 1, as cited by Vahlen (1911), p. 284. Vahlen gives only the angles; the figure is needed."
-  },
-  {
    "problem": "stc",
    "who": "Baudhayana",
    "year": "about 800 BC",
@@ -4264,31 +4423,10 @@ const ARCHIVE = {
   },
   {
    "problem": "stc",
-   "who": "A. H. Anglin",
-   "year": "1884",
-   "value": "his fourth quadrature: side 1.768191052 of the radius",
-   "source": "Anglin, \"Approximate circle-quadratures\", Messenger of Mathematics XIII (1884), p. 167, construction 4 (his first three are charted). His figure is not in the scanned text, and no placement of his centre C tried gives his value."
-  },
-  {
-   "problem": "stc",
    "who": "Ernst Lakenmacher",
    "year": "1890",
    "value": "the side 0.8862279 of the diameter, too big by one part in 654498 by area",
-   "source": "Lakenmacher, Archiv der Mathematik und Physik, 2nd series, IX (1890), pp. 214-215. The scan lacks p. 214, where the construction begins."
-  },
-  {
-   "problem": "dtc",
-   "who": "K. T. Vahlen",
-   "year": "1911",
-   "value": "∛2 ≈ 1.2599275, from the unit square, by similar triangles",
-   "source": "Vahlen, Konstruktionen und Approximationen (1911), pp. 282-283. The scan garbles the fractions of BF and CE and the formula; it needs a clean page."
-  },
-  {
-   "problem": "rtc",
-   "who": "E. Lemoine",
-   "year": "1895",
-   "value": "π ≈ √51 − 4, the same value as Pleskot's rectification (rtc-under-99.994)",
-   "source": "Lemoine, Bulletin de la Société mathématique de France XXIII (1895), p. 242, as cited by Vahlen (1911), p. 311. Not reachable from here; if it is the same construction as Pleskot's, Lemoine is listed on that entry as having also found it, and whichever was published first holds it."
+   "source": "Lakenmacher, Archiv der Mathematik und Physik, 2nd series, IX (1890), pp. 214-215. In the only scan on the Internet Archive (archivdermathem49unkngoog) pages 213 and 214 are blank white images, so the start of the construction is lost; another copy (HathiTrust, a library) is needed."
   }
  ],
  "derived_pi": {
@@ -4444,6 +4582,18 @@ const ARCHIVE = {
   "A. L. Crelle": [
    "August Leopold Crelle",
    "A. L. Crelle"
+  ],
+  "Christiaan Huygens": [
+   "Christiaan Huygens"
+  ],
+  "Émile Lemoine": [
+   "Émile Lemoine",
+   "E. Lemoine"
+  ],
+  "Kopf / Perron": [
+   "Kopf",
+   "O. Perron",
+   "Oskar Perron"
   ]
  }
 };

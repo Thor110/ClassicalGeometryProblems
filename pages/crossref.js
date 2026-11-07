@@ -1,6 +1,10 @@
 // Written by tools/crossref.py. Do not edit by hand: run it again.
 const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-07","pairs":[
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796","newer":"taa-over-96.305","older_holder":"Maurice d'Ocagne","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
+{"problem":"rtc","kind":"same result","similarity":0.568,"older":"rtc-over-99.851-lemoine-a","newer":"rtc-over-99.851-lemoine-b","older_holder":"Émile Lemoine","newer_holder":"Émile Lemoine","kinds":["person","person"]},
+{"problem":"rtc","kind":"same result","similarity":0.205,"older":"rtc-over-99.851","newer":"rtc-over-99.851-lemoine-a","older_holder":"Maurice d'Ocagne","newer_holder":"Émile Lemoine","kinds":["person","person"]},
+{"problem":"rtc","kind":"same result","similarity":0.196,"older":"rtc-over-99.851","newer":"rtc-over-99.851-lemoine-b","older_holder":"Maurice d'Ocagne","newer_holder":"Émile Lemoine","kinds":["person","person"]},
+{"problem":"rtc","kind":"same result","similarity":0.134,"older":"rtc-over-99.904","newer":"rtc-over-99.904-lemoine","older_holder":"A. L. Crelle","newer_holder":"Émile Lemoine","kinds":["person","person"]},
 {"problem":"dtc","kind":"same result","similarity":0.079,"older":"dtc-under-97.65625","newer":"dtc-under-97.656","older_holder":"Michael Stifel","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"rtc","kind":"near identical","similarity":0.851,"older":"rtc-over-99.971","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"rtc","kind":"near identical","similarity":0.697,"older":"rtc-over-99.9987","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},

@@ -58,6 +58,8 @@ holder in `holders` counts as self-verification; anyone else's counts as indepen
 
 **Changing a chart figure:** the chart figure (`acc`) is the precise readout truncated, never
 rounded, to three decimal places, or more where needed so each side of the chart reads in order.
+An exact tie (two constructions of the same number) keeps the same figure, and the later entry's id
+ends with its holder's name, as `rtc-over-99.851-lemoine-a` does.
 `tools/add_submission.py` chooses it that way for new entries.
 
 **The architecture search:** see "Running it again" in [ARCHITECTURAL.md](ARCHITECTURAL.md). It runs

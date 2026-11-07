@@ -15,12 +15,7 @@ beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
 
 | Construction | Chart | Why it is not charted yet |
 |---|---|---|
-| Kopf and Perron (1919): trisection from the limaçon, within 15" up to 90° | Trisecting an angle | The scanned text of Yates, "The Trisection Problem" (1942), ch. 4 §5, garbles the construction; it needs Perron's paper (1933) or a clean copy of Yates' figure 37. |
-| A. H. Anglin (1884): construction 4, side 1.768191052 | Squaring the circle | Messenger of Mathematics XIII, p. 167: no figure in either scan, and no placement of his centre C tried gives his value. |
-| Ernst Lakenmacher (1890): the side 0.8862279 of the diameter | Squaring the circle | Archiv der Mathematik und Physik (2) IX, p. 214 is missing from the scan. |
-| K. T. Vahlen (1911): ∛2 ≈ 1.2599275 from the unit square | Doubling the cube | Vahlen (1911), pp. 282-283: the scan garbles the fractions and the formula. |
-| E. Lemoine (1895): π ≈ √51 − 4, Pleskot's value | Rectifying the circle | Bulletin de la Société mathématique de France XXIII, p. 242 (Vahlen 1911, p. 311): not reachable from here. If it is Pleskot's construction, it is recorded as also found by whichever of the two came later. |
-| Christiaan Huygens: AE = cosec 52.5° = 1.2605 | Doubling the cube | Vahlen (1911), p. 284, gives only the angles; needs *Varia opera mathematica* I, p. 1. |
+| Ernst Lakenmacher (1890): the side 0.8862279 of the diameter | Squaring the circle | Archiv der Mathematik und Physik (2) IX: pp. 213-214 are blank white images in the only scan on the Internet Archive; needs another copy (HathiTrust refuses automated access). |
 | Baudhayana (about 800 BC): π ≈ 3.0883 | Squaring the circle | Vahlen (1911), p. 177; which of two rules is his needs a translation of the Sulba Sutra. |
 
 No drafts are in progress.
@@ -58,7 +53,7 @@ given there.
 | C. G. Specht (1828): his second construction, Cd = 5√(439/278) | Rectifying the circle, 99.9999995% under | Crelle's Journal 3 (1828), pp. 405-406 |
 | W. J. M. Rankine (1867): two rectifications of any arc, and their combination | Arc rectification, 95.243% under, 98.685% and 99.899% over (at 150°) | F. J. van den Berg, Nieuw Archief voor Wiskunde IV (1878), pp. 200-204 |
 | A. H. Anglin (1884): his first quadrature | Squaring the circle, 99.886% over | Messenger of Mathematics XIII, pp. 165-166 |
-| A. H. Anglin (1884): his second and third quadratures | Squaring the circle, 99.318% and 99.985% under | Messenger of Mathematics XIII, pp. 166-167, from a second scan (messengermathem00taylgoog) |
+| A. H. Anglin (1884): his second, third and fourth quadratures | Squaring the circle, 99.318%, 99.985% and 99.519% under | Messenger of Mathematics XIII, pp. 166-167 and the plate (fig. 10), from a second scan (messengermathem00taylgoog) |
 | Lorenzo Mascheroni (1797): a quadrature with the compass alone, art. 269 | Squaring the circle, 99.977% over | "Géométrie du compas" (1798), pp. 250-252 |
 | Maurice d'Ocagne (1895), after Bioche: √2 + √3 | Rectifying the circle, 99.851% over | Journal de mathématiques élémentaires 1895, pp. 77-78 |
 | A. Pleskot (1895): 2vb = √51 − 4 | Rectifying the circle, 99.994% under | Journal de mathématiques élémentaires 1895, pp. 125-126 |
@@ -67,7 +62,11 @@ given there.
 | E. Cominotto (1895): trisection through the circle on K, I, C | Trisecting an angle, 99.177% over (at 150°) | Conti in Enriques (1900), § 17 |
 | Michael Stifel (1544): Plato's figure with OM = 3/8, ∛2 = 5/4 | Doubling the cube, 97.656% under | Vahlen (1911), p. 284 |
 | K. T. Vahlen (1911): 8 divided externally to the product 35/3 | Doubling the cube, 99.998% under | Vahlen (1911), pp. 283-284 |
+| K. T. Vahlen (1911): 349/277 from the unit square | Doubling the cube, 99.998% over | Vahlen (1911), pp. 282-283, from the page image |
+| Christiaan Huygens: AE = cosec 52.5° | Doubling the cube, 99.868% over | Varia opera mathematica I, p. 1, via Vahlen (1911), p. 284, from the page image |
 | A. L. Crelle (1846): the cosine equal to its tangent, 8 cos x | Rectifying the circle, 99.904% over | Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92 |
+| Émile Lemoine (1895): two shorter ways to draw √2 + √3, and the golden chord for a quarter | Rectifying the circle, 99.851% over (twice, tying d'Ocagne) and 99.904% over (tying Crelle) | Bulletin de la Société mathématique de France 23 (1895), pp. 242-255 |
+| Kopf (1919), refined by Perron (1933): the arc about F and the angle at P | Trisecting an angle, 99.981% under (at 63.95°) | Yates (1942), ch. 4 § 5, fig. 37, from the page image |
 | K. T. Vahlen (1911): 39/4 divided externally to the product 81/2 | Rectifying the circle, 99.9997% under | Vahlen (1911), p. 312 |
 
 The sources are on the Internet Archive: Hobson as squaringcirclehi00hobsuoft and cu31924001159411,
@@ -76,7 +75,7 @@ konstruktionenun00vahluoft, Mascheroni as gomtrieducompas00masc, Willich as phil
 Enriques as rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454, and the Italian original of Enriques (Bologna 1900),
 whose chapter by Alberto Conti keeps the formulas the German scan garbles, as questioniriguard00enri, and Crelle's Journal 32
 (1846) as sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32. The scans
-garble some fractions and leave out the figures; where something had to be read back from the values
+garble some fractions and leave out the figures; the page images (and folded plates) are read where the text fails; where something had to be read back from the values
 the author gives, each entry's notes say so.
 
 Angle methods from Yates are charted at their weakest angle up to 90°, the range Yates tabulates
