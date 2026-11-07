@@ -110,3 +110,32 @@ function repoBlob(path) { return REPO + '/blob/main/' + path.split('/').map(enco
 // The repository's accuracy rule: 100 − |constructed − true| ÷ true × 100, truncated (never rounded).
 function accuracyOf(constructed, truth) { return 100 - Math.abs(constructed - truth) / truth * 100; }
 function truncate(x, places) { const f = Math.pow(10, places); return (Math.trunc(x * f) / f).toFixed(places); }
+
+// Open slots (SUBMISSION_RULESET.md, "Slots"). Every budget of c circles and l lines is a slot on each side of a chart.
+const RULESETS = [['Base ruleset', 25, 40], ['Extended ruleset', 49, 80]];
+const GIVEN_POINTS = {stc: 2, rtc: 2, pi: 2, dtc: 2, taa: 3, ar: 3};   // the points a construction starts from
+// Slots that can never be filled, and why.
+function slotImpossible(pid, c, l) {
+  if (c === 0) return 'No circles: a straightedge alone, from the given points, draws no new point.';
+  if (c === 1 && (pid === 'stc' || pid === 'rtc' || pid === 'pi')) return 'One circle is the given circle itself: lines can then only join the centre and points on one diameter, so the only lengths are r and 2r, far below 95%.';
+  return '';
+}
+const slotKey = e => parseInt(e.circles, 10) + ',' + parseInt(e.lines, 10);
+function slotStats(pid, entries, C, L) {
+  const ok = e => { const c = parseInt(e.circles, 10), l = parseInt(e.lines, 10); return c <= C && l <= L && !isNaN(c) && !isNaN(l); };
+  const filled = side => new Set(entries.filter(e => e.side === side && ok(e)).map(slotKey)).size;
+  const per = (C + 1) * (L + 1);
+  let impossible = 0; for (let c = 0; c <= C; c++) for (let l = 0; l <= L; l++) if (slotImpossible(pid, c, l)) impossible++;
+  const fo = filled('over'), fu = filled('under');
+  return {per, impossible, fo, fu, open: 2 * (per - impossible) - fo - fu};
+}
+// An upper bound on the number of different ways to draw, summed over every budget up to C circles and L lines:
+// ways(c, l) ≤ C(n, c) × ∏ₖ [Pₖ(Pₖ − 1) + Pₖ · C(Pₖ, 2)], with n = c + l, P₀ the given points and Pₖ₊₁ = Pₖ + 2k.
+function waysLog10(C, L, P0) {
+  const lc = (n, k) => { let s = 0; for (let i = 1; i <= k; i++) s += Math.log10(n - k + i) - Math.log10(i); return s; };
+  const steps = [0]; let P = P0;
+  for (let k = 0; k < C + L; k++) { steps.push(steps[k] + Math.log10(Math.max(1, P * (P - 1) + P * (P * (P - 1) / 2)))); P += 2 * k; }
+  let m = -Infinity; const terms = [];
+  for (let c = 0; c <= C; c++) for (let l = 0; l <= L; l++) { const t = lc(c + l, c) + steps[c + l]; terms.push(t); if (t > m) m = t; }
+  return m + Math.log10(terms.reduce((s, t) => s + Math.pow(10, t - m), 0));
+}

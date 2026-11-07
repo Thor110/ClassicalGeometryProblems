@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Open slots: every budget of circles and lines on the approximation charts, which are filled, which are open, and how many ways there are to draw.">
+<title>Classical Geometry Problems // Open Slots</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  table.slots{width:100%;border-collapse:collapse;font-size:13px;}
+  table.slots th{white-space:normal;}
+  table.slots td,table.slots th{padding:6px 8px;text-align:center;border-bottom:1px solid #2a2a33;}
+  table.slots td:first-child,table.slots th:first-child{text-align:left;}
+  .ways{line-height:1.8;}
+  .formula{display:block;margin:8px 0;padding:8px 10px;border:1px solid #2a2a33;overflow-x:auto;white-space:nowrap;}
+  .grids{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;}
+  .g h4{margin:0 0 6px;text-align:center;font-weight:normal;letter-spacing:0.2em;font-size:13px;}
+  .g h4.over{color:#e0b35a;} .g h4.under{color:#5aa9d6;}
+  .axis{font-size:11px;color:#888;}
+  .gwrap{max-width:100%;overflow-x:auto;}
+  .cells{display:grid;gap:1px;background:#16171c;padding:1px;--s:11px;}
+  .cells.ext{--s:5px;}
+  .c{width:var(--s);height:var(--s);background:#14151a;position:relative;}
+  .c.has{cursor:pointer;}
+  .c.f{outline:1.5px solid #fff;outline-offset:-1.5px;}
+  .cells.ext .c.f{outline-width:1px;outline-offset:-1px;}
+  .c.multi::after{content:"";position:absolute;right:1px;top:1px;width:3px;height:3px;background:#000;}
+  .show-open .c.first{background:repeating-linear-gradient(45deg,#1d3b33 0 2px,#14151a 2px 4px);}
+  .show-open .c.beat::after{content:"";position:absolute;left:calc(50% - 1.5px);top:calc(50% - 1.5px);width:3px;height:3px;border-radius:50%;background:#3a3c46;}
+  .show-open .c.no{background:#14151a;}
+  .show-open .c.no::before{content:"";position:absolute;inset:2px;background:linear-gradient(45deg,transparent 45%,#4a2a2a 45% 55%,transparent 55%),linear-gradient(-45deg,transparent 45%,#4a2a2a 45% 55%,transparent 55%);}
+  .c.sel{outline:2px solid #4a9;outline-offset:-1px;}
+  .legend{display:flex;align-items:center;gap:6px 12px;justify-content:center;font-size:13px;color:#999;margin-top:10px;flex-wrap:wrap;}
+  .sw{display:inline-block;width:11px;height:11px;vertical-align:-1px;margin-right:4px;position:relative;}
+  #slotTip{position:fixed;display:none;background:#1b1c22;border:1px solid #2a2a33;padding:8px 10px;font-size:13px;line-height:1.55;max-width:260px;z-index:20;box-shadow:0 4px 14px #0008;pointer-events:none;}
+  .keylist li{margin-bottom:8px;line-height:1.6;}
+  @media (max-width:520px){ .cells{--s:9px;} .cells.ext{--s:4px;} }
+</style>
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Open Slots</h1>
+<div class="sub">
+  Every budget of circles and lines is a slot on each side of a chart. Which are filled, which are open, and how many ways there are to draw.
+</div>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="box">
+  <div class="box-title" id="title"></div>
+  <div class="box-text">Each slot is one budget, exactly c circles and l lines, on one side of the chart, and it has one best construction to find: the most accurate that fits the budget. With at most C circles and L lines there are (C + 1) × (L + 1) slots per side.</div>
+  <div class="table-wrap"><table class="slots" id="counts"></table></div>
+  <div class="box-text ways" id="ways"></div>
+  <div class="box-text" style="text-align:center;" id="back"></div>
+</div>
+
+<div class="box">
+  <div class="box-title">Slots Grid</div>
+  <div class="controls">
+    <button class="small active" data-rules="0">Base Ruleset</button>
+    <button class="small" data-rules="1">Extended</button>
+    <button class="small" id="openBtn" aria-pressed="false">Show Open Slots</button>
+  </div>
+  <div class="grids" id="grids"></div>
+  <div class="legend" id="legOver"></div>
+  <div class="legend" id="legUnder"></div>
+  <div class="small-text muted" style="text-align:center;margin-top:10px;">Circles run left to right, lines top to bottom. Hover or tap a slot for its budget and best entry; click a filled slot to open the entry on its chart. Each step of shade is ten times closer to perfect, as on the ladder.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Key</div>
+  <ul class="keylist">
+    <li><span class="sw" style="background:#e0b35a"></span><span class="sw" style="background:#5aa9d6"></span><b>Filled</b>: an entry on the chart uses exactly this budget, shaded by its accuracy (gold oversized, blue undersized; brighter is closer to perfect).</li>
+    <li><span class="sw" style="background:#666;outline:1.5px solid #fff;outline-offset:-1.5px"></span><b>On the frontier</b>: the best entry for this budget or anything cheaper. To take its place, a construction must be at least as cheap and more accurate.</li>
+    <li><span class="sw" style="background:#666"><span style="position:absolute;right:1px;top:1px;width:3px;height:3px;background:#000"></span></span><b>Shared</b>: more than one entry uses this budget; the slot shows the best.</li>
+    <li><span class="sw" style="background:repeating-linear-gradient(45deg,#1d3b33 0 2px,#14151a 2px 4px)"></span><b>Open, nothing this cheap yet</b>: no entry at this budget or below. These look like the easiest slots, and some may be, but the smallest budgets may have no construction of 95% or better at all: nobody has shown that one exists, or that none does. A construction here would join the frontier at once.</li>
+    <li><span class="sw" style="background:#18191f"><span style="position:absolute;left:4px;top:4px;width:3px;height:3px;border-radius:50%;background:#3a3c46"></span></span><b>Open, beat what is cheaper</b>: a cheaper construction already exists. Any 95% construction fills the slot, but to matter it should beat the best cheaper one, which hovering shows.</li>
+    <li><span class="sw" style="background:#14151a"><span style="position:absolute;inset:2px;background:linear-gradient(45deg,transparent 45%,#4a2a2a 45% 55%,transparent 55%),linear-gradient(-45deg,transparent 45%,#4a2a2a 45% 55%,transparent 55%)"></span></span><b>Cannot be filled</b>: shown to be impossible, and left out of the open count.
+      <ul>
+        <li><b>No circles.</b> A straightedge alone, from the given points, can only draw lines through them, and those lines meet only at the given points again: no new point, so no new length or angle.</li>
+        <li><b>One circle, for squaring and rectifying the circle.</b> That circle is the given circle itself, counted as the rules require. Lines can then only join the centre and the points on one diameter, all on one line, so the only lengths are the radius and the diameter: at best 72.7% of the circle's area, and far less of its circumference.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="box-text">Open slots are switched off at first, so the filled pattern reads first. The rulesets, and the reasoning behind the count of ways to draw, are in the <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md#rulesets" target="_blank" rel="noopener">ruleset</a>.</div>
+</div>
+
+<div class="nav-group">
+  <a href="charts.html" class="btn-link">Approximation Charts</a>
+  <a href="submit.html" class="btn-link">Submit An Approximation</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div id="slotTip" role="tooltip"></div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+
+<script src="common.js"></script>
+<script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
+<script src="crossref.js"></script>
+<script src="data.js"></script>
+<script>
+const CHARTS = PROBLEMS.concat(PI_CHART ? [PI_CHART] : []);
+const nameHTML = n => n.replace(/π/g, '<span style="text-transform:none">π</span>');
+const fmt = x => x.toLocaleString('en-GB');
+let current = CHARTS[0], rules = 0, showOpen = false;
+
+for (const p of CHARTS) {
+  const b = document.createElement('button');
+  b.className = 'tab'; b.innerHTML = p.n + '. ' + nameHTML(p.name); b.dataset.id = p.id;
+  b.onclick = () => { location.hash = p.id; };
+  $('tabs').appendChild(b);
+}
+document.querySelectorAll('[data-rules]').forEach(b => b.onclick = () => {
+  rules = +b.dataset.rules; document.querySelectorAll('[data-rules]').forEach(x => x.classList.toggle('active', x === b)); drawGrids();
+});
+$('openBtn').onclick = () => {
+  showOpen = !showOpen; $('openBtn').classList.toggle('active', showOpen); $('openBtn').setAttribute('aria-pressed', showOpen);
+  $('grids').classList.toggle('show-open', showOpen);
+};
+
+// Shade by closeness to perfect: 95% darkest, 99.9999% and beyond brightest; each step is ten times closer.
+const closeness = e => -Math.log10(Math.max(1e-12, Number(100n * 10n ** BigInt(PRECISE_PLACES) - e.units) / 1e36));
+function shade(side, k) {
+  const t = Math.max(0, Math.min(1, (k - 1.3) / 5.7));
+  return `hsl(${side === 'over' ? 40 : 203},${35 + 45 * t}%,${18 + 52 * t}%)`;
+}
+
+function render() {
+  const p = current, pid = p.id, P0 = GIVEN_POINTS[pid] || 2;
+  $('title').innerHTML = p.n + '. ' + nameHTML(p.name);
+  const ways = RULESETS.map(([, C, L]) => Math.ceil(waysLog10(C, L, P0)));
+  $('counts').innerHTML = '<tr><th>Ruleset</th><th>Slots per side</th><th>Filled (over / under)</th><th>Cannot be filled (per side)</th><th>Open</th><th>Ways to draw</th></tr>' +
+    RULESETS.map(([name, C, L], i) => {
+      const s = slotStats(pid, p.entries, C, L);
+      return `<tr><td>${name}</td><td class="mono">(${C} + 1) × (${L} + 1) = ${fmt(s.per)}</td><td>${fmt(s.fo)} / ${fmt(s.fu)}</td><td>${fmt(s.impossible)}</td><td><b>${fmt(s.open)}</b></td><td>&lt; 10<sup>${fmt(ways[i])}</sup></td></tr>`;
+    }).join('');
+  $('ways').innerHTML = `<b>Ways to draw</b> counts the different constructions themselves, every way of choosing each step from what is already drawn: the number of methods someone could find. With n = c + l steps, starting from the ${P0} given points of this problem, and P<sub>k</sub> the points drawn before step k (each new circle or line can meet each earlier one in at most 2 new points):
+    <span class="formula mono">ways(c, l) ≤ C(n, c) × ∏<sub>k</sub> [ P<sub>k</sub>(P<sub>k</sub> − 1) + P<sub>k</sub> · C(P<sub>k</sub>, 2) ],&nbsp;&nbsp; P<sub>0</sub> = ${P0},&nbsp; P<sub>k+1</sub> = P<sub>k</sub> + 2k</span>
+    C(n, c) chooses which steps are circles, and the bracket counts the choices for each new circle (about one point through another, or with a radius carried from two others), which outnumber the choices for a line. Summed over every budget up to the ruleset's caps, that is fewer than 10<sup>${fmt(ways[0])}</sup> ways under the base ruleset and 10<sup>${fmt(ways[1])}</sup> under the extended one. It is an upper bound: the same drawing made in another order is counted again, so the true number is smaller, but still far beyond listing. The slots are the few thousand budgets that all these drawings compete for.`;
+  $('back').innerHTML = `<a href="charts.html#${pid}">Back to the ${nameHTML(p.name)} chart →</a>`;
+  drawGrids();
+}
+
+function drawGrids() {
+  const p = current, [, C, L] = RULESETS[rules];
+  $('grids').innerHTML = ['over', 'under'].map(side => grid(p, side, C, L)).join('');
+  $('grids').classList.toggle('show-open', showOpen);
+  for (const side of ['over', 'under'])
+    $('leg' + (side === 'over' ? 'Over' : 'Under')).innerHTML = `<span>${side}sized</span>` + [95, 99, 99.9, 99.99, 99.999, 99.9999].map(a => `<span><span class="sw" style="background:${shade(side, -Math.log10((100 - a) / 100))}"></span>${a}%</span>`).join('');
+}
+
+let cellInfo = {};
+function grid(p, side, C, L) {
+  const cell = {};
+  p.entries.filter(e => e.side === side).forEach(e => { (cell[slotKey(e)] = cell[slotKey(e)] || []).push(e); });
+  Object.values(cell).forEach(a => a.sort(byExact));
+  // The best at or below each budget, built up row by row and column by column.
+  const best = [];
+  for (let c = 0; c <= C; c++) { best.push([]); for (let l = 0; l <= L; l++) {
+    const here = (cell[c + ',' + l] || [])[0];
+    const cands = [here, c > 0 ? best[c - 1][l] : null, l > 0 ? best[c][l - 1] : null].filter(Boolean);
+    best[c].push(cands.sort(byExact)[0] || null);
+  } }
+  let html = '';
+  for (let l = 0; l <= L; l++) for (let c = 0; c <= C; c++) {
+    const a = cell[c + ',' + l], id = side + ':' + c + ',' + l, no = slotImpossible(p.id, c, l);
+    cellInfo[id] = {side, c, l, entries: a || [], best: best[c][l], no};
+    if (a) {
+      const front = best[c][l] === a[0];
+      html += `<div class="c has${front ? ' f' : ''}${a.length > 1 ? ' multi' : ''}" data-id="${id}" style="background:${shade(side, closeness(a[0]))}"></div>`;
+    } else html += `<div class="c ${no ? 'no' : best[c][l] ? 'beat' : 'first'}" data-id="${id}"></div>`;
+  }
+  return `<div class="g"><h4 class="${side}">${side === 'over' ? '↑ OVERSIZED' : '↓ UNDERSIZED'}</h4>
+    <div class="axis" style="text-align:center;margin-bottom:3px;">circles 0 → ${C}</div>
+    <div style="display:flex;gap:4px;"><div class="axis" style="writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;">lines 0 → ${L}</div>
+    <div class="gwrap"><div class="cells${rules ? ' ext' : ''}" style="grid-template-columns:repeat(${C + 1},var(--s))">${html}</div></div></div></div>`;
+}
+
+// The hover box: the budget, what fills it, and what to beat.
+const tipEl = $('slotTip');
+function tipText(info) {
+  const head = `<b>${info.c} circle${info.c === 1 ? '' : 's'}, ${info.l} line${info.l === 1 ? '' : 's'}</b> · ${info.side}sized<br>`;
+  const who = e => `<b>${esc(e.acc)}%</b> (${esc(e.holder)}, ${e.circles} circles, ${e.lines} lines)`;
+  if (info.entries.length) {
+    const e = info.entries[0], front = info.best === e;
+    return head + `Filled by ${who(e)}${info.entries.length > 1 ? ` and ${info.entries.length - 1} more` : ''}.<br>` +
+      (front ? 'On the frontier: nothing at this budget or cheaper beats it.' : `A cheaper construction beats it: ${who(info.best)}.`) + '<br><span class="muted">Click to open it on the chart.</span>';
+  }
+  if (info.no) return head + 'Cannot be filled. ' + esc(info.no);
+  if (!info.best) return head + 'Open, and nothing at this budget or cheaper yet: any construction of 95% or better here joins the frontier, if one exists.';
+  return head + `Open. Best at this budget or cheaper: ${who(info.best)}.<br>To take this slot on the frontier, beat it.`;
+}
+function showTip(el, x, y) {
+  const info = cellInfo[el.dataset.id]; if (!info) return;
+  if (!info.entries.length && !showOpen) { tipEl.style.display = 'none'; return; }
+  tipEl.innerHTML = tipText(info); tipEl.style.display = 'block';
+  const w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+  tipEl.style.left = Math.min(window.innerWidth - w - 8, x + 14) + 'px'; tipEl.style.top = Math.min(window.innerHeight - h - 8, y + 14) + 'px';
+}
+$('grids').addEventListener('mousemove', ev => { const el = ev.target.closest('.c'); if (el) showTip(el, ev.clientX, ev.clientY); else tipEl.style.display = 'none'; });
+$('grids').addEventListener('mouseleave', () => { tipEl.style.display = 'none'; });
+$('grids').addEventListener('click', ev => {
+  const el = ev.target.closest('.c'); if (!el) return;
+  const info = cellInfo[el.dataset.id];
+  if (info && info.entries.length && el.classList.contains('sel')) { location.href = `charts.html#${current.id}/${info.entries[0].id}`; return; }
+  document.querySelectorAll('.c.sel').forEach(x => x.classList.remove('sel')); el.classList.add('sel');
+  const r = el.getBoundingClientRect(); showTip(el, r.right, r.top);
+  if (info && info.entries.length && matchMedia('(hover: hover)').matches) location.href = `charts.html#${current.id}/${info.entries[0].id}`;
+});
+
+function pick() {
+  current = CHARTS.find(p => p.id === location.hash.slice(1)) || CHARTS[0];
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === current.id));
+  render();
+}
+window.addEventListener('hashchange', pick);
+pick();
+</script>
+</body>
+</html>

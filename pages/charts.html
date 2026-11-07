@@ -160,6 +160,7 @@
 </div>
 
 <div class="nav-group">
+  <a href="slots.html" class="btn-link">Open Slots</a>
   <a href="submit.html" class="btn-link">Submit An Approximation</a>
   <a href="../index.html" class="btn-link">Return to Open Archive</a>
 </div>
@@ -282,21 +283,18 @@ function visible(e) {
   return true;
 }
 
-// Open slots: every budget of c circles and l lines is a slot, on each side of the chart, and each slot has one best
-// construction to find. Slots per side = (C + 1)(L + 1) for a ruleset's caps C and L; a slot is filled when an entry
-// uses exactly that budget (SUBMISSION_RULESET.md, "Slots").
-const RULESETS = [['Base ruleset', 25, 40], ['Extended ruleset', 49, 80]];
+// Open slots: the counts; the grids and the count of ways to draw are on slots.html.
 function renderSlots(entries) {
-  const n = x => parseInt(x, 10), fmt = x => x.toLocaleString('en-GB');
-  const filled = (side, C, L) => new Set(entries.filter(e => e.side === side && n(e.circles) <= C && n(e.lines) <= L && !isNaN(n(e.circles)) && !isNaN(n(e.lines))).map(e => n(e.circles) + ',' + n(e.lines))).size;
+  const fmt = x => x.toLocaleString('en-GB'), pid = current.id;
   const rows = RULESETS.map(([name, C, L]) => {
-    const per = (C + 1) * (L + 1), fo = filled('over', C, L), fu = filled('under', C, L);
-    return `<tr><td>${name}</td><td class="mono">(${C} + 1) × (${L} + 1) = ${fmt(per)}</td><td>${fmt(fo)} of ${fmt(per)}</td><td>${fmt(fu)} of ${fmt(per)}</td><td><b>${fmt(2 * per - fo - fu)}</b></td></tr>`;
+    const s = slotStats(pid, entries, C, L);
+    return `<tr><td>${name}</td><td class="mono">(${C} + 1) × (${L} + 1) = ${fmt(s.per)}</td><td>${fmt(s.fo)}</td><td>${fmt(s.fu)}</td><td><b>${fmt(s.open)}</b></td></tr>`;
   }).join('');
   $('slots').innerHTML = `<div class="box-title">Open Slots</div>
-    <div class="box-text">Every budget of circles and lines is a slot on each side of the chart, and each slot has one best construction waiting to be found: the most accurate one that uses exactly that many circles and lines. With at most C circles and L lines there are (C + 1) × (L + 1) slots per side. A slot is filled when an entry on the chart uses its budget; a cheaper or more accurate construction can still take it over.</div>
+    <div class="box-text">Every budget of circles and lines is a slot on each side of the chart, with one best construction to find: (C + 1) × (L + 1) slots per side for at most C circles and L lines.</div>
     <div class="table-wrap"><table class="slots"><tr><th>Ruleset</th><th>Slots per side</th><th>Filled oversized</th><th>Filled undersized</th><th>Open</th></tr>${rows}</table></div>
-    <div class="small-text muted" style="text-align:center;">Some of the smallest budgets may have no construction at 95% or better at all; the extended ruleset is for entries of 99.91% and above. ${who === 'all' ? '' : 'Counted among ' + (who === 'ai' ? 'AI finds' : 'people') + ' only.'}</div>`;
+    <div class="box-text" style="text-align:center;"><a href="slots.html#${pid}">See them as a grid, and how many ways there are to draw, on the Open Slots page →</a></div>
+    <div class="small-text muted" style="text-align:center;">Open leaves out the slots that can never be filled (no circles at all, and for the circle problems one circle). ${who === 'all' ? '' : 'Counted among ' + (who === 'ai' ? 'AI finds' : 'people') + ' only.'}</div>`;
 }
 
 function render() {
