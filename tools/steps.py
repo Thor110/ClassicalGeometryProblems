@@ -7,6 +7,9 @@ every circle, line and point, each with a sentence written from the file itself,
 whether the result depends on it (the "steps that count"). The last step shows the result and its
 measurement. Geometry comes from tools/verify.py's rebuild, as for the drawings, not from GeoGebra.
 
+main() returns, for each entry, how many steps the player plays: those the result depends on (counted, shown
+on the charts as Steps) and all of them; tools/verify.py records both in pages/ai-checks.js.
+
 Run from the repository root:  python tools/steps.py
 (python tools/verify.py --write runs it too.)
 """
@@ -270,7 +273,7 @@ def build(problem, folder, entry, frames=False):
 def main():
     archive = v.load_archive()
     os.makedirs(OUT, exist_ok=True)
-    made, keep = 0, set()
+    made, keep, counts = 0, set(), {}
     dump = lambda x: json.dumps(x, ensure_ascii=False, separators=(',', ':'))
     head = '// Written by tools/steps.py (python tools/verify.py --write). Do not edit by hand: run the script again.\n'
     for p in archive['problems']:
@@ -280,6 +283,8 @@ def main():
             except Exception as ex: print('steps for %s were not written: %s' % (e['id'], ex)); b = None
             if b:
                 files.setdefault(e['file'], b[0]); entries[e['id']] = b[1]; made += 1
+                u = b[1]['u'][1:]                                  # leave out step 0, the given figure
+                counts[e['id']] = {'counted': u.count('1'), 'all': len(u)}
                 if b[2]: angles[e['id']] = b[2]
         name = p['id'] + '.js'; keep.add(name)
         with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
@@ -300,6 +305,7 @@ def main():
     for f in os.listdir(OUT):
         if f.endswith('.js') and f not in keep: os.remove(os.path.join(OUT, f))
     print('%d constructions written as steps into pages/steps' % made)
+    return counts
 
 
 if __name__ == '__main__':

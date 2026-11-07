@@ -798,7 +798,9 @@ def main():
         except Exception as ex:
             print('drawings were not made: %s' % ex)
         try:
-            import steps; steps.main()
+            import steps
+            for k, c in (steps.main() or {}).items():
+                if k in results: results[k]['steps_played'] = c       # every step the player plays, intersections and midpoints too
         except Exception as ex:
             print('steps were not written: %s' % ex)
         write_js(os.path.join(ROOT, 'pages', 'ai-checks.js'), '// Written by tools/verify.py --write. Do not edit by hand: run the script again.', 'AI_CHECKS', out)

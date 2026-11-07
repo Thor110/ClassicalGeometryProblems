@@ -281,7 +281,7 @@ function show() {
   const err = R.c - R.t, rel = err / R.t;
   const s = CHECKS[entry.id] && CHECKS[entry.id].steps_used;
   $('meters').innerHTML = meters([
-    ['Counted', `${entry.circles} circles, ${entry.lines} lines`, ''],
+    ['Counted', `${entry.circles} circles, ${entry.lines} lines, ${data.e.u.slice(1).split('').filter(x => x === '1').length} steps`, ''],
     ['Constructed', last ? fmt(R.c, R.unit) : '…', ''],
     ['True value', fmt(R.t, R.unit), ''],
     ['Gap', last ? (err > 0 ? '+' : '') + err.toExponential(3) + (R.unit ? ' ' + R.unit : '') : '…', last ? (err > 0 ? 'warm' : '') : ''],
