@@ -77,7 +77,8 @@ td.precise{color:#555;font-size:13px;}
 .muted{color:#555;}
 .small-text{font-size:14px;color:#666;line-height:1.6;}
 
-.footer{margin-top:16px;font-size:16px;color:#3a3a46;letter-spacing:0.1em;text-transform:uppercase;text-align:center;}
+.footer{margin-top:40px;font-size:9px;color:#777;letter-spacing:0.1em;text-transform:uppercase;text-align:center;line-height:1.8;}
+.footer a{color:#888;}
 
 /* On a phone, long titles and figures wrap rather than push the page sideways. */
 @media (max-width:720px){
