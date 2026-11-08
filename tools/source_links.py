@@ -62,7 +62,7 @@ BOOKS = [
     (r'Hayden|Proceedings of the Royal Society 20', 'paper-doi-10_1098_rspl_1871_0099'), (r'Willich', 'philtrans08545474'), (r'Rudio|Vier Abhandlungen', 'archimedeshuygen00rudiuoft'), (r'Montucla', 'histoiredesreche00montuoft'),
     (r'Ramanujan, "(?:Squaring the circle|Modular equations)', 'pli.kerala.rare.28155'),
 ]
-MDZ = {'bsb10186754': 'J. Buteo, De quadratura circuli (1559), MDZ', 'bsb11104863': 'J. Fortius Ringelbergh, Lucubrationes (1541), MDZ', 'bsb11925583': 'J. Fortius Ringelbergh, Opera (1556), MDZ', 'bsb10147857': 'L. van Ceulen, Van den Circkel (1596), MDZ', 'bsb10164554': "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ", 'bsb11942712': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ', 'bsb10082182': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (2nd edition, 1851), MDZ'}
+MDZ = {'bsb11218281': 'T. Gephyrander [Brugmann], Quadratura circuli nova (1608/1609), MDZ', 'bsb10186754': 'J. Buteo, De quadratura circuli (1559), MDZ', 'bsb11104863': 'J. Fortius Ringelbergh, Lucubrationes (1541), MDZ', 'bsb11925583': 'J. Fortius Ringelbergh, Opera (1556), MDZ', 'bsb10147857': 'L. van Ceulen, Van den Circkel (1596), MDZ', 'bsb10164554': "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ", 'bsb11942712': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ', 'bsb10082182': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (2nd edition, 1851), MDZ'}
 ARXIV = {'1205.0080': 'G. H. Hughes, The Polygons of Albrecht Dürer, 1525 (arXiv)', '1908.01202': 'H. V. Chu, Squaring the Circle Revisited (arXiv)'}
 
 

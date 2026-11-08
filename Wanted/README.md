@@ -29,6 +29,9 @@ Found in the Jahrbuch but not charted:
 | Bryson (5th century BC): the circle as the mean of the inscribed and circumscribed squares | Known only from later commentators, and read in different ways (Montucla takes the arithmetic mean, π = 3). |
 | Longomontanus (1644): π = 3.1418596 | Worked out with numbers; he says himself that no true measure of the circle can be had "by geometric hypothesis without numbers" (Rotundi in plano absoluta mensura, Amsterdam 1644, [ARes744233](https://archive.org/details/ARes744233)). |
 | Cusa's second, third and fifth squarings; Campanus; the Arabs (Buteo 1559) | Cusa II and III place points by trial ("fortuito, vel reiteratione"); in Cusa V Buteo's wording and his numbers disagree; Campanus' square has the circle's perimeter, only 78.6% of its area; the Arabs give the value √10 only, charted through Bouvelles and Barbel. |
+| Jaime Juan Falcó (1587; MDZ bsb10164563) | His squaring rests on lemmas about equal "mixed figures" bounded by arcs, whose equality is assumed, not constructed; the height of his rectangle IEYR is never fixed by a step that can be drawn. |
+| Merkel and Leistner (refuted by Krafft, 1751; MDZ bsb10821348) | Numbers chosen to make the area a perfect square (Merkel: diameter to circumference as 1225 to 3844, √π = 62/35); no construction. |
+| "Herr Cantor" (refuted by Bendeler, 1701; MDZ bsb10821332) | Diameter to circumference as 8 to 25, π = 3⅛: Dürer's value, already charted; no construction of his own is given. |
 | Scaliger (1594), Van Eyk (1584) and other claimed quadratures | Their values are reported, not yet the constructions. |
 | Uffenbach's later figures | They roll a wheel. |
 | Huygens' bounds for an arc from its chord and sine (1654, Theorem XVI and Problem IV) | Numerical bounds, worked as fourth proportionals for the ratio of circumference to diameter; no construction is given. |
@@ -121,6 +124,7 @@ given there.
 | Nicholas of Cusa: the fourth squaring, HK | Rectifying the circle, 99.933% under | via Regiomontanus, quoted by Buteo (1559), pp. 138-141 |
 | Charles de Bouvelles (1542): a line made into a quadrant | Rectifying the circle, 99.772% under | Livre singulier (1542), prop. 10; Buteo (1559), pp. 155-158 |
 | Joachim Fortius Ringelbergh (by 1531): the quarter points, and Dürer's eighths | Squaring the circle, 98.140% over (credit moved from Bouvelles) | Chaos mathematicum, Lucubrationes (1541), pp. 571-572 ([MDZ bsb11104863](https://www.digitale-sammlungen.de/en/view/bsb11104863?page=665)) |
+| Thomas Brugmann ("Gephyrander", 1608): the rectangle of the diameter and the diameter less EH | Squaring the circle, 99.045% over | Quadratura circuli nova, sections I-IV ([MDZ bsb11218281](https://www.digitale-sammlungen.de/en/view/bsb11218281?page=11)) |
 | Christiaan Huygens (1654): six radii and a fifth of the square's side, 3 + √2/10 (also Busch 1868, under whose name it was charted first) | Rectifying the circle, 99.9945% under | De circuli magnitudine inventa, Problem II, third solution, in Rudio's translation (1892), pp. 105-106 ([archimedeshuygen00rudiuoft](https://archive.org/details/archimedeshuygen00rudiuoft)) |
 | Christiaan Huygens (1654): eight sides of the twelve-gon less the radius | Rectifying the circle, 99.984% under | the same, first solution, p. 104 |
 | Christiaan Huygens (1654): DG + GH, the quadrant from the twelve-gon | Rectifying the circle, 99.975% over | the same, second solution, pp. 104-105 |

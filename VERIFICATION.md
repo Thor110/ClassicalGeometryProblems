@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-08). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (175)
+### Not verified by a person yet (176)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -192,6 +192,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, oversized 98.140% · Ringelbergh's quarter points (stc-over-98.140): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/98.140-Bouvelles.ggb`, square q
 - [ ] Squaring The Circle, undersized 95.492% · de Serres' square on the triangle's side (stc-under-95.492-serres): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/95.492-Serres.ggb`, square q
 - [ ] Squaring The Circle, undersized 97.943% · Finé's first squaring (stc-under-97.943): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/97.943-Fine.ggb`, square q
+- [ ] Squaring The Circle, oversized 99.045% · Brugmann's rectangle (stc-over-99.045): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.045-Brugmann.ggb`, square q
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`

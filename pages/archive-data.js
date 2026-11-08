@@ -1729,6 +1729,41 @@ const ARCHIVE = {
       ]
      },
      "square": "q"
+    },
+    {
+     "id": "stc-over-99.045",
+     "side": "over",
+     "marks": "",
+     "holder": "Thomas Brugmann",
+     "method": "Brugmann's rectangle",
+     "circles": 9,
+     "lines": 8,
+     "acc": "99.045",
+     "precise": "99.045699905436204032859403053657",
+     "date": "1608",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/99.045-Brugmann",
+     "note": "F halves the quarter arc AB; the chord AB cuts the radius EF at G; on EF, H is as far beyond G as G is from F, and I on EA as far from H, so that FG = GH = HI = IE (each 1 − 1/√2 of the radius). Brugmann claims the lunule between the arc AF and the chord equals the small triangle HIE, and so that the rectangle of the diameter and the diameter less EH equals the circle: 2(2 − (√2 − 1)) = 6 − 2√2 = 3.1716 times the radius squared. The rectangle is his; the square on its mean proportional (Euclid II.14) is the archive's.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: T. Gephyrander [T. Brugmann], Quadratura circuli nova, perspicua, expedita (1608), sections I-IV, with the figures (MDZ, bsb11218281; Internet Archive, bub_gb_z5TUDt70KlMC); section IV, \"Rectangulum circulo aequale\": \"Si duae constituuntur lineae rectae ad angulum rectum, quarum altera diametro aequalis, altera spacio inter E.H. minor, id rectangulum ... circulo est aequale\"",
+       "redrawn in November 2026 from the page images; EH = (√2 − 1) of the radius, as FG = GH = HI = IE requires; the squaring of the rectangle is the archive's"
+      ],
+      "links": [
+       {
+        "label": "Internet Archive: bub_gb_z5TUDt70KlMC",
+        "url": "https://archive.org/details/bub_gb_z5TUDt70KlMC"
+       },
+       {
+        "label": "T. Gephyrander [Brugmann], Quadratura circuli nova (1608/1609), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11218281"
+       }
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -6622,6 +6657,11 @@ const ARCHIVE = {
    "Joachim Fortius Ringelbergh",
    "Joachim Sterck van Ringelbergh",
    "Ioachimus Fortius"
+  ],
+  "Thomas Brugmann": [
+   "Tho. Gephyrander Salicetus",
+   "Thomas Brugmann",
+   "Thomas Gephyrander"
   ]
  },
  "authors": [
@@ -7552,6 +7592,16 @@ const ARCHIVE = {
      "url": "https://en.wikipedia.org/wiki/Joachim_Sterck_van_Ringelbergh"
     }
    ]
+  },
+  {
+   "name": "Thomas Brugmann",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Thomas Brugmann"
+   ],
+   "bio": "A Westphalian scholar who published his squaring of the circle in 1608 under the name Thomas Gephyrander Salicetus; Gephyrander, \"bridge-man\", is his surname put into Greek. His little book divides the circle into eighths and claims a lunule equal to a small triangle; little else is known of him here.",
+   "links": []
   }
  ]
 };

@@ -12,6 +12,15 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Falcó, Brugmann, Bendeler, Krafft
+
+### Archive
+- Added Thomas Brugmann's rectangle ("Gephyrander", 1608), 99.045% over, squared with Euclid's mean proportional.
+- Read and set aside, with the reasons on the Wanted list: Falcó (1587), whose squaring rests on equalities he
+  assumes; Merkel and Leistner (refuted by Krafft, 1751), numbers only; and "Herr Cantor" (refuted by Bendeler,
+  1701), π = 3⅛, Dürer's value.
+- 206 entries, 69 authors.
+
 ## November 2026: Buteo's survey
 
 ### Archive
