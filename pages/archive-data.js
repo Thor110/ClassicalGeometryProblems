@@ -1764,6 +1764,46 @@ const ARCHIVE = {
       ]
      },
      "square": "q"
+    },
+    {
+     "id": "stc-under-99.239",
+     "side": "under",
+     "marks": "",
+     "holder": "Joseph Scaliger",
+     "method": "Scaliger's square",
+     "circles": 13,
+     "lines": 8,
+     "acc": "99.239",
+     "precise": "99.239201175922568912038769696334",
+     "date": "1594",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.239-Scaliger",
+     "note": "On a line, NQ equal to the side of the equilateral triangle inscribed in the circle and NR equal to 9/10 of the diameter; the semicircle on QR cuts the perpendicular at N in M, and the square on NM is taken as equal to the circle. That is, the circle is 6/5 of its inscribed hexagon, or the rectangle of the triangle's side and 9/10 of the diameter: π = 1.8√3 = 3.1177. Viète, Clavius, Van Roomen and Ludolph all wrote against it.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: J. Scaliger, Cyclometrica elementa duo (Leiden 1594) (MDZ, bsb10147881), book II, \"De potentia circuli\", pp. 79-80 (\"Aliter\", with its figure) and the corollary: \"circuli aream esse aequalem rectangulo sub latere trianguli aequilateri in eo ipso inscripti circulo, et novem decimis diametri concepto\"",
+       "refuted by F. Viète, Munimen adversus nova cyclometrica (1594), in his Opera mathematica (Leiden 1646), pp. 436-446 (Internet Archive, bub_gb_25iHrtJpy9oC); described by M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition, p. 596 (Internet Archive, vorlesungenber02cantuoft)",
+       "redrawn in November 2026 from the page images; 9/10 of the diameter is laid off with fifths of the radius, as Scaliger says to take a tenth from the diameter"
+      ],
+      "links": [
+       {
+        "label": "Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)",
+        "url": "https://archive.org/details/bub_gb_25iHrtJpy9oC"
+       },
+       {
+        "label": "M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)",
+        "url": "https://archive.org/details/vorlesungenber02cantuoft"
+       },
+       {
+        "label": "J. Scaliger, Cyclometrica elementa duo (1594), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10147881"
+       }
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -5683,6 +5723,37 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.341-scaliger",
+     "side": "over",
+     "marks": "",
+     "holder": "Joseph Scaliger",
+     "method": "Scaliger's perimeter",
+     "circles": 3,
+     "lines": 3,
+     "acc": "99.341",
+     "precise": "99.341575791025929927544939714507",
+     "date": "1594",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.341-Scaliger",
+     "note": "H three quarters of the way along the diameter from A, so that HC is a quarter of the diameter; E on the chord through H with HE = HC; AE is √10 times HE, and four times AE is taken as the perimeter: π = √10, the old Indian and Arab value, which Scaliger set out to prove.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: J. Scaliger, Cyclometrica elementa duo (Leiden 1594) (MDZ, bsb10147881), book I, \"De ambitu circuli\", proposition VII, pp. 37-38, with its figure; his \"Aliter\" (pp. 38-39), by the inscribed triangle, gives the same value",
+       "redrawn in November 2026 from the page images"
+      ],
+      "links": [
+       {
+        "label": "J. Scaliger, Cyclometrica elementa duo (1594), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10147881"
+       }
+      ]
+     },
+     "result_scale": 4
     }
    ]
   },
@@ -6662,6 +6733,11 @@ const ARCHIVE = {
    "Tho. Gephyrander Salicetus",
    "Thomas Brugmann",
    "Thomas Gephyrander"
+  ],
+  "Joseph Scaliger": [
+   "Iosephus Scaliger",
+   "Joseph Justus Scaliger",
+   "Joseph Scaliger"
   ]
  },
  "authors": [
@@ -7602,6 +7678,21 @@ const ARCHIVE = {
    ],
    "bio": "A Westphalian scholar who published his squaring of the circle in 1608 under the name Thomas Gephyrander Salicetus; Gephyrander, \"bridge-man\", is his surname put into Greek. His little book divides the circle into eighths and claims a lunule equal to a small triangle; little else is known of him here.",
    "links": []
+  },
+  {
+   "name": "Joseph Scaliger",
+   "life": "1540–1609",
+   "kind": "historical",
+   "holders": [
+    "Joseph Scaliger"
+   ],
+   "bio": "French scholar at Leiden, the founder of modern chronology (\"De emendatione temporum\", 1583) and one of the great classical philologists. His \"Cyclometrica elementa\" (1594) claimed to square the circle in two ways that contradict each other (π = √10 and π = 1.8√3), and drew replies from Viète, Clavius, Van Roomen and Ludolph van Ceulen.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Joseph_Justus_Scaliger"
+    }
+   ]
   }
  ]
 };

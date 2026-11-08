@@ -12,6 +12,15 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Scaliger, Van Eyk, Grandi
+
+### Archive
+- Added Joseph Scaliger's two constructions from his *Cyclometrica elementa* (1594): his square (π = 1.8√3), 99.239%
+  under, and his perimeter (π = √10), 99.341% over, tied with Bouvelles and Barbel by other steps.
+- Van Eyk (Simon Duchesne, 1583 and 1586) gives values only, as far as the sources show; Grandi (1710) uses infinite
+  series. Both are explained on the Wanted list.
+- 208 entries, 70 authors.
+
 ## November 2026: Falcó, Brugmann, Bendeler, Krafft
 
 ### Archive
