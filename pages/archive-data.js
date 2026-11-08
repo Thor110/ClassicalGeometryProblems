@@ -1548,7 +1548,8 @@ const ARCHIVE = {
       "evidence": [
        "published: A. Dürer, Underweysung der Messung (Nuremberg 1525), book II, as in A. Peltzer's edition, Albrecht Dürer's Unterweisung der Messung (Munich 1908) (Internet Archive, albrechtdrersun01peltgoog)",
        "the same construction is noted by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, note 2 (Dürer, sheet F VI, fig. 34)",
-       "redrawn in November 2026 from the circle, as Bouvelles draws it (La géométrie pratique, f. 40, proposition 9); the square's area is 3.125 times the radius squared"
+       "redrawn in November 2026 from the circle, as Bouvelles draws it (La géométrie pratique, f. 40, proposition 9); the square's area is 3.125 times the radius squared",
+       "J. Buteo, De quadratura circuli (Lyon 1559), pp. 150-151, \"Tetragonismus Alberti, sive Fortii\": \"cuius inventionem duo sibi scriptores Germani vendicant, Albertus scilicet Durerus et Ioachimus Fortius\" (MDZ, bsb10186754)"
       ],
       "links": [
        {
@@ -1558,6 +1559,10 @@ const ARCHIVE = {
        {
         "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10186754"
        }
       ]
      },
@@ -1567,6 +1572,11 @@ const ARCHIVE = {
        "name": "Charles de Bouvelles",
        "date": "1566",
        "note": "La géométrie pratique (1566 edition), chapter IV, propositions 9 and 10, drawn from the circle and from the square. It is not in his first French edition of 1542 (MDZ, bsb10164554), whose chapter on the circle has the quarter-point circle instead; Dürer's book of 1525 is earlier."
+      },
+      {
+       "name": "Joachim Fortius Ringelbergh",
+       "date": "by 1531",
+       "note": "Chaos mathematicum, in his Lucubrationes (1541), p. 571: \"Divisa diametro in octo partes utrinque unam adijce, sic aequale quadratum circulo efficies\", with the figure (MDZ, bsb11104863). Buteo (1559, p. 150) names Dürer and Fortius together as claiming it."
       }
      ]
     },
@@ -1610,37 +1620,48 @@ const ARCHIVE = {
      "id": "stc-over-98.140",
      "side": "over",
      "marks": "",
-     "holder": "Charles de Bouvelles",
-     "method": "Bouvelles' quarter points",
+     "holder": "Joachim Fortius Ringelbergh",
+     "method": "Ringelbergh's quarter points",
      "circles": 4,
      "lines": 11,
      "acc": "98.140",
      "precise": "98.140836421186985107914391441591",
-     "date": "1542",
+     "date": "by 1531",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/98.140-Bouvelles",
-     "note": "The circle through the quarter points of the square's sides (the points a quarter of the way from each corner) is taken as equal to the square: π = 3.2. Bouvelles gives it in 1542 as his way of turning a square into a circle (proposition 9), and again later for the sphere equal to a cube. Drawn here from the circle: the square whose sides it cuts at their quarter points.",
+     "note": "The circle through the quarter points of the square's sides (the points a quarter of the way from each corner) is taken as equal to the square: π = 3.2. Ringelbergh (who died in 1531) gives it in his Chaos mathematicum, with the figure; Bouvelles gives it in 1542, and Buteo (1559) says Bouvelles took it from Fortius, who wrote more than ten years before him. Drawn here from the circle: the square whose sides it cuts at their quarter points.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV (MDZ, bsb10164554), proposition 9, f. 36r: \"Je divise chascun des costez dudict quarré en quatre parties esgallement, & par les boutz & poinctz finaulx des premieres quartes parties ... je produis ung cercle ... lequel je dis estre esgal & pareil au quarré proposé\"",
-       "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter VI, f. 50, proposition 3 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), with its figure",
+       "published: J. Fortius Ringelbergh, Chaos mathematicum, in his Lucubrationes (Basel 1541), pp. 571-572 (MDZ, bsb11104863); also in his Opera (Lyon 1556), p. 452 (MDZ, bsb11925583): \"Divide latus quadrati per A B C in parteis quatuor. Tum extenso circino ad centrum & literam C circulum pinges quadrato aequalem\", with the figure",
+       "J. Buteo, De quadratura circuli (Lyon 1559), pp. 151-152 (\"Ioachimi Fortii tetragonismus\") and p. 158: \"Tertium insuper tetragonismum quem ponit Bouillus Ioachimo Fortio suppilauit ... Scripsit autem Fortius annis plusquam decem ante Bouillum\" (MDZ, bsb10186754)",
        "redrawn in November 2026 from the circle: the points of the circle where tan = 1/2 give the sides; the square is 3.2 times the radius squared"
       ],
       "links": [
        {
-        "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
-        "url": "https://archive.org/details/lageometrieprati00bovi"
+        "label": "J. Fortius Ringelbergh, Lucubrationes (1541), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11104863"
        },
        {
-        "label": "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ",
-        "url": "https://www.digitale-sammlungen.de/en/view/bsb10164554"
+        "label": "J. Fortius Ringelbergh, Opera (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11925583"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10186754"
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "rediscovered": [
+      {
+       "name": "Charles de Bouvelles",
+       "date": "1542",
+       "note": "Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV, proposition 9 (MDZ, bsb10164554), and La géométrie pratique (1566), chapter VI; charted under his name until Ringelbergh's book was found"
+      }
+     ]
     },
     {
      "id": "stc-under-95.492-serres",
@@ -1668,6 +1689,42 @@ const ARCHIVE = {
        {
         "label": "J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)",
         "url": "https://archive.org/details/histoiredesreche00montuoft"
+       }
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-under-97.943",
+     "side": "under",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's first squaring",
+     "circles": 4,
+     "lines": 13,
+     "acc": "97.943",
+     "precise": "97.943287127529146441958773936311",
+     "date": "1532",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/97.943-Fine",
+     "note": "The squares inscribed (EF) and circumscribed (BGD) about the circle; the line from the inscribed square's corner E to the circumscribed square's far corner G cuts the diameter BD at H and the circle at I; L is the corner of the square on AH; IL meets BD at N, and the square about the circle of radius AN is taken as equal to the circle. Finé meant HLM to be the mean proportional of the two squares and the circle AN a third proportional, but neither step is exact: the square is 3.0770 times the radius squared.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, Protomathesis (Paris 1532), as quoted in full by J. Buteo, De quadratura circuli libri duo (Lyon 1559), book II (MDZ, bsb10186754; Internet Archive, ARes13633), pp. 159-162, \"Tetragonismus Orontii I\", with its figure",
+       "redrawn in November 2026 from Buteo's quotation and figure; AN = 0.8770660 of the radius",
+       "Buteo: \"Orontii 1. CO, deficit\" (p. 205), as found here"
+      ],
+      "links": [
+       {
+        "label": "J. Buteo, De quadratura circuli (1559)",
+        "url": "https://archive.org/details/ARes13633"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10186754"
        }
       ]
      },
@@ -5512,6 +5569,85 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 1
+    },
+    {
+     "id": "rtc-under-99.933",
+     "side": "under",
+     "marks": "",
+     "holder": "Nicholas of Cusa",
+     "method": "Cusa's fourth squaring (HK)",
+     "circles": 4,
+     "lines": 2,
+     "acc": "99.933",
+     "precise": "99.933116084860186411658808527634",
+     "date": "about 1450",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.933-Cusa",
+     "note": "AF the side of the equilateral triangle inscribed in the circle, from the end A of the diameter AC; AG = AF laid along AC; the circle about G through A cuts the other diameter BD, produced, at H and K, and HK is taken as equal to the half circumference: 2√(2√3 − 1) = 3.1395 radii. Regiomontanus showed it falls short.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "Nicholas of Cusa, as reported by Regiomontanus (letters of 1464-65, printed 1533) and quoted by J. Buteo, De quadratura circuli libri duo (Lyon 1559), book II (MDZ, bsb10186754; Internet Archive, ARes13633), pp. 138-141, \"Tetragonismus Cusani IIII\"",
+       "redrawn in November 2026 from Buteo's text; Buteo's own figures (EG between 363 and 364 parts of the radius 497) agree with the rebuilt EG = 0.7320508 of the radius"
+      ],
+      "links": [
+       {
+        "label": "J. Buteo, De quadratura circuli (1559)",
+        "url": "https://archive.org/details/ARes13633"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10186754"
+       }
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-under-99.772",
+     "side": "under",
+     "marks": "",
+     "holder": "Charles de Bouvelles",
+     "method": "Bouvelles' line made into a quadrant",
+     "circles": 6,
+     "lines": 8,
+     "acc": "99.772",
+     "precise": "99.772530852568353945845428159151",
+     "date": "1542",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.772-Bouvelles",
+     "note": "A right angle DCE; CF and CG each a third of the given line; H the middle of FG; IK drawn parallel to FG between the legs, as long as FC + CG + GH; the quadrant IK about C is taken as equal to the given line. So the radius is (√2 + 1/2) thirds of the line, and π is taken as 6/(√2 + 1/2) = 3.1344. Drawn on the given circle, with its radius as the third, and scaled back to it with a parallel.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV, proposition 10, f. 36 (MDZ, bsb10164554); the same in La géométrie pratique (Paris 1566), f. 40 (Internet Archive, lageometrieprati00bovi)",
+       "quoted and refuted by J. Buteo, De quadratura circuli libri duo (Lyon 1559), book II (MDZ, bsb10186754; Internet Archive, ARes13633), pp. 155-158, \"Tetragonismus Bouilli II\"",
+       "redrawn in November 2026; the scaling to the given circle is the archive's"
+      ],
+      "links": [
+       {
+        "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
+        "url": "https://archive.org/details/lageometrieprati00bovi"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559)",
+        "url": "https://archive.org/details/ARes13633"
+       },
+       {
+        "label": "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10164554"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10186754"
+       }
+      ]
+     },
+     "result_scale": 4
     }
    ]
   },
@@ -6476,6 +6612,16 @@ const ARCHIVE = {
    "Ludolf van Ceulen",
    "Ludolph van Ceulen",
    "Ludolph von Cöllen"
+  ],
+  "Oronce Finé": [
+   "Oronce Fine",
+   "Oronce Finé",
+   "Orontius Finaeus"
+  ],
+  "Joachim Fortius Ringelbergh": [
+   "Joachim Fortius Ringelbergh",
+   "Joachim Sterck van Ringelbergh",
+   "Ioachimus Fortius"
   ]
  },
  "authors": [
@@ -6586,7 +6732,7 @@ const ARCHIVE = {
    "also": [
     "Charles de Bouvelles"
    ],
-   "bio": "French mathematician and philosopher, canon of Noyon. His \"Géométrie en françoys\" (1511) was the first scientific work printed in French. In later editions he worked out lengths of the circle by watching a cart wheel roll on a Paris bridge, and he reported the constructions of his friend Achaire Barbel.",
+   "bio": "French mathematician and philosopher, canon of Noyon. His \"Géométrie en françoys\" (1511) was the first scientific work printed in French. In later editions he worked out lengths of the circle by watching a cart wheel roll on a Paris bridge, and he reported the constructions of his friend Achaire Barbel. The circle through the quarter points, long charted under his name, is Ringelbergh's, from before 1531.",
    "links": [
     {
      "label": "MacTutor biography",
@@ -7367,6 +7513,43 @@ const ARCHIVE = {
     {
      "label": "Wikipedia",
      "url": "https://en.wikipedia.org/wiki/Ludolph_van_Ceulen"
+    }
+   ]
+  },
+  {
+   "name": "Oronce Finé",
+   "life": "1494–1555",
+   "kind": "historical",
+   "holders": [
+    "Oronce Finé"
+   ],
+   "bio": "French mathematician, cartographer and book illustrator, the first professor of mathematics at the Collège royal in Paris. His textbooks and maps were widely used, but his claims to have squared the circle, doubled the cube and trisected the angle were refuted in his lifetime by Buteo and Nunes.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Fine/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Oronce_Fin%C3%A9"
+    }
+   ]
+  },
+  {
+   "name": "Joachim Fortius Ringelbergh",
+   "life": "about 1499–1531",
+   "kind": "historical",
+   "holders": [
+    "Joachim Fortius Ringelbergh"
+   ],
+   "also": [
+    "Joachim Fortius Ringelbergh"
+   ],
+   "bio": "Flemish humanist from Antwerp, who wrote short handbooks on almost every subject, from rhetoric to astronomy, collected after his death as his Lucubrationes (1541). His Chaos mathematicum gives two squarings of the circle with their figures; Buteo says Bouvelles took one of them from him.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Joachim_Sterck_van_Ringelbergh"
     }
    ]
   }

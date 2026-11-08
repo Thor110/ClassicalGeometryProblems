@@ -12,6 +12,22 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Buteo's survey
+
+### Archive
+- Went through Jean Buteo's *De quadratura circuli* (1559), which quotes and refutes the squarings before his time
+  (MDZ and the Internet Archive). Added three of them:
+  - Oronce Finé's first squaring (1532), 97.943% under;
+  - Cusa's fourth squaring (from Regiomontanus), 99.933% under;
+  - Bouvelles' line made into a quadrant (1542), 99.772% under, drawn on the given circle and scaled back.
+- Re-credited: the circle through the quarter points of the square's sides moves from Bouvelles (1542) to Joachim
+  Fortius Ringelbergh (by 1531), from his *Chaos mathematicum*; Buteo says Bouvelles took it from him. Ringelbergh is
+  also listed under "Also found by" on Dürer's 3⅛ squaring.
+- Not chartable, now explained on the Wanted list: Finé's second squaring and Longomontanus' value (the first needs a
+  mechanical device, the second is computed, not drawn); Cusa's second, third and fifth squarings; Campanus (78.6%);
+  and the Arabs' √10, which is already charted.
+- 205 entries, 68 authors.
+
 ## November 2026: Wanted list, first editions
 
 ### Site
