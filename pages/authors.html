@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Every author of an approximation in the archive, from the Rhind papyrus to today, with who they were and what they contributed to mathematics.">
+<title>Classical Geometry Problems // Authors</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .afilter{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:4px;}
+  .afilter input{flex:1 1 220px;max-width:360px;background:#111118;border:1px solid #2a2a3a;color:#ddd;padding:7px 10px;font:inherit;font-size:14px;}
+  .author{scroll-margin-top:16px;}
+  .author h2{margin:0;font-size:18px;font-weight:normal;color:#e0ddd8;letter-spacing:0.04em;}
+  .author .life{color:#888;font-size:14px;margin:4px 0 12px;}
+  .author .tag{display:inline-block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;border:1px solid #2a2a3a;color:#999;padding:1px 6px;margin-left:8px;vertical-align:2px;}
+  .author .tag.ai{color:#8fc7a8;border-color:#2d4a3c;}
+  .author .tag.living{color:#d6c08a;border-color:#4a4330;}
+  .author ul.entries{margin:4px 0 12px 20px;font-size:14px;}
+  .author ul.entries li{margin-bottom:4px;}
+  .author .acc.over{color:#e0b35a;} .author .acc.under{color:#5aa9d6;}
+  .author .lab{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#666;margin-top:6px;}
+  .author .alinks{font-size:14px;}
+  .author.target{border-color:#4a9;}
+  #none{display:none;text-align:center;}
+</style>
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Authors</h1>
+<div class="sub">
+  Everyone credited on the charts, from the Rhind papyrus to today: who they were, and what they gave to mathematics.
+</div>
+
+<div class="box">
+  <div class="box-title">The Authors</div>
+  <div class="box-text" id="intro"></div>
+  <div class="box-text">Most of the people here are remembered for these constructions alone, and some are known only from a single paper or a review of it; their cards say so rather than guess. Others are among the great names of mathematics and science, and tried their hand at the same problems. Cards are in order of each author's earliest entry. Each lists the entries credited to them, with links to their place on the charts, and to fuller biographies where there are any.</div>
+  <div class="afilter">
+    <input type="search" id="q" placeholder="name, chart or method" aria-label="Search the authors">
+    <button class="small active" data-kind="">All</button>
+    <button class="small" data-kind="historical">Historical</button>
+    <button class="small" data-kind="living">Living</button>
+    <button class="small" data-kind="ai">AI</button>
+  </div>
+</div>
+
+<div id="cards"></div>
+<div class="box" id="none"><div class="box-text" style="text-align:center;">No author matches the search.</div></div>
+
+<div class="nav-group">
+  <a href="charts.html" class="btn-link">Approximation Charts</a>
+  <a href="submit.html" class="btn-link">Submit An Approximation</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0
+</div>
+<script src="common.js"></script>
+<script src="archive-data.js"></script>
+<script src="ai-checks.js"></script>
+<script src="crossref.js"></script>
+<script src="data.js"></script>
+<script>
+// The year an entry's date stands for, to put the authors in order: "c. 1700 BC" is -1700,
+// "15th century" is 1450, "06-11-2026" is 2026; no date sorts last.
+function yearOf(d) {
+  d = String(d || '');
+  let m = d.match(/(\d+)\s*BC/); if (m) return -parseInt(m[1], 10);
+  m = d.match(/(\d+)(st|nd|rd|th) century/); if (m) return (parseInt(m[1], 10) - 1) * 100 + 50;
+  m = d.match(/\d{2}-\d{2}-(\d{4})/); if (m) return parseInt(m[1], 10);
+  m = d.match(/\d{3,4}/); return m ? parseInt(m[0], 10) : 9999;
+}
+const slug = s => plainName(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const SIDE = {over: 'over', under: 'under'};
+
+const AUTHORS = (ARCHIVE.authors || []).map(a => {
+  const own = [], found = [];
+  for (const p of PROBLEMS) {
+    for (const e of p.entries.concat(p.archived || [])) {
+      const charted = !e.archived;
+      if ((a.holders || []).includes(e.holder)) own.push({p, e, charted});
+      for (const r of e.rediscovered || [])
+        if (r.name === a.name || (a.also || []).includes(r.name)) found.push({p, e, charted, r});
+    }
+  }
+  const years = own.map(x => yearOf(x.e.date)).concat(found.map(x => yearOf(x.r.date)));
+  return {...a, own, found, year: years.length ? Math.min(...years) : 9999, id: slug(a.name)};
+}).sort((x, y) => x.year - y.year || x.name.localeCompare(y.name));
+
+// Who else a credit belongs to: "Kochanski / Gordon" is on both people's cards.
+const SHARERS = {};
+(ARCHIVE.authors || []).forEach(a => (a.holders || []).forEach(h => (SHARERS[h] = SHARERS[h] || []).push(a.name)));
+function entryLine(x, extra, self) {
+  const others = self ? (SHARERS[x.e.holder] || []).filter(n => n !== self) : [];
+  extra = (extra || '') + (others.length ? ' · shared with ' + others.map(n => `<a href="#${slug(n)}">${esc(n)}</a>`).join(', ') : '');
+  const e = x.e, where = esc(x.p.name);
+  const acc = `<span class="acc ${SIDE[e.side] || ''}">${esc(e.acc)}% ${esc(e.side)}</span>`;
+  const name = x.charted ? `<a href="charts.html#${encodeURIComponent(x.p.id)}/${encodeURIComponent(e.id)}">${esc(e.method)}</a>` : esc(e.method) + ' (kept on record, below the charts\' minimum)';
+  return `<li>${name} · ${where}, ${acc}${e.date ? ' · ' + esc(e.date) : ''}${extra || ''}</li>`;
+}
+function card(a) {
+  const tag = a.kind === 'ai' ? '<span class="tag ai">AI</span>' : a.kind === 'living' ? '<span class="tag living">Living</span>' : '';
+  const own = a.own.length ? `<div class="lab">On the charts</div><ul class="entries">${a.own.map(x => entryLine(x, '', a.name)).join('')}</ul>` : '';
+  const found = a.found.length ? `<div class="lab">Also found, after an earlier author</div><ul class="entries">${a.found.map(x => entryLine(x, x.r.date ? ' · found ' + esc(x.r.date) : '')).join('')}</ul>` : '';
+  const links = (a.links || []).length ? `<div class="alinks">${a.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}</div>` : '';
+  return `<div class="box author" id="${a.id}" data-kind="${esc(a.kind || 'historical')}">
+    <h2>${esc(a.name)}${tag}</h2>
+    <div class="life">${esc(a.life || '')}</div>
+    <div class="box-text">${esc(a.bio)}</div>
+    ${own}${found}${links}
+  </div>`;
+}
+$('cards').innerHTML = AUTHORS.map(card).join('');
+const nEntries = new Set(AUTHORS.flatMap(a => a.own.map(x => x.e.id))).size;
+const nHist = AUTHORS.filter(a => (a.kind || 'historical') === 'historical').length;
+$('intro').textContent = `${AUTHORS.length} authors are credited on the charts: ${nHist} historical, the rest living or AI. Between them they hold ${nEntries} entries.`;
+
+let kind = '';
+function filter() {
+  const q = plainName($('q').value);
+  let shown = 0;
+  for (const a of AUTHORS) {
+    const el = $(a.id), text = plainName([a.name, a.bio, ...a.own.concat(a.found).map(x => x.p.name + ' ' + x.e.method)].join(' '));
+    const ok = (!kind || (a.kind || 'historical') === kind) && (!q || text.includes(q));
+    el.style.display = ok ? '' : 'none'; if (ok) shown++;
+  }
+  $('none').style.display = shown ? 'none' : 'block';
+}
+$('q').oninput = filter;
+document.querySelectorAll('[data-kind]').forEach(b => b.onclick = () => {
+  if (b.tagName !== 'BUTTON') return;
+  kind = b.dataset.kind; document.querySelectorAll('button[data-kind]').forEach(x => x.classList.toggle('active', x === b)); filter();
+});
+function showHash() {
+  const id = decodeURIComponent(location.hash.slice(1)); if (!id || !$(id)) return;
+  document.querySelectorAll('.author.target').forEach(x => x.classList.remove('target'));
+  $(id).classList.add('target'); $(id).scrollIntoView();
+}
+window.addEventListener('hashchange', showHash); showHash();
+</script>
+</body>
+</html>

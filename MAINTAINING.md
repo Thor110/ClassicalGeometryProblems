@@ -74,6 +74,14 @@ Cite each source in the entry's evidence by its identifier ("Internet Archive, <
 "arXiv:1234.56789", a NUMDAM item) and run `python tools/source_links.py`: it writes the links into the data and the
 notes. `python tools/source_links.py --check` (run by the verify workflow) fails if a historical entry has no link.
 
+**Authors:** the [Authors page](pages/authors.html) is built from `ARCHIVE.authors` in `pages/archive-data.js`, one card
+per person, with the entries found from each card's `holders` (and `also`, for "Also found by"). A new entry by someone
+already listed needs nothing. A new name needs a card: two to four sentences on who they were and what they contributed,
+or what little is known ("Known here from his paper in ..."), with links to MacTutor or Wikipedia where those exist. A joint
+credit ("Kochanski / Gordon") goes in both people's `holders`. `python tools/authors.py` (run by the verify workflow) fails if
+a credited name has no card; `--links` also opens every link. The home page's Notable Authors list is written by hand, from
+the cards that have a `notable` line.
+
 **When a source shows a charted construction was found earlier** (the same construction, not just the same
 value: `python tools/crossref.py <file> <problem>` compares the steps), move the credit and keep the name.
 Set the entry's `holder`, `date` and `origin` to the earliest author the source supports, add the earlier

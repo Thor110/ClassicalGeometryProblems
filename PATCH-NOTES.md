@@ -12,6 +12,20 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Authors page
+
+### Site
+- **New page: Authors** ([pages/authors.html](pages/authors.html)). It has one card for each of the 65 people credited on the charts:
+  - who they were and what they contributed to mathematics, or what little is known of them;
+  - the entries credited to them, linked to their place on the charts, and those they found after an earlier author;
+  - links to MacTutor and Wikipedia biographies.
+  - Cards are in order of each author's earliest entry. The page has search and filters (historical, living, AI), and shared credits say who they are shared with.
+- **Notable Authors**, a new section on the home page under "Trying Is Not Foolish": Dürer, Viète, Huygens, Kochański,
+  Lambert and Ramanujan.
+- The page builds itself from the data. `tools/authors.py` checks that every credited name has a card, and the verify
+  workflow runs it; `--links` also opens every biography link.
+- Authors link added to the home page and the charts.
+
 ## November 2026: Renaissance and early modern constructions
 
 ### Site

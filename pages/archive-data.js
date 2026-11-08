@@ -6351,5 +6351,876 @@ const ARCHIVE = {
    "P. Uffenbach",
    "Philipp Uffenbach"
   ]
- }
+ },
+ "authors": [
+  {
+   "name": "Ahmes",
+   "life": "scribe, about 1550 BC",
+   "kind": "historical",
+   "holders": [
+    "Ahmes (Rhind Papyrus)"
+   ],
+   "bio": "The Egyptian scribe who copied the Rhind Mathematical Papyrus, about 1550 BC, from a text some two centuries older. He is the earliest person known by name to have written mathematics, and his rule for the area of a circle, the square on 8/9 of the diameter, is the oldest approximation in the archive.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Ahmes/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Ahmes"
+    }
+   ]
+  },
+  {
+   "name": "Baudhayana",
+   "life": "about 800 BC",
+   "kind": "historical",
+   "holders": [
+    "Baudhayana"
+   ],
+   "bio": "The author of the Baudhāyana Śulbasūtra, the oldest of the Indian manuals for building fire altars, and among the oldest geometry texts that survive. It states the theorem now called Pythagoras' for the diagonal of a rectangle, gives a close value for √2, and has rules for turning squares into circles and back.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Baudhayana/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Baudhayana"
+    }
+   ]
+  },
+  {
+   "name": "Nicholas of Cusa",
+   "life": "1401–1464",
+   "kind": "historical",
+   "holders": [
+    "Nicholas of Cusa",
+    "Nicholas of Cusa / Snellius"
+   ],
+   "bio": "German cardinal, philosopher and mathematician. In \"On Learned Ignorance\" he treated the circle as a polygon with infinitely many sides, an idea that points toward the calculus. He spent ten years on the circle in a series of treatises; his arc formula, 3 sin θ / (2 + cos θ), was later proved by Snellius and Huygens.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Cusa/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Nicholas_of_Cusa"
+    }
+   ]
+  },
+  {
+   "name": "Albrecht Dürer",
+   "life": "1471–1528",
+   "kind": "historical",
+   "holders": [
+    "Albrecht Dürer"
+   ],
+   "bio": "The Nuremberg painter and printmaker of the German Renaissance. His \"Underweysung der Messung\" (1525) was one of the first books of mathematics printed in German, written for artists and craftsmen, with constructions of curves, regular polygons and solids, and the theory of perspective. He offered his squaring of the circle openly as a working rule, not a proof.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Durer/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Albrecht_D%C3%BCrer"
+    }
+   ],
+   "notable": "Painter and printmaker; his Underweysung der Messung (1525) brought geometry to artists in German, and gave a squaring offered honestly as a working rule."
+  },
+  {
+   "name": "Michael Stifel",
+   "life": "about 1487–1567",
+   "kind": "historical",
+   "holders": [
+    "Michael Stifel"
+   ],
+   "bio": "German monk, early follower of Luther, and later professor of mathematics at Jena. His \"Arithmetica integra\" (1544) set out negative numbers and exponents, and compared arithmetic and geometric series in a way that anticipates logarithms.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Stifel/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Michael_Stifel"
+    }
+   ]
+  },
+  {
+   "name": "Charles de Bouvelles",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Charles de Bouvelles"
+   ],
+   "also": [
+    "Charles de Bouvelles"
+   ],
+   "bio": "French mathematician and philosopher, canon of Noyon. His \"Géométrie en françoys\" (1511) was the first scientific work printed in French. In later editions he worked out lengths of the circle by watching a cart wheel roll on a Paris bridge, and he reported the constructions of his friend Achaire Barbel.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Bouvelles/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Charles_de_Bovelles"
+    }
+   ]
+  },
+  {
+   "name": "Achaire Barbel",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Achaire Barbel"
+   ],
+   "bio": "Known only from Bouvelles, who calls him a friend from Ham in Picardy, \"very ingenious at new inventions serving geometry\", and credits him with a quadrant of the circle found at Bouvelles' request.",
+   "links": []
+  },
+  {
+   "name": "François Viète",
+   "life": "1540–1603",
+   "kind": "historical",
+   "holders": [
+    "François Viète"
+   ],
+   "bio": "French lawyer and royal counsellor whose \"new algebra\" first used letters for known quantities as well as unknowns, the start of modern algebraic notation. He gave the first infinite product for π (1593), and worked π out to nine decimal places with polygons of 393,216 sides.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Viete/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te"
+    }
+   ],
+   "notable": "Father of modern algebraic notation and author of the first infinite product for π (1593); he drew the circle's quadrant from the golden section."
+  },
+  {
+   "name": "Olivier de Serres",
+   "life": "1539–1619",
+   "kind": "historical",
+   "holders": [
+    "Olivier de Serres"
+   ],
+   "bio": "French agronomist, whose \"Théâtre d'agriculture\" (1600) became the standard French work on farming for a century. He found by weighing that a circle and the square on the side of its inscribed triangle are nearly equal, and said so without claiming a discovery.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Olivier_de_Serres"
+    }
+   ]
+  },
+  {
+   "name": "Philipp Uffenbach",
+   "life": "1566–1636",
+   "kind": "historical",
+   "holders": [
+    "Philipp Uffenbach"
+   ],
+   "bio": "Frankfurt painter and etcher, teacher of Adam Elsheimer, with interests in mechanics, geometry, alchemy and anatomy. His \"De quadratura circuli mechanici\" (1619) collected practical ways of measuring the circle for craftsmen.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Philipp_Uffenbach"
+    }
+   ]
+  },
+  {
+   "name": "Willebrord Snellius",
+   "life": "1580–1626",
+   "kind": "historical",
+   "holders": [
+    "Nicholas of Cusa / Snellius"
+   ],
+   "bio": "Dutch astronomer and mathematician, known for the law of refraction that bears his name, and for measuring the Earth by triangulation. His \"Cyclometricus\" (1621) found close bounds for π from few-sided polygons, using the arc formula Cusa had found.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Snell/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Willebrord_Snellius"
+    }
+   ]
+  },
+  {
+   "name": "Christiaan Huygens",
+   "life": "1629–1695",
+   "kind": "historical",
+   "holders": [
+    "Christiaan Huygens"
+   ],
+   "bio": "Dutch mathematician, physicist and astronomer: he invented the pendulum clock, set out the wave theory of light, described the rings of Saturn and discovered Titan, and wrote the first book on probability. \"De circuli magnitudine inventa\" (1654) proved Snellius' bounds for π strictly, and gave rectifications that he showed were accurate to stated limits.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Huygens/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Christiaan_Huygens"
+    }
+   ],
+   "notable": "Pendulum clock, wave theory of light, Saturn's rings; in 1654 he proved the bounds on π strictly and gave rectifications with proven limits of error."
+  },
+  {
+   "name": "Adam Adamandy Kochański",
+   "life": "1631–1700",
+   "kind": "historical",
+   "holders": [
+    "Adam Adamandy Kochanski",
+    "Kochanski / Gordon"
+   ],
+   "bio": "Polish Jesuit, mathematician, clock-maker and court mathematician and librarian to King John III Sobieski. He corresponded with Leibniz. His rectification of the circle (Acta Eruditorum, 1685) gives π to four decimal places with a few strokes of compass and ruler, and is still taught.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Adam_Adamandy_Kocha%C5%84ski"
+    }
+   ],
+   "notable": "Court mathematician to John III Sobieski; his 1685 rectification gives π to four places in a few strokes and is still drawn today."
+  },
+  {
+   "name": "Johann Heinrich Lambert",
+   "life": "1728–1777",
+   "kind": "historical",
+   "holders": [
+    "Johann Heinrich Lambert"
+   ],
+   "bio": "Polymath from Mulhouse who worked in mathematics, physics, astronomy, philosophy and map-making (the Lambert projections). In 1761 he proved that π is irrational, the first step toward showing the circle cannot be squared. He also improved Snellius' rectification of arcs.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Lambert/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Johann_Heinrich_Lambert"
+    }
+   ],
+   "notable": "Proved π irrational in 1761, the first step toward showing the circle cannot be squared; he also sharpened Snellius' rectification of arcs."
+  },
+  {
+   "name": "Lorenzo Mascheroni",
+   "life": "1750–1800",
+   "kind": "historical",
+   "holders": [
+    "Lorenzo Mascheroni"
+   ],
+   "bio": "Italian geometer and poet. His \"Geometria del compasso\" (1797) showed that every straightedge and compass construction can be done with the compass alone (the Mohr-Mascheroni theorem). He also computed Euler's constant, which now carries his name too.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Mascheroni/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Lorenzo_Mascheroni"
+    }
+   ]
+  },
+  {
+   "name": "Fontana",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Fontana"
+   ],
+   "bio": "Named by Beutel (1913) only as Fontana, the first to give this rectification, in 1784. Which Fontana is meant has not been found yet.",
+   "links": []
+  },
+  {
+   "name": "Pioche",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Pioche"
+   ],
+   "bio": "A French army officer (\"militaire\") whose rectification Gergonne published in his Annales in 1818. Nothing more is known of him here.",
+   "links": []
+  },
+  {
+   "name": "C. G. Specht",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Specht"
+   ],
+   "bio": "Known here from his construction in the third volume of Crelle's Journal (1828).",
+   "links": []
+  },
+  {
+   "name": "August Leopold Crelle",
+   "life": "1780–1855",
+   "kind": "historical",
+   "holders": [
+    "A. L. Crelle"
+   ],
+   "bio": "German engineer and mathematician who founded the \"Journal für die reine und angewandte Mathematik\" in 1826, still published today, and published seven of Abel's papers in its first volume. The approximation charted under his name appeared unsigned in his journal in 1846.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Crelle/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/August_Leopold_Crelle"
+    }
+   ]
+  },
+  {
+   "name": "Nicolai Nuwrotzki",
+   "life": "",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "Nicolai Nuwrotzki"
+   ],
+   "bio": "Known from a pamphlet on the rectification of the circle (Hamburg, before 1846), which gave Kochański's construction without naming him.",
+   "links": []
+  },
+  {
+   "name": "Jacob de Gelder",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Jacob de Gelder"
+   ],
+   "bio": "Dutch mathematician, known here for his construction of Zu Chongzhi's fraction 355/113, published in Grunert's Archiv in 1849.",
+   "links": []
+  },
+  {
+   "name": "A. Kunze",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "A. Kunze"
+   ],
+   "bio": "Author of a \"Lehrbuch der Planimetrie\" (second edition, Jena 1851), the source of his triangle.",
+   "links": []
+  },
+  {
+   "name": "C. M. Willich",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "C. M. Willich"
+   ],
+   "bio": "Known here from his note on an approximate squaring, communicated to the Royal Society by G. G. Stokes in 1855.",
+   "links": []
+  },
+  {
+   "name": "August Ludwig Busch",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "August Ludwig Busch"
+   ],
+   "also": [
+    "August Ludwig Busch"
+   ],
+   "bio": "Author of the textbook \"Vorschule der darstellenden Geometrie\" (first edition 1846), which gives three rectifications of the circle; two of them turned out to be older, Huygens' and (perhaps) Kunze's.",
+   "links": []
+  },
+  {
+   "name": "W. J. Macquorn Rankine",
+   "life": "1820–1872",
+   "kind": "historical",
+   "holders": [
+    "W. J. Macquorn Rankine"
+   ],
+   "bio": "Scottish engineer and physicist, one of the founders of thermodynamics; the Rankine cycle of the steam engine and the Rankine temperature scale are named after him. His rectifications of arcs were written for engineers, in \"Machinery and Millwork\" (1869).",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Rankine/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/W._J._M._Rankine"
+    }
+   ]
+  },
+  {
+   "name": "Gaetano Baratto",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Gaetano Baratto"
+   ],
+   "bio": "Of Naples. His trisection was examined in 1869 by the astronomer Giovanni Schiaparelli, for the Istituto Lombardo.",
+   "links": []
+  },
+  {
+   "name": "William Hayden",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "William Hayden"
+   ],
+   "bio": "Known here from his approximate duplication of the cube and squaring of the circle, communicated to the Royal Society by G. G. Stokes in 1871.",
+   "links": []
+  },
+  {
+   "name": "G. Buonafalce",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "G. Buonafalce"
+   ],
+   "bio": "Known here from his pamphlet on the duplication of the cube (Pisa 1876).",
+   "links": []
+  },
+  {
+   "name": "G. J. Vargiù",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "G. J. Vargiù"
+   ],
+   "bio": "Known here from his pamphlet on the duplication and multiplication of the cube (Oristano 1877).",
+   "links": []
+  },
+  {
+   "name": "C. H. Kummell",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "C. H. Kummell"
+   ],
+   "bio": "Known here from his paper on the approximate multisection of an angle in The Analyst (1878).",
+   "links": []
+  },
+  {
+   "name": "A. H. Anglin",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "A. H. Anglin"
+   ],
+   "bio": "Known here from his four approximate squarings in the Messenger of Mathematics (1884).",
+   "links": []
+  },
+  {
+   "name": "Gaetano Boccali",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Gaetano Boccali"
+   ],
+   "bio": "Known here from his pamphlet on the double cube, drawn with a polygonal spiral (Camerino 1884).",
+   "links": []
+  },
+  {
+   "name": "Ernst Lakenmacher",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Ernst Lakenmacher"
+   ],
+   "bio": "Known here from his squaring in the Archiv der Mathematik und Physik (1890), which Vahlen later cited.",
+   "links": []
+  },
+  {
+   "name": "Émile Lemoine",
+   "life": "1840–1912",
+   "kind": "historical",
+   "holders": [
+    "Émile Lemoine"
+   ],
+   "bio": "French engineer and geometer, a founder of the modern geometry of the triangle (the Lemoine point). His \"géométrographie\" (1888) counted the elementary operations of a construction to measure its simplicity, the same idea as this archive's count of circles and lines.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Lemoine/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/%C3%89mile_Lemoine"
+    }
+   ]
+  },
+  {
+   "name": "Maurice d'Ocagne",
+   "life": "1862–1938",
+   "kind": "historical",
+   "holders": [
+    "Maurice d'Ocagne"
+   ],
+   "also": [
+    "Maurice d'Ocagne"
+   ],
+   "bio": "French engineer and mathematician who founded nomography, the computing of formulas with drawn scales (nomograms), used widely before electronic calculators.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Philbert_Maurice_d'Ocagne"
+    }
+   ]
+  },
+  {
+   "name": "A. Pleskot",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "A. Pleskot"
+   ],
+   "bio": "Of Prague. Known here from his rectification, first published in the Czech Časopis and then in the Journal de mathématiques élémentaires (1895).",
+   "links": []
+  },
+  {
+   "name": "E. Cominotto",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "E. Cominotto"
+   ],
+   "bio": "Known here from his booklet on the approximate trisection of the angle (Padua 1895).",
+   "links": []
+  },
+  {
+   "name": "P. Monti",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "P. Monti"
+   ],
+   "bio": "His general rule for trisection was published in Il Politecnico (1895) with a proof by the astronomer Giovanni Schiaparelli.",
+   "links": []
+  },
+  {
+   "name": "M. Blasendorff",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "M. Blasendorff"
+   ],
+   "bio": "A Berlin schoolmaster, known here from his school programme on dividing the arc of a circle (1896), with a table of its errors.",
+   "links": []
+  },
+  {
+   "name": "G. Peirce",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "G. Peirce"
+   ],
+   "bio": "Known here from his \"curious approximate construction for π\" in the Bulletin of the American Mathematical Society (1901).",
+   "links": []
+  },
+  {
+   "name": "H. Schoeler",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "H. Schoeler"
+   ],
+   "bio": "Known here from his note on the approximate division of an angle into n parts (Archiv der Mathematik und Physik, 1902), the source of the trisection long credited to d'Ocagne.",
+   "links": []
+  },
+  {
+   "name": "Fr. Strempel",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Fr. Strempel"
+   ],
+   "bio": "A teacher at the Gymnasium in Rostock, known here from his school programme on the rectification and division of arcs (1903).",
+   "links": []
+  },
+  {
+   "name": "G. Bojko",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "G. Bojko"
+   ],
+   "bio": "Known here from his construction for π in the Zeitschrift für Mathematik und Physik (1909).",
+   "links": []
+  },
+  {
+   "name": "A. A. Dmitrovskij",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "A. A. Dmitrovskij"
+   ],
+   "bio": "Known here from his article, in Russian, on the approximate duplication of the cube (Kagan's Vestnik, 1910).",
+   "links": []
+  },
+  {
+   "name": "K. T. Vahlen",
+   "life": "1869–1945",
+   "kind": "historical",
+   "holders": [
+    "K. T. Vahlen"
+   ],
+   "bio": "German mathematician whose \"Konstruktionen und Approximationen in systematischer Darstellung\" (1911) is the standard survey of approximate constructions, and the source of many entries here. He later became a leading Nazi official in German academic life.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Theodor_Vahlen"
+    }
+   ]
+  },
+  {
+   "name": "Srinivasa Ramanujan",
+   "life": "1887–1920",
+   "kind": "historical",
+   "holders": [
+    "Srinivasa Ramanujan"
+   ],
+   "bio": "Indian mathematician, largely self-taught, whose work on infinite series, continued fractions, partitions and modular forms is still being explored. His series for 1/π are the basis of modern computations of π. His squarings of the circle (1913, 1914) give π to six and to eight decimal places.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Ramanujan/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan"
+    }
+   ],
+   "notable": "Infinite series, partitions and modular forms; his series for 1/π drive modern computations, and his squarings give π to six and eight places."
+  },
+  {
+   "name": "E. W. Hobson",
+   "life": "1856–1933",
+   "kind": "historical",
+   "holders": [
+    "E. W. Hobson"
+   ],
+   "bio": "English mathematician, Sadleirian Professor at Cambridge, known for his books on real analysis. His \"Squaring the Circle\" (1913) is a classic history of the problem, and many entries here are taken from it.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Hobson/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/E._W._Hobson"
+    }
+   ]
+  },
+  {
+   "name": "K. Hagge",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "K. Hagge"
+   ],
+   "bio": "Known here from his rectification with the compass alone, printed without proof in the Revista matemática Hispano-Americana (1913-14).",
+   "links": []
+  },
+  {
+   "name": "Emil Lampe",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Emil Lampe"
+   ],
+   "bio": "German mathematician who for many years edited the Jahrbuch über die Fortschritte der Mathematik, the review journal through which many of the approximations here were found. His survey \"Angenäherte Kreisquadraturen\" appeared in 1916.",
+   "links": []
+  },
+  {
+   "name": "J. Kornbrekke",
+   "life": "",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "J. Kornbrekke"
+   ],
+   "bio": "Known from his construction for the approximate division of an angle in the Norsk Matematisk Tidsskrift (1919).",
+   "links": []
+  },
+  {
+   "name": "Ludwig Burmester",
+   "life": "1840–1927",
+   "kind": "historical",
+   "holders": [
+    "Ludwig Burmester"
+   ],
+   "bio": "German geometer and one of the founders of the kinematics of mechanisms; Burmester theory, for designing linkages, is named after him.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Ludwig_Burmester"
+    }
+   ]
+  },
+  {
+   "name": "Karajordanoff",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Karajordanoff"
+   ],
+   "bio": "Known here from his trisection of 1928, as given by Breidenbach (1933) and Yates (1942).",
+   "links": []
+  },
+  {
+   "name": "Artur Heiseler",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Artur Heiseler"
+   ],
+   "bio": "Known here from his method for rectifying the circle in the Commentationes of the Finnish Society of Sciences (1931).",
+   "links": []
+  },
+  {
+   "name": "Eugen Kopf",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Eugen Kopf"
+   ],
+   "bio": "A master tailor whose trisections were examined by the mathematician Oskar Perron, who published the second of them in 1933.",
+   "links": [
+    {
+     "label": "Oskar Perron (MacTutor biography)",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Perron/"
+    }
+   ]
+  },
+  {
+   "name": "A. Stoyanoff",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "A. Stoyanoff"
+   ],
+   "bio": "Known here from his paper on the trisection of the angle in the Annuaire of the University of Sofia (1935).",
+   "links": []
+  },
+  {
+   "name": "Ig. Hajek",
+   "life": "",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "Ig. Hajek"
+   ],
+   "bio": "Known from his booklet on the trisection of the angle for draughtsmen (Znaim 1936).",
+   "links": []
+  },
+  {
+   "name": "Eduard Gregori",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Eduard Gregori"
+   ],
+   "bio": "A merchant of Bolzano whose squaring was published, with a proof, by G. Innerebner in 1947.",
+   "links": []
+  },
+  {
+   "name": "Edoardo Storchi",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Edoardo Storchi"
+   ],
+   "bio": "Known here from his paper on the approximate squaring of the circle in the Periodico di Matematiche (1947).",
+   "links": []
+  },
+  {
+   "name": "J. G. van der Corput",
+   "life": "1890–1975",
+   "kind": "historical",
+   "holders": [
+    "J. G. van der Corput and H. Mooij"
+   ],
+   "bio": "Dutch mathematician, a leading figure in analytic number theory (van der Corput's lemma and the van der Corput sequence). With H. Mooij he worked out a general approximate division of an angle (1949).",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Van_der_Corput/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Johannes_van_der_Corput"
+    }
+   ]
+  },
+  {
+   "name": "H. Mooij",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "J. G. van der Corput and H. Mooij"
+   ],
+   "bio": "Van der Corput's co-author on the approximate division of an angle (1949).",
+   "links": []
+  },
+  {
+   "name": "D. Visser",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "D. Visser"
+   ],
+   "bio": "Known here from his trisection in Simon Stevin (1950).",
+   "links": []
+  },
+  {
+   "name": "Sauerbeck",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "Sauerbeck"
+   ],
+   "bio": "Known from the trisection that J. Lense examined for the Bavarian Academy of Sciences (1951).",
+   "links": []
+  },
+  {
+   "name": "Hung Viet Chu",
+   "life": "",
+   "kind": "living",
+   "holders": [
+    "Hung Viet Chu"
+   ],
+   "bio": "Author of \"Squaring the Circle Revisited\" (arXiv, 2019).",
+   "links": [
+    {
+     "label": "arXiv:1908.01202",
+     "url": "https://arxiv.org/abs/1908.01202"
+    }
+   ]
+  },
+  {
+   "name": "Edward James Gordon",
+   "life": "",
+   "kind": "living",
+   "holders": [
+    "Edward James Gordon",
+    "Kochanski / Gordon"
+   ],
+   "bio": "Founder and maintainer of this archive (Thor110).",
+   "links": [
+    {
+     "label": "GitHub",
+     "url": "https://github.com/Thor110"
+    }
+   ]
+  },
+  {
+   "name": "Claude (Anthropic)",
+   "life": "",
+   "kind": "ai",
+   "holders": [
+    "Claude (Anthropic)"
+   ],
+   "bio": "An AI model made by Anthropic. Its entries come from computer searches and variant searches run at the maintainer's request, and are marked as AI finds on the charts.",
+   "links": []
+  }
+ ]
 };

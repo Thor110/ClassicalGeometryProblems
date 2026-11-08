@@ -28,3 +28,5 @@ jobs:
         run: python tools/add_submission.py --check-labels
       - name: Check that every historical entry links to its sources
         run: python tools/source_links.py --check
+      - name: Check that every credited name has a card on the Authors page
+        run: python tools/authors.py
