@@ -12,7 +12,7 @@ anyone can open the page the construction was taken from:
 
 To add a source the script does not know yet, add it to BOOKS (by a phrase the evidence uses) or cite its identifier
 in the evidence in the usual form ("Internet Archive, <identifier>", "JFM 12.0345.06", "Zbl 0012.34501",
-"arXiv:1234.56789", "NUMDAM, <item>", "MDZ, bsb12345678").
+"arXiv:1234.56789", "NUMDAM, <item>", "MDZ, bsb12345678", "BAdW, 003383299").
 """
 import json, os, re, sys
 
@@ -82,6 +82,8 @@ def links_for(evidence):
             'https://zbmath.org/?q=an%3A' + num)
     for num in re.findall(r'arXiv:?\s?(\d{4}\.\d{4,5})', text):
         add(ARXIV.get(num, 'arXiv:' + num), 'https://arxiv.org/abs/' + num)
+    for item in re.findall(r'BAdW,? (\d{9})', text):
+        add('Bayerische Akademie der Wissenschaften, Sitzungsberichte (' + item + ')', 'https://publikationen.badw.de/de/' + item)
     for item in re.findall(r'MDZ,? (bsb\d{8})', text):
         add(MDZ.get(item, 'Münchener DigitalisierungsZentrum: ' + item), 'https://www.digitale-sammlungen.de/en/view/' + item)
     for item in re.findall(r'\b(BSMF_\d{4}__\d+__\d+_\d)', text):

@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-08). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (178)
+### Not verified by a person yet (180)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -227,6 +227,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 99.855% · van der Corput and Mooij's division, r = 1/3 (taa-under-99.855): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.855-vanderCorput.ggb`
 - [ ] Trisecting An Angle, undersized 99.584% · Visser's trisection (taa-under-99.584): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.584-Visser.ggb`
 - [ ] Trisecting An Angle, oversized 98.678% · Sauerbeck's trisection (taa-over-98.678): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.678-Sauerbeck.ggb`
+- [ ] Trisecting An Angle, undersized 98.960% · Kopf's first trisection (taa-under-98.960): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-98.960-Kopf.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -294,6 +295,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.933% · Cusa's fourth squaring (HK) (rtc-under-99.933): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.933-Cusa.ggb`
 - [ ] Rectifying The Circle, undersized 99.772% · Bouvelles' line made into a quadrant (rtc-under-99.772): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.772-Bouvelles.ggb`
 - [ ] Rectifying The Circle, oversized 99.341% · Scaliger's perimeter (rtc-over-99.341-scaliger): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.341-Scaliger.ggb`
+- [ ] Rectifying The Circle, oversized 99.904% · Cusa's fifth squaring (the chord AF) (rtc-over-99.904-cusa): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.904-Cusa.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
@@ -322,7 +324,7 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Identical or near-identical entries (18)
+### Identical or near-identical entries (20)
 
 From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
 
@@ -340,8 +342,10 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] same result: rtc-over-99.904 and rtc-over-99.904-lemoine (score 0.13)
 - [ ] same result: rtc-over-99.341 and rtc-over-99.341-barbel (score 0.13)
 - [ ] same result: stc-under-95.492-serres and stc-under-95.492 (score 0.12)
+- [ ] same result: rtc-over-99.904 and rtc-over-99.904-cusa (score 0.11)
 - [ ] same result: rtc-over-99.998-viete and rtc-over-99.998 (score 0.08)
 - [ ] same result: dtc-under-97.65625 and dtc-under-97.656 (score 0.08)
+- [ ] same result: rtc-over-99.904-lemoine and rtc-over-99.904-cusa (score 0.03)
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)
 

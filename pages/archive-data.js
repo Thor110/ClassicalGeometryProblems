@@ -2567,10 +2567,10 @@ const ARCHIVE = {
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: O. Perron, \"Eine neue Winkeldreiteilung des Schneidermeisters Kopf\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Abt., 1933, pp. 439-445 (Jahrbuch über die Fortschritte der Mathematik, JFM 60.1233.02 (zbMATH Open), which describes the construction step for step)",
-       "its largest error found by O. Nehring, \"Über die Dreiteilung des Winkels nach Eugen Kopf\", ibid. 1936, pp. 77-79 (Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)): 14.86\" at the angle with cos x = 181/(266 + 151√3), 69.934°, which the rebuilt figure gives exactly",
+       "published: O. Perron, \"Eine neue Winkeldreiteilung des Schneidermeisters Kopf\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Abt., 1933, pp. 439-445 (BAdW, 003383427; Jahrbuch über die Fortschritte der Mathematik, JFM 60.1233.02 (zbMATH Open), which describes the construction step for step)",
+       "its largest error found by O. Nehring, \"Über die Dreiteilung des Winkels nach Eugen Kopf\", ibid. 1936, pp. 77-79 (BAdW, 003396126; Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)): 14.86\" at the angle with cos x = 181/(266 + 151√3), 69.934°, which the rebuilt figure gives exactly",
        "as given, with Perron's table, in R. C. Yates, The Trisection Problem (1942), ch. 4, § 5, fig. 37 (Internet Archive, ERIC_ED058058), who dates Kopf's work to 1919 and mentions refinements by Perron and d'Ocagne",
-       "Kopf's first construction (E. Kopf, Die Dreiteilung des Winkels, Ludwigshafen 1929; Perron, Sitzungsberichte München 59 (1929), pp. 341-343) is a different one, with errors up to 8' 12\" for acute angles"
+       "Kopf's first construction (E. Kopf, Die Dreiteilung des Winkels, Ludwigshafen 1929; Perron, Sitzungsberichte München 1929, pp. 341-343) is a different one, charted as taa-under-98.960"
       ],
       "links": [
        {
@@ -2584,6 +2584,14 @@ const ARCHIVE = {
        {
         "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)",
         "url": "https://zbmath.org/?q=an%3A62.0698.02"
+       },
+       {
+        "label": "Bayerische Akademie der Wissenschaften, Sitzungsberichte (003383427)",
+        "url": "https://publikationen.badw.de/de/003383427"
+       },
+       {
+        "label": "Bayerische Akademie der Wissenschaften, Sitzungsberichte (003396126)",
+        "url": "https://publikationen.badw.de/de/003396126"
        }
       ]
      }
@@ -2800,7 +2808,7 @@ const ARCHIVE = {
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: J. Lense, \"Die Winkeldreiteilung des Herrn Sauerbeck\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Klasse, 1950 (1951), pp. 107-110",
+       "published: J. Lense, \"Die Winkeldreiteilung des Herrn Sauerbeck\", Sitzungsberichte der Bayerischen Akademie der Wissenschaften, math.-nat. Klasse, 1950 (1951), pp. 107-110 (BAdW, 003383642)",
        "as described in the review in the Zentralblatt, Zbl 0043.35403 (zbMATH Open)",
        "redrawn in November 2026 from the review; the rebuilt error is 7.93' at 30°, 6.24' at 60°, 0 at 90° and 180°, under the 8'12\" Lense gives"
       ],
@@ -2808,6 +2816,44 @@ const ARCHIVE = {
        {
         "label": "Zentralblatt, Zbl 0043.35403 (zbMATH Open)",
         "url": "https://zbmath.org/?q=an%3A0043.35403"
+       },
+       {
+        "label": "Bayerische Akademie der Wissenschaften, Sitzungsberichte (003383642)",
+        "url": "https://publikationen.badw.de/de/003383642"
+       }
+      ]
+     }
+    },
+    {
+     "id": "taa-under-98.960",
+     "side": "under",
+     "marks": "",
+     "holder": "Eugen Kopf",
+     "method": "Kopf's first trisection",
+     "circles": 3,
+     "lines": 5,
+     "acc": "98.960",
+     "precise": "98.960906389829014210587099925821",
+     "date": "1929",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-98.960-Kopf",
+     "note": "On the diameter AB about M, MC the perpendicular radius; the arc about B through C; E on AB produced beyond B with CE = AB (so ME = √3 radii). For the angle AMF, the line FB meets the arc at G, and AEG is taken as the third: cot y = (√3 − 1 + √2 cos(x/2)) / (√2 sin(x/2)). Exact at 0° and 90°; Perron found the largest error, 8'12\", at 52°34'37\". Its relative error does not shrink for small angles, so it is charted at its weakest from 30° to 90°, at 30°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Perron, \"Die Winkeldreiteilung des Schneidermeisters Kopf\", Sitzungsberichte der math.-nat. Abteilung der Bayerischen Akademie der Wissenschaften 1929, pp. 341-343 (BAdW, 003383299), with the figure and the error analysis; Kopf's own leaflet is E. Kopf, Die Dreiteilung des Winkels (Ludwigshafen 1929), 2 pp., reviewed in the Jahrbuch über die Fortschritte der Mathematik, JFM 55.0982.04 (zbMATH Open)",
+       "redrawn in November 2026 from Perron's paper; the rebuilt third agrees with his formula (1), and the error at 52°34'37\" is his 8'12\""
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 55.0982.04 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A55.0982.04"
+       },
+       {
+        "label": "Bayerische Akademie der Wissenschaften, Sitzungsberichte (003383299)",
+        "url": "https://publikationen.badw.de/de/003383299"
        }
       ]
      }
@@ -4946,7 +4992,7 @@ const ARCHIVE = {
      "date": "1846",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.904-Crelle",
-     "note": "The angle whose cosine equals its tangent: its sine is (√5 − 1)/2, and its cosine, √((√5 − 1)/2) = 0.786151 radii, is nearly an eighth of the circumference, 0.785398. Drawn as the perpendicular from the centre to a chord √5 − 1 long, taken off the line from one end of the diameter to the tangent at the other. Lemoine (1895) drew the same length another way, as the leg of a right triangle on the diameter (rtc-over-99.904-lemoine).",
+     "note": "The angle whose cosine equals its tangent: its sine is (√5 − 1)/2, and its cosine, √((√5 − 1)/2) = 0.786151 radii, is nearly an eighth of the circumference, 0.785398. Drawn as the perpendicular from the centre to a chord √5 − 1 long, taken off the line from one end of the diameter to the tangent at the other. Lemoine (1895) drew the same length another way, as the leg of a right triangle on the diameter (rtc-over-99.904-lemoine). Nicholas of Cusa had the same number about 1450, in the squaring Buteo calls his fifth (rtc-over-99.904-cusa), by other steps; Duchesne gave it again as a value in 1586.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -5074,7 +5120,7 @@ const ARCHIVE = {
      "date": "1895",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.904-Lemoine",
-     "note": "On the diameter AB, Lemoine divides AB in extreme and mean ratio with the compass (AG = (√5 − 1)/2 · AB), lays AG as a chord AH, and takes BH: √((√5 − 1)/2) of the diameter, nearly a quarter of the circumference. The same value as Crelle's cosine equal to its tangent (rtc-over-99.904), by other steps; Lemoine says he found it long before and that it is perhaps not known.",
+     "note": "On the diameter AB, Lemoine divides AB in extreme and mean ratio with the compass (AG = (√5 − 1)/2 · AB), lays AG as a chord AH, and takes BH: √((√5 − 1)/2) of the diameter, nearly a quarter of the circumference. The same value as Crelle's cosine equal to its tangent (rtc-over-99.904), by other steps; Lemoine says he found it long before and that it is perhaps not known. Nicholas of Cusa had the same number about 1450, in the squaring Buteo calls his fifth (rtc-over-99.904-cusa), by other steps; Duchesne gave it again as a value in 1586.",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -5754,6 +5800,53 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.904-cusa",
+     "side": "over",
+     "marks": "",
+     "holder": "Nicholas of Cusa",
+     "method": "Cusa's fifth squaring (the chord AF)",
+     "circles": 8,
+     "lines": 6,
+     "acc": "99.904",
+     "precise": "99.904097769121747403630174171380",
+     "date": "about 1450",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.904-Cusa",
+     "note": "The chord AF from the end A of one diameter cuts the other diameter BD at G, placed so that GE is half of AF; Cusa takes AF as equal to the quadrant. The condition fixes G: EG = r/√φ, AF = 2 EG, so π = √(8(√5 − 1)) = 3.14460, the value π² = √320 − 8 that Duchesne put forward again in 1586, and the same number as Crelle's (1846) and Lemoine's (1895) constructions, by other steps. Cusa states the condition only; finding G with a golden section and a mean proportional is the archive's.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "Nicholas of Cusa, as quoted and refuted by J. Buteo, De quadratura circuli libri duo (Lyon 1559), book II (MDZ, bsb10186754; Internet Archive, ARes13633), pp. 147-149, \"Tetragonismus Cusani V\", with the figure (Regiomontanus had refuted it \"circuitu longo numerorum\")",
+       "the value π² = √320 − 8 is identified as Cusa's by Van Roomen and Ludolph van Ceulen, as reported by M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition, pp. 592 and 597 (Internet Archive, vorlesungenber02cantuoft)",
+       "redrawn in November 2026 from Buteo's text; the steps that place G are the archive's"
+      ],
+      "links": [
+       {
+        "label": "J. Buteo, De quadratura circuli (1559)",
+        "url": "https://archive.org/details/ARes13633"
+       },
+       {
+        "label": "M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)",
+        "url": "https://archive.org/details/vorlesungenber02cantuoft"
+       },
+       {
+        "label": "J. Buteo, De quadratura circuli (1559), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10186754"
+       }
+      ]
+     },
+     "result_scale": 4,
+     "rediscovered": [
+      {
+       "name": "Simon Duchesne",
+       "date": "1586",
+       "note": "as a value only, π² = √320 − 8, in his second attempt at the circle; Van Roomen and Ludolph van Ceulen pointed out that it was one of Cusa's values (M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition, pp. 592 and 597; Internet Archive, vorlesungenber02cantuoft)"
+      }
+     ]
     }
    ]
   },
@@ -6648,8 +6741,8 @@ const ARCHIVE = {
    "A. A. Dmitrovskij"
   ],
   "Eugen Kopf": [
-   "Eugen Kopf",
    "E. Kopf",
+   "Eugen Kopf",
    "Kopf"
   ],
   "M. Blasendorff": [
@@ -7474,7 +7567,7 @@ const ARCHIVE = {
    "holders": [
     "Eugen Kopf"
    ],
-   "bio": "A master tailor whose trisections were examined by the mathematician Oskar Perron, who published the second of them in 1933.",
+   "bio": "A master tailor of Ludwigshafen, who sent his trisections to the mathematician Oskar Perron. Perron published both, in 1929 and 1933, and found them remarkably good for their simplicity: the second is within 15 seconds of arc for every acute angle.",
    "links": [
     {
      "label": "Oskar Perron (MacTutor biography)",
@@ -7693,6 +7786,17 @@ const ARCHIVE = {
      "url": "https://en.wikipedia.org/wiki/Joseph_Justus_Scaliger"
     }
    ]
+  },
+  {
+   "name": "Simon Duchesne",
+   "life": "",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "Simon Duchesne"
+   ],
+   "bio": "Born at Dole in France and living in Delft by 1584, where he was known as Simon van der Eycke. He published two squarings of the circle (1583, 1586), which drew replies from Ludolph van Ceulen and Adriaan Anthonisz, whose son Metius took from the dispute the famous value 355/113. His second value turned out to be one of Cusa's.",
+   "links": []
   }
  ]
 };

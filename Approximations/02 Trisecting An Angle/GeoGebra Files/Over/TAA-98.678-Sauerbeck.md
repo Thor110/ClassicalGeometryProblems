@@ -35,3 +35,4 @@ An error of up to about 8 minutes of arc at every size of angle, exact at 90° a
 
 **Sources:**
 - [Zentralblatt, Zbl 0043.35403 (zbMATH Open)](https://zbmath.org/?q=an%3A0043.35403)
+- [Bayerische Akademie der Wissenschaften, Sitzungsberichte (003383642)](https://publikationen.badw.de/de/003383642)

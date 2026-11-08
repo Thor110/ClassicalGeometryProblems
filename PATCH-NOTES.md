@@ -12,6 +12,20 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Kopf and Cusa V
+
+### Site
+- `tools/source_links.py` links papers in the Bavarian Academy's archive: cite them as "BAdW, 003383299".
+
+### Archive
+- Added Kopf's first trisection (1929), from Perron's paper in the Bavarian Academy's archive, 98.960% under at 30°.
+  The Jahrbuch review had left the construction ambiguous.
+- Added Cusa's fifth squaring (from Buteo), 99.904% over. It gives the same number as Crelle (1846) and Lemoine
+  (1895), and it is the value Duchesne gave again in 1586.
+- Kopf's second trisection and Sauerbeck's now link to the original papers in the Academy's archive.
+- Two rows closed on the Wanted list.
+- 210 entries, 71 authors.
+
 ## November 2026: Scaliger, Van Eyk, Grandi
 
 ### Archive

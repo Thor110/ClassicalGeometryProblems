@@ -39,3 +39,5 @@ The Jahrbuch über die Fortschritte der Mathematik (JFM 60.1233.02) describes Pe
 - [R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)](https://archive.org/details/ERIC_ED058058)
 - [Jahrbuch über die Fortschritte der Mathematik, JFM 60.1233.02 (zbMATH Open)](https://zbmath.org/?q=an%3A60.1233.02)
 - [Jahrbuch über die Fortschritte der Mathematik, JFM 62.0698.02 (zbMATH Open)](https://zbmath.org/?q=an%3A62.0698.02)
+- [Bayerische Akademie der Wissenschaften, Sitzungsberichte (003383427)](https://publikationen.badw.de/de/003383427)
+- [Bayerische Akademie der Wissenschaften, Sitzungsberichte (003396126)](https://publikationen.badw.de/de/003396126)
