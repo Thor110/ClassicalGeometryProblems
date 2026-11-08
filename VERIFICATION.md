@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-08). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (170)
+### Not verified by a person yet (172)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -169,11 +169,11 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, undersized 99.9999994% · Search find: 7 circles, 6 lines (stc-under-99.9999994): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9999994-Claude.ggb`
 - [ ] Squaring The Circle, oversized 99.99999157% · Search find: 8 circles, 4 lines (stc-over-99.99999157): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.99999157-Claude.ggb`
 - [ ] Squaring The Circle, undersized 99.9999999% · Search find: 10 circles, 6 lines (stc-under-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9999999-Claude.ggb`
-- [ ] Squaring The Circle, oversized 99.998% · Hobson's construction (the square on GH) (stc-over-99.998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.998-Hobson.ggb`, square q
+- [ ] Squaring The Circle, oversized 99.998% · Kunze's square on GH (stc-over-99.998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.998-Hobson.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.999998% · Hayden's quadrature (stc-over-99.999998): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.999998-Hayden.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.398% · Eight ninths of the diameter (stc-over-99.398): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.398-Rhind-Papyrus.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.946% · Willich's quadrature (stc-under-99.946): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.946-Willich.ggb`, square q
-- [ ] Squaring The Circle, undersized 99.9993% · Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5 (stc-under-99.9993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9993-Claude.ggb`, square q
+- [ ] Squaring The Circle, undersized 99.9993% · Kunze's square on GH, OD = 1/3, OE = 11/8, OF = 6/5 (stc-under-99.9993): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.9993-Claude.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.99999999% · Chu's construction of Ramanujan's number (stc-over-99.9999999): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.9999999-Chu.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.886% · Anglin's first quadrature (stc-over-99.886): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.886-Anglin.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.318% · Anglin's second quadrature (stc-under-99.318): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.318-Anglin.ggb`
@@ -286,6 +286,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, oversized 99.976% · Cusa's arcuated triangle (rtc-over-99.976): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.976-Cusa-Toscanelli.ggb`
 - [ ] Rectifying The Circle, oversized 99.582% · Uffenbach's triangle (rtc-over-99.582): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.582-Uffenbach.ggb`
 - [ ] Rectifying The Circle, oversized 99.582% · Uffenbach's two diameters and a diagonal (rtc-over-99.582-uffenbach): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.582-Uffenbach-2.ggb`
+- [ ] Rectifying The Circle, oversized 96.992% · Ludolph's hidden point, in fourths (rtc-over-96.992): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-96.992-Ceulen.ggb`
+- [ ] Rectifying The Circle, oversized 98.723% · Ludolph's hidden point, in sixths (rtc-over-98.723): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-98.723-Ceulen.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`

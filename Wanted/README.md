@@ -15,9 +15,7 @@ beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
 
 | Construction | Chart | Why it is not charted yet |
 |---|---|---|
-| August Ludwig Busch: the triangle with legs 3/5 and 6/5 of the diameter, Kunze's triangle step for step | Rectifying the circle (priority) | Vorschule der darstellenden Geometrie, Aufgabe 67, third solution (1868 edition seen; the Jahrbuch dates it to the first edition, 1846). Kunze is charted from his second edition (1851); the first editions of both are needed to settle who came first. |
-| Charles de Bouvelles: the square on the diameters produced by an eighth (π = 3⅛) | Squaring the circle (priority over Dürer) | Seen in La géométrie pratique (1566 edition). His Latin geometry of 1503 has a booklet De circuli quadratura that has not been seen; if the rule is there, the credit for stc-under-99.471 moves from Dürer (1525) to him. |
-| Philipp Uffenbach: first edition (1619) | Rectifying the circle (date) | Charted from the 1653 edition; the 1619 edition would fix the date. |
+| Philipp Uffenbach: an edition before 1653 | Rectifying the circle (date) | Charted from the 1653 edition, which calls itself enlarged with a new appendix. No earlier edition was found online (MDZ, Internet Archive, e-rara, November 2026). |
 
 No drafts are in progress.
 
@@ -29,7 +27,6 @@ Found in the Jahrbuch but not charted:
 | Descartes' isoperimetric squaring (Œuvres posthumes; Montucla 1831, pp. 272-273) | An endless series of rectangles; stopped after any number of steps it is an approximation, but Descartes gives no stopping point. |
 | Oronce Finé (1556): the circumference as the smaller of two mean proportionals between the perimeters of the inscribed and circumscribed squares | Two mean proportionals cannot be drawn with ruler and compass; Finé's own construction for them is needed (De rebus mathematicis hactenus desideratis, [ARes43323](https://archive.org/details/ARes43323)). |
 | Bryson (5th century BC): the circle as the mean of the inscribed and circumscribed squares | Known only from later commentators, and read in different ways (Montucla takes the arithmetic mean, π = 3). |
-| Ludolph van Ceulen, Van den Circkel (1596), chapter 12: a point on the radius found from a circle through three points | Quoted by Uffenbach (1653), pp. 9-11, but the OCR text and small figure are not clear enough to draw it step by step; the original is needed. |
 | Longomontanus (1644), Scaliger (1594), Van Eyk (1584) and other claimed quadratures | Their values are reported (3.14185 for Longomontanus), but not yet the constructions; Longomontanus' book is on the Internet Archive ([ARes744233](https://archive.org/details/ARes744233)), as is Buteo's survey of 1559 ([ARes13633](https://archive.org/details/ARes13633)). |
 | Bouvelles' arcufication (a line made into a quadrant) and Uffenbach's later figures | These turn a line into an arc, or roll a wheel; the charts take the circle as given. |
 | Huygens' bounds for an arc from its chord and sine (1654, Theorem XVI and Problem IV) | Numerical bounds, worked as fourth proportionals for the ratio of circumference to diameter; no construction is given. |
@@ -52,15 +49,15 @@ given there.
 | Nicholas of Cusa / Snellius: the same point used to trisect | Trisecting an angle, 95.527% under (at 90°) | Yates (1942), ch. 4 §2; Vahlen (1911), p. 189 |
 | Albrecht Dürer (1525): trisection | Trisecting an angle, 99.395% over (at 150°) | G. H. Hughes, "The Polygons of Albrecht Dürer" (2012), Appendix A |
 | Specht (1828): AE = (13/25) √146 | Rectifying the circle, 99.99997% under | Hobson (1913), pp. 34-35 |
-| Jacob de Gelder (1849): 355/113 | Rectifying the circle, 99.999991% over | Hobson (1913), p. 34 |
+| Jacob de Gelder (before 1842): 355/113 | Rectifying the circle, 99.999991% over | Kunze (1842), pp. 271-272; Hobson (1913), p. 34 |
 | William Hayden (1871): quadrature, π ≈ 3.141592713 | Squaring the circle, 99.999998% over | Proceedings of the Royal Society 20 (1871-72), pp. 525-526 |
 | William Hayden (1871): duplication, AL : AB = 1.2598754 | Doubling the cube, 99.989% under | Proceedings of the Royal Society 20 (1871-72), p. 525 |
-| E. W. Hobson (1913): the square on GH, 6/5 · (1 + φ) | Squaring the circle, 99.998% over | Hobson (1913), p. 35 |
 | Karajordanoff (1928): trisection, exact at 90° | Trisecting an angle, 99.838% under (at 65.57°) | Yates (1942), ch. 4 §4 |
 | H. Schoeler (1902): the n-section with n = 3 (also given by d'Ocagne, 1934) | Trisecting an angle, 98.796% over (at 90°) | Archiv (3) 4, via the Jahrbuch ([JFM 33.0517.05](https://zbmath.org/?q=an%3A33.0517.05)); Yates (1942), ch. 4 §6 for d'Ocagne |
 | Johann Heinrich Lambert (1765): Snellius' point moved a fifth of the versine | Arc rectification, 99.029% under (at 90°) | Vahlen, "Konstruktionen und Approximationen" (1911), p. 203 |
 | Lorenzo Mascheroni (1797): two duplications with the compass alone | Doubling the cube, 99.847% and 99.9995% under | "Géométrie du compas" (1798), art. 275 |
-| A. Kunze (1851): the triangle with legs 3/5 and 6/5 of the diameter | Rectifying the circle, 99.998% over | Vahlen (1911), p. 311 |
+| Ludwig Kunze (1842): the triangle with legs 3/5 and 6/5 of the diameter (also Busch, 1846) | Rectifying the circle, 99.998% over | Lehrbuch der Geometrie I (1842), pp. 269-270 ([MDZ bsb11942712](https://www.digitale-sammlungen.de/en/view/bsb11942712?page=286)); Vahlen (1911), p. 311 |
+| Ludwig Kunze (1842): the square on GH (also Hobson, 1913, under whose name it was charted first) | Squaring the circle, 99.998% over | the same, construction 1 |
 | C. M. Willich (1855): quadrature | Squaring the circle, 99.946% under | Proceedings of the Royal Society 7 (1854-55) |
 | G. Buonafalce (1876): first and third solutions | Doubling the cube, 99.693% and 99.997% under | Amaldi in Enriques, "Fragen der Elementargeometrie" II (1907), § 9 |
 | G. J. Vargiù (1877): seven mean proportionals, 2^(85/256) | Doubling the cube, 99.729% under | Amaldi in Enriques (1907), § 9 |
@@ -109,14 +106,15 @@ given there.
 | K. Hagge (1913-14): by the compass | Rectifying the circle, 99.999976% under | Revista mat. Hispano-Americana 3, explained by Cebrián (1949), via the Zentralblatt ([Zbl 0033.39002](https://zbmath.org/?q=an%3A0033.39002)) |
 | August Ludwig Busch: 22/7 | Rectifying the circle, 99.959% over | Vorschule der darstellenden Geometrie (1868 edition), Aufgabe 67 |
 | François Viète (1593): Proposition III, the quadrant AK = (3/5)φ² | Rectifying the circle, 99.998% over (tied with Kunze) | Variorum de rebus mathematicis responsorum VIII, in his Opera (1646), pp. 392-393 ([bub_gb_25iHrtJpy9oC](https://archive.org/details/bub_gb_25iHrtJpy9oC)); pointed out by Montucla (1831), p. 76 ([histoiredesreche00montuoft](https://archive.org/details/histoiredesreche00montuoft)) |
-| François Viète (1593): Proposition IV, the square on BI, 1.2φ² | Squaring the circle, 99.998% over (tied with Hobson) | the same, p. 393 |
+| François Viète (1593): Proposition IV, the square on BI, 1.2φ² | Squaring the circle, 99.998% over (tied with Kunze's square) | the same, p. 393 |
 | Nicholas of Cusa (about 1450): the arcuated triangle, π = 3.142337 | Rectifying the circle, 99.976% over | De transformationibus geometricis, as described by Cantor, Vorlesungen II, pp. 193-195 ([vorlesungenber02cantuoft](https://archive.org/details/vorlesungenber02cantuoft)) |
 | Albrecht Dürer (1525): the square with the diagonal ten parts to the diameter's eight (also Bouvelles) | Squaring the circle, 99.471% under | Underweysung der Messung, in Peltzer's edition ([albrechtdrersun01peltgoog](https://archive.org/details/albrechtdrersun01peltgoog)) |
 | Charles de Bouvelles (1542): the wheel, π = √10 | Rectifying the circle, 99.341% over | La géométrie pratique (1566), f. 37 ([lageometrieprati00bovi](https://archive.org/details/lageometrieprati00bovi)); Cantor II, pp. 382-383 |
 | Achaire Barbel (by 1566): corner to the middle of the opposite side, π = √10 | Rectifying the circle, 99.341% over (tied with Bouvelles) | La géométrie pratique, f. 40-41 |
-| Charles de Bouvelles: the shorter squaring (π = 3.24) and the quarter points (π = 3.2) | Squaring the circle, 96.867% and 98.140% over | La géométrie pratique, f. 40 and f. 50 |
+| Charles de Bouvelles (1542): the shorter squaring (π = 3.24) and the quarter points (π = 3.2) | Squaring the circle, 96.867% and 98.140% over | Livre singulier (1542), ff. 35v-36r ([MDZ bsb10164554](https://www.digitale-sammlungen.de/en/view/bsb10164554?page=74)); La géométrie pratique (1566), f. 40 and f. 50 |
 | Olivier de Serres (1600): the square on the side of the inscribed triangle, π = 3 | Squaring the circle, 95.492% under (tied with Circling the Square v1) | Le théâtre d'agriculture, via Montucla (1831), pp. 209-210 |
 | Philipp Uffenbach (1619/1653): two constructions with π = 2 + 2/√3 | Rectifying the circle, 99.582% over | De quadratura circuli mechanici, figure 1 ([dequadraturacirc00uffe](https://archive.org/details/dequadraturacirc00uffe)) |
+| Ludolph van Ceulen (1596): the hidden point on the radius, in fourths and in sixths | Rectifying the circle, 96.992% and 98.723% over | Van den Circkel, chapter XII ([MDZ bsb10147857](https://www.digitale-sammlungen.de/en/view/bsb10147857?page=43)) |
 | Christiaan Huygens (1654): six radii and a fifth of the square's side, 3 + √2/10 (also Busch 1868, under whose name it was charted first) | Rectifying the circle, 99.9945% under | De circuli magnitudine inventa, Problem II, third solution, in Rudio's translation (1892), pp. 105-106 ([archimedeshuygen00rudiuoft](https://archive.org/details/archimedeshuygen00rudiuoft)) |
 | Christiaan Huygens (1654): eight sides of the twelve-gon less the radius | Rectifying the circle, 99.984% under | the same, first solution, p. 104 |
 | Christiaan Huygens (1654): DG + GH, the quadrant from the twelve-gon | Rectifying the circle, 99.975% over | the same, second solution, pp. 104-105 |
@@ -145,7 +143,7 @@ them over; each method gives one trisecting line, and the rest of the angle is b
 [Variants/](../Variants/README.md). One is charted so far: Lambert's rectification with a quarter of the versine instead
 of a fifth (arc rectification, 99.831% over, at 76.17°), credited to Lambert's method and found by the search.
 Two more, the same way: Cusa's trisection with the point moved a quarter of the versine (trisecting an angle, 99.660%
-under, at 90°), and Hobson's construction with OD = 1/3, OE = 11/8 and OF = 6/5 (squaring the circle, 99.9993% under).
+under, at 90°), and Kunze's square on GH (the construction Hobson gives) with OD = 1/3, OE = 11/8 and OF = 6/5 (squaring the circle, 99.9993% under).
 
 The search also shows how far the historical authors' own choices hold up: for most of them no other small fraction
 does better (Hayden, Kunze, Willich, Buonafalce's first, the Rhind papyrus, Kochański, Specht, de Gelder, Karajordanoff,

@@ -4,7 +4,7 @@
 De Gelder's construction of 355/113
 
 **Author:**
-Jacob de Gelder - 1849 (Grünert's Archiv, vol. 7), as given by E. W. Hobson, "Squaring the Circle: A History of the Problem" (1913), p. 34
+Jacob de Gelder - before 1842, as given by Ludwig Kunze, "Lehrbuch der Geometrie I: Planimetrie" (Jena 1842), pp. 271-272, and by E. W. Hobson, "Squaring the Circle: A History of the Problem" (1913), p. 34, who cites Grünert's Archiv, vol. 7, 1849
 
 **Accuracy (%):**
 99.999991
@@ -41,3 +41,4 @@ Steps 1 to 4 are de Gelder's, as Hobson gives them. De Gelder needed only the le
 
 **Sources:**
 - [E. W. Hobson, Squaring the Circle: A History of the Problem (1913)](https://archive.org/details/squaringcirclehi00hobsuoft)
+- [L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ](https://www.digitale-sammlungen.de/en/view/bsb11942712)

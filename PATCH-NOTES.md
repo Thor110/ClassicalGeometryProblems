@@ -12,6 +12,24 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Wanted list, first editions
+
+### Site
+- `tools/source_links.py` links sources in the Munich Digitization Centre (MDZ): cite them as "MDZ, bsb12345678".
+
+### Archive
+- Kunze's triangle is dated 1842, from the first edition of his textbook, found on MDZ. That is earlier than Busch
+  (1846), who now appears under "Also found by". Kunze's full name is Carl Ludwig Albrecht Kunze (1805–1890).
+- The squaring charted as Hobson's (1913) is Kunze's too, from the same appendix of 1842. The credit moves to Kunze,
+  with Hobson under "Also found by".
+- De Gelder's construction of 355/113 is dated "before 1842": Kunze gives it in 1842, before the 1849 printing the
+  archive had cited.
+- Bouvelles' shorter squaring and his circle through the quarter points are dated 1542, from his first French
+  edition. The 3⅛ squaring and Barbel's quadrant are not in that edition, so Dürer (1525) keeps the credit for 3⅛.
+- Added Ludolph van Ceulen's "hidden point" (1596), in fourths and in sixths, from *Van den Circkel* on MDZ.
+- Three rows closed on the Wanted list: Busch against Kunze, Bouvelles against Dürer, and Ludolph's chapter 12.
+- 202 entries, 66 authors.
+
 ## November 2026: Authors page
 
 ### Site

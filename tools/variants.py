@@ -1,7 +1,7 @@
 """Variants of the historical constructions: the same steps, with the fractions changed.
 
 Most historical approximations are a skeleton of steps with a few fractions in it: Hayden takes a third
-of CD, Hobson 3/5, 1/2 and 3/2 of the radius, the Rhind papyrus 8/9 of the diameter, Lambert a fifth of
+of CD, Kunze 3/5, 1/2 and 3/2 of the radius, the Rhind papyrus 8/9 of the diameter, Lambert a fifth of
 the versine. Keep the skeleton, change the fractions, and the construction lands somewhere else. This
 script tries every small fraction in each skeleton and lists, for each one, the variants that beat the
 original, with what they cost: a fraction p/q of a length costs about q compass steps and two lines
@@ -278,13 +278,13 @@ SKELETONS = [
     dict(id='hayden-dtc', name="Hayden's duplication (1871)", entry='dtc-under-99.989', problem='dtc',
          slots=[('f', Fr(1, 3), (Fr(0), Fr(1)))], fn=hayden_dtc,
          about='F a fraction f of the way from C to D (Hayden: a third).'),
-    dict(id='hobson-stc', name="Hobson's quadrature (1913)", entry='stc-over-99.998', problem='stc',
+    dict(id='hobson-stc', name="Kunze's square on GH (1842)", entry='stc-over-99.998', problem='stc',
          slots=[('OD', Fr(3, 5), (Fr(0), Fr(2))), ('OE', Fr(1, 2), (Fr(0), Fr(2))), ('OF', Fr(3, 2), (Fr(1, 2), Fr(3)))], fn=hobson_stc,
-         about='OD, OE and OF as fractions of the radius (Hobson: 3/5, 1/2, 3/2).'),
+         about='OD, OE and OF as fractions of the radius (Kunze: 3/5, 1/2, 3/2).'),
     dict(id='rhind-stc', name='Rhind papyrus (about 1700 BC)', entry='stc-over-99.398', problem='stc',
          slots=[('side', Fr(8, 9), (Fr(1, 2), Fr(1)))], fn=rhind_stc,
          about='The square on a fraction of the diameter (Ahmes: 8/9).'),
-    dict(id='kunze-rtc', name="Kunze's triangle (1851)", entry='rtc-over-99.998', problem='rtc',
+    dict(id='kunze-rtc', name="Kunze's triangle (1842)", entry='rtc-over-99.998', problem='rtc',
          slots=[('leg 1', Fr(3, 5), (Fr(0), Fr(2))), ('leg 2', Fr(6, 5), (Fr(0), Fr(2)))], fn=kunze_rtc,
          about='The legs of the right triangle as fractions of the diameter (Kunze: 3/5 and 6/5).'),
     dict(id='lambert-ar', name="Cusa's and Lambert's rectification (1765)", entry='ar-under-99.029', problem='ar',

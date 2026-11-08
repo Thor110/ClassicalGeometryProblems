@@ -12,7 +12,7 @@ anyone can open the page the construction was taken from:
 
 To add a source the script does not know yet, add it to BOOKS (by a phrase the evidence uses) or cite its identifier
 in the evidence in the usual form ("Internet Archive, <identifier>", "JFM 12.0345.06", "Zbl 0012.34501",
-"arXiv:1234.56789", "NUMDAM, <item>").
+"arXiv:1234.56789", "NUMDAM, <item>", "MDZ, bsb12345678").
 """
 import json, os, re, sys
 
@@ -61,6 +61,7 @@ BOOKS = [
     (r'Hayden|Proceedings of the Royal Society 20', 'paper-doi-10_1098_rspl_1871_0099'), (r'Willich', 'philtrans08545474'), (r'Rudio|Vier Abhandlungen', 'archimedeshuygen00rudiuoft'), (r'Montucla', 'histoiredesreche00montuoft'),
     (r'Ramanujan, "(?:Squaring the circle|Modular equations)', 'pli.kerala.rare.28155'),
 ]
+MDZ = {'bsb10147857': 'L. van Ceulen, Van den Circkel (1596), MDZ', 'bsb10164554': "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ", 'bsb11942712': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ', 'bsb10082182': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (2nd edition, 1851), MDZ'}
 ARXIV = {'1205.0080': 'G. H. Hughes, The Polygons of Albrecht Dürer, 1525 (arXiv)', '1908.01202': 'H. V. Chu, Squaring the Circle Revisited (arXiv)'}
 
 
@@ -80,6 +81,8 @@ def links_for(evidence):
             'https://zbmath.org/?q=an%3A' + num)
     for num in re.findall(r'arXiv:?\s?(\d{4}\.\d{4,5})', text):
         add(ARXIV.get(num, 'arXiv:' + num), 'https://arxiv.org/abs/' + num)
+    for item in re.findall(r'MDZ,? (bsb\d{8})', text):
+        add(MDZ.get(item, 'Münchener DigitalisierungsZentrum: ' + item), 'https://www.digitale-sammlungen.de/en/view/' + item)
     for item in re.findall(r'\b(BSMF_\d{4}__\d+__\d+_\d)', text):
         add('Bulletin de la Société mathématique de France (NUMDAM, ' + item + ')', 'https://www.numdam.org/item/' + item + '/')
     return out

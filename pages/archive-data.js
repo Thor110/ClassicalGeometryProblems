@@ -929,32 +929,48 @@ const ARCHIVE = {
      "id": "stc-over-99.998",
      "side": "over",
      "marks": "",
-     "holder": "E. W. Hobson",
-     "method": "Hobson's construction (the square on GH)",
+     "holder": "Ludwig Kunze",
+     "method": "Kunze's square on GH",
      "circles": 10,
      "lines": 6,
      "acc": "99.998",
      "precise": "99.998467881887055614596084601667",
-     "date": "1913",
+     "date": "1842",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/99.998-Hobson",
      "square": "q",
-     "note": "OD = 3/5, OF = 3/2 and OE = 1/2 of the radius; the semicircles on DE and AF cut the perpendicular through O at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Given by Hobson (1913) without naming its author. A variant with OD = 1/3, OE = 11/8 and OF = 6/5 (one more circle, two more lines) is charted as stc-under-99.9993. Viète had the same number, 1.2φ², in 1593 (stc-over-99.998-viete), by other steps.",
+     "note": "CD = 3/5, CE = 1/2 and CF = 3/2 of the radius on the diameter; the semicircles on DE and AF cut the perpendicular through the centre at G and H, and the square on GH has area 6/5 · (1 + φ) = 3.14164079 times the radius squared. Kunze gives it in 1842, among constructions he says are \"perhaps partly not yet known\"; Hobson gives the same construction in 1913 without naming its author, and it was charted under his name until Kunze's book was found. A variant with OD = 1/3, OE = 11/8 and OF = 6/5 (one more circle, two more lines) is charted as stc-under-99.9993. Viète had the same number, 1.2φ², in 1593 (stc-over-99.998-viete), by other steps.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, p. 35, construction (4)",
-       "redrawn in November 2026 from the book's text (Internet Archive scans), the three fractions read from the value GH = 1.77246 that Hobson gives"
+       "published: L. Kunze, Lehrbuch der Geometrie I: Planimetrie (Jena 1842), eighth appendix, IV \"Über graphische Quadratur und Rectification des Kreises\", pp. 269-270 (MDZ, bsb11942712), construction 1: \"Man theilt AC in fünf gleiche Theile; AD sind zwei davon. Eben so BC in zwei gleiche Theile; einen davon, BE, trägt man auf den verlängerten Durchmesser nach BF. Beschreibt man nun über DE einen Halbkreis, der GH in G schneidet; ingleichen über AF einen Halbkreis, der GH in H schneidet: so ist GH die Seite eines Quadrats, das sehr nahe dem Kreise gleich ist\"",
+       "the same in the second edition (Jena 1851), p. 278 (MDZ, bsb10082182)",
+       "redrawn in November 2026; Kunze's text confirms the three fractions that had been read from Hobson's value GH = 1.77246"
       ],
       "links": [
        {
         "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
         "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       },
+       {
+        "label": "L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11942712"
+       },
+       {
+        "label": "L. Kunze, Lehrbuch der Geometrie I: Planimetrie (2nd edition, 1851), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10082182"
        }
       ]
-     }
+     },
+     "rediscovered": [
+      {
+       "name": "E. W. Hobson",
+       "date": "1913",
+       "note": "Squaring the Circle: A History of the Problem (1913), p. 35, construction (4), without naming its author (Internet Archive, squaringcirclehi00hobsuoft); charted under his name until Kunze's book of 1842 was found"
+      }
+     ]
     },
     {
      "id": "stc-over-99.999998",
@@ -1057,7 +1073,7 @@ const ARCHIVE = {
      "side": "under",
      "marks": "",
      "holder": "Claude (Anthropic)",
-     "method": "Hobson's construction, OD = 1/3, OE = 11/8, OF = 6/5",
+     "method": "Kunze's square on GH, OD = 1/3, OE = 11/8, OF = 6/5",
      "circles": 11,
      "lines": 8,
      "acc": "99.9993",
@@ -1065,13 +1081,13 @@ const ARCHIVE = {
      "date": "07-11-2026",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Under/99.9993-Claude",
-     "note": "Hobson's construction step for step, with D, E and F at other places on the diameter: OD = 1/3, OE = 11/8 and OF = 6/5 of the radius, instead of 3/5, 1/2 and 3/2. One more circle and two more lines than Hobson's; two and a half times closer. Found by Claude (Anthropic), an AI, with tools/variants.py.",
+     "note": "Kunze's square on GH (the construction Hobson gives) step for step, with D, E and F at other places on the diameter: OD = 1/3, OE = 11/8 and OF = 6/5 of the radius, instead of 3/5, 1/2 and 3/2. One more circle and two more lines than Kunze's; two and a half times closer. Found by Claude (Anthropic), an AI, with tools/variants.py.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "session",
       "evidence": [
-       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Hobson's construction (stc-over-99.998)"
+       "found by Claude in the maintainer's own sessions with the archive (November 2026), with tools/variants.py, as a variant of Kunze's square on GH (stc-over-99.998), which Hobson gives"
       ],
       "links": [
        {
@@ -1488,7 +1504,7 @@ const ARCHIVE = {
      "date": "1593",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/99.998-Viete",
-     "note": "AF on the radius AD equal to half the chord CE, so that BF² = 3/2 of the radius squared; AC cut in extreme and mean ratio at H; CI parallel to HF meets BF produced at I: as BH to BC, so BF to BI, and BI is the side of the square. Its area is 1.2φ² times the radius squared, the same number as Hobson's square.",
+     "note": "AF on the radius AD equal to half the chord CE, so that BF² = 3/2 of the radius squared; AC cut in extreme and mean ratio at H; CI parallel to HF meets BF produced at I: as BH to BC, so BF to BI, and BI is the side of the square. Its area is 1.2φ² times the radius squared, the same number as Kunze's square on GH (stc-over-99.998).",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -1550,7 +1566,7 @@ const ARCHIVE = {
       {
        "name": "Charles de Bouvelles",
        "date": "1566",
-       "note": "La géométrie pratique (1566 edition seen), chapter IV, propositions 9 and 10, drawn from the circle and from the square. His Latin geometry of 1503 has a booklet De circuli quadratura that has not been seen: if the rule is there, the credit moves to him."
+       "note": "La géométrie pratique (1566 edition), chapter IV, propositions 9 and 10, drawn from the circle and from the square. It is not in his first French edition of 1542 (MDZ, bsb10164554), whose chapter on the circle has the quarter-point circle instead; Dürer's book of 1525 is earlier."
       }
      ]
     },
@@ -1564,7 +1580,7 @@ const ARCHIVE = {
      "lines": 8,
      "acc": "96.867",
      "precise": "96.867596876451822421763321334611",
-     "date": "1566",
+     "date": "1542",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/96.867-Bouvelles",
      "note": "L a quarter of the radius beyond the foot of the circle; the line from L through the end of the cross diameter meets the tangent at the top in M; the side of the square is the top point to M, 1.8 radii. Bouvelles offers it as a shorter way to his rectangle of the diameter and the quadrant, but it gives π = 3.24.",
@@ -1573,6 +1589,7 @@ const ARCHIVE = {
      "origin": {
       "kind": "historical",
       "evidence": [
+       "published: C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV (MDZ, bsb10164554), proposition 8, f. 35v, with the same figure",
        "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter IV, ff. 37-41 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), proposition 8, with its figure",
        "redrawn in November 2026 from the page images; the side is 1.8 radii, so the square is 3.24 times the radius squared"
       ],
@@ -1580,6 +1597,10 @@ const ARCHIVE = {
        {
         "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
         "url": "https://archive.org/details/lageometrieprati00bovi"
+       },
+       {
+        "label": "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10164554"
        }
       ]
      },
@@ -1595,15 +1616,16 @@ const ARCHIVE = {
      "lines": 11,
      "acc": "98.140",
      "precise": "98.140836421186985107914391441591",
-     "date": "1566",
+     "date": "1542",
      "geogebra": "",
      "file": "GeoGebra Files/Squared Circle Over/98.140-Bouvelles",
-     "note": "The circle through the quarter points of the square's sides (the points a quarter of the way from each corner) is taken as equal to the square: π = 3.2. Bouvelles gives it to find the sphere equal to a cube, \"as we did for the circle equal to the square\". Drawn here from the circle: the square whose sides it cuts at their quarter points.",
+     "note": "The circle through the quarter points of the square's sides (the points a quarter of the way from each corner) is taken as equal to the square: π = 3.2. Bouvelles gives it in 1542 as his way of turning a square into a circle (proposition 9), and again later for the sphere equal to a cube. Drawn here from the circle: the square whose sides it cuts at their quarter points.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
+       "published: C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV (MDZ, bsb10164554), proposition 9, f. 36r: \"Je divise chascun des costez dudict quarré en quatre parties esgallement, & par les boutz & poinctz finaulx des premieres quartes parties ... je produis ung cercle ... lequel je dis estre esgal & pareil au quarré proposé\"",
        "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter VI, f. 50, proposition 3 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), with its figure",
        "redrawn in November 2026 from the circle: the points of the circle where tan = 1/2 give the sides; the square is 3.2 times the radius squared"
       ],
@@ -1611,6 +1633,10 @@ const ARCHIVE = {
        {
         "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
         "url": "https://archive.org/details/lageometrieprati00bovi"
+       },
+       {
+        "label": "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10164554"
        }
       ]
      },
@@ -4463,15 +4489,16 @@ const ARCHIVE = {
      "lines": 6,
      "acc": "99.999991",
      "precise": "99.999991508632134162913741597801",
-     "date": "1849",
+     "date": "before 1842",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.999991-de-Gelder",
-     "note": "355/113 = 3 + 4²/(7² + 8²): CE = 7/8 of the radius, AF = 1/2 on AE, FG parallel to CD and FH parallel to EG give AH = 16/113, as Hobson (1913, p. 34) gives de Gelder's construction from Grünert's Archiv, vol. 7, 1849. The three radii that complete the half circumference are the archive's.",
+     "note": "355/113 = 3 + 4²/(7² + 8²): CE = 7/8 of the radius, AF = 1/2 on AE, FG parallel to CD and FH parallel to EG give AH = 16/113, as Kunze (1842) and Hobson (1913, p. 34) give de Gelder's construction; Hobson cites Grünert's Archiv, vol. 7, 1849, but Kunze already gives it in 1842, so it is older. The three radii that complete the half circumference are the archive's.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
+       "published: L. Kunze, Lehrbuch der Geometrie I: Planimetrie (Jena 1842), eighth appendix, IV \"Über graphische Quadratur und Rectification des Kreises\", pp. 271-272 (MDZ, bsb11942712), construction 4: \"Jacob de Gelder, Professor in Leyden, geht von dem Verhältniß des Kreisumfanges zum Durchmesser 355 : 113 ... aus\", with the construction step for step",
        "published: de Gelder, Grünert's Archiv, vol. 7, 1849",
        "described step by step in E. W. Hobson, Squaring the Circle: A History of the Problem, 1913, p. 34",
        "the construction's steps redrawn from Hobson's description in November 2026; the last step, laying out the half circumference, is the archive's"
@@ -4480,6 +4507,10 @@ const ARCHIVE = {
        {
         "label": "E. W. Hobson, Squaring the Circle: A History of the Problem (1913)",
         "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
+       },
+       {
+        "label": "L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11942712"
        }
       ]
      },
@@ -4520,32 +4551,47 @@ const ARCHIVE = {
      "id": "rtc-over-99.998",
      "side": "over",
      "marks": "",
-     "holder": "A. Kunze",
+     "holder": "Ludwig Kunze",
      "method": "Kunze's triangle",
      "circles": 10,
      "lines": 4,
      "acc": "99.998",
      "precise": "99.998467881887055614596084601667",
-     "date": "1851",
+     "date": "1842",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.998-Kunze",
-     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. The same number as Hobson's squaring, 6/5 · (1 + φ), 62 years earlier. The value itself, 1.8 + √1.8 = (3/5)(3 + √5), is older: it is called Vieta's in the Jahrbuch (JFM 62.0698.03, on Lambacher 1936), and A. Busch constructed it in his Vorschule der darstellenden Geometrie (1846), as the Jahrbuch notes on G. Peirce's rediscovery of it in 1907 (JFM 38.0535.01); Lakenmacher (1888) gave it again as a formula. Whether Busch's construction is Kunze's triangle is not known yet (see Wanted). Viète had the same number, 1.2φ², in 1593 (rtc-over-99.998-viete), by other steps.",
+     "note": "The right triangle with legs 3/5 and 6/5 of the diameter has a perimeter of 1.8 + (3/5)√5 = 3.1416407 diameters, very nearly the circumference. Laid out on one line here. Kunze gives it in the first edition of his textbook (1842), among constructions he says are \"perhaps partly not yet known\", together with the squaring charted as stc-over-99.998. Busch gives it step for step in his Vorschule der darstellenden Geometrie (first edition 1846). The value itself, 1.8 + √1.8 = (3/5)(3 + √5), is older: Viète had the same number, 1.2φ², in 1593 (rtc-over-99.998-viete), by other steps; G. Peirce found it again in 1907 (JFM 38.0535.01) and Lakenmacher (1888) gave it as a formula.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: A. Kunze, Lehrbuch der Planimetrie I, 2nd edition, Jena 1851, p. 278",
-       "as given in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 311 (Internet Archive, konstruktionenun00vahluoft)",
+       "published: L. Kunze, Lehrbuch der Geometrie I: Planimetrie (Jena 1842), eighth appendix, IV \"Über graphische Quadratur und Rectification des Kreises\", pp. 269-270 (MDZ, bsb11942712), construction 2: \"Man theilt den Durchmesser in fünf gleiche Theile und macht ein rechtwinkeliges Dreieck ABC, dessen Katheten AB = 6 und BC = 3 solcher Theile halten. Dieses Dreieck hat mit dem Kreise sehr nahe einerlei Umfang\"",
+       "the same in the second edition (Jena 1851), eighth appendix, p. 278 (MDZ, bsb10082182), and in K. T. Vahlen, Konstruktionen und Approximationen in systematischer Darstellung, Leipzig 1911, p. 311 (Internet Archive, konstruktionenun00vahluoft)",
        "redrawn in November 2026; the fifths of the radius and the laying out of the perimeter on one line are the archive's"
       ],
       "links": [
        {
         "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       },
+       {
+        "label": "L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11942712"
+       },
+       {
+        "label": "L. Kunze, Lehrbuch der Geometrie I: Planimetrie (2nd edition, 1851), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10082182"
        }
       ]
-     }
+     },
+     "rediscovered": [
+      {
+       "name": "August Ludwig Busch",
+       "date": "1846",
+       "note": "Vorschule der darstellenden Geometrie, Aufgabe 67, third solution: Kunze's triangle step for step (the edition of 1868 is the one seen; the Jahrbuch, JFM 38.0535.01, dates it to the first edition, 1846). Kunze's first edition of 1842 is earlier."
+      }
+     ]
     },
     {
      "id": "rtc-under-99.826",
@@ -5242,6 +5288,7 @@ const ARCHIVE = {
       "kind": "historical",
       "evidence": [
        "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter IV, ff. 37-41 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), proposition 2, with its figure; proposition 3 doubles it for the half circumference, with the same value",
+       "the same in the first French edition: C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV (MDZ, bsb10164554), proposition 2, with the figure",
        "in the French edition of 1542 according to M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition (Internet Archive, vorlesungenber02cantuoft), pp. 382-383, who shows that the figure means π = √10",
        "redrawn in November 2026 from the page images; AG is 1.5811388 radii against the quadrant 1.5707963"
       ],
@@ -5253,6 +5300,10 @@ const ARCHIVE = {
        {
         "label": "M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)",
         "url": "https://archive.org/details/vorlesungenber02cantuoft"
+       },
+       {
+        "label": "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10164554"
        }
       ]
      },
@@ -5271,19 +5322,24 @@ const ARCHIVE = {
      "date": "1566",
      "geogebra": "",
      "file": "GeoGebra Files/Over/RTC-99.341-Barbel",
-     "note": "In the square inscribed in the circle, the line from a corner to the middle of an opposite side is taken for the quadrant: √10/2 radii, π = √10. Bouvelles reports it as found \"this year, at my request\" by his friend Maître Achaire Barbel of Ham.",
+     "note": "In the square inscribed in the circle, the line from a corner to the middle of an opposite side is taken for the quadrant: √10/2 radii, π = √10. Bouvelles reports it as found \"this year, at my request\" by his friend Maître Achaire Barbel of Ham. It is not in the first French edition of 1542; it was added in a later one.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
        "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter IV, ff. 37-41 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), proposition 11",
-       "redrawn in November 2026: the square ACBtD on the two diameters; the line from C to the middle of AD is 1.5811388 radii"
+       "redrawn in November 2026: the square ACBtD on the two diameters; the line from C to the middle of AD is 1.5811388 radii",
+       "not in C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV (MDZ, bsb10164554), which ends the chapter with propositions 9 and 10 (the quarter points, and a line made into a quadrant)"
       ],
       "links": [
        {
         "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
         "url": "https://archive.org/details/lageometrieprati00bovi"
+       },
+       {
+        "label": "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10164554"
        }
       ]
      },
@@ -5382,6 +5438,76 @@ const ARCHIVE = {
        {
         "label": "P. Uffenbach, De quadratura circuli mechanici (1653 edition)",
         "url": "https://archive.org/details/dequadraturacirc00uffe"
+       }
+      ]
+     },
+     "result_scale": 1
+    },
+    {
+     "id": "rtc-over-96.992",
+     "side": "over",
+     "marks": "",
+     "holder": "Ludolph van Ceulen",
+     "method": "Ludolph's hidden point, in fourths",
+     "circles": 7,
+     "lines": 7,
+     "acc": "96.992",
+     "precise": "96.992757039903226998546979685117",
+     "date": "1596",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-96.992-Ceulen",
+     "note": "Ludolph's way to the \"hidden point\" on the radius: the half circle and the diameter BC divided into four; the line from the centre A to the quarter point F and the perpendicular from the quarter point O of the diameter meet at N; the circle through B, N and C cuts the radius AD at I, and AI is (nearly) the diameter of a circle whose circumference is BC. AI = √5/2 − 1/2, so π is taken as 3.236. Ludolph shows it is too short, and that finer divisions come closer (his second example, in sixths). Drawn on the given circle and scaled back to it with a parallel.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. van Ceulen, Van den Circkel (Delft 1596), chapter XII, ff. 14-15, with its figures (MDZ, bsb10147857); quoted by P. Uffenbach, De quadratura circuli mechanici (1653), pp. 9-11 (Internet Archive, dequadraturacirc00uffe), first example",
+       "redrawn in November 2026 from the page images; AI = 0.6180340 of the radius, as Ludolph computes (√(5/4) − 1/2)"
+      ],
+      "links": [
+       {
+        "label": "P. Uffenbach, De quadratura circuli mechanici (1653 edition)",
+        "url": "https://archive.org/details/dequadraturacirc00uffe"
+       },
+       {
+        "label": "L. van Ceulen, Van den Circkel (1596), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10147857"
+       }
+      ]
+     },
+     "result_scale": 1
+    },
+    {
+     "id": "rtc-over-98.723",
+     "side": "over",
+     "marks": "",
+     "holder": "Ludolph van Ceulen",
+     "method": "Ludolph's hidden point, in sixths",
+     "circles": 9,
+     "lines": 9,
+     "acc": "98.723",
+     "precise": "98.723561402094597256348078589006",
+     "date": "1596",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-98.723-Ceulen",
+     "note": "The same as his first example, with the half circle and the diameter divided into six: the line from the centre to the point a sixth of the half circle from the top, and the perpendicular from the point a sixth of the diameter from the centre, meet at Q; the circle through B, Q and C cuts the radius at I. AI = 0.62860, so π is taken as 3.1817, closer than the fourths. Drawn on the given circle and scaled back to it with a parallel.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: L. van Ceulen, Van den Circkel (Delft 1596), chapter XII, ff. 14-15, with its figures (MDZ, bsb10147857); quoted by P. Uffenbach, De quadratura circuli mechanici (1653), pp. 9-11 (Internet Archive, dequadraturacirc00uffe), second example",
+       "redrawn in November 2026 from the page images; AI = 0.6285961 of the radius"
+      ],
+      "links": [
+       {
+        "label": "P. Uffenbach, De quadratura circuli mechanici (1653 edition)",
+        "url": "https://archive.org/details/dequadraturacirc00uffe"
+       },
+       {
+        "label": "L. van Ceulen, Van den Circkel (1596), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10147857"
        }
       ]
      },
@@ -6074,15 +6200,7 @@ const ARCHIVE = {
    "about": "Cominotto's construction (1895), through a circle on three points: good to 180° as it stands (43' out at 180°, 25' at 150°), and 99.950% from 30° to 150° on the angle halved twice."
   }
  ],
- "wanted": [
-  {
-   "problem": "rtc",
-   "who": "August Ludwig Busch",
-   "year": "1846",
-   "value": "π ≈ (3/5)(3 + √5): the right triangle with legs 3/5 and 6/5 of the diameter, exactly Kunze's triangle (rtc-over-99.998)",
-   "source": "Busch, Vorschule der darstellenden Geometrie, Aufgabe 67, third solution: in the edition of 1868 (Internet Archive) it is Kunze's construction step for step; the Jahrbuch (JFM 38.0535.01) dates it to the first edition, 1846. Kunze's is charted from the second edition of his Lehrbuch der Planimetrie (1851). Which came first depends on the dates of the first editions of both books, which are not online; if Busch's is earlier, the credit moves to him and Kunze is listed as having also found it."
-  }
- ],
+ "wanted": [],
  "derived_pi": {
   "folder": "Approximations/06 Pi Approximations",
   "about": "The π chart is worked out from the circle rectification chart: each rectification, halved, is a π approximation with the same accuracy and steps. These are the π versions drawn in GeoGebra, linked beside the rectification each comes from.",
@@ -6173,9 +6291,6 @@ const ARCHIVE = {
   ],
   "C. M. Willich": [
    "C. M. Willich"
-  ],
-  "A. Kunze": [
-   "A. Kunze"
   ],
   "Johann Heinrich Lambert": [
    "Johann Heinrich Lambert"
@@ -6350,6 +6465,17 @@ const ARCHIVE = {
   "Philipp Uffenbach": [
    "P. Uffenbach",
    "Philipp Uffenbach"
+  ],
+  "Ludwig Kunze": [
+   "Carl Ludwig Albrecht Kunze",
+   "Ludwig Kunze",
+   "L. Kunze",
+   "A. Kunze"
+  ],
+  "Ludolph van Ceulen": [
+   "Ludolf van Ceulen",
+   "Ludolph van Ceulen",
+   "Ludolph von Cöllen"
   ]
  },
  "authors": [
@@ -6479,7 +6605,7 @@ const ARCHIVE = {
    "holders": [
     "Achaire Barbel"
    ],
-   "bio": "Known only from Bouvelles, who calls him a friend from Ham in Picardy, \"very ingenious at new inventions serving geometry\", and credits him with a quadrant of the circle found at Bouvelles' request.",
+   "bio": "Known only from Bouvelles, who calls him a friend from Ham in Picardy, \"very ingenious at new inventions serving geometry\", and credits him with a quadrant of the circle found at Bouvelles' request. The construction is not in Bouvelles' first French edition of 1542, so it was found later.",
    "links": []
   },
   {
@@ -6694,17 +6820,17 @@ const ARCHIVE = {
    "holders": [
     "Jacob de Gelder"
    ],
-   "bio": "Dutch mathematician, known here for his construction of Zu Chongzhi's fraction 355/113, published in Grunert's Archiv in 1849.",
+   "bio": "Dutch mathematician, professor at Leiden (as Kunze calls him in 1842). His construction of Zu Chongzhi's fraction 355/113 is given by Kunze (1842) and by Hobson, who cites Grunert's Archiv (1849).",
    "links": []
   },
   {
-   "name": "A. Kunze",
-   "life": "",
+   "name": "Ludwig Kunze",
+   "life": "1805–1890",
    "kind": "historical",
    "holders": [
-    "A. Kunze"
+    "Ludwig Kunze"
    ],
-   "bio": "Author of a \"Lehrbuch der Planimetrie\" (second edition, Jena 1851), the source of his triangle.",
+   "bio": "Carl Ludwig Albrecht Kunze, author of a \"Lehrbuch der Geometrie\" (Jena, first edition 1842). An appendix to its first volume gives constructions for squaring and rectifying the circle that he thought \"perhaps partly not yet known\": the square on GH, later given by Hobson, and the right triangle with legs 3/5 and 6/5 of the diameter. Both are charted under his name.",
    "links": []
   },
   {
@@ -6727,7 +6853,7 @@ const ARCHIVE = {
    "also": [
     "August Ludwig Busch"
    ],
-   "bio": "Author of the textbook \"Vorschule der darstellenden Geometrie\" (first edition 1846), which gives three rectifications of the circle; two of them turned out to be older, Huygens' and (perhaps) Kunze's.",
+   "bio": "Author of the textbook \"Vorschule der darstellenden Geometrie\" (first edition 1846), which gives three rectifications of the circle; two of them turned out to be older, Huygens' (1654) and Kunze's (1842).",
    "links": []
   },
   {
@@ -6998,7 +7124,7 @@ const ARCHIVE = {
    "holders": [
     "E. W. Hobson"
    ],
-   "bio": "English mathematician, Sadleirian Professor at Cambridge, known for his books on real analysis. His \"Squaring the Circle\" (1913) is a classic history of the problem, and many entries here are taken from it.",
+   "bio": "English mathematician, Sadleirian Professor at Cambridge, known for his books on real analysis. His \"Squaring the Circle\" (1913) is a classic history of the problem, and many entries here are taken from it. The squaring charted under his name until 2026 turned out to be Kunze's, of 1842; Hobson gave it without naming its author.",
    "links": [
     {
      "label": "MacTutor biography",
@@ -7008,6 +7134,9 @@ const ARCHIVE = {
      "label": "Wikipedia",
      "url": "https://en.wikipedia.org/wiki/E._W._Hobson"
     }
+   ],
+   "also": [
+    "E. W. Hobson"
    ]
   },
   {
@@ -7221,6 +7350,25 @@ const ARCHIVE = {
    ],
    "bio": "An AI model made by Anthropic. Its entries come from computer searches and variant searches run at the maintainer's request, and are marked as AI finds on the charts.",
    "links": []
+  },
+  {
+   "name": "Ludolph van Ceulen",
+   "life": "1540–1610",
+   "kind": "historical",
+   "holders": [
+    "Ludolph van Ceulen"
+   ],
+   "bio": "German-Dutch mathematician from Hildesheim, fencing master and professor at Leiden. He spent much of his life computing π, to 20 decimal places in \"Van den Circkel\" (1596) and later to 35, which were carved on his tombstone; in Germany π was long called the Ludolphine number. His book also shows a way to find the diameter of a circle as long as a given line, closer the finer one divides.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Van_Ceulen/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Ludolph_van_Ceulen"
+    }
+   ]
   }
  ]
 };

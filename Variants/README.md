@@ -52,9 +52,9 @@ F a fraction f of the way from C to D (Hayden: a third). Chart entry: `dtc-under
 
 0 variants beat the original in all.
 
-## Hobson's quadrature (1913)
+## Kunze's square on GH (1842)
 
-OD, OE and OF as fractions of the radius (Hobson: 3/5, 1/2, 3/2). Chart entry: `stc-over-99.998`.
+OD, OE and OF as fractions of the radius (Kunze: 3/5, 1/2, 3/2). Chart entry: `stc-over-99.998`.
 
 | Fractions | Accuracy | Cost (circles, lines) | Extra |
 |---|---|---|---|
@@ -78,7 +78,7 @@ The square on a fraction of the diameter (Ahmes: 8/9). Chart entry: `stc-over-99
 
 0 variants beat the original in all.
 
-## Kunze's triangle (1851)
+## Kunze's triangle (1842)
 
 The legs of the right triangle as fractions of the diameter (Kunze: 3/5 and 6/5). Chart entry: `rtc-over-99.998`.
 

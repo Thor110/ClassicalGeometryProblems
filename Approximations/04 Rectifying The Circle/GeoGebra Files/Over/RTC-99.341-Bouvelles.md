@@ -36,3 +36,4 @@ Over by 0.66%. The same value, π = √10, comes from Barbel's construction in t
 **Sources:**
 - [C. de Bouvelles, La géométrie pratique (Paris 1566)](https://archive.org/details/lageometrieprati00bovi)
 - [M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)](https://archive.org/details/vorlesungenber02cantuoft)
+- [C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ](https://www.digitale-sammlungen.de/en/view/bsb10164554)

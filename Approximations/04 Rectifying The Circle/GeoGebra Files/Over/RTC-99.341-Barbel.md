@@ -35,3 +35,4 @@ Over by 0.66%. "This year" is that of the edition it first appeared in, which is
 
 **Sources:**
 - [C. de Bouvelles, La géométrie pratique (Paris 1566)](https://archive.org/details/lageometrieprati00bovi)
+- [C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ](https://www.digitale-sammlungen.de/en/view/bsb10164554)
