@@ -44,6 +44,10 @@ ITEMS = {
     'pli.kerala.rare.28155': 'Collected Papers of Srinivasa Ramanujan (1927)',
     'bub_gb_25iHrtJpy9oC': 'Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)',
     'histoiredesreche00montuoft': 'J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)',
+    'lageometrieprati00bovi': 'C. de Bouvelles, La géométrie pratique (Paris 1566)',
+    'albrechtdrersun01peltgoog': "A. Peltzer (ed.), Albrecht Dürer's Unterweisung der Messung (1908)",
+    'vorlesungenber02cantuoft': 'M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)',
+    'dequadraturacirc00uffe': 'P. Uffenbach, De quadratura circuli mechanici (1653 edition)',
     'archimedeshuygen00rudiuoft': 'F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)',
 }
 # Books the evidence cites by name, for entries that do not give the identifier.
@@ -54,7 +58,7 @@ BOOKS = [
     (r'Gergonne|Annales de math[ée]matiques VIII', 'annalesdemathma06unkngoog'), (r'Messenger of Mathematics XIII', 'messengermathem06glaigoog'),
     (r'Journal de math[ée]matiques [ée]l[ée]mentaires', 'journaldemathma34unkngoog'), (r'Nieuw Archief', 'nieuwarchiefvoo00amstgoog'),
     (r'Ś?[Ss]ulvas[úu]tras|Thibaut', 'ulvastras00ktgoog'), (r'Vorschule der darstellenden', 'vorschule-der-darstellenden-geometrie'),
-    (r'Hayden|Proceedings of the Royal Society 20', 'paper-doi-10_1098_rspl_1871_0099'), (r'Willich', 'philtrans08545474'), (r'Rudio|Vier Abhandlungen', 'archimedeshuygen00rudiuoft'),
+    (r'Hayden|Proceedings of the Royal Society 20', 'paper-doi-10_1098_rspl_1871_0099'), (r'Willich', 'philtrans08545474'), (r'Rudio|Vier Abhandlungen', 'archimedeshuygen00rudiuoft'), (r'Montucla', 'histoiredesreche00montuoft'),
     (r'Ramanujan, "(?:Squaring the circle|Modular equations)', 'pli.kerala.rare.28155'),
 ]
 ARXIV = {'1205.0080': 'G. H. Hughes, The Polygons of Albrecht Dürer, 1525 (arXiv)', '1908.01202': 'H. V. Chu, Squaring the Circle Revisited (arXiv)'}

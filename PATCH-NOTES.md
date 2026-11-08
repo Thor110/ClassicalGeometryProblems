@@ -12,6 +12,24 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Renaissance and early modern constructions
+
+### Site
+- Footer updated across the site.
+- `tools/source_links.py` knows six more sources: Bouvelles, Dürer (Peltzer's edition), Cantor, Uffenbach,
+  Montucla and Viète.
+
+### Archive
+- Added Nicholas of Cusa's arcuated triangle (about 1450), π = 3.142337, from Cantor's account of his treatise for
+  Toscanelli.
+- Added Albrecht Dürer's squaring (1525), π = 3⅛. Bouvelles gives the same figure and is listed under
+  "Also found by".
+- Added four constructions from Charles de Bouvelles' *Géométrie pratique*, including his wheel (π = √10), and
+  Achaire Barbel's quadrant, which he reports.
+- Added Olivier de Serres' square (1600), π = 3. It ties with Circling the Square v1, by other steps.
+- Added two constructions from Philipp Uffenbach's *De quadratura circuli mechanici* (1619/1653), π = 2 + 2/√3.
+- 200 entries.
+
 ## November 2026: source links
 
 ### Site

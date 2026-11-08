@@ -368,7 +368,7 @@ const ARCHIVE = {
      "date": "2020",
      "geogebra": "jyyqe7rj",
      "file": "GeoGebra Files/Squared Circle Under/95.492",
-     "note": "Marked too simple and contested: constructions this simple appear in ancient sources such as the Śulba Sūtras of Vedic India, and in architecture, so its first discoverer may never be known.",
+     "note": "Marked too simple and contested: constructions this simple appear in ancient sources such as the Śulba Sūtras of Vedic India, and in architecture, so its first discoverer may never be known. Olivier de Serres found the same number, π = 3, in 1600 (stc-under-95.492-serres), by other steps.",
      "verified": [
       {
        "by": "Edward James Gordon",
@@ -1503,6 +1503,142 @@ const ARCHIVE = {
         "label": "Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)",
         "url": "https://archive.org/details/bub_gb_25iHrtJpy9oC"
        },
+       {
+        "label": "J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)",
+        "url": "https://archive.org/details/histoiredesreche00montuoft"
+       }
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-under-99.471",
+     "side": "under",
+     "marks": "",
+     "holder": "Albrecht Dürer",
+     "method": "Dürer's squaring",
+     "circles": 6,
+     "lines": 4,
+     "acc": "99.471",
+     "precise": "99.471839432434584855552352107821",
+     "date": "1525",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/99.471-Durer",
+     "note": "The square whose diagonal is ten parts where the circle's diameter is eight: π taken as 3⅛, the value of Vitruvius. Dürer gives it as a working rule, \"mechanice\", saying the exact squaring has not been demonstrated. Bouvelles gives the same figure from the circle: the two diameters divided into eight and produced by an eighth each way, and the square on the four ends.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: A. Dürer, Underweysung der Messung (Nuremberg 1525), book II, as in A. Peltzer's edition, Albrecht Dürer's Unterweisung der Messung (Munich 1908) (Internet Archive, albrechtdrersun01peltgoog)",
+       "the same construction is noted by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, note 2 (Dürer, sheet F VI, fig. 34)",
+       "redrawn in November 2026 from the circle, as Bouvelles draws it (La géométrie pratique, f. 40, proposition 9); the square's area is 3.125 times the radius squared"
+      ],
+      "links": [
+       {
+        "label": "A. Peltzer (ed.), Albrecht Dürer's Unterweisung der Messung (1908)",
+        "url": "https://archive.org/details/albrechtdrersun01peltgoog"
+       },
+       {
+        "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
+        "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       }
+      ]
+     },
+     "square": "q",
+     "rediscovered": [
+      {
+       "name": "Charles de Bouvelles",
+       "date": "1566",
+       "note": "La géométrie pratique (1566 edition seen), chapter IV, propositions 9 and 10, drawn from the circle and from the square. His Latin geometry of 1503 has a booklet De circuli quadratura that has not been seen: if the rule is there, the credit moves to him."
+      }
+     ]
+    },
+    {
+     "id": "stc-over-96.867",
+     "side": "over",
+     "marks": "",
+     "holder": "Charles de Bouvelles",
+     "method": "Bouvelles' shorter squaring",
+     "circles": 7,
+     "lines": 8,
+     "acc": "96.867",
+     "precise": "96.867596876451822421763321334611",
+     "date": "1566",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/96.867-Bouvelles",
+     "note": "L a quarter of the radius beyond the foot of the circle; the line from L through the end of the cross diameter meets the tangent at the top in M; the side of the square is the top point to M, 1.8 radii. Bouvelles offers it as a shorter way to his rectangle of the diameter and the quadrant, but it gives π = 3.24.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter IV, ff. 37-41 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), proposition 8, with its figure",
+       "redrawn in November 2026 from the page images; the side is 1.8 radii, so the square is 3.24 times the radius squared"
+      ],
+      "links": [
+       {
+        "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
+        "url": "https://archive.org/details/lageometrieprati00bovi"
+       }
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-over-98.140",
+     "side": "over",
+     "marks": "",
+     "holder": "Charles de Bouvelles",
+     "method": "Bouvelles' quarter points",
+     "circles": 4,
+     "lines": 11,
+     "acc": "98.140",
+     "precise": "98.140836421186985107914391441591",
+     "date": "1566",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Over/98.140-Bouvelles",
+     "note": "The circle through the quarter points of the square's sides (the points a quarter of the way from each corner) is taken as equal to the square: π = 3.2. Bouvelles gives it to find the sphere equal to a cube, \"as we did for the circle equal to the square\". Drawn here from the circle: the square whose sides it cuts at their quarter points.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter VI, f. 50, proposition 3 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), with its figure",
+       "redrawn in November 2026 from the circle: the points of the circle where tan = 1/2 give the sides; the square is 3.2 times the radius squared"
+      ],
+      "links": [
+       {
+        "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
+        "url": "https://archive.org/details/lageometrieprati00bovi"
+       }
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-under-95.492-serres",
+     "side": "under",
+     "marks": "",
+     "holder": "Olivier de Serres",
+     "method": "de Serres' square on the triangle's side",
+     "circles": 4,
+     "lines": 4,
+     "acc": "95.492",
+     "precise": "95.492965855137201461330258023509",
+     "date": "1600",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/95.492-Serres",
+     "note": "The square on the side of the equilateral triangle inscribed in the circle, found by weighing to be about equal to the circle: π taken as 3. The same number as Circling the Square v1 (stc-under-95.492), by other steps.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. de Serres, Le théâtre d'agriculture (1600), first place, chapter 8, as reported in J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition) (Internet Archive, histoiredesreche00montuoft), pp. 209-210 and the editor's note there",
+       "redrawn in November 2026: the side P₁P₂ of the inscribed triangle and the square on it, 3 times the radius squared"
+      ],
+      "links": [
        {
         "label": "J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)",
         "url": "https://archive.org/details/histoiredesreche00montuoft"
@@ -5085,6 +5221,171 @@ const ARCHIVE = {
       ]
      },
      "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.341",
+     "side": "over",
+     "marks": "",
+     "holder": "Charles de Bouvelles",
+     "method": "Bouvelles' wheel",
+     "circles": 6,
+     "lines": 5,
+     "acc": "99.341",
+     "precise": "99.341575791025929927544939714507",
+     "date": "1542",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.341-Bouvelles",
+     "note": "The circle as a wheel on the tangent at its foot A. H a quarter radius below A; the circle about H through the end D of the cross diameter meets the tangent at G, and AG is taken for the quadrant: √10/2 radii, π = √10. Bouvelles says he found it after watching a cart wheel on a Paris bridge; he takes the curve of the rolling point for a circular arc.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter IV, ff. 37-41 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), proposition 2, with its figure; proposition 3 doubles it for the half circumference, with the same value",
+       "in the French edition of 1542 according to M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition (Internet Archive, vorlesungenber02cantuoft), pp. 382-383, who shows that the figure means π = √10",
+       "redrawn in November 2026 from the page images; AG is 1.5811388 radii against the quadrant 1.5707963"
+      ],
+      "links": [
+       {
+        "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
+        "url": "https://archive.org/details/lageometrieprati00bovi"
+       },
+       {
+        "label": "M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)",
+        "url": "https://archive.org/details/vorlesungenber02cantuoft"
+       }
+      ]
+     },
+     "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.341-barbel",
+     "side": "over",
+     "marks": "",
+     "holder": "Achaire Barbel",
+     "method": "Barbel's quadrant",
+     "circles": 3,
+     "lines": 4,
+     "acc": "99.341",
+     "precise": "99.341575791025929927544939714507",
+     "date": "1566",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.341-Barbel",
+     "note": "In the square inscribed in the circle, the line from a corner to the middle of an opposite side is taken for the quadrant: √10/2 radii, π = √10. Bouvelles reports it as found \"this year, at my request\" by his friend Maître Achaire Barbel of Ham.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: C. de Bouvelles, La géométrie pratique (Paris 1566), chapter IV, ff. 37-41 (Internet Archive, lageometrieprati00bovi); a later edition of his Livre singulier et utile touchant l'art et pratique de géométrie (1542), proposition 11",
+       "redrawn in November 2026: the square ACBtD on the two diameters; the line from C to the middle of AD is 1.5811388 radii"
+      ],
+      "links": [
+       {
+        "label": "C. de Bouvelles, La géométrie pratique (Paris 1566)",
+        "url": "https://archive.org/details/lageometrieprati00bovi"
+       }
+      ]
+     },
+     "result_scale": 4
+    },
+    {
+     "id": "rtc-over-99.976",
+     "side": "over",
+     "marks": "",
+     "holder": "Nicholas of Cusa",
+     "method": "Cusa's arcuated triangle",
+     "circles": 12,
+     "lines": 8,
+     "acc": "99.976",
+     "precise": "99.976287001828648785380610355936",
+     "date": "about 1450",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.976-Cusa-Toscanelli",
+     "note": "Cusa's first arcufication, dedicated to Toscanelli: in the equilateral triangle, f the middle of a side and e halfway from f to a corner; the line from the centre to e, lengthened by a quarter of itself, is the radius of the circle as long as the triangle's perimeter. π = √(1728/175) = 3.142337, closer than Archimedes' 3 1/7. Drawn on the triangle inscribed in the given circle and scaled back to it with a parallel.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: Nicholas of Cusa, De transformationibus geometricis (about 1450, to Paolo Toscanelli), as described with its figure by M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition (Internet Archive, vorlesungenber02cantuoft), pp. 193-195, which works out π = 3.142337",
+       "the value 3.142337 is also given by E. Beutel, Die Quadratur des Kreises (1913), p. 25",
+       "redrawn in November 2026; the scaling to the given circle (the triangle's perimeter laid three sides long, and a parallel) is not Cusa's, who starts from the triangle"
+      ],
+      "links": [
+       {
+        "label": "M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)",
+        "url": "https://archive.org/details/vorlesungenber02cantuoft"
+       },
+       {
+        "label": "E. Beutel, Die Quadratur des Kreises (1913)",
+        "url": "https://archive.org/details/diequadraturdes01beutgoog"
+       }
+      ]
+     },
+     "result_scale": 1
+    },
+    {
+     "id": "rtc-over-99.582",
+     "side": "over",
+     "marks": "",
+     "holder": "Philipp Uffenbach",
+     "method": "Uffenbach's triangle",
+     "circles": 3,
+     "lines": 5,
+     "acc": "99.582",
+     "precise": "99.582763068455729058358061430130",
+     "date": "1653",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.582-Uffenbach",
+     "note": "The equilateral triangle on the diameter, its apex f below the circle; the lines from f through the ends of the diameter meet the tangent at the top in g and h, and gh is taken for half the circumference: π = 2 + 2/√3 = 3.1547. Uffenbach, a Frankfurt painter, checks it with a circle of radius 13 and area 533.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Uffenbach, De quadratura circuli mechanici (Nuremberg 1653; first edition Frankfurt 1619), \"Abriß der ersten Figur\", pp. 16-20 (Internet Archive, dequadraturacirc00uffe), figure 1, No. 1, with its plate",
+       "redrawn in November 2026 from the plate; gh is 3.1547005 radii"
+      ],
+      "links": [
+       {
+        "label": "P. Uffenbach, De quadratura circuli mechanici (1653 edition)",
+        "url": "https://archive.org/details/dequadraturacirc00uffe"
+       }
+      ]
+     },
+     "result_scale": 2
+    },
+    {
+     "id": "rtc-over-99.582-uffenbach",
+     "side": "over",
+     "marks": "",
+     "holder": "Philipp Uffenbach",
+     "method": "Uffenbach's two diameters and a diagonal",
+     "circles": 4,
+     "lines": 4,
+     "acc": "99.582",
+     "precise": "99.582763068455729058358061430130",
+     "date": "1653",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.582-Uffenbach-2",
+     "note": "The tangent at one end a of a diameter; f a sixth of the circle from a; the line from the other end c through f meets the tangent at d. Two diameters and cd are taken for the circumference: π = 2 + 2/√3, as in his No. 1.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Uffenbach, De quadratura circuli mechanici (Nuremberg 1653; first edition Frankfurt 1619), \"Abriß der ersten Figur\", pp. 16-20 (Internet Archive, dequadraturacirc00uffe), figure 1, No. 2, with its plate",
+       "redrawn in November 2026 from the plate; two diameters and cd make 6.3094011 radii"
+      ],
+      "links": [
+       {
+        "label": "P. Uffenbach, De quadratura circuli mechanici (1653 edition)",
+        "url": "https://archive.org/details/dequadraturacirc00uffe"
+       }
+      ]
+     },
+     "result_scale": 1
     }
    ]
   },
@@ -5844,6 +6145,7 @@ const ARCHIVE = {
    "E. W. Hobson"
   ],
   "Albrecht Dürer": [
+   "A. Dürer",
    "Albrecht Dürer"
   ],
   "Specht": [
@@ -5894,6 +6196,7 @@ const ARCHIVE = {
   ],
   "Nicholas of Cusa": [
    "Nicholas of Cusa",
+   "Nicolaus Cusanus",
    "Nikolaus von Kues"
   ],
   "G. J. Vargiù": [
@@ -6032,6 +6335,21 @@ const ARCHIVE = {
    "F. Viète",
    "Franciscus Vieta",
    "François Viète"
+  ],
+  "Charles de Bouvelles": [
+   "C. de Bouvelles",
+   "Carolus Bovillus",
+   "Charles de Bouvelles"
+  ],
+  "Achaire Barbel": [
+   "Achaire Barbel"
+  ],
+  "Olivier de Serres": [
+   "Olivier de Serres"
+  ],
+  "Philipp Uffenbach": [
+   "P. Uffenbach",
+   "Philipp Uffenbach"
   ]
  }
 };
