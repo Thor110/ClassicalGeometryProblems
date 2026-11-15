@@ -12,6 +12,15 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Located by
+
+### Archive
+- Every historical entry now records who located it. Edward James Gordon found Kochański's rectification (1685) and
+  Ramanujan's squaring (1913) and rectification (1914) himself; the other 114 were found by Claude (Anthropic) in
+  Edward's sessions, during the historical search of November 2026, each with the source it was found in.
+
+---
+
 ## November 2026: Hidden in history
 
 ### Site

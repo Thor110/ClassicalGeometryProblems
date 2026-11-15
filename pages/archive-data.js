@@ -254,7 +254,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/pli.kerala.rare.28155"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Edward James Gordon",
+       "date": "",
+       "note": "found while working on his own constructions, before the archive's historical search"
+      }
+     ]
     },
     {
      "id": "stc-under-99.932",
@@ -970,6 +977,13 @@ const ARCHIVE = {
        "date": "1913",
        "note": "Squaring the Circle: A History of the Problem (1913), p. 35, construction (4), without naming its author (Internet Archive, squaringcirclehi00hobsuoft); charted under his name until Kunze's book of 1842 was found"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. W. Hobson, Squaring the Circle: A History of the Problem (1913)"
+      }
      ]
     },
     {
@@ -1002,7 +1016,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in W. Hayden, Proceedings of the Royal Society 20 (1871-72)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.398",
@@ -1034,7 +1055,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. W. Hobson, Squaring the Circle: A History of the Problem (1913)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.946",
@@ -1066,7 +1094,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in C. M. Willich, Proceedings of the Royal Society 7 (1854-55)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.9993",
@@ -1129,7 +1164,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in H. V. Chu, Squaring the Circle Revisited (arXiv)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.886",
@@ -1160,7 +1202,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in The Messenger of Mathematics XIII (1884), first scan"
+      }
+     ]
     },
     {
      "id": "stc-under-99.318",
@@ -1194,7 +1243,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/messengermathem06glaigoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in The Messenger of Mathematics XIII (1884), second scan, with the plates"
+      }
+     ]
     },
     {
      "id": "stc-under-99.985",
@@ -1228,7 +1284,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/messengermathem06glaigoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in The Messenger of Mathematics XIII (1884), second scan, with the plates"
+      }
+     ]
     },
     {
      "id": "stc-over-99.977",
@@ -1258,7 +1321,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/gomtrieducompas00masc"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in L. Mascheroni, Géométrie du compas (1798)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.519",
@@ -1292,7 +1362,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/messengermathem06glaigoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in The Messenger of Mathematics XIII (1884), second scan, with the plates"
+      }
+     ]
     },
     {
      "id": "stc-under-98.304",
@@ -1327,7 +1404,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in G. Thibaut, On the Śulvasútras (1875)"
+      }
+     ]
     },
     {
      "id": "stc-under-95.634",
@@ -1357,7 +1441,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/ulvastras00ktgoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in G. Thibaut, On the Śulvasútras (1875)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.99981",
@@ -1396,7 +1487,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A22.0578.01"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Archiv der Mathematik und Physik, 2nd series, IX (1890)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.9996",
@@ -1427,7 +1525,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A46.0857.01"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 46.0857.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.99986",
@@ -1458,7 +1563,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A0032.17902"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Zentralblatt, Zbl 0032.17902 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.99999998",
@@ -1489,7 +1601,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A0029.31002"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Zentralblatt, Zbl 0029.31002 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.998-viete",
@@ -1525,7 +1644,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.471",
@@ -1578,6 +1704,13 @@ const ARCHIVE = {
        "date": "by 1531",
        "note": "Chaos mathematicum, in his Lucubrationes (1541), p. 571: \"Divisa diametro in octo partes utrinque unam adijce, sic aequale quadratum circulo efficies\", with the figure (MDZ, bsb11104863). Buteo (1559, p. 150) names Dürer and Fortius together as claiming it."
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in A. Peltzer (ed.), Albrecht Dürer's Unterweisung der Messung (1908)"
+      }
      ]
     },
     {
@@ -1614,7 +1747,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in C. de Bouvelles, La géométrie pratique (Paris 1566)"
+      }
+     ]
     },
     {
      "id": "stc-over-98.140",
@@ -1661,6 +1801,13 @@ const ARCHIVE = {
        "date": "1542",
        "note": "Livre singulier et utile touchant l'art et pratique de géométrie (Paris 1542), chapter IV, proposition 9 (MDZ, bsb10164554), and La géométrie pratique (1566), chapter VI; charted under his name until Ringelbergh's book was found"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in J. Fortius Ringelbergh, Lucubrationes (1541), MDZ"
+      }
      ]
     },
     {
@@ -1692,7 +1839,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in J. E. Montucla, Histoire des recherches sur la quadrature du cercle (1831 edition)"
+      }
+     ]
     },
     {
      "id": "stc-under-97.943",
@@ -1728,7 +1882,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in J. Buteo, De quadratura circuli (1559)"
+      }
+     ]
     },
     {
      "id": "stc-over-99.045",
@@ -1763,7 +1924,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Internet Archive: bub_gb_z5TUDt70KlMC"
+      }
+     ]
     },
     {
      "id": "stc-under-99.239",
@@ -1803,7 +1971,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.996",
@@ -1838,7 +2013,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.862",
@@ -1873,7 +2055,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "stc-under-99.972",
@@ -1908,7 +2097,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "square": "q"
+     "square": "q",
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     }
    ]
   },
@@ -2151,7 +2347,14 @@ const ARCHIVE = {
         "url": "https://arxiv.org/abs/1205.0080"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in G. H. Hughes, The Polygons of Albrecht Dürer, 1525 (arXiv)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.838",
@@ -2181,7 +2384,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/ERIC_ED058058"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)"
+      }
+     ]
     },
     {
      "id": "taa-over-98.796",
@@ -2237,6 +2447,13 @@ const ARCHIVE = {
        "date": "1936",
        "note": "\"Die Dreiteilung des Winkels. Eine für den Zeichner praktische Methode\" (Znaim 1936): the same approximation, cot(α/3) ≈ (1/2 + cos(α/2)) : sin(α/2), as the Jahrbuch notes (JFM 62.0698.01)"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)"
+      }
      ]
     },
     {
@@ -2272,7 +2489,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.147",
@@ -2303,7 +2527,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.660",
@@ -2568,7 +2799,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.990",
@@ -2627,7 +2865,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in F. Enriques (ed.), Questioni riguardanti la geometria elementare (1900)"
+      }
+     ]
     },
     {
      "id": "taa-over-99.950",
@@ -2699,7 +2944,14 @@ const ARCHIVE = {
         "url": "https://publikationen.badw.de/de/003396126"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in R. C. Yates, The Trisection Problem (1942; NCTM reprint 1971)"
+      }
+     ]
     },
     {
      "id": "taa-over-98.796-baratto",
@@ -2737,6 +2989,13 @@ const ARCHIVE = {
        "date": "1919",
        "note": "as the case n = 2 of his \"tilnærmet vinkeldelingskonstruktion\" (Norsk Matematisk Tidsskrift 1 (1919), pp. 27, 71; JFM 47.0548.01): the point at the middle of the arc, the line through it from the far end to the tangent at the near end, and the line from the centre, step for step"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 02.0362.01 (zbMATH Open)"
+      }
      ]
     },
     {
@@ -2768,7 +3027,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A62.1417.04"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 62.1417.04 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-under-97.592",
@@ -2799,7 +3065,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A27.0394.06"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 27.0394.06 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-over-98.934",
@@ -2830,7 +3103,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A10.0363.04"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 10.0363.04 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.855",
@@ -2861,7 +3141,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A0032.29801"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Zentralblatt, Zbl 0032.29801 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.584",
@@ -2892,7 +3179,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A0037.37802"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Zentralblatt, Zbl 0037.37802 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-over-98.678",
@@ -2927,7 +3221,14 @@ const ARCHIVE = {
         "url": "https://publikationen.badw.de/de/003383642"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Zentralblatt, Zbl 0043.35403 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-under-98.960",
@@ -2961,7 +3262,14 @@ const ARCHIVE = {
         "url": "https://publikationen.badw.de/de/003383299"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 55.0982.04 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-over-99.927",
@@ -2995,7 +3303,14 @@ const ARCHIVE = {
         "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.984",
@@ -3029,7 +3344,14 @@ const ARCHIVE = {
         "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "taa-under-99.838-averdieck",
@@ -3072,7 +3394,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11489878"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Internet Archive: sim_journal-fuer-die-reine-und-angewandte-mathematik_1889_105"
+      }
+     ]
     }
    ]
   },
@@ -3382,7 +3711,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/paper-doi-10_1098_rspl_1871_0099"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in W. Hayden, Proceedings of the Royal Society 20 (1871-72)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.847",
@@ -3417,7 +3753,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in L. Mascheroni, Géométrie du compas (1798)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.9995",
@@ -3448,7 +3791,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/gomtrieducompas00masc"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in L. Mascheroni, Géométrie du compas (1798)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.693",
@@ -3479,7 +3829,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.997",
@@ -3510,7 +3867,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/rcin.org.pl.WA35_102168_4521-II_Aufgaben-dritten_78454"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.729",
@@ -3552,6 +3916,13 @@ const ARCHIVE = {
        "date": "1893",
        "note": "Časopis pro pěstování mathematiky a fysiky 22 (1893), pp. 154-155 (dml.cz 122048): the same idea, ∛(a²b) as the nest √(a√(b√(a√b…))) of mean proportionals, taken \"until the differences can no longer be drawn\"; his steps give Vargiù's 2^(85/256) after eight means"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in U. Amaldi, Aufgaben dritten Grades, in F. Enriques, Fragen der Elementargeometrie II (1907)"
+      }
      ]
     },
     {
@@ -3592,7 +3963,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in F. Enriques (ed.), Questioni riguardanti la geometria elementare (1900)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.9976",
@@ -3622,7 +4000,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "dtc-under-97.65625",
@@ -3653,7 +4038,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.998",
@@ -3683,7 +4075,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.868",
@@ -3713,7 +4112,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.981",
@@ -3744,7 +4150,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A41.0569.01"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 41.0569.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.781",
@@ -3774,7 +4187,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.391",
@@ -3804,7 +4224,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ"
+      }
+     ]
     },
     {
      "id": "dtc-under-98.888",
@@ -3834,7 +4261,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.068",
@@ -3864,7 +4298,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.821",
@@ -3894,7 +4335,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.850",
@@ -3924,7 +4372,14 @@ const ARCHIVE = {
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.9999",
@@ -3965,6 +4420,13 @@ const ARCHIVE = {
        "date": "1957",
        "note": "\"On the duplication of the cube\", Nordisk Matematisk Tidskrift 5 (1957), pp. 84-86 (Zbl 0077.14302): the root 8 − √62 of x² − 16x + 2 = 0 as a tenth of ∛2, found with continued fractions; his own construction is not in the review"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
      ]
     },
     {
@@ -3999,7 +4461,14 @@ const ARCHIVE = {
         "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.041",
@@ -4033,7 +4502,14 @@ const ARCHIVE = {
         "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "dtc-under-99.998",
@@ -4067,7 +4543,14 @@ const ARCHIVE = {
         "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     }
    ]
   },
@@ -4623,6 +5106,13 @@ const ARCHIVE = {
        "date": "before 1846",
        "note": "in \"Über die Rectification der Peripherie des Kreises\" (Hamburg, Nestler und Melle), without mention of Kochański, as reported in Journal für die reine und angewandte Mathematik 32 (1846), pp. 91-92, \"Zur näherungsweisen Kreis-Quadratur\" (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1846_32)"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Edward James Gordon",
+       "date": "",
+       "note": "found while working on his own constructions, before the archive's historical search"
+      }
      ]
     },
     {
@@ -4948,7 +5438,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/pli.kerala.rare.28155"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Edward James Gordon",
+       "date": "",
+       "note": "found while working on his own constructions, before the archive's historical search"
+      }
+     ]
     },
     {
      "marks": "µ",
@@ -5238,7 +5735,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. W. Hobson, Squaring the Circle: A History of the Problem (1913)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.99997",
@@ -5269,7 +5773,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/squaringcirclehi00hobsuoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. W. Hobson, Squaring the Circle: A History of the Problem (1913)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.998",
@@ -5315,6 +5826,13 @@ const ARCHIVE = {
        "date": "1846",
        "note": "Vorschule der darstellenden Geometrie, Aufgabe 67, third solution: Kunze's triangle step for step (the edition of 1868 is the one seen; the Jahrbuch, JFM 38.0535.01, dates it to the first edition, 1846). Kunze's first edition of 1842 is earlier."
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
      ]
     },
     {
@@ -5346,7 +5864,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/diequadraturdes01beutgoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. Beutel, Die Quadratur des Kreises (1913)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.999996",
@@ -5380,7 +5905,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Gergonne's Annales de mathématiques VIII (1817-18)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.974",
@@ -5416,7 +5948,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Gergonne's Annales de mathématiques VIII (1817-18)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.9999995",
@@ -5451,7 +5990,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Crelle's Journal für die reine und angewandte Mathematik 3 (1828)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.851",
@@ -5487,7 +6033,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Journal de mathématiques élémentaires (1895)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.994",
@@ -5523,7 +6076,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Journal de mathématiques élémentaires (1895)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.904",
@@ -5559,7 +6119,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 8
+     "result_scale": 8,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Crelle's Journal für die reine und angewandte Mathematik 32 (1846)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.9997",
@@ -5589,7 +6156,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.851-lemoine-a",
@@ -5620,7 +6194,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.851-lemoine-b",
@@ -5651,7 +6232,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.904-lemoine",
@@ -5683,7 +6271,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Bulletin de la Société mathématique de France (NUMDAM, BSMF_1895__23__242_0)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.962",
@@ -5715,7 +6310,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 32.0504.04 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.993",
@@ -5747,7 +6349,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 40.0560.03 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.999",
@@ -5783,7 +6392,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 57.0692.02 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.959",
@@ -5813,7 +6429,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/vorschule-der-darstellenden-geometrie"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in A. L. Busch, Vorschule der darstellenden Geometrie (1868 edition)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.9945",
@@ -5875,6 +6498,13 @@ const ARCHIVE = {
        "date": "1868",
        "note": "Vorschule der darstellenden Geometrie, Aufgabe 67, second solution, as three diameters and a fifth of the square's side (edition of 1868; first edition 1846); charted under his name until Huygens' text was found"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Internet Archive: berdieentwickl00simouoft"
+      }
      ]
     },
     {
@@ -5907,7 +6537,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Zentralblatt, Zbl 0033.39002 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.984",
@@ -5938,7 +6575,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.975",
@@ -5969,7 +6613,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.998-viete",
@@ -6005,7 +6656,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Francisci Vietae Opera mathematica, ed. F. van Schooten (Leiden 1646)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.341",
@@ -6046,7 +6704,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in C. de Bouvelles, La géométrie pratique (Paris 1566)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.341-barbel",
@@ -6089,6 +6754,13 @@ const ARCHIVE = {
        "date": "1893",
        "note": "as the line from the middle of the quadrant's chord to the end of the diameter, nearly π/2 (1.58); the Zürich astronomer's note in Grunert's Archiv, as reported by M. Simon, Über die Entwicklung der Elementar-Geometrie im XIX. Jahrhundert, Jahresbericht der Deutschen Mathematiker-Vereinigung, Ergänzungsband I (Leipzig 1906) (Internet Archive, berdieentwickl00simouoft), p. 65"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in C. de Bouvelles, La géométrie pratique (Paris 1566)"
+      }
      ]
     },
     {
@@ -6125,7 +6797,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 1
+     "result_scale": 1,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in M. Cantor, Vorlesungen über Geschichte der Mathematik II (2nd edition)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.582",
@@ -6156,7 +6835,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in P. Uffenbach, De quadratura circuli mechanici (1653 edition)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.582-uffenbach",
@@ -6187,7 +6873,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 1
+     "result_scale": 1,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in P. Uffenbach, De quadratura circuli mechanici (1653 edition)"
+      }
+     ]
     },
     {
      "id": "rtc-over-96.992",
@@ -6222,7 +6915,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 1
+     "result_scale": 1,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in P. Uffenbach, De quadratura circuli mechanici (1653 edition)"
+      }
+     ]
     },
     {
      "id": "rtc-over-98.723",
@@ -6257,7 +6957,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 1
+     "result_scale": 1,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in P. Uffenbach, De quadratura circuli mechanici (1653 edition)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.933",
@@ -6292,7 +6999,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 2
+     "result_scale": 2,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in J. Buteo, De quadratura circuli (1559)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.772",
@@ -6336,7 +7050,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in C. de Bouvelles, La géométrie pratique (Paris 1566)"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.341-scaliger",
@@ -6367,7 +7088,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in J. Scaliger, Cyclometrica elementa duo (1594), MDZ"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.904-cusa",
@@ -6414,6 +7142,13 @@ const ARCHIVE = {
        "date": "1586",
        "note": "as a value only, π² = √320 − 8, in his second attempt at the circle; Van Roomen and Ludolph van Ceulen pointed out that it was one of Cusa's values (M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition, pp. 592 and 597; Internet Archive, vorlesungenber02cantuoft)"
       }
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in J. Buteo, De quadratura circuli (1559)"
+      }
      ]
     },
     {
@@ -6449,7 +7184,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 1
+     "result_scale": 1,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "rtc-under-99.996",
@@ -6484,7 +7226,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 1
+     "result_scale": 1,
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)"
+      }
+     ]
     }
    ]
   },
@@ -6645,7 +7394,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/ERIC_ED058058"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. W. Hobson, Squaring the Circle: A History of the Problem (1913)"
+      }
+     ]
     },
     {
      "id": "ar-under-99.029",
@@ -6676,7 +7432,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in K. T. Vahlen, Konstruktionen und Approximationen (1911)"
+      }
+     ]
     },
     {
      "id": "ar-over-99.831",
@@ -6802,7 +7565,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/diequadraturdes01beutgoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in E. Beutel, Die Quadratur des Kreises (1913)"
+      }
+     ]
     },
     {
      "id": "ar-under-95.243",
@@ -6833,7 +7603,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/nieuwarchiefvoo00amstgoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Nieuw Archief voor Wiskunde IV (1878)"
+      }
+     ]
     },
     {
      "id": "ar-over-98.685",
@@ -6869,6 +7646,13 @@ const ARCHIVE = {
       "B",
       "C_2",
       "A"
+     ],
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Nieuw Archief voor Wiskunde IV (1878)"
+      }
      ]
     },
     {
@@ -6899,7 +7683,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/nieuwarchiefvoo00amstgoog"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Nieuw Archief voor Wiskunde IV (1878)"
+      }
+     ]
     },
     {
      "id": "ar-under-99.99993",
@@ -7002,7 +7793,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A38.0535.03"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 38.0535.03 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "ar-over-99.592-burmester",
@@ -7033,7 +7831,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A47.0547.04"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 47.0547.04 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "ar-under-99.986",
@@ -7064,7 +7869,14 @@ const ARCHIVE = {
         "url": "https://zbmath.org/?q=an%3A34.0553.05"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in Jahrbuch über die Fortschritte der Mathematik, JFM 34.0553.05 (zbMATH Open)"
+      }
+     ]
     },
     {
      "id": "ar-under-99.922",
@@ -7094,7 +7906,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/archimedeshuygen00rudiuoft"
        }
       ]
-     }
+     },
+     "located_by": [
+      {
+       "name": "Claude (Anthropic)",
+       "date": "November 2026",
+       "note": "in Edward James Gordon's sessions, during the archive's historical search; found in F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)"
+      }
+     ]
     }
    ]
   }
