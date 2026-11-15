@@ -103,7 +103,7 @@ is worked out live from the charts.
 | Squaring The Circle | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9999999% (Claude (Anthropic), AI): −0.819 nm | 3.86 nm (13.4 gold atoms) |
 | Squaring The Circle (people only) | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9996% (Emil Lampe): −148 µm | 148 µm |
 | Doubling The Cube | given edge 10 m, doubled edge 12.5992 m | 99.999998% (Claude (Anthropic), AI): +71.7 nm | 99.99997% (Claude (Anthropic), AI): −1.18 µm | 1.25 µm |
-| Doubling The Cube (people only) | given edge 10 m, doubled edge 12.5992 m | 99.998% (K. T. Vahlen): +67.5 µm | 99.9995% (Lorenzo Mascheroni): −17.9 µm | 85.4 µm |
+| Doubling The Cube (people only) | given edge 10 m, doubled edge 12.5992 m | 99.9999% (Paul Finsler): +2.10 µm | 99.9995% (Lorenzo Mascheroni): −17.9 µm | 20.0 µm |
 | Rectifying The Circle | plaza 100 m across, circumference 314.1593 m | 99.999999% (Claude (Anthropic), AI): +104 nm | 99.9999999% (Srinivasa Ramanujan): −101 nm | 205 nm (712 gold atoms) |
 | Rectifying The Circle (people only) | plaza 100 m across, circumference 314.1593 m | 99.999996% (Kochanski / Gordon): +11.0 µm | 99.9999999% (Srinivasa Ramanujan): −101 nm | 11.1 µm |
 
@@ -122,7 +122,7 @@ gold joint or a walkable path (the Earth is 12,742 km across):
 | Squaring The Circle | circle, across | larger than the Earth | larger than the Earth | larger than the Earth |
 | Squaring The Circle (people only) | circle, across | 337 m | 3.37 km | 810 km |
 | Doubling The Cube | given cube edge | 4.00 km | 40.0 km | 9,606 km |
-| Doubling The Cube (people only) | given cube edge | 58.6 m | 586 m | 141 km |
+| Doubling The Cube (people only) | given cube edge | 250 m | 2.50 km | 600 km |
 | Rectifying The Circle | plaza, across | 244 km | 2,440 km | larger than the Earth |
 | Rectifying The Circle (people only) | plaza, across | 4.52 km | 45.2 km | 10,838 km |
 

@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-15). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (186)
+### Not verified by a person yet (197)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -194,6 +194,9 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Squaring The Circle, undersized 97.943% · Finé's first squaring (stc-under-97.943): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/97.943-Fine.ggb`, square q
 - [ ] Squaring The Circle, oversized 99.045% · Brugmann's rectangle (stc-over-99.045): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Over/99.045-Brugmann.ggb`, square q
 - [ ] Squaring The Circle, undersized 99.239% · Scaliger's square (stc-under-99.239): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/99.239-Scaliger.ggb`, square q
+- [ ] Squaring The Circle, undersized 99.996% · Finsler's half-circumference mean (AF) (stc-under-99.996): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/STC-99.996-Finsler.ggb`, square q
+- [ ] Squaring The Circle, undersized 99.862% · Finsler's HK (stc-under-99.862): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/STC-99.862-Finsler.ggb`, square q
+- [ ] Squaring The Circle, undersized 99.972% · Finsler's 1O' + L'L (stc-under-99.972): GeoGebra file `Approximations/01 Squaring The Circle/GeoGebra Files/Squared Circle Under/STC-99.972-Finsler.ggb`, square q
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-~99.317.ggb`
 - [ ] Trisecting An Angle, oversized 96.305% · Search find: 2 circles, 2 lines (any angle) (taa-over-96.305): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-96.305-Claude.ggb`
 - [ ] Trisecting An Angle, oversized 98.902% · Search find: 3 circles, 3 lines (any angle) (taa-over-98.902): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.902-Claude.ggb`
@@ -228,6 +231,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 99.584% · Visser's trisection (taa-under-99.584): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.584-Visser.ggb`
 - [ ] Trisecting An Angle, oversized 98.678% · Sauerbeck's trisection (taa-over-98.678): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-98.678-Sauerbeck.ggb`
 - [ ] Trisecting An Angle, undersized 98.960% · Kopf's first trisection (taa-under-98.960): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-98.960-Kopf.ggb`
+- [ ] Trisecting An Angle, oversized 99.927% · Finsler's osculating circle, k = 1 (8.3) (taa-over-99.927): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.927-Finsler.ggb`
+- [ ] Trisecting An Angle, undersized 99.984% · Finsler's osculating circle, k = 2 (9.3.3) (taa-under-99.984): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.984-Finsler.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -257,6 +262,10 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, undersized 99.068% · Finé's mean proportionals, Prop. VI (dtc-under-99.068): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.068-Fine-PropVI.ggb`
 - [ ] Doubling The Cube, undersized 99.821% · Finé's mean proportionals, Prop. VII (Philo's line) (dtc-under-99.821): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.821-Fine-PropVII.ggb`
 - [ ] Doubling The Cube, oversized 99.850% · Finé's mean proportionals, Prop. VIII (dtc-over-99.850): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.850-Fine-PropVIII.ggb`
+- [ ] Doubling The Cube, oversized 99.9999% · Finsler's tenth of the doubled edge (8 − √62) (dtc-over-99.9999): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.9999-Finsler.ggb`
+- [ ] Doubling The Cube, oversized 98.076% · Finsler's 3 − √3 (dtc-over-98.076-finsler): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076-Finsler.ggb`
+- [ ] Doubling The Cube, oversized 99.041% · Finsler's 3½ − √5 (dtc-over-99.041): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.041-Finsler.ggb`
+- [ ] Doubling The Cube, undersized 99.998% · Finsler's 4 + √3 − 2√5 (dtc-under-99.998): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.998-Finsler.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.999996% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
@@ -302,6 +311,8 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.772% · Bouvelles' line made into a quadrant (rtc-under-99.772): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.772-Bouvelles.ggb`
 - [ ] Rectifying The Circle, oversized 99.341% · Scaliger's perimeter (rtc-over-99.341-scaliger): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.341-Scaliger.ggb`
 - [ ] Rectifying The Circle, oversized 99.904% · Cusa's fifth squaring (the chord AF) (rtc-over-99.904-cusa): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.904-Cusa.ggb`
+- [ ] Rectifying The Circle, oversized 99.9999% · Cordilha's triangle (√229 + 10)/4 (rtc-over-99.9999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.9999-Cordilha.ggb`
+- [ ] Rectifying The Circle, undersized 99.996% · Finsler's tangent and four radii (rtc-under-99.996): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.996-Finsler.ggb`
 - [ ] Arc Rectification, oversized 97.537% · Tangent Path (ar-over-97.537): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-97.537.ggb`
 - [ ] Arc Rectification, oversized 96.640% · Search find: 3 circles, 0 lines (any arc) (ar-over-96.640): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-96.640-Claude.ggb`
 - [ ] Arc Rectification, oversized 98.689% · Search find: 4 circles, 0 lines (any arc) (ar-over-98.689): GeoGebra file `Approximations/05 Arc Rectification/GeoGebra Files/Arc Rectification Over/AR-98.689-Claude.ggb`
@@ -330,7 +341,7 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Identical or near-identical entries (21)
+### Identical or near-identical entries (22)
 
 From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
 
@@ -339,6 +350,7 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] identical: taa-over-98.796-baratto and taa-over-98.796 (score 1.00)
 - [ ] identical: ar-over-99.592 and ar-over-99.592-burmester (score 1.00)
 - [ ] same result: rtc-over-99.851-lemoine-a and rtc-over-99.851-lemoine-b (score 0.57)
+- [ ] same result: dtc-over-98.076-finsler and dtc-over-98.076 (score 0.54)
 - [ ] same result: rtc-over-99.341-barbel and rtc-over-99.341-scaliger (score 0.40)
 - [ ] same result: rtc-over-99.582 and rtc-over-99.582-uffenbach (score 0.33)
 - [ ] same result: rtc-over-99.341 and rtc-over-99.341-scaliger (score 0.28)
@@ -356,10 +368,11 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] near identical: dtc-under-99.821 and dtc-over-99.850 (score 0.84)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)
 
-### µ marks to review (2)
+### µ marks to review (3)
 
 The micro scale test (a step under 5% of the given size) disagrees with the chart. Add or remove the mark, or for a mark made by hand, describe the adjustment in the entry's micro_note.
 
+- [ ] Doubling The Cube, undersized 99.998% · Finsler's 4 + √3 − 2√5 (dtc-under-99.998): the test finds its smallest step at 0.4% of the given size; the chart does not have µ
 - [ ] Rectifying The Circle, oversized 99.607% (rtc-over-99.607): the test finds its smallest step at 6.3% of the given size; the chart has µ
 - [ ] Rectifying The Circle, oversized 99.873% (rtc-over-99.873): the test finds its smallest step at 50.0% of the given size; the chart has µ
 

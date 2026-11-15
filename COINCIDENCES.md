@@ -32,8 +32,9 @@ ancestors spot the lion in the grass, and it costs us little to see a few lions 
 
 There is also simple arithmetic behind it. Work with enough numbers, as the archive does with every entry, every
 gap and every scale, and some of them will land near a number that means something to you. With thousands of
-chances, a match is not surprising; it would be strange to find none. (At the time of writing, 13 people are listed
-under "Also found by" across the charts. That one is a coincidence too.)
+chances, a match is not surprising; it would be strange to find none. (When this note was written, exactly 13 people
+were listed under "Also found by" across the charts; a few days later Ernst Selmer made it 14. That one was a
+coincidence too, and it did not last.)
 
 None of this makes the patterns less enjoyable. It just means that a pattern is the start of a question, not
 the answer to one.
@@ -45,14 +46,15 @@ length in a few steps: the square's diagonal √2, the equilateral triangle's he
 and the golden ratio that comes out of it. Anyone who starts from a circle and a square is choosing from the same
 short list, so the same values keep being found again, centuries apart and by people who never read each other:
 
-- **Ten values on the charts are reached by more than one construction.** Cusa's fifth squaring (about 1450),
-  Crelle's (1846) and Lemoine's (1895) all come to π = √(8(√5 − 1)), by different steps.
+- **Eleven values on the charts are reached by more than one construction.** Cusa's fifth squaring (about 1450),
+  Crelle's (1846) and Lemoine's (1895) all come to π = √(8(√5 − 1)), by different steps; Finsler's 3 − √3 for the
+  doubled cube (1938) is Edward's Three Minus Root Three (2026), by other steps.
 - **The same construction is found again.** Molther (1619), Huygens (1654) and Busch (1846) each laid three
-  diameters and a fifth of the quadrant's chord along a line. The archive lists 13 such later finders under
+  diameters and a fifth of the quadrant's chord along a line. The archive lists 14 such later finders under
   "Also found by".
 - **The same numbers return.** Stifel's 5/4 for the doubled cube (1544) is also where Winthrop's construction of
   1793 ends up as its angles shrink. Finé's 3 − √2 (1556) for ∛4 is the square of Sorgner's √(3 − √2) for ∛2
-  (1915).
+  (1915). Selmer found Finsler's 8 − √62 for a tenth of ∛2 (1938) again in 1957, with continued fractions.
 
 These come from the shapes, not from luck: the circle, the square and the triangle hold only so many simple
 lengths, and good approximations are made from simple lengths. That is part of why trying is worthwhile. Each

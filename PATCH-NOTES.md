@@ -12,6 +12,23 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Finsler (1938)
+
+### Archive
+- Added eleven constructions from Paul Finsler's "Einige elementargeometrische Näherungskonstruktionen" (1938):
+  - doubling the cube: 10 (8 − √62), 99.99995% over, the best people's duplication on the chart; 3 − √3 (tied with
+    Edward's Three Minus Root Three, by other steps), 3½ − √5, and 4 + √3 − 2√5 (99.9985% under);
+  - rectifying the circle: his tangent and four radii, 99.996% under, and J. Cordilha's triangle (1932), 99.99998% over;
+  - squaring the circle: three squares from the same figure, 99.996%, 99.972% and 99.862% under;
+  - trisecting an angle: his osculating circles, 99.927% over and 99.984% under at 90°.
+- Ernst Selmer's 8 − √62 (1957) is listed under "Also found by" on Finsler's duplication.
+- 227 entries, 76 authors.
+
+### Site
+- `tools/source_links.py` links papers on E-Periodica: cite them as "e-periodica, com-001:1937:10::274".
+
+---
+
 ## November 2026: Doubling the cube
 
 ### Archive

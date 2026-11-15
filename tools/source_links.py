@@ -12,7 +12,7 @@ anyone can open the page the construction was taken from:
 
 To add a source the script does not know yet, add it to BOOKS (by a phrase the evidence uses) or cite its identifier
 in the evidence in the usual form ("Internet Archive, <identifier>", "JFM 12.0345.06", "Zbl 0012.34501",
-"arXiv:1234.56789", "NUMDAM, <item>", "MDZ, bsb12345678", "BAdW, 003383299").
+"arXiv:1234.56789", "NUMDAM, <item>", "MDZ, bsb12345678", "BAdW, 003383299", "e-periodica, com-001:1937:10::274").
 """
 import json, os, re, sys
 
@@ -62,6 +62,7 @@ BOOKS = [
     (r'Hayden|Proceedings of the Royal Society 20', 'paper-doi-10_1098_rspl_1871_0099'), (r'Willich', 'philtrans08545474'), (r'Rudio|Vier Abhandlungen', 'archimedeshuygen00rudiuoft'), (r'Montucla', 'histoiredesreche00montuoft'),
     (r'Ramanujan, "(?:Squaring the circle|Modular equations)', 'pli.kerala.rare.28155'),
 ]
+EPER = {'com-001:1937:10::274': 'P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica'}
 MDZ = {'bsb11199762': 'O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ', 'bsb10053689': 'J. Molther, Problema Deliacum de cubi duplicatione (1619), MDZ', 'bsb10147881': 'J. Scaliger, Cyclometrica elementa duo (1594), MDZ', 'bsb11218281': 'T. Gephyrander [Brugmann], Quadratura circuli nova (1608/1609), MDZ', 'bsb10186754': 'J. Buteo, De quadratura circuli (1559), MDZ', 'bsb11104863': 'J. Fortius Ringelbergh, Lucubrationes (1541), MDZ', 'bsb11925583': 'J. Fortius Ringelbergh, Opera (1556), MDZ', 'bsb10147857': 'L. van Ceulen, Van den Circkel (1596), MDZ', 'bsb10164554': "C. de Bouvelles, Livre singulier et utile touchant l'art et pratique de géométrie (1542), MDZ", 'bsb11942712': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (1842), MDZ', 'bsb10082182': 'L. Kunze, Lehrbuch der Geometrie I: Planimetrie (2nd edition, 1851), MDZ'}
 ARXIV = {'1205.0080': 'G. H. Hughes, The Polygons of Albrecht Dürer, 1525 (arXiv)', '1908.01202': 'H. V. Chu, Squaring the Circle Revisited (arXiv)'}
 
@@ -86,6 +87,8 @@ def links_for(evidence):
         add('Bayerische Akademie der Wissenschaften, Sitzungsberichte (' + item + ')', 'https://publikationen.badw.de/de/' + item)
     for item in re.findall(r'MDZ,? (bsb\d{8})', text):
         add(MDZ.get(item, 'Münchener DigitalisierungsZentrum: ' + item), 'https://www.digitale-sammlungen.de/en/view/' + item)
+    for item in re.findall(r'e-periodica,? ([a-z]{3}-\d{3}:\d{4}:\d+::\d+)', text):
+        add(EPER.get(item, 'E-Periodica (ETH Zürich): ' + item), 'https://www.e-periodica.ch/digbib/view?pid=' + item)
     for item in re.findall(r'\b(BSMF_\d{4}__\d+__\d+_\d)', text):
         add('Bulletin de la Société mathématique de France (NUMDAM, ' + item + ')', 'https://www.numdam.org/item/' + item + '/')
     return out

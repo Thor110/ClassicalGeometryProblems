@@ -1804,6 +1804,111 @@ const ARCHIVE = {
       ]
      },
      "square": "q"
+    },
+    {
+     "id": "stc-under-99.996",
+     "side": "under",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's half-circumference mean (AF)",
+     "circles": 7,
+     "lines": 8,
+     "acc": "99.996",
+     "precise": "99.996296359736215372251550174183",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/STC-99.996-Finsler",
+     "note": "With AE the circumference from Fig. 3: the semicircle on the first half of AE meets 1C produced at F, and AF, the mean proportional of r and AE/2, is the side of the square: √((9 + √97)/6) r = 1.772421 r, wrong by about 2r/60000.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 7, (7.1), p. 250, with Fig. 3: \"So schneidet der Halbkreis über der ersten Hälfte von AE (Fig. 3) die Verlängerung von 1C in F derart, daß AF nahe die gesuchte Quadratseite darstellt.\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-under-99.862",
+     "side": "under",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's HK",
+     "circles": 8,
+     "lines": 7,
+     "acc": "99.862",
+     "precise": "99.862646206673097706047924642902",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/STC-99.862-Finsler",
+     "note": "AG = AD is laid on the tangent AE, and the length GD (4√2/3 r) is laid from B towards A and from A towards B, to H and K: HK = (8√2/3 − 2) r = 1.7712 r, the square's side with an error of about 2r/1600, \"still sufficient\".",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 7, (7.2), pp. 250-251: \"Einfacher, wenn auch weniger genau, ist es, auf AE die Strecke AG = AD abzutragen, und die Strecke GD von B aus gegen A und von A aus gegen B bis H und K.\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     },
+     "square": "q"
+    },
+    {
+     "id": "stc-under-99.972",
+     "side": "under",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's 1O' + L'L",
+     "circles": 6,
+     "lines": 9,
+     "acc": "99.972",
+     "precise": "99.972290343181375163602046355288",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Squared Circle Under/STC-99.972-Finsler",
+     "note": "AL = AC = r√2 is laid on the diameter AB; the line 1C meets 3L at L' and 3O at O'; then 1O' + L'L = (2 + √11)/3 r = 1.77221 r is the square's side, wrong by about 2r/8000.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 7, (7.3), p. 251: \"Auf AB (Fig. 3) sei AL = AC = r√2 abgetragen; 1C werde von 3L in L', von 3O in O' getroffen. Dann ist 1O' + L'L die Quadratseite\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     },
+     "square": "q"
     }
    ]
   },
@@ -2857,6 +2962,74 @@ const ARCHIVE = {
        }
       ]
      }
+    },
+    {
+     "id": "taa-over-99.927",
+     "side": "over",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's osculating circle, k = 1 (8.3)",
+     "circles": 8,
+     "lines": 7,
+     "acc": "99.927",
+     "precise": "99.927630400234966522786446383741",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/TAA-99.927-Finsler",
+     "note": "O'', O', O and A five units apart on a line, M with O'M = 1; the circle about O through A, the circle about M through A. For the angle BOA, O'B meets the second circle at B'', and B''O''A is taken as the third: the circle about M replaces the limaçon through A by its circle of curvature. The error is (1/108)(φ/3)⁵: 0.10\" at 24°, 10\" at 60°, 78\" at 90°. Charted at 90°, where it is largest.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 8, (8.3), pp. 254-255: \"Auf einer Geraden seien in Abständen von je 5 Einheiten die Punkte O'', O', O und A markiert, während O'M gleich einer, also MO gleich 4 Einheiten gemacht sei. Man zeichne um O als Mittelpunkt den Kreis ABO', und um M als Mittelpunkt den Kreis AB''. Liegt dann B'' auf der Geraden O'B, so ist der Winkel B''O''A = ψ sehr nahe ein Drittel des Winkels BOA.\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.984",
+     "side": "under",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's osculating circle, k = 2 (9.3.3)",
+     "circles": 6,
+     "lines": 10,
+     "acc": "99.984",
+     "precise": "99.984517607567076509908735791763",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.984-Finsler",
+     "note": "The general rule of § 9 for n = 3, k = 2: on a line OA = 4, ŌA = 3 and MA = 3mn/(2(m + n)) = 18/7 units; with BOA the given angle halved twice, and MB = MA on its free arm, the angle BŌA is very nearly a third of the given one. The error is −(7/3456)(φ/3)⁵: −0.016\" at 22½°, −16.7\" at 90°, −9'17\" at 180°. Charted at 90°.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 9, (9.3.3), p. 259: \"Auf einer Geraden werde mit beliebiger Einheit OA = m, ŌA = n und MA = 3mn/(2(m + n)) abgetragen. Ist dann ∢BOA mit MB = MA der durch k-maliges Halbieren gefundene Winkel φ/m, so ist der Winkel BŌA = ψ sehr nahe gleich φ/n.\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     }
     }
    ]
   },
@@ -3706,6 +3879,149 @@ const ARCHIVE = {
        {
         "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
         "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.9999",
+     "side": "over",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's tenth of the doubled edge (8 − √62)",
+     "circles": 9,
+     "lines": 1,
+     "acc": "99.9999",
+     "precise": "99.999949999949999937499912499869",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.9999-Finsler",
+     "note": "On the square ABCD of the given edge a: AB is produced to M and N with AM = MN = 4a; E is found with ME = MA and AE = AC; NF = NE with F on AB. Then AF = (8 − √62) a = 0.125992126 a, a tenth of the doubled edge 0.125992105 a, wrong by about a fifty-millionth of a. Ten times AF is the edge: laying it off ten times is the archive's step.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 1, Fig. 1, p. 243: \"Man verlängere die Kante AB = a bis M und N, so daß AM = MN = 4a. Wird dann ME = MA und AE = AC gemacht, sowie NF = NE mit F auf AB, so ist AF sehr nahe ein Zehntel der gesuchten Würfelkante\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     },
+     "rediscovered": [
+      {
+       "name": "Ernst S. Selmer",
+       "date": "1957",
+       "note": "\"On the duplication of the cube\", Nordisk Matematisk Tidskrift 5 (1957), pp. 84-86 (Zbl 0077.14302): the root 8 − √62 of x² − 16x + 2 = 0 as a tenth of ∛2, found with continued fractions; his own construction is not in the review"
+      }
+     ]
+    },
+    {
+     "id": "dtc-over-98.076-finsler",
+     "side": "over",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's 3 − √3",
+     "circles": 5,
+     "lines": 0,
+     "acc": "98.076",
+     "precise": "98.076211353315940291169512258809",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-98.076-Finsler",
+     "note": "Along the line AB the points 2 and 3 are marked; Q is the apex of the equilateral triangle on the points 1 (B) and 2, so the distance from 3 to Q is √3, and X is laid off with 3X = 3Q: AX = 3 − √3 = 1.2679 a. Finsler gives it as one of two values very easy to construct, with an error of about a/125.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 1, (1.2), p. 244, with Fig. 1 (\"In Fig. 1 ist √3 = 3Q\")",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.041",
+     "side": "over",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's 3½ − √5",
+     "circles": 5,
+     "lines": 1,
+     "acc": "99.041",
+     "precise": "99.041903030810991254150033476539",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.041-Finsler",
+     "note": "With C the corner of the square on AB, the distance from the point 3 to C is √5; laid back from the point 3½ it gives AY = 3½ − √5 = 1.2639 a, with an error of about a/250.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 1, (1.3), p. 244, with Fig. 1 (\"√5 = 3C\")",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.998",
+     "side": "under",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's 4 + √3 − 2√5",
+     "circles": 9,
+     "lines": 1,
+     "acc": "99.998",
+     "precise": "99.998524361087792296452986649006",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.998-Finsler",
+     "note": "The two easy values 3 − √3 and 3½ − √5 differ by 0.004 a; taking that difference from the smaller gives 4 + √3 − 2√5 = 1.2599149 a, \"a result good in theory too\", too small by about a/160000.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 1, (1.4), p. 244: \"Subtrahiert man ihre Differenz von dem kleineren Wert, so ergibt sich das auch theoretisch gute Resultat 4 + √3 − 2√5\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
        }
       ]
      }
@@ -6044,6 +6360,76 @@ const ARCHIVE = {
        "note": "as a value only, π² = √320 − 8, in his second attempt at the circle; Van Roomen and Ludolph van Ceulen pointed out that it was one of Cusa's values (M. Cantor, Vorlesungen über Geschichte der Mathematik II, 2nd edition, pp. 592 and 597; Internet Archive, vorlesungenber02cantuoft)"
       }
      ]
+    },
+    {
+     "id": "rtc-over-99.9999",
+     "side": "over",
+     "marks": "",
+     "holder": "J. Cordilha",
+     "method": "Cordilha's triangle (√229 + 10)/4",
+     "circles": 6,
+     "lines": 3,
+     "acc": "99.9999",
+     "precise": "99.999981212939857813210612051932",
+     "date": "1932",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/RTC-99.9999-Cordilha",
+     "note": "The right triangle with legs (4 − ¼) r and ½ r, its hypotenuse produced by 2½ r: the whole is (√229 + 10)/4 r = 2r × 3.14159324, the circumference to within about 6r/5000000. Cordilha, of Rio de Janeiro, sent it to d'Ocagne, who published it in 1933; Finsler gives it from a letter of May 1932.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 6, (6.1), p. 249: \"In einem rechtwinkligen Dreieck mit den Katheten (4 − ¼) r und ½ r wird die Hypothenuse um 2½ r verlängert\"; Cordilha's construction was published by M. d'Ocagne, Revue générale des Sciences 44 (1933), p. 8",
+       "redrawn in November 2026 from Finsler's account; the rebuilt length is 25.132746 against 8π = 25.132741 for the radius 4"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     },
+     "result_scale": 1
+    },
+    {
+     "id": "rtc-under-99.996",
+     "side": "under",
+     "marks": "",
+     "holder": "Paul Finsler",
+     "method": "Finsler's tangent and four radii",
+     "circles": 6,
+     "lines": 4,
+     "acc": "99.996",
+     "precise": "99.996296359736215372251550174183",
+     "date": "1938",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/RTC-99.996-Finsler",
+     "note": "On the tangent at A four radii are laid off to the point 4; C is found with 1C = OC = r, and 4C meets the diameter AOB at D (AD = 4r/3); 3E = 3D is laid on the tangent. AE = (3 + √97/3) r = 2r × 3.14148, the larger leg and the hypotenuse of the right triangle with legs 3r and 4r/3; the error is about 6r/26000. The value of π satisfies (x − 3/2)² = (3/2)² + (2/3)².",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: P. Finsler, \"Einige elementargeometrische Näherungskonstruktionen\", Commentarii Mathematici Helvetici 10 (1937/38), pp. 243-262, received 2 March 1938 (e-periodica, com-001:1937:10::274; JFM 64.0629.01), § 6, Fig. 3, (6.2), pp. 249-250: \"Auf der in A an den Kreis gelegten Tangente wird der Radius r von A aus viermal abgetragen bis zum Punkt 4. Weiter ist 1C = OC = r, und die Gerade 4C trifft den Durchmesser AOB des Kreises in D. Auf der Tangente wird noch 3E = 3D abgetragen; dann ist AE nahe gleich dem Umfang des Kreises.\"",
+       "redrawn in November 2026 from the paper; the rebuilt value agrees with Finsler's"
+      ],
+      "links": [
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 64.0629.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A64.0629.01"
+       },
+       {
+        "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
+        "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     },
+     "result_scale": 1
     }
    ]
   },
@@ -7033,6 +7419,13 @@ const ARCHIVE = {
    "J. Molther",
    "Johann Molther",
    "Johannes Molther"
+  ],
+  "Paul Finsler": [
+   "P. Finsler",
+   "Paul Finsler"
+  ],
+  "J. Cordilha": [
+   "J. Cordilha"
   ]
  },
  "authors": [
@@ -8023,6 +8416,52 @@ const ARCHIVE = {
     {
      "label": "Wikipedia",
      "url": "https://en.wikipedia.org/wiki/V%C3%A1clav_L%C3%A1ska"
+    }
+   ]
+  },
+  {
+   "name": "Paul Finsler",
+   "life": "1894–1970",
+   "kind": "historical",
+   "holders": [
+    "Paul Finsler"
+   ],
+   "bio": "German-Swiss mathematician, professor at the University of Zürich. His thesis of 1918 founded the geometry of what are now called Finsler spaces, and he worked on the foundations of set theory. His paper of 1938 collects simple approximate constructions for the cube, the circle, regular polygons and the division of angles, and works out exactly how good they are.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Finsler/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Paul_Finsler"
+    }
+   ],
+   "notable": "Finsler geometry (1918); in 1938 a set of approximations for the cube and the circle accurate to millionths."
+  },
+  {
+   "name": "J. Cordilha",
+   "life": "",
+   "kind": "historical",
+   "holders": [
+    "J. Cordilha"
+   ],
+   "bio": "A geometer of Rio de Janeiro, known from the constructions he sent to Maurice d'Ocagne, who published them in 1933 and 1934: a rectification of the circle correct to about a millionth, and two for the regular nonagon. Paul Finsler had the rectification from him by letter in 1932.",
+   "links": []
+  },
+  {
+   "name": "Ernst S. Selmer",
+   "life": "1920–2006",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "Ernst S. Selmer"
+   ],
+   "bio": "Norwegian mathematician and cryptographer, known for the Selmer group in the theory of elliptic curves. In 1957, working with continued fractions, he found that 8 − √62 is a tenth of ∛2 to within a few hundred-millionths, the value Finsler had drawn in 1938.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Ernst_Sejersted_Selmer"
     }
    ]
   }
