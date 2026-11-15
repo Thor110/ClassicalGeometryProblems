@@ -12,6 +12,20 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Two architectural visions
+
+### Site
+- The Architectural Vision page is split into two visions: Vision I, a gap you can walk (about 1.2 m,
+  with pairs chosen to be built), and Vision II, a gap you can see, as a pencil line or a gold-filled
+  paving joint, which can carry the best constructions.
+- Vision II's seam can be built at true scale or as a symbol: a gold joint wider than the gap, with the
+  two best ends and the perfect result inside it.
+- New table, "How Big For Each Vision": the size each pair must be built at for a pencil line, a gold
+  joint or a walkable path, worked out live.
+- Gaps are shown to three significant figures down to nanometres, and in gold atoms below a micrometre.
+  The squaring gap had shown as 0.00 µm; it is 3.86 nm on a 100 m circle, about 13 gold atoms.
+- ARCHITECTURAL.md follows the page, with its tables brought up to date.
+
 ## November 2026: Kopf and Cusa V
 
 ### Site

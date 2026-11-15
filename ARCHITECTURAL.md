@@ -15,34 +15,81 @@ then the other: between them, in the gap you can stand in or point at, lies the 
 no construction can reach. The building makes the impossibility visible, and celebrates every
 attempt that narrowed the gap.
 
-## One problem at a time
+## Two visions
+
+The gap between the two lines can be built two ways.
+
+### Vision I: a gap you can walk
+
+The two lines stand about 1.2 m apart where they end, a path wide enough to walk down. Visitors walk
+the oversized line, then the undersized one, and stand in the space between, where the perfect result
+lies. To keep the gap that wide at a building's size, this vision uses constructions chosen to be
+built, around 98% to 99.6% (see [Pairs that can be built](#pairs-that-can-be-built) and the
+[search finds](#search-finds-constructions-a-building-can-show)), rather than the best on the charts.
 
 **Rectifying the circle.** A circular plaza, and beside it two straight walkways starting from a
 common threshold:
-- one as long as the best oversized construction of the plaza's circumference;
-- one as long as the best undersized construction.
+- one as long as an oversized construction of the plaza's circumference;
+- one as long as an undersized construction.
 
 Where they end, a marker stands in the gap: the true circumference, π times the diameter.
 
 **Squaring the circle.** A circular garden and a square court of equal area, except that there are
-two courts, nested: the best oversized square and the best undersized square. The true square's
-outline lies in the band between their walls.
+two courts, nested: an oversized square and an undersized square. The true square's outline runs
+along the path between their walls.
 
-**Doubling the cube.** A cube-shaped pavilion, and beside it two larger cubes, or two frames, at the
-best oversized and undersized doubled edge. The cube of exactly twice the volume lies between them.
+**Doubling the cube.** A cube-shaped pavilion, and beside it two larger frames at an oversized and an
+undersized doubled edge, far enough apart to walk between. The cube of exactly twice the volume lies
+between them.
 
 **Trisecting an angle.** A fan-shaped plaza with an angle set into the paving and its three parts
-marked out by the best constructions, as paths radiating from the vertex.
+marked out by constructions, as paths radiating from the vertex. At the plaza's edge the oversized
+and undersized paths have drawn apart, with the true third between them.
 
-**Arc rectification.** An arched walkway, and beside it the straight path that best matches its
-length, from each side.
+**Arc rectification.** An arched walkway, and beside it the straight paths that match its length
+from either side, ending a step apart.
+
+### Vision II: a gap you can see
+
+The lines do not need to be walked between, only walked along, with the gap between them in view.
+Here the gap is a seam: a pencil's width, or the joint where two paving slabs meet, filled with
+poured gold. This vision can carry the best constructions on the charts.
+
+**Rectifying the circle.** The two walkways from the threshold end at a single joint in the paving,
+filled with gold. The oversized line ends at one edge of the joint, the undersized at the other, and
+the true circumference lies in the gold.
+
+**Squaring the circle.** The oversized and undersized courts share their walls' outline, separated
+by a gold seam around the square. The true square runs inside the gold.
+
+**Doubling the cube.** The two frames meet along a gold-filled joint at their edges, where the cube of
+exactly twice the volume lies.
+
+**Trisecting an angle.** The best oversized and undersized paths from the vertex run together across
+the plaza, with a gold seam between them that widens only towards the edge.
+
+**Arc rectification.** The straight paths end at a gold joint beside the arch's end.
+
+The seam can be built two ways:
+
+- **At true scale.** The joint is exactly as wide as the gap. A pair is chosen and the work is sized
+  so the gap comes out a pencil's width (about 0.5 mm) or a paving joint (about 5 mm). It needs
+  modern survey and stone cutting: at that width, rope and stake work wander more than the gap
+  ([Old-world methods](#old-world-methods-the-error-grows-with-the-work)).
+- **As a symbol.** The best two lines end at a gold joint wider than their gap, so both ends, and the
+  perfect result between them, lie somewhere inside the gold. It works at any size, with ordinary
+  building accuracy. A plaque gives the gap's true width, which for the best constructions is counted
+  in gold atoms (a gold atom is about 0.288 nm across).
+
+An idea of Edward's from November 2026: the lines need only be walked and the gap seen, perhaps as the
+meeting of two paving slabs with gold poured into the crack.
 
 ## All of them at once
 
-A single architect could combine them: a circular plaza (the circle), a square court of the same
-area set into it, a cube pavilion beside a doubled one, and paths that trisect the plaza's angles.
-Each would carry its pair of lines, oversized and undersized, and its marker for the exact answer in
-between.
+A single architect could combine them, in either vision: a circular plaza (the circle), a square
+court of the same area set into it, a cube pavilion beside a doubled one, and paths that trisect the
+plaza's angles. Each would carry its pair of lines, oversized and undersized, and its gap or seam for
+the exact answer in between.
 
 ## How close the lines are today
 
@@ -51,24 +98,34 @@ alone (leaving out the search finds made by an AI). As the charts improve, the g
 monument can be updated. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html)
 is worked out live from the charts.
 
-| Problem | Scale | Best oversized | Best undersized | Gap you would walk between |
+| Problem | Scale | Best oversized | Best undersized | Gap |
 |---|---|---|---|---|
-| Rectifying The Circle | plaza 100 m across, circumference 314.159265 m | 99.999999% (Claude (Anthropic), AI): +0.10 µm | 99.99999% (Srinivasa Ramanujan): −0.10 µm | 0.20 µm |
-| Rectifying The Circle (people only) | plaza 100 m across, circumference 314.159265 m | 99.99999% (Kochanski / Gordon): +0.011 mm | 99.99999% (Srinivasa Ramanujan): −0.10 µm | 0.011 mm |
-| Squaring The Circle | circle 100 m across, square side 88.622693 m | 99.999999% (Claude (Anthropic), AI): +0.13 µm | 99.9999999% (Claude (Anthropic), AI): −0.8 nm | 0.13 µm |
-| Squaring The Circle (people only) | circle 100 m across, square side 88.622693 m | 99.999% (Srinivasa Ramanujan): +3.76 µm | 99.999% (Edward James Gordon): −0.394 mm | 0.397 mm |
-| Doubling The Cube | given edge 10 m, doubled edge 12.599210 m | 99.999998% (Claude (Anthropic), AI): +0.07 µm | 99.999% (Claude (Anthropic), AI): −1.18 µm | 1.25 µm |
-| Doubling The Cube (people only) | given edge 10 m, doubled edge 12.599210 m | 98.076% (Edward James Gordon): +80 mm | 98.924% (Edward James Gordon): −45 mm | 126 mm |
+| Squaring The Circle | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9999999% (Claude (Anthropic), AI): −0.819 nm | 3.86 nm (13 gold atoms) |
+| Squaring The Circle (people only) | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9996% (Emil Lampe): −148 µm | 148 µm |
+| Doubling The Cube | given edge 10 m, doubled edge 12.5992 m | 99.999998% (Claude (Anthropic), AI): +71.7 nm | 99.99997% (Claude (Anthropic), AI): −1.18 µm | 1.25 µm |
+| Doubling The Cube (people only) | given edge 10 m, doubled edge 12.5992 m | 99.998% (K. T. Vahlen): +67.5 µm | 99.9995% (Lorenzo Mascheroni): −17.9 µm | 85.4 µm |
+| Rectifying The Circle | plaza 100 m across, circumference 314.1593 m | 99.999999% (Claude (Anthropic), AI): +104 nm | 99.9999999% (Srinivasa Ramanujan): −101 nm | 205 nm (712 gold atoms) |
+| Rectifying The Circle (people only) | plaza 100 m across, circumference 314.1593 m | 99.999996% (Kochanski / Gordon): +11.0 µm | 99.9999999% (Srinivasa Ramanujan): −101 nm | 11.1 µm |
 
-At the scale of a building, the best constructions for the circle are closer together than any
-builder can lay a line. Two choices follow:
+The page shows each gap to three significant figures in the largest unit that fits (m, mm, µm or nm),
+and below a micrometre also in gold atoms. (Before November 2026 it rounded to two decimal places of
+a micrometre, so the squaring gap showed as 0.00 µm.)
 
-- **Build the gap at its true size**, and let the monument say that the lines meet at the limit of
-  what can be built. The marker for perfection then stands between lines no eye can separate.
-- **Build a pair you can see**, using constructions further apart, or a much larger scale such as a
-  landscape or a land-art piece kilometres across, so the gap is wide enough to walk between.
+### How big for each vision
 
-With people's constructions alone, doubling the cube still leaves a gap you could stand in, about 126 mm on a 10 m cube; the search finds close it to about a thousandth of a millimetre.
+The gap grows in step with the size of the work, so each pair needs its own size for a pencil line, a
+gold joint or a walkable path (the Earth is 12,742 km across):
+
+| Pair | Size given | Pencil line, 0.5 mm | Gold joint, 5 mm | Walkable, 1.2 m |
+|---|---|---|---|---|
+| Squaring The Circle | circle, across | larger than the Earth | larger than the Earth | larger than the Earth |
+| Squaring The Circle (people only) | circle, across | 337 m | 3.37 km | 810 km |
+| Doubling The Cube | given cube edge | 4.00 km | 40.0 km | 9,606 km |
+| Doubling The Cube (people only) | given cube edge | 58.6 m | 586 m | 141 km |
+| Rectifying The Circle | plaza, across | 244 km | 2,440 km | larger than the Earth |
+| Rectifying The Circle (people only) | plaza, across | 4.52 km | 45.2 km | 10,838 km |
+
+So the best pairs belong to Vision II, as a symbolic gold seam, and Vision I uses pairs further apart.
 
 ## Building it for real
 
