@@ -133,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 Kept up to date by `python tools/verify.py --write` (last run 2026-11-15). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (197)
+### Not verified by a person yet (198)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -233,6 +233,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Trisecting An Angle, undersized 98.960% · Kopf's first trisection (taa-under-98.960): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-98.960-Kopf.ggb`
 - [ ] Trisecting An Angle, oversized 99.927% · Finsler's osculating circle, k = 1 (8.3) (taa-over-99.927): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Over/TAA-99.927-Finsler.ggb`
 - [ ] Trisecting An Angle, undersized 99.984% · Finsler's osculating circle, k = 2 (9.3.3) (taa-under-99.984): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.984-Finsler.ggb`
+- [ ] Trisecting An Angle, undersized 99.838% · Averdieck's chord AK, with D at a quarter of the angle (taa-under-99.838-averdieck): GeoGebra file `Approximations/02 Trisecting An Angle/GeoGebra Files/Under/TAA-99.838-Averdieck.ggb`
 - [ ] Doubling The Cube, undersized 97.656% · Cube 2 Tesseract v1.0 (dtc-under-97.656): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-97.656.ggb`
 - [ ] Doubling The Cube, undersized 98.924% · Cube 2 Tesseract v2.0 (dtc-under-98.924): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.924.ggb`
 - [ ] Doubling The Cube, oversized 98.076% · Three Minus Root Three (dtc-over-98.076): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-98.076.ggb`
@@ -341,7 +342,7 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Identical or near-identical entries (22)
+### Identical or near-identical entries (23)
 
 From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
 
@@ -363,6 +364,7 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] same result: rtc-over-99.904 and rtc-over-99.904-cusa (score 0.11)
 - [ ] same result: rtc-over-99.998-viete and rtc-over-99.998 (score 0.08)
 - [ ] same result: dtc-under-97.65625 and dtc-under-97.656 (score 0.08)
+- [ ] same result: taa-under-99.838 and taa-under-99.838-averdieck (score 0.05)
 - [ ] same result: rtc-over-99.904-lemoine and rtc-over-99.904-cusa (score 0.03)
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
 - [ ] near identical: dtc-under-99.821 and dtc-over-99.850 (score 0.84)

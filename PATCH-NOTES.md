@@ -12,6 +12,24 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Simon's report (1906)
+
+### Archive
+- Max Simon's survey of nineteenth-century elementary geometry (1906) was read for leads, and its sources followed up.
+- Added Averdieck's trisection (1882), published by Schwering (1886), with the point D at a quarter of the angle as
+  Lampe proposed (1889): 99.838% under at 131.14°. For every angle, its third of 2α is exactly twice Karajordanoff's
+  third of α (1928), so the two are charted tied.
+- Rudolf Wolf (1893) is listed under "Also found by" on Barbel's √10 quadrant: his line from the middle of the
+  quadrant's chord to the end of the diameter is the same line.
+- Molther's entry adds Paucker (1823), who already named Molther as the author of 3 + √2/10.
+- The Wanted page records what the leads turned out to be: Pellet (1888, exact in the limit of a repeated step),
+  Querret (1825, no construction), Pegrassi (1893, mechanical), Pressland (1893, the nonagon only), Genese (1872, a
+  hyperbola), Vériot (1868, algebra), Beuel (1828), Lakemacher, Beyel, Perigal and Newton's arc formula, and the
+  "already known" trisection reported by Cominotto (1895).
+- 228 entries, 78 authors.
+
+---
+
 ## November 2026: Finsler (1938)
 
 ### Archive

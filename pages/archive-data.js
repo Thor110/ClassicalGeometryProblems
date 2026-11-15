@@ -2166,7 +2166,7 @@ const ARCHIVE = {
      "date": "1928",
      "geogebra": "",
      "file": "GeoGebra Files/Under/TAA-99.838-Karajordanoff",
-     "note": "Circles of radius 1 and 2 about the corner; the tangent at A meets the chord from B to the middle of the arc in D; the parallel to OB through D meets the larger circle at T. Exact at 90°. Charted at 65.57°, its weakest angle up to 90°; the rest of the angle is bisected.",
+     "note": "Circles of radius 1 and 2 about the corner; the tangent at A meets the chord from B to the middle of the arc in D; the parallel to OB through D meets the larger circle at T. Exact at 90°. Charted at 65.57°, its weakest angle up to 90°; the rest of the angle is bisected. For every angle α its third is half of Averdieck's (1882, with Lampe's choice of D, 1889) on the angle 2α, so the two are charted tied (taa-under-99.838-averdieck).",
      "verified": [],
      "disputes": [],
      "origin": {
@@ -3027,6 +3027,49 @@ const ARCHIVE = {
        {
         "label": "P. Finsler, Einige elementargeometrische Näherungskonstruktionen, Commentarii Mathematici Helvetici 10 (1938), E-Periodica",
         "url": "https://www.e-periodica.ch/digbib/view?pid=com-001:1937:10::274"
+       }
+      ]
+     }
+    },
+    {
+     "id": "taa-under-99.838-averdieck",
+     "side": "under",
+     "marks": "",
+     "holder": "Averdieck / Lampe",
+     "method": "Averdieck's chord AK, with D at a quarter of the angle",
+     "circles": 3,
+     "lines": 5,
+     "acc": "99.838",
+     "precise": "99.838643849960771369115640449876",
+     "date": "1882; 1889",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/TAA-99.838-Averdieck",
+     "note": "About the vertex C an arc meets the arms at A and B; CF is the perpendicular to the chord AB. D on the arc; the circle about A through D meets CD again at E; the parallel through E to DF meets AB at K, and AK is taken as the chord of the third. Averdieck left D free, advising only to take it near the third, a little nearer A; Lampe (1889) showed that the angle ACD = a quarter of ACB, found by halving twice, makes it nearly exact. With that choice it is a general method, good to 180°, and for every angle its third of 2α is exactly twice Karajordanoff's third of α (1928): so its weakest from 30° to 150° is twice Karajordanoff's weakest angle, and it is charted at 131.14°, twice the 65.57° of his entry, tied with it (2' 2.6\" short at 90°).",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: K. Schwering, \"Über Dreiecke, deren einer Winkel das Vielfache eines andern ist\", II: \"Angebliche Dreiteilung des Winkels\", Beilage zum Programm des Gymnasiums zu Coesfeld 1886, pp. 8-10 (MDZ, bsb11489878; JFM 18.0484.01), from Averdieck's letter of October 1882: \"Fragliche Konstruktion erhielt ich zur Beurteilung im Oktober 1882 von ihrem Erfinder\"",
+       "with the choice of D: E. Lampe, \"Ueber eine Maximalaufgabe zur angeblichen Dreitheilung eines Winkels von Averdieck\", Journal für die reine und angewandte Mathematik 105 (1889), pp. 355-356 (Internet Archive, sim_journal-fuer-die-reine-und-angewandte-mathematik_1889_105; JFM 21.0268.01): \"Da nun ¼α leicht zu zeichnen ist, so erhält man aus β = ¼α eine nahezu genaue Lösung der Aufgabe\"",
+       "redrawn in November 2026 from Lampe's text and figure; the rebuilt chord agrees with his formula (1), and at 90° his AK = 0.5116294 r for the worst position of D"
+      ],
+      "links": [
+       {
+        "label": "Internet Archive: sim_journal-fuer-die-reine-und-angewandte-mathematik_1889_105",
+        "url": "https://archive.org/details/sim_journal-fuer-die-reine-und-angewandte-mathematik_1889_105"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 18.0484.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A18.0484.01"
+       },
+       {
+        "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 21.0268.01 (zbMATH Open)",
+        "url": "https://zbmath.org/?q=an%3A21.0268.01"
+       },
+       {
+        "label": "K. Schwering, Programm des Gymnasiums zu Coesfeld (1886), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11489878"
        }
       ]
      }
@@ -5792,12 +5835,17 @@ const ARCHIVE = {
       "kind": "historical",
       "evidence": [
        "published: J. Molther, Problema Deliacum de cubi duplicatione (Frankfurt 1619; MDZ, bsb10053689), caput III, pp. 67-68: \"Diametri triplum cum parte quinta subtensae Quadrantis esse rectam Peripheriae quam proxime aequalem\"; the circle about A with diameter BC, CE the chord of the quadrant, CF its fifth, GH three diameters and CF",
+       "G. Paucker, Die ebene Geometrie der geraden Linie und des Kreises (Königsberg 1823), art. 317, names \"Joh. Molther\" as the author of 3 + √2/10, as reported by M. Simon, Über die Entwicklung der Elementar-Geometrie im XIX. Jahrhundert, Jahresbericht der Deutschen Mathematiker-Vereinigung, Ergänzungsband I (Leipzig 1906) (Internet Archive, berdieentwickl00simouoft), p. 67",
        "also in: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem II (§ 11, pp. 105-106), third solution: \"Um daher eine der ganzen Kreisperipherie gleiche Strecke zu erhalten, füge man zu sechs Halbmessern 1/5 jener Seite des eingeschriebenen Quadrates hinzu\"",
        "the value 3 + √2/10 = 3.14142 is given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, among Huygens' values",
        "also in: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, second solution (\"Aufl. 2\"); the first edition is of 1846",
        "redrawn in November 2026 from the scanned text; the rebuilt length is 3.1414214 diameters; the 3.14125 printed in the 1868 edition does not match its own description, which gives 3.14142"
       ],
       "links": [
+       {
+        "label": "Internet Archive: berdieentwickl00simouoft",
+        "url": "https://archive.org/details/berdieentwickl00simouoft"
+       },
        {
         "label": "F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)",
         "url": "https://archive.org/details/archimedeshuygen00rudiuoft"
@@ -6034,7 +6082,14 @@ const ARCHIVE = {
        }
       ]
      },
-     "result_scale": 4
+     "result_scale": 4,
+     "rediscovered": [
+      {
+       "name": "Rudolf Wolf",
+       "date": "1893",
+       "note": "as the line from the middle of the quadrant's chord to the end of the diameter, nearly π/2 (1.58); the Zürich astronomer's note in Grunert's Archiv, as reported by M. Simon, Über die Entwicklung der Elementar-Geometrie im XIX. Jahrhundert, Jahresbericht der Deutschen Mathematiker-Vereinigung, Ergänzungsband I (Leipzig 1906) (Internet Archive, berdieentwickl00simouoft), p. 65"
+      }
+     ]
     },
     {
      "id": "rtc-over-99.976",
@@ -7426,6 +7481,11 @@ const ARCHIVE = {
   ],
   "J. Cordilha": [
    "J. Cordilha"
+  ],
+  "Averdieck / Lampe": [
+   "Averdieck",
+   "E. Lampe",
+   "Emil Lampe"
   ]
  },
  "authors": [
@@ -8104,7 +8164,8 @@ const ARCHIVE = {
    "life": "",
    "kind": "historical",
    "holders": [
-    "Emil Lampe"
+    "Emil Lampe",
+    "Averdieck / Lampe"
    ],
    "bio": "German mathematician who for many years edited the Jahrbuch über die Fortschritte der Mathematik, the review journal through which many of the approximations here were found. His survey \"Angenäherte Kreisquadraturen\" appeared in 1916.",
    "links": []
@@ -8464,6 +8525,36 @@ const ARCHIVE = {
      "url": "https://en.wikipedia.org/wiki/Ernst_Sejersted_Selmer"
     }
    ]
+  },
+  {
+   "name": "Rudolf Wolf",
+   "life": "1816–1893",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "Rudolf Wolf"
+   ],
+   "bio": "Swiss astronomer and historian of science at Zürich, known for the Wolf number that still counts sunspots. He also wrote on the history of astronomy and on finding π by experiment, and noted that the line from the middle of a quadrant's chord to the end of the diameter is nearly a quarter of the circumference, π/2 radii.",
+   "links": [
+    {
+     "label": "MacTutor biography",
+     "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Wolf/"
+    },
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Rudolf_Wolf"
+    }
+   ]
+  },
+  {
+   "name": "Averdieck",
+   "life": "about 1811–1883",
+   "kind": "historical",
+   "holders": [
+    "Averdieck / Lampe"
+   ],
+   "bio": "A village schoolteacher who, in the last months of his life, sent a construction for trisecting an angle to the mathematician Carl Schwering, who published it in 1886. Emil Lampe found in 1889 that with one point placed at a quarter of the angle it is nearly exact.",
+   "links": []
   }
  ]
 };

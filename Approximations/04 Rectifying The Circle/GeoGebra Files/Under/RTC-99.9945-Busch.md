@@ -38,6 +38,7 @@ In the file BtC is the side of the inscribed square. Five radii are stepped down
 Under by 0.0055%. Busch's printed figure (3.14125, too small by 0.00034) does not match his own construction, which gives 3.14142; the file follows the construction. The same value is among those Vahlen lists after Huygens.
 
 **Sources:**
+- [Internet Archive: berdieentwickl00simouoft](https://archive.org/details/berdieentwickl00simouoft)
 - [F. Rudio, Archimedes, Huygens, Lambert, Legendre: Vier Abhandlungen über die Kreismessung (1892)](https://archive.org/details/archimedeshuygen00rudiuoft)
 - [A. L. Busch, Vorschule der darstellenden Geometrie (1868 edition)](https://archive.org/details/vorschule-der-darstellenden-geometrie)
 - [K. T. Vahlen, Konstruktionen und Approximationen (1911)](https://archive.org/details/konstruktionenun00vahluoft)

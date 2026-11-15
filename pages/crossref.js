@@ -18,6 +18,7 @@ const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-15","pairs":[
 {"problem":"rtc","kind":"same result","similarity":0.107,"older":"rtc-over-99.904","newer":"rtc-over-99.904-cusa","older_holder":"A. L. Crelle","newer_holder":"Nicholas of Cusa","kinds":["person","person"]},
 {"problem":"rtc","kind":"same result","similarity":0.083,"older":"rtc-over-99.998-viete","newer":"rtc-over-99.998","older_holder":"François Viète","newer_holder":"Ludwig Kunze","kinds":["person","person"]},
 {"problem":"dtc","kind":"same result","similarity":0.079,"older":"dtc-under-97.65625","newer":"dtc-under-97.656","older_holder":"Michael Stifel","newer_holder":"Edward James Gordon","kinds":["person","person"]},
+{"problem":"taa","kind":"same result","similarity":0.053,"older":"taa-under-99.838","newer":"taa-under-99.838-averdieck","older_holder":"Karajordanoff","newer_holder":"Averdieck / Lampe","kinds":["person","person"]},
 {"problem":"rtc","kind":"same result","similarity":0.034,"older":"rtc-over-99.904-lemoine","newer":"rtc-over-99.904-cusa","older_holder":"Émile Lemoine","newer_holder":"Nicholas of Cusa","kinds":["person","person"]},
 {"problem":"rtc","kind":"near identical","similarity":0.851,"older":"rtc-over-99.971","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"dtc","kind":"near identical","similarity":0.836,"older":"dtc-under-99.821","newer":"dtc-over-99.850","older_holder":"Oronce Finé","newer_holder":"Oronce Finé","kinds":["person","person"]},
