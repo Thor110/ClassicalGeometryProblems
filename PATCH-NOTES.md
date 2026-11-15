@@ -12,6 +12,18 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Neusis by circles
+
+### Site
+- New page, [Neusis By Circles](pages/neusis.html): Archimedes' marked-ruler trisection with an interactive figure (set
+  the angle, slide the ruler), why the ruler's final position cannot be drawn with straightedge and compass, why its path
+  (a limaçon) can be drawn point by point, and how a circle through three points of that path gives the third within
+  seconds of arc (3.6" at 90°). It explains Kopf's and Finsler's constructions as the same idea, and mentions iteration,
+  paper folding and mechanical tools. An explainer only: nothing on it is charted.
+- Linked from the home page, The Problems and Mechanical Solutions.
+
+---
+
 ## November 2026: Pointed to, located and verified
 
 ### Archive

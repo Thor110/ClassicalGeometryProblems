@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Neusis by circles: why the sliding ruler of Archimedes' trisection cannot be drawn with straightedge and compass, why its path can, and how circles through that path give very good approximations.">
+<title>Classical Geometry Problems // Neusis By Circles</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #fig{aspect-ratio:16/9;max-height:560px;cursor:grab;touch-action:none;}
+  .ctl{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;margin:10px 0;}
+  .ctl label{color:#a9a6a0;font-size:14px;}
+  .ctl output{color:#d8d4cc;font-size:14px;text-align:right;}
+  .ctl input[type=range]{width:100%;}
+  .toggles{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 4px;}
+  .readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:12px;}
+  .readout div{border:1px solid #1e1e2a;padding:8px 10px;font-size:13px;color:#a9a6a0;}
+  .readout b{display:block;color:#e4e0d8;font-size:16px;font-weight:normal;margin-top:2px;}
+  .key{font-size:13px;color:#8e8a84;text-align:center;margin-top:6px;}
+  .sw{display:inline-block;width:12px;height:3px;vertical-align:middle;margin:0 4px 0 12px;}
+  table.err{border-collapse:collapse;margin:10px auto;font-size:14px;}
+  table.err td,table.err th{border:1px solid #1e1e2a;padding:6px 12px;text-align:right;color:#c9c5bd;}
+  table.err th{color:#a9a6a0;font-weight:normal;}
+  @media (max-width:720px){ .ctl{grid-template-columns:1fr;gap:4px;} .ctl output{text-align:left;} }
+</style>
+</head>
+<body>
+
+<h1>Classical Geometry Problems // Neusis By Circles</h1>
+<div class="sub">
+  Why the sliding ruler of the oldest exact trisection cannot be drawn with straightedge and compass, why the path it slides along can, and how a circle laid along that path comes within seconds of arc.
+</div>
+
+<div class="box">
+  <div class="box-title">The Marked Ruler</div>
+  <div class="box-text">
+    The Greeks could trisect any angle exactly, if they were allowed one extra move: <b>neusis</b>, "verging". Mark two points on a ruler, a radius apart, and slide the ruler through a fixed point until the two marks land on two given lines or circles. Archimedes' trisection (Book of Lemmas, Proposition 8) works like this:
+  </div>
+  <ul>
+    <li>Draw the angle <b>AOB</b> to be trisected, with the circle about <b>O</b> through <b>A</b> and <b>B</b>, and the line through <b>O</b> and <b>A</b>.</li>
+    <li>Lay the ruler through <b>B</b> and slide it until one mark <b>C</b> is on the circle and the other mark <b>D</b> is on the line, with <b>CD</b> equal to the radius.</li>
+    <li>Then the angle at <b>D</b> is exactly a third of <b>AOB</b>. Since <b>DC = CO</b>, the triangle <b>DCO</b> is isosceles, so the angle <b>COD</b> is θ, the angle at <b>D</b>. The angle <b>OCB</b>, outside that triangle, is 2θ, and so is <b>OBC</b>, since <b>OC = OB</b>. The angle <b>BOA</b>, outside the triangle <b>DOB</b>, is then θ + 2θ = 3θ.</li>
+  </ul>
+  <div class="box-text">Try it below: set the angle, then slide the ruler until its second mark meets the line.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Slide The Ruler</div>
+  <canvas id="fig" width="1600" height="900" aria-label="Archimedes' neusis: a circle, an angle, and a marked ruler through B"></canvas>
+  <div class="key"><span class="sw" style="background:#c9c5bd"></span>circle and angle<span class="sw" style="background:#ca6"></span>the marked ruler<span class="sw" style="background:#4a9"></span>the ruler's path (a limaçon)<span class="sw" style="background:#79c"></span>the circle through three points of the path</div>
+  <div class="ctl"><label for="phi">The angle AOB</label><input id="phi" type="range" min="10" max="170" step="0.5" value="90"><output id="phiOut"></output></div>
+  <div class="ctl"><label for="th">Slide the ruler</label><input id="th" type="range" min="0" max="100000" step="1" value="56000"><output id="thOut"></output></div>
+  <div class="toggles">
+    <button class="small" id="snap">Slide To The Exact Third</button>
+    <button class="small active" id="showPath">Show The Path</button>
+    <button class="small active" id="showCircle">Show The Circle Through Three Points</button>
+  </div>
+  <div class="readout">
+    <div>The ruler's angle at D<b id="rTh"></b></div>
+    <div>A third of AOB<b id="rThird"></b></div>
+    <div>The second mark's height above the line<b id="rGap"></b></div>
+    <div>Neusis by circles gives<b id="rApprox"></b></div>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">Why You Cannot Draw The Ruler</div>
+  <div class="box-text">
+    The position where both marks fit is the answer to a cubic equation: finding the angle θ with 3θ equal to the given angle means solving 4x³ − 3x = cos 3θ. A straightedge and compass can only reach lengths built from square roots, one after another, and Wantzel proved in 1837 that the roots of this cubic cannot be reached that way for most angles. So no finite straightedge-and-compass construction can draw the ruler in its final position. The marked ruler is not a convenience: it is exactly the extra power the construction needs.
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">But You Can Draw Its Path</div>
+  <div class="box-text">
+    Watch the second mark as the ruler slides. It traces a curve, shown in green above: the conchoid of the circle from the point <b>B</b>, which, because <b>B</b> is on the circle, is a <b>limaçon of Pascal</b>. Every single point of that curve can be drawn with straightedge and compass:
+  </div>
+  <ul>
+    <li>draw any line through <b>B</b> at an angle you can construct (by halving, say);</li>
+    <li>it meets the circle again at <b>C</b>;</li>
+    <li>the circle about <b>C</b> with the radius marks the point of the curve on that line.</li>
+  </ul>
+  <div class="box-text">
+    So the ruler's path can be plotted at as many points as you like. What cannot be constructed is the one point where the path crosses the line: that crossing is the cubic again. Everything up to the last step is allowed; only the last step is not.
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">Neusis By Circles</div>
+  <div class="box-text">
+    Near the crossing, the path bends gently, very like a circular arc. So replace it there with a circle, and let the circle cross the line instead. A circle through three points is easy to construct, and its crossing with a line is a straightedge-and-compass point. The figure above does this with the three points of the path whose lines through <b>B</b> lie at a quarter, five sixteenths and three eighths of the angle, all found by halving, on either side of the unknown third:
+  </div>
+  <div class="table-wrap"><table class="err" id="errTable"></table></div>
+  <div class="box-text">
+    Within seconds of arc for the angles most often drawn, with nothing placed by eye. It is offered here as an illustration of the idea, not as a charted construction.
+  </div>
+  <div class="box-text">
+    The best approximations in the archive work the same way, with more care about which circle to take:
+  </div>
+  <ul>
+    <li><a href="charts.html#taa"><b>Eugen Kopf</b></a> (1933): as Finsler showed, his second construction amounts to replacing the limaçon near the answer with a circle chosen to be exact at 90° as well as at 0°, an interpolating circle. It is within 15 seconds of arc for every acute angle.</li>
+    <li><a href="charts.html#taa"><b>Paul Finsler</b></a> (1938) explained why Kopf's is so good, and took instead the <b>circle of curvature</b> of the limaçon at the starting point, the circle that hugs the curve most closely there. His error grows only with the fifth power of the angle; with the angle first halved twice, it is 0.016 seconds of arc at 22½°.</li>
+  </ul>
+</div>
+
+<div class="box">
+  <div class="box-title">Other Ways Around</div>
+  <ul>
+    <li><b>Correct and repeat.</b> Lay the ruler in a guessed position, construct where its mark actually lands, and correct the guess. Each round is an ordinary straightedge-and-compass step, and a few rounds come very close. Pellet's method of 1888 works this way; the archive lists it on the <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Wanted/README.md">Wanted page</a>, because it gives no fixed number of rounds.</li>
+    <li><b>Fold the paper.</b> A single fold can make a neusis exactly: Margherita Beloch showed in 1936 that one fold places two points on two lines at once. That is why origami can trisect angles and double cubes, which straightedge and compass cannot.</li>
+    <li><b>Build the ruler.</b> Sliders, linkages, marked rulers and ropes all do what the rules forbid, and do it exactly. They are kept apart from the charts, under <a href="mechanical.html">Mechanical Solutions</a>.</li>
+  </ul>
+</div>
+
+<div class="nav-group">
+  <a href="charts.html#taa" class="btn-link">Trisection Chart</a>
+  <a href="mechanical.html" class="btn-link">Mechanical Solutions</a>
+  <a href="problems.html" class="btn-link">The Problems</a>
+  <a href="../index.html" class="btn-link">Return to Open Archive</a>
+</div>
+
+<div class="footer">
+  Straightedge &amp; Compass · Open Archive v1.0<br>
+  <a href="https://github.com/Thor110/ClassicalGeometryProblems">Source on GitHub</a> · Edward James Gordon (Thor110)
+  <br>
+  <a href="https://thor110.github.io/InscribedShapeProblems/">Inscribed Shape Problems</a>
+  <br>
+  <a href="https://thor110.github.io/Potentia/">Potentia</a>
+</div>
+
+<script src="common.js"></script>
+<script>
+// Archimedes' neusis on the unit circle: O at the origin, A = (1, 0), B at the angle φ. A ruler through B at the
+// inclination θ (falling towards the negative x axis) meets the circle again at C; its second mark is P = C + (radius
+// along the ruler). At θ = φ/3 the mark P lies on the x axis: that is the exact trisection.
+
+const cv = $('fig'), g = cv.getContext('2d');
+let showPath = true, showCircle = true;
+const deg = r => r * 180 / Math.PI, rad = d => d * Math.PI / 180;
+function mark(phi, th) {
+  const B = [Math.cos(phi), Math.sin(phi)], u = [-Math.cos(th), -Math.sin(th)];
+  const t = -2 * (B[0] * u[0] + B[1] * u[1]);              // the second crossing with the circle
+  const C = [B[0] + t * u[0], B[1] + t * u[1]];
+  return {B, C, P: [C[0] + u[0], C[1] + u[1]], u};
+}
+function circle3(a, b, c) {
+  const d = 2 * (a[0] * (b[1] - c[1]) + b[0] * (c[1] - a[1]) + c[0] * (a[1] - b[1]));
+  const s = p => p[0] * p[0] + p[1] * p[1];
+  const x = (s(a) * (b[1] - c[1]) + s(b) * (c[1] - a[1]) + s(c) * (a[1] - b[1])) / d;
+  const y = (s(a) * (c[0] - b[0]) + s(b) * (a[0] - c[0]) + s(c) * (b[0] - a[0])) / d;
+  return {c: [x, y], r: Math.hypot(a[0] - x, a[1] - y)};
+}
+// Neusis by circles: the circle through the path's points at φ/4, 5φ/16 and 3φ/8 meets the line at D', and the
+// angle at D' is taken as the third.
+function byCircles(phi) {
+  const pts = [1 / 4, 5 / 16, 3 / 8].map(k => mark(phi, k * phi).P), K = circle3(...pts);
+  const h = Math.sqrt(Math.max(0, K.r * K.r - K.c[1] * K.c[1]));
+  const x = [K.c[0] - h, K.c[0] + h].sort((p, q) => Math.abs(p - pts[1][0]) - Math.abs(q - pts[1][0]))[0];
+  const B = [Math.cos(phi), Math.sin(phi)];
+  return {pts, K, D: [x, 0], th: Math.atan2(B[1], B[0] - x)};
+}
+const fmtErr = e => { const s = Math.abs(deg(e)) * 3600; return (e < 0 ? '−' : '+') + (s >= 60 ? Math.floor(s / 60) + "' " + (s % 60).toFixed(1) + '"' : s.toFixed(s < 1 ? 3 : 1) + '"'); };
+
+// the view: x from -3.3 to 1.5, keeping the aspect
+let view = {x0: -3.3, x1: 1.5};
+function toPx(p) {
+  const W = cv.width, H = cv.height, k = W / (view.x1 - view.x0);
+  return [(p[0] - view.x0) * k, H * 0.72 - p[1] * k];
+}
+function line(a, b, col, w, dash) {
+  const p = toPx(a), q = toPx(b); g.strokeStyle = col; g.lineWidth = w; g.setLineDash(dash || []);
+  g.beginPath(); g.moveTo(...p); g.lineTo(...q); g.stroke(); g.setLineDash([]);
+}
+function dot(p, col, r, label, dx, dy) {
+  const q = toPx(p); g.fillStyle = col; g.beginPath(); g.arc(q[0], q[1], r, 0, 2 * Math.PI); g.fill();
+  if (label) { g.fillStyle = '#d8d4cc'; g.font = '30px Georgia, serif'; g.fillText(label, q[0] + (dx || 10), q[1] + (dy || -12)); }
+}
+function draw() {
+  const phi = rad(+$('phi').value), lo = 0.05 * phi, hi = Math.min(0.62 * phi, rad(88));
+  const th = lo + (hi - lo) * (+$('th').value / 100000);
+  const W = cv.width, H = cv.height, k = W / (view.x1 - view.x0);
+  g.fillStyle = '#0d0d14'; g.fillRect(0, 0, W, H);
+  // the line through O and A, the circle, the angle
+  line([view.x0, 0], [view.x1, 0], '#5a5a66', 2);
+  const o = toPx([0, 0]); g.strokeStyle = '#c9c5bd'; g.lineWidth = 2.5; g.beginPath(); g.arc(o[0], o[1], k, 0, 2 * Math.PI); g.stroke();
+  const m = mark(phi, th);
+  line([0, 0], [1, 0], '#c9c5bd', 3); line([0, 0], m.B, '#c9c5bd', 3);
+  g.strokeStyle = '#8e8a84'; g.lineWidth = 2; g.beginPath(); g.arc(o[0], o[1], 0.18 * k, -phi, 0); g.stroke();
+  // the path of the second mark
+  if (showPath) {
+    g.strokeStyle = '#4a9'; g.lineWidth = 2.5; g.beginPath();
+    for (let i = 0; i <= 400; i++) { const t = rad(1) + (rad(89) - rad(1)) * i / 400, q = toPx(mark(phi, t).P); i ? g.lineTo(...q) : g.moveTo(...q); }
+    g.stroke();
+  }
+  // the circle through three points of the path
+  const bc = byCircles(phi);
+  if (showCircle) {
+    const c = toPx(bc.K.c); g.strokeStyle = '#79c'; g.lineWidth = 2; g.setLineDash([10, 8]); g.beginPath(); g.arc(c[0], c[1], bc.K.r * k, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+    bc.pts.forEach(p => dot(p, '#79c', 7));
+    dot(bc.D, '#79c', 8, "D'", -52, -16);
+  }
+  // the ruler: from B through C to beyond the second mark, with its two marks a radius apart
+  const end = [m.P[0] + 0.35 * m.u[0], m.P[1] + 0.35 * m.u[1]], start = [m.B[0] - 0.25 * m.u[0], m.B[1] - 0.25 * m.u[1]];
+  line(start, end, '#ca6', 6);
+  dot(m.C, '#ca6', 9, 'C', 12, -14); dot(m.P, '#ca6', 9, 'D', 12, 34);
+  dot([0, 0], '#c9c5bd', 7, 'O', -12, 36); dot([1, 0], '#c9c5bd', 7, 'A', 10, 36); dot(m.B, '#c9c5bd', 8, 'B', 12, -12);
+  // readouts
+  $('phiOut').textContent = (+$('phi').value).toFixed(1) + '°';
+  $('thOut').textContent = deg(th).toFixed(2) + '°';
+  $('rTh').textContent = deg(th).toFixed(4) + '°';
+  $('rThird').textContent = (deg(phi) / 3).toFixed(4) + '°';
+  const gap = m.P[1]; $('rGap').textContent = Math.abs(gap) < 5e-5 ? 'on the line' : (gap > 0 ? 'above by ' : 'below by ') + Math.abs(gap).toFixed(4) + ' radius';
+  $('rApprox').textContent = deg(bc.th).toFixed(4) + '°, ' + fmtErr(bc.th - phi / 3);
+}
+$('phi').oninput = draw; $('th').oninput = draw;
+$('snap').onclick = () => {
+  const phi = rad(+$('phi').value), lo = 0.05 * phi, hi = Math.min(0.62 * phi, rad(88));
+  $('th').value = Math.round(100000 * (phi / 3 - lo) / (hi - lo)); draw();
+};
+$('showPath').onclick = e => { showPath = !showPath; e.target.classList.toggle('active', showPath); draw(); };
+$('showCircle').onclick = e => { showCircle = !showCircle; e.target.classList.toggle('active', showCircle); draw(); };
+// dragging the figure slides the ruler
+let dragging = false;
+cv.addEventListener('pointerdown', e => { dragging = true; cv.setPointerCapture(e.pointerId); cv.style.cursor = 'grabbing'; });
+cv.addEventListener('pointerup', () => { dragging = false; cv.style.cursor = 'grab'; });
+cv.addEventListener('pointermove', e => {
+  if (!dragging) return; const r = cv.getBoundingClientRect(), x = (e.clientX - r.left) / r.width;
+  $('th').value = Math.round(100000 * Math.min(1, Math.max(0, 1 - x))); draw();
+});
+// the table of errors
+(function () {
+  const rows = [30, 60, 90, 120, 150].map(d => { const t = byCircles(rad(d)).th; return [d, fmtErr(t - rad(d) / 3), (100 * (1 - Math.abs(t - rad(d) / 3) / (rad(d) / 3))).toFixed(5) + '%']; });
+  $('errTable').innerHTML = '<tr><th>Angle</th>' + rows.map(r => `<th>${r[0]}°</th>`).join('') + '</tr><tr><th>Error in the third</th>' + rows.map(r => `<td>${r[1]}</td>`).join('') + '</tr><tr><th>Accuracy</th>' + rows.map(r => `<td>${r[2]}</td>`).join('') + '</tr>';
+})();
+draw();
+</script>
+</body>
+</html>
