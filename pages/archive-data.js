@@ -3329,7 +3329,14 @@ const ARCHIVE = {
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
        }
       ]
-     }
+     },
+     "rediscovered": [
+      {
+       "name": "Václav Láska",
+       "date": "1893",
+       "note": "Časopis pro pěstování mathematiky a fysiky 22 (1893), pp. 154-155 (dml.cz 122048): the same idea, ∛(a²b) as the nest √(a√(b√(a√b…))) of mean proportionals, taken \"until the differences can no longer be drawn\"; his steps give Vargiù's 2^(85/256) after eight means"
+      }
+     ]
     },
     {
      "id": "dtc-over-99.972",
@@ -3519,6 +3526,186 @@ const ARCHIVE = {
        {
         "label": "Jahrbuch über die Fortschritte der Mathematik, JFM 41.0569.01 (zbMATH Open)",
         "url": "https://zbmath.org/?q=an%3A41.0569.01"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.781",
+     "side": "over",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's mean proportionals, Prop. I (the half case)",
+     "circles": 6,
+     "lines": 10,
+     "acc": "99.781",
+     "precise": "99.781978666421110539764920197616",
+     "date": "1556",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.781-Fine-PropI",
+     "note": "In the rectangle with sides ab = 2 cd and ae = cd, with d on ce at cd: f divides ab in extreme and mean ratio, ag on ae is half of af, and fg meets the diagonal ad at l. The parallel to ab through l gives ln, the first mean; lo, parallel to ae and cut off by an, is laid off as nr, and the perpendicular at r meets ad at s: sr is the second, exactly ln²/ab. sr = 1.260836 cd against ∛2 = 1.259921. Published the year after his death.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, De rebus mathematicis, hactenus desideratis, libri IIII (Paris, Vascosan 1556; MDZ, bsb11199762), book I, Prop. I, fol. 4r-4v (scans 19-20): \"Diuidatur postmodum ab recta proportionaliter, seu media & extrema ratione in puncto f, cuius segmentum maius sit af: & huius segmenti dimidio, aequalis secetur ag, & connectatur fg linea recta, quae secet ad rectam in puncto l.\"",
+       "redrawn in November 2026 from the page images; Finé's figures for the half case are drawn at 2 : 1"
+      ],
+      "links": [
+       {
+        "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.391",
+     "side": "under",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's mean proportionals, Prop. IV (the square on the larger line)",
+     "circles": 4,
+     "lines": 9,
+     "acc": "99.391",
+     "precise": "99.391263788887016422452686329300",
+     "date": "1556",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.391-Fine-PropIV",
+     "note": "In the square abce on ab = 2 cd, with d the middle of ce: af = ab is cut on the diagonal ac and ag = fc on ae; the parallel to ab through g meets ad at h and bc at k, and hk = 3 − √2 is the first mean. hm parallel to ak, and mn parallel to gk meeting ad at n, give nm = (3 − √2)²/2 = 1.257359 cd, the second, against ∛2 = 1.259921. Published the year after his death.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, De rebus mathematicis, hactenus desideratis, libri IIII (Paris, Vascosan 1556; MDZ, bsb11199762), book I, Prop. IV, fol. 15r-15v (scans 41-42): \"Ab ipso postmodum ac dimetiente, ipsi ab maiori secetur aequalis af: ipsi autem fc aequalis ag ... Per punctum deinde g ipsi ab parallela ducatur ghk, quae secet ad rectam in puncto h.\"",
+       "redrawn in November 2026 from the page images; Finé's figures for the half case are drawn at 2 : 1"
+      ],
+      "links": [
+       {
+        "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-98.888",
+     "side": "under",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's mean proportionals, Prop. V",
+     "circles": 10,
+     "lines": 5,
+     "acc": "98.888",
+     "precise": "98.888548834793847338070013255181",
+     "date": "1556",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-98.888-Fine-PropV",
+     "note": "ab at right angles to bc; bf = ab on cb produced, af the diagonal of the square on ab; ag = ac on af; h divides gf in extreme and mean ratio, and kl, the mean of fh and hg, is laid off as bm on cb produced. The circle about m through c meets cb produced at e and ab at d: be and bd are taken as the means. bd = 1.255236 cd against ∛2 = 1.259921. Published the year after his death.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, De rebus mathematicis, hactenus desideratis, libri IIII (Paris, Vascosan 1556; MDZ, bsb11199762), book I, Prop. V, fol. 17r-19r (scans 45-49): \"Transibit enim indubitanter huius semicirculi peripheria per punctum e, ut ipsa te docebit experientia.\"",
+       "redrawn in November 2026 from the page images; Finé's figures for the half case are drawn at 2 : 1"
+      ],
+      "links": [
+       {
+        "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.068",
+     "side": "under",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's mean proportionals, Prop. VI",
+     "circles": 6,
+     "lines": 5,
+     "acc": "99.068",
+     "precise": "99.068801772694455011780606615271",
+     "date": "1556",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.068-Fine-PropVI",
+     "note": "Heron's figure with the key point guessed. In the rectangle abcd (ab = 2 cd): bf = ab on bc produced, af the square's diagonal, ag = bd on af; ch = gf and hl = bc on bc produced, so cl = bc + gf. ld meets ab produced at m, and Finé takes em = el, as experience will show: cl and am are the means. am = 1.255998 cd against ∛2 = 1.259921. Published the year after his death.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, De rebus mathematicis, hactenus desideratis, libri IIII (Paris, Vascosan 1556; MDZ, bsb11199762), book I, Prop. VI, fol. 19r-21r (scans 49-53)",
+       "redrawn in November 2026 from the page images; Finé's figures for the half case are drawn at 2 : 1"
+      ],
+      "links": [
+       {
+        "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-under-99.821",
+     "side": "under",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's mean proportionals, Prop. VII (Philo's line)",
+     "circles": 14,
+     "lines": 10,
+     "acc": "99.821",
+     "precise": "99.821980743564818336847753040338",
+     "date": "1556",
+     "geogebra": "",
+     "file": "GeoGebra Files/Under/DTC-99.821-Fine-PropVII",
+     "note": "Philo's line with the chord guessed. The rectangle abcd (ab = 2 bc) and its circle; cf = bc on cd; g divides fd in extreme and mean ratio, h divides gf and i divides hf; the chord dk = di is drawn and produced to l on ab produced and m on bc produced, where ld and km should be equal. cm and la are the means. la = 1.259173 cd against ∛2 = 1.259921. Published the year after his death.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, De rebus mathematicis, hactenus desideratis, libri IIII (Paris, Vascosan 1556; MDZ, bsb11199762), book I, Prop. VII, fol. 21r-23v (scans 53-58): \"aequalis erit ld ipsi km: quemadmodum ocularis te docebit experientia.\"",
+       "redrawn in November 2026 from the page images; Finé's figures for the half case are drawn at 2 : 1"
+      ],
+      "links": [
+       {
+        "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
+       }
+      ]
+     }
+    },
+    {
+     "id": "dtc-over-99.850",
+     "side": "over",
+     "marks": "",
+     "holder": "Oronce Finé",
+     "method": "Finé's mean proportionals, Prop. VIII",
+     "circles": 14,
+     "lines": 10,
+     "acc": "99.850",
+     "precise": "99.850160670344998048681559599555",
+     "date": "1556",
+     "geogebra": "",
+     "file": "GeoGebra Files/Over/DTC-99.850-Fine-PropVIII",
+     "note": "The same chord dk as in Prop. VII; through k the parallels to bc and to ab, the second meeting bc produced at m: bm and mk are the means. mk = 1.260550 cd against ∛2 = 1.259921. Published the year after his death.",
+     "verified": [],
+     "disputes": [],
+     "origin": {
+      "kind": "historical",
+      "evidence": [
+       "published: O. Finé, De rebus mathematicis, hactenus desideratis, libri IIII (Paris, Vascosan 1556; MDZ, bsb11199762), book I, Prop. VIII, fol. 23v-24v (scans 58-60)",
+       "redrawn in November 2026 from the page images; Finé's figures for the half case are drawn at 2 : 1"
+      ],
+      "links": [
+       {
+        "label": "O. Finé, De rebus mathematicis hactenus desideratis (1556), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11199762"
        }
       ]
      }
@@ -5273,22 +5460,23 @@ const ARCHIVE = {
      "id": "rtc-under-99.9945",
      "side": "under",
      "marks": "",
-     "holder": "Christiaan Huygens",
-     "method": "Huygens' six radii and a fifth of the square's side",
+     "holder": "Johann Molther",
+     "method": "Molther's three diameters and a fifth of the quadrant's chord",
      "circles": 9,
      "lines": 6,
      "acc": "99.9945",
      "precise": "99.994547435922731809106253978542",
-     "date": "1654",
+     "date": "1619",
      "geogebra": "",
      "file": "GeoGebra Files/Under/RTC-99.9945-Busch",
-     "note": "Six radii and a fifth of the side of the inscribed square: 3 + √2/10 = 3.14142 diameters. Huygens (1654) gives it as the third solution of his Problem II, short by less than 1/10000 of the diameter for the half circumference; Busch's textbook gives the same construction in 1868. Too small by 0.00017 of the diameter.",
+     "note": "Three diameters and a fifth of the chord of a quadrant (the side of the inscribed square): 3 + √2/10 = 3.14142 diameters. Molther (1619) gives it as a ruler-and-compass rectification \"quam proxime\", reckoning 314142 against the true 314159; Huygens gives the same construction in 1654 as six radii and a fifth of the square's side, and Busch's textbook in 1868. Too small by 0.00017 of the diameter.",
      "verified": [],
      "disputes": [],
      "origin": {
       "kind": "historical",
       "evidence": [
-       "published: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem II (§ 11, pp. 105-106), third solution: \"Um daher eine der ganzen Kreisperipherie gleiche Strecke zu erhalten, füge man zu sechs Halbmessern 1/5 jener Seite des eingeschriebenen Quadrates hinzu\"",
+       "published: J. Molther, Problema Deliacum de cubi duplicatione (Frankfurt 1619; MDZ, bsb10053689), caput III, pp. 67-68: \"Diametri triplum cum parte quinta subtensae Quadrantis esse rectam Peripheriae quam proxime aequalem\"; the circle about A with diameter BC, CE the chord of the quadrant, CF its fifth, GH three diameters and CF",
+       "also in: F. Rudio, Archimedes, Huygens, Lambert, Legendre. Vier Abhandlungen über die Kreismessung (Leipzig 1892), the German translation of C. Huygens, De circuli magnitudine inventa (1654) (Internet Archive, archimedeshuygen00rudiuoft), Problem II (§ 11, pp. 105-106), third solution: \"Um daher eine der ganzen Kreisperipherie gleiche Strecke zu erhalten, füge man zu sechs Halbmessern 1/5 jener Seite des eingeschriebenen Quadrates hinzu\"",
        "the value 3 + √2/10 = 3.14142 is given by K. T. Vahlen, Konstruktionen und Approximationen (1911), p. 312, among Huygens' values",
        "also in: A. L. Busch, Vorschule der darstellenden Geometrie, edition of 1868 (Internet Archive, vorschule-der-darstellenden-geometrie), Aufgabe 67, second solution (\"Aufl. 2\"); the first edition is of 1846",
        "redrawn in November 2026 from the scanned text; the rebuilt length is 3.1414214 diameters; the 3.14125 printed in the 1868 edition does not match its own description, which gives 3.14142"
@@ -5305,10 +5493,19 @@ const ARCHIVE = {
        {
         "label": "K. T. Vahlen, Konstruktionen und Approximationen (1911)",
         "url": "https://archive.org/details/konstruktionenun00vahluoft"
+       },
+       {
+        "label": "J. Molther, Problema Deliacum de cubi duplicatione (1619), MDZ",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb10053689"
        }
       ]
      },
      "rediscovered": [
+      {
+       "name": "Christiaan Huygens",
+       "date": "1654",
+       "note": "De circuli magnitudine inventa, Problem II, third solution, as six radii and a fifth of the side of the inscribed square; charted under his name until Molther's text was found"
+      },
       {
        "name": "August Ludwig Busch",
        "date": "1868",
@@ -6831,6 +7028,11 @@ const ARCHIVE = {
    "Iosephus Scaliger",
    "Joseph Justus Scaliger",
    "Joseph Scaliger"
+  ],
+  "Johann Molther": [
+   "J. Molther",
+   "Johann Molther",
+   "Johannes Molther"
   ]
  },
  "authors": [
@@ -7732,7 +7934,7 @@ const ARCHIVE = {
    "holders": [
     "Oronce Finé"
    ],
-   "bio": "French mathematician, cartographer and book illustrator, the first professor of mathematics at the Collège royal in Paris. His textbooks and maps were widely used, but his claims to have squared the circle, doubled the cube and trisected the angle were refuted in his lifetime by Buteo and Nunes.",
+   "bio": "French mathematician, cartographer and book illustrator, the first professor of mathematics at the Collège royal in Paris. His textbooks and maps were widely used, but his claims to have squared the circle, doubled the cube and trisected the angle were refuted in his lifetime by Buteo and Nunes. His posthumous \"De rebus mathematicis\" (1556) gives a series of ruler-and-compass constructions for two mean proportionals, each with one step left to \"experience\": as approximations, the best double the cube to within 0.2%.",
    "links": [
     {
      "label": "MacTutor biography",
@@ -7797,6 +7999,32 @@ const ARCHIVE = {
    ],
    "bio": "Born at Dole in France and living in Delft by 1584, where he was known as Simon van der Eycke. He published two squarings of the circle (1583, 1586), which drew replies from Ludolph van Ceulen and Adriaan Anthonisz, whose son Metius took from the dispute the famous value 355/113. His second value turned out to be one of Cusa's.",
    "links": []
+  },
+  {
+   "name": "Johann Molther",
+   "life": "1591–",
+   "kind": "historical",
+   "holders": [
+    "Johann Molther"
+   ],
+   "bio": "A Hessian doctor of philosophy and medicine. His \"Problema Deliacum\" (Frankfurt 1619), dedicated to Landgrave Moritz of Hesse, doubles the cube with a sliding ruler and, on the way, rectifies the circle with ruler and compass as three diameters and a fifth of the quadrant's chord: the construction Huygens gave again in 1654.",
+   "links": []
+  },
+  {
+   "name": "Václav Láska",
+   "life": "1862–1943",
+   "kind": "historical",
+   "holders": [],
+   "also": [
+    "Václav Láska"
+   ],
+   "bio": "Czech mathematician, astronomer and geodesist, a lecturer at the Czech technical university in Prague in 1893 and later a professor at Lemberg and Prague. His note of 1893 doubles the cube by an endless nest of mean proportionals, the idea Vargiù had charted in 1877.",
+   "links": [
+    {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/V%C3%A1clav_L%C3%A1ska"
+    }
+   ]
   }
  ]
 };

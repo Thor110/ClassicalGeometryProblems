@@ -131,9 +131,9 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 ## Waiting for the maintainer
 
-Kept up to date by `python tools/verify.py --write` (last run 2026-11-08). Tick items off by fixing them; the next run rewrites this list.
+Kept up to date by `python tools/verify.py --write` (last run 2026-11-15). Tick items off by fixing them; the next run rewrites this list.
 
-### Not verified by a person yet (180)
+### Not verified by a person yet (186)
 
 Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then add yourself to its `verified` list in pages/archive-data.js.
 
@@ -251,6 +251,12 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Doubling The Cube, oversized 99.998% · Vahlen's square: 349/277 (dtc-over-99.998): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.998-Vahlen.ggb`
 - [ ] Doubling The Cube, oversized 99.868% · Huygens' chords: cosec 52.5° (dtc-over-99.868): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.868-Huygens.ggb`
 - [ ] Doubling The Cube, oversized 99.981% · Dmitrovskij's 1.26 (dtc-over-99.981): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.981-Dmitrovskij.ggb`
+- [ ] Doubling The Cube, oversized 99.781% · Finé's mean proportionals, Prop. I (the half case) (dtc-over-99.781): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.781-Fine-PropI.ggb`
+- [ ] Doubling The Cube, undersized 99.391% · Finé's mean proportionals, Prop. IV (the square on the larger line) (dtc-under-99.391): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.391-Fine-PropIV.ggb`
+- [ ] Doubling The Cube, undersized 98.888% · Finé's mean proportionals, Prop. V (dtc-under-98.888): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-98.888-Fine-PropV.ggb`
+- [ ] Doubling The Cube, undersized 99.068% · Finé's mean proportionals, Prop. VI (dtc-under-99.068): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.068-Fine-PropVI.ggb`
+- [ ] Doubling The Cube, undersized 99.821% · Finé's mean proportionals, Prop. VII (Philo's line) (dtc-under-99.821): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Under/DTC-99.821-Fine-PropVII.ggb`
+- [ ] Doubling The Cube, oversized 99.850% · Finé's mean proportionals, Prop. VIII (dtc-over-99.850): GeoGebra file `Approximations/03 Doubling The Cube/GeoGebra Files/Over/DTC-99.850-Fine-PropVIII.ggb`
 - [ ] Rectifying The Circle, undersized 99.376% (rtc-under-99.376): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.376.ggb`
 - [ ] Rectifying The Circle, undersized 99.9999999% · Ramanujan's 1914 construction (rtc-under-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.99999-Ramanujan-1914.ggb`
 - [ ] Rectifying The Circle, oversized 99.999996% · Kochanski Gordon Crossover (3/7) (rtc-over-99.99999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.99999-Kochanski-Gordon-3-7.ggb`
@@ -280,7 +286,7 @@ Rebuild each in GeoGebra, confirm the accuracy and the circles and lines, then a
 - [ ] Rectifying The Circle, undersized 99.993% · Bojko's construction (rtc-under-99.993): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.993-Bojko.ggb`
 - [ ] Rectifying The Circle, oversized 99.999% · Heiseler's difference of two legs (rtc-over-99.999): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.999-Heiseler.ggb`
 - [ ] Rectifying The Circle, oversized 99.959% · Busch's three diameters and a seventh (rtc-over-99.959): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.959-Busch.ggb`
-- [ ] Rectifying The Circle, undersized 99.9945% · Huygens' six radii and a fifth of the square's side (rtc-under-99.9945): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9945-Busch.ggb`
+- [ ] Rectifying The Circle, undersized 99.9945% · Molther's three diameters and a fifth of the quadrant's chord (rtc-under-99.9945): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.9945-Busch.ggb`
 - [ ] Rectifying The Circle, undersized 99.999976% · Hagge's rectification by the compass (rtc-under-99.999976): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.999976-Hagge.ggb`
 - [ ] Rectifying The Circle, undersized 99.984% · Huygens' eight sides of the twelve-gon (rtc-under-99.984): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Under/RTC-99.984-Huygens.ggb`
 - [ ] Rectifying The Circle, oversized 99.975% · Huygens' quadrant from the twelve-gon (rtc-over-99.975): GeoGebra file `Approximations/04 Rectifying The Circle/GeoGebra Files/Over/RTC-99.975-Huygens.ggb`
@@ -324,7 +330,7 @@ Each needs a decision: correct the entry, or explain why the check does not appl
 
 - [ ] Trisecting An Angle, oversized ~99.317% · Array Casting v2.0 (taa-over-99.317): shallowest crossing the result depends on: 30.0°; A_1, Z are placed freely, but only sets the size: sliding it along its line or circle leaves the accuracy unchanged; the result depends on freely placed point(s) beyond the given figure: D; the result depends on hand-placed point(s): F; swept across angles: 95% or better from 24° to 47° (as drawn, 39.3° in the file)
 
-### Identical or near-identical entries (20)
+### Identical or near-identical entries (21)
 
 From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a credit question, or two genuinely different entries.
 
@@ -347,6 +353,7 @@ From tools/crossref.py. Decide whether each pair is a duplicate (dispute it), a 
 - [ ] same result: dtc-under-97.65625 and dtc-under-97.656 (score 0.08)
 - [ ] same result: rtc-over-99.904-lemoine and rtc-over-99.904-cusa (score 0.03)
 - [ ] near identical: rtc-over-99.971 and rtc-under-99.9875 (score 0.85)
+- [ ] near identical: dtc-under-99.821 and dtc-over-99.850 (score 0.84)
 - [ ] near identical: rtc-over-99.9987 and rtc-under-99.9875 (score 0.70)
 
 ### µ marks to review (2)

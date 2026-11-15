@@ -100,7 +100,7 @@ is worked out live from the charts.
 
 | Problem | Scale | Best oversized | Best undersized | Gap |
 |---|---|---|---|---|
-| Squaring The Circle | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9999999% (Claude (Anthropic), AI): −0.819 nm | 3.86 nm (13 gold atoms) |
+| Squaring The Circle | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9999999% (Claude (Anthropic), AI): −0.819 nm | 3.86 nm (13.4 gold atoms) |
 | Squaring The Circle (people only) | circle 100 m across, square side 88.6227 m | 99.99999999% (Hung Viet Chu): +3.05 nm | 99.9996% (Emil Lampe): −148 µm | 148 µm |
 | Doubling The Cube | given edge 10 m, doubled edge 12.5992 m | 99.999998% (Claude (Anthropic), AI): +71.7 nm | 99.99997% (Claude (Anthropic), AI): −1.18 µm | 1.25 µm |
 | Doubling The Cube (people only) | given edge 10 m, doubled edge 12.5992 m | 99.998% (K. T. Vahlen): +67.5 µm | 99.9995% (Lorenzo Mascheroni): −17.9 µm | 85.4 µm |
@@ -108,7 +108,8 @@ is worked out live from the charts.
 | Rectifying The Circle (people only) | plaza 100 m across, circumference 314.1593 m | 99.999996% (Kochanski / Gordon): +11.0 µm | 99.9999999% (Srinivasa Ramanujan): −101 nm | 11.1 µm |
 
 The page shows each gap to three significant figures in the largest unit that fits (m, mm, µm or nm),
-and below a micrometre also in gold atoms. (Before November 2026 it rounded to two decimal places of
+and below a micrometre also in gold atoms (to a tenth when under a hundred). The 13.4 has a note of its own in
+[COINCIDENCES.md](COINCIDENCES.md). (Before November 2026 it rounded to two decimal places of
 a micrometre, so the squaring gap showed as 0.00 µm.)
 
 ### How big for each vision

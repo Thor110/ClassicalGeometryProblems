@@ -1,5 +1,5 @@
 // Written by tools/crossref.py. Do not edit by hand: run it again.
-const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-08","pairs":[
+const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-15","pairs":[
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796","newer":"taa-over-96.305","older_holder":"H. Schoeler","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-96.305","older_holder":"Gaetano Baratto","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-98.796","older_holder":"Gaetano Baratto","newer_holder":"H. Schoeler","kinds":["person","person"]},
@@ -19,6 +19,7 @@ const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-08","pairs":[
 {"problem":"dtc","kind":"same result","similarity":0.079,"older":"dtc-under-97.65625","newer":"dtc-under-97.656","older_holder":"Michael Stifel","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"rtc","kind":"same result","similarity":0.034,"older":"rtc-over-99.904-lemoine","newer":"rtc-over-99.904-cusa","older_holder":"Émile Lemoine","newer_holder":"Nicholas of Cusa","kinds":["person","person"]},
 {"problem":"rtc","kind":"near identical","similarity":0.851,"older":"rtc-over-99.971","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
+{"problem":"dtc","kind":"near identical","similarity":0.836,"older":"dtc-under-99.821","newer":"dtc-over-99.850","older_holder":"Oronce Finé","newer_holder":"Oronce Finé","kinds":["person","person"]},
 {"problem":"rtc","kind":"near identical","similarity":0.697,"older":"rtc-over-99.9987","newer":"rtc-under-99.9875","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"stc","kind":"builds on","similarity":1.0,"older":"stc-under-95.492","newer":"stc-over-99.356","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},
 {"problem":"stc","kind":"builds on","similarity":1.0,"older":"stc-under-95.492","newer":"stc-over-99.862","older_holder":"Edward James Gordon","newer_holder":"Edward James Gordon","kinds":["person","person"]},

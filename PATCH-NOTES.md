@@ -12,6 +12,29 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Doubling the cube
+
+### Archive
+- Added six of Oronce Finé's constructions for two mean proportionals (De rebus mathematicis, 1556), which he believed exact:
+  doubling the cube to 99.781% (over), 99.391%, 98.888%, 99.068% and 99.821% (under), and 99.850% (over). They are the
+  earliest ruler-and-compass duplications on the chart after Stifel's.
+- Johann Molther's "Problema Deliacum" (1619) gives Huygens' rectification, three diameters and a fifth of the quadrant's
+  chord, 35 years before him: the credit for rtc-under-99.9945 moves to Molther, with Huygens and Busch under "Also found by".
+- Václav Láska (1893) is added under "Also found by" on Vargiù's duplication: the same endless nest of mean proportionals.
+- The Wanted page lists what the search found but could not chart: Finsler (1938; the paper's download needs a browser
+  check), Sorgner and Michnik (1915), Lenzer (1930), Pappus' unnamed geometer, Casanova's rule (1790), Winthrop (1793),
+  Di Gennaro (1802), Manoja (1836), Hullmann (1897), Dürer's and Molther's mechanical duplications, and Finé's gnomon.
+- 216 entries, 73 authors.
+
+### Site
+- `tools/source_links.py` links Finé's 1556 book and Molther's 1619 book at MDZ.
+- The Architectural Vision page gives gold atoms to a tenth under a hundred: the squaring gap is 13.4 gold atoms.
+- New loose note, [COINCIDENCES.md](COINCIDENCES.md): the 13.4, why we see patterns everywhere, and the repeats in the
+  archive that are not coincidences, because geometry follows from a few simple shapes.
+- Every page's footer now links to the source and to the other two sites, as on the home page.
+
+---
+
 ## November 2026: Two architectural visions
 
 ### Site
