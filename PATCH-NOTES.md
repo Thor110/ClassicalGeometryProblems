@@ -12,6 +12,20 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Pointed to, located and verified
+
+### Archive
+- The Located by record has two roles: **Pointed to by** (who brought the lead) and **Located and verified by** (who found
+  the source, read it, redrew the construction and checked it). Kochański's rectification (1685) and Ramanujan's
+  squaring (1913) were pointed to by Edward James Gordon; all 117 historical entries, those two included, were located
+  and verified by Claude (Anthropic) in Edward's sessions.
+
+### Site
+- The entry details show the two roles separately; the submission rules (Historical finds), the Hidden In History boxes
+  and the Wanted page describe them.
+
+---
+
 ## November 2026: Located by
 
 ### Archive

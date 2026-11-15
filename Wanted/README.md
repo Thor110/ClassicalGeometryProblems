@@ -22,7 +22,7 @@ hundred historical constructions were charted from them.
 
 The search was stopped on purpose. There are surely many more: in journals and school programmes not yet digitised, in
 letters, and in languages barely touched here. They are left for others to find, and the leads below are a place to
-start. A find is charted under its original author, with the finder recorded under **Located by**
+start. A find is charted under its original author, with whoever pointed to it, and whoever located and verified it, recorded on the entry
 ([Historical finds](../SUBMISSION_RULESET.md#historical-finds)).
 
 ## Still wanted

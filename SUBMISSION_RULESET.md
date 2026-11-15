@@ -75,8 +75,11 @@ Constructions made by people in the past can be submitted by anyone who finds th
 original author, never under the finder.
 
 - **Credit.** The entry is credited to the person who first drew the construction, with the date of its earliest known
-  source. Whoever found it and brought it to the charts is recorded on the entry under **Located by**, with the date
-  and where they found it.
+  source. The people who brought it to the charts are recorded on the entry, in two roles:
+  - **Pointed to by**: whoever brought the lead, a name, a title or a half-remembered construction, even if someone else
+    did the checking;
+  - **Located and verified by**: whoever found the source, read it, redrew the construction and checked it.
+  One person may hold both roles, with the date and where they found it.
 - **The source.** A historical construction is charted only from the original source, or a faithful published account
   of it, read in the source itself: give the title, edition, page, and a link to a scan where one exists. Where the
   source only gives a value, or a rule with a free choice in it, or uses a sliding ruler, a curve or an instrument, it
@@ -156,7 +159,7 @@ Each entry is **verified**, **self-verified**, **unverified** or **disputed**. P
 ## Changes
 
 - **1.6 (November 2026)**: chart figures capped at ten decimal places, with `≈` for entries alike at the cap; an error column; the limits on precision written down; exact ties ordered by fewer circles and lines.
-- **1.6 (November 2026)**: historical finds. Charted under their original author, with the finder recorded under Located by.
+- **1.6 (November 2026)**: historical finds. Charted under their original author, with who pointed to it, and who located and verified it, recorded on the entry.
 - **1.5 (November 2026)**: earlier discoveries. Credit goes to the earliest known author; everyone who found a construction later is kept on its entry as a possible independent rediscovery.
 - **1.4 (November 2026)**: points placed freely that only set the size are not counted against a construction; angle sweeps find the angle's corner from the file.
 - **1.3 (November 2026)**: submissions through the browser extension, evaluated automatically; new submissions below 95% are no longer accepted.

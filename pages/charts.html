@@ -133,7 +133,7 @@
 
 <div class="box">
   <div class="box-title">Hidden In History</div>
-  <div class="box-text">Many entries were found in old books and journals, credited to the person who first drew them and checked step by step against the source. There are surely many more still waiting to be dug up. If you find one, it is charted under its original author, and you are recorded under <b>Located by</b> on its entry. <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md#historical-finds" target="_blank" rel="noopener">How to submit a historical find</a> · <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Wanted/README.md" target="_blank" rel="noopener">Leads still open</a></div>
+  <div class="box-text">Many entries were found in old books and journals, credited to the person who first drew them and checked step by step against the source. There are surely many more still waiting to be dug up. If you find one, it is charted under its original author, and you are recorded on its entry: under <b>Pointed to by</b> if you bring the lead, and under <b>Located and verified by</b> if you also find the source and check it. <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/SUBMISSION_RULESET.md#historical-finds" target="_blank" rel="noopener">How to submit a historical find</a> · <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Wanted/README.md" target="_blank" rel="noopener">Leads still open</a></div>
 </div>
 
 <div class="box">
@@ -501,10 +501,15 @@ function alsoFound(e) {
   return e.rediscovered.map(r => `<li>${esc(r.name)}${r.date ? ' · ' + esc(r.date) : ''} · possibly an independent rediscovery${r.note ? ' · ' + esc(r.note) : ''}</li>`).join('');
 }
 
-// People who found a historical construction in the literature and brought it to the charts. The credit stays with
-// the construction's original author; the finder is recorded here (SUBMISSION_RULESET.md, Historical finds).
+// People who brought a historical construction to the charts. The credit stays with the construction's original author;
+// who pointed to it, and who located and verified its source, are recorded here (SUBMISSION_RULESET.md, Historical finds).
+const ROLES = [['pointed to', 'Pointed to by'], ['located and verified', 'Located and verified by']];
 function locatedBy(e) {
-  return e.located_by.map(r => `<li>${esc(r.name)}${r.date ? ' · ' + esc(r.date) : ''}${r.note ? ' · ' + esc(r.note) : ''}</li>`).join('');
+  const item = r => `<li>${esc(r.name)}${r.date ? ' · ' + esc(r.date) : ''}${r.note ? ' · ' + esc(r.note) : ''}</li>`;
+  return ROLES.map(([role, title]) => {
+    const rs = e.located_by.filter(r => (r.role || 'located and verified') === role);
+    return rs.length ? `<div class="rec"><div class="rec-title">${title}</div><ul>${rs.map(item).join('')}</ul></div>` : '';
+  }).join('');
 }
 
 function renderDetail() {
@@ -537,7 +542,7 @@ function renderDetail() {
     <div class="rec"><div class="rec-title">Verified by people</div><ul>${people}</ul></div>
     <div class="rec"><div class="rec-title">Checked by AI</div><ul>${ai}</ul></div>
     ${(e.rediscovered || []).length ? `<div class="rec"><div class="rec-title">Also found by</div><ul>${alsoFound(e)}</ul></div>` : ''}
-    ${(e.located_by || []).length ? `<div class="rec"><div class="rec-title">Located by</div><ul>${locatedBy(e)}</ul></div>` : ''}
+    ${(e.located_by || []).length ? locatedBy(e) : ''}
     ${(e.origin && e.origin.links || []).length ? `<div class="rec"><div class="rec-title">Sources</div><ul>${e.origin.links.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a></li>`).join('')}</ul></div>` : ''}
     <div class="rec"><div class="rec-title">Related entries</div><ul>${related(e)}</ul></div>
     <div class="rec"><div class="rec-title">Disputes</div><ul>${disputes}</ul></div>
