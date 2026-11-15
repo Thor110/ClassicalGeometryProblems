@@ -12,6 +12,18 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Hidden in history
+
+### Site
+- New box on the home page and the charts page, "Hidden In History": the historical search, why it was stopped on
+  purpose, and how to submit a find.
+- Historical finds are charted under their original author; whoever located the source is recorded on the entry under
+  **Located by**, shown in the entry's details and found by the chart's search (`located_by` in the data).
+- Submission rules 1.6: [Historical finds](SUBMISSION_RULESET.md#historical-finds).
+- The Wanted page opens with a summary of the historical search.
+
+---
+
 ## November 2026: Simon's report (1906)
 
 ### Archive

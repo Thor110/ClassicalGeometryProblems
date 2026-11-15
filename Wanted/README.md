@@ -11,6 +11,20 @@ independent rediscovery ([Earlier discoveries](../SUBMISSION_RULESET.md#earlier-
 historical method that only reaches the same value by other steps is charted beside it, as Stifel's is
 beside Gordon's Cube 2 Tesseract v1.0 (both exactly 5/4 of the edge).
 
+## The historical search
+
+From November 2026 the archive searched the history of these problems for approximate constructions: Montucla (1754,
+1831), Cantor's Vorlesungen, Vahlen's Konstruktionen und Approximationen (1911), Enriques' Fragen der
+Elementargeometrie, the reviews of the Jahrbuch über die Fortschritte der Mathematik, Simon's report on nineteenth-century
+geometry (1906), Finsler (1938), and the books and journals behind them, read in the digital libraries of the Internet
+Archive, the Bavarian State Library (MDZ), the Bavarian Academy, NUMDAM, E-Periodica and the Czech DML. More than a
+hundred historical constructions were charted from them.
+
+The search was stopped on purpose. There are surely many more: in journals and school programmes not yet digitised, in
+letters, and in languages barely touched here. They are left for others to find, and the leads below are a place to
+start. A find is charted under its original author, with the finder recorded under **Located by**
+([Historical finds](../SUBMISSION_RULESET.md#historical-finds)).
+
 ## Still wanted
 
 | Construction | Chart | Why it is not charted yet |
