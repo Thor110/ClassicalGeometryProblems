@@ -20,6 +20,9 @@
 // maintainer's own work, backed by papers, his GeoGebra account and his files), session (found or
 // drawn in the maintainer's own sessions with Claude), submitted (sent in by someone else: the
 // construction can be checked, but who first found it cannot). evidence lists what backs it.
+// rediscovered: later finders of the same construction, shown as "Also found by" ({name, date, note}).
+// located_by: who brought a historical entry to the charts ({name, role, date, note}), role "pointed to" or
+// "located and verified" (SUBMISSION_RULESET.md, Historical finds).
 const ARCHIVE = {
  "problems": [
   {

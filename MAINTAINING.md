@@ -93,6 +93,14 @@ and the GeoGebra file stay where they were. Each `rediscovered` record is
 with `name` and `date` required, and `note` for how they came to it. The charts list each as "possibly an independent rediscovery", since
 independence can never be checked (SUBMISSION_RULESET.md, "Earlier discoveries").
 
+**Who brought a historical entry in:** each historical entry carries a `located_by` list, shown on the charts as
+"Pointed to by" and "Located and verified by" (SUBMISSION_RULESET.md, "Historical finds"):
+
+    {"name": "A. N. Other", "role": "pointed to", "date": "2027", "note": "how they came to it"}
+    {"name": "A. N. Other", "role": "located and verified", "date": "2027", "note": "in the 1795 edition, pp. 12-14"}
+
+The credit (`holder`) always stays with the construction's original author.
+
 **Variants of historical constructions:** `python tools/variants.py` keeps each historical skeleton
 and tries other small fractions in it, writing what beats the original to [Variants/](Variants/README.md).
 Nothing there is charted by itself: draw a promising variant in GeoGebra and add it like any other entry.
