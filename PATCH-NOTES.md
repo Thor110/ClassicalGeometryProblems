@@ -12,6 +12,19 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #6, the balance search
+
+### Site
+- The Architectural Vision page has Attempt #6, first in the attempts dropdown: the same form balanced by a
+  search of 190 charted constructions for steps, reach and accuracy. Every gap is now visible (the smallest a
+  2.6 mm gold joint), the whole floor fits inside the digital shell, and the building grows to 4.5 m to the
+  radius on a 46 m site: [Architecture/Plan/attempt-6.ggb](Architecture/Plan/attempt-6.ggb).
+- The trisection rings move out to 1.5, 2.5, 3.5 and 4.5 radii, pillars on gold lines become gateways, and the
+  gnomon has a clear line: the three problems the walk-through found.
+- ARCHITECTURAL.md describes the search and its result.
+
+---
+
 ## November 2026: Walking through
 
 ### Site

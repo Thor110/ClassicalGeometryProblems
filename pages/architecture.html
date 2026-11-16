@@ -10,7 +10,8 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
-  #qCv,#rCv,#sCv,#tCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
+  #att1,#att2,#att3,#att4,#att5,#att6,#attm{width:100%;max-width:1000px;min-width:0;}
+  #qCv,#rCv,#sCv,#tCv,#uCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -69,6 +70,7 @@
   <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
   <div class="controls" style="justify-content:center;margin-top:10px;">
     <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att6">Attempt #6: The Balance Search</option>
       <option value="att5">Attempt #5: The Digital Outer Shell</option>
       <option value="att4">Attempt #4: Gates On The Outer Ring</option>
       <option value="att3">Attempt #3: The Trisection Rings</option>
@@ -79,7 +81,51 @@
   </div>
 </div>
 
-<div id="att5">
+<div id="att6">
+<div class="box">
+  <div class="box-title">Attempt #6: The Balance Search</div>
+  <div class="box-text">The same form as Attempt #5, balanced. Every charted construction except the trisections (190 of them) was laid alone on the one-origin floor, with its transfer, and measured for the steps it adds and how far its circles reach. The set chosen keeps the fewest steps but now also keeps every construction inside the outer ring, so the whole floor fits within the digital shell. That lets the building grow to <b>4.5 m to the radius</b>, with every gap one you can see.</div>
+  <div class="table-wrap"><table>
+    <tr><th>Pair</th><th>Oversized</th><th>Undersized</th><th>Gap at 4.5 m</th></tr>
+    <tr><td>Doubled cube</td><td>Finsler (1938), 98.08%</td><td>Stifel (1544), 97.656%</td><td>8.1 cm on the edge, 4.0 cm each face</td></tr>
+    <tr><td>Squared circle</td><td>Claude, 99.922%</td><td>Willich (1855), 99.947%</td><td>5.2 mm on the side, 2.6 mm each edge</td></tr>
+    <tr><td>π</td><td>Peirce (1901), 99.963%</td><td>Bojko (1909), 99.994%</td><td>6.2 mm at 14.14 m</td></tr>
+    <tr><td>Quarter arc</td><td>Burmester (1919), 99.59%</td><td>Nicholas of Cusa and Snellius, 95.49%</td><td>35 cm at 7.07 m</td></tr>
+  </table></div>
+  <div class="box-text">No gap is microscopic any more: the smallest, the squares' 2.6 mm, is a gold joint, and the cubes' 4 cm and the arc's 35 cm are plain to see. The constructions take <b>28 circles and 30 lines</b> with the rings and gates (Attempt #5: 31 and 30), and the site is <b>46 m × 46 m</b>, the shell 45 m across.</div>
+  <div class="box-text">The walk-through's three problems are solved by moving the trisection rings out half a radius, to 1.5, 2.5, 3.5 and 4.5 radii (6.75, 11.25, 15.75 and 20.25 m), each found as a midpoint along the line OC. The clock's twelve points stay on the floor as low bronze studs.</div>
+  <ul>
+    <li><b>Room at the centre.</b> The squares' corners now stand 1.96 m from the nearest pillar, and the given cube, 4.5 m, is a hall you can walk round.</li>
+    <li><b>No pillar on a gold line.</b> Where a pillar would stand on the π lines or the arc lines, it is split into a pair 1.2 m apart, so the gold line runs through a gateway: twice on the π lines, once on the arc lines.</li>
+    <li><b>A clear line for the gnomon.</b> It rises north from the origin between the first ring's north pair, and ends 5.4 m out and 6.6 m up, inside the cone.</li>
+    <li><b>The cone</b> now meets the ground exactly at the digital shell, five radii out: pillars 8.4, 6.0, 3.6 and 1.2 m tall.</li>
+  </ul>
+  <div class="box-text">One coincidence came out of it: Cusa's straightened quarter arc is exactly one and a half radii long, so his gold line ends precisely at the first ring's gateway, with Burmester's running on 35 cm beyond it.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-6.svg" target="_blank"><img src="images/architecture-plan-6.svg" alt="Attempt #6: the balanced plan, everything inside the digital shell: the rings at one and a half to four and a half radii, gateways on the gold lines, gates on the outer ring"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Every step in the metal of its problem, the results in gold. The cyan studs are surveyed, not constructed.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Drawing The Floor, Then Raising It</div>
+  <div class="box-text">Step through the floor, raise it in three dimensions, or walk through it at eye level.</div>
+  <canvas id="uCv" width="1400" height="1100" aria-label="Attempt #6, drawn step by step and then raised in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="uPrev">◀ Back</button>
+    <button class="small" id="uPlay">▶ Play</button>
+    <button class="small" id="uNext">Next ▶</button>
+    <button class="small" id="uGrid">Metre grid</button>
+    <button class="small" id="u3d">3D</button>
+    <button class="small" id="uWalk">Walk through</button>
+    <button class="small" id="uHang">Suspend the cubes</button>
+    <select id="uChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="uSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="uText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-6.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-6.ggb</a>. Each result in it gives exactly the accuracy in the table.</div>
+</div>
+</div>
+
+<div id="att5" hidden>
 <div class="box">
   <div class="box-title">Attempt #5: The Digital Outer Shell</div>
   <div class="box-text" style="border-left:4px solid #7fe8ff;padding-left:12px;"><b>Not a construction.</b> 5° cannot be drawn with straightedge and compass: among whole degrees, only multiples of 3° can. The outer shell in this attempt is not an approximation, and it does not claim to construct 5°. Its marks are placed by measurement, as a surveyor or a computer would place them, and nothing on the floor draws them. It is there on purpose, as a symbol: the digital world round the classical one, what can be calculated but not constructed.</div>
@@ -301,7 +347,7 @@
 
 <div class="box" id="eyelevel">
   <div class="box-title">At Eye Level</div>
-  <div class="box-text">Attempts #2 to #5 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
+  <div class="box-text">Attempts #2 to #6 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
   <ul>
     <li><b>From the edge</b> the form reads well: the low cyan shell, the gates, and the pillars rising ring by ring to the glass hall.</li>
     <li><b>Inside the clock ring it is crowded.</b> The clock's pillars stand 3 m out and 4.8 m tall, and the doubled cube's corners come within 0.6 m of the nearest of them.</li>
@@ -390,6 +436,7 @@
 <script src="architecture-plan-3-steps.js"></script>
 <script src="architecture-plan-4-steps.js"></script>
 <script src="architecture-plan-5-steps.js"></script>
+<script src="architecture-plan-6-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -552,6 +599,11 @@ const att5 = planPlayer(window.PLAN5_STEPS, {cv: 'tCv', slider: 'tSlider', chap:
 if (att5 && att5.v3) {
   let hung = false;
   document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };
+}
+const att6 = planPlayer(window.PLAN6_STEPS, {cv: 'uCv', slider: 'uSlider', chap: 'uChap', text: 'uText', prev: 'uPrev', next: 'uNext', play: 'uPlay', d3: 'u3d', grid: 'uGrid', walk: 'uWalk'});
+if (att6 && att6.v3) {
+  let hung = false;
+  document.getElementById('uHang').onclick = e => { hung = !hung; att6.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att6.to3d(); };
 }
 // Edward's Blender mockup (pages/architecture-mockup.js), raised whenever it is shown.
 const mock = window.MOCKUP && typeof makeView3D === 'function' ? makeView3D(document.getElementById('mCv'), {view: [-8, -8, 8, 8], steps: [], solids: [], mesh: window.MOCKUP, dist: 17, tgt: [0, 0, 2]}) : null;

@@ -358,6 +358,46 @@ of their own (cyan on the page), with no construction lines; the ring itself is 
 plan. Read from outside in, the monument goes from the measured to the constructed, and at its centre to what
 neither can reach exactly. The site grows to about 42 m × 32 m.
 
+## All of them at once, Attempt #6: the balance search
+
+The same form as Attempt #5, balanced against the walk-through's findings. The
+[website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-6) has the
+plan, steps, 3D view and walk-through; the file is [Architecture/Plan/attempt-6.ggb](Architecture/Plan/attempt-6.ggb).
+
+### The search
+
+Every charted construction except the trisections, 190 in all, was laid alone on the one-origin floor in each of
+its 24 turns and mirror images, with its transfer to the origin, and measured for the circles and lines it adds,
+how far those reach from the origin, and its accuracy there (126 could be placed; the rest start from a different
+given figure). The pairs were then chosen by fewest steps first, then the smallest reach, then accuracy. The
+change that mattered most was π: Attempt #5's pair reached nine radii east of the origin; Peirce's and Bojko's take
+the same steps and reach only π radii. With every construction now inside four and three quarter radii, the floor
+fits inside the digital shell at five radii, and the building can grow to 4.5 m to the radius within 50 m.
+
+| Pair | Oversized | Undersized | At 4.5 m | Gap |
+|---|---|---|---|---|
+| Doubled cube's edge | Finsler (1938), 98.08% | Stifel (1544), 97.656% | true 5.6696 m: +36.1 mm, −44.6 mm | 80.8 mm (40.4 mm each face) |
+| Squared circle's side | Claude, 99.922% | Willich (1855), 99.947% | true 7.9760 m: +3.11 mm, −2.13 mm | 5.24 mm (2.62 mm each edge) |
+| π, half the circumference | Peirce (1901), 99.963% | Bojko (1909), 99.994% | true 14.1372 m: +5.30 mm, −0.90 mm | 6.20 mm |
+| Quarter arc | Burmester (1919), 99.59% | Cusa and Snellius, 95.49% | true 7.0686 m: +28.8 mm, −318.6 mm | 347 mm |
+
+No gap is microscopic: the smallest is a 2.6 mm gold joint. All eight accuracies were checked in GeoGebra on the
+merged file. The floor is 28 circles and 30 lines with the rings and gates (Attempt #5: 31 and 30).
+
+### The walk-through's problems
+
+- **The rings move out half a radius**, to 1.5, 2.5, 3.5 and 4.5 radii: circles about C and about the point two
+  radii east mark three, four and five radii on the line OC, and the midpoints between give the rings' radii.
+  The clock's twelve points stay as low bronze studs on the clock circle.
+- **Room at the centre**: the squares' corners stand 1.96 m from the nearest pillar's centre.
+- **No pillar on a gold line**: where one would stand on the π or arc lines it is split into a pair 1.2 m apart,
+  so the line runs through a gateway (the first and second rings on the π lines, the first on the arc lines).
+- **The gnomon** rises between the first ring's north pair and ends 5.4 m out and 6.6 m up, inside the cone.
+- **The cone** meets the ground at the digital shell: pillars 8.4, 6.0, 3.6 and 1.2 m tall.
+
+Cusa's straightened quarter arc is exactly 1.5 radii long (95.49% is 3/π), so his gold line ends precisely at the
+first ring's gateway.
+
 ## At eye level: the first walk-through
 
 Attempts #2 to #5 can now be walked in their 3D view, with the eye 1.6 m above the floor (the Walk through
