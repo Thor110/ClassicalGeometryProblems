@@ -10,6 +10,7 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
+  #qCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -63,8 +64,64 @@
   </ul>
 </div>
 
+<div class="box" id="attempts">
+  <div class="box-title">All Of Them At Once: Design Attempts</div>
+  <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
+  <div class="controls" style="justify-content:center;margin-top:10px;">
+    <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att2">Attempt #2: One Origin</option>
+      <option value="att1">Attempt #1: The Clock Plaza</option>
+    </select>
+  </div>
+</div>
+
+<div id="att2">
+<div class="box">
+  <div class="box-title">Attempt #2: One Origin</div>
+  <div class="box-text">Everything grows from one point: the origin O, the first point placed on the ground and the centre of the first circle. Each problem is drawn twice about it, once oversized and once undersized, so the gap is a true gap: between two squares about the same centre, two cubes standing on the same spot, or two lines drawn from the same point, one on top of the other. The perfect answer lies in the space between each pair.</div>
+  <div class="box-text">The constructions were chosen by the fewest steps first and accuracy last. A result is carried to O with the compass: one circle about O with the result's length meets the two diameters, and the midpoints between neighbouring crossings are the corners of a square of that side centred on O. A length is laid from O along a diameter. Midpoints and crossings are not counted as steps.</div>
+  <div class="box-text">The whole floor is <b>26 circles and 10 lines</b>, with the eight results in gold: four gold lines and four gold squares. Attempt #1 took 40 circles and 37 lines. The site is <b>38 m × 31 m</b>, with the clock 6 m across and the given cube 3 m high.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-2.svg" target="_blank"><img src="images/architecture-plan-2.svg" alt="Attempt #2: the clock circle about the origin, the given cube's floor, the two doubled cubes' floors and the two squares of the circle's area nested about it, the two π lines running west and the two straightened quarter arcs north, with the sundial's hour stones"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Grey: every step, laid in the floor. Gold: the results. The small stones on the rim are the sundial's hours.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Drawing The Floor, Then Raising It</div>
+  <div class="box-text">Step through the floor as it is drawn, or play it. The last step stands the building up from the floor in three dimensions: drag to turn it, and scroll or pinch to zoom.</div>
+  <canvas id="qCv" width="1400" height="1100" aria-label="Attempt #2, drawn step by step and then raised in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="qPrev">◀ Back</button>
+    <button class="small" id="qPlay">▶ Play</button>
+    <button class="small" id="qNext">Next ▶</button>
+    <button class="small" id="q3d">3D</button>
+    <select id="qChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="qSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="qText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-2.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-2.ggb</a>. Each result in it gives exactly the accuracy listed below.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">The Pairs, Built 3 m To The Radius</div>
+  <ul>
+    <li><b>The cubes.</b> The given cube stands on the origin, 3 m on each edge, its floor the square through the midpoints of the clock's four quarter chords: no extra step at all. Round it stand two open frames: Stifel's undersized double (1544, 97.656%), exactly 3.75 m, and Claude's oversized double (99.919%), 3.7808 m. The true doubled cube, 3.7798 m, lies between them, 1 mm inside the outer frame and 3 cm outside the inner one.</li>
+    <li><b>The squares of the circle.</b> Two gold squares about the origin: Lakenmacher's oversized (1890, 99.99981%), 5.3174 m on a side and only 5 thousandths of a millimetre too long, and de Serres's undersized (1600, 95.49%), 5.196 m, the side of the triangle inscribed in the circle. The true square runs between them, almost on Lakenmacher's line.</li>
+    <li><b>π.</b> Two gold lines from the origin, laid west along the diameter one on top of the other, each half a circumference long: Claude's oversized (99.992%) and Claude's undersized (99.99995%). They run together for 9.42 m and end 0.71 mm apart, the true π radii between their ends.</li>
+    <li><b>The quarter arc.</b> The arc of the clock from three to twelve o'clock is the arc to be straightened, with a colonnade standing on it. Two gold lines from the origin run north along the other diameter: Burmester's oversized (1919) and Rankine's undersized (1867), 99.59% and 99.41% on this arc. They end 4.7 cm apart, the arc's true length, 4.712 m, between them: walk the arc under the columns, then the straight back to the origin.</li>
+    <li><b>The trisection.</b> The right angle under the quarter arc, between three and twelve o'clock, is divided into exact thirds by two lines from the origin through the clock's points: the trisection where it is possible.</li>
+  </ul>
+</div>
+
+<div class="box">
+  <div class="box-title">The Sundial</div>
+  <div class="box-text">The clock is also a sundial. A gold gnomon rises from the origin, pointing north at the angle of the latitude (50.9° for Southampton), at the celestial pole, through the glass of the given cube. Its shadow turns about the origin through the day and crosses hour stones on the rim. The stones are not at the clock's twelve points: on level ground the hours bunch towards noon, so each stone is set on its own hour line, worked out for the latitude rather than constructed.</div>
+  <div class="box-text">Two of the hour lines fall on the gold. At noon the shadow runs north along the straightened arcs; at six in the morning, west along π.</div>
+</div>
+</div>
+
+<div id="att1" hidden>
 <div class="box" id="plan">
-  <div class="box-title">All Of Them At Once: A Design Study</div>
+  <div class="box-title">Attempt #1: The Clock Plaza</div>
   <div class="box-text">A single building for every chart: the best approximations on the charts, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every construction is drawn from the same few first lines, and each line or circle that two of them share is drawn once. The whole floor is <b>40 circles and 43 lines</b>, each a brass line in the stone, with the eight results in gold: six gold lines and the two gold squares. It fits a site of <b>44 m × 48 m</b>, with the central circle 11 m across.</div>
   <div class="plan-fig"><a href="images/architecture-plan.svg" target="_blank"><img src="images/architecture-plan.svg" alt="The site plan: the clock court, the square court, the π meridian walk with its Sun Gate, the tangent of arcs with its colonnade, the cube pavilion, and the gallery around them"></a></div>
   <div class="small-text" style="text-align:center;">North is up. Grey: every step of the eight constructions, laid in the floor. Gold: their results. The hatched band is the raised gallery, with a balcony facing each problem.</div>
@@ -121,6 +178,8 @@
   <div class="box-text">How the constructions were chosen: each candidate on the charts was laid onto the clock, turned or mirrored to share as many lines as possible, and measured for the lines it adds, how far it reaches and its smallest step. The set here keeps every result above 99.9998% while the whole floor stays inside 50 m. The measurements are in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#all-of-them-at-once-a-design-study" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.</div>
 </div>
 
+</div>
+
 <div class="box">
   <div class="box-title">How Close The Lines Are Today</div>
   <div class="table-wrap"><table id="gaps"></table></div>
@@ -173,6 +232,8 @@
 <script src="data.js"></script>
 <script src="architecture-finds.js"></script>
 <script src="architecture-plan-steps.js"></script>
+<script src="architecture-plan-2-steps.js"></script>
+<script src="architecture-3d.js"></script>
 <script>
 // The gap between the best oversized and undersized entries, at a building's scale.
 const SCALES = {
@@ -246,19 +307,21 @@ document.getElementById('gaps').innerHTML = rows;
   N.innerHTML = `Long and short give each length's accuracy, as on the charts: one oversized, one undersized, with the true end between them. "Shows" is how many times wider the gap is than its wander with rope work true to one part in 5,000. Last run ${last.date}, with ${last.entries} chart entries; ${F.runs.length} run${F.runs.length === 1 ? '' : 's'} so far. The full checklist is in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#the-checklist" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.`;
 })();
 
-// The combined plan, step by step (pages/architecture-plan-steps.js, written from Architecture/Plan/combined-plan.ggb).
-(function () {
-  const P = window.PLAN_STEPS; if (!P) return;
-  const cv = document.getElementById('planCv'), g = cv.getContext('2d'), sl = document.getElementById('pSlider');
+// The design attempts, step by step (pages/architecture-plan-steps.js and architecture-plan-2-steps.js, written from Architecture/Plan).
+function planPlayer(P, id) {
+  if (!P) return;
+  const $ = k => document.getElementById(id[k]);
+  const cv = $('cv'), g = cv.getContext('2d'), sl = $('slider');
   const steps = P.steps, cs = Math.cos(P.turn), sn = Math.sin(P.turn);
   const [x0, y0, x1, y1] = P.view, pad = 1.2;
   const sc = Math.min((cv.width - 40) / (x1 - x0 + 2 * pad), (cv.height - 40) / (y1 - y0 + 2 * pad));
   const turn = p => [p[0] * cs - p[1] * sn, p[0] * sn + p[1] * cs];
   const px = p => { const q = turn(p); return [20 + (q[0] - x0 + pad) * sc, cv.height - 20 - (q[1] - y0 + pad) * sc]; };
+  const v3 = P.solids && typeof makeView3D === 'function' ? makeView3D(cv, P) : null;
   let i = 0, timer = null;
   sl.max = steps.length - 1;
-  const chap = document.getElementById('pChap');
-  steps.forEach((st, k) => { if (st.ch) { const o = document.createElement('option'); o.value = k; o.textContent = st.t.split(':')[0].split('.')[0]; chap.appendChild(o); } });
+  const chap = $('chap');
+  steps.forEach((st, k) => { if (st.ch) { const o = document.createElement('option'); o.value = k; o.textContent = st.td ? 'In three dimensions' : st.t.split(':')[0].split('.')[0]; chap.appendChild(o); } });
   function shape(x, col, w) {
     g.strokeStyle = col; g.fillStyle = col; g.lineWidth = w;
     if (x.k === 'p') { const q = px(x.p); g.beginPath(); g.arc(q[0], q[1], Math.max(2, w + 1), 0, 2 * Math.PI); g.fill(); }
@@ -269,25 +332,38 @@ document.getElementById('gaps').innerHTML = rows;
     else if (x.k === 'a') { const q = px(x.c), a0 = Math.atan2(x.a[1] - x.c[1], x.a[0] - x.c[0]) + P.turn, a1 = Math.atan2(x.b[1] - x.c[1], x.b[0] - x.c[0]) + P.turn; g.beginPath(); g.arc(q[0], q[1], x.r * sc, -a0, -a1, true); g.stroke(); }
   }
   function draw() {
+    sl.value = i; $('text').textContent = (i + 1) + ' / ' + steps.length + ' · ' + steps[i].t;
+    let c = -1; for (let k = 0; k <= i; k++) if (steps[k].ch) c = k; if (c >= 0) chap.value = c;
+    if (steps[i].td && v3) { v3.show(); return; }
+    if (v3) v3.hide();
     g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
     for (let k = 0; k <= i; k++) for (const x of steps[k].s) {
       const now = k === i, gold = x.res;
       shape(x, gold ? '#d4a838' : now ? '#5fb3ff' : '#4a4a58', gold ? 4 : now ? 2.5 : 1.2);
     }
-    sl.value = i; document.getElementById('pText').textContent = (i + 1) + ' / ' + steps.length + ' · ' + steps[i].t;
-    let c = -1; for (let k = 0; k <= i; k++) if (steps[k].ch) c = k; if (c >= 0) chap.value = c;
   }
   const go = k => { i = Math.max(0, Math.min(steps.length - 1, k)); draw(); };
-  document.getElementById('pPrev').onclick = () => go(i - 1);
-  document.getElementById('pNext').onclick = () => go(i + 1);
+  $('prev').onclick = () => go(i - 1);
+  $('next').onclick = () => go(i + 1);
+  if (id.d3) $('d3').onclick = () => go(steps.length - 1);
   sl.oninput = () => go(+sl.value);
   chap.onchange = () => go(+chap.value);
-  document.getElementById('pPlay').onclick = e => {
+  $('play').onclick = e => {
     if (timer) { clearInterval(timer); timer = null; e.target.textContent = '▶ Play'; return; }
     if (i >= steps.length - 1) i = 0;
     e.target.textContent = '❚❚ Pause'; timer = setInterval(() => { if (i >= steps.length - 1) { clearInterval(timer); timer = null; e.target.textContent = '▶ Play'; return; } go(i + 1); }, 450);
   };
-  go(steps.length - 1);
+  go(P.solids ? steps.length - 2 : steps.length - 1);
+}
+planPlayer(window.PLAN_STEPS, {cv: 'planCv', slider: 'pSlider', chap: 'pChap', text: 'pText', prev: 'pPrev', next: 'pNext', play: 'pPlay'});
+planPlayer(window.PLAN2_STEPS, {cv: 'qCv', slider: 'qSlider', chap: 'qChap', text: 'qText', prev: 'qPrev', next: 'qNext', play: 'qPlay', d3: 'q3d'});
+
+// The attempt shown: the dropdown, or #attempt-1 / #attempt-2 in the address.
+(function () {
+  const sel = document.getElementById('attSel');
+  const show = v => { for (const o of sel.options) document.getElementById(o.value).hidden = o.value !== v; sel.value = v; };
+  sel.onchange = () => { show(sel.value); history.replaceState(null, '', '#attempt-' + sel.value.slice(3)); };
+  const m = location.hash.match(/^#attempt-(\d+)$/); if (m && document.getElementById('att' + m[1])) show('att' + m[1]);
 })();
 </script>
 </body>

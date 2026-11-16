@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="887" height="761" viewBox="0 0 887 761" font-family="Georgia, serif">
+<rect width="100%" height="100%" fill="#0d0d14"/>
+<rect x="30.0" y="30.0" width="827.8" height="671.9" fill="#14141c" stroke="#5a5a66"/>
+<clipPath id="site"><rect x="30.0" y="30.0" width="827.8" height="671.9"/></clipPath>
+<g clip-path="url(#site)" fill="none" stroke="#3c3c4a" stroke-width="1.2">
+<circle cx="250.6" cy="307.2" r="66.0"/>
+<line x1="6850.6" y1="307.2" x2="-6349.4" y2="307.2"/>
+<line x1="250.6" y1="-6292.8" x2="250.6" y2="6907.2"/>
+<circle cx="316.6" cy="307.2" r="66.0"/>
+<circle cx="250.6" cy="241.2" r="66.0"/>
+<circle cx="184.6" cy="307.2" r="66.0"/>
+<circle cx="250.6" cy="373.2" r="66.0"/>
+<line x1="5966.3" y1="-2992.8" x2="-5465.2" y2="3607.2"/>
+<line x1="3550.6" y1="-5408.6" x2="-3049.4" y2="6023.0"/>
+<line x1="316.6" y1="-6292.8" x2="316.6" y2="6907.2"/>
+<line x1="-4981.9" y1="4330.6" x2="5578.1" y2="-3589.4"/>
+<line x1="-5626.3" y1="3311.6" x2="6180.2" y2="-2591.6"/>
+<line x1="298.1" y1="-6292.8" x2="298.1" y2="6907.2"/>
+<circle cx="307.3" cy="307.2" r="41.7"/>
+<circle cx="250.6" cy="307.2" r="117.0"/>
+<circle cx="250.6" cy="307.2" r="114.3"/>
+<circle cx="283.6" cy="250.0" r="198.0"/>
+<circle cx="473.1" cy="307.2" r="222.6"/>
+<circle cx="250.6" cy="307.2" r="207.4"/>
+<line x1="-6349.4" y1="307.2" x2="6850.6" y2="307.2"/>
+<circle cx="382.6" cy="307.2" r="198.0"/>
+<circle cx="580.6" cy="307.2" r="264.0"/>
+<circle cx="404.6" cy="504.0" r="184.8"/>
+<circle cx="250.6" cy="307.2" r="207.3"/>
+<line x1="-6349.4" y1="307.2" x2="6850.6" y2="307.2"/>
+<circle cx="217.6" cy="307.2" r="99.0"/>
+<line x1="3175.8" y1="-5609.2" x2="-2727.4" y2="6197.2"/>
+<circle cx="250.6" cy="307.2" r="104.1"/>
+<line x1="250.6" y1="-6292.8" x2="250.6" y2="6907.2"/>
+<line x1="4950.5" y1="4941.1" x2="-4383.3" y2="-4392.7"/>
+<circle cx="316.6" cy="307.2" r="46.7"/>
+<circle cx="349.6" cy="340.2" r="140.0"/>
+<circle cx="250.6" cy="307.2" r="103.1"/>
+<line x1="250.6" y1="-6292.8" x2="250.6" y2="6907.2"/>
+<circle cx="382.6" cy="307.2" r="66.0"/>
+<circle cx="316.6" cy="307.2" r="114.3"/>
+<circle cx="415.6" cy="364.4" r="180.3"/>
+<circle cx="250.6" cy="307.2" r="83.2"/>
+<circle cx="275.3" cy="307.2" r="107.2"/>
+<circle cx="250.6" cy="307.2" r="82.5"/>
+</g>
+<circle cx="250.6" cy="307.2" r="66.0" fill="#1b1b26" stroke="#c9c5bd" stroke-width="2.5"/>
+<polygon points="250.6,307.2 316.6,307.2 316.5,303.7 316.2,300.3 315.7,296.9 315.1,293.5 314.3,290.1 313.3,286.8 312.2,283.5 310.9,280.4 309.4,277.2 307.7,274.2 305.9,271.3 304.0,268.4 301.9,265.7 299.6,263.0 297.2,260.5 294.7,258.2 292.1,255.9 289.4,253.8 286.5,251.8 283.6,250.0 280.5,248.4 277.4,246.9 274.2,245.6 271.0,244.4 267.6,243.4 264.3,242.6 260.9,242.0 257.5,241.6 254.0,241.3 250.6,241.2" fill="#2a2433" stroke="none"/>
+<line x1="250.6" y1="307.2" x2="307.7" y2="274.2" stroke="#c9c5bd" stroke-width="2"/>
+<line x1="250.6" y1="307.2" x2="283.6" y2="250.0" stroke="#c9c5bd" stroke-width="2"/>
+<polyline points="316.6,307.2 316.5,303.7 316.2,300.3 315.7,296.9 315.1,293.5 314.3,290.1 313.3,286.8 312.2,283.5 310.9,280.4 309.4,277.2 307.7,274.2 305.9,271.3 304.0,268.4 301.9,265.7 299.6,263.0 297.2,260.5 294.7,258.2 292.1,255.9 289.4,253.8 286.5,251.8 283.6,250.0 280.5,248.4 277.4,246.9 274.2,245.6 271.0,244.4 267.6,243.4 264.3,242.6 260.9,242.0 257.5,241.6 254.0,241.3 250.6,241.2" fill="none" stroke="#c9c5bd" stroke-width="4"/>
+<circle cx="316.6" cy="307.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="307.7" cy="274.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="283.6" cy="250.0" r="2.6" fill="#c9c5bd"/>
+<circle cx="250.6" cy="241.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="217.6" cy="250.0" r="2.6" fill="#c9c5bd"/>
+<circle cx="193.4" cy="274.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="184.6" cy="307.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="193.4" cy="340.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="217.6" cy="364.4" r="2.6" fill="#c9c5bd"/>
+<circle cx="250.6" cy="373.2" r="2.6" fill="#c9c5bd"/>
+<circle cx="283.6" cy="364.4" r="2.6" fill="#c9c5bd"/>
+<circle cx="307.7" cy="340.2" r="2.6" fill="#c9c5bd"/>
+<polygon points="283.6,274.2 217.6,274.2 217.6,340.2 283.6,340.2" fill="#c9c5bd" fill-opacity="0.18" stroke="#e8e4dc" stroke-width="2.5"/>
+<polygon points="292.1,265.6 209.0,265.6 209.0,348.8 292.1,348.8" fill="none" stroke="#d4a838" stroke-width="2.5"/>
+<polygon points="291.8,265.9 209.3,265.9 209.3,348.4 291.8,348.4" fill="none" stroke="#d4a838" stroke-width="2.5"/>
+<polygon points="309.1,248.7 192.1,248.7 192.1,365.7 309.1,365.7" fill="none" stroke="#d4a838" stroke-width="3"/>
+<polygon points="307.7,250.0 193.4,250.0 193.4,364.4 307.7,364.4" fill="none" stroke="#d4a838" stroke-width="3"/>
+<line x1="250.6" y1="307.2" x2="43.2" y2="307.2" stroke="#d4a838" stroke-width="5"/>
+<line x1="250.6" y1="307.2" x2="250.6" y2="203.1" stroke="#d4a838" stroke-width="5"/>
+<line x1="250.6" y1="307.2" x2="250.6" y2="204.1" stroke="#d4a838" stroke-width="5"/>
+<circle cx="43.2" cy="307.2" r="2.0" fill="#d4a838"/>
+<circle cx="43.2" cy="307.2" r="2.0" fill="#d4a838"/>
+<circle cx="250.6" cy="203.1" r="2.0" fill="#d4a838"/>
+<circle cx="250.6" cy="204.1" r="2.0" fill="#d4a838"/>
+<polygon points="176.2,307.2 172.7,303.7 169.2,307.2 172.7,310.7" fill="#8a8678"/>
+<text x="162.1" y="310.5" font-size="12" fill="#a8a498" text-anchor="middle">6</text>
+<polygon points="180.5,281.8 176.9,278.3 173.4,281.8 176.9,285.3" fill="#8a8678"/>
+<text x="167.0" y="281.6" font-size="12" fill="#a8a498" text-anchor="middle">7</text>
+<polygon points="191.6,260.7 188.1,257.2 184.6,260.7 188.1,264.2" fill="#8a8678"/>
+<text x="179.6" y="257.7" font-size="12" fill="#a8a498" text-anchor="middle">8</text>
+<polygon points="206.3,245.7 202.8,242.2 199.3,245.7 202.8,249.2" fill="#8a8678"/>
+<text x="196.3" y="240.6" font-size="12" fill="#a8a498" text-anchor="middle">9</text>
+<polygon points="222.2,236.1 218.7,232.6 215.2,236.1 218.7,239.6" fill="#8a8678"/>
+<text x="214.4" y="229.8" font-size="12" fill="#a8a498" text-anchor="middle">10</text>
+<polygon points="238.2,231.0 234.7,227.4 231.2,231.0 234.7,234.5" fill="#8a8678"/>
+<text x="232.6" y="223.9" font-size="12" fill="#a8a498" text-anchor="middle">11</text>
+<polygon points="254.1,229.3 250.6,225.8 247.0,229.3 250.6,232.8" fill="#8a8678"/>
+<text x="250.6" y="222.1" font-size="12" fill="#a8a498" text-anchor="middle">12</text>
+<polygon points="269.9,231.0 266.4,227.4 262.9,231.0 266.4,234.5" fill="#8a8678"/>
+<text x="268.6" y="223.9" font-size="12" fill="#a8a498" text-anchor="middle">1</text>
+<polygon points="285.9,236.1 282.4,232.6 278.9,236.1 282.4,239.6" fill="#8a8678"/>
+<text x="286.7" y="229.8" font-size="12" fill="#a8a498" text-anchor="middle">2</text>
+<polygon points="301.8,245.7 298.3,242.2 294.8,245.7 298.3,249.2" fill="#8a8678"/>
+<text x="304.8" y="240.6" font-size="12" fill="#a8a498" text-anchor="middle">3</text>
+<polygon points="316.6,260.7 313.0,257.2 309.5,260.7 313.0,264.2" fill="#8a8678"/>
+<text x="321.5" y="257.7" font-size="12" fill="#a8a498" text-anchor="middle">4</text>
+<polygon points="327.7,281.8 324.2,278.3 320.7,281.8 324.2,285.3" fill="#8a8678"/>
+<text x="334.2" y="281.6" font-size="12" fill="#a8a498" text-anchor="middle">5</text>
+<polygon points="332.0,307.2 328.4,303.7 324.9,307.2 328.4,310.7" fill="#8a8678"/>
+<text x="339.0" y="310.5" font-size="12" fill="#a8a498" text-anchor="middle">6</text>
+<text x="250.6" y="388.6" font-size="14" fill="#d8d4cc" text-anchor="middle">the clock: 6 m across · the given cube 3 m · its doubles · the squared circles</text>
+<text x="43.2" y="323.7" font-size="14" fill="#d4a838" text-anchor="start">π, over and under: 9.42 m</text>
+<text x="257.2" y="197.6" font-size="14" fill="#d4a838" text-anchor="start">the quarter arc, straightened: 4.71 m</text>
+<line x1="831.4" y1="78.4" x2="831.4" y2="47.6" stroke="#c9c5bd" stroke-width="2"/>
+<text x="831.4" y="42.1" font-size="15" fill="#d8d4cc" text-anchor="middle">N</text>
+<line x1="52.0" y1="684.3" x2="162.0" y2="684.3" stroke="#c9c5bd" stroke-width="3"/>
+<text x="107.0" y="677.7" font-size="13" fill="#d8d4cc" text-anchor="middle">5 m</text>
+<text x="443.9" y="739.9" font-size="15" fill="#a8a498" text-anchor="middle">Attempt #2: 37.6 m × 30.5 m. Grey: every step. Gold: the results, each pair drawn from the origin O.</text>
+</svg>

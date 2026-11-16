@@ -89,8 +89,9 @@ meeting of two paving slabs with gold poured into the crack.
 A single architect could combine them: a circular plaza, a square court of the same area set over it,
 a cube pavilion inside its doubled frame, and the circle's length laid out straight. In November 2026
 this was worked out as one floor, built from the best approximations on the charts, with every step of
-every construction a visible line on the ground. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#plan)
-has the plan, a section through the meridian, and the construction step by step.
+every construction a visible line on the ground. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-1)
+has the plan, a section through the meridian, and the construction step by step. This was Attempt #1;
+the page keeps every attempt in a dropdown, and [Attempt #2](#all-of-them-at-once-attempt-2-one-origin) follows below.
 
 ### The brief
 
@@ -182,6 +183,80 @@ solstice: each year the sun crosses the whole of π. At other latitudes the aper
 - **Plaza, 44 m × 48 m**: stone and inlay, set out by survey to about a millimetre.
 - **Rope and stakes**: every step can be laid, but true to about one part in 5,000; the seams are then
   symbolic (Vision II).
+
+## All of them at once, Attempt #2: one origin
+
+The second attempt, from Edward's notes on the first: start everything from one point, and draw every
+problem twice about it, oversized and undersized, so that each gap is a true gap between two shapes or two
+lines from the same origin. Fewest steps comes first, accuracy last. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-2)
+has the plan, the floor step by step, and a last step that raises the building in three dimensions.
+The file is [Architecture/Plan/attempt-2.ggb](Architecture/Plan/attempt-2.ggb).
+
+### The rules
+
+- **One origin.** O is the first point placed on the ground and the centre of the first circle; C is one
+  radius east of it. The clock (the circle, two diameters, four circles of the radius) is built first.
+- **Pairs on the same origin.** Squares (the circle's squares and the floors of the doubled cubes) are centred
+  on O; lengths (π and the straightened arc) are laid from O along a diameter, the two of a pair on top of
+  each other.
+- **Transfers are allowed.** A result's length is carried to O with the compass: one circle about O with
+  that radius meets the diameters at four points, and the midpoints between neighbours are the corners of a
+  square of that side centred on O. Laying a length costs one circle. Midpoints and crossings are not counted.
+- **Order of choice.** Fewest steps, counting the transfer, then accuracy.
+
+### The choice
+
+Each charted construction was laid onto the clock in each of its 24 turns and mirror images, and the
+lines and circles it adds were counted with the transfer included. The arc constructions were measured on
+the clock's quarter arc, from three to twelve o'clock, so both straighten the same arc.
+
+| Problem | Side | Construction | Accuracy here |
+|---|---|---|---|
+| Squaring the circle | over | Lakenmacher (1890) | 99.99981% |
+| Squaring the circle | under | de Serres (1600) | 95.49% |
+| Rectifying the circle | over | Claude, rtc-over-99.992 | 99.992% |
+| Rectifying the circle | under | Claude, rtc-under-99.99994 | 99.99995% |
+| Arc rectification | over | Burmester (1919) | 99.59% on the quarter arc |
+| Arc rectification | under | Rankine (1867) | 99.41% on the quarter arc |
+| Doubling the cube | over | Claude, dtc-over-99.919 | 99.919% |
+| Doubling the cube | under | Stifel (1544) | 97.656% |
+
+The whole floor is 26 circles and 10 lines, with four gold lines and four gold squares as the results
+(Attempt #1: 40 circles and 37 lines, with six gold lines and two gold squares). De Serres's side was
+already in the floor, drawn by the clock and the circles before it, so his square costs only its transfer.
+The given cube's floor costs nothing: its corners are the midpoints of the clock's four quarter chords.
+All eight accuracies were checked in GeoGebra on the merged file.
+
+### At 3 m to the radius
+
+The site is 38 m × 31 m, nearly all of it taken by the large construction circles; the building itself
+stands within about 10 m of the origin.
+
+| Pair | Oversized | True | Undersized | Gap |
+|---|---|---|---|---|
+| Doubled cube's edge | 3.7808 m | 3.7798 m | 3.7500 m | 3.1 cm |
+| Square's side | 5.3174 m (+5 µm) | 5.3174 m | 5.1962 m | 12.1 cm |
+| π radii (half circumference) | +0.711 mm | 9.4248 m | −4.7 µm | 0.716 mm |
+| Quarter arc | +19.2 mm | 4.7124 m | −27.7 mm | 4.7 cm |
+
+### The building
+
+- **The cubes.** The given cube, 3 m, in glass on its floor at the origin; around it two open frames, Stifel's
+  undersized double and the oversized one, with the true doubled cube between them.
+- **The squares.** Two gold squares in the floor about the origin, de Serres's inside Lakenmacher's.
+- **π and the arc.** Two gold lines from O west along the diameter for π, two north for the quarter arc,
+  with a colonnade on the arc itself.
+- **The sundial.** A gnomon rises from O to the north at the angle of the latitude, pointing at the celestial
+  pole. On level ground the hour lines bunch towards noon, so the hour stones on the rim are set on their own
+  lines, worked out for the latitude (50.9° N here) rather than constructed; they are not the clock's twelve
+  points. The noon line falls on the gold arc lines, and the six o'clock morning line on the π lines.
+
+### In three dimensions
+
+The page's player ends with a 3D step: the floor as drawn, every step projected on the ground, and the
+building rising from it. It is drawn by a small script of its own (pages/architecture-3d.js), so the page
+needs no outside library. The plan and the 3D model come from the same GeoGebra file, through
+pages/architecture-plan-2-steps.js.
 
 ## How close the lines are today
 

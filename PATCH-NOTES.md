@@ -12,6 +12,22 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Design attempts, and Attempt #2
+
+### Site
+- The Architectural Vision page keeps its designs for one building as attempts, chosen from a dropdown:
+  Attempt #1, the clock plaza, as before, and Attempt #2, one origin. A link can open either with
+  `#attempt-1` or `#attempt-2`.
+- Attempt #2 draws every problem twice about one origin, oversized and undersized: the squares and the
+  doubled cubes' floors centred on it, π and the quarter arc laid from it in pairs, one line on top of the
+  other. Chosen for the fewest steps: 26 circles and 10 lines, [Architecture/Plan/attempt-2.ggb](Architecture/Plan/attempt-2.ggb).
+- Its step player ends with a 3D view, drawn without any library: the floor projected on the ground, and the
+  cubes, colonnade, sundial gnomon and hour stones rising from it. Drag to turn it, scroll or pinch to zoom.
+- The clock is a sundial in Attempt #2, its hour stones set for the latitude.
+- ARCHITECTURAL.md has the rules, the choice of constructions and the sizes for Attempt #2.
+
+---
+
 ## November 2026: All of them at once, a design study
 
 ### Site
