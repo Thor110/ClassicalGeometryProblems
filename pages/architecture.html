@@ -179,6 +179,7 @@
     <li><b>The edge:</b> the digital shell as 72 steel bollards a metre high, every 5°, 1.96 m apart, each with a light in its top: they keep vehicles out, and they are surveyed, not constructed.</li>
     <li><b>The sundial:</b> the gold gnomon's shadow falls on the hour stones; set the hour and the date below and watch it, and the shadows of every pillar, turn round the floor.</li>
   </ul>
+  <div class="box-text">A drawing sheet of this attempt, for planning by hand: the plan at 1:200 on A3, with only what would be built and a faint metre grid to draw over. <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/raw/main/Architecture/Sheets/attempt-9-sheet-1to200-A3.pdf" target="_blank" rel="noopener">PDF</a> · <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Sheets/attempt-9-sheet-1to200-A3.svg" target="_blank" rel="noopener">SVG</a>. Print it at actual size, not fitted to the page, to keep the scale.</div>
 </div>
 
 <div class="box">
@@ -779,6 +780,11 @@ function planPlayer(P, id) {
   $('prev').onclick = () => go(i - 1);
   $('next').onclick = () => go(i + 1);
   if (id.d3) $('d3').onclick = () => { if (v3) v3.walk(false); if (id.walk) $('walk').textContent = 'Walk through'; go(steps.length - 1); };
+  if (v3) {              // the floor's construction pattern in the 3D view: shown by default, and can be hidden
+    const b = document.createElement('button'); b.className = 'small'; b.textContent = 'Hide the construction'; let con = true;
+    b.onclick = () => { con = !con; v3.construction(con); b.textContent = con ? 'Hide the construction' : 'Show the construction'; go(steps.length - 1); };
+    $('d3').insertAdjacentElement('afterend', b);
+  }
   if (id.walk && v3) {   // first person, at eye level: starts 2 m south of the site, facing north
     let w = false;
     $('walk').onclick = e => { w = !w; go(steps.length - 1); v3.walk(w); e.target.textContent = w ? 'Stop walking' : 'Walk through'; };

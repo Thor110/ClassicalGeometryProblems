@@ -12,6 +12,16 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: The construction toggle and a drawing sheet
+
+### Site
+- Every attempt's 3D view has a Hide the construction button: the floor's construction pattern is shown by default,
+  as it would be inlaid in a built version, and can be hidden to see only what stands on it.
+- A drawing sheet of Attempt #9, the plan at 1:200 on A3 with only what would be built on a faint metre grid, is in
+  [Architecture/Sheets](Architecture/Sheets) as PDF and SVG, linked from Attempt #9.
+
+---
+
 ## November 2026: Attempt #9 first, Attempt #11 set aside
 
 ### Site

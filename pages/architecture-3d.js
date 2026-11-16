@@ -19,7 +19,7 @@ function makeView3D(cv, P) {
   let hang = P.hang !== false, gridU = 0;      // the cubes hang about one centre unless told to stand
   // the materials view (Attempt #9 on): stone, metal inlay and glass, lit by the sun at an hour and date, or at night
   const LOOK = P.look === 'materials', LAT = (P.lat || 50.9) * Math.PI / 180;
-  let night = false, SUN = [0, 0, 1], vaultOpen = false, cutaway = false;
+  let night = false, SUN = [0, 0, 1], vaultOpen = false, cutaway = false, showCon = true;   // the floor's construction pattern, shown unless hidden
   function setSun(hour, decl) {
     const H = (hour - 12) * 15 * Math.PI / 180, d = decl * Math.PI / 180;
     SUN = [-Math.cos(d) * Math.sin(H), Math.cos(LAT) * Math.sin(d) - Math.sin(LAT) * Math.cos(d) * Math.cos(H), Math.sin(LAT) * Math.sin(d) + Math.cos(LAT) * Math.cos(d) * Math.cos(H)];
@@ -166,7 +166,7 @@ function makeView3D(cv, P) {
       for (let k = 0; x0 + k * gridU <= x1 + 1e-9; k++) { const X = x0 + k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([X, y1 - (y1 - y0) * j / 24, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
       for (let k = 0; y1 - k * gridU >= y0 - 1e-9; k++) { const Y = y1 - k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([x0 + (x1 - x0) * j / 24, Y, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
     }
-    for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, LOOK ? (night ? 0.35 : 0.95) : 0.7) : 'rgba(110,110,130,0.55)', x.m ? (LOOK ? 1.8 : 1.4) : 1);
+    if (showCon) for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, LOOK ? (night ? 0.35 : 0.95) : 0.7) : 'rgba(110,110,130,0.55)', x.m ? (LOOK ? 1.8 : 1.4) : 1);
     if (LOOK && night) { g.shadowColor = '#ffcc55'; g.shadowBlur = 14; }
     for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, LOOK ? (night ? '#ffd25a' : '#b8860b') : '#d4a838', LOOK ? 3.5 : 2.5);
     g.shadowBlur = 0;
@@ -278,6 +278,7 @@ function makeView3D(cv, P) {
   cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; wx += Math.cos(wyaw) * s_; wy += Math.sin(wyaw) * s_; if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
     sun(hour, decl) { setSun(hour, decl); if (on && !raf) draw(); },
+    construction(b) { showCon = b; if (on && !raf) draw(); },
     cut(b) { cutaway = b; if (on && !raf) draw(); },
     vault(b) { vaultOpen = b; if (on && !raf) draw(); },
     night(b) { night = b; if (on && !raf) draw(); },

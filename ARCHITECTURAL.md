@@ -492,6 +492,12 @@ sun at any hour (solar time) and on the solstices or equinoxes at 50.9° N, or s
 - **Sundial**: the gold gnomon's shadow falls on the hour stones; the shadows of every pillar turn round the floor
   with it, long and low at a December morning.
 
+### Drawing sheet
+
+[Architecture/Sheets](Architecture/Sheets) holds a drawing sheet of Attempt #9 for planning by hand: the plan at 1:200
+on A3 (PDF and SVG), with only what would be built (pillars, studs, hour stones, bollards, the gold lines and
+squares, the cubes, the ring lines) on a faint metre grid. Print it at actual size to keep the scale.
+
 ### Idea: a cathedral
 
 A future attempt where the geometry carves its own space: the slots under the pillars grown into arches that spring
