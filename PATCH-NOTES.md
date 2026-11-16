@@ -12,6 +12,15 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: A colour key for every attempt
+
+### Site
+- Every design attempt's step player now has a colour key under its drawing, made from the metals its steps use:
+  bronze, silver, copper, steel and patina for each problem (and cyan for the digital shell), gold for the results
+  and blue for the step being drawn; Attempts #1 and #2, drawn in grey, have the key for that.
+
+---
+
 ## November 2026: The construction toggle and a drawing sheet
 
 ### Site

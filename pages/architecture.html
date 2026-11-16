@@ -739,6 +739,16 @@ function planPlayer(P, id) {
   const turn = p => [p[0] * cs - p[1] * sn, p[0] * sn + p[1] * cs];
   const px = p => { const q = turn(p); return [20 + (q[0] - x0 + pad) * sc, cv.height - 20 - (q[1] - y0 + pad) * sc]; };
   const v3 = P.solids && typeof makeView3D === 'function' ? makeView3D(cv, P) : null;
+  {                      // a colour key for the drawing, from the metals the steps use
+    const used = new Set(); steps.forEach(st => st.s.forEach(x => { if (x.m) used.add(x.m); }));
+    const NAMES = {bronze: 'the clock and the trisection rings', silver: 'squaring the circle', copper: 'π, rectifying the circle', steel: 'the arc', patina: 'doubling the cube', digital: 'the digital shell: surveyed, not constructed'};
+    const COLS = typeof METALS !== 'undefined' ? METALS : {};
+    const sw = (c, t) => `<span style="display:inline-flex;align-items:center;gap:6px;margin:2px 10px;"><span style="display:inline-block;width:18px;height:4px;border-radius:2px;background:${c};"></span>${t}</span>`;
+    let h = used.size ? ['bronze', 'silver', 'copper', 'steel', 'patina', 'digital'].filter(m => used.has(m)).map(m => sw(COLS[m], NAMES[m])).join('') : sw('#4a4a58', 'every step of the construction');
+    h += sw('#d4a838', 'the results') + sw('#5fb3ff', 'the step being drawn');
+    const k = document.createElement('div'); k.className = 'small-text'; k.style.cssText = 'display:flex;flex-wrap:wrap;justify-content:center;margin-top:6px;'; k.innerHTML = h;
+    cv.insertAdjacentElement('afterend', k);
+  }
   let i = 0, timer = null;
   sl.max = steps.length - 1;
   const chap = $('chap');
