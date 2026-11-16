@@ -358,6 +358,33 @@ of their own (cyan on the page), with no construction lines; the ring itself is 
 plan. Read from outside in, the monument goes from the measured to the constructed, and at its centre to what
 neither can reach exactly. The site grows to about 42 m × 32 m.
 
+## The plaques: every discrepancy stated
+
+Every pair in a built version carries a plaque saying exactly what it is, so that no one mistakes a symbol for
+a measurement: how far apart the two shapes stand, how far the nearer one is from perfect, and whether that can
+be built and seen or is only symbolic. Anything placed by calculation rather than construction says so too.
+For Attempts #2 to #5, at 3 m to the radius:
+
+| Pair | Gap between the two | Nearer one from perfect | Built and seen? |
+|---|---|---|---|
+| Doubled cube's edge (Claude 99.919%, Stifel 97.656%) | 3.1 cm (1.5 cm each face) | 1.0 mm too long | Gap built and seen; the 1 mm at the limit of stonework |
+| Square's side (Lakenmacher 99.99981%, de Serres 95.49%) | 12.1 cm | 5 µm too long (about 17,500 gold atoms) | Gap built and seen; the 5 µm only on a machined model, under a microscope |
+| π, half the circumference (Claude 99.992%, 99.99995%) | 0.72 mm | 4.7 µm too short (about 16,400 gold atoms) | A pencil's width: symbolic on site, as a gold seam |
+| The quarter arc (Burmester, Rankine, on this arc) | 4.7 cm | 19 mm too long | Built and seen |
+
+- **Temperature**: stone grows about 8 millionths of its length per degree, some 75 µm a degree along the
+  π lines, so distances of a few micrometres are the drawing's, not the stone's.
+- **Calculated, not constructed**: the sundial's hour stones and gnomon angle (worked out for the latitude),
+  and Attempt #5's digital outer shell.
+- **Measured on this arc**: the arc constructions are charted at their own angles; the plaques give their
+  accuracy on the building's quarter arc.
+- **Atoms**: Attempt #1's Ramanujan line ends 1.8 nm short, about six gold atoms. Only a scanning tunnelling
+  or transmission electron microscope shows that, on an object made like a computer chip rather than a floor.
+  An engraved chip of the best pairs under such a microscope would be an experiment worth trying.
+- **Crowding**: at full size the centre is crowded: the cubes, gold squares, clock pillars, gnomon and hour
+  stones all lie within about 4 m of the origin. That is the next problem for the design, together with a
+  physical model (Edward is considering one in wood, card and paper).
+
 ## How close the lines are today
 
 Worked out from the charts in November 2026, once with every entry and once with people's entries

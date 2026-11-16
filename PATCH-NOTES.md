@@ -12,6 +12,16 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: The plaques
+
+### Site
+- The Architectural Vision page and ARCHITECTURAL.md describe the plaques a built version would carry: for each
+  pair, the gap, how far the nearer one is from perfect, and whether it can be built and seen or is symbolic;
+  with notes on temperature, what is calculated rather than constructed, and the gaps measured in atoms.
+- ARCHITECTURAL.md notes the crowding at the centre as the next design problem.
+
+---
+
 ## November 2026: Attempt #5, the digital outer shell
 
 ### Site
