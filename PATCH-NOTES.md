@@ -12,6 +12,28 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #9 first, Attempt #11 set aside
+
+### Site
+- The Architectural Vision page opens on Attempt #9, the plaza in its materials.
+- Attempt #11 is set aside: kept at the end of the attempts dropdown as a record, marked as not a direction the design
+  is taking.
+
+---
+
+## November 2026: Attempt #11, the carved form
+
+### Site
+- The Architectural Vision page has Attempt #11, first in the attempts dropdown: the cathedral turned inside out.
+  Every element becomes a void in solid stone (galleries, light shafts, tunnels, a dome chamber, passages, the June
+  light's tunnel) and the building is the stone within 1.5 m of a void, its outside shaped by its inside. With a
+  section and a plan cut from the form, and a 3D view that can be cut in half and walked, the walls stopping you.
+- The scripts that carve it are in [Architecture/Carved](Architecture/Carved).
+- The 3D view can draw a large mesh packed in binary, hide faces turned away, cut it in half, and keep a walker
+  inside its voids.
+
+---
+
 ## November 2026: The cathedral's glazed vault and courtyard
 
 ### Site

@@ -4,6 +4,13 @@ const metal = (m, a) => { const h = METALS[m]; return 'rgba(' + [1, 3, 5].map(i 
 // A small 3D view of a plan's floor and solids, drawn on a 2D canvas (no library): drag to turn, scroll or pinch to zoom.
 // It can also be walked at eye level, 1.6 m above the floor: keys or the on-screen pad to move, drag to look round.
 function makeView3D(cv, P) {
+  if (P.mesh && P.mesh.packed) {     // a mesh packed as base64: 16-bit vertex coordinates and 16-bit face indices
+    const pk = P.mesh.packed, bin = t => Uint8Array.from(atob(t), c => c.charCodeAt(0)).buffer;
+    const V = new Int16Array(bin(pk.v)), Fi = new Uint16Array(bin(pk.f)), v = [], f = [];
+    for (let i = 0; i < V.length; i += 3) v.push([V[i] * pk.s, V[i + 1] * pk.s, V[i + 2] * pk.s]);
+    for (let i = 0; i < Fi.length; i += 3) f.push([Fi[i], Fi[i + 1], Fi[i + 2]]);
+    P.mesh = {v, objects: [Object.assign({f, l: []}, pk.obj)]};
+  }
   const g = cv.getContext('2d'), S = P.solids.slice();
   const ORDER = {faces: 2, ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
@@ -12,7 +19,7 @@ function makeView3D(cv, P) {
   let hang = P.hang !== false, gridU = 0;      // the cubes hang about one centre unless told to stand
   // the materials view (Attempt #9 on): stone, metal inlay and glass, lit by the sun at an hour and date, or at night
   const LOOK = P.look === 'materials', LAT = (P.lat || 50.9) * Math.PI / 180;
-  let night = false, SUN = [0, 0, 1], vaultOpen = false;
+  let night = false, SUN = [0, 0, 1], vaultOpen = false, cutaway = false;
   function setSun(hour, decl) {
     const H = (hour - 12) * 15 * Math.PI / 180, d = decl * Math.PI / 180;
     SUN = [-Math.cos(d) * Math.sin(H), Math.cos(LAT) * Math.sin(d) - Math.sin(LAT) * Math.cos(d) * Math.cos(H), Math.sin(LAT) * Math.sin(d) + Math.cos(LAT) * Math.cos(d) * Math.cos(H)];
@@ -82,7 +89,18 @@ function makeView3D(cv, P) {
   function prims(f) {             // the solids as faces, edges and labels, each with its depth
     const out = [], face = (pts, fill, edge) => out.push({pts, fill, edge}), edge = (a, b, col, w) => out.push({pts: [a, b], edge: col, w, line: 1});
     if (M) M.objects.forEach((o, i) => {     // a mesh from a modelling program, each object rising in turn
-      const k = ease(f(i)); if (k <= 0) return; const [fill, line] = COL[o.col] || COL.stone, V = j => [M.v[j][0], M.v[j][1], M.v[j][2] * k];
+      const k = ease(M.objects.length === 1 ? f(0) : f(i)); if (k <= 0) return; const [fill, line] = COL[o.col] || COL.stone, V = j => [M.v[j][0], M.v[j][1], M.v[j][2] * k];
+      if (o.col === 'carved') {          // the carved form: shaded by the light, cut in half to look inside
+        for (const fc of o.f) {
+          const q = fc.map(V);
+          if (cutaway && q[0][1] < 0 && q[1][1] < 0 && q[2][1] < 0) continue;
+          const nn = crs(sub(q[1], q[0]), sub(q[2], q[0])), l = Math.hypot(...nn) || 1, n_ = [nn[0] / l, nn[1] / l, nn[2] / l];
+          const toEye = sub(E, q[0]), sd = dot(n_, toEye) < 0 ? -1 : 1, nv = [n_[0] * sd, n_[1] * sd, n_[2] * sd];
+          if (sd < 0 && o.cull) continue;       // a closed form: faces turned away from the eye are hidden by the ones in front
+          face(q, LOOK ? lit('#e8e0d0', nv) : 'rgba(200,196,189,0.9)', null);
+        }
+        return;
+      }
       for (const fc of o.f) face(fc.map(V), fill, line);
       for (const l of o.l) edge(V(l[0]), V(l[1]), line, 2);
     });
@@ -218,6 +236,10 @@ function makeView3D(cv, P) {
         let along = vx * tg[0] + vy * tg[1]; if (Math.abs(along) < 0.3 * v) along = 0.6 * v;
         nx = cx + n[0] * rr + tg[0] * along; ny = cy + n[1] * rr + tg[1] * along;
       }
+      if (P.walkgrid) {        // a carved form: only its voids can be walked
+        const G_ = P.walkgrid, ci = Math.floor((nx - G_.x0) / G_.step + 0.5), cj = Math.floor((ny - G_.x0) / G_.step + 0.5);
+        if (ci >= 0 && cj >= 0 && ci < G_.n && cj < G_.n && G_.cells.charCodeAt(cj * G_.n + ci) === 49) { nx = wx; ny = wy; }
+      }
       if (P.wall) {            // a ring wall: crossed only through its openings
         const W_ = P.wall, r0 = Math.hypot(wx, wy), r1 = Math.hypot(nx, ny), band = W_.t / 2 + BODY;
         const ang = (Math.atan2(ny, nx) * 180 / Math.PI + 360) % 360, open = W_.open.some(([a, h]) => Math.abs((ang - a + 540) % 360 - 180) < h);
@@ -256,6 +278,7 @@ function makeView3D(cv, P) {
   cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; wx += Math.cos(wyaw) * s_; wy += Math.sin(wyaw) * s_; if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
     sun(hour, decl) { setSun(hour, decl); if (on && !raf) draw(); },
+    cut(b) { cutaway = b; if (on && !raf) draw(); },
     vault(b) { vaultOpen = b; if (on && !raf) draw(); },
     night(b) { night = b; if (on && !raf) draw(); },
     grid(b, u) { gridU = b ? u : 0; if (on && !raf) draw(); },

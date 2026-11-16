@@ -415,6 +415,7 @@ square's on each edge, π's and the arc's where the two lines end):
 | #8 The Machined Piece | 10 cm | 2.28 µm | 6.47 µm | 4.84 µm | 18.9 µm |
 | #9 In Its Materials | 4.5 m | as #6 | as #6 | as #6 | as #6 |
 | #10 The Cathedral | 6 m | 53.9 mm | 3.49 mm | 8.27 mm | 463 mm |
+| #11 The Carved Form | 6 m | as #10 | as #10 | as #10 | as #10 |
 
 Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
 
@@ -534,6 +535,33 @@ has a section, a plan, and the 3D view with the sun, night, an open vault and th
 - **Floor**: Attempt #9's materials. Gaps at this size: cubes 5.4 cm a face, squares 3.5 mm an edge, π 8.3 mm, the
   arc 46 cm. Pillars on the gold lines stand on glass slots; the digital shell is a ring of lights in the paving
   outside the wall, which itself keeps vehicles out.
+
+## All of them at once, Attempt #11: the carved form
+
+> **Set aside.** Kept as a record, but not a direction the design is taking: generated all at once, the carved
+> form came out too rough and too busy to judge. The idea, a space carved by the geometry, is better approached
+> step by step from the beginning.
+
+The cathedral turned inside out, from Edward's idea: every element of Attempt #10 becomes a void cut from solid,
+and the building is only the stone within 1.5 m of a void, so the outside is shaped by the inside. The floor is
+Attempt #6's at 6 m to the radius. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-11)
+has a section, a plan cut at walking height, and a 3D view that can be cut in half and walked; the scripts that make
+it are in [Architecture/Carved](Architecture/Carved).
+
+- **Galleries**: the four rings are walkable galleries (9, 15, 21, 27 m out; 8 m high stepping down to 4 m), a
+  labyrinth of concentric corridors at walking height, curved walls that would carry sound round them.
+- **Light shafts**: every trisection point is a shaft 1.8 m across rising through the skin, as tall as the
+  cathedral's pillar there: 25 towers of daylight.
+- **Tunnels**: the flying arches become sloping tunnels between shafts.
+- **Dome chamber**: 20 m across and 44 m high over the hanging cubes, with an oculus at its crown.
+- **Passages**: π west to the third ring, the arc and meridian north to the outer gallery, and three portals in at
+  0°, 120° and 240°.
+- **June light**: a tunnel bored from the crown along the noon sun of 21 June (62.5° high) to a gold mark 22.9 m north.
+
+**How it is made.** The voids are written as shapes; the distance from the nearest void is worked out on a grid
+(0.75 m for the model, 0.25 m for the drawings); the stone is where that distance is between 0 and 1.5 m, above the
+ground; and its surface is drawn by marching cubes and simplified to about 38,000 triangles for the page. The
+section and plan are cut from the same field. The scripts need numpy, scikit-image and fast-simplification.
 
 ## At eye level: the first walk-through
 
