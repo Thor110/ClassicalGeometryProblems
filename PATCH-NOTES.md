@@ -12,6 +12,17 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #7, stadium scale
+
+### Site
+- The Architectural Vision page has Attempt #7, first in the attempts dropdown: the same form 200 m across, 20 m
+  to the radius, with the most accurate pairs whose gaps still show as at least a pencil line (0.5 mm): every
+  gap between 1 and 4 mm, for 52 circles and 50 lines. The seasonal movement of the stone, larger than the gaps,
+  is stated as an accepted loss: [Architecture/Plan/attempt-7.ggb](Architecture/Plan/attempt-7.ggb).
+- The gap chart and ARCHITECTURAL.md include Attempt #7.
+
+---
+
 ## November 2026: The gaps, attempt by attempt
 
 ### Site

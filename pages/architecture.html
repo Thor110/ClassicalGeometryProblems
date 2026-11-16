@@ -10,8 +10,8 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
-  #att1,#att2,#att3,#att4,#att5,#att6,#attm{width:100%;max-width:1000px;min-width:0;}
-  #qCv,#rCv,#sCv,#tCv,#uCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
+  #att1,#att2,#att3,#att4,#att5,#att6,#att7,#attm{width:100%;max-width:1000px;min-width:0;}
+  #qCv,#rCv,#sCv,#tCv,#uCv,#vCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -70,6 +70,7 @@
   <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
   <div class="controls" style="justify-content:center;margin-top:10px;">
     <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att7">Attempt #7: Stadium Scale</option>
       <option value="att6">Attempt #6: The Balance Search</option>
       <option value="att5">Attempt #5: The Digital Outer Shell</option>
       <option value="att4">Attempt #4: Gates On The Outer Ring</option>
@@ -81,7 +82,44 @@
   </div>
 </div>
 
-<div id="att6">
+<div id="att7">
+<div class="box">
+  <div class="box-title">Attempt #7: Stadium Scale</div>
+  <div class="box-text">Attempt #6's form, built the size of a football stadium: <b>20 m to the radius</b>, the digital shell 200 m across. At this size the search asks a different question. Not the fewest steps, but the <b>most accurate pairs whose gaps still show</b>: for each problem, every charted oversized construction against every undersized one, keeping only pairs whose gap at this size is at least half a millimetre, a pencil line of gold poured between two paving slabs, and choosing the narrowest of those (and, among pairs within a tenth of it, the one with fewest steps).</div>
+  <div class="table-wrap"><table>
+    <tr><th>Pair</th><th>Oversized</th><th>Undersized</th><th>Gap at 20 m</th></tr>
+    <tr><td>Doubled cube</td><td>Boccali (1884), 99.973%</td><td>Finsler (1938), 99.9985%</td><td>1.21 mm each face</td></tr>
+    <tr><td>Squared circle</td><td>Claude, 99.99985%</td><td>Anglin (1884), 99.986%</td><td>1.29 mm each edge</td></tr>
+    <tr><td>π</td><td>Viète (1593), 99.998%</td><td>Claude, 99.999993%</td><td>0.97 mm at 62.8 m</td></tr>
+    <tr><td>Quarter arc</td><td>Claude, 99.999998%</td><td>Claude, 99.988%</td><td>3.78 mm at 31.4 m</td></tr>
+  </table></div>
+  <div class="box-text">Every gap is now a fine gold seam between one and four millimetres wide. Accuracy has cost steps: <b>52 circles and 50 lines</b>, nearly twice Attempt #6's. The given cube is a 20 m hall; the rings stand at 30, 50, 70 and 90 m, the pillars stepping down from 28 m to 4 m on a cone 40 m high; the gateways on the gold lines are 3 m wide.</div>
+  <div class="box-text"><b>Accepted loss: the seasons.</b> Stone grows about 8 millionths of its length for each degree, so over a year's ±15 °C the 62.8 m π lines move by about ±7.5 mm, more than their 0.97 mm gap. The gaps here are true for the drawing and for the stone at the temperature it was laid; through the year they open and close. The plaques say so.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-7.svg" target="_blank"><img src="images/architecture-plan-7.svg" alt="Attempt #7: the same form at stadium scale, 200 m across, with the more accurate pairs' many construction lines"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Every step in the metal of its problem, the results in gold. The cyan studs are surveyed, not constructed.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Drawing The Floor, Then Raising It</div>
+  <div class="box-text">Step through the floor, raise it in three dimensions, or walk through it at eye level. At this size it is a long walk: the start, 2 m outside the site, is over 100 m from the origin.</div>
+  <canvas id="vCv" width="1400" height="1100" aria-label="Attempt #7, drawn step by step and then raised in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="vPrev">◀ Back</button>
+    <button class="small" id="vPlay">▶ Play</button>
+    <button class="small" id="vNext">Next ▶</button>
+    <button class="small" id="vGrid">Metre grid</button>
+    <button class="small" id="v3d">3D</button>
+    <button class="small" id="vWalk">Walk through</button>
+    <button class="small" id="vHang">Suspend the cubes</button>
+    <select id="vChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="vSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="vText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-7.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-7.ggb</a>. Each result in it gives exactly the accuracy in the table.</div>
+</div>
+</div>
+
+<div id="att6" hidden>
 <div class="box">
   <div class="box-title">Attempt #6: The Balance Search</div>
   <div class="box-text">The same form as Attempt #5, balanced. Every charted construction except the trisections (190 of them) was laid alone on the one-origin floor, with its transfer, and measured for the steps it adds and how far its circles reach. The set chosen keeps the fewest steps but now also keeps every construction inside the outer ring, so the whole floor fits within the digital shell. That lets the building grow to <b>4.5 m to the radius</b>, with every gap one you can see.</div>
@@ -350,12 +388,12 @@
   <div class="box-text">A gauge to steer by: how wide each pair's gap is in each attempt, built at that attempt's size. The cube's gap is measured on each face, the square's on each edge, and π's and the arc's where their two lines end. The scale runs from atoms to metres, each step ten times the last, and the shaded bands say what it takes to see a gap of that width.</div>
   <div id="gapPlot" style="width:100%;overflow-x:auto;"></div>
   <div class="table-wrap" style="margin-top:12px;"><table id="gapTable"></table></div>
-  <div class="small-text" style="margin-top:8px;">Attempts #3 to #5 keep Attempt #2's pairs at the same size, so their gaps are the same. Each attempt's pairs and accuracies are in its own section above.</div>
+  <div class="small-text" style="margin-top:8px;">Attempts #3 to #5 keep Attempt #2's pairs at the same size, so their gaps are the same. From Attempt #7 the aim is the narrowest gap that still shows, at least half a millimetre. Each attempt's pairs and accuracies are in its own section above.</div>
 </div>
 
 <div class="box" id="eyelevel">
   <div class="box-title">At Eye Level</div>
-  <div class="box-text">Attempts #2 to #6 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
+  <div class="box-text">Attempts #2 to #7 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
   <ul>
     <li><b>From the edge</b> the form reads well: the low cyan shell, the gates, and the pillars rising ring by ring to the glass hall.</li>
     <li><b>Inside the clock ring it is crowded.</b> The clock's pillars stand 3 m out and 4.8 m tall, and the doubled cube's corners come within 0.6 m of the nearest of them.</li>
@@ -445,6 +483,7 @@
 <script src="architecture-plan-4-steps.js"></script>
 <script src="architecture-plan-5-steps.js"></script>
 <script src="architecture-plan-6-steps.js"></script>
+<script src="architecture-plan-7-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -608,6 +647,11 @@ if (att5 && att5.v3) {
   let hung = false;
   document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };
 }
+const att7 = planPlayer(window.PLAN7_STEPS, {cv: 'vCv', slider: 'vSlider', chap: 'vChap', text: 'vText', prev: 'vPrev', next: 'vNext', play: 'vPlay', d3: 'v3d', grid: 'vGrid', walk: 'vWalk'});
+if (att7 && att7.v3) {
+  let hung = false;
+  document.getElementById('vHang').onclick = e => { hung = !hung; att7.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att7.to3d(); };
+}
 const att6 = planPlayer(window.PLAN6_STEPS, {cv: 'uCv', slider: 'uSlider', chap: 'uChap', text: 'uText', prev: 'uPrev', next: 'uNext', play: 'uPlay', d3: 'u3d', grid: 'uGrid', walk: 'uWalk'});
 if (att6 && att6.v3) {
   let hung = false;
@@ -615,7 +659,7 @@ if (att6 && att6.v3) {
 }
 // The gaps across the attempts: a dot for each attempt on a ten-times scale, one panel for each pair.
 (function () {
-  const GAPS = [{"n":1,"name":"Attempt #1: The Clock Plaza","R":5.5,"same":false,"cube":3.435276389977052e-07,"square":3.366114219677609e-06,"pi":1.4727423498713924e-06,"arc":1.1952373855232191e-05},{"n":2,"name":"Attempt #2: One Origin","R":3.0,"same":false,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":3,"name":"Attempt #3: The Trisection Rings","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":4,"name":"Attempt #4: Gates On The Outer Ring","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":5,"name":"Attempt #5: The Digital Outer Shell","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":6,"name":"Attempt #6: The Balance Search","R":4.5,"same":false,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395}];
+  const GAPS = [{"n":1,"name":"Attempt #1: The Clock Plaza","R":5.5,"same":false,"cube":3.435276389977052e-07,"square":3.366114219677609e-06,"pi":1.4727423498713924e-06,"arc":1.1952373855232191e-05},{"n":2,"name":"Attempt #2: One Origin","R":3.0,"same":false,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":3,"name":"Attempt #3: The Trisection Rings","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":4,"name":"Attempt #4: Gates On The Outer Ring","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":5,"name":"Attempt #5: The Digital Outer Shell","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":6,"name":"Attempt #6: The Balance Search","R":4.5,"same":false,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395},{"n":7,"name":"Attempt #7: Stadium Scale","R":20.0,"same":false,"cube":0.0012090627334520182,"square":0.0012943031487086148,"pi":0.0009670835161602302,"arc":0.003778585625186747}];
   const PAIRS = [['cube', 'Doubled cube, each face'], ['square', 'Squared circle, each edge'], ['pi', 'π, where the lines end'], ['arc', 'Arc, where the lines end']];
   const BANDS = [[1e-10, 1e-6, 'electron microscope'], [1e-6, 1e-4, 'light microscope'], [1e-4, 5e-3, 'a fine joint'], [5e-3, 1.2, 'seen'], [1.2, 10, 'walkable']];
   const lo = -10, hi = 1, W = 760, L = 150, Rm = 20, rowH = 22, top = 46;

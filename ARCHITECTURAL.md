@@ -408,8 +408,36 @@ square's on each edge, π's and the arc's where the two lines end):
 | #1 The Clock Plaza | 5.5 m | 344 nm | 3.37 µm | 1.47 µm | 12.0 µm |
 | #2 to #5 | 3 m | 15.4 mm | 60.6 mm | 716 µm | 46.9 mm |
 | #6 The Balance Search | 4.5 m | 40.4 mm | 2.62 mm | 6.20 mm | 347 mm |
+| #7 Stadium Scale | 20 m | 1.21 mm | 1.29 mm | 0.97 mm | 3.78 mm |
 
 Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
+
+## All of them at once, Attempt #7: stadium scale
+
+Attempt #6's form at the size of a football stadium, 20 m to the radius, the digital shell 200 m across. The
+[website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-7) has the
+plan, steps, 3D view and walk-through; the file is [Architecture/Plan/attempt-7.ggb](Architecture/Plan/attempt-7.ggb).
+
+The search's question changes with the size. For each problem, every placed oversized construction was paired
+with every undersized one (still keeping every construction inside four and three quarter radii), and the pair
+chosen is the one with the narrowest gap that is still at least 0.5 mm at this size, a pencil line of gold
+between two paving slabs; among pairs within a tenth of that narrowest gap, the one with fewest steps.
+
+| Pair | Oversized | Undersized | Gap at 20 m |
+|---|---|---|---|
+| Doubled cube (each face) | Boccali (1884), 99.973% | Finsler (1938), 99.9985% | 1.21 mm |
+| Squared circle (each edge) | Claude, 99.99985% | Anglin (1884), 99.986% | 1.29 mm |
+| π (where the lines end) | Viète (1593), 99.998% | Claude, 99.999993% | 0.97 mm |
+| Quarter arc (where the lines end) | Claude, 99.999998% | Claude, 99.988% | 3.78 mm |
+
+All eight accuracies were checked in GeoGebra on the merged file. The floor takes 52 circles and 50 lines, nearly
+twice Attempt #6's: accuracy costs steps. The given cube is a 20 m hall, the rings stand at 30, 50, 70 and 90 m,
+the pillars step down from 28 m to 4 m on a cone 40 m high, and the gateways are 3 m wide.
+
+**Accepted loss: the seasons.** At about 8 millionths per degree, a year's ±15 °C moves the 62.8 m π lines by
+about ±7.5 mm, more than their gap. The gaps are true for the drawing and for the stone at the temperature it was
+laid; through the year they open and close, and the plaques say so. The most accurate pairs can only be held
+still in a machined piece kept at one temperature: Attempt #8.
 
 ## At eye level: the first walk-through
 
