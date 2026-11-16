@@ -2,6 +2,7 @@
 const METALS = {digital: '#7fe8ff', bronze: '#c08a48', silver: '#cfd4dc', copper: '#d8743e', steel: '#74a3dc', patina: '#52b496'};
 const metal = (m, a) => { const h = METALS[m]; return 'rgba(' + [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)).join(',') + ',' + a + ')'; };
 // A small 3D view of a plan's floor and solids, drawn on a 2D canvas (no library): drag to turn, scroll or pinch to zoom.
+// It can also be walked at eye level, 1.6 m above the floor: keys or the on-screen pad to move, drag to look round.
 function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
   const ORDER = {ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
@@ -15,16 +16,41 @@ function makeView3D(cv, P) {
   const crs = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
   const nrm = a => { const l = Math.hypot(...a); return [a[0] / l, a[1] / l, a[2] / l]; };
   let E, F, Rt, Up, FL;
+  // walking: the eye's place on the floor, its heading and its tilt, in file units (P.radius units to P.metres metres)
+  const MU = (P.radius || 4) / (P.metres || 3), EYE = 1.6 * MU, BODY = 0.3 * MU, SPEED = 1.4 * MU;
+  let walking = false, wx = 0, wy = y0 - 2 * MU, wyaw = Math.PI / 2, wpitch = -0.05;
   function camera() {
+    if (walking) {
+      E = [wx, wy, EYE]; const cp = Math.cos(wpitch); F = [cp * Math.cos(wyaw), cp * Math.sin(wyaw), Math.sin(wpitch)];
+      Rt = nrm(crs(F, [0, 0, 1])); Up = crs(Rt, F); FL = cv.width * 0.5; return;     // about 90 degrees across
+    }
     const cp = Math.cos(pitch); E = [tgt[0] + dist * cp * Math.cos(yaw), tgt[1] + dist * cp * Math.sin(yaw), tgt[2] + dist * Math.sin(pitch)];
     F = nrm(sub(tgt, E)); Rt = nrm(crs(F, [0, 0, 1])); Up = crs(Rt, F); FL = cv.height * 1.15;
   }
-  const pr = p => { const d = sub(p, E), z = dot(d, F); return z < 0.3 ? null : [cv.width / 2 + FL * dot(d, Rt) / z, cv.height / 2 - FL * dot(d, Up) / z, z]; };
+  // points in the eye's frame, cut at a near plane so that things beside and behind the eye are drawn correctly
+  const NEAR = 0.05;
+  const cam = p => { const d = sub(p, E); return [dot(d, Rt), dot(d, Up), dot(d, F)]; };
+  const proj = c => [cv.width / 2 + FL * c[0] / c[2], cv.height / 2 - FL * c[1] / c[2], c[2]];
+  const cut = (a, b) => { const t_ = (NEAR - a[2]) / (b[2] - a[2]); return [a[0] + (b[0] - a[0]) * t_, a[1] + (b[1] - a[1]) * t_, NEAR]; };
+  function clipPoly(cs) {
+    const out = [];
+    for (let i = 0; i < cs.length; i++) {
+      const a = cs[i], b = cs[(i + 1) % cs.length], ina = a[2] >= NEAR, inb = b[2] >= NEAR;
+      if (ina) out.push(a); if (ina !== inb) out.push(cut(a, b));
+    }
+    return out;
+  }
+  function clipSeg(a, b) { const ina = a[2] >= NEAR, inb = b[2] >= NEAR; if (!ina && !inb) return null; return [ina ? a : cut(a, b), inb ? b : cut(a, b)]; }
+  const pr = p => { const c = cam(p); return c[2] < NEAR ? null : proj(c); };
   const ease = x => x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(1 - x, 3);
-  function path(pts, close) {     // a projected polyline, broken where it passes behind the eye
-    let pen = false; g.beginPath();
-    for (const p of pts) { const q = pr(p); if (!q) { pen = false; continue; } pen ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); pen = true; }
-    if (close) g.closePath();
+  function path(pts, close) {     // a projected polyline, cut where it passes behind the eye
+    g.beginPath(); const L = close ? pts.concat([pts[0]]) : pts; let prev = null;
+    for (let i = 0; i + 1 < L.length; i++) {
+      const sg = clipSeg(cam(L[i]), cam(L[i + 1])); if (!sg) { prev = null; continue; }
+      const a = proj(sg[0]), b = proj(sg[1]);
+      if (!prev || Math.abs(prev[0] - a[0]) > 0.5 || Math.abs(prev[1] - a[1]) > 0.5) g.moveTo(a[0], a[1]);
+      g.lineTo(b[0], b[1]); prev = b;
+    }
   }
   function clipLine(p0, d) {      // an infinite floor line, cut to the site
     let lo = -1e9, hi = 1e9;
@@ -72,12 +98,19 @@ function makeView3D(cv, P) {
       } else if (s.k === 'rail') edge([s.a[0], s.a[1], s.h], [s.a[0] + (s.b[0] - s.a[0]) * k, s.a[1] + (s.b[1] - s.a[1]) * k, s.h], line, 5);
       else if (s.k === 'rod') edge(s.a, [s.a[0] + (s.b[0] - s.a[0]) * k, s.a[1] + (s.b[1] - s.a[1]) * k, s.a[2] + (s.b[2] - s.a[2]) * k], line, 4);
     });
-    for (const p of out) { const q = p.pts.map(pr); p.q = q; p.d = q.some(x => !x) ? -1 : q.reduce((s, x) => s + x[2], 0) / q.length; }
+    for (const p of out) {
+      let c = p.pts.map(cam);
+      if (p.text) c = c[0][2] >= NEAR ? c : [];
+      else if (p.line) c = clipSeg(c[0], c[1]) || [];
+      else c = clipPoly(c);
+      if (!c.length || (!p.text && !p.line && c.length < 3)) { p.d = -1; continue; }
+      p.q = c.map(proj); p.d = c.reduce((s, x) => s + x[2], 0) / c.length;
+    }
     return out.filter(p => p.d > 0).sort((a, b) => b.d - a.d);
   }
   function draw() {
     camera(); g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
-    path([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]], true); g.fillStyle = '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke();
+    { const c = clipPoly([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]].map(cam)); if (c.length > 2) { g.beginPath(); c.map(proj).forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fillStyle = '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke(); } }
     if (gridU) {          // the metre grid on the ground, from the site's north-west corner
       for (let k = 0; x0 + k * gridU <= x1 + 1e-9; k++) { const X = x0 + k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([X, y1 - (y1 - y0) * j / 24, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
       for (let k = 0; y1 - k * gridU >= y0 - 1e-9; k++) { const Y = y1 - k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([x0 + (x1 - x0) * j / 24, Y, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
@@ -94,23 +127,72 @@ function makeView3D(cv, P) {
     }
     const n0 = pr([0, y1 - 1, 0]), n1 = pr([0, y1 + 1.5, 0]);
     if (n0 && n1) { g.fillStyle = '#c9c5bd'; g.font = 'bold 26px Georgia, serif'; g.textAlign = 'center'; g.fillText('N', n1[0], n1[1]); }
+    if (walking) {        // where you stand
+      const m = v => (v / MU).toFixed(1), r = Math.hypot(wx, wy) / MU, dirs = ['east', 'north-east', 'north', 'north-west', 'west', 'south-west', 'south', 'south-east'];
+      const face = dirs[Math.round(((wyaw % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI) / (Math.PI / 4)) % 8];
+      g.fillStyle = 'rgba(13,13,20,0.75)'; g.fillRect(0, cv.height - 76, cv.width, 76);
+      g.fillStyle = '#d8d4cc'; g.font = '24px Georgia, serif'; g.textAlign = 'left';
+      g.fillText(`${r.toFixed(1)} m from the origin (${m(Math.abs(wx))} m ${wx >= 0 ? 'east' : 'west'}, ${m(Math.abs(wy))} m ${wy >= 0 ? 'north' : 'south'}), facing ${face}, eye 1.6 m above the floor`, 20, cv.height - 44);
+      g.fillStyle = '#a8a498'; g.font = '20px Georgia, serif';
+      g.fillText('W / S or ↑ / ↓ to walk, A / D or ← / → to turn, drag to look round. Pillars and posts stop you; everything else you can walk through.', 20, cv.height - 16);
+    }
   }
+  // walking: keys and the on-screen pad set what is held down; a loop moves the eye while anything is held
+  const held = new Set(); let wraf = null, wlast = null;
+  const posts = () => S.filter(s => s.k === 'column').map(s => [s.c[0], s.c[1], s.r + BODY]);
+  function step(ts) {
+    if (!walking || !held.size) { wraf = null; wlast = null; return; }
+    const dt = wlast === null ? 0 : Math.min(0.1, (ts - wlast) / 1000); wlast = ts;
+    const fw = (held.has('f') ? 1 : 0) - (held.has('b') ? 1 : 0), tn = (held.has('l') ? 1 : 0) - (held.has('r') ? 1 : 0);
+    wyaw += tn * 1.6 * dt;
+    if (fw) {
+      let nx = wx + Math.cos(wyaw) * fw * SPEED * dt, ny = wy + Math.sin(wyaw) * fw * SPEED * dt;
+      for (const [cx, cy, rr] of posts()) {       // slide round a post rather than stopping dead against it
+        const d = Math.hypot(nx - cx, ny - cy); if (d >= rr) continue;
+        const n = [(nx - cx) / d, (ny - cy) / d], tg = [-n[1], n[0]], vx = nx - wx, vy = ny - wy, v = Math.hypot(vx, vy);
+        let along = vx * tg[0] + vy * tg[1]; if (Math.abs(along) < 0.3 * v) along = 0.6 * v;
+        nx = cx + n[0] * rr + tg[0] * along; ny = cy + n[1] * rr + tg[1] * along;
+      }
+      wx = Math.max(x0 - 4 * MU, Math.min(x1 + 4 * MU, nx)); wy = Math.max(y0 - 4 * MU, Math.min(y1 + 4 * MU, ny));
+    }
+    draw(); wraf = requestAnimationFrame(step);
+  }
+  const press = k => { held.add(k); if (!wraf) wraf = requestAnimationFrame(step); };
+  const KEYS = {ArrowUp: 'f', w: 'f', W: 'f', ArrowDown: 'b', s: 'b', S: 'b', ArrowLeft: 'l', a: 'l', A: 'l', ArrowRight: 'r', d: 'r', D: 'r'};
+  cv.tabIndex = 0;
+  cv.addEventListener('keydown', e => { if (!walking || !KEYS[e.key]) return; e.preventDefault(); press(KEYS[e.key]); });
+  cv.addEventListener('keyup', e => { if (KEYS[e.key]) held.delete(KEYS[e.key]); });
+  cv.addEventListener('blur', () => held.clear());
+  const pad = document.createElement('div');       // for touch screens
+  pad.className = 'controls'; pad.style.cssText = 'justify-content:center;margin-top:8px;display:none;';
+  for (const [k, label] of [['l', '↶ Turn left'], ['f', '▲ Forward'], ['b', '▼ Back'], ['r', 'Turn right ↷']]) {
+    const b = document.createElement('button'); b.className = 'small'; b.textContent = label; b.style.touchAction = 'none';
+    b.addEventListener('pointerdown', e => { e.preventDefault(); press(k); }); for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, () => held.delete(k));
+    pad.appendChild(b);
+  }
+  cv.insertAdjacentElement('afterend', pad);
   function frame(ts) { if (!on) return; if (start === null) start = ts; t = Math.min(1, (ts - start) / 3500); draw(); if (t < 1) raf = requestAnimationFrame(frame); else raf = null; }
   const ptrs = new Map(); let pinch = null;
-  cv.addEventListener('pointerdown', e => { if (!on) return; cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]); });
+  cv.addEventListener('pointerdown', e => { if (!on) return; if (walking) cv.focus({preventScroll: true}); cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]); });
   cv.addEventListener('pointermove', e => {
     if (!on || !ptrs.has(e.pointerId)) return; const old = ptrs.get(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]);
-    if (ptrs.size === 1) { yaw -= (e.clientX - old[0]) * 0.008; pitch = Math.max(0.08, Math.min(1.5, pitch + (e.clientY - old[1]) * 0.006)); }
+    if (walking) { if (ptrs.size === 1) { wyaw -= (e.clientX - old[0]) * 0.004; wpitch = Math.max(-1.2, Math.min(1.2, wpitch - (e.clientY - old[1]) * 0.004)); } }
+    else if (ptrs.size === 1) { yaw -= (e.clientX - old[0]) * 0.008; pitch = Math.max(0.08, Math.min(1.5, pitch + (e.clientY - old[1]) * 0.006)); }
     else { const [a, b] = [...ptrs.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch) dist = Math.max(8, Math.min(140, dist * pinch / d)); pinch = d; }
     if (!raf) draw();
   });
   const up = e => { ptrs.delete(e.pointerId); pinch = null; };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
-  cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
+  cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; wx += Math.cos(wyaw) * s_; wy += Math.sin(wyaw) * s_; if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
     grid(b, u) { gridU = b ? u : 0; if (on && !raf) draw(); },
     suspend(b) { hang = b; if (on && !raf) draw(); },
     show() { if (on) return; on = true; cv.style.touchAction = 'none'; cv.style.cursor = 'grab'; start = null; t = 0; raf = requestAnimationFrame(frame); },
-    hide() { on = false; cv.style.touchAction = ''; cv.style.cursor = ''; if (raf) cancelAnimationFrame(raf); raf = null; },
+    walk(b) {
+      walking = b; held.clear(); pad.style.display = b ? 'flex' : 'none';
+      if (b) { wx = 0; wy = y0 - 2 * MU; wyaw = Math.PI / 2; wpitch = -0.05; t = 1; if (raf) { cancelAnimationFrame(raf); raf = null; } cv.focus({preventScroll: true}); }
+      if (on) draw();
+    },
+    hide() { if (walking) { walking = false; pad.style.display = 'none'; } on = false; cv.style.touchAction = ''; cv.style.cursor = ''; if (raf) cancelAnimationFrame(raf); raf = null; },
   };
 }

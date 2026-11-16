@@ -98,6 +98,7 @@
     <button class="small" id="tNext">Next ▶</button>
     <button class="small" id="tGrid">Metre grid</button>
     <button class="small" id="t3d">3D</button>
+    <button class="small" id="tWalk">Walk through</button>
     <button class="small" id="tHang">Suspend the cubes</button>
     <select id="tChap" class="small" style="max-width:100%;"></select>
   </div>
@@ -126,6 +127,7 @@
     <button class="small" id="sNext">Next ▶</button>
     <button class="small" id="sGrid">Metre grid</button>
     <button class="small" id="s3d">3D</button>
+    <button class="small" id="sWalk">Walk through</button>
     <button class="small" id="sHang">Suspend the cubes</button>
     <select id="sChap" class="small" style="max-width:100%;"></select>
   </div>
@@ -156,6 +158,7 @@
     <button class="small" id="rNext">Next ▶</button>
     <button class="small" id="rGrid">Metre grid</button>
     <button class="small" id="r3d">3D</button>
+    <button class="small" id="rWalk">Walk through</button>
     <button class="small" id="rHang">Suspend the cubes</button>
     <select id="rChap" class="small" style="max-width:100%;"></select>
   </div>
@@ -196,6 +199,7 @@
     <button class="small" id="qNext">Next ▶</button>
     <button class="small" id="qGrid">Metre grid</button>
     <button class="small" id="q3d">3D</button>
+    <button class="small" id="qWalk">Walk through</button>
     <button class="small" id="qHang">Suspend the cubes</button>
     <select id="qChap" class="small" style="max-width:100%;"></select>
   </div>
@@ -295,6 +299,18 @@
 
 </div>
 
+<div class="box" id="eyelevel">
+  <div class="box-title">At Eye Level</div>
+  <div class="box-text">Attempts #2 to #5 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
+  <ul>
+    <li><b>From the edge</b> the form reads well: the low cyan shell, the gates, and the pillars rising ring by ring to the glass hall.</li>
+    <li><b>Inside the clock ring it is crowded.</b> The clock's pillars stand 3 m out and 4.8 m tall, and the doubled cube's corners come within 0.6 m of the nearest of them.</li>
+    <li><b>Eight pillars stand exactly on de Serres's square.</b> His side is √3 radii, the chord from four to eight o'clock, so his square's sides pass exactly through the clock's points at one, two, four, five, seven, eight, ten and eleven o'clock. Lakenmacher's square runs 6 cm outside, through the same pillars. Beautiful in the drawing; in stone the gold seams would run into the pillars.</li>
+    <li><b>The gnomon meets the twelve o'clock pillar,</b> passing 3 m north of the origin about 3.7 m up.</li>
+  </ul>
+  <div class="box-text">These are what the next attempt has to solve: room at the centre, the squares clear of the pillars, and a clear line for the gnomon.</div>
+</div>
+
 <div class="box" id="plaques">
   <div class="box-title">The Plaques: Every Discrepancy Stated</div>
   <div class="box-text">Each pair in the building carries a plaque saying exactly what it is: how far apart the two shapes stand, how far the nearer one is from perfect, and whether that distance can be built and seen or is only symbolic. Anything placed by calculation rather than construction says so too. For Attempts #2 to #5, at 3 m to the radius:</div>
@@ -310,6 +326,11 @@
     <li><b>Placed by calculation, not construction:</b> the sundial's hour stones and its gnomon's angle, worked out for the latitude; and in Attempt #5 the digital outer shell, every 5°, which no straightedge and compass can draw.</li>
     <li><b>Measured on this building's arc:</b> the two arc constructions are charted at their own angles; on the quarter arc they give 99.59% and 99.41%, and the plaque gives these.</li>
     <li><b>Atoms.</b> In Attempt #1, Ramanujan's line ends 1.8 nanometres short, about six gold atoms. Seeing that takes a scanning tunnelling or transmission electron microscope, which can show single atoms, and an object made on a chip, as computer chips are, rather than on a floor. A small engraved version of the best pairs, looked at under such a microscope, would be a fun experiment of its own.</li>
+  </ul>
+  <div class="box-text"><b>Ideas, not yet decided:</b></div>
+  <ul>
+    <li><b>A microscope station.</b> A digital microscope set over a gold seam, with a screen beside it and an eyepiece for anyone to look through when it is free, so the plaque's micrometres can be seen, not just read.</li>
+    <li><b>A gold-skinned cube.</b> The two doubled cubes are only 1.5 cm apart on each face (3.1 cm is the difference of their edges, shared between opposite faces), too close for two frames. They could be one shell instead: the oversized cube outside, Stifel's inside, and the 1.5 cm between them gold, with the true doubled cube half a millimetre below the outer surface. It would also ease the crowding at the centre.</li>
   </ul>
 </div>
 
@@ -484,7 +505,7 @@ function planPlayer(P, id) {
     sl.value = i; $('text').textContent = (i + 1) + ' / ' + steps.length + ' · ' + steps[i].t;
     let c = -1; for (let k = 0; k <= i; k++) if (steps[k].ch) c = k; if (c >= 0) chap.value = c;
     if (steps[i].td && v3) { v3.show(); return; }
-    if (v3) v3.hide();
+    if (v3) { v3.hide(); if (id.walk) $('walk').textContent = 'Walk through'; }
     g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
     if (grid) drawGrid();
     for (let k = 0; k <= i; k++) for (const x of steps[k].s) {
@@ -495,7 +516,12 @@ function planPlayer(P, id) {
   const go = k => { i = Math.max(0, Math.min(steps.length - 1, k)); draw(); };
   $('prev').onclick = () => go(i - 1);
   $('next').onclick = () => go(i + 1);
-  if (id.d3) $('d3').onclick = () => go(steps.length - 1);
+  if (id.d3) $('d3').onclick = () => { if (v3) v3.walk(false); if (id.walk) $('walk').textContent = 'Walk through'; go(steps.length - 1); };
+  if (id.walk && v3) {   // first person, at eye level: starts 2 m south of the site, facing north
+    let w = false;
+    $('walk').onclick = e => { w = !w; go(steps.length - 1); v3.walk(w); e.target.textContent = w ? 'Stop walking' : 'Walk through'; };
+    sl.addEventListener('input', () => { w = false; $('walk').textContent = 'Walk through'; });
+  }
   sl.oninput = () => go(+sl.value);
   chap.onchange = () => go(+chap.value);
   $('play').onclick = e => {
@@ -507,22 +533,22 @@ function planPlayer(P, id) {
   return {v3, to3d: () => go(steps.length - 1)};
 }
 planPlayer(window.PLAN_STEPS, {cv: 'planCv', slider: 'pSlider', chap: 'pChap', text: 'pText', prev: 'pPrev', next: 'pNext', play: 'pPlay', grid: 'pGrid'});
-const att2 = planPlayer(window.PLAN2_STEPS, {cv: 'qCv', slider: 'qSlider', chap: 'qChap', text: 'qText', prev: 'qPrev', next: 'qNext', play: 'qPlay', d3: 'q3d', grid: 'qGrid'});
+const att2 = planPlayer(window.PLAN2_STEPS, {cv: 'qCv', slider: 'qSlider', chap: 'qChap', text: 'qText', prev: 'qPrev', next: 'qNext', play: 'qPlay', d3: 'q3d', grid: 'qGrid', walk: 'qWalk'});
 if (att2 && att2.v3) {
   let hung = false;
   document.getElementById('qHang').onclick = e => { hung = !hung; att2.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att2.to3d(); };
 }
-const att3 = planPlayer(window.PLAN3_STEPS, {cv: 'rCv', slider: 'rSlider', chap: 'rChap', text: 'rText', prev: 'rPrev', next: 'rNext', play: 'rPlay', d3: 'r3d', grid: 'rGrid'});
+const att3 = planPlayer(window.PLAN3_STEPS, {cv: 'rCv', slider: 'rSlider', chap: 'rChap', text: 'rText', prev: 'rPrev', next: 'rNext', play: 'rPlay', d3: 'r3d', grid: 'rGrid', walk: 'rWalk'});
 if (att3 && att3.v3) {
   let hung = false;
   document.getElementById('rHang').onclick = e => { hung = !hung; att3.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att3.to3d(); };
 }
-const att4 = planPlayer(window.PLAN4_STEPS, {cv: 'sCv', slider: 'sSlider', chap: 'sChap', text: 'sText', prev: 'sPrev', next: 'sNext', play: 'sPlay', d3: 's3d', grid: 'sGrid'});
+const att4 = planPlayer(window.PLAN4_STEPS, {cv: 'sCv', slider: 'sSlider', chap: 'sChap', text: 'sText', prev: 'sPrev', next: 'sNext', play: 'sPlay', d3: 's3d', grid: 'sGrid', walk: 'sWalk'});
 if (att4 && att4.v3) {
   let hung = false;
   document.getElementById('sHang').onclick = e => { hung = !hung; att4.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att4.to3d(); };
 }
-const att5 = planPlayer(window.PLAN5_STEPS, {cv: 'tCv', slider: 'tSlider', chap: 'tChap', text: 'tText', prev: 'tPrev', next: 'tNext', play: 'tPlay', d3: 't3d', grid: 'tGrid'});
+const att5 = planPlayer(window.PLAN5_STEPS, {cv: 'tCv', slider: 'tSlider', chap: 'tChap', text: 'tText', prev: 'tPrev', next: 'tNext', play: 'tPlay', d3: 't3d', grid: 'tGrid', walk: 'tWalk'});
 if (att5 && att5.v3) {
   let hung = false;
   document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };

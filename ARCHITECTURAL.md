@@ -358,6 +358,29 @@ of their own (cyan on the page), with no construction lines; the ring itself is 
 plan. Read from outside in, the monument goes from the measured to the constructed, and at its centre to what
 neither can reach exactly. The site grows to about 42 m × 32 m.
 
+## At eye level: the first walk-through
+
+Attempts #2 to #5 can now be walked in their 3D view, with the eye 1.6 m above the floor (the Walk through
+button: keys or the on-screen pad to move, drag to look round; pillars and posts stop you, sliding you round
+them). The walk starts 2 m south of the site, facing north. What it shows, in Attempt #5:
+
+- **From the edge** the form reads well: the low cyan shell, the ring of gates, and the pillars rising ring by
+  ring to the glass hall, the cone plain to see.
+- **Inside the clock ring it is crowded.** The clock's pillars stand 3 m out, 4.8 m tall; the doubled cube's
+  corners come within 0.8 m of the nearest of them (0.6 m clear of the pillar's face), and the gold squares,
+  hour stones and gnomon all share the same few metres.
+- **Eight pillars stand on de Serres's square, exactly.** De Serres's side is the chord from four to eight
+  o'clock, √3 radii, so his square, centred on the origin, has its sides at √3/2 radii from it: precisely
+  where the clock's points at one, two, four, five, seven, eight, ten and eleven o'clock lie. Each of those
+  eight pillars stands centred on a gold line, and Lakenmacher's square passes 6 cm outside their centres,
+  through the pillars themselves. In the drawing it is a beautiful coincidence; in stone the gold seams would
+  run into the pillars.
+- **The gnomon meets the twelve o'clock pillar.** Rising north from the origin at the latitude, it passes 3 m
+  north at about 3.7 m up, inside the 4.8 m pillar there.
+
+These are the problems for the balance search and the next attempt: room at the centre, the squares clear of
+the pillars, and a clear line for the gnomon.
+
 ## The plaques: every discrepancy stated
 
 Every pair in a built version carries a plaque saying exactly what it is, so that no one mistakes a symbol for
@@ -381,6 +404,11 @@ For Attempts #2 to #5, at 3 m to the radius:
 - **Atoms**: Attempt #1's Ramanujan line ends 1.8 nm short, about six gold atoms. Only a scanning tunnelling
   or transmission electron microscope shows that, on an object made like a computer chip rather than a floor.
   An engraved chip of the best pairs under such a microscope would be an experiment worth trying.
+- **Idea, a microscope station**: a digital microscope over a gold seam, with a screen and an eyepiece
+  for visitors, so the micrometres on the plaques can be seen.
+- **Idea, a gold-skinned cube**: the doubled cubes' faces are 1.5 cm apart (the 3.1 cm difference of their
+  edges shared between opposite faces), too close for two frames. They could be one shell, the oversized cube
+  outside, Stifel's inside and gold between, the true doubled cube 0.5 mm below the outer surface. Not decided.
 - **Crowding**: at full size the centre is crowded: the cubes, gold squares, clock pillars, gnomon and hour
   stones all lie within about 4 m of the origin. That is the next problem for the design, together with a
   physical model (Edward is considering one in wood, card and paper).

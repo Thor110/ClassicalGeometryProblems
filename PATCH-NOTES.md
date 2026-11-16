@@ -12,6 +12,17 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Walking through
+
+### Site
+- Attempts #2 to #5 can be walked in first person at eye level, 1.6 m above the floor (the Walk through
+  button): keys or an on-screen pad to move, drag to look round, with pillars and posts to walk round. The 3D
+  view now cuts shapes at the eye, so nearby walls and pillars draw correctly.
+- The page and ARCHITECTURAL.md record what the first walk showed: the crowding inside the clock ring, eight
+  clock pillars standing exactly on de Serres's square, and the gnomon meeting the twelve o'clock pillar.
+
+---
+
 ## November 2026: The plaques
 
 ### Site
@@ -19,6 +30,7 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
   pair, the gap, how far the nearer one is from perfect, and whether it can be built and seen or is symbolic;
   with notes on temperature, what is calculated rather than constructed, and the gaps measured in atoms.
 - ARCHITECTURAL.md notes the crowding at the centre as the next design problem.
+- Two ideas are recorded, not decided: a microscope station at a gold seam, and a gold-skinned doubled cube.
 
 ---
 
