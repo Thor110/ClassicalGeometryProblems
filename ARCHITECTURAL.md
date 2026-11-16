@@ -520,20 +520,20 @@ has a section, a plan, and the 3D view with the sun, night, an open vault and th
 
 - **Arcades**: each trisection ring is an arcade, its arches springing from the exact points. First ring, 9 m out:
   twelve pillars 33.6 m tall joined by lancets. Second, 15 m: six piers 24 m tall under great pointed arches. Third,
-  21 m: four piers 14.4 m tall. Fourth, 27 m: the cloister, round arches 4.8 m high on the posts at the odd 7.5°
-  marks, each 15° mark the centre of an arch; at 0°, 120° and 240° the ring's pillar stands in the opening as a
-  central pier, making three great portals.
-- **Flying arches**: from every outer pier's top to the next ring in, at the same angle or to the two nearest
-  pillars: six from the second ring, six from the third, five from the fourth. The cone is now their line.
+  21 m: four piers 14.4 m tall. Fourth, 27 m: the courtyard's exterior wall, 7.2 m high on posts at the odd 7.5°
+  marks, open only at three great portals (0°, 120°, 240°) where the ring's pillar stands as a central pier under
+  two round arches; an open courtyard lies between the wall and the arcades.
+- **Flying arches**: from every pier's top on the second and third rings to the next ring in, at the same angle or
+  to the two nearest pillars: twelve in all. The wall sends none.
 - **Vault**: twelve stone ribs from the first ring's pillars to a bronze-ringed oculus 46.5 m up and 4 m across,
-  with stone between them; the cubes hang beneath, the given cube a 6 m glass room.
-- **Light**: the oculus replaces the gnomon. At noon on 21 June (the sun 62.5° high at 50.9° N) its line from the
+  glazed between them; the cubes hang beneath, the given cube a 6 m glass room.
+- **Light**: under the glass the gnomon keeps the hours on its stones, and the open oculus throws a brighter spot. At noon on 21 June (the sun 62.5° high at 50.9° N) its line from the
   oculus passes the first ring's north pillar 29.2 m up and the third ring's 6.1 m up, both cut through with
   gold-lined openings, and lands on a gold mark 24.2 m north of the origin. At other dates the noon spot falls
-  beyond the cloister. These are worked out for the latitude, not constructed.
+  beyond the courtyard wall. These are worked out for the latitude, not constructed.
 - **Floor**: Attempt #9's materials. Gaps at this size: cubes 5.4 cm a face, squares 3.5 mm an edge, π 8.3 mm, the
   arc 46 cm. Pillars on the gold lines stand on glass slots; the digital shell is a ring of lights in the paving
-  outside the cloister, which itself keeps vehicles out.
+  outside the wall, which itself keeps vehicles out.
 
 ## At eye level: the first walk-through
 

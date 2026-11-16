@@ -12,6 +12,16 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: The cathedral's glazed vault and courtyard
+
+### Site
+- Attempt #10's vault is glazed between its ribs, so the sun reaches the floor: the gnomon and its hour stones return,
+  and the 3D view casts shadows inside.
+- Its outer ring is now a courtyard wall, 7.2 m high, open at the three portals, with no flying arches from it; the
+  walk-through starts outside the south-west portal and the wall can only be crossed through the portals.
+
+---
+
 ## November 2026: Attempt #10, the cathedral
 
 ### Site

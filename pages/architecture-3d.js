@@ -7,7 +7,7 @@ function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
   const ORDER = {faces: 2, ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
-  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], vault: ['#d9d0bd', null], sector: ['rgba(150,120,210,0.35)', null]};
+  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], vault: ['#d9d0bd', null], glassvault: [null, null], sector: ['rgba(150,120,210,0.35)', null]};
   const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
   let hang = P.hang !== false, gridU = 0;      // the cubes hang about one centre unless told to stand
   // the materials view (Attempt #9 on): stone, metal inlay and glass, lit by the sun at an hour and date, or at night
@@ -95,8 +95,8 @@ function makeView3D(cv, P) {
           const q = f.map(p => [p[0], p[1], p[2] * k]);
           const u = sub(q[1], q[0]), v = sub(q[2], q[0]), nn = crs(u, v), l = Math.hypot(...nn) || 1, n_ = [nn[0] / l, nn[1] / l, nn[2] / l];
           const two = [Math.abs(n_[0]), Math.abs(n_[1]), Math.abs(n_[2])];
-          const fill = LOOK ? (s.col === 'gold' ? (night ? '#ffd25a' : '#c8961e') : lit(base, n_[0] * SUN[0] + n_[1] * SUN[1] + n_[2] * SUN[2] < 0 ? [-n_[0], -n_[1], -n_[2]] : n_)) : (s.col === 'gold' ? '#d4a838' : 'rgba(200,196,189,' + (s.vault ? 0.25 : 0.55) + ')');
-          face(q, fill, LOOK ? null : 'rgba(230,226,219,0.35)');
+          const fill = s.col === 'glassvault' ? (LOOK && !night ? 'rgba(190,222,240,0.22)' : night ? 'rgba(255,225,160,0.08)' : 'rgba(150,200,230,0.12)') : LOOK ? (s.col === 'gold' ? (night ? '#ffd25a' : '#c8961e') : lit(base, n_[0] * SUN[0] + n_[1] * SUN[1] + n_[2] * SUN[2] < 0 ? [-n_[0], -n_[1], -n_[2]] : n_)) : (s.col === 'gold' ? '#d4a838' : 'rgba(200,196,189,' + (s.vault ? 0.25 : 0.55) + ')');
+          face(q, fill, s.col === 'glassvault' ? 'rgba(235,248,255,0.35)' : LOOK ? null : 'rgba(230,226,219,0.35)');
         }
         return;
       }
@@ -218,6 +218,11 @@ function makeView3D(cv, P) {
         let along = vx * tg[0] + vy * tg[1]; if (Math.abs(along) < 0.3 * v) along = 0.6 * v;
         nx = cx + n[0] * rr + tg[0] * along; ny = cy + n[1] * rr + tg[1] * along;
       }
+      if (P.wall) {            // a ring wall: crossed only through its openings
+        const W_ = P.wall, r0 = Math.hypot(wx, wy), r1 = Math.hypot(nx, ny), band = W_.t / 2 + BODY;
+        const ang = (Math.atan2(ny, nx) * 180 / Math.PI + 360) % 360, open = W_.open.some(([a, h]) => Math.abs((ang - a + 540) % 360 - 180) < h);
+        if (!open && (Math.abs(r1 - W_.r) < band || (r0 - W_.r) * (r1 - W_.r) < 0)) { nx = wx; ny = wy; }
+      }
       wx = Math.max(x0 - 4 * MU, Math.min(x1 + 4 * MU, nx)); wy = Math.max(y0 - 4 * MU, Math.min(y1 + 4 * MU, ny));
     }
     draw(); wraf = requestAnimationFrame(step);
@@ -258,7 +263,7 @@ function makeView3D(cv, P) {
     show() { if (on) return; on = true; cv.style.touchAction = 'none'; cv.style.cursor = 'grab'; start = null; t = 0; raf = requestAnimationFrame(frame); },
     walk(b) {
       walking = b; held.clear(); pad.style.display = b ? 'flex' : 'none';
-      if (b) { wx = 0; wy = y0 - 2 * MU; wyaw = Math.PI / 2; wpitch = -0.05; t = 1; if (raf) { cancelAnimationFrame(raf); raf = null; } cv.focus({preventScroll: true}); }
+      if (b) { const st = P.walkStart || {x: 0, y: y0 - 2 * MU, yaw: Math.PI / 2}; wx = st.x; wy = st.y; wyaw = st.yaw; wpitch = -0.05; t = 1; if (raf) { cancelAnimationFrame(raf); raf = null; } cv.focus({preventScroll: true}); }
       if (on) draw();
     },
     hide() { if (walking) { walking = false; pad.style.display = 'none'; } on = false; cv.style.touchAction = ''; cv.style.cursor = ''; if (raf) cancelAnimationFrame(raf); raf = null; },
