@@ -12,6 +12,16 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #4, gates on the outer ring
+
+### Site
+- The Architectural Vision page has Attempt #4, first in the attempts dropdown: Attempt #3 with the exact
+  trisections of 45° and 22.5° charted on the outer ring as a gate every 15° and a post every 7.5°, for 19
+  more lines: [Architecture/Plan/attempt-4.ggb](Architecture/Plan/attempt-4.ggb).
+- ARCHITECTURAL.md describes Attempt #4.
+
+---
+
 ## November 2026: Attempt #3 in metals
 
 ### Site

@@ -324,6 +324,25 @@ patinated bronze for doubling the cube. Gold is kept for the results. A line two
 in the metal of the one that drew it first, so the clock's bronze (its two diameters and the four circles
 about their ends, which make all twelve points) runs under everything else.
 
+## All of them at once, Attempt #4: gates on the outer ring
+
+Attempt #3 with two more exact trisections: 15°, a third of 45°, and 7.5°, a third of 22.5°. Rings of their
+own would stand only a metre or so apart, so they are charted on the outer ring alone, 12 m out: a gate every
+15° (3.1 m apart) and a low post every 7.5° between them, with the ring's three pillars in place of three
+gates. The gates, two posts and a bronze bar 1 m high under the cone, could become guides, thresholds or
+turnstiles. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-4)
+has the plan, steps and 3D view; the file is [Architecture/Plan/attempt-4.ggb](Architecture/Plan/attempt-4.ggb),
+Attempt #3's file with the new lines added.
+
+- **15°**: lines from the origin through the midpoints between neighbouring clock points. The 45° and 135°
+  lines pass through the cube's corners, already on the floor; one more line, from five to eleven o'clock,
+  completes the 30° directions.
+- **7.5°**: lines through the midpoints between neighbouring 15° points on the clock.
+- **Cost**: 19 lines, no circles, for 31 circles and 30 lines in all. Every new point was checked in GeoGebra.
+
+The lines run through the origin and across the whole floor, so the bronze becomes a sunburst. Whether that
+reads as a pattern or as clutter is the question this attempt asks.
+
 ## How close the lines are today
 
 Worked out from the charts in November 2026, once with every entry and once with people's entries

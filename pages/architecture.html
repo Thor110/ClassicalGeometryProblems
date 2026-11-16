@@ -10,7 +10,7 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
-  #qCv,#rCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
+  #qCv,#rCv,#sCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -69,6 +69,7 @@
   <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
   <div class="controls" style="justify-content:center;margin-top:10px;">
     <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att4">Attempt #4: Gates On The Outer Ring</option>
       <option value="att3">Attempt #3: The Trisection Rings</option>
       <option value="att2">Attempt #2: One Origin</option>
       <option value="attm">Edward's Blender Mockup Of Attempt #2</option>
@@ -77,7 +78,34 @@
   </div>
 </div>
 
-<div id="att3">
+<div id="att4">
+<div class="box">
+  <div class="box-title">Attempt #4: Gates On The Outer Ring</div>
+  <div class="box-text">Attempt #3, with two more exact trisections charted on its outer ring. 15° is a third of 45°, and 7.5° a third of 22.5°, and both of those can be drawn exactly, so these are true trisections too. Rings of their own would stand only a metre or so apart, too close to read, so they are marked on the outer ring alone, 12 m from the origin: a gate every 15°, 3.1 m apart, and a low post halfway between each pair, every 7.5°. The ring's three pillars stand in place of three of the gates. The gates could be guides, thresholds or turnstiles into the monument; for now they are a pair of posts with a bronze bar, 1 m high, under the cone.</div>
+  <div class="box-text">The new directions cost <b>19 lines</b> and no circles: lines from the origin through the midpoints between neighbouring clock points give every 15° (the cube's corners already lie on the 45° and 135° lines), and lines through the midpoints between those give every 7.5°. That makes <b>31 circles and 30 lines</b> in all. The lines run right through the origin, so the bronze becomes a sunburst across the whole floor: that, more than the gates, is what this attempt tests.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-4.svg" target="_blank"><img src="images/architecture-plan-4.svg" alt="Attempt #4: Attempt #3's plan with a ring of gates and posts every 7.5° on the outer ring, and the bronze lines through the origin that place them"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Every step in the metal of its problem, the results in gold.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Drawing The Floor, Then Raising It</div>
+  <div class="box-text">Step through the floor as it is drawn, or play it. The last step raises it in three dimensions: drag to turn it, and scroll or pinch to zoom.</div>
+  <canvas id="sCv" width="1400" height="1100" aria-label="Attempt #4, drawn step by step and then raised in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="sPrev">◀ Back</button>
+    <button class="small" id="sPlay">▶ Play</button>
+    <button class="small" id="sNext">Next ▶</button>
+    <button class="small" id="s3d">3D</button>
+    <button class="small" id="sHang">Suspend the cubes</button>
+    <select id="sChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="sSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="sText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-4.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-4.ggb</a>, Attempt #3's file with the gates' lines added.</div>
+</div>
+</div>
+
+<div id="att3" hidden>
 <div class="box">
   <div class="box-title">Attempt #3: The Trisection Rings</div>
   <div class="box-text">Attempt #2, with every exact trisection carried all the way round the monument. Four trisections can be done exactly with straightedge and compass, and the clock already marks them all: 90° into 30°, 180° into 60°, 270° into 90° and 360° into 120°. Here each has its own ring about the origin, repeating its division the whole way round: pillars every 30° on the clock itself, every 60° on a ring at two radii, every 90° at three radii and every 120° at four.</div>
@@ -288,6 +316,7 @@
 <script src="architecture-plan-steps.js"></script>
 <script src="architecture-plan-2-steps.js"></script>
 <script src="architecture-plan-3-steps.js"></script>
+<script src="architecture-plan-4-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -422,6 +451,11 @@ const att3 = planPlayer(window.PLAN3_STEPS, {cv: 'rCv', slider: 'rSlider', chap:
 if (att3 && att3.v3) {
   let hung = false;
   document.getElementById('rHang').onclick = e => { hung = !hung; att3.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att3.to3d(); };
+}
+const att4 = planPlayer(window.PLAN4_STEPS, {cv: 'sCv', slider: 'sSlider', chap: 'sChap', text: 'sText', prev: 'sPrev', next: 'sNext', play: 'sPlay', d3: 's3d'});
+if (att4 && att4.v3) {
+  let hung = false;
+  document.getElementById('sHang').onclick = e => { hung = !hung; att4.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att4.to3d(); };
 }
 // Edward's Blender mockup (pages/architecture-mockup.js), raised whenever it is shown.
 const mock = window.MOCKUP && typeof makeView3D === 'function' ? makeView3D(document.getElementById('mCv'), {view: [-8, -8, 8, 8], steps: [], solids: [], mesh: window.MOCKUP, dist: 17, tgt: [0, 0, 2]}) : null;
