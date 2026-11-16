@@ -12,6 +12,26 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #8, the machined piece
+
+### Site
+- The Architectural Vision page has Attempt #8, first in the attempts dropdown: the form as a machined statue a
+  metre across, with the most accurate pairs whose gaps a light microscope can still show (every gap between 2 and
+  19 µm), a figure of each pair's line ends under the microscope, and notes on material and display:
+  [Architecture/Plan/attempt-8.ggb](Architecture/Plan/attempt-8.ggb).
+- The gap chart and ARCHITECTURAL.md include Attempt #8.
+
+---
+
+## November 2026: Every pillar on a constructed point
+
+### Site
+- In Attempts #6 and #7, the pillar pairs at the gold lines stand on the exact 7.5° marks either side instead of
+  at a measured offset, and the outer ring's gate posts stand on the odd 7.5° marks, so each 15° gate is the exact
+  centre of an opening. The six new points are in the GeoGebra files, checked.
+
+---
+
 ## November 2026: Attempt #7, stadium scale
 
 ### Site

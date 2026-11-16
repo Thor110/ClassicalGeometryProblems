@@ -390,8 +390,11 @@ merged file. The floor is 28 circles and 30 lines with the rings and gates (Atte
   radii east mark three, four and five radii on the line OC, and the midpoints between give the rings' radii.
   The clock's twelve points stay as low bronze studs on the clock circle.
 - **Room at the centre**: the squares' corners stand 1.96 m from the nearest pillar's centre.
-- **No pillar on a gold line**: where one would stand on the π or arc lines it is split into a pair 1.2 m apart,
-  so the line runs through a gateway (the first and second rings on the π lines, the first on the arc lines).
+- **No pillar on a gold line**: where one would stand on the π or arc lines it becomes a pair on the exact 7.5°
+  marks either side (1.76 m apart on the first ring), so the line runs through a gateway (the first and second
+  rings on the π lines, the first on the arc lines). The outer ring's gates are exact the same way: a post on
+  every odd 7.5° mark, each 15° mark the centre of an opening with a bronze threshold. Every pillar and post
+  stands on a constructed point; the six pair points were added to the file and checked in GeoGebra.
 - **The gnomon** rises between the first ring's north pair and ends 5.4 m out and 6.6 m up, inside the cone.
 - **The cone** meets the ground at the digital shell: pillars 8.4, 6.0, 3.6 and 1.2 m tall.
 
@@ -409,6 +412,7 @@ square's on each edge, π's and the arc's where the two lines end):
 | #2 to #5 | 3 m | 15.4 mm | 60.6 mm | 716 µm | 46.9 mm |
 | #6 The Balance Search | 4.5 m | 40.4 mm | 2.62 mm | 6.20 mm | 347 mm |
 | #7 Stadium Scale | 20 m | 1.21 mm | 1.29 mm | 0.97 mm | 3.78 mm |
+| #8 The Machined Piece | 10 cm | 2.28 µm | 6.47 µm | 4.84 µm | 18.9 µm |
 
 Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
 
@@ -432,12 +436,41 @@ between two paving slabs; among pairs within a tenth of that narrowest gap, the 
 
 All eight accuracies were checked in GeoGebra on the merged file. The floor takes 52 circles and 50 lines, nearly
 twice Attempt #6's: accuracy costs steps. The given cube is a 20 m hall, the rings stand at 30, 50, 70 and 90 m,
-the pillars step down from 28 m to 4 m on a cone 40 m high, and the gateways are 3 m wide.
+the pillars step down from 28 m to 4 m on a cone 40 m high, and the gateways stand on the 7.5° marks either side (7.8 m apart on the first ring).
 
 **Accepted loss: the seasons.** At about 8 millionths per degree, a year's ±15 °C moves the 62.8 m π lines by
 about ±7.5 mm, more than their gap. The gaps are true for the drawing and for the stone at the temperature it was
 laid; through the year they open and close, and the plaques say so. The most accurate pairs can only be held
 still in a machined piece kept at one temperature: Attempt #8.
+
+## All of them at once, Attempt #8: the machined piece
+
+The same form as a statue: a machined piece a metre across, 10 cm to the radius, its cone of pillars half a
+metre high. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-8)
+has the plan, steps, 3D view and a figure of each pair's line ends under the microscope; the file is
+[Architecture/Plan/attempt-8.ggb](Architecture/Plan/attempt-8.ggb).
+
+The search's rule is Attempt #7's with a finer threshold: the narrowest pair whose gap at this size is at least
+1 µm, enough for an ordinary light microscope (and, among pairs within a tenth of it, the fewest steps).
+
+| Pair | Oversized | Undersized | Gap at 10 cm |
+|---|---|---|---|
+| Doubled cube (each face) | Claude, 99.999983% | Hayden (1871), 99.989% | 2.28 µm |
+| Squared circle (each edge) | Claude, 99.99985% | Anglin (1884), 99.986% | 6.47 µm |
+| π (where the lines end) | Viète (1593), 99.998% | Claude, 99.999993% | 4.84 µm |
+| Quarter arc (where the lines end) | Claude, 99.999998% | Claude, 99.988% | 18.9 µm |
+
+Only the cube differs from Attempt #7. All eight accuracies, and every pillar's and post's point, were checked in
+GeoGebra; the floor is 52 circles and 52 lines. In each pair one line ends within a few hundredths of a
+micrometre of perfect and the other a few micrometres off; the charts hold no pair with a gap between these and
+Attempt #1's nanometres, so a finer threshold would not change the choice until the nanometre scale.
+
+- **Material**: a glass-ceramic of the kind used for telescope mirrors, such as Zerodur, which changes length by
+  about 2 × 10⁻⁸ a degree: about 6 nm a degree along the π lines, a thousandth of their gap. Lines cut by diamond
+  turning or laser and filled with gold; the given cube in clear glass.
+- **Display**: a case held at 20 °C, with the microscope station over the gold seams.
+- **Further**: made like a computer chip, the best pairs on the charts would show gaps of nanometres, for an
+  electron microscope: a different piece again.
 
 ## At eye level: the first walk-through
 
