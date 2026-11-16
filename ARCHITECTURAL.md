@@ -390,12 +390,12 @@ merged file. The floor is 28 circles and 30 lines with the rings and gates (Atte
   radii east mark three, four and five radii on the line OC, and the midpoints between give the rings' radii.
   The clock's twelve points stay as low bronze studs on the clock circle.
 - **Room at the centre**: the squares' corners stand 1.96 m from the nearest pillar's centre.
-- **No pillar on a gold line**: where one would stand on the π or arc lines it becomes a pair on the exact 7.5°
-  marks either side (1.76 m apart on the first ring), so the line runs through a gateway (the first and second
-  rings on the π lines, the first on the arc lines). The outer ring's gates are exact the same way: a post on
-  every odd 7.5° mark, each 15° mark the centre of an opening with a bronze threshold. Every pillar and post
-  stands on a constructed point; the six pair points were added to the file and checked in GeoGebra.
-- **The gnomon** rises between the first ring's north pair and ends 5.4 m out and 6.6 m up, inside the cone.
+- **Pillars on the gold lines**: where a pillar stands on the π or arc lines (the first and second rings on the π
+  lines, the first on the arc lines) it stays one pillar on its exact point, and the gold line runs under it
+  through an arched slot at its foot: the approximation passes beneath the exact trisection. How best to show
+  the gold there is left to the materials. The outer ring's gates are exact: a post on every odd 7.5° mark, each
+  15° mark the centre of an opening with a bronze threshold. Every pillar and post stands on a constructed point.
+- **The gnomon** rises north from the origin and ends 5.4 m out and 6.6 m up, inside the first ring and the cone.
 - **The cone** meets the ground at the digital shell: pillars 8.4, 6.0, 3.6 and 1.2 m tall.
 
 Cusa's straightened quarter arc is exactly 1.5 radii long (95.49% is 3/π), so his gold line ends precisely at the
@@ -413,6 +413,7 @@ square's on each edge, π's and the arc's where the two lines end):
 | #6 The Balance Search | 4.5 m | 40.4 mm | 2.62 mm | 6.20 mm | 347 mm |
 | #7 Stadium Scale | 20 m | 1.21 mm | 1.29 mm | 0.97 mm | 3.78 mm |
 | #8 The Machined Piece | 10 cm | 2.28 µm | 6.47 µm | 4.84 µm | 18.9 µm |
+| #9 In Its Materials | 4.5 m | as #6 | as #6 | as #6 | as #6 |
 
 Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
 
@@ -436,7 +437,7 @@ between two paving slabs; among pairs within a tenth of that narrowest gap, the 
 
 All eight accuracies were checked in GeoGebra on the merged file. The floor takes 52 circles and 50 lines, nearly
 twice Attempt #6's: accuracy costs steps. The given cube is a 20 m hall, the rings stand at 30, 50, 70 and 90 m,
-the pillars step down from 28 m to 4 m on a cone 40 m high, and the gateways stand on the 7.5° marks either side (7.8 m apart on the first ring).
+the pillars step down from 28 m to 4 m on a cone 40 m high, and where a pillar stands on a gold line, the line runs under it through an arched slot.
 
 **Accepted loss: the seasons.** At about 8 millionths per degree, a year's ±15 °C moves the 62.8 m π lines by
 about ±7.5 mm, more than their gap. The gaps are true for the drawing and for the stone at the temperature it was
@@ -471,6 +472,30 @@ Attempt #1's nanometres, so a finer threshold would not change the choice until 
 - **Display**: a case held at 20 °C, with the microscope station over the gold seams.
 - **Further**: made like a computer chip, the best pairs on the charts would show gaps of nanometres, for an
   electron microscope: a different piece again.
+
+## All of them at once, Attempt #9: in its materials
+
+Attempt #6, the 46 m plaza, as it might be built, in the 3D view's materials mode: the floor is Attempt #6's file.
+The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-9) sets the
+sun at any hour (solar time) and on the solstices or equinoxes at 50.9° N, or shows it at night, and can be walked.
+
+- **Floor**: pale limestone paving, every step a flush metal strip in its problem's metal (bronze for the clock and
+  the rings, silver for squaring the circle, copper for π, blued steel for the arc, patinated bronze for the cube).
+- **Gold**: the results as gold leaf sealed in resin under glass strips, flush and walkable; lit from beneath at
+  night.
+- **Pillars**: pale stone with bronze caps, 8.4 m down to 1.2 m. Where one stands on a gold line, the line runs under
+  it through an arched slot.
+- **Hall**: the given cube as a 4.5 m glass pavilion, inside the open bronze and gold frames of the doubled cubes.
+- **Edge**: the digital shell as 72 steel bollards a metre high, every 5°, each with a light in its top.
+- **Sundial**: the gold gnomon's shadow falls on the hour stones; the shadows of every pillar turn round the floor
+  with it, long and low at a December morning.
+
+### Idea: bollards
+
+For real-world versions the digital shell's marks can be bollards against vehicles, with their angle chosen for the
+scale so they stand close enough: every 5° on the plaza (1.96 m apart at 22.5 m) and every 1° at stadium scale
+(1.75 m apart at 100 m). The shell is surveyed, not constructed, so any angle can be used: 4° on the plaza would
+bring them to 1.57 m, nearer usual vehicle-barrier spacing.
 
 ## At eye level: the first walk-through
 

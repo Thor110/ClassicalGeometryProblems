@@ -12,6 +12,17 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #9, in its materials
+
+### Site
+- The Architectural Vision page has Attempt #9, first in the attempts dropdown: Attempt #6's plaza in stone, metal
+  inlay, gold under glass and a glass pavilion, with steel bollards on the digital shell. Its 3D view casts the
+  sun's shadows for any hour on the solstices and equinoxes (the gnomon's shadow falls on the hour stones) and has a
+  night mode with the gold lit from below; it can be walked.
+- Bollards on the digital shell, at an angle chosen for the scale, are recorded as an idea for built versions.
+
+---
+
 ## November 2026: Attempt #8, the machined piece
 
 ### Site
@@ -26,9 +37,9 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 ## November 2026: Every pillar on a constructed point
 
 ### Site
-- In Attempts #6 and #7, the pillar pairs at the gold lines stand on the exact 7.5° marks either side instead of
-  at a measured offset, and the outer ring's gate posts stand on the odd 7.5° marks, so each 15° gate is the exact
-  centre of an opening. The six new points are in the GeoGebra files, checked.
+- In Attempts #6, #7 and #8, a pillar that falls on a gold line is a single pillar on its exact point, with the
+  gold line running under it through an arched slot, instead of a pair at a measured offset; and the outer ring's
+  gate posts stand on the odd 7.5° marks, so each 15° gate is the exact centre of an opening.
 
 ---
 

@@ -10,6 +10,16 @@ function makeView3D(cv, P) {
   const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], sector: ['rgba(150,120,210,0.35)', null]};
   const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
   let hang = false, gridU = 0;
+  // the materials view (Attempt #9 on): stone, metal inlay and glass, lit by the sun at an hour and date, or at night
+  const LOOK = P.look === 'materials', LAT = (P.lat || 50.9) * Math.PI / 180;
+  let night = false, SUN = [0, 0, 1];
+  function setSun(hour, decl) {
+    const H = (hour - 12) * 15 * Math.PI / 180, d = decl * Math.PI / 180;
+    SUN = [-Math.cos(d) * Math.sin(H), Math.cos(LAT) * Math.sin(d) - Math.sin(LAT) * Math.cos(d) * Math.cos(H), Math.sin(LAT) * Math.sin(d) + Math.cos(LAT) * Math.cos(d) * Math.cos(H)];
+  }
+  setSun(12, 0);
+  const rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)), mix = (h, k) => 'rgb(' + rgb(h).map(v => Math.round(Math.min(255, v * k))).join(',') + ')';
+  const lit = (h, n) => night ? mix(h, 0.32 + 0.25 * Math.max(0, n[2])) : mix(h, 0.62 + 0.45 * Math.max(0, n[0] * SUN[0] + n[1] * SUN[1] + n[2] * SUN[2]));
   let yaw = P.yaw || -1.95, pitch = P.pitch || 0.55, dist = P.dist || 30, tgt = P.tgt || [0, 1, 1.8], t = 1, start = null, raf = null, on = false;
   const [x0, y0, x1, y1] = P.view;
   const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -79,7 +89,7 @@ function makeView3D(cv, P) {
     S.forEach((s, i) => {
       const k = ease(f(i)); if (k <= 0) return; const [fill, line] = COL[s.col];
       if (s.k === 'ring') { const n = 96; for (let j = 0; j < n; j++) { const a = 2 * Math.PI * j / n, b = 2 * Math.PI * (j + 1) / n, r = s.r * k; edge([r * Math.cos(a), r * Math.sin(a), 0.03], [r * Math.cos(b), r * Math.sin(b), 0.03], line, 2); } return; }
-      if (s.k === 'cone') { for (let j = 0; j < 24; j++) { const a = 2 * Math.PI * j / 24; edge([0, 0, s.apex * k], [s.foot * Math.cos(a), s.foot * Math.sin(a), 0], line, 1); } return; }
+      if (s.k === 'cone') { if (LOOK) return; for (let j = 0; j < 24; j++) { const a = 2 * Math.PI * j / 24; edge([0, 0, s.apex * k], [s.foot * Math.cos(a), s.foot * Math.sin(a), 0], line, 1); } return; }
       if (s.k === 'sector') { const pts = [[0, 0, 0.02]]; for (let j = 0; j <= 24; j++) { const a = s.a0 + (s.a1 - s.a0) * j / 24; pts.push([s.r * k * Math.cos(a), s.r * k * Math.sin(a), 0.02]); } face(pts, fill, null); return; }
       if (s.k === 'box' || s.k === 'frame' || s.k === 'kerb') {
         // standing on the floor, or hung with the outer frame's centre (Edward's mockup: the smaller cube suspended inside the larger)
@@ -92,8 +102,14 @@ function makeView3D(cv, P) {
       } else if (s.k === 'column') {
         const h = s.h * k, n = 8, ring = z => Array.from({length: n}, (_, j) => [s.c[0] + s.r * Math.cos(2 * Math.PI * j / n), s.c[1] + s.r * Math.sin(2 * Math.PI * j / n), z]);
         const lo = ring(0), hi = ring(h);
+        if (LOOK) {
+          const base = s.col === 'digital' ? '#8a9098' : s.col === 'bronze' ? '#a8763a' : '#e4dccb';
+          for (let j = 0; j < n; j++) { const a = 2 * Math.PI * (j + 0.5) / n; face([lo[j], lo[(j + 1) % n], hi[(j + 1) % n], hi[j]], lit(base, [Math.cos(a), Math.sin(a), 0]), null); }
+          face(hi, s.col === 'digital' ? (night ? '#7fe8ff' : '#5fb8cc') : s.col === 'stone' && s.h > 1 ? lit('#b07a3c', [0, 0, 1]) : lit(base, [0, 0, 1]), null);
+        } else {
         for (let j = 0; j < n; j++) face([lo[j], lo[(j + 1) % n], hi[(j + 1) % n], hi[j]], fill, null);
         face(hi, line, null);
+        }
         if (s.hour && k >= 1) out.push({pts: [[s.c[0], s.c[1], h + 0.5]], text: String(s.hour)});
       } else if (s.k === 'rail') edge([s.a[0], s.a[1], s.h], [s.a[0] + (s.b[0] - s.a[0]) * k, s.a[1] + (s.b[1] - s.a[1]) * k, s.h], line, 5);
       else if (s.k === 'rod') edge(s.a, [s.a[0] + (s.b[0] - s.a[0]) * k, s.a[1] + (s.b[1] - s.a[1]) * k, s.a[2] + (s.b[2] - s.a[2]) * k], line, 4);
@@ -109,14 +125,41 @@ function makeView3D(cv, P) {
     return out.filter(p => p.d > 0).sort((a, b) => b.d - a.d);
   }
   function draw() {
-    camera(); g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
-    { const c = clipPoly([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]].map(cam)); if (c.length > 2) { g.beginPath(); c.map(proj).forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fillStyle = '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke(); } }
+    camera();
+    if (LOOK) { const sky = g.createLinearGradient(0, 0, 0, cv.height); if (night) { sky.addColorStop(0, '#04050b'); sky.addColorStop(1, '#141626'); } else { sky.addColorStop(0, '#6f9cc8'); sky.addColorStop(1, '#dce8f0'); } g.fillStyle = sky; }
+    else g.fillStyle = '#0d0d14';
+    g.fillRect(0, 0, cv.width, cv.height);
+    { const c = clipPoly([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]].map(cam)); if (c.length > 2) { g.beginPath(); c.map(proj).forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fillStyle = LOOK ? (night ? '#26241f' : '#d6cdb9') : '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke(); } }
     if (gridU) {          // the metre grid on the ground, from the site's north-west corner
       for (let k = 0; x0 + k * gridU <= x1 + 1e-9; k++) { const X = x0 + k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([X, y1 - (y1 - y0) * j / 24, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
       for (let k = 0; y1 - k * gridU >= y0 - 1e-9; k++) { const Y = y1 - k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([x0 + (x1 - x0) * j / 24, Y, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
     }
-    for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, 0.7) : 'rgba(110,110,130,0.55)', x.m ? 1.4 : 1);
-    for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, '#d4a838', 2.5);
+    for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, LOOK ? (night ? 0.35 : 0.95) : 0.7) : 'rgba(110,110,130,0.55)', x.m ? (LOOK ? 1.8 : 1.4) : 1);
+    if (LOOK && night) { g.shadowColor = '#ffcc55'; g.shadowBlur = 14; }
+    for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, LOOK ? (night ? '#ffd25a' : '#b8860b') : '#d4a838', LOOK ? 3.5 : 2.5);
+    g.shadowBlur = 0;
+    if (LOOK && !night && SUN[2] > 0.03) {   // the sun's shadows on the floor: every pillar, post and stone, the cubes and the gnomon
+      const k_ = Math.hypot(SUN[0], SUN[1]) / SUN[2], dx = -SUN[0] / Math.hypot(SUN[0], SUN[1]), dy = -SUN[1] / Math.hypot(SUN[0], SUN[1]);
+      const inRect = poly => {          // shadows stop at the edge of the site
+        let P_ = poly;
+        for (const [ax, lim, sg] of [[0, x0, 1], [0, x1, -1], [1, y0, 1], [1, y1, -1]]) {
+          const o = []; for (let i = 0; i < P_.length; i++) { const a = P_[i], b = P_[(i + 1) % P_.length], ia = sg * (a[ax] - lim) >= 0, ib = sg * (b[ax] - lim) >= 0;
+            if (ia) o.push(a); if (ia !== ib) { const t_ = (lim - a[ax]) / (b[ax] - a[ax]); o.push([a[0] + (b[0] - a[0]) * t_, a[1] + (b[1] - a[1]) * t_, a[2]]); } }
+          P_ = o; if (!P_.length) break;
+        }
+        return P_;
+      };
+      const seg = (a, b) => { const q = inRect([a, b, b]); if (q.length >= 2) { path([q[0], q[q.length - 1]]); g.stroke(); } };
+      const onFloor = (p, z) => [p[0] - SUN[0] / SUN[2] * z, p[1] - SUN[1] / SUN[2] * z, 0.01];
+      g.fillStyle = 'rgba(60,45,30,0.32)'; g.strokeStyle = 'rgba(60,45,30,0.4)';
+      for (const s of S) {
+        if (s.k === 'column') { const L = s.h * k_, r = s.r, px = -dy * r, py = dx * r, c = s.c; const c4 = clipPoly(inRect([[c[0] + px, c[1] + py, 0.01], [c[0] - px, c[1] - py, 0.01], [c[0] - px + dx * L, c[1] - py + dy * L, 0.01], [c[0] + px + dx * L, c[1] + py + dy * L, 0.01]]).map(cam)); if (c4.length > 2) { g.beginPath(); c4.map(proj).forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fill(); } }
+        else if (s.k === 'rod') { g.lineWidth = 4; seg(onFloor(s.a, s.a[2]), onFloor(s.b, s.b[2])); }
+        else if (s.k === 'box' || s.k === 'frame') { const a = s.s / 2, z0 = hang ? (OUTER - s.s) / 2 : 0, z1 = z0 + s.h, c = [[-a, -a], [a, -a], [a, a], [-a, a]];
+          g.lineWidth = s.k === 'frame' ? 3 : 1.5;
+          for (let j = 0; j < 4; j++) { const p = c[j], q = c[(j + 1) % 4]; seg(onFloor(p, z1), onFloor(q, z1)); seg(onFloor(p, z0), onFloor(p, z1)); } }
+      }
+    }
     const N = M ? M.objects.length : S.length, f = i => (t * 1.6 - 0.6 * i / N) / 0.6;
     g.lineJoin = 'round';
     for (const p of prims(f)) {
@@ -185,6 +228,8 @@ function makeView3D(cv, P) {
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
   cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; wx += Math.cos(wyaw) * s_; wy += Math.sin(wyaw) * s_; if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
+    sun(hour, decl) { setSun(hour, decl); if (on && !raf) draw(); },
+    night(b) { night = b; if (on && !raf) draw(); },
     grid(b, u) { gridU = b ? u : 0; if (on && !raf) draw(); },
     suspend(b) { hang = b; if (on && !raf) draw(); },
     show() { if (on) return; on = true; cv.style.touchAction = 'none'; cv.style.cursor = 'grab'; start = null; t = 0; raf = requestAnimationFrame(frame); },
