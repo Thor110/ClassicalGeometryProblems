@@ -345,6 +345,14 @@
 
 </div>
 
+<div class="box" id="gapchart">
+  <div class="box-title">The Gaps, Attempt By Attempt</div>
+  <div class="box-text">A gauge to steer by: how wide each pair's gap is in each attempt, built at that attempt's size. The cube's gap is measured on each face, the square's on each edge, and π's and the arc's where their two lines end. The scale runs from atoms to metres, each step ten times the last, and the shaded bands say what it takes to see a gap of that width.</div>
+  <div id="gapPlot" style="width:100%;overflow-x:auto;"></div>
+  <div class="table-wrap" style="margin-top:12px;"><table id="gapTable"></table></div>
+  <div class="small-text" style="margin-top:8px;">Attempts #3 to #5 keep Attempt #2's pairs at the same size, so their gaps are the same. Each attempt's pairs and accuracies are in its own section above.</div>
+</div>
+
 <div class="box" id="eyelevel">
   <div class="box-title">At Eye Level</div>
   <div class="box-text">Attempts #2 to #6 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
@@ -605,6 +613,41 @@ if (att6 && att6.v3) {
   let hung = false;
   document.getElementById('uHang').onclick = e => { hung = !hung; att6.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att6.to3d(); };
 }
+// The gaps across the attempts: a dot for each attempt on a ten-times scale, one panel for each pair.
+(function () {
+  const GAPS = [{"n":1,"name":"Attempt #1: The Clock Plaza","R":5.5,"same":false,"cube":3.435276389977052e-07,"square":3.366114219677609e-06,"pi":1.4727423498713924e-06,"arc":1.1952373855232191e-05},{"n":2,"name":"Attempt #2: One Origin","R":3.0,"same":false,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":3,"name":"Attempt #3: The Trisection Rings","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":4,"name":"Attempt #4: Gates On The Outer Ring","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":5,"name":"Attempt #5: The Digital Outer Shell","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":6,"name":"Attempt #6: The Balance Search","R":4.5,"same":false,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395}];
+  const PAIRS = [['cube', 'Doubled cube, each face'], ['square', 'Squared circle, each edge'], ['pi', 'π, where the lines end'], ['arc', 'Arc, where the lines end']];
+  const BANDS = [[1e-10, 1e-6, 'electron microscope'], [1e-6, 1e-4, 'light microscope'], [1e-4, 5e-3, 'a fine joint'], [5e-3, 1.2, 'seen'], [1.2, 10, 'walkable']];
+  const lo = -10, hi = 1, W = 760, L = 150, Rm = 20, rowH = 22, top = 46;
+  const X = m => L + (Math.log10(m) - lo) / (hi - lo) * (W - L - Rm);
+  const len = m => m >= 1 ? m.toPrecision(3) + ' m' : m >= 1e-3 ? (m * 1000).toPrecision(3) + ' mm' : m >= 1e-6 ? (m * 1e6).toPrecision(3) + ' µm' : (m * 1e9).toPrecision(3) + ' nm';
+  let svg = '';
+  const H = top + PAIRS.length * (GAPS.length * rowH + 42) + 30;
+  for (const [a, b, t] of BANDS) {
+    const x0 = X(a), x1 = X(b), shade = ['#1b1b28', '#181824', '#1b1b28', '#181824', '#1b1b28'][BANDS.findIndex(z => z[0] === a)];
+    svg += `<rect x="${x0}" y="${top - 6}" width="${x1 - x0}" height="${H - top - 24}" fill="${shade}"/>`;
+    svg += `<text x="${(x0 + x1) / 2}" y="${top - 12 - (BANDS.findIndex(z => z[0] === a) % 2) * 13}" font-size="11" fill="#a8a498" text-anchor="middle">${t}</text>`;
+  }
+  for (let e = lo; e <= hi; e++) {
+    const x = X(Math.pow(10, e)); svg += `<line x1="${x}" y1="${top - 6}" x2="${x}" y2="${H - 30}" stroke="#2c2c3a" stroke-width="1"/>`;
+    const lab = {'-9': '1 nm', '-6': '1 µm', '-3': '1 mm', '0': '1 m'}[e]; if (lab) svg += `<text x="${x}" y="${H - 14}" font-size="11" fill="#a8a498" text-anchor="middle">${lab}</text>`;
+  }
+  let y = top;
+  PAIRS.forEach(([k, title]) => {
+    svg += `<text x="8" y="${y + 10}" font-size="13" fill="#d8d4cc" font-weight="bold">${title}</text>`; y += 30;
+    for (const g of GAPS) {
+      svg += `<text x="8" y="${y + 4}" font-size="12" fill="#a8a498">Attempt #${g.n}</text><line x1="${L}" y1="${y}" x2="${W - Rm}" y2="${y}" stroke="#2c2c3a" stroke-width="1"/>`;
+      const x = X(g[k]);
+      svg += `<g><circle cx="${x}" cy="${y}" r="10" fill="transparent"><title>Attempt #${g.n}, ${title.toLowerCase()}: ${len(g[k])}, at ${g.R} m to the radius</title></circle><circle cx="${x}" cy="${y}" r="5" fill="#d4a838" stroke="#0d0d14" stroke-width="2" pointer-events="none"/></g>`;
+      y += rowH;
+    }
+    y += 12;
+  });
+  document.getElementById('gapPlot').innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:560px;max-width:${W}px;display:block;margin:0 auto;" role="img" aria-label="The width of each pair's gap in each attempt, on a scale from a tenth of a nanometre to ten metres">${svg}</svg>`;
+  let t = '<tr><th>Attempt</th><th>Radius</th><th>Cube (face)</th><th>Square (edge)</th><th>π</th><th>Arc</th></tr>';
+  for (const g of GAPS) t += `<tr><td>${g.name}${g.same ? '<br><span class="muted" style="font-size:13px;">Attempt #2\'s pairs</span>' : ''}</td><td>${g.R} m</td>` + PAIRS.map(([k]) => `<td>${len(g[k])}</td>`).join('') + '</tr>';
+  document.getElementById('gapTable').innerHTML = t;
+})();
 // Edward's Blender mockup (pages/architecture-mockup.js), raised whenever it is shown.
 const mock = window.MOCKUP && typeof makeView3D === 'function' ? makeView3D(document.getElementById('mCv'), {view: [-8, -8, 8, 8], steps: [], solids: [], mesh: window.MOCKUP, dist: 17, tgt: [0, 0, 2]}) : null;
 if (mock) document.getElementById('mReplay').onclick = () => { mock.hide(); mock.show(); };

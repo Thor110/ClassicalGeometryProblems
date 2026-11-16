@@ -12,6 +12,15 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: The gaps, attempt by attempt
+
+### Site
+- The Architectural Vision page charts every pair's gap in every design attempt, at that attempt's size, on a
+  scale from atoms to metres with bands for what it takes to see each width, with a table of the same figures:
+  a gauge for the attempts to come.
+
+---
+
 ## November 2026: Attempt #6, the balance search
 
 ### Site

@@ -398,6 +398,19 @@ merged file. The floor is 28 circles and 30 lines with the rings and gates (Atte
 Cusa's straightened quarter arc is exactly 1.5 radii long (95.49% is 3/π), so his gold line ends precisely at the
 first ring's gateway.
 
+## The gaps, attempt by attempt
+
+The page charts each pair's gap in each attempt, built at that attempt's size (the cube's on each face, the
+square's on each edge, π's and the arc's where the two lines end):
+
+| Attempt | Radius | Cube | Square | π | Arc |
+|---|---|---|---|---|---|
+| #1 The Clock Plaza | 5.5 m | 344 nm | 3.37 µm | 1.47 µm | 12.0 µm |
+| #2 to #5 | 3 m | 15.4 mm | 60.6 mm | 716 µm | 46.9 mm |
+| #6 The Balance Search | 4.5 m | 40.4 mm | 2.62 mm | 6.20 mm | 347 mm |
+
+Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
+
 ## At eye level: the first walk-through
 
 Attempts #2 to #5 can now be walked in their 3D view, with the eye 1.6 m above the floor (the Walk through
