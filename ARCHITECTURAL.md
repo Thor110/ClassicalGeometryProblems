@@ -84,12 +84,104 @@ The seam can be built two ways:
 An idea of Edward's from November 2026: the lines need only be walked and the gap seen, perhaps as the
 meeting of two paving slabs with gold poured into the crack.
 
-## All of them at once
+## All of them at once: a design study
 
-A single architect could combine them, in either vision: a circular plaza (the circle), a square
-court of the same area set into it, a cube pavilion beside a doubled one, and paths that trisect the
-plaza's angles. Each would carry its pair of lines, oversized and undersized, and its gap or seam for
-the exact answer in between.
+A single architect could combine them: a circular plaza, a square court of the same area set over it,
+a cube pavilion inside its doubled frame, and the circle's length laid out straight. In November 2026
+this was worked out as one floor, built from the best approximations on the charts, with every step of
+every construction a visible line on the ground. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#plan)
+has the plan, a section through the meridian, and the construction step by step.
+
+### The brief
+
+- Every chart except the trisection's, which depends on the angle: squaring the circle, rectifying it
+  (and with it π), rectifying an arc, doubling the cube; each with its best oversized and undersized
+  construction, the results in gold.
+- The trisection shown where it can be done exactly: the right angle, from the twelve points of a clock.
+- As few lines and circles as possible, each construction growing out of what is already drawn.
+- A site of at most 50 m; also a statue-sized version, and a version for rope and stakes.
+- A building to walk through, with places to view each problem from above and up close, and the
+  solstice sun on a gold point.
+
+### The base: a clock
+
+The plaza's circle about O through C; the diameter OC and the perpendicular diameter; the four circles
+of the radius about the ends of the diameters, which mark the twelve points of a clock on the rim; and
+the four diameters through the 30° points. 5 circles and 6 lines. The right angle between twelve and
+three o'clock is divided into exact thirds by them, and the same twelve points trisect 180°, 270° and
+360°.
+
+### Choosing the constructions
+
+Each construction on the four charts (190 in all) was rebuilt, and its given figure laid onto the base:
+the circle onto the plaza's circle, the cube's edge onto the radius, in each of the 24 ways the clock can
+be turned or mirrored onto itself. For each, the steps the result depends on were compared with the base,
+and every line or circle already there counted once. Then, for each problem and side, the most accurate
+construction was found for each number of added steps, with how far it reaches from the centre and its
+smallest step. With a limit of 11 added steps each and a reach of 3.5 radii, every result stays above
+99.97%; letting the cube's oversized construction reach 4.4 radii lifts it to 99.999998%, and Ramanujan's
+rectification (14 steps) was taken for its accuracy and its name:
+
+| Problem | Oversized | Undersized |
+|---|---|---|
+| Squaring the circle | Eduard Gregori, 99.99986% | Claude (Anthropic), 99.9999994% |
+| Rectifying the circle | Jacob de Gelder, 99.999992% | Srinivasa Ramanujan (1914), 99.99999997% |
+| Arc rectification (150°) | Claude (Anthropic), 99.99998% | Claude (Anthropic), 99.99993% |
+| Doubling the cube | Claude (Anthropic), 99.999998% | Claude (Anthropic), 99.99997% |
+
+The eight were then merged one after another, each turned to the position that shares most with what is
+drawn, and among equals to the one that keeps the floor smallest. Each step was replayed into one GeoGebra
+file, [Architecture/Plan/combined-plan.ggb](Architecture/Plan/combined-plan.ggb), and any point, line or
+circle that coincides with one already drawn is drawn once. **The whole floor is 40 circles and 43 lines**, the six gold result lines among them, and the two gold squares.
+Every result in the combined file gives exactly the accuracy it has on its chart, to ten decimal places,
+and the file opens in GeoGebra with every object defined.
+
+The merging placed things well: de Gelder's half circumference lies along the diameter through C, π
+radii from the rim northwards; Ramanujan's sixth and both arc results lie on the tangent at C, straightened
+from the same point; the two arc results run together and end at one seam.
+
+### The building
+
+With the plaza's radius 5.5 m, the floor is 37.9 m × 42.3 m, and with a 3 m gallery round it the site is
+**43.9 m × 48.3 m**. The smallest step is 0.45 m.
+
+- **The Clock Court**: the plaza, 11 m across, with twelve brass points; the quarter between twelve and
+  three o'clock paved apart, with its two trisecting lines.
+- **The Square Court**: the square of the circle's area, 9.75 m on a side, set over the circle with its
+  corners just outside the rim, laid out from the two gold squares, which lie in the floor beside it
+  (their sides differ by 6.7 µm).
+- **The π Meridian Walk**: de Gelder's half circumference, 17.28 m, due north from the rim, with a mark
+  at each radius.
+- **The Tangent Of Arcs**: Ramanujan's sixth (5.76 m, short by 1.8 nm, about six gold atoms) and the 150°
+  arc (14.40 m; its two gold lines end 12 µm apart), with a colonnade on the arc itself.
+- **The Cube Pavilion**: a cube room of edge 5.5 m, the radius, inside an open frame of the doubled
+  edge, 6.93 m.
+- **The gallery**: raised about 4 m, 3 m wide, with a balcony facing each problem; the floor is walkable,
+  every line inlaid flush, and each gold seam has a lens and a plaque giving its true gap.
+
+### The Sun Gate
+
+The π walk lies on the meridian. A gate across it 2.95 m south of its southern end carries an aperture
+5.67 m up, for latitude 50.9° north (Southampton). At noon the sun's spot falls on the start of π at the
+summer solstice, 6.98 m north of the gate at the equinoxes, and on the far end of the walk at the winter
+solstice: each year the sun crosses the whole of π. At other latitudes the aperture moves:
+
+| Latitude | Aperture height | South of the walk's start |
+|---|---|---|
+| 35° | 12.14 m | 2.48 m |
+| 40° | 10.15 m | 3.02 m |
+| 45° | 8.09 m | 3.20 m |
+| 50.9° | 5.67 m | 2.95 m |
+| 55° | 4.04 m | 2.48 m |
+| 60° | 2.17 m | 1.61 m |
+
+### Three sizes
+
+- **Statue or table piece, about 1 m**: the circle 23 cm across, the smallest step about 1 cm; machined to
+  a hundredth of a millimetre; a pin about 12 cm high as the Sun Gate.
+- **Plaza, 44 m × 48 m**: stone and inlay, set out by survey to about a millimetre.
+- **Rope and stakes**: every step can be laid, but true to about one part in 5,000; the seams are then
+  symbolic (Vision II).
 
 ## How close the lines are today
 

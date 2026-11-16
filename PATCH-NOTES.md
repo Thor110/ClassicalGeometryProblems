@@ -12,6 +12,22 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: All of them at once, a design study
+
+### Site
+- The Architectural Vision page has a design study for one building holding every chart but the trisection's,
+  with the trisection shown exactly on a clock face: the site plan, the construction step by step, the parts
+  of the building, the Sun Gate, and the three sizes (statue, plaza, rope and stakes).
+- The best oversized and undersized constructions for squaring the circle, rectifying it, rectifying an arc and
+  doubling the cube were chosen by laying each charted construction onto a shared base and counting the lines
+  it adds, and merged into one floor of 40 circles and 43 lines: [Architecture/Plan/combined-plan.ggb](Architecture/Plan/combined-plan.ggb).
+  Every result in it keeps its charted accuracy exactly.
+- The π walk is a meridian line: a Sun Gate puts the noon sun on the start of π at the summer solstice and on its
+  far end at the winter solstice.
+- ARCHITECTURAL.md describes the method, the choice of constructions and the building.
+
+---
+
 ## November 2026: Neusis by circles
 
 ### Site

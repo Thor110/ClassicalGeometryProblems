@@ -6,6 +6,11 @@
 <meta name="description" content="Building the classical geometry approximations as architecture: the best oversized and undersized constructions side by side, with a walkable gap or a visible gold seam between them, lit by the sun.">
 <title>Classical Geometry Problems // Architectural Vision</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .plan-fig{text-align:center;margin:12px 0;}
+  .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
+  #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
+</style>
 </head>
 <body>
 
@@ -58,9 +63,62 @@
   </ul>
 </div>
 
+<div class="box" id="plan">
+  <div class="box-title">All Of Them At Once: A Design Study</div>
+  <div class="box-text">A single building for every chart: the best approximations on the charts, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every construction is drawn from the same few first lines, and each line or circle that two of them share is drawn once. The whole floor is <b>40 circles and 43 lines</b>, each a brass line in the stone, with the eight results in gold: six gold lines and the two gold squares. It fits a site of <b>44 m × 48 m</b>, with the central circle 11 m across.</div>
+  <div class="plan-fig"><a href="images/architecture-plan.svg" target="_blank"><img src="images/architecture-plan.svg" alt="The site plan: the clock court, the square court, the π meridian walk with its Sun Gate, the tangent of arcs with its colonnade, the cube pavilion, and the gallery around them"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Grey: every step of the eight constructions, laid in the floor. Gold: their results. The hatched band is the raised gallery, with a balcony facing each problem.</div>
+</div>
+
 <div class="box">
-  <div class="box-title">All Of Them At Once</div>
-  <div class="box-text">One architect could also combine them, in either vision: a circular plaza, a square court of the same area set into it, a cube pavilion beside a doubled one, and paths that trisect the plaza's angles, each with its pair of lines and its gap or seam in between.</div>
+  <div class="box-title">Drawing The Floor, Step By Step</div>
+  <div class="box-text">The floor is one construction, built in order: first the clock, then each problem growing out of what is already drawn. Step through it, or play it.</div>
+  <canvas id="planCv" width="1400" height="1500" aria-label="The combined construction, drawn step by step"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="pPrev">◀ Back</button>
+    <button class="small" id="pPlay">▶ Play</button>
+    <button class="small" id="pNext">Next ▶</button>
+    <select id="pChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="pSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="pText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/combined-plan.ggb" target="_blank" rel="noopener">Architecture/Plan/combined-plan.ggb</a>. Each result in it gives exactly the accuracy it has on its chart.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">The Parts Of The Building</div>
+  <ul>
+    <li><b>The Clock Court.</b> The circle of the plaza, 11 m across, with twelve brass points around its rim: the two diameters and four circles of the radius about their ends mark them. The diameters through them divide the right angle into exact thirds, and the same twelve points trisect 180°, 270° and the full turn: the trisection shown where it is possible, and nowhere else. The quarter of the court between twelve and three o'clock is paved apart, with its two trisecting lines.</li>
+    <li><b>The Square Court.</b> The square of the circle's area, 9.75 m on a side, set over the circle so that its corners stand just outside the rim, laid out from the two gold squares, which lie in the floor beside it where their constructions put them (Gregori's oversized, the archive's undersized). Their sides differ by 6.7 thousandths of a millimetre.</li>
+    <li><b>The π Meridian Walk.</b> De Gelder's half circumference, π radii, 17.28 m, runs due north along the diameter from the rim, with a brass mark at every radius: three whole radii and the last 0.14159. The walk is also the meridian line (below).</li>
+    <li><b>The Tangent Of Arcs.</b> On the tangent at the top of the circle, two arcs straightened side by side from one point: Ramanujan's sixth of the circle (1914), 5.76 m, short of the true length by 1.8 millionths of a millimetre, about six gold atoms; and the 150° arc, whose two gold lines, oversized and undersized, run together for 14.4 m and end 12 thousandths of a millimetre apart. A colonnade stands on the arc itself: walk the curve under the columns, then walk back along the straight, the same distance.</li>
+    <li><b>The Cube Pavilion.</b> A cube room whose edge is the plaza's radius, 5.5 m, standing inside an open frame of the doubled edge, 6.93 m, so that you can walk between a cube and the cube of twice its volume. The two gold doubled edges lie in the floor where their constructions draw them.</li>
+  </ul>
+</div>
+
+<div class="box">
+  <div class="box-title">The Sun Gate</div>
+  <div class="box-text">The π walk is laid on the meridian, like the sun lines of San Petronio in Bologna and Saint-Sulpice in Paris. A slender gate stands across it 2.95 m south of the walk's southern end, with a small aperture 5.67 m above the floor (for the latitude of Southampton, 50.9° north). At noon on the summer solstice, the sun's spot through the aperture falls on the gold seam at the start of π; at the equinoxes it falls 6.98 m north of the gate; at noon on the winter solstice it reaches the far end of the walk, three radii and 0.14159 away. Each year the sun crosses the whole of π.</div>
+  <div class="plan-fig"><img src="images/architecture-meridian.svg" alt="A section through the π walk: the Sun Gate's aperture and the noon sun at the solstices and equinoxes"></div>
+  <div class="small-text" style="text-align:center;">Other latitudes keep the same plan and move the aperture: 12.1 m high at 35°, 10.2 m at 40°, 8.1 m at 45°, 4.0 m at 55°, 2.2 m at 60°.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Seeing It, Far And Near</div>
+  <ul>
+    <li><b>From above.</b> A gallery 3 m wide runs round the site, raised about 4 m, with a balcony facing each problem: at the north end looking down the π walk, on the east over the clock and the square court, on the south over the court's southern half, and on the west over the tangent of arcs and the cube pavilion. The Sun Gate can carry a small platform at the height of its aperture.</li>
+    <li><b>Up close.</b> The whole floor is walkable: every line is inlaid flush. At each gold seam a lens is set in a bronze plinth, with a plaque giving the true gap at this size, from 12 thousandths of a millimetre on the arc to six gold atoms on Ramanujan's line.</li>
+  </ul>
+</div>
+
+<div class="box">
+  <div class="box-title">Three Sizes Of The Same Plan</div>
+  <ul>
+    <li><b>A statue or table piece, about 1 m across.</b> A bronze or stone disc with the plan engraved and the results inlaid in gold; the circle is 23 cm across and the smallest step about 1 cm. Machined to a hundredth of a millimetre, it is the most faithful version. Set it level and turned to the meridian, and a pin 12 cm high plays the Sun Gate.</li>
+    <li><b>A plaza, 44 m × 48 m.</b> Stone with brass and gold inlay, laid out by modern survey to about a millimetre. Its smallest step is 0.45 m, easy to set out.</li>
+    <li><b>Old-world work.</b> Every step can be laid with cords, stakes and a rope compass, as the rope-stretchers did, but rope work is true only to about one part in 5,000: the near-perfect results can be honoured in such a building, not shown. The gold seams are then symbolic, as in Vision II.</li>
+  </ul>
+  <div class="box-text">How the constructions were chosen: each candidate on the charts was laid onto the clock, turned or mirrored to share as many lines as possible, and measured for the lines it adds, how far it reaches and its smallest step. The set here keeps every result above 99.9998% while the whole floor stays inside 50 m. The measurements are in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#all-of-them-at-once-a-design-study" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.</div>
 </div>
 
 <div class="box">
@@ -114,6 +172,7 @@
 <script src="archive-data.js"></script>
 <script src="data.js"></script>
 <script src="architecture-finds.js"></script>
+<script src="architecture-plan-steps.js"></script>
 <script>
 // The gap between the best oversized and undersized entries, at a building's scale.
 const SCALES = {
@@ -185,6 +244,50 @@ document.getElementById('gaps').innerHTML = rows;
   T.innerHTML = '<tr><th>Find</th><th>Steps</th><th>Long</th><th>Short</th><th>Gap</th><th>Shows</th><th>Plaza for 1.2 m</th><th>Longest cord</th><th>File</th></tr>' + rows.join('');
   const last = F.runs[F.runs.length - 1];
   N.innerHTML = `Long and short give each length's accuracy, as on the charts: one oversized, one undersized, with the true end between them. "Shows" is how many times wider the gap is than its wander with rope work true to one part in 5,000. Last run ${last.date}, with ${last.entries} chart entries; ${F.runs.length} run${F.runs.length === 1 ? '' : 's'} so far. The full checklist is in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#the-checklist" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.`;
+})();
+
+// The combined plan, step by step (pages/architecture-plan-steps.js, written from Architecture/Plan/combined-plan.ggb).
+(function () {
+  const P = window.PLAN_STEPS; if (!P) return;
+  const cv = document.getElementById('planCv'), g = cv.getContext('2d'), sl = document.getElementById('pSlider');
+  const steps = P.steps, cs = Math.cos(P.turn), sn = Math.sin(P.turn);
+  const [x0, y0, x1, y1] = P.view, pad = 1.2;
+  const sc = Math.min((cv.width - 40) / (x1 - x0 + 2 * pad), (cv.height - 40) / (y1 - y0 + 2 * pad));
+  const turn = p => [p[0] * cs - p[1] * sn, p[0] * sn + p[1] * cs];
+  const px = p => { const q = turn(p); return [20 + (q[0] - x0 + pad) * sc, cv.height - 20 - (q[1] - y0 + pad) * sc]; };
+  let i = 0, timer = null;
+  sl.max = steps.length - 1;
+  const chap = document.getElementById('pChap');
+  steps.forEach((st, k) => { if (st.ch) { const o = document.createElement('option'); o.value = k; o.textContent = st.t.split(':')[0].split('.')[0]; chap.appendChild(o); } });
+  function shape(x, col, w) {
+    g.strokeStyle = col; g.fillStyle = col; g.lineWidth = w;
+    if (x.k === 'p') { const q = px(x.p); g.beginPath(); g.arc(q[0], q[1], Math.max(2, w + 1), 0, 2 * Math.PI); g.fill(); }
+    else if (x.k === 'c') { const q = px(x.c); g.beginPath(); g.arc(q[0], q[1], x.r * sc, 0, 2 * Math.PI); g.stroke(); }
+    else if (x.k === 'l') { const [a, b, c] = x.e, p0 = [-a * c, -b * c], d = [-b, a], L = 60; const p = px([p0[0] - d[0] * L, p0[1] - d[1] * L]), q = px([p0[0] + d[0] * L, p0[1] + d[1] * L]); g.beginPath(); g.moveTo(...p); g.lineTo(...q); g.stroke(); }
+    else if (x.k === 's' || x.k === 'r') { const p = px(x.a), q = px(x.b); g.beginPath(); g.moveTo(...p); g.lineTo(...q); g.stroke(); }
+    else if (x.k === 'g') { g.beginPath(); x.pts.forEach((p, k) => { const q = px(p); k ? g.lineTo(...q) : g.moveTo(...q); }); g.closePath(); g.stroke(); }
+    else if (x.k === 'a') { const q = px(x.c), a0 = Math.atan2(x.a[1] - x.c[1], x.a[0] - x.c[0]) + P.turn, a1 = Math.atan2(x.b[1] - x.c[1], x.b[0] - x.c[0]) + P.turn; g.beginPath(); g.arc(q[0], q[1], x.r * sc, -a0, -a1, true); g.stroke(); }
+  }
+  function draw() {
+    g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
+    for (let k = 0; k <= i; k++) for (const x of steps[k].s) {
+      const now = k === i, gold = x.res;
+      shape(x, gold ? '#d4a838' : now ? '#5fb3ff' : '#4a4a58', gold ? 4 : now ? 2.5 : 1.2);
+    }
+    sl.value = i; document.getElementById('pText').textContent = (i + 1) + ' / ' + steps.length + ' · ' + steps[i].t;
+    let c = -1; for (let k = 0; k <= i; k++) if (steps[k].ch) c = k; if (c >= 0) chap.value = c;
+  }
+  const go = k => { i = Math.max(0, Math.min(steps.length - 1, k)); draw(); };
+  document.getElementById('pPrev').onclick = () => go(i - 1);
+  document.getElementById('pNext').onclick = () => go(i + 1);
+  sl.oninput = () => go(+sl.value);
+  chap.onchange = () => go(+chap.value);
+  document.getElementById('pPlay').onclick = e => {
+    if (timer) { clearInterval(timer); timer = null; e.target.textContent = '▶ Play'; return; }
+    if (i >= steps.length - 1) i = 0;
+    e.target.textContent = '❚❚ Pause'; timer = setInterval(() => { if (i >= steps.length - 1) { clearInterval(timer); timer = null; e.target.textContent = '▶ Play'; return; } go(i + 1); }, 450);
+  };
+  go(steps.length - 1);
 })();
 </script>
 </body>
