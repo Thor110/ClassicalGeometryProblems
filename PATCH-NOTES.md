@@ -12,6 +12,25 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #5, the digital outer shell
+
+### Site
+- The Architectural Vision page has Attempt #5, first in the attempts dropdown: Attempt #4 with a digital
+  outer shell of 72 studs every 5°. **It is not a construction**: 5° cannot be drawn with straightedge and
+  compass, and the shell says so wherever it appears (page, step player, plan, ARCHITECTURAL.md). Its marks
+  are surveyed, as a symbol of the digital world round the classical one.
+
+---
+
+## November 2026: A metre grid
+
+### Site
+- Every design attempt's step player, and its 3D view, can show a metre grid over the floor (the Metre grid
+  button). It is laid from the site's north-west corner, so the odd part metre falls along the east and south
+  edges, with every tenth line brighter and the site's size in metres.
+
+---
+
 ## November 2026: Attempt #4, gates on the outer ring
 
 ### Site

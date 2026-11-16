@@ -1,14 +1,14 @@
 // The metals of the floor's inlay, one for each problem's steps (Attempt #3 on); gold is kept for the results.
-const METALS = {bronze: '#c08a48', silver: '#cfd4dc', copper: '#d8743e', steel: '#74a3dc', patina: '#52b496'};
+const METALS = {digital: '#7fe8ff', bronze: '#c08a48', silver: '#cfd4dc', copper: '#d8743e', steel: '#74a3dc', patina: '#52b496'};
 const metal = (m, a) => { const h = METALS[m]; return 'rgba(' + [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)).join(',') + ',' + a + ')'; };
 // A small 3D view of a plan's floor and solids, drawn on a 2D canvas (no library): drag to turn, scroll or pinch to zoom.
 function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
   const ORDER = {ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
-  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], conef: [null, 'rgba(240,200,96,0.28)'], sector: ['rgba(150,120,210,0.35)', null]};
+  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], sector: ['rgba(150,120,210,0.35)', null]};
   const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
-  let hang = false;
+  let hang = false, gridU = 0;
   let yaw = P.yaw || -1.95, pitch = P.pitch || 0.55, dist = P.dist || 30, tgt = P.tgt || [0, 1, 1.8], t = 1, start = null, raf = null, on = false;
   const [x0, y0, x1, y1] = P.view;
   const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -78,6 +78,10 @@ function makeView3D(cv, P) {
   function draw() {
     camera(); g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
     path([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]], true); g.fillStyle = '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke();
+    if (gridU) {          // the metre grid on the ground, from the site's north-west corner
+      for (let k = 0; x0 + k * gridU <= x1 + 1e-9; k++) { const X = x0 + k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([X, y1 - (y1 - y0) * j / 24, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
+      for (let k = 0; y1 - k * gridU >= y0 - 1e-9; k++) { const Y = y1 - k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([x0 + (x1 - x0) * j / 24, Y, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
+    }
     for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, 0.7) : 'rgba(110,110,130,0.55)', x.m ? 1.4 : 1);
     for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, '#d4a838', 2.5);
     const N = M ? M.objects.length : S.length, f = i => (t * 1.6 - 0.6 * i / N) / 0.6;
@@ -104,6 +108,7 @@ function makeView3D(cv, P) {
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
   cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
+    grid(b, u) { gridU = b ? u : 0; if (on && !raf) draw(); },
     suspend(b) { hang = b; if (on && !raf) draw(); },
     show() { if (on) return; on = true; cv.style.touchAction = 'none'; cv.style.cursor = 'grab'; start = null; t = 0; raf = requestAnimationFrame(frame); },
     hide() { on = false; cv.style.touchAction = ''; cv.style.cursor = ''; if (raf) cancelAnimationFrame(raf); raf = null; },

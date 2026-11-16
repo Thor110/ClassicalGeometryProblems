@@ -343,6 +343,21 @@ Attempt #3's file with the new lines added.
 The lines run through the origin and across the whole floor, so the bronze becomes a sunburst. Whether that
 reads as a pattern or as clutter is the question this attempt asks.
 
+## All of them at once, Attempt #5: the digital outer shell
+
+> **Not a construction.** 5° cannot be drawn with straightedge and compass: among whole degrees, only
+> multiples of 3° can. Attempt #5's outer shell does not claim to construct 5°, and it is not an
+> approximation. Its marks are placed by measurement, as a surveyor or a computer would place them, and no
+> step on the floor draws them. It is a deliberate symbol, Edward's idea: the digital world round the
+> classical one, what can be calculated but not constructed.
+
+Everything inside is Attempt #4 unchanged, and the GeoGebra file is Attempt #4's
+([Architecture/Plan/attempt-4.ggb](Architecture/Plan/attempt-4.ggb)): the shell has no construction to record.
+Beyond the gates, on a ring 13.5 m from the origin, stand 72 low studs every 5°, 1.18 m apart, in a material
+of their own (cyan on the page), with no construction lines; the ring itself is a survey line, dashed in the
+plan. Read from outside in, the monument goes from the measured to the constructed, and at its centre to what
+neither can reach exactly. The site grows to about 42 m × 32 m.
+
 ## How close the lines are today
 
 Worked out from the charts in November 2026, once with every entry and once with people's entries

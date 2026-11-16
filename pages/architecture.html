@@ -10,7 +10,7 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
-  #qCv,#rCv,#sCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
+  #qCv,#rCv,#sCv,#tCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -69,6 +69,7 @@
   <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
   <div class="controls" style="justify-content:center;margin-top:10px;">
     <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att5">Attempt #5: The Digital Outer Shell</option>
       <option value="att4">Attempt #4: Gates On The Outer Ring</option>
       <option value="att3">Attempt #3: The Trisection Rings</option>
       <option value="att2">Attempt #2: One Origin</option>
@@ -78,7 +79,35 @@
   </div>
 </div>
 
-<div id="att4">
+<div id="att5">
+<div class="box">
+  <div class="box-title">Attempt #5: The Digital Outer Shell</div>
+  <div class="box-text" style="border-left:4px solid #7fe8ff;padding-left:12px;"><b>Not a construction.</b> 5° cannot be drawn with straightedge and compass: among whole degrees, only multiples of 3° can. The outer shell in this attempt is not an approximation, and it does not claim to construct 5°. Its marks are placed by measurement, as a surveyor or a computer would place them, and nothing on the floor draws them. It is there on purpose, as a symbol: the digital world round the classical one, what can be calculated but not constructed.</div>
+  <div class="box-text">Inside it, everything is Attempt #4 unchanged: every step a line in the floor, every pillar and gate an exact trisection. Beyond the gates, on a ring 13.5 m from the origin, stand 72 low studs every 5°, 1.18 m apart, in a material of their own (shown in cyan), with no construction lines. The ring they stand on is not drawn by the compass either: it is a line of the survey, shown dashed in the plan. Read from outside in, the monument goes from the measured to the constructed, and at its centre to what neither can reach exactly.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-5.svg" target="_blank"><img src="images/architecture-plan-5.svg" alt="Attempt #5: Attempt #4's plan with a dashed outer ring of 72 cyan studs every 5 degrees, surveyed rather than constructed"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Every step in the metal of its problem, the results in gold. The cyan studs are surveyed, not constructed.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Drawing The Floor, Then Raising It</div>
+  <div class="box-text">The floor is drawn step by step as in Attempt #4. The last floor step is not a step at all: it sets the digital shell, marked "not a construction". Then the building rises in three dimensions: drag to turn it, and scroll or pinch to zoom.</div>
+  <canvas id="tCv" width="1400" height="1100" aria-label="Attempt #5, drawn step by step and then raised in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="tPrev">◀ Back</button>
+    <button class="small" id="tPlay">▶ Play</button>
+    <button class="small" id="tNext">Next ▶</button>
+    <button class="small" id="tGrid">Metre grid</button>
+    <button class="small" id="t3d">3D</button>
+    <button class="small" id="tHang">Suspend the cubes</button>
+    <select id="tChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="tSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="tText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file is Attempt #4's, <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-4.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-4.ggb</a>, unchanged: the digital shell has no construction to record.</div>
+</div>
+</div>
+
+<div id="att4" hidden>
 <div class="box">
   <div class="box-title">Attempt #4: Gates On The Outer Ring</div>
   <div class="box-text">Attempt #3, with two more exact trisections charted on its outer ring. 15° is a third of 45°, and 7.5° a third of 22.5°, and both of those can be drawn exactly, so these are true trisections too. Rings of their own would stand only a metre or so apart, too close to read, so they are marked on the outer ring alone, 12 m from the origin: a gate every 15°, 3.1 m apart, and a low post halfway between each pair, every 7.5°. The ring's three pillars stand in place of three of the gates. The gates could be guides, thresholds or turnstiles into the monument; for now they are a pair of posts with a bronze bar, 1 m high, under the cone.</div>
@@ -95,6 +124,7 @@
     <button class="small" id="sPrev">◀ Back</button>
     <button class="small" id="sPlay">▶ Play</button>
     <button class="small" id="sNext">Next ▶</button>
+    <button class="small" id="sGrid">Metre grid</button>
     <button class="small" id="s3d">3D</button>
     <button class="small" id="sHang">Suspend the cubes</button>
     <select id="sChap" class="small" style="max-width:100%;"></select>
@@ -124,6 +154,7 @@
     <button class="small" id="rPrev">◀ Back</button>
     <button class="small" id="rPlay">▶ Play</button>
     <button class="small" id="rNext">Next ▶</button>
+    <button class="small" id="rGrid">Metre grid</button>
     <button class="small" id="r3d">3D</button>
     <button class="small" id="rHang">Suspend the cubes</button>
     <select id="rChap" class="small" style="max-width:100%;"></select>
@@ -163,6 +194,7 @@
     <button class="small" id="qPrev">◀ Back</button>
     <button class="small" id="qPlay">▶ Play</button>
     <button class="small" id="qNext">Next ▶</button>
+    <button class="small" id="qGrid">Metre grid</button>
     <button class="small" id="q3d">3D</button>
     <button class="small" id="qHang">Suspend the cubes</button>
     <select id="qChap" class="small" style="max-width:100%;"></select>
@@ -217,6 +249,7 @@
     <button class="small" id="pPrev">◀ Back</button>
     <button class="small" id="pPlay">▶ Play</button>
     <button class="small" id="pNext">Next ▶</button>
+    <button class="small" id="pGrid">Metre grid</button>
     <select id="pChap" class="small" style="max-width:100%;"></select>
   </div>
   <input type="range" id="pSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
@@ -317,6 +350,7 @@
 <script src="architecture-plan-2-steps.js"></script>
 <script src="architecture-plan-3-steps.js"></script>
 <script src="architecture-plan-4-steps.js"></script>
+<script src="architecture-plan-5-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -416,12 +450,25 @@ function planPlayer(P, id) {
     else if (x.k === 'g') { g.beginPath(); x.pts.forEach((p, k) => { const q = px(p); k ? g.lineTo(...q) : g.moveTo(...q); }); g.closePath(); g.stroke(); }
     else if (x.k === 'a') { const q = px(x.c), a0 = Math.atan2(x.a[1] - x.c[1], x.a[0] - x.c[0]) + P.turn, a1 = Math.atan2(x.b[1] - x.c[1], x.b[0] - x.c[0]) + P.turn; g.beginPath(); g.arc(q[0], q[1], x.r * sc, -a0, -a1, true); g.stroke(); }
   }
+  // a metre grid, laid from the site's north-west corner, so the odd part metre falls along the east and south edges
+  const unit = (P.radius || 4) / (P.metres || 5.5);
+  let grid = false;
+  function drawGrid() {
+    const N = k => k % 10 === 0;
+    for (let k = 0; x0 + k * unit <= x1 + 1e-9; k++) { const X = x0 + k * unit, a = [20 + (X - x0 + pad) * sc, 0]; g.strokeStyle = N(k) ? 'rgba(220,220,235,0.32)' : 'rgba(220,220,235,0.12)'; g.lineWidth = 1; g.beginPath(); g.moveTo(a[0], 20 + pad * sc); g.lineTo(a[0], cv.height - 20 - pad * sc); g.stroke(); }
+    for (let k = 0; y1 - k * unit >= y0 - 1e-9; k++) { const Y = y1 - k * unit, yy = cv.height - 20 - (Y - y0 + pad) * sc; g.strokeStyle = N(k) ? 'rgba(220,220,235,0.32)' : 'rgba(220,220,235,0.12)'; g.beginPath(); g.moveTo(20 + pad * sc, yy); g.lineTo(cv.width - 20 - pad * sc, yy); g.stroke(); }
+    const W = (x1 - x0) / unit, H = (y1 - y0) / unit;
+    g.fillStyle = 'rgba(220,220,235,0.7)'; g.font = '22px Georgia, serif'; g.textAlign = 'left';
+    g.fillText(W.toFixed(1) + ' m × ' + H.toFixed(1) + ' m; lines every metre, every tenth brighter', 24 + pad * sc, 16 + pad * sc);
+  }
+  if (id.grid) $('grid').onclick = e => { grid = !grid; e.target.textContent = grid ? 'Hide grid' : 'Metre grid'; if (v3) v3.grid(grid, unit); draw(); };
   function draw() {
     sl.value = i; $('text').textContent = (i + 1) + ' / ' + steps.length + ' · ' + steps[i].t;
     let c = -1; for (let k = 0; k <= i; k++) if (steps[k].ch) c = k; if (c >= 0) chap.value = c;
     if (steps[i].td && v3) { v3.show(); return; }
     if (v3) v3.hide();
     g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
+    if (grid) drawGrid();
     for (let k = 0; k <= i; k++) for (const x of steps[k].s) {
       const now = k === i, gold = x.res;
       shape(x, gold ? '#d4a838' : now ? '#5fb3ff' : x.m ? metal(x.m, 0.75) : '#4a4a58', gold ? 4 : now ? 2.5 : x.m ? 1.6 : 1.2);
@@ -441,21 +488,26 @@ function planPlayer(P, id) {
   go(P.solids ? steps.length - 2 : steps.length - 1);
   return {v3, to3d: () => go(steps.length - 1)};
 }
-planPlayer(window.PLAN_STEPS, {cv: 'planCv', slider: 'pSlider', chap: 'pChap', text: 'pText', prev: 'pPrev', next: 'pNext', play: 'pPlay'});
-const att2 = planPlayer(window.PLAN2_STEPS, {cv: 'qCv', slider: 'qSlider', chap: 'qChap', text: 'qText', prev: 'qPrev', next: 'qNext', play: 'qPlay', d3: 'q3d'});
+planPlayer(window.PLAN_STEPS, {cv: 'planCv', slider: 'pSlider', chap: 'pChap', text: 'pText', prev: 'pPrev', next: 'pNext', play: 'pPlay', grid: 'pGrid'});
+const att2 = planPlayer(window.PLAN2_STEPS, {cv: 'qCv', slider: 'qSlider', chap: 'qChap', text: 'qText', prev: 'qPrev', next: 'qNext', play: 'qPlay', d3: 'q3d', grid: 'qGrid'});
 if (att2 && att2.v3) {
   let hung = false;
   document.getElementById('qHang').onclick = e => { hung = !hung; att2.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att2.to3d(); };
 }
-const att3 = planPlayer(window.PLAN3_STEPS, {cv: 'rCv', slider: 'rSlider', chap: 'rChap', text: 'rText', prev: 'rPrev', next: 'rNext', play: 'rPlay', d3: 'r3d'});
+const att3 = planPlayer(window.PLAN3_STEPS, {cv: 'rCv', slider: 'rSlider', chap: 'rChap', text: 'rText', prev: 'rPrev', next: 'rNext', play: 'rPlay', d3: 'r3d', grid: 'rGrid'});
 if (att3 && att3.v3) {
   let hung = false;
   document.getElementById('rHang').onclick = e => { hung = !hung; att3.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att3.to3d(); };
 }
-const att4 = planPlayer(window.PLAN4_STEPS, {cv: 'sCv', slider: 'sSlider', chap: 'sChap', text: 'sText', prev: 'sPrev', next: 'sNext', play: 'sPlay', d3: 's3d'});
+const att4 = planPlayer(window.PLAN4_STEPS, {cv: 'sCv', slider: 'sSlider', chap: 'sChap', text: 'sText', prev: 'sPrev', next: 'sNext', play: 'sPlay', d3: 's3d', grid: 'sGrid'});
 if (att4 && att4.v3) {
   let hung = false;
   document.getElementById('sHang').onclick = e => { hung = !hung; att4.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att4.to3d(); };
+}
+const att5 = planPlayer(window.PLAN5_STEPS, {cv: 'tCv', slider: 'tSlider', chap: 'tChap', text: 'tText', prev: 'tPrev', next: 'tNext', play: 'tPlay', d3: 't3d', grid: 'tGrid'});
+if (att5 && att5.v3) {
+  let hung = false;
+  document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };
 }
 // Edward's Blender mockup (pages/architecture-mockup.js), raised whenever it is shown.
 const mock = window.MOCKUP && typeof makeView3D === 'function' ? makeView3D(document.getElementById('mCv'), {view: [-8, -8, 8, 8], steps: [], solids: [], mesh: window.MOCKUP, dist: 17, tgt: [0, 0, 2]}) : null;
