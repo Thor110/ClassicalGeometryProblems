@@ -496,6 +496,13 @@ A future attempt where the geometry carves its own space: the slots under the pi
 between the trisection pillars, from ring to ring and round each ring, so that the rings become arcades and the cone
 a vaulted roof, with the gold lines running along the nave beneath.
 
+### Idea: light through the pillars
+
+Where a pillar stands in the way of a solstice light line, such as the noon sun along the north–south line (the
+first and third rings each have a pillar due south and due north), it can be cut through for that light alone: an
+aperture lined with gold, or in the cathedral form a window, so that the sun's spot reaches the gold on the floor at
+noon on the solstice.
+
 ### Idea: bollards
 
 For real-world versions the digital shell's marks can be bollards against vehicles, with their angle chosen for the
