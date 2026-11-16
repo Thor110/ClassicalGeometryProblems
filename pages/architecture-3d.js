@@ -9,7 +9,7 @@ function makeView3D(cv, P) {
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
   const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], sector: ['rgba(150,120,210,0.35)', null]};
   const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
-  let hang = false, gridU = 0;
+  let hang = P.hang !== false, gridU = 0;      // the cubes hang about one centre unless told to stand
   // the materials view (Attempt #9 on): stone, metal inlay and glass, lit by the sun at an hour and date, or at night
   const LOOK = P.look === 'materials', LAT = (P.lat || 50.9) * Math.PI / 180;
   let night = false, SUN = [0, 0, 1];
@@ -101,7 +101,9 @@ function makeView3D(cv, P) {
         if (s.k === 'box') { face(c.map(p => [p[0], p[1], zt]), fill, line); if (z0 > 0) face(c.map(p => [p[0], p[1], z0]), fill, line); }
       } else if (s.k === 'column') {
         const h = s.h * k, n = 8, ring = z => Array.from({length: n}, (_, j) => [s.c[0] + s.r * Math.cos(2 * Math.PI * j / n), s.c[1] + s.r * Math.sin(2 * Math.PI * j / n), z]);
-        const lo = ring(0), hi = ring(h);
+        // a pillar on a gold line stands on a glass slot, so the gold runs on underneath it in view
+        const z0 = s.arch ? 0.12 * h : 0, lo = ring(z0), hi = ring(h);
+        if (s.arch) { const gl = ring(0); for (let j = 0; j < n; j++) face([gl[j], gl[(j + 1) % n], lo[(j + 1) % n], lo[j]], LOOK && !night ? 'rgba(200,225,240,0.28)' : 'rgba(150,200,230,0.2)', LOOK ? '#eef8ff' : '#bfe0f5'); }
         if (LOOK) {
           const base = s.col === 'digital' ? '#8a9098' : s.col === 'bronze' ? '#a8763a' : '#e4dccb';
           for (let j = 0; j < n; j++) { const a = 2 * Math.PI * (j + 0.5) / n; face([lo[j], lo[(j + 1) % n], hi[(j + 1) % n], hi[j]], lit(base, [Math.cos(a), Math.sin(a), 0]), null); }

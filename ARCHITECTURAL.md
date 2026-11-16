@@ -391,9 +391,9 @@ merged file. The floor is 28 circles and 30 lines with the rings and gates (Atte
   The clock's twelve points stay as low bronze studs on the clock circle.
 - **Room at the centre**: the squares' corners stand 1.96 m from the nearest pillar's centre.
 - **Pillars on the gold lines**: where a pillar stands on the π or arc lines (the first and second rings on the π
-  lines, the first on the arc lines) it stays one pillar on its exact point, and the gold line runs under it
-  through an arched slot at its foot: the approximation passes beneath the exact trisection. How best to show
-  the gold there is left to the materials. The outer ring's gates are exact: a post on every odd 7.5° mark, each
+  lines, the first on the arc lines) it stays one pillar on its exact point, standing on a glass slot, so the
+  gold line runs on under it in view: the approximation passes beneath the exact trisection and can still be
+  seen. The outer ring's gates are exact: a post on every odd 7.5° mark, each
   15° mark the centre of an opening with a bronze threshold. Every pillar and post stands on a constructed point.
 - **The gnomon** rises north from the origin and ends 5.4 m out and 6.6 m up, inside the first ring and the cone.
 - **The cone** meets the ground at the digital shell: pillars 8.4, 6.0, 3.6 and 1.2 m tall.
@@ -437,7 +437,7 @@ between two paving slabs; among pairs within a tenth of that narrowest gap, the 
 
 All eight accuracies were checked in GeoGebra on the merged file. The floor takes 52 circles and 50 lines, nearly
 twice Attempt #6's: accuracy costs steps. The given cube is a 20 m hall, the rings stand at 30, 50, 70 and 90 m,
-the pillars step down from 28 m to 4 m on a cone 40 m high, and where a pillar stands on a gold line, the line runs under it through an arched slot.
+the pillars step down from 28 m to 4 m on a cone 40 m high, and where a pillar stands on a gold line, it stands on a glass slot and the gold runs on beneath it.
 
 **Accepted loss: the seasons.** At about 8 millionths per degree, a year's ±15 °C moves the 62.8 m π lines by
 about ±7.5 mm, more than their gap. The gaps are true for the drawing and for the stone at the temperature it was
@@ -483,12 +483,18 @@ sun at any hour (solar time) and on the solstices or equinoxes at 50.9° N, or s
   the rings, silver for squaring the circle, copper for π, blued steel for the arc, patinated bronze for the cube).
 - **Gold**: the results as gold leaf sealed in resin under glass strips, flush and walkable; lit from beneath at
   night.
-- **Pillars**: pale stone with bronze caps, 8.4 m down to 1.2 m. Where one stands on a gold line, the line runs under
-  it through an arched slot.
+- **Pillars**: pale stone with bronze caps, 8.4 m down to 1.2 m. Where one stands on a gold line, it stands on a glass
+  slot, so the gold runs on beneath it in view.
 - **Hall**: the given cube as a 4.5 m glass pavilion, inside the open bronze and gold frames of the doubled cubes.
 - **Edge**: the digital shell as 72 steel bollards a metre high, every 5°, each with a light in its top.
 - **Sundial**: the gold gnomon's shadow falls on the hour stones; the shadows of every pillar turn round the floor
   with it, long and low at a December morning.
+
+### Idea: a cathedral
+
+A future attempt where the geometry carves its own space: the slots under the pillars grown into arches that spring
+between the trisection pillars, from ring to ring and round each ring, so that the rings become arcades and the cone
+a vaulted roof, with the gold lines running along the nave beneath.
 
 ### Idea: bollards
 

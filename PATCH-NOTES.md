@@ -12,6 +12,16 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Glass slots, and the cubes suspended by default
+
+### Site
+- In Attempts #6 to #9 a pillar on a gold line stands on a glass slot, so the gold line runs on under it in view.
+- The cubes now hang about one centre by default in every attempt's 3D view, with a Stand the cubes button to
+  set them on the floor; Attempt #9 has the button too.
+- A cathedral, with arches springing between the trisection pillars, is recorded as an idea for a future attempt.
+
+---
+
 ## November 2026: Attempt #9, in its materials
 
 ### Site
