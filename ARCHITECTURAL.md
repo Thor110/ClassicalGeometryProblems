@@ -277,6 +277,45 @@ building rising from it. It is drawn by a small script of its own (pages/archite
 needs no outside library. The plan and the 3D model come from the same GeoGebra file, through
 pages/architecture-plan-2-steps.js.
 
+## All of them at once, Attempt #3: the trisection rings
+
+Attempt #2, with every exact trisection carried all the way round the monument, from Edward's idea of
+layering them as concentric rings whose pillars step down to form a cone. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-3)
+has the plan, the floor step by step, and the building raised in three dimensions. The file is
+[Architecture/Plan/attempt-3.ggb](Architecture/Plan/attempt-3.ggb): Attempt #2's file exactly as published,
+with the rings added at the end, so the eight results keep their accuracies.
+
+### The rings
+
+Four trisections are exact with straightedge and compass, and the clock already marks all of them. Each has
+its own ring about the origin, repeating its division the whole way round:
+
+| Ring | Radius | Trisection | Pillars | Height |
+|---|---|---|---|---|
+| 1, the clock | 3 m | 90° into 30° | 12, every 30° | 4.8 m |
+| 2 | 6 m | 180° into 60° | 6, every 60° | 3.6 m |
+| 3 | 9 m | 270° into 90° | 4, every 90° | 2.4 m |
+| 4 | 12 m | 360° into 120° | 3, every 120° | 1.2 m |
+
+The pillars also get slimmer ring by ring. Their tops lie on one cone, 6 m high over the origin and meeting
+the ground 15 m out, and the cubes and the gnomon stand inside it (the gnomon is shortened to 5.6 m for that).
+The clock's pillars on the quarter arc replace Attempt #2's colonnade.
+
+### The steps
+
+- The circle about C, from the clock, meets the line OC again two radii out: the second ring is the circle
+  about O through that point.
+- From that point, a circle through C reaches three radii, and a circle through O reaches four; a circle about
+  O through each gives the third and fourth rings.
+- The pillars stand where the rings cross lines through the origin. The clock's lines serve every ring
+  except the 120° and 300° directions, which need one more line, from four to ten o'clock.
+
+That is 5 circles and 1 line more than Attempt #2: 31 circles and 11 lines in all, with the eight gold
+results. The site is 40 m × 31 m. Every new point was checked in GeoGebra.
+
+The pillars due west stand on the π lines at one, two and three radii, like milestones; π ends 0.42 m
+beyond the third.
+
 ## How close the lines are today
 
 Worked out from the charts in November 2026, once with every entry and once with people's entries

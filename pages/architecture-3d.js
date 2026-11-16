@@ -1,12 +1,12 @@
 // A small 3D view of a plan's floor and solids, drawn on a 2D canvas (no library): drag to turn, scroll or pinch to zoom.
 function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
-  const ORDER = {sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
+  const ORDER = {ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
-  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], sector: ['rgba(150,120,210,0.35)', null]};
+  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], conef: [null, 'rgba(240,200,96,0.28)'], sector: ['rgba(150,120,210,0.35)', null]};
   const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
   let hang = false;
-  let yaw = -1.95, pitch = 0.55, dist = P.dist || 30, tgt = P.tgt || [0, 1, 1.8], t = 1, start = null, raf = null, on = false;
+  let yaw = P.yaw || -1.95, pitch = P.pitch || 0.55, dist = P.dist || 30, tgt = P.tgt || [0, 1, 1.8], t = 1, start = null, raf = null, on = false;
   const [x0, y0, x1, y1] = P.view;
   const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
   const crs = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
@@ -49,6 +49,8 @@ function makeView3D(cv, P) {
     });
     S.forEach((s, i) => {
       const k = ease(f(i)); if (k <= 0) return; const [fill, line] = COL[s.col];
+      if (s.k === 'ring') { const n = 96; for (let j = 0; j < n; j++) { const a = 2 * Math.PI * j / n, b = 2 * Math.PI * (j + 1) / n, r = s.r * k; edge([r * Math.cos(a), r * Math.sin(a), 0.03], [r * Math.cos(b), r * Math.sin(b), 0.03], line, 2); } return; }
+      if (s.k === 'cone') { for (let j = 0; j < 24; j++) { const a = 2 * Math.PI * j / 24; edge([0, 0, s.apex * k], [s.foot * Math.cos(a), s.foot * Math.sin(a), 0], line, 1); } return; }
       if (s.k === 'sector') { const pts = [[0, 0, 0.02]]; for (let j = 0; j <= 24; j++) { const a = s.a0 + (s.a1 - s.a0) * j / 24; pts.push([s.r * k * Math.cos(a), s.r * k * Math.sin(a), 0.02]); } face(pts, fill, null); return; }
       if (s.k === 'box' || s.k === 'frame' || s.k === 'kerb') {
         // standing on the floor, or hung with the outer frame's centre (Edward's mockup: the smaller cube suspended inside the larger)

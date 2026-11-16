@@ -10,7 +10,7 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
-  #qCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
+  #qCv,#rCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -69,6 +69,7 @@
   <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
   <div class="controls" style="justify-content:center;margin-top:10px;">
     <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att3">Attempt #3: The Trisection Rings</option>
       <option value="att2">Attempt #2: One Origin</option>
       <option value="attm">Edward's Blender Mockup Of Attempt #2</option>
       <option value="att1">Attempt #1: The Clock Plaza</option>
@@ -76,7 +77,46 @@
   </div>
 </div>
 
-<div id="att2">
+<div id="att3">
+<div class="box">
+  <div class="box-title">Attempt #3: The Trisection Rings</div>
+  <div class="box-text">Attempt #2, with every exact trisection carried all the way round the monument. Four trisections can be done exactly with straightedge and compass, and the clock already marks them all: 90° into 30°, 180° into 60°, 270° into 90° and 360° into 120°. Here each has its own ring about the origin, repeating its division the whole way round: pillars every 30° on the clock itself, every 60° on a ring at two radii, every 90° at three radii and every 120° at four.</div>
+  <div class="box-text">The pillars step down ring by ring, shorter and slimmer the further out they stand, so that their tops lie on one cone, 6 m high over the origin and meeting the ground 15 m out: 4.8 m on the clock, then 3.6 m, 2.4 m and 1.2 m. The cubes, the gnomon and everything else stand inside it.</div>
+  <div class="box-text">The rings cost <b>5 circles and 1 line</b> more than Attempt #2: a circle about O for each new ring, two circles to find the radii of the third and fourth, and the line from four to ten o'clock for the 120° divisions. The rest are the clock's own lines. That makes <b>31 circles and 11 lines</b> in all, with the same eight gold results. The site is <b>40 m × 31 m</b>.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-3.svg" target="_blank"><img src="images/architecture-plan-3.svg" alt="Attempt #3: the four trisection rings about the origin with their pillars, round the nested squares, the π lines and the straightened quarter arcs of Attempt #2"></a></div>
+  <div class="small-text" style="text-align:center;">North is up. Grey: every step. Gold: the results. Silver: the four trisection rings, each with its pillars. The π lines pass the pillars at one, two and three radii, and end just beyond the third.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Drawing The Floor, Then Raising It</div>
+  <div class="box-text">Step through the floor as it is drawn, or play it. The last step stands the building up in three dimensions, with the cone that bounds the pillars drawn faintly: drag to turn it, and scroll or pinch to zoom.</div>
+  <canvas id="rCv" width="1400" height="1100" aria-label="Attempt #3, drawn step by step and then raised in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="rPrev">◀ Back</button>
+    <button class="small" id="rPlay">▶ Play</button>
+    <button class="small" id="rNext">Next ▶</button>
+    <button class="small" id="r3d">3D</button>
+    <button class="small" id="rHang">Suspend the cubes</button>
+    <select id="rChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <input type="range" id="rSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="rText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The GeoGebra file: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-3.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-3.ggb</a>. It is Attempt #2's file with the rings added, so the eight results keep the accuracies given under Attempt #2.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">The Rings</div>
+  <ul>
+    <li><b>The clock, 3 m out: 90° into 30°.</b> Twelve pillars, 4.8 m high, on the clock's twelve points. Four of them stand on the quarter arc, at three, one, two and twelve o'clock, and replace Attempt #2's colonnade.</li>
+    <li><b>The second ring, 6 m out: 180° into 60°.</b> Six pillars, 3.6 m high, at one, three, five, seven, nine and eleven o'clock.</li>
+    <li><b>The third ring, 9 m out: 270° into 90°.</b> Four pillars, 2.4 m high, at three, six, nine and twelve o'clock, on the two diameters.</li>
+    <li><b>The fourth ring, 12 m out: 360° into 120°.</b> Three pillars, 1.2 m high, at three, seven and eleven o'clock.</li>
+  </ul>
+  <div class="box-text">Every ring's pillars lie on lines through the origin that the clock has already drawn, except the 120° and 300° directions, which need the one extra line. The pillars due west stand on the π lines at one, two and three radii, like milestones, and π itself ends 0.42 m beyond the third.</div>
+</div>
+</div>
+
+<div id="att2" hidden>
 <div class="box">
   <div class="box-title">Attempt #2: One Origin</div>
   <div class="box-text">Everything grows from one point: the origin O, the first point placed on the ground and the centre of the first circle. Each problem is drawn twice about it, once oversized and once undersized, so the gap is a true gap: between two squares about the same centre, two cubes standing on the same spot, or two lines drawn from the same point, one on top of the other. The perfect answer lies in the space between each pair.</div>
@@ -246,6 +286,7 @@
 <script src="architecture-finds.js"></script>
 <script src="architecture-plan-steps.js"></script>
 <script src="architecture-plan-2-steps.js"></script>
+<script src="architecture-plan-3-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -375,6 +416,11 @@ const att2 = planPlayer(window.PLAN2_STEPS, {cv: 'qCv', slider: 'qSlider', chap:
 if (att2 && att2.v3) {
   let hung = false;
   document.getElementById('qHang').onclick = e => { hung = !hung; att2.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att2.to3d(); };
+}
+const att3 = planPlayer(window.PLAN3_STEPS, {cv: 'rCv', slider: 'rSlider', chap: 'rChap', text: 'rText', prev: 'rPrev', next: 'rNext', play: 'rPlay', d3: 'r3d'});
+if (att3 && att3.v3) {
+  let hung = false;
+  document.getElementById('rHang').onclick = e => { hung = !hung; att3.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att3.to3d(); };
 }
 // Edward's Blender mockup (pages/architecture-mockup.js), raised whenever it is shown.
 const mock = window.MOCKUP && typeof makeView3D === 'function' ? makeView3D(document.getElementById('mCv'), {view: [-8, -8, 8, 8], steps: [], solids: [], mesh: window.MOCKUP, dist: 17, tgt: [0, 0, 2]}) : null;

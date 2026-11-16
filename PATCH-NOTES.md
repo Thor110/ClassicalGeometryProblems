@@ -12,6 +12,18 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #3, the trisection rings
+
+### Site
+- The Architectural Vision page has Attempt #3, now first in the attempts dropdown: Attempt #2 with the four
+  exact trisections (90°, 180°, 270° and 360°) each as a ring of pillars all the way round the origin, the
+  pillars stepping down ring by ring so that their tops form a cone. Plan, steps and 3D view, with the
+  Suspend button: [Architecture/Plan/attempt-3.ggb](Architecture/Plan/attempt-3.ggb).
+- The 3D view can draw rings on the ground and a cone's outline, and each attempt can set its own camera.
+- ARCHITECTURAL.md has the rings, their steps and their sizes.
+
+---
+
 ## November 2026: Edward's mockup, and the cubes suspended
 
 ### Site
