@@ -10,8 +10,8 @@
   .plan-fig{text-align:center;margin:12px 0;}
   .plan-fig img{max-width:100%;height:auto;border:1px solid #1e1e2a;}
   #planCv{width:100%;max-width:700px;display:block;margin:0 auto;}
-  #att1,#att2,#att3,#att4,#att5,#att6,#att7,#att8,#att9,#attm{width:100%;max-width:1000px;min-width:0;}
-  #qCv,#rCv,#sCv,#tCv,#uCv,#vCv,#wCv,#yCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
+  #att1,#att2,#att3,#att4,#att5,#att6,#att7,#att8,#att9,#att10,#attm{width:100%;max-width:1000px;min-width:0;}
+  #qCv,#rCv,#sCv,#tCv,#uCv,#vCv,#wCv,#yCv,#zCv,#mCv{width:100%;max-width:900px;display:block;margin:0 auto;}
 </style>
 </head>
 <body>
@@ -70,6 +70,7 @@
   <div class="box-text">A single building for every chart: the best approximations, oversized and undersized, for squaring the circle, rectifying it (and so π), rectifying an arc and doubling the cube, with the trisection shown in the one place a straightedge and compass can do it exactly. Every step is a line in the floor. Each attempt at the design is kept here, so the ideas can be compared as they change.</div>
   <div class="controls" style="justify-content:center;margin-top:10px;">
     <select id="attSel" class="small" style="max-width:100%;">
+      <option value="att10">Attempt #10: The Cathedral</option>
       <option value="att9">Attempt #9: In Its Materials</option>
       <option value="att8">Attempt #8: The Machined Piece</option>
       <option value="att7">Attempt #7: Stadium Scale</option>
@@ -84,7 +85,47 @@
   </div>
 </div>
 
-<div id="att9">
+<div id="att10">
+<div class="box">
+  <div class="box-title">Attempt #10: The Cathedral</div>
+  <div class="box-text">The form as a cathedral, where the geometry carves its own space. The floor is Attempt #6's, built at <b>6 m to the radius</b>: 60 m across, the vault 48 m high at its crown. Every pillar still stands on an exact trisection point, and the arches spring from them.</div>
+  <ul>
+    <li><b>The arcades.</b> Each trisection ring becomes an arcade, its arches springing from the exact points. The first ring, 9 m out, is twelve pillars 33.6 m tall joined by lancets; the second, 15 m out, six piers 24 m tall under great pointed arches; the third, 21 m out, four piers 14.4 m tall; and the fourth, 27 m out, is the cloister: round arches 4.8 m high on the posts at every odd 7.5° mark, each 15° mark the centre of an arch. In three of them, at 0°, 120° and 240°, the ring's own pillar stands in the opening as a central pier: the three great portals.</li>
+    <li><b>The flying arches.</b> From the top of every outer pier an arch springs up and in to the next ring, to the pillar at the same angle or to the two nearest it: six from the second ring, six from the third, five from the fourth. The cone of the earlier attempts is now their line.</li>
+    <li><b>The vault.</b> The first ring carries a ribbed vault, twelve stone ribs rising from its pillars to a bronze-ringed oculus 46.5 m up, 4 m across, open to the sky. Under it hang the cubes, the given cube a 6 m glass room.</li>
+    <li><b>The light.</b> The oculus replaces the gnomon: with a roof overhead, the sun's spot through the oculus is the sundial. At noon on 21 June the sun stands 62.5° high, and its line from the oculus passes through the first ring's north pillar 29.2 m up and the third ring's 6.1 m up, so both are cut through there with gold-lined openings, and it lands on a gold mark in the floor 24.2 m north of the origin, on the meridian. At other dates the noon spot falls further north, beyond the cloister. Set the hour and date in the 3D view to move it.</li>
+    <li><b>The floor</b> is Attempt #9's in its materials, at this size: every gap one you can see (the cubes 5.4 cm a face, the squares 3.5 mm an edge, π 8.3 mm, the arc 46 cm). Pillars on the gold lines stand on glass slots; the digital shell is a ring of lights in the paving outside the cloister, which itself keeps vehicles out.</li>
+  </ul>
+  <div class="plan-fig"><img src="images/architecture-section-10.svg" alt="A section through the cathedral from south to north: the vault and oculus, the cut pillars of the first and third rings with their gold-lined openings, the hanging cubes, and the June noon sun's line from the oculus to its gold mark"></div>
+  <div class="small-text" style="text-align:center;">A section through the origin, south to north, with the June noon sun's line from the oculus.</div>
+  <div class="plan-fig"><a href="images/architecture-plan-10.svg" target="_blank"><img src="images/architecture-plan-10.svg" alt="The cathedral's plan: the floor in its metals, and above it the arcades, flying arches and vault ribs as grey lines, the oculus and the June solstice mark"></a></div>
+  <div class="small-text" style="text-align:center;">The plan: the floor, and above it in grey the arches, flying arches and vault ribs, with the noon line to the June mark.</div>
+</div>
+
+<div class="box">
+  <div class="box-title">Inside And Out</div>
+  <canvas id="zCv" width="1400" height="1100" aria-label="Attempt #10, the cathedral, in three dimensions"></canvas>
+  <div class="controls" style="margin-top:10px;justify-content:center;">
+    <button class="small" id="zPrev">◀ Back</button>
+    <button class="small" id="zPlay">▶ Play</button>
+    <button class="small" id="zNext">Next ▶</button>
+    <button class="small" id="zGrid">Metre grid</button>
+    <button class="small" id="z3d">3D</button>
+    <button class="small" id="zWalk">Walk through</button>
+    <button class="small" id="zVault">Open the vault</button>
+    <button class="small" id="zHang">Stand the cubes</button>
+    <button class="small" id="zNight">Night</button>
+    <select id="zDate" class="small"><option value="23.44" selected>21 June</option><option value="0">The equinoxes</option><option value="-23.44">21 December</option></select>
+    <select id="zChap" class="small" style="max-width:100%;"></select>
+  </div>
+  <div class="controls" style="justify-content:center;align-items:center;"><span class="small-text">Hour of the sun</span><input type="range" id="zHour" min="6" max="18" step="0.25" value="12" style="flex:1;max-width:420px;"><span class="small-text" id="zHourText">12 pm</span></div>
+  <input type="range" id="zSlider" min="0" max="1" value="0" style="width:100%;margin-top:8px;">
+  <div class="box-text" id="zText" style="min-height:3.2em;text-align:center;margin-top:6px;"></div>
+  <div class="small-text" style="text-align:center;">The floor is Attempt #6's: <a class="link" href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/Architecture/Plan/attempt-6.ggb" target="_blank" rel="noopener">Architecture/Plan/attempt-6.ggb</a>, at 6 m to the radius. The sun is set for 50.9° north, in solar time.</div>
+</div>
+</div>
+
+<div id="att9" hidden>
 <div class="box">
   <div class="box-title">Attempt #9: In Its Materials</div>
   <div class="box-text">Attempt #6, the plaza 46 m across, as it might be built: not a diagram but stone, metal and glass, lit by the sun at any hour and date, or by its own lights at night. The geometry is unchanged, and the floor is Attempt #6's file.</div>
@@ -466,7 +507,7 @@
   <div class="box-text">A gauge to steer by: how wide each pair's gap is in each attempt, built at that attempt's size. The cube's gap is measured on each face, the square's on each edge, and π's and the arc's where their two lines end. The scale runs from atoms to metres, each step ten times the last, and the shaded bands say what it takes to see a gap of that width.</div>
   <div id="gapPlot" style="width:100%;overflow-x:auto;"></div>
   <div class="table-wrap" style="margin-top:12px;"><table id="gapTable"></table></div>
-  <div class="small-text" style="margin-top:8px;">Attempts #3 to #5 keep Attempt #2's pairs at the same size, and Attempt #9 is Attempt #6 in its materials, so their gaps are the same. From Attempt #7 the aim is the narrowest gap that still shows: at least half a millimetre in Attempt #7's stone, at least a micrometre, for a light microscope, in Attempt #8's machined piece. Each attempt's pairs and accuracies are in its own section above.</div>
+  <div class="small-text" style="margin-top:8px;">Attempts #3 to #5 keep Attempt #2's pairs at the same size, and Attempt #9 is Attempt #6 in its materials, so their gaps are the same; Attempt #10 has Attempt #6's pairs at 6 m to the radius. From Attempt #7 the aim is the narrowest gap that still shows: at least half a millimetre in Attempt #7's stone, at least a micrometre, for a light microscope, in Attempt #8's machined piece. Each attempt's pairs and accuracies are in its own section above.</div>
 </div>
 
 <div class="box" id="eyelevel">
@@ -567,6 +608,7 @@
 <script src="architecture-plan-7-steps.js"></script>
 <script src="architecture-plan-8-steps.js"></script>
 <script src="architecture-plan-9-steps.js"></script>
+<script src="architecture-plan-10-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -730,6 +772,16 @@ if (att5 && att5.v3) {
   let hung = true;
   document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };
 }
+const att10 = planPlayer(window.PLAN10_STEPS, {cv: 'zCv', slider: 'zSlider', chap: 'zChap', text: 'zText', prev: 'zPrev', next: 'zNext', play: 'zPlay', d3: 'z3d', grid: 'zGrid', walk: 'zWalk'});
+if (att10 && att10.v3) {
+  const hr = document.getElementById('zHour'), dt = document.getElementById('zDate'), ht = document.getElementById('zHourText');
+  const sun = () => { const h = +hr.value, hh = Math.floor(h), mm = Math.round((h - hh) * 60); ht.textContent = ((hh + 11) % 12 + 1) + (mm ? ':' + String(mm).padStart(2, '0') : '') + (hh < 12 ? ' am' : ' pm'); att10.v3.sun(h, +dt.value); };
+  hr.oninput = () => { sun(); att10.to3d(); }; dt.onchange = () => { sun(); att10.to3d(); };
+  let nt = false; document.getElementById('zNight').onclick = e => { nt = !nt; att10.v3.night(nt); e.target.textContent = nt ? 'Day' : 'Night'; att10.to3d(); };
+  let vo = false; document.getElementById('zVault').onclick = e => { vo = !vo; att10.v3.vault(vo); e.target.textContent = vo ? 'Close the vault' : 'Open the vault'; att10.to3d(); };
+  let hung = true; document.getElementById('zHang').onclick = e => { hung = !hung; att10.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att10.to3d(); };
+  sun(); att10.to3d();
+}
 const att9 = planPlayer(window.PLAN9_STEPS, {cv: 'yCv', slider: 'ySlider', chap: 'yChap', text: 'yText', prev: 'yPrev', next: 'yNext', play: 'yPlay', d3: 'y3d', grid: 'yGrid', walk: 'yWalk'});
 if (att9 && att9.v3) {
   const hr = document.getElementById('yHour'), dt = document.getElementById('yDate'), ht = document.getElementById('yHourText');
@@ -757,7 +809,7 @@ if (att6 && att6.v3) {
 }
 // The gaps across the attempts: a dot for each attempt on a ten-times scale, one panel for each pair.
 (function () {
-  const GAPS = [{"n":1,"name":"Attempt #1: The Clock Plaza","R":5.5,"same":false,"cube":3.435276389977052e-07,"square":3.366114219677609e-06,"pi":1.4727423498713924e-06,"arc":1.1952373855232191e-05},{"n":2,"name":"Attempt #2: One Origin","R":3.0,"same":false,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":3,"name":"Attempt #3: The Trisection Rings","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":4,"name":"Attempt #4: Gates On The Outer Ring","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":5,"name":"Attempt #5: The Digital Outer Shell","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":6,"name":"Attempt #6: The Balance Search","R":4.5,"same":false,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395},{"n":7,"name":"Attempt #7: Stadium Scale","R":20.0,"same":false,"cube":0.0012090627334520182,"square":0.0012943031487086148,"pi":0.0009670835161602302,"arc":0.003778585625186747},{"n":8,"name":"Attempt #8: The Machined Piece","R":0.1,"same":false,"cube":2.28e-06,"square":6.47e-06,"pi":4.84e-06,"arc":1.89e-05},{"n":9,"name":"Attempt #9: In Its Materials","R":4.5,"same":true,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395}];
+  const GAPS = [{"n":1,"name":"Attempt #1: The Clock Plaza","R":5.5,"same":false,"cube":3.435276389977052e-07,"square":3.366114219677609e-06,"pi":1.4727423498713924e-06,"arc":1.1952373855232191e-05},{"n":2,"name":"Attempt #2: One Origin","R":3.0,"same":false,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":3,"name":"Attempt #3: The Trisection Rings","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":4,"name":"Attempt #4: Gates On The Outer Ring","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":5,"name":"Attempt #5: The Digital Outer Shell","R":3.0,"same":true,"cube":0.015390792935360019,"square":0.06060708669719767,"pi":0.0007156598681485104,"arc":0.04692157064719127},{"n":6,"name":"Attempt #6: The Balance Search","R":4.5,"same":false,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395},{"n":7,"name":"Attempt #7: Stadium Scale","R":20.0,"same":false,"cube":0.0012090627334520182,"square":0.0012943031487086148,"pi":0.0009670835161602302,"arc":0.003778585625186747},{"n":8,"name":"Attempt #8: The Machined Piece","R":0.1,"same":false,"cube":2.28e-06,"square":6.47e-06,"pi":4.84e-06,"arc":1.89e-05},{"n":9,"name":"Attempt #9: In Its Materials","R":4.5,"same":true,"cube":0.040385682970026135,"square":0.0026185392684570513,"pi":0.006198250399287118,"arc":0.34737001361093395},{"n":10,"name":"Attempt #10: The Cathedral","R":6.0,"same":false,"cube":0.05384757729336818,"square":0.003491385691276068,"pi":0.008264333865716157,"arc":0.4631600181479119}];
   const PAIRS = [['cube', 'Doubled cube, each face'], ['square', 'Squared circle, each edge'], ['pi', 'π, where the lines end'], ['arc', 'Arc, where the lines end']];
   const BANDS = [[1e-10, 1e-6, 'electron microscope'], [1e-6, 1e-4, 'light microscope'], [1e-4, 5e-3, 'a fine joint'], [5e-3, 1.2, 'seen'], [1.2, 10, 'walkable']];
   const lo = -10, hi = 1, W = 760, L = 150, Rm = 20, rowH = 22, top = 46;

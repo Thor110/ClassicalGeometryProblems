@@ -5,14 +5,14 @@ const metal = (m, a) => { const h = METALS[m]; return 'rgba(' + [1, 3, 5].map(i 
 // It can also be walked at eye level, 1.6 m above the floor: keys or the on-screen pad to move, drag to look round.
 function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
-  const ORDER = {ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
+  const ORDER = {faces: 2, ring: 0, cone: 6, sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
-  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], sector: ['rgba(150,120,210,0.35)', null]};
+  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], digital: ['#5fd0ea', '#bff6ff'], conef: [null, 'rgba(240,200,96,0.28)'], vault: ['#d9d0bd', null], sector: ['rgba(150,120,210,0.35)', null]};
   const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
   let hang = P.hang !== false, gridU = 0;      // the cubes hang about one centre unless told to stand
   // the materials view (Attempt #9 on): stone, metal inlay and glass, lit by the sun at an hour and date, or at night
   const LOOK = P.look === 'materials', LAT = (P.lat || 50.9) * Math.PI / 180;
-  let night = false, SUN = [0, 0, 1];
+  let night = false, SUN = [0, 0, 1], vaultOpen = false;
   function setSun(hour, decl) {
     const H = (hour - 12) * 15 * Math.PI / 180, d = decl * Math.PI / 180;
     SUN = [-Math.cos(d) * Math.sin(H), Math.cos(LAT) * Math.sin(d) - Math.sin(LAT) * Math.cos(d) * Math.cos(H), Math.sin(LAT) * Math.sin(d) + Math.cos(LAT) * Math.cos(d) * Math.cos(H)];
@@ -88,6 +88,18 @@ function makeView3D(cv, P) {
     });
     S.forEach((s, i) => {
       const k = ease(f(i)); if (k <= 0) return; const [fill, line] = COL[s.col];
+      if (s.k === 'faces') {        // shaped stone (arches, ribs, the vault's webs), gold and bronze, given face by face
+        if (s.vault && vaultOpen) return;
+        const base = {stone: '#e4dccb', vault: '#d9d0bd', gold: '#d4a838', bronze: '#a8763a'}[s.col] || '#e4dccb';
+        for (const f of s.f) {
+          const q = f.map(p => [p[0], p[1], p[2] * k]);
+          const u = sub(q[1], q[0]), v = sub(q[2], q[0]), nn = crs(u, v), l = Math.hypot(...nn) || 1, n_ = [nn[0] / l, nn[1] / l, nn[2] / l];
+          const two = [Math.abs(n_[0]), Math.abs(n_[1]), Math.abs(n_[2])];
+          const fill = LOOK ? (s.col === 'gold' ? (night ? '#ffd25a' : '#c8961e') : lit(base, n_[0] * SUN[0] + n_[1] * SUN[1] + n_[2] * SUN[2] < 0 ? [-n_[0], -n_[1], -n_[2]] : n_)) : (s.col === 'gold' ? '#d4a838' : 'rgba(200,196,189,' + (s.vault ? 0.25 : 0.55) + ')');
+          face(q, fill, LOOK ? null : 'rgba(230,226,219,0.35)');
+        }
+        return;
+      }
       if (s.k === 'ring') { const n = 96; for (let j = 0; j < n; j++) { const a = 2 * Math.PI * j / n, b = 2 * Math.PI * (j + 1) / n, r = s.r * k; edge([r * Math.cos(a), r * Math.sin(a), 0.03], [r * Math.cos(b), r * Math.sin(b), 0.03], line, 2); } return; }
       if (s.k === 'cone') { if (LOOK) return; for (let j = 0; j < 24; j++) { const a = 2 * Math.PI * j / 24; edge([0, 0, s.apex * k], [s.foot * Math.cos(a), s.foot * Math.sin(a), 0], line, 1); } return; }
       if (s.k === 'sector') { const pts = [[0, 0, 0.02]]; for (let j = 0; j <= 24; j++) { const a = s.a0 + (s.a1 - s.a0) * j / 24; pts.push([s.r * k * Math.cos(a), s.r * k * Math.sin(a), 0.02]); } face(pts, fill, null); return; }
@@ -140,7 +152,7 @@ function makeView3D(cv, P) {
     if (LOOK && night) { g.shadowColor = '#ffcc55'; g.shadowBlur = 14; }
     for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, LOOK ? (night ? '#ffd25a' : '#b8860b') : '#d4a838', LOOK ? 3.5 : 2.5);
     g.shadowBlur = 0;
-    if (LOOK && !night && SUN[2] > 0.03) {   // the sun's shadows on the floor: every pillar, post and stone, the cubes and the gnomon
+    if (LOOK && !night && SUN[2] > 0.03 && !P.noCast) {   // the sun's shadows on the floor: every pillar, post and stone, the cubes and the gnomon
       const k_ = Math.hypot(SUN[0], SUN[1]) / SUN[2], dx = -SUN[0] / Math.hypot(SUN[0], SUN[1]), dy = -SUN[1] / Math.hypot(SUN[0], SUN[1]);
       const inRect = poly => {          // shadows stop at the edge of the site
         let P_ = poly;
@@ -169,6 +181,14 @@ function makeView3D(cv, P) {
       g.beginPath(); p.q.forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]));
       if (p.line) { g.strokeStyle = p.edge; g.lineWidth = p.w; g.stroke(); continue; }
       g.closePath(); if (p.fill) { g.fillStyle = p.fill; g.fill(); } if (p.edge) { g.strokeStyle = p.edge; g.lineWidth = 1.5; g.stroke(); }
+    }
+    if (P.oculus && LOOK && !night && SUN[2] > 0.03) {   // the sun through the oculus: a shaft of light and its spot on the floor
+      const z = P.oculus.z, r = P.oculus.r, off = [-SUN[0] / SUN[2] * z, -SUN[1] / SUN[2] * z];
+      const top = [], bot = []; for (let j = 0; j < 24; j++) { const a = 2 * Math.PI * j / 24; top.push([r * Math.cos(a), r * Math.sin(a), z]); bot.push([off[0] + r * Math.cos(a), off[1] + r * Math.sin(a), 0.03]); }
+      g.save(); g.globalAlpha = 0.85; g.fillStyle = '#fff6d0'; const sp = clipPoly(bot.map(cam)); if (sp.length > 2) { g.beginPath(); sp.map(proj).forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fill(); }
+      g.globalAlpha = 0.16; g.fillStyle = '#fff2c0';
+      for (let j = 0; j < 24; j++) { const c = clipPoly([top[j], top[(j + 1) % 24], bot[(j + 1) % 24], bot[j]].map(cam)); if (c.length > 2) { g.beginPath(); c.map(proj).forEach((q, i) => i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fill(); } }
+      g.restore();
     }
     const n0 = pr([0, y1 - 1, 0]), n1 = pr([0, y1 + 1.5, 0]);
     if (n0 && n1) { g.fillStyle = '#c9c5bd'; g.font = 'bold 26px Georgia, serif'; g.textAlign = 'center'; g.fillText('N', n1[0], n1[1]); }
@@ -231,6 +251,7 @@ function makeView3D(cv, P) {
   cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; wx += Math.cos(wyaw) * s_; wy += Math.sin(wyaw) * s_; if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
     sun(hour, decl) { setSun(hour, decl); if (on && !raf) draw(); },
+    vault(b) { vaultOpen = b; if (on && !raf) draw(); },
     night(b) { night = b; if (on && !raf) draw(); },
     grid(b, u) { gridU = b ? u : 0; if (on && !raf) draw(); },
     suspend(b) { hang = b; if (on && !raf) draw(); },

@@ -414,6 +414,7 @@ square's on each edge, π's and the arc's where the two lines end):
 | #7 Stadium Scale | 20 m | 1.21 mm | 1.29 mm | 0.97 mm | 3.78 mm |
 | #8 The Machined Piece | 10 cm | 2.28 µm | 6.47 µm | 4.84 µm | 18.9 µm |
 | #9 In Its Materials | 4.5 m | as #6 | as #6 | as #6 | as #6 |
+| #10 The Cathedral | 6 m | 53.9 mm | 3.49 mm | 8.27 mm | 463 mm |
 
 Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
 
@@ -509,6 +510,30 @@ For real-world versions the digital shell's marks can be bollards against vehicl
 scale so they stand close enough: every 5° on the plaza (1.96 m apart at 22.5 m) and every 1° at stadium scale
 (1.75 m apart at 100 m). The shell is surveyed, not constructed, so any angle can be used: 4° on the plaza would
 bring them to 1.57 m, nearer usual vehicle-barrier spacing.
+
+## All of them at once, Attempt #10: the cathedral
+
+The form as a cathedral, the geometry carving its own space. The floor is Attempt #6's (its file,
+[Architecture/Plan/attempt-6.ggb](Architecture/Plan/attempt-6.ggb)), built at 6 m to the radius: 60 m across, the
+vault 48 m at its crown. The [website's version](https://thor110.github.io/ClassicalGeometryProblems/pages/architecture.html#attempt-10)
+has a section, a plan, and the 3D view with the sun, night, an open vault and the walk-through.
+
+- **Arcades**: each trisection ring is an arcade, its arches springing from the exact points. First ring, 9 m out:
+  twelve pillars 33.6 m tall joined by lancets. Second, 15 m: six piers 24 m tall under great pointed arches. Third,
+  21 m: four piers 14.4 m tall. Fourth, 27 m: the cloister, round arches 4.8 m high on the posts at the odd 7.5°
+  marks, each 15° mark the centre of an arch; at 0°, 120° and 240° the ring's pillar stands in the opening as a
+  central pier, making three great portals.
+- **Flying arches**: from every outer pier's top to the next ring in, at the same angle or to the two nearest
+  pillars: six from the second ring, six from the third, five from the fourth. The cone is now their line.
+- **Vault**: twelve stone ribs from the first ring's pillars to a bronze-ringed oculus 46.5 m up and 4 m across,
+  with stone between them; the cubes hang beneath, the given cube a 6 m glass room.
+- **Light**: the oculus replaces the gnomon. At noon on 21 June (the sun 62.5° high at 50.9° N) its line from the
+  oculus passes the first ring's north pillar 29.2 m up and the third ring's 6.1 m up, both cut through with
+  gold-lined openings, and lands on a gold mark 24.2 m north of the origin. At other dates the noon spot falls
+  beyond the cloister. These are worked out for the latitude, not constructed.
+- **Floor**: Attempt #9's materials. Gaps at this size: cubes 5.4 cm a face, squares 3.5 mm an edge, π 8.3 mm, the
+  arc 46 cm. Pillars on the gold lines stand on glass slots; the digital shell is a ring of lights in the paving
+  outside the cloister, which itself keeps vehicles out.
 
 ## At eye level: the first walk-through
 

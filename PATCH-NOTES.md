@@ -12,6 +12,19 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #10, the cathedral
+
+### Site
+- The Architectural Vision page has Attempt #10, first in the attempts dropdown: Attempt #6's floor at 6 m to the
+  radius as a cathedral 60 m across. The trisection rings are arcades (lancets, great pointed arches, a cloister
+  with three portals), flying arches spring from ring to ring, and a ribbed vault 48 m high rises from the first
+  ring to an oculus. The June noon sun through the oculus passes gold-lined openings in two north pillars to a
+  gold mark on the floor. With a section, a plan, and a 3D view that can open the vault, follow the sun's spot
+  through the day and year, light it at night, and be walked.
+- The 3D view can draw shaped stone (arches, ribs, vault webs) and the sun's light through an oculus.
+
+---
+
 ## November 2026: Glass slots, and the cubes suspended by default
 
 ### Site
