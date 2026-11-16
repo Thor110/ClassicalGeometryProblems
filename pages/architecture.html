@@ -82,9 +82,10 @@
   <div class="box-title">Attempt #3: The Trisection Rings</div>
   <div class="box-text">Attempt #2, with every exact trisection carried all the way round the monument. Four trisections can be done exactly with straightedge and compass, and the clock already marks them all: 90° into 30°, 180° into 60°, 270° into 90° and 360° into 120°. Here each has its own ring about the origin, repeating its division the whole way round: pillars every 30° on the clock itself, every 60° on a ring at two radii, every 90° at three radii and every 120° at four.</div>
   <div class="box-text">The pillars step down ring by ring, shorter and slimmer the further out they stand, so that their tops lie on one cone, 6 m high over the origin and meeting the ground 15 m out: 4.8 m on the clock, then 3.6 m, 2.4 m and 1.2 m. The cubes, the gnomon and everything else stand inside it.</div>
+  <div class="box-text">Every step is a line in the floor, inlaid in the metal of the problem it belongs to: <span style="color:#c08a48">bronze</span> for the clock and the trisection rings, <span style="color:#cfd4dc">silver</span> for squaring the circle, <span style="color:#d8743e">copper</span> for π, <span style="color:#74a3dc">blued steel</span> for the arc and <span style="color:#52b496">patinated bronze</span> for doubling the cube. Gold is kept for the results. A line two problems share is laid once, in the metal of the one that drew it first, so the clock's bronze runs under all of them.</div>
   <div class="box-text">The rings cost <b>5 circles and 1 line</b> more than Attempt #2: a circle about O for each new ring, two circles to find the radii of the third and fourth, and the line from four to ten o'clock for the 120° divisions. The rest are the clock's own lines. That makes <b>31 circles and 11 lines</b> in all, with the same eight gold results. The site is <b>40 m × 31 m</b>.</div>
   <div class="plan-fig"><a href="images/architecture-plan-3.svg" target="_blank"><img src="images/architecture-plan-3.svg" alt="Attempt #3: the four trisection rings about the origin with their pillars, round the nested squares, the π lines and the straightened quarter arcs of Attempt #2"></a></div>
-  <div class="small-text" style="text-align:center;">North is up. Grey: every step. Gold: the results. Silver: the four trisection rings, each with its pillars. The π lines pass the pillars at one, two and three radii, and end just beyond the third.</div>
+  <div class="small-text" style="text-align:center;">North is up. Every step is inlaid in the metal of its problem, and the results in gold. The π lines pass the pillars at one, two and three radii, and end just beyond the third.</div>
 </div>
 
 <div class="box">
@@ -394,7 +395,7 @@ function planPlayer(P, id) {
     g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
     for (let k = 0; k <= i; k++) for (const x of steps[k].s) {
       const now = k === i, gold = x.res;
-      shape(x, gold ? '#d4a838' : now ? '#5fb3ff' : '#4a4a58', gold ? 4 : now ? 2.5 : 1.2);
+      shape(x, gold ? '#d4a838' : now ? '#5fb3ff' : x.m ? metal(x.m, 0.75) : '#4a4a58', gold ? 4 : now ? 2.5 : x.m ? 1.6 : 1.2);
     }
   }
   const go = k => { i = Math.max(0, Math.min(steps.length - 1, k)); draw(); };

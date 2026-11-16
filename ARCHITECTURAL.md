@@ -316,6 +316,14 @@ results. The site is 40 m × 31 m. Every new point was checked in GeoGebra.
 The pillars due west stand on the π lines at one, two and three radii, like milestones; π ends 0.42 m
 beyond the third.
 
+### A metal for each problem
+
+Every step is inlaid in the metal of its problem, so the floor can be read problem by problem: bronze for the
+clock and the trisection rings, silver for squaring the circle, copper for π, blued steel for the arc and
+patinated bronze for doubling the cube. Gold is kept for the results. A line two problems share is laid once,
+in the metal of the one that drew it first, so the clock's bronze (its two diameters and the four circles
+about their ends, which make all twelve points) runs under everything else.
+
 ## How close the lines are today
 
 Worked out from the charts in November 2026, once with every entry and once with people's entries

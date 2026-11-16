@@ -12,6 +12,16 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Attempt #3 in metals
+
+### Site
+- Attempt #3's floor is inlaid in a metal for each problem, in the plan, the step player and the 3D view:
+  bronze for the clock and the trisection rings, silver for squaring the circle, copper for π, blued steel
+  for the arc and patinated bronze for doubling the cube, with the results in gold. The clock's own steps,
+  which were lost in the grey, now show as the bronze under everything.
+
+---
+
 ## November 2026: Attempt #3, the trisection rings
 
 ### Site

@@ -1,3 +1,6 @@
+// The metals of the floor's inlay, one for each problem's steps (Attempt #3 on); gold is kept for the results.
+const METALS = {bronze: '#c08a48', silver: '#cfd4dc', copper: '#d8743e', steel: '#74a3dc', patina: '#52b496'};
+const metal = (m, a) => { const h = METALS[m]; return 'rgba(' + [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)).join(',') + ',' + a + ')'; };
 // A small 3D view of a plan's floor and solids, drawn on a 2D canvas (no library): drag to turn, scroll or pinch to zoom.
 function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
@@ -75,7 +78,7 @@ function makeView3D(cv, P) {
   function draw() {
     camera(); g.fillStyle = '#0d0d14'; g.fillRect(0, 0, cv.width, cv.height);
     path([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]], true); g.fillStyle = '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke();
-    for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, 'rgba(110,110,130,0.55)', 1);
+    for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, 0.7) : 'rgba(110,110,130,0.55)', x.m ? 1.4 : 1);
     for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, '#d4a838', 2.5);
     const N = M ? M.objects.length : S.length, f = i => (t * 1.6 - 0.6 * i / N) / 0.6;
     g.lineJoin = 'round';
