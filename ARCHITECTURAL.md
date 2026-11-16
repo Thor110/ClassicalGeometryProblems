@@ -251,6 +251,25 @@ stands within about 10 m of the origin.
   lines, worked out for the latitude (50.9° N here) rather than constructed; they are not the clock's twelve
   points. The noon line falls on the gold arc lines, and the six o'clock morning line on the π lines.
 
+### The trisection, and π
+
+- **The trisection** is in the clock. The right angle under the quarter arc, from three to twelve o'clock,
+  is cut into exact thirds by the lines from the origin to one and two o'clock. In the building that
+  quarter is paved apart, with the two lines in silver. The same twelve points trisect 180°, 270° and the
+  full turn; no other angle on the floor is trisected.
+- **Rectifying the circle and π** are one problem: the circumference is 2π radii, so the half laid from the
+  origin is π radii. The arc rectification is the other problem, a part of the circle straightened.
+
+### Suspended cubes: Edward's mockup
+
+Edward's Blender mockup of this attempt ([Architecture/Mockups/blender-mockup.obj](Architecture/Mockups/blender-mockup.obj))
+has the smaller cube hanging inside the larger one, the two about one centre, so that the gap runs round
+all six faces rather than only the four sides and the top. The page shows the mockup itself in its own 3D
+view, from the attempts dropdown, and Attempt #2's 3D view can hang its cubes the same way. Hung about the
+centre of the oversized frame, which stays on its floor, the gap is 1.5 cm on every face between the two
+doubled cubes and 37.5 cm between the given cube and Stifel's; the given cube then floats 39 cm above the
+floor, on fine cables to the frame's top corners.
+
 ### In three dimensions
 
 The page's player ends with a 3D step: the floor as drawn, every step projected on the ground, and the

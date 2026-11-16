@@ -12,6 +12,19 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Edward's mockup, and the cubes suspended
+
+### Site
+- The Architectural Vision page's attempts dropdown has Edward's Blender mockup of Attempt #2, in its own 3D
+  view: [Architecture/Mockups/blender-mockup.obj](Architecture/Mockups/blender-mockup.obj).
+- Attempt #2's 3D view has a Suspend button, which hangs the cubes about one centre as in the mockup, so the
+  gap between each cube and the next runs round all six faces.
+- The trisection shows in Attempt #2's 3D view: the right angle under the quarter arc, paved apart, with
+  silver lines to one and two o'clock.
+- The page and ARCHITECTURAL.md say that rectifying the circle and π are one problem.
+
+---
+
 ## November 2026: Design attempts, and Attempt #2
 
 ### Site

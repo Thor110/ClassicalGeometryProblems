@@ -1,10 +1,12 @@
 // A small 3D view of a plan's floor and solids, drawn on a 2D canvas (no library): drag to turn, scroll or pinch to zoom.
 function makeView3D(cv, P) {
   const g = cv.getContext('2d'), S = P.solids.slice();
-  const ORDER = {kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
+  const ORDER = {sector: 0, kerb: 0, rail: 1, column: 2, box: 3, frame: 4, rod: 5};
   S.sort((a, b) => ORDER[a.k] - ORDER[b.k]);
-  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860']};
-  let yaw = -1.95, pitch = 0.55, dist = 30, tgt = [0, 1, 1.8], t = 1, start = null, raf = null, on = false;
+  const COL = {stone: ['#8f8b80', '#c9c5bd'], glass: ['rgba(150,190,220,0.16)', '#bfe0f5'], bronze: [null, '#c08a48'], gold: ['#c49820', '#f0c860'], silver: [null, '#e8e4dc'], goldglass: ['rgba(212,168,56,0.16)', '#f0c860'], goldfloor: ['rgba(212,168,56,0.45)', '#f0c860'], sector: ['rgba(150,120,210,0.35)', null]};
+  const M = P.mesh, OUTER = Math.max(0, ...S.filter(s => s.k === 'frame' || s.k === 'box').map(s => s.s));
+  let hang = false;
+  let yaw = -1.95, pitch = 0.55, dist = P.dist || 30, tgt = P.tgt || [0, 1, 1.8], t = 1, start = null, raf = null, on = false;
   const [x0, y0, x1, y1] = P.view;
   const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
   const crs = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
@@ -40,13 +42,22 @@ function makeView3D(cv, P) {
   }
   function prims(f) {             // the solids as faces, edges and labels, each with its depth
     const out = [], face = (pts, fill, edge) => out.push({pts, fill, edge}), edge = (a, b, col, w) => out.push({pts: [a, b], edge: col, w, line: 1});
+    if (M) M.objects.forEach((o, i) => {     // a mesh from a modelling program, each object rising in turn
+      const k = ease(f(i)); if (k <= 0) return; const [fill, line] = COL[o.col] || COL.stone, V = j => [M.v[j][0], M.v[j][1], M.v[j][2] * k];
+      for (const fc of o.f) face(fc.map(V), fill, line);
+      for (const l of o.l) edge(V(l[0]), V(l[1]), line, 2);
+    });
     S.forEach((s, i) => {
       const k = ease(f(i)); if (k <= 0) return; const [fill, line] = COL[s.col];
+      if (s.k === 'sector') { const pts = [[0, 0, 0.02]]; for (let j = 0; j <= 24; j++) { const a = s.a0 + (s.a1 - s.a0) * j / 24; pts.push([s.r * k * Math.cos(a), s.r * k * Math.sin(a), 0.02]); } face(pts, fill, null); return; }
       if (s.k === 'box' || s.k === 'frame' || s.k === 'kerb') {
-        const h = s.h * k, a = s.s / 2, c = [[-a, -a], [a, -a], [a, a], [-a, a]];
-        if (s.k === 'frame') { for (let j = 0; j < 4; j++) { const p = c[j], q = c[(j + 1) % 4]; edge([p[0], p[1], 0], [p[0], p[1], h], line, 3); edge([p[0], p[1], h], [q[0], q[1], h], line, 3); edge([p[0], p[1], 0], [q[0], q[1], 0], line, 3); } return; }
-        for (let j = 0; j < 4; j++) { const p = c[j], q = c[(j + 1) % 4]; face([[p[0], p[1], 0], [q[0], q[1], 0], [q[0], q[1], h], [p[0], p[1], h]], fill, line); }
-        if (s.k === 'box') face(c.map(p => [p[0], p[1], h]), fill, line);
+        // standing on the floor, or hung with the outer frame's centre (Edward's mockup: the smaller cube suspended inside the larger)
+        const z0 = hang && s.k !== 'kerb' ? (OUTER - s.s) / 2 : 0;
+        const h = s.h * k, a = s.s / 2, c = [[-a, -a], [a, -a], [a, a], [-a, a]], zt = z0 + h;
+        if (z0 > 0 && k >= 1) { const b = OUTER / 2; for (const p of c) edge([p[0], p[1], zt], [Math.sign(p[0]) * b, Math.sign(p[1]) * b, OUTER], '#8a8678', 1); }
+        if (s.k === 'frame') { for (let j = 0; j < 4; j++) { const p = c[j], q = c[(j + 1) % 4]; edge([p[0], p[1], z0], [p[0], p[1], zt], line, 3); edge([p[0], p[1], zt], [q[0], q[1], zt], line, 3); edge([p[0], p[1], z0], [q[0], q[1], z0], line, 3); } return; }
+        for (let j = 0; j < 4; j++) { const p = c[j], q = c[(j + 1) % 4]; face([[p[0], p[1], z0], [q[0], q[1], z0], [q[0], q[1], zt], [p[0], p[1], zt]], fill, line); }
+        if (s.k === 'box') { face(c.map(p => [p[0], p[1], zt]), fill, line); if (z0 > 0) face(c.map(p => [p[0], p[1], z0]), fill, line); }
       } else if (s.k === 'column') {
         const h = s.h * k, n = 8, ring = z => Array.from({length: n}, (_, j) => [s.c[0] + s.r * Math.cos(2 * Math.PI * j / n), s.c[1] + s.r * Math.sin(2 * Math.PI * j / n), z]);
         const lo = ring(0), hi = ring(h);
@@ -64,7 +75,7 @@ function makeView3D(cv, P) {
     path([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]], true); g.fillStyle = '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke();
     for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, 'rgba(110,110,130,0.55)', 1);
     for (const st of P.steps) for (const x of st.s) if (x.res) floor(x, '#d4a838', 2.5);
-    const N = S.length, f = i => (t * 1.6 - 0.6 * i / N) / 0.6;
+    const N = M ? M.objects.length : S.length, f = i => (t * 1.6 - 0.6 * i / N) / 0.6;
     g.lineJoin = 'round';
     for (const p of prims(f)) {
       if (p.text) { g.fillStyle = '#d8d4cc'; g.font = '22px Georgia, serif'; g.textAlign = 'center'; g.fillText(p.text, p.q[0][0], p.q[0][1]); continue; }
@@ -88,6 +99,7 @@ function makeView3D(cv, P) {
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
   cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
+    suspend(b) { hang = b; if (on && !raf) draw(); },
     show() { if (on) return; on = true; cv.style.touchAction = 'none'; cv.style.cursor = 'grab'; start = null; t = 0; raf = requestAnimationFrame(frame); },
     hide() { on = false; cv.style.touchAction = ''; cv.style.cursor = ''; if (raf) cancelAnimationFrame(raf); raf = null; },
   };
