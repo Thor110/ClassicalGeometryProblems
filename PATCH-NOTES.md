@@ -12,6 +12,14 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: The metre grid on stone
+
+### Site
+- The metre grid now shows in the materials views (Attempts #9 to #11): dark lines on the pale stone by day, light
+  ones at night. Attempt #11 has the Metre grid button too.
+
+---
+
 ## November 2026: A colour key for every attempt
 
 ### Site

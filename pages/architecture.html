@@ -113,6 +113,7 @@
     <button class="small" id="kPrev">◀ Back</button>
     <button class="small" id="kPlay">▶ Play</button>
     <button class="small" id="kNext">Next ▶</button>
+    <button class="small" id="kGrid">Metre grid</button>
     <button class="small" id="k3d">3D</button>
     <button class="small" id="kCut">Cut in half</button>
     <button class="small" id="kWalk">Walk through</button>
@@ -831,7 +832,7 @@ if (att5 && att5.v3) {
   let hung = true;
   document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };
 }
-const att11 = planPlayer(window.PLAN11_STEPS, {cv: 'kCv', slider: 'kSlider', chap: 'kChap', text: 'kText', prev: 'kPrev', next: 'kNext', play: 'kPlay', d3: 'k3d', walk: 'kWalk'});
+const att11 = planPlayer(window.PLAN11_STEPS, {cv: 'kCv', slider: 'kSlider', chap: 'kChap', text: 'kText', prev: 'kPrev', next: 'kNext', play: 'kPlay', d3: 'k3d', walk: 'kWalk', grid: 'kGrid'});
 if (att11 && att11.v3) {
   const hr = document.getElementById('kHour'), dt = document.getElementById('kDate'), ht = document.getElementById('kHourText');
   const sun = () => { const h = +hr.value, hh = Math.floor(h), mm = Math.round((h - hh) * 60); ht.textContent = ((hh + 11) % 12 + 1) + (mm ? ':' + String(mm).padStart(2, '0') : '') + (hh < 12 ? ' am' : ' pm'); att11.v3.sun(h, +dt.value); };

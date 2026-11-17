@@ -163,8 +163,9 @@ function makeView3D(cv, P) {
     g.fillRect(0, 0, cv.width, cv.height);
     { const c = clipPoly([[x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]].map(cam)); if (c.length > 2) { g.beginPath(); c.map(proj).forEach((q, j) => j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.fillStyle = LOOK ? (night ? '#26241f' : '#d6cdb9') : '#16161f'; g.fill(); g.strokeStyle = '#5a5a66'; g.lineWidth = 1.5; g.stroke(); } }
     if (gridU) {          // the metre grid on the ground, from the site's north-west corner
-      for (let k = 0; x0 + k * gridU <= x1 + 1e-9; k++) { const X = x0 + k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([X, y1 - (y1 - y0) * j / 24, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
-      for (let k = 0; y1 - k * gridU >= y0 - 1e-9; k++) { const Y = y1 - k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([x0 + (x1 - x0) * j / 24, Y, 0]); g.strokeStyle = k % 10 ? 'rgba(220,220,235,0.12)' : 'rgba(220,220,235,0.32)'; g.lineWidth = 1; path(pts); g.stroke(); }
+      const gFaint = LOOK && !night ? 'rgba(60,48,32,0.22)' : 'rgba(220,220,235,0.12)', gBold = LOOK && !night ? 'rgba(60,48,32,0.5)' : 'rgba(220,220,235,0.32)';
+      for (let k = 0; x0 + k * gridU <= x1 + 1e-9; k++) { const X = x0 + k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([X, y1 - (y1 - y0) * j / 24, 0]); g.strokeStyle = k % 10 ? gFaint : gBold; g.lineWidth = 1; path(pts); g.stroke(); }
+      for (let k = 0; y1 - k * gridU >= y0 - 1e-9; k++) { const Y = y1 - k * gridU, pts = []; for (let j = 0; j <= 24; j++) pts.push([x0 + (x1 - x0) * j / 24, Y, 0]); g.strokeStyle = k % 10 ? gFaint : gBold; g.lineWidth = 1; path(pts); g.stroke(); }
     }
     if (showCon) for (const st of P.steps) for (const x of st.s) if (!x.res) floor(x, x.m ? metal(x.m, LOOK ? (night ? 0.35 : 0.95) : 0.7) : 'rgba(110,110,130,0.55)', x.m ? (LOOK ? 1.8 : 1.4) : 1);
     if (LOOK && night) { g.shadowColor = '#ffcc55'; g.shadowBlur = 14; }
