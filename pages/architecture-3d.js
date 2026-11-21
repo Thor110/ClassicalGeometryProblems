@@ -218,7 +218,7 @@ function makeView3D(cv, P) {
       g.fillStyle = '#d8d4cc'; g.font = '24px Georgia, serif'; g.textAlign = 'left';
       g.fillText(`${r.toFixed(1)} m from the origin (${m(Math.abs(wx))} m ${wx >= 0 ? 'east' : 'west'}, ${m(Math.abs(wy))} m ${wy >= 0 ? 'north' : 'south'}), facing ${face}, eye 1.6 m above the floor`, 20, cv.height - 44);
       g.fillStyle = '#a8a498'; g.font = '20px Georgia, serif';
-      g.fillText('W / S or ↑ / ↓ to walk, A / D or ← / → to turn, drag to look round. Pillars and posts stop you; everything else you can walk through.', 20, cv.height - 16);
+      g.fillText('W / S or ↑ / ↓ to walk, A / D or ← / → to turn, drag to look round. ' + (P.walkgrid ? 'The stone stops you: walk its voids.' : P.wall ? 'Pillars, posts and the courtyard wall stop you.' : 'Pillars and posts stop you; everything else you can walk through.'), 20, cv.height - 16);
     }
   }
   // walking: keys and the on-screen pad set what is held down; a loop moves the eye while anything is held
@@ -229,8 +229,11 @@ function makeView3D(cv, P) {
     const dt = wlast === null ? 0 : Math.min(0.1, (ts - wlast) / 1000); wlast = ts;
     const fw = (held.has('f') ? 1 : 0) - (held.has('b') ? 1 : 0), tn = (held.has('l') ? 1 : 0) - (held.has('r') ? 1 : 0);
     wyaw += tn * 1.6 * dt;
-    if (fw) {
-      let nx = wx + Math.cos(wyaw) * fw * SPEED * dt, ny = wy + Math.sin(wyaw) * fw * SPEED * dt;
+    if (fw) moveTo(wx + Math.cos(wyaw) * fw * SPEED * dt, wy + Math.sin(wyaw) * fw * SPEED * dt);
+    draw(); wraf = requestAnimationFrame(step);
+  }
+  // one move of the walker, with every collision: pillars and posts (slid round), a carved form's stone, a ring wall
+  function moveTo(nx, ny) {
       for (const [cx, cy, rr] of posts()) {       // slide round a post rather than stopping dead against it
         const d = Math.hypot(nx - cx, ny - cy); if (d >= rr) continue;
         const n = [(nx - cx) / d, (ny - cy) / d], tg = [-n[1], n[0]], vx = nx - wx, vy = ny - wy, v = Math.hypot(vx, vy);
@@ -247,8 +250,6 @@ function makeView3D(cv, P) {
         if (!open && (Math.abs(r1 - W_.r) < band || (r0 - W_.r) * (r1 - W_.r) < 0)) { nx = wx; ny = wy; }
       }
       wx = Math.max(x0 - 4 * MU, Math.min(x1 + 4 * MU, nx)); wy = Math.max(y0 - 4 * MU, Math.min(y1 + 4 * MU, ny));
-    }
-    draw(); wraf = requestAnimationFrame(step);
   }
   const press = k => { held.add(k); if (!wraf) wraf = requestAnimationFrame(step); };
   const KEYS = {ArrowUp: 'f', w: 'f', W: 'f', ArrowDown: 'b', s: 'b', S: 'b', ArrowLeft: 'l', a: 'l', A: 'l', ArrowRight: 'r', d: 'r', D: 'r'};
@@ -276,7 +277,7 @@ function makeView3D(cv, P) {
   });
   const up = e => { ptrs.delete(e.pointerId); pinch = null; };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
-  cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; wx += Math.cos(wyaw) * s_; wy += Math.sin(wyaw) * s_; if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
+  cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; moveTo(wx + Math.cos(wyaw) * s_, wy + Math.sin(wyaw) * s_); if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
   return {
     sun(hour, decl) { setSun(hour, decl); if (on && !raf) draw(); },
     construction(b) { showCon = b; if (on && !raf) draw(); },
@@ -286,6 +287,7 @@ function makeView3D(cv, P) {
     grid(b, u) { gridU = b ? u : 0; if (on && !raf) draw(); },
     suspend(b) { hang = b; if (on && !raf) draw(); },
     show() { if (on) return; on = true; cv.style.touchAction = 'none'; cv.style.cursor = 'grab'; start = null; t = 0; raf = requestAnimationFrame(frame); },
+    isWalking() { return walking; },
     walk(b) {
       walking = b; held.clear(); pad.style.display = b ? 'flex' : 'none';
       if (b) { const st = P.walkStart || {x: 0, y: y0 - 2 * MU, yaw: Math.PI / 2}; wx = st.x; wy = st.y; wyaw = st.yaw; wpitch = -0.05; t = 1; if (raf) { cancelAnimationFrame(raf); raf = null; } cv.focus({preventScroll: true}); }

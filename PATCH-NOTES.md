@@ -12,6 +12,48 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Review fixes (update-89)
+
+A multi-agent review of the repository found these, each checked by a second agent before fixing.
+
+### Tools and checks
+- `tools/verify.py` could not load the archive: it read from the first `{` in `pages/archive-data.js`, and a
+  brace in the header comment broke it. Every tool built on it failed, the Verify constructions workflow failed,
+  submissions skipped their duplicate check, and the architecture search silently never ran. It now reads from
+  the declaration, as the other tools do.
+- `verify.py --write` now fails when the cross-reference, drawings or steps cannot be written, instead of
+  printing a line and passing.
+- `tools/architecture_due.py` exits 10 for "not due", so the architecture workflow no longer hides real
+  failures behind `|| true`.
+- `tools/evaluate_submission.py` prints its usage for `--help` or no arguments, instead of writing its report
+  into a folder called `--help`; a cross-reference that cannot run now sends the submission for a manual check.
+- `tools/add_submission.py` gives a name new to the archive a short card on the Authors page, so the checks
+  pass; MAINTAINING.md says to fill it out.
+- The Verify constructions workflow runs with read-only permissions, on pushes to main and on pull requests.
+
+### Site
+- Constructions page: clicking problems quickly could show the wrong one and fetch a file twice.
+- Verification page: verifiers' details are escaped like the rest of the page.
+- Authors page: counts only charted entries, and says who is credited for other things.
+- Architecture page: the Walk through button no longer gets out of step after the 3D button or the slider;
+  the scroll wheel no longer walks through pillars, walls or stone; the walking hint names what stops you; a
+  mistyped `#attempt-` link no longer blanks the page, and links to an attempt now switch to it; the cathedral
+  and light-through-the-pillars ideas are marked as built in Attempt #10.
+
+### Documentation and data
+- README: Ramanujan's squaring is no longer called the most accurate; the arc rectification figures, a
+  rounded search-find figure, the date and the repository structure are corrected.
+- VERIFICATION.md describes adding a submission with `tools/add_submission.py`; MAINTAINING.md lists every check
+  in the Verify workflow and which pages load `common.js`; ARCHITECTURAL.md's Attempt #10 gaps match the page.
+- SUBMISSION_RULESET.md: the newest change is version 1.7. SUBMISSION_TEMPLATE.md: π is submitted as a
+  rectification of the circle; real names; dates as DD-MM-YYYY. Wanted/README.md: where the leads are listed.
+- `Variants/variants.json` regenerated (Kunze, 1842, not Hobson 1913); Lakenmacher's note dates Kunze's triangle
+  1842; the archive's header explains the two meanings of `~`. An orphaned note (`Squared Circle Under/99.253.md`,
+  for an entry since re-measured as 99.283% oversized) is removed.
+- `Architecture/Carved/README.md` says how Attempt #11's step file was put together.
+
+---
+
 ## November 2026: The metre grid on stone
 
 ### Site

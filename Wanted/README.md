@@ -1,7 +1,7 @@
 # Wanted: historical constructions, in progress
 
-The charts list known historical approximations that are not charted yet, under "Wanted" on each
-chart. A construction is charted under a historical name only once it has been checked against the
+Known historical approximations that are not charted yet are listed below ("Still wanted"), and the
+charts link here ("Leads still open"). A construction is charted under a historical name only once it has been checked against the
 original source, or a faithful published description of it, step by step, so that the credit is for
 what that person actually drew. Drafts in progress are kept here.
 

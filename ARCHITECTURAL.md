@@ -414,7 +414,7 @@ square's on each edge, π's and the arc's where the two lines end):
 | #7 Stadium Scale | 20 m | 1.21 mm | 1.29 mm | 0.97 mm | 3.78 mm |
 | #8 The Machined Piece | 10 cm | 2.28 µm | 6.47 µm | 4.84 µm | 18.9 µm |
 | #9 In Its Materials | 4.5 m | as #6 | as #6 | as #6 | as #6 |
-| #10 The Cathedral | 6 m | 53.9 mm | 3.49 mm | 8.27 mm | 463 mm |
+| #10 The Cathedral | 6 m | 53.8 mm | 3.49 mm | 8.26 mm | 463 mm |
 | #11 The Carved Form | 6 m | as #10 | as #10 | as #10 | as #10 |
 
 Attempt #1 used the best pairs on the charts, so its gaps are microscopic; from Attempt #6 every gap can be seen.
@@ -500,11 +500,15 @@ squares, the cubes, the ring lines) on a faint metre grid. Print it at actual si
 
 ### Idea: a cathedral
 
+*Built as Attempt #10 (below).*
+
 A future attempt where the geometry carves its own space: the slots under the pillars grown into arches that spring
 between the trisection pillars, from ring to ring and round each ring, so that the rings become arcades and the cone
 a vaulted roof, with the gold lines running along the nave beneath.
 
 ### Idea: light through the pillars
+
+*Built into Attempt #10 (below), as gold-lined openings in the north pillars of the first and third rings.*
 
 Where a pillar stands in the way of a solstice light line, such as the noon sun along the north–south line (the
 first and third rings each have a pillar due south and due north), it can be cut through for that light alone: an

@@ -94,7 +94,7 @@ The charts can show results by people, by AI, or both together.
 
 ### Search finds
 
-At my request, Claude (an AI) searched millions of straightedge and compass constructions for short, accurate ones. Its finds are on the charts under its own name with an AI label, waiting for a person's verification like any other entry. They include 4 circles and 2 lines that double the cube to 99.99997%, 5 circles and 2 lines that rectify the circle to 99.99999997%, and 10 circles and 6 lines that square it to 99.999999998%. For the angle problems it found general methods, with nothing placed by eye, that hold across almost every angle: a trisection with 4 circles and 4 lines that is at least 99.05% accurate for every angle from 30° to 150° (and 95% from 5° to 179°), and an arc rectification with 4 circles and 1 line that is at least 99.75% accurate over the same range.
+At my request, Claude (an AI) searched millions of straightedge and compass constructions for short, accurate ones. Its finds are on the charts under its own name with an AI label, waiting for a person's verification like any other entry. They include 4 circles and 2 lines that double the cube to 99.99997%, 5 circles and 2 lines that rectify the circle to 99.99999996%, and 10 circles and 6 lines that square it to 99.999999998%. For the angle problems it found general methods, with nothing placed by eye, that hold across almost every angle: a trisection with 4 circles and 4 lines that is at least 99.05% accurate for every angle from 30° to 150° (and 95% from 5° to 179°), and an arc rectification with 4 circles and 1 line that is at least 99.75% accurate over the same range.
 
 ### Method names
 
@@ -102,7 +102,7 @@ At my request, Claude (an AI) searched millions of straightedge and compass cons
 
 ### 1. Squaring The Circle
 
-Srinivasa Ramanujans method for approximating this problem is the most accurate and is listed in the approximation chart.
+Srinivasa Ramanujan's own method (1913) reaches 99.9999915%, oversized, and is on the chart. The most accurate on the chart now are Hung Viet Chu's construction of a number Ramanujan gave (99.99999999%, oversized) and a search find of 10 circles and 6 lines (99.999999998%, undersized).
 
 Among my own methods, Circling the Square variants recovered from my GeoGebra files reach 99.99996% oversized and 99.9991% undersized, using micro scale steps (µ). All of them are on the [chart](https://thor110.github.io/ClassicalGeometryProblems/pages/charts.html#stc).
 
@@ -132,7 +132,7 @@ Ramanujan's 1914 construction is the most accurate on the chart at 99.99999996% 
 
 ### 5. Arc Rectification
 
-The best method I could find for rectifying any given arc gives ~95% accuracy and only works for angles below 180 degrees and over 90 degrees, however it could easily be modified to accomodate angles over 180 degrees, I just haven't worked on it yet.
+My Tangent Path method gives 97.537% for the 135° arc in its file, and 95% or better for arcs from 128° to 215°.
 
 ### 6. Kochanski's approximations of π
 
@@ -214,7 +214,7 @@ Every entry is checked and its record is public: who verified it, whether they a
 
 ---
 
-Last updated: [06-11-2026]
+Last updated: [21-11-2026]
 
 Maintainer: Edward James Gordon
 
@@ -222,7 +222,14 @@ Maintainer: Edward James Gordon
 - `/Approximations/` — Euclidean constructions: a GeoGebra file and notes for each.
 - `/Mechanical Solutions/` — Non-Euclidean or mechanical methods.
 - `/pages/` — The website, including the chart data (`archive-data.js`) and the papers.
-- `/tools/verify.py` — Rebuilds every GeoGebra file and checks it against the charts.
+- `/tools/` — The maintainer's scripts: `verify.py` rebuilds every GeoGebra file and checks it against the charts; `add_submission.py`, `evaluate_submission.py`, `crossref.py`, `draw.py`, `steps.py`, `authors.py`, `source_links.py`, `variants.py` and the architecture scripts are described in [MAINTAINING.md](MAINTAINING.md).
+- `/Submissions/` — Incoming submissions from the browser extension, while they are reviewed.
+- `/extension/` — The browser extension that submits constructions from GeoGebra.
+- `/Wanted/` — Historical constructions still to be found and charted, and leads still open.
+- `/Variants/` — The search for variants of charted constructions.
+- `/Architecture/` — The architectural vision's files: plans, finds, the carved form and drawing sheets.
+- `MAINTAINING.md` — How the archive, its tools and its website fit together.
+- `SUBMISSION_RULESET.md` and `SUBMISSION_TEMPLATE.md` — The counting rules, and the form for a submission.
 - `VERIFICATION.md` — How entries are verified and disputed.
 - `ARCHITECTURAL.md` — The architectural vision: building the best approximations as walkable monuments.
 

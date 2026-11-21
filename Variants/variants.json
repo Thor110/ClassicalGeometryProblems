@@ -22,11 +22,11 @@
    "micro_front": []
   },
   {
-   "id": "hobson-stc",
-   "name": "Hobson's quadrature (1913)",
+   "id": "kunze-stc",
+   "name": "Kunze's square on GH (1842)",
    "entry": "stc-over-99.998",
    "problem": "stc",
-   "about": "OD, OE and OF as fractions of the radius (Hobson: 3/5, 1/2, 3/2).",
+   "about": "OD, OE and OF as fractions of the radius (Kunze: 3/5, 1/2, 3/2).",
    "original": {
     "values": {
      "OD": "3/5",
@@ -152,7 +152,7 @@
   },
   {
    "id": "kunze-rtc",
-   "name": "Kunze's triangle (1851)",
+   "name": "Kunze's triangle (1842)",
    "entry": "rtc-over-99.998",
    "problem": "rtc",
    "about": "The legs of the right triangle as fractions of the diameter (Kunze: 3/5 and 6/5).",

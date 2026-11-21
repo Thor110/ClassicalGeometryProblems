@@ -1,5 +1,5 @@
 // Written by tools/crossref.py. Do not edit by hand: run it again.
-const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-15","pairs":[
+const CROSSREF = {"tool":"tools/crossref.py","run":"2026-11-21","pairs":[
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796","newer":"taa-over-96.305","older_holder":"H. Schoeler","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-96.305","older_holder":"Gaetano Baratto","newer_holder":"Claude (Anthropic)","kinds":["person","ai"]},
 {"problem":"taa","kind":"identical","similarity":1.0,"older":"taa-over-98.796-baratto","newer":"taa-over-98.796","older_holder":"Gaetano Baratto","newer_holder":"H. Schoeler","kinds":["person","person"]},

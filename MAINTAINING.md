@@ -20,9 +20,10 @@ Node.js and Playwright (`npm install playwright@1.63.0` and `npx playwright inst
   (from `tools/draw.py`), every construction's steps for the step-by-step player in `pages/steps/`
   (from `tools/steps.py`, with the angle methods rebuilt every 5° for its angle slider in
   `pages/steps/<problem>-angles.js`) and the maintainer's list in `VERIFICATION.md`.
-- **The website** is static: `index.html` and `pages/`. Every page loads `pages/common.js` (shared
-  helpers); the chart pages also load the data files and `pages/data.js` (ranks, statuses, the π
-  chart worked out from the circle rectifications). The paper pages share `pages/paper.js`. The look
+- **The website** is static: `index.html` and `pages/`. The chart, tool and architecture pages load
+  `pages/common.js` (shared helpers); the paper pages load `pages/paper.js` instead, and `index.html`,
+  `papers.html` and `privacy.html` are plain HTML. The chart pages also load the data files and `pages/data.js` (ranks, statuses, the π
+  chart worked out from the circle rectifications). The look
   is all in `pages/style.css`.
 - **Submissions** come in as pull requests from the browser extension (`extension/`), into
   `Submissions/<folder>/`. `.github/workflows/evaluate-submission.yml` evaluates each one with
@@ -50,7 +51,9 @@ It refuses a construction that does not fit its problem, that the checker would 
 or that duplicates an entry already charted. For the same construction found later, run it again with
 `--rediscovery`: no new entry is made, and the submitter is added to that entry's `rediscovered` list.
 For the same result by a different construction, `--allow-duplicate` charts it as an entry of its own.
-Then delete the `Submissions/<folder>` once the entry is charted.
+A name new to the archive also gets a short card on the Authors page (`ARCHIVE.authors`); fill out its
+biography and links, then check with `python tools/authors.py`. Then delete the `Submissions/<folder>`
+once the entry is charted.
 
 **Recording a verification:** add it to the entry's `verified` list in the data, with the verifier's
 full name, how they checked it and the date. A verification by one of the full names listed for the
@@ -109,7 +112,7 @@ Nothing there is charted by itself: draw a promising variant in GeoGebra and add
 
 | Workflow | When | What |
 |---|---|---|
-| `verify.yml` | changes to constructions, chart data or tools | `tools/verify.py`: every construction rebuilt and checked |
+| `verify.yml` | changes to constructions, chart data or tools | `tools/verify.py`: every construction rebuilt and checked; `tools/add_submission.py --check-labels`: every chart figure against the label rule; `tools/source_links.py --check`: every historical entry links its sources; `tools/authors.py`: every credited name has a card on the Authors page |
 | `site-check.yml` | changes to the website or tools, and every push to main | `tools/site_check.js`: every page opened in a browser at desktop and phone width; script errors, links, images, every chart tab |
 | `evaluate-submission.yml` | a submission pull request | evaluates it, comments, labels, and closes duplicates, floods and offensive wording |
 | `architecture.yml` | chart data changes, and monthly | re-runs the architecture search when due, as a pull request |

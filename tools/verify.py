@@ -622,8 +622,9 @@ def read_js(path):
     return json.loads(s[s.index('{', s.index('const ')):s.rindex('}') + 1])
 
 def load_archive():
+    """The archive's data. Anchored on its declaration, so a brace in the header comment cannot break it."""
     src = open(os.path.join(ROOT, 'pages', 'archive-data.js'), encoding='utf-8').read()
-    return json.loads(src[src.index('{'):src.rindex('}') + 1])
+    return json.loads(src[src.index('{', src.index('const ARCHIVE')):src.rindex('}') + 1])
 
 def md_fields(path):
     t = open(path, encoding='utf-8').read()
@@ -784,7 +785,7 @@ def main():
             pairs = crossref.run(archive); crossref.write(pairs)
             print('%d related pairs written to pages/crossref.js' % len(pairs))
         except Exception as ex:
-            pairs = []; print('cross-reference was not run: %s' % ex)
+            pairs = []; print('!! cross-reference was not run: %s' % ex); bad += 1
         vpath = os.path.join(ROOT, 'VERIFICATION.md')
         vtext = open(vpath, encoding='utf-8').read()
         block = maintainer_list(archive, results, out['run'], pairs)
@@ -796,13 +797,13 @@ def main():
         try:
             import draw; draw.main()
         except Exception as ex:
-            print('drawings were not made: %s' % ex)
+            print('!! drawings were not made: %s' % ex); bad += 1
         try:
             import steps
             for k, c in (steps.main() or {}).items():
                 if k in results: results[k]['steps_played'] = c       # every step the player plays, intersections and midpoints too
         except Exception as ex:
-            print('steps were not written: %s' % ex)
+            print('!! steps were not written: %s' % ex); bad += 1
         write_js(os.path.join(ROOT, 'pages', 'ai-checks.js'), '// Written by tools/verify.py --write. Do not edit by hand: run the script again.', 'AI_CHECKS', out)
     ORIGINS = {'historical', 'maintainer', 'session', 'submitted'}
     for pr in archive['problems']:

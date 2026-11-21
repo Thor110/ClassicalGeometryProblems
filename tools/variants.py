@@ -278,7 +278,7 @@ SKELETONS = [
     dict(id='hayden-dtc', name="Hayden's duplication (1871)", entry='dtc-under-99.989', problem='dtc',
          slots=[('f', Fr(1, 3), (Fr(0), Fr(1)))], fn=hayden_dtc,
          about='F a fraction f of the way from C to D (Hayden: a third).'),
-    dict(id='hobson-stc', name="Kunze's square on GH (1842)", entry='stc-over-99.998', problem='stc',
+    dict(id='kunze-stc', name="Kunze's square on GH (1842)", entry='stc-over-99.998', problem='stc',
          slots=[('OD', Fr(3, 5), (Fr(0), Fr(2))), ('OE', Fr(1, 2), (Fr(0), Fr(2))), ('OF', Fr(3, 2), (Fr(1, 2), Fr(3)))], fn=hobson_stc,
          about='OD, OE and OF as fractions of the radius (Kunze: 3/5, 1/2, 3/2).'),
     dict(id='rhind-stc', name='Rhind papyrus (about 1700 BC)', entry='stc-over-99.398', problem='stc',

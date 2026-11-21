@@ -129,7 +129,7 @@
 </div>
 
 <div id="att10" hidden>
-<div class="box">
+<div class="box" id="attempt-10">
   <div class="box-title">Attempt #10: The Cathedral</div>
   <div class="box-text">The form as a cathedral, where the geometry carves its own space. The floor is Attempt #6's, built at <b>6 m to the radius</b>: 60 m across, the vault 48 m high at its crown. Every pillar still stands on an exact trisection point, and the arches spring from them.</div>
   <ul>
@@ -556,7 +556,7 @@
 
 <div class="box" id="eyelevel">
   <div class="box-title">At Eye Level</div>
-  <div class="box-text">Attempts #2 to #7 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north. Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you; everything else you can walk through. What the first walk showed:</div>
+  <div class="box-text">Attempts #2 to #7 and #9 to #11 can be walked: <b>Walk through</b> puts you 1.6 m above the floor, 2 m south of the site and facing north (the cathedral and the carved form start outside their south-west portal). Walk with W and S or the arrow keys, turn with A and D, and drag to look round; on a touch screen, use the buttons under the view. Pillars and posts stop you, and so do the cathedral's courtyard wall and the carved form's stone; everything else you can walk through. What the first walk showed:</div>
   <ul>
     <li><b>From the edge</b> the form reads well: the low cyan shell, the gates, and the pillars rising ring by ring to the glass hall.</li>
     <li><b>Inside the clock ring it is crowded.</b> The clock's pillars stand 3 m out and 4.8 m tall, and the doubled cube's corners come within 0.6 m of the nearest of them.</li>
@@ -584,8 +584,8 @@
   </ul>
   <div class="box-text"><b>Ideas, not yet decided:</b></div>
   <ul>
-    <li><b>A cathedral.</b> A future attempt where the geometry carves its own space: the arched slots grown into arches that spring between the trisection pillars, ring to ring and round each ring, so the rings become arcades and the cone a vaulted roof, the gold lines running along the nave beneath.</li>
-    <li><b>Light through the pillars.</b> Where a pillar stands in the way of a solstice light line, such as the noon sun along the north–south line, where the first and third rings each have a pillar due south and due north, it can be cut through for that light alone: an aperture lined with gold, or in the cathedral form a window, so that the sun's spot reaches the gold on the floor at noon on the solstice.</li>
+    <li><b>A cathedral.</b> <i>Built as <a class="link" href="#attempt-10">Attempt #10</a>.</i> The geometry carving its own space: the arched slots grown into arches that spring between the trisection pillars, ring to ring and round each ring, so the rings become arcades and the cone a vaulted roof, the gold lines running along the nave beneath.</li>
+    <li><b>Light through the pillars.</b> <i>Built into <a class="link" href="#attempt-10">Attempt #10</a>, as gold-lined openings in two north pillars.</i> Where a pillar stands in the way of a solstice light line, such as the noon sun along the north–south line, where the first and third rings each have a pillar due south and due north, it can be cut through for that light alone: an aperture lined with gold, or in the cathedral form a window, so that the sun's spot reaches the gold on the floor at noon on the solstice.</li>
     <li><b>Bollards on the digital shell.</b> In a built version the digital shell's marks can be bollards, keeping vehicles out, with the angle between them chosen for the size so they stand close enough to stop a car: every 5° on the plaza (1.96 m apart at 22.5 m), every 1° at stadium scale (1.75 m apart at 100 m). Like the shell itself they are surveyed, not constructed, so any angle can be used; 4° on the plaza would bring them to 1.57 m. Attempt #9 shows them at 5°.</li>
     <li><b>A microscope station.</b> A digital microscope set over a gold seam, with a screen beside it and an eyepiece for anyone to look through when it is free, so the plaque's micrometres can be seen, not just read.</li>
     <li><b>A gold-skinned cube.</b> The two doubled cubes are only 1.5 cm apart on each face (3.1 cm is the difference of their edges, shared between opposite faces), too close for two frames. They could be one shell instead: the oversized cube outside, Stifel's inside, and the 1.5 cm between them gold, with the true doubled cube half a millimetre below the outer surface. It would also ease the crowding at the centre.</li>
@@ -729,7 +729,7 @@ document.getElementById('gaps').innerHTML = rows;
   N.innerHTML = `Long and short give each length's accuracy, as on the charts: one oversized, one undersized, with the true end between them. "Shows" is how many times wider the gap is than its wander with rope work true to one part in 5,000. Last run ${last.date}, with ${last.entries} chart entries; ${F.runs.length} run${F.runs.length === 1 ? '' : 's'} so far. The full checklist is in <a href="https://github.com/Thor110/ClassicalGeometryProblems/blob/main/ARCHITECTURAL.md#the-checklist" target="_blank" rel="noopener">ARCHITECTURAL.md</a>.`;
 })();
 
-// The design attempts, step by step (pages/architecture-plan-steps.js and architecture-plan-2-steps.js, written from Architecture/Plan).
+// The design attempts, step by step (pages/architecture-plan-*-steps.js, Attempts #1 to #11: floors from Architecture/Plan, Attempt #11's mesh from Architecture/Carved).
 function planPlayer(P, id) {
   if (!P) return;
   const $ = k => document.getElementById(id[k]);
@@ -796,10 +796,9 @@ function planPlayer(P, id) {
     b.onclick = () => { con = !con; v3.construction(con); b.textContent = con ? 'Hide the construction' : 'Show the construction'; go(steps.length - 1); };
     $('d3').insertAdjacentElement('afterend', b);
   }
-  if (id.walk && v3) {   // first person, at eye level: starts 2 m south of the site, facing north
-    let w = false;
-    $('walk').onclick = e => { w = !w; go(steps.length - 1); v3.walk(w); e.target.textContent = w ? 'Stop walking' : 'Walk through'; };
-    sl.addEventListener('input', () => { w = false; $('walk').textContent = 'Walk through'; });
+  if (id.walk && v3) {   // first person, at eye level; the 3D view itself holds whether it is walking
+    $('walk').onclick = e => { const w = !v3.isWalking(); go(steps.length - 1); v3.walk(w); e.target.textContent = w ? 'Stop walking' : 'Walk through'; };
+    sl.addEventListener('input', () => { if (v3.isWalking()) v3.walk(false); $('walk').textContent = 'Walk through'; });
   }
   sl.oninput = () => go(+sl.value);
   chap.onchange = () => go(+chap.value);
@@ -924,7 +923,8 @@ if (mock) document.getElementById('mReplay').onclick = () => { mock.hide(); mock
     if (mock) { if (v === 'attm') { mock.hide(); mock.show(); } else mock.hide(); }
   };
   sel.onchange = () => { show(sel.value); history.replaceState(null, '', '#attempt-' + sel.value.slice(3)); };
-  const m = location.hash.match(/^#attempt-(\w+)$/); if (m && document.getElementById('att' + m[1])) show('att' + m[1]);
+  window.addEventListener('hashchange', () => { const h = location.hash.match(/^#attempt-(\w+)$/); if (h && [...sel.options].some(o => o.value === 'att' + h[1])) show('att' + h[1]); });
+  const m = location.hash.match(/^#attempt-(\w+)$/); if (m && [...sel.options].some(o => o.value === 'att' + m[1])) show('att' + m[1]);   // only attempts in the dropdown
 })();
 </script>
 </body>

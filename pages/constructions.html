@@ -148,17 +148,24 @@ PROBLEMS.forEach(p => {
 });
 
 // ---- Choosing a problem and an entry ----
+// Each problem's steps file is fetched once, even if asked for again while it is still loading.
+const LOADING = {};
 function load(pid, then) {
   if (STEPS[pid]) return then();
+  if (LOADING[pid]) return LOADING[pid].push(then);
+  LOADING[pid] = [then];
   const s = document.createElement('script');
-  s.src = 'steps/' + pid + '.js'; s.onload = then;
-  s.onerror = () => { $('stepText').textContent = 'The steps for this problem could not be loaded.'; };
+  s.src = 'steps/' + pid + '.js'; s.onload = () => { const q = LOADING[pid]; delete LOADING[pid]; q.forEach(f => f()); };
+  s.onerror = () => { delete LOADING[pid]; $('stepText').textContent = 'The steps for this problem could not be loaded.'; };
   document.head.appendChild(s);
 }
 
+let goSeq = 0;      // only the latest choice is shown, whichever file finishes loading last
 function go(pid, eid, keepStep) {
   const p = PROBLEMS.find(x => x.id === pid) || PROBLEMS.find(x => x.id === 'rtc');
+  const req = ++goSeq;
   load(p.id, () => {
+    if (req !== goSeq) return;
     if (prob !== p) {
       prob = p;
       document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === p.id));

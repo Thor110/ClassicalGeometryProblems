@@ -116,9 +116,10 @@ function card(a) {
   </div>`;
 }
 $('cards').innerHTML = AUTHORS.map(card).join('');
-const nEntries = new Set(AUTHORS.flatMap(a => a.own.map(x => x.e.id))).size;
+const nEntries = new Set(AUTHORS.flatMap(a => a.own.filter(x => x.charted).map(x => x.e.id))).size;
+const nHolders = AUTHORS.filter(a => a.own.some(x => x.charted)).length;
 const nHist = AUTHORS.filter(a => (a.kind || 'historical') === 'historical').length;
-$('intro').textContent = `${AUTHORS.length} authors are credited on the charts: ${nHist} historical, the rest living or AI. Between them they hold ${nEntries} entries.`;
+$('intro').textContent = `${AUTHORS.length} authors are credited in the archive: ${nHist} historical, the rest living or AI. ${nHolders} of them hold the ${nEntries} charted entries; the others are credited for rediscoveries or for constructions below the 95% minimum.`;
 
 let kind = '';
 function filter() {

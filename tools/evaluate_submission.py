@@ -227,7 +227,9 @@ def evaluate(sub_dir):
         else:
             rep.append('- **Cross-reference:** not identical or close to any entry in the archive.')
     except Exception as ex:
-        rep.append('- **Cross-reference:** could not be run (%s).' % ex)
+        # a check that could not run must not let a duplicate through unnoticed
+        rep.append('- **Cross-reference:** could not be run (%s), so this needs checking by hand.' % ex)
+        labels.add('needs-manual-check'); decision = 'manual'
 
     # Verdict
     if a < 95:
@@ -253,7 +255,10 @@ def evaluate(sub_dir):
     return '\n'.join(rep), labels, decision
 
 def main():
-    sub = sys.argv[1]; out = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else sub
+    args = sys.argv[1:]
+    if not args or args[0] in ('-h', '--help') or args[0].startswith('-') or (args[-1] == '--out'):
+        print(__doc__); sys.exit(2)
+    sub = args[0]; out = args[args.index('--out') + 1] if '--out' in args else sub
     report, labels, decision = evaluate(sub)
     os.makedirs(out, exist_ok=True)
     open(os.path.join(out, 'report.md'), 'w', encoding='utf-8').write(report + '\n')

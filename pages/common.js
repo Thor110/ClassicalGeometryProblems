@@ -1,4 +1,5 @@
-// Small helpers shared by every page of the website. Load it first, before any other script.
+// Small helpers shared by the chart, tool and architecture pages (the paper pages use paper.js instead).
+// Load it first, before any other script.
 
 const $ = id => document.getElementById(id);
 

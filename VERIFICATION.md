@@ -120,10 +120,12 @@ Pull requests that add a folder to `Submissions/` are evaluated automatically an
 
 1. reads the evaluation comment, and opens the construction in GeoGebra;
 2. for a needs-manual-check, settles what the check could not (the problem, a hand-placed point, a shallow crossing);
-3. merges the pull request, then moves the files into the problem's folder under the archive's naming
-   (`RTC-99.806.ggb` and its `.md`), adds the entry to `pages/archive-data.js` with
-   `"origin": {"kind": "submitted", "evidence": ["pull request #N"]}`, and runs
-   `python tools/verify.py --write`.
+3. merges the pull request, then runs `python tools/add_submission.py Submissions/<folder> --pr N --dry-run`
+   and, if all is well, the same without `--dry-run` (with `--rediscovery` or `--allow-duplicate` where they
+   apply; see [MAINTAINING.md](MAINTAINING.md)). It moves the files into the problem's folder under the
+   archive's naming (`RTC-99.806-Gordon.ggb` and its `.md`) and adds the entry to `pages/archive-data.js` with
+   `"origin": {"kind": "submitted", "evidence": ["pull request #N"]}`. Then `python tools/verify.py --write`,
+   and the `Submissions/<folder>` is deleted.
 
 The AI check then verifies it like any other entry, and it waits in the list below for a person.
 
@@ -131,7 +133,7 @@ The AI check then verifies it like any other entry, and it waits in the list bel
 
 ## Waiting for the maintainer
 
-Kept up to date by `python tools/verify.py --write` (last run 2026-11-15). Tick items off by fixing them; the next run rewrites this list.
+Kept up to date by `python tools/verify.py --write` (last run 2026-11-21). Tick items off by fixing them; the next run rewrites this list.
 
 ### Not verified by a person yet (198)
 

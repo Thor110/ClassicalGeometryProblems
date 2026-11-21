@@ -5,13 +5,15 @@ All constructions should adhere to the strict Euclidean ruleset (straightedge an
 
 ---
 
-**Problem:** (Squaring the Circle / Trisecting an Angle / Doubling the Cube / Rectifying the Circle / Arc Rectification / π Approximation)
+**Problem:** (Squaring the Circle / Trisecting an Angle / Doubling the Cube / Rectifying the Circle / Arc Rectification)
+
+For π, submit the construction as Rectifying the Circle: the π chart is worked out from it.
 
 **Method Name:**
 Provide the title or informal name of your method or construction.
 
 **Author:**
-Your full name (or pseudonym) and the date of creation, in the form of DD/MM/YY (e.g. 07-11-2025).
+Your real full name and the date of creation, as DD-MM-YYYY (e.g. 07-11-2025).
 
 **Accuracy (%):**
 Approximate accuracy of your construction, ideally calculated numerically (e.g. 99.816%).

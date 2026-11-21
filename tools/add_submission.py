@@ -93,6 +93,16 @@ def check_labels(archive):
     return out
 
 
+def ensure_card(D, name, pr):
+    """Every name the charts credit needs a card on the Authors page (tools/authors.py checks it).
+    A new name gets a short one, to be filled out by the maintainer; returns True if one was added."""
+    cards = D.setdefault('authors', [])
+    if any(name == a['name'] or name in a.get('holders', []) or name in a.get('also', []) for a in cards): return False
+    cards.append({'name': name, 'life': '', 'kind': 'living', 'holders': [name],
+                  'bio': 'Submitted a construction to the archive%s.' % (' in pull request #%s' % pr if pr else ''), 'links': []})
+    return True
+
+
 def add_rediscovery(eid, problem, meta, pr, dry):
     """List the submitter on the earlier entry as a possible independent rediscovery, instead of a new entry."""
     submitted = (meta.get('submitted') or datetime.date.today().isoformat())[:10]
@@ -105,7 +115,9 @@ def add_rediscovery(eid, problem, meta, pr, dry):
     D = json.loads(s[i:s.rindex('}') + 1])
     e = [x for p in D['problems'] if p['id'] == problem for x in p['entries'] if x['id'] == eid][0]
     e.setdefault('rediscovered', []).append(rec)
+    card = ensure_card(D, rec['name'], pr)
     open(DATA, 'w', encoding='utf-8').write(head + json.dumps(D, ensure_ascii=False, indent=1) + s[s.rindex('}') + 1:])
+    if card: print('New name: a short card for %s was added to ARCHIVE.authors; fill out the biography (see MAINTAINING.md).' % rec['name'])
     print('Recorded. Now run: python tools/verify.py --write')
 
 
@@ -201,7 +213,9 @@ def main():
     [x for x in D['problems'] if x['id'] == problem][0]['entries'].append(entry)
     if name not in (D.get('holders') or {}):
         D.setdefault('holders', {})[name] = [name]
+    card = ensure_card(D, name, pr)
     open(DATA, 'w', encoding='utf-8').write(head + json.dumps(D, ensure_ascii=False, indent=1) + s[s.rindex('}') + 1:])
+    if card: print('New name: a short card for %s was added to ARCHIVE.authors; fill out the biography (see MAINTAINING.md).' % name)
     print('Added. Now run: python tools/verify.py --write')
 
 

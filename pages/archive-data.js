@@ -5,7 +5,8 @@
 //
 // Each entry: id (problem-side-accuracy, never changes), side (over/under), marks
 // (~ contested, @ too simple, µ micro scale edits), holder, method, circles, lines, acc (the chart
-// figure, truncated), precise (a fuller readout, if any), date, geogebra (the id after
+// figure, truncated; a leading ~ here means approximate, as for a point placed by hand, and is checked
+// with a looser tolerance: not the same as the ~ in marks), precise (a fuller readout, if any), date, geogebra (the id after
 // geogebra.org/geometry/), file (the .ggb/.md pair under the problem's folder, without extension),
 // note, verified (people who have checked it), disputes (open or closed; see VERIFICATION.md).
 // known_issue: why an entry is flagged by tools/verify.py and what is being done; it is listed but no

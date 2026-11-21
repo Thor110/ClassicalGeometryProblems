@@ -5,7 +5,7 @@ These are the rules behind the keys and figures in the approximation charts.
 **Rules are subject to change.** Each change is listed under [Changes](#changes) with its date, and
 entries are re-checked against the current rules by `tools/verify.py`.
 
-Current version: **1.6 (November 2026)**
+Current version: **1.7 (November 2026)**
 
 ## Rulesets
 
@@ -158,7 +158,7 @@ Each entry is **verified**, **self-verified**, **unverified** or **disputed**. P
 
 ## Changes
 
-- **1.6 (November 2026)**: chart figures capped at ten decimal places, with `≈` for entries alike at the cap; an error column; the limits on precision written down; exact ties ordered by fewer circles and lines.
+- **1.7 (November 2026)**: chart figures capped at ten decimal places, with `≈` for entries alike at the cap; an error column; the limits on precision written down; exact ties ordered by fewer circles and lines.
 - **1.6 (November 2026)**: historical finds. Charted under their original author, with who pointed to it, and who located and verified it, recorded on the entry.
 - **1.5 (November 2026)**: earlier discoveries. Credit goes to the earliest known author; everyone who found a construction later is kept on its entry as a possible independent rediscovery.
 - **1.4 (November 2026)**: points placed freely that only set the size are not counted against a construction; angle sweeps find the angle's corner from the file.

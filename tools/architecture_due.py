@@ -15,7 +15,8 @@ waits for a few. A run is due when:
   - at least X entries have been added since the last run, or
   - at least one entry has been added and STALE_DAYS have passed since the last run.
 
-  python tools/architecture_due.py           prints the reasoning; exit code 0 if due, 1 if not
+  python tools/architecture_due.py           prints the reasoning; exit code 0 if due, 10 if not
+  (any other exit code is a real failure, such as the archive failing to load, and fails the workflow)
   (in GitHub Actions it also writes due=true/false, x=… and new=… to $GITHUB_OUTPUT)
 """
 import datetime, json, os, sys
@@ -25,6 +26,7 @@ import verify as v
 
 MIN_X, MAX_X, FIRST_X = 3, 25, 5     # FIRST_X: until there is a month of history to judge the pace by
 STALE_DAYS = 180
+NOT_DUE = 10                          # the exit code for 'not due', kept apart from Python's 1 for a crash
 FINDS_JS = os.path.join(v.ROOT, 'pages', 'architecture-finds.js')
 
 
@@ -61,7 +63,7 @@ def main():
     print(('Due: ' if due else 'Not due: ') + why)
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'], 'a') as f: f.write('due=%s\nx=%d\nnew=%d\n' % (str(due).lower(), x, new))
-    sys.exit(0 if due else 1)
+    sys.exit(0 if due else NOT_DUE)
 
 
 if __name__ == '__main__':

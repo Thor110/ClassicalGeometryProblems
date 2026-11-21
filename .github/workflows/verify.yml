@@ -4,10 +4,14 @@ name: Verify constructions
 
 on:
   push:
+    branches: [main]
     paths: ['Approximations/**', 'pages/archive-data.js', 'tools/*.py']
   pull_request:
     paths: ['Approximations/**', 'pages/archive-data.js', 'tools/*.py']
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   verify:

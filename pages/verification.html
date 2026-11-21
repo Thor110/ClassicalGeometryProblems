@@ -136,9 +136,9 @@ const all = PROBLEMS.flatMap(p => p.entries.concat(p.archived || []).map(e => ({
 const counted = name => all.filter(e => (e.verified || []).some(v => v.by === name)).length;
 
 $('people').innerHTML = '<tr><th>Name</th><th>Role</th><th>Since</th><th>Entries verified</th><th>How</th></tr>' +
-  ARCHIVE.verifiers.people.map(v => `<tr><td>${v.name}</td><td>${v.role}</td><td>${v.since}</td><td>${counted(v.name)}</td><td class="wrap">${v.how}</td></tr>`).join('');
+  ARCHIVE.verifiers.people.map(v => `<tr><td>${esc(v.name)}</td><td>${esc(v.role)}</td><td>${esc(v.since)}</td><td>${counted(v.name)}</td><td class="wrap">${esc(v.how)}</td></tr>`).join('');
 $('ai').innerHTML = '<tr><th>Name</th><th>Role</th><th>Since</th><th>Entries reproduced</th><th>How</th></tr>' +
-  ARCHIVE.verifiers.ai.map(v => `<tr><td>${v.name}</td><td>${v.role}</td><td>${v.since}</td><td>${Object.values(CHECKS).filter(c => c.status === 'reproduced').length} of ${all.length}</td><td class="wrap">${v.how}</td></tr>`).join('');
+  ARCHIVE.verifiers.ai.map(v => `<tr><td>${esc(v.name)}</td><td>${esc(v.role)}</td><td>${esc(v.since)}</td><td>${Object.values(CHECKS).filter(c => c.status === 'reproduced').length} of ${all.length}</td><td class="wrap">${esc(v.how)}</td></tr>`).join('');
 
 $('aiRun').textContent = `AI check last run ${AI_CHECKS.run}. Click an entry's problem to see it on its chart.`;
 const n = s => all.filter(e => statusOf(e).status === s).length;
