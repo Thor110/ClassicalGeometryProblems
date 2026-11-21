@@ -12,6 +12,34 @@ The counting rules have their own version history, under "Changes" in [SUBMISSIO
 
 ---
 
+## November 2026: Speed and accessibility (update-90)
+
+The second half of the review's fixes.
+
+### Speed
+- `tools/verify.py --write` takes about 25 seconds instead of over three minutes. Sweeping an angle method with a
+  point placed by hand halved every step to the limit, because that point never agrees exactly between one step
+  and two half steps; only the points that follow the figure are compared now. The two methods concerned keep
+  their 95% ranges, and their far-off angles move slightly.
+- The angle sweeps are in their own file, `pages/ai-sweeps.js`, loaded only by the charts and the Six Problems
+  page; `pages/ai-checks.js` drops from 511 KB to 191 KB. The Authors and Open Slots pages no longer load data they
+  do not use.
+- The step-by-step player's angle slider loads only the chosen entry's frames (`pages/steps/angles/<entry>.js`,
+  typically 50 KB) instead of a whole problem's (up to 2.4 MB).
+- Architecture page: only the attempt on show runs its 3D view (the hidden ones no longer animate at load), the
+  two heaviest attempts' data loads when they are first chosen, dragging and scrolling redraw once per frame, and
+  the carved form's surface is worked out once.
+
+### Accessibility
+- Greys raised to readable contrast across the site, the footer enlarged, and a clear focus outline for
+  keyboard users.
+- Toggle buttons and chart tabs tell screen readers which is chosen (a shared helper in `common.js`).
+- Constructions page: Space and the arrow keys work on a focused checkbox or button instead of driving the player.
+- Paper pages: figures open from the keyboard, and the viewer takes and returns focus.
+- Verification page: each entry's problem link opens the entry itself on its chart.
+
+---
+
 ## November 2026: Review fixes (update-89)
 
 A multi-agent review of the repository found these, each checked by a second agent before fixing.

@@ -18,7 +18,7 @@
   .picker input{flex:0 1 260px;}
   #entryHead{text-align:center;margin-top:4px;} #entryNote{text-align:center;}
   .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-top:12px;font-size:14px;}
-  .keys{font-size:13px;color:#555;text-align:center;margin-top:10px;line-height:1.6;}
+  .keys{font-size:13px;color:#8a8a8a;text-align:center;margin-top:10px;line-height:1.6;}
   .keys kbd{border:1px solid #2a2a3a;padding:0 5px;color:#888;font-family:inherit;}
   .box.wide .controls{max-width:none;align-items:center;}
   label.check{color:#888;font-size:14px;display:inline-flex;gap:8px;align-items:center;cursor:pointer;white-space:nowrap;letter-spacing:0.05em;padding:0 6px;}
@@ -215,7 +215,7 @@ function choose(eid, keepStep) {
   fit(); show();
 }
 
-// ---- The angle slider: angle methods rebuilt every 5°, from tools/steps.py, loaded when first asked for ----
+// ---- The angle slider: angle methods rebuilt every 5°, from tools/steps.py, each entry's loaded when first asked for ----
 function setupAngle() {
   const on = prob.id === 'taa' || prob.id === 'ar';
   $('angleRow').style.display = on ? '' : 'none';
@@ -235,9 +235,10 @@ function openAngle() {
     $('angleOpen').style.display = 'none';
     setAngle(+$('angle').value);
   };
-  if (ANGLES[pid]) return ready();
+  if ((ANGLES[pid] || {})[eid]) return ready();
+  if (!(STEPS[pid].entries[eid] || {}).ang) { $('angleVal').textContent = 'No other angles for this one.'; return; }
   $('angleVal').textContent = 'loading…';
-  const sc = document.createElement('script'); sc.src = 'steps/' + pid + '-angles.js'; sc.onload = ready;
+  const sc = document.createElement('script'); sc.src = 'steps/angles/' + eid + '.js'; sc.onload = ready;      // this entry's frames only
   sc.onerror = () => { $('angleVal').textContent = 'The other angles could not be loaded.'; };
   document.head.appendChild(sc);
 }
@@ -491,7 +492,8 @@ $('search').oninput = fillPicker;
 const nextEntry = d => { const i = entries.findIndex(e => e.id === entry.id); const j = i + d; if (j >= 0 && j < entries.length) choose(entries[j].id); };
 $('prevEntry').onclick = () => nextEntry(-1); $('nextEntry').onclick = () => nextEntry(1);
 document.addEventListener('keydown', ev => {
-  if (ev.target.closest('input:not([type=checkbox]), select, textarea') || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+  // keys belong to whatever control has focus (a checkbox, a button, a link): the player's keys apply elsewhere
+  if (ev.target.closest('input, select, textarea, button, a[href], [contenteditable]') || ev.altKey || ev.ctrlKey || ev.metaKey) return;
   const act = {ArrowRight: () => $('next').onclick(), ArrowLeft: () => $('prev').onclick(), ArrowUp: () => nextEntry(-1), ArrowDown: () => nextEntry(1),
     ' ': play, Home: () => $('first').onclick(), End: () => $('last').onclick(), Escape: () => select(null)}[ev.key];
   if (act) { ev.preventDefault(); act(); }

@@ -285,7 +285,7 @@ def main():
                 files.setdefault(e['file'], b[0]); entries[e['id']] = b[1]; made += 1
                 u = b[1]['u'][1:]                                  # leave out step 0, the given figure
                 counts[e['id']] = {'counted': u.count('1'), 'all': len(u)}
-                if b[2]: angles[e['id']] = b[2]
+                if b[2]: angles[e['id']] = b[2]; b[1]['ang'] = 1      # ang: it has its own angle file
         name = p['id'] + '.js'; keep.add(name)
         with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
             f.write(head + '// files: each GeoGebra file\'s steps, once (f: the steps each is drawn from); entries: which steps count\n'
@@ -295,15 +295,16 @@ def main():
             f.write('\n},\n"entries": {\n')
             f.write(',\n'.join('%s: %s' % (json.dumps(k), dump(x)) for k, x in entries.items()))
             f.write('\n}};\n')
-        if angles:
-            name = p['id'] + '-angles.js'; keep.add(name)
+        # each angle method's frames in a file of its own, so the player loads only the one it is showing
+        os.makedirs(os.path.join(OUT, 'angles'), exist_ok=True)
+        for k, x in angles.items():
+            name = os.path.join('angles', k + '.js'); keep.add(name)
             with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
-                f.write(head + '// Each angle method rebuilt every 5 degrees from its own angle, for the player\'s angle slider.\n')
-                f.write('window.ANGLES = window.ANGLES || {};\nANGLES[%s] = {\n' % json.dumps(p['id']))
-                f.write(',\n'.join('%s: %s' % (json.dumps(k), dump(x)) for k, x in angles.items()))
-                f.write('\n};\n')
-    for f in os.listdir(OUT):
-        if f.endswith('.js') and f not in keep: os.remove(os.path.join(OUT, f))
+                f.write(head + '// This angle method rebuilt every 5 degrees from its own angle, for the player\'s angle slider.\n')
+                f.write('window.ANGLES = window.ANGLES || {};\n(ANGLES[%s] = ANGLES[%s] || {})[%s] = %s;\n' % (json.dumps(p['id']), json.dumps(p['id']), json.dumps(k), dump(x)))
+    for d in ('', 'angles'):
+        for f in os.listdir(os.path.join(OUT, d)):
+            if f.endswith('.js') and os.path.join(d, f) not in keep: os.remove(os.path.join(OUT, d, f))
     print('%d constructions written as steps into pages/steps' % made)
     return counts
 

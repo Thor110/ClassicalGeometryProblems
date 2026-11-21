@@ -91,13 +91,15 @@ function makeView3D(cv, P) {
     if (M) M.objects.forEach((o, i) => {     // a mesh from a modelling program, each object rising in turn
       const k = ease(M.objects.length === 1 ? f(0) : f(i)); if (k <= 0) return; const [fill, line] = COL[o.col] || COL.stone, V = j => [M.v[j][0], M.v[j][1], M.v[j][2] * k];
       if (o.col === 'carved') {          // the carved form: shaded by the light, cut in half to look inside
-        for (const fc of o.f) {
-          const q = fc.map(V);
+        // once it has risen the form is still, so each face's corners and normal are worked out once and kept
+        const still = k >= 1;
+        if (still && !o._faces) o._faces = o.f.map(fc => { const q = fc.map(V), nn = crs(sub(q[1], q[0]), sub(q[2], q[0])), l = Math.hypot(...nn) || 1; return [q, [nn[0] / l, nn[1] / l, nn[2] / l]]; });
+        const list = still ? o._faces : o.f.map(fc => { const q = fc.map(V), nn = crs(sub(q[1], q[0]), sub(q[2], q[0])), l = Math.hypot(...nn) || 1; return [q, [nn[0] / l, nn[1] / l, nn[2] / l]]; });
+        for (const [q, n_] of list) {
           if (cutaway && q[0][1] < 0 && q[1][1] < 0 && q[2][1] < 0) continue;
-          const nn = crs(sub(q[1], q[0]), sub(q[2], q[0])), l = Math.hypot(...nn) || 1, n_ = [nn[0] / l, nn[1] / l, nn[2] / l];
           const toEye = sub(E, q[0]), sd = dot(n_, toEye) < 0 ? -1 : 1, nv = [n_[0] * sd, n_[1] * sd, n_[2] * sd];
           if (sd < 0 && o.cull) continue;       // a closed form: faces turned away from the eye are hidden by the ones in front
-          face(q, LOOK ? lit('#e8e0d0', nv) : 'rgba(200,196,189,0.9)', null);
+          face(q, LOOK ? lit('#e8e0d0', nv) : 'rgba(200,196,189,0.9)', null); out[out.length - 1].tri = 1;
         }
         return;
       }
@@ -153,6 +155,9 @@ function makeView3D(cv, P) {
       else c = clipPoly(c);
       if (!c.length || (!p.text && !p.line && c.length < 3)) { p.d = -1; continue; }
       p.q = c.map(proj); p.d = c.reduce((s, x) => s + x[2], 0) / c.length;
+      if (p.tri && p.q.length === 3) {      // a mesh triangle smaller than about a pixel on screen is not worth drawing
+        const [a, b, d] = p.q; if (Math.abs((b[0] - a[0]) * (d[1] - a[1]) - (d[0] - a[0]) * (b[1] - a[1])) < 1.5) p.d = -1;
+      }
     }
     return out.filter(p => p.d > 0).sort((a, b) => b.d - a.d);
   }
@@ -266,6 +271,9 @@ function makeView3D(cv, P) {
   }
   cv.insertAdjacentElement('afterend', pad);
   function frame(ts) { if (!on) return; if (start === null) start = ts; t = Math.min(1, (ts - start) / 3500); draw(); if (t < 1) raf = requestAnimationFrame(frame); else raf = null; }
+  // a drag or a scroll asks for a redraw; it happens once, at the next frame, however many events came first
+  let queued = false;
+  const redraw = () => { if (raf || queued) return; queued = true; requestAnimationFrame(() => { queued = false; if (on) draw(); }); };
   const ptrs = new Map(); let pinch = null;
   cv.addEventListener('pointerdown', e => { if (!on) return; if (walking) cv.focus({preventScroll: true}); cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]); });
   cv.addEventListener('pointermove', e => {
@@ -273,11 +281,11 @@ function makeView3D(cv, P) {
     if (walking) { if (ptrs.size === 1) { wyaw -= (e.clientX - old[0]) * 0.004; wpitch = Math.max(-1.2, Math.min(1.2, wpitch - (e.clientY - old[1]) * 0.004)); } }
     else if (ptrs.size === 1) { yaw -= (e.clientX - old[0]) * 0.008; pitch = Math.max(0.08, Math.min(1.5, pitch + (e.clientY - old[1]) * 0.006)); }
     else { const [a, b] = [...ptrs.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch) dist = Math.max(8, Math.min(140, dist * pinch / d)); pinch = d; }
-    if (!raf) draw();
+    redraw();
   });
   const up = e => { ptrs.delete(e.pointerId); pinch = null; };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
-  cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; moveTo(wx + Math.cos(wyaw) * s_, wy + Math.sin(wyaw) * s_); if (!raf) draw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); if (!raf) draw(); }, {passive: false});
+  cv.addEventListener('wheel', e => { if (!on) return; e.preventDefault(); if (walking) { const s_ = -Math.sign(e.deltaY) * 0.5 * MU; moveTo(wx + Math.cos(wyaw) * s_, wy + Math.sin(wyaw) * s_); redraw(); return; } dist = Math.max(8, Math.min(140, dist * Math.exp(e.deltaY * 0.001))); redraw(); }, {passive: false});
   return {
     sun(hour, decl) { setSun(hour, decl); if (on && !raf) draw(); },
     construction(b) { showCon = b; if (on && !raf) draw(); },

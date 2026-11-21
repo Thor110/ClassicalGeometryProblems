@@ -542,8 +542,12 @@ def sweep(problem, path, entry, lo=5.0, hi=355.0, step=1.0, stop_at=None, on_ste
     pts = lambda r: {k: o[1] for k, o in r['objects'].items() if o and o[0] == 'point'}
     scale = dist(B, A) if (problem == 'taa' or (problem == 'ar' and not nums)) else 1.0
     def same(r1, r2):
-        p1, p2 = pts(r1), pts(r2)
-        return all(k in p2 and dist(p1[k], p2[k]) <= 1e-9 * scale for k in p1)
+        # A point placed by hand is projected afresh from wherever the last step left it, so it never agrees
+        # exactly between one step and two half steps; comparing it (or anything built on it) would halve every
+        # step to the full depth. Only the points that follow the figure are compared.
+        p1, p2, hand = pts(r1), pts(r2), r1.get('hand') or set()
+        follow = [k for k in p1 if k not in hand and not (r1['deps'].get(k, set()) & hand)]
+        return all(k in p2 and dist(p1[k], p2[k]) <= 1e-9 * scale for k in follow)
     def step_to(d0, d1, ref, depth=0):
         # Move the figure from angle d0 to d1. Where a step is too big for some crossing to be followed
         # (two crossings closer together than the figure moves), one step and two half steps disagree:
@@ -804,7 +808,17 @@ def main():
                 if k in results: results[k]['steps_played'] = c       # every step the player plays, intersections and midpoints too
         except Exception as ex:
             print('!! steps were not written: %s' % ex); bad += 1
-        write_js(os.path.join(ROOT, 'pages', 'ai-checks.js'), '// Written by tools/verify.py --write. Do not edit by hand: run the script again.', 'AI_CHECKS', out)
+        # The angle sweeps are over half the data but only the charts' details and the problems page draw them,
+        # so they go in a file of their own, which folds them back into AI_CHECKS on the pages that load it.
+        sweeps = {k: {f: r.pop(f) for f in ('sweep', 'sweep_angle') if f in r} for k, r in results.items()}
+        write_js(os.path.join(ROOT, 'pages', 'ai-checks.js'), '// Written by tools/verify.py --write. Do not edit by hand: run the script again.\n'
+                 '// The angle sweeps are in ai-sweeps.js, loaded after this file on the pages that draw them.', 'AI_CHECKS', out)
+        with open(os.path.join(ROOT, 'pages', 'ai-sweeps.js'), 'w', encoding='utf-8') as f:
+            f.write('// Written by tools/verify.py --write. Do not edit by hand: run the script again.\n'
+                    '// Each angle method\'s accuracy, swept across angles (sweep: [degrees, accuracy]; sweep_angle: the angle in its file).\n'
+                    '// Load it after ai-checks.js: it adds these to AI_CHECKS.results.\n'
+                    'const AI_SWEEPS = {\n' + ',\n'.join('%s:%s' % (json.dumps(k), json.dumps(x, ensure_ascii=False, separators=(',', ':'))) for k, x in sweeps.items() if x) + '\n};\n'
+                    'if (typeof AI_CHECKS !== \'undefined\') for (const [k, x] of Object.entries(AI_SWEEPS)) Object.assign(AI_CHECKS.results[k] || {}, x);\n')
     ORIGINS = {'historical', 'maintainer', 'session', 'submitted'}
     for pr in archive['problems']:
         for e in pr['entries']:

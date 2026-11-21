@@ -34,3 +34,24 @@ function copyButton(button, text, fallback) {
     button.textContent = 'Copied'; clearTimeout(timer); timer = setTimeout(() => { button.textContent = label; }, 1500);
   };
 }
+
+// Screen readers learn which toggle or tab is chosen. The pages mark it with the class "active"; this keeps
+// aria-selected (on tabs, in a tablist) and aria-pressed (on toggle buttons: those with a data-who, data-side,
+// data-filter, data-rules or data-kind attribute, or #flip) in step with that class wherever it changes.
+(function () {
+  const TOGGLE = '[data-who],[data-side],[data-filter],[data-rules],[data-kind],#flip';
+  const sync = el => {
+    if (!el.classList) return;
+    const on = el.classList.contains('active');
+    if (el.classList.contains('tab')) {
+      el.setAttribute('role', 'tab'); el.setAttribute('aria-selected', on);
+      if (el.parentElement && !el.parentElement.getAttribute('role')) el.parentElement.setAttribute('role', 'tablist');
+    } else if (el.tagName === 'BUTTON' && el.matches(TOGGLE)) el.setAttribute('aria-pressed', on);
+  };
+  const scan = root => root.querySelectorAll && root.querySelectorAll('.tab, button').forEach(sync);
+  new MutationObserver(ms => ms.forEach(m => {
+    if (m.type === 'attributes') sync(m.target);
+    else m.addedNodes.forEach(n => { if (n.nodeType === 1) { sync(n); scan(n); } });
+  })).observe(document.documentElement, {subtree: true, childList: true, attributes: true, attributeFilter: ['class']});
+  document.addEventListener('DOMContentLoaded', () => scan(document));
+})();

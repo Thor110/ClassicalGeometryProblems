@@ -652,8 +652,6 @@
 <script src="architecture-plan-7-steps.js"></script>
 <script src="architecture-plan-8-steps.js"></script>
 <script src="architecture-plan-9-steps.js"></script>
-<script src="architecture-plan-10-steps.js"></script>
-<script src="architecture-plan-11-steps.js"></script>
 <script src="architecture-3d.js"></script>
 <script src="architecture-mockup.js"></script>
 <script>
@@ -831,6 +829,7 @@ if (att5 && att5.v3) {
   let hung = true;
   document.getElementById('tHang').onclick = e => { hung = !hung; att5.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att5.to3d(); };
 }
+function setup11() {
 const att11 = planPlayer(window.PLAN11_STEPS, {cv: 'kCv', slider: 'kSlider', chap: 'kChap', text: 'kText', prev: 'kPrev', next: 'kNext', play: 'kPlay', d3: 'k3d', walk: 'kWalk', grid: 'kGrid'});
 if (att11 && att11.v3) {
   const hr = document.getElementById('kHour'), dt = document.getElementById('kDate'), ht = document.getElementById('kHourText');
@@ -839,8 +838,11 @@ if (att11 && att11.v3) {
   let nt = false; document.getElementById('kNight').onclick = e => { nt = !nt; att11.v3.night(nt); e.target.textContent = nt ? 'Day' : 'Night'; att11.to3d(); };
   let ct = false; document.getElementById('kCut').onclick = e => { ct = !ct; att11.v3.cut(ct); e.target.textContent = ct ? 'Make it whole' : 'Cut in half'; att11.to3d(); };
   let hung = true; document.getElementById('kHang').onclick = e => { hung = !hung; att11.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att11.to3d(); };
-  sun(); att11.to3d();
+  sun();
 }
+return att11;
+}
+function setup10() {
 const att10 = planPlayer(window.PLAN10_STEPS, {cv: 'zCv', slider: 'zSlider', chap: 'zChap', text: 'zText', prev: 'zPrev', next: 'zNext', play: 'zPlay', d3: 'z3d', grid: 'zGrid', walk: 'zWalk'});
 if (att10 && att10.v3) {
   const hr = document.getElementById('zHour'), dt = document.getElementById('zDate'), ht = document.getElementById('zHourText');
@@ -849,7 +851,9 @@ if (att10 && att10.v3) {
   let nt = false; document.getElementById('zNight').onclick = e => { nt = !nt; att10.v3.night(nt); e.target.textContent = nt ? 'Day' : 'Night'; att10.to3d(); };
   let vo = false; document.getElementById('zVault').onclick = e => { vo = !vo; att10.v3.vault(vo); e.target.textContent = vo ? 'Close the vault' : 'Open the vault'; att10.to3d(); };
   let hung = true; document.getElementById('zHang').onclick = e => { hung = !hung; att10.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att10.to3d(); };
-  sun(); att10.to3d();
+  sun();
+}
+return att10;
 }
 const att9 = planPlayer(window.PLAN9_STEPS, {cv: 'yCv', slider: 'ySlider', chap: 'yChap', text: 'yText', prev: 'yPrev', next: 'yNext', play: 'yPlay', d3: 'y3d', grid: 'yGrid', walk: 'yWalk'});
 if (att9 && att9.v3) {
@@ -859,7 +863,7 @@ if (att9 && att9.v3) {
   let hung = true;
   document.getElementById('yHang').onclick = e => { hung = !hung; att9.v3.suspend(hung); e.target.textContent = hung ? 'Stand the cubes' : 'Suspend the cubes'; att9.to3d(); };
   let nt = false; document.getElementById('yNight').onclick = e => { nt = !nt; att9.v3.night(nt); e.target.textContent = nt ? 'Day' : 'Night'; att9.to3d(); };
-  sun(); att9.to3d();
+  sun();
 }
 const att8 = planPlayer(window.PLAN8_STEPS, {cv: 'wCv', slider: 'wSlider', chap: 'wChap', text: 'wText', prev: 'wPrev', next: 'wNext', play: 'wPlay', d3: 'w3d'});
 if (att8 && att8.v3) {
@@ -918,13 +922,26 @@ if (mock) document.getElementById('mReplay').onclick = () => { mock.hide(); mock
 // The attempt shown: the dropdown, or #attempt-1 / #attempt-2 in the address.
 (function () {
   const sel = document.getElementById('attSel');
+  // Only the attempt on show runs its 3D view: the others are stopped. Attempts #9 to #11 open in 3D, and the
+  // two heavy ones, #10 and #11, have their step files loaded only when first chosen.
+  const VIEW = {att2, att3, att4, att5, att6, att7, att8, att9}, OPEN3D = ['att9', 'att10', 'att11'];
+  const LAZY = {att10: ['architecture-plan-10-steps.js', () => setup10()], att11: ['architecture-plan-11-steps.js', () => setup11()]};
+  const start = v => { const pl = VIEW[v]; if (pl && OPEN3D.includes(v) && sel.value === v) pl.to3d(); };
   const show = v => {
     for (const o of sel.options) document.getElementById(o.value).hidden = o.value !== v; sel.value = v;
+    for (const [k, pl] of Object.entries(VIEW)) if (k !== v && pl && pl.v3) pl.v3.hide();
     if (mock) { if (v === 'attm') { mock.hide(); mock.show(); } else mock.hide(); }
+    if (LAZY[v] && !VIEW[v]) {
+      const [file, setup] = LAZY[v]; LAZY[v] = null;
+      const sc = document.createElement('script'); sc.src = file;
+      sc.onload = () => { VIEW[v] = setup(); start(v); };
+      document.head.appendChild(sc);
+    } else start(v);
   };
   sel.onchange = () => { show(sel.value); history.replaceState(null, '', '#attempt-' + sel.value.slice(3)); };
   window.addEventListener('hashchange', () => { const h = location.hash.match(/^#attempt-(\w+)$/); if (h && [...sel.options].some(o => o.value === 'att' + h[1])) show('att' + h[1]); });
-  const m = location.hash.match(/^#attempt-(\w+)$/); if (m && [...sel.options].some(o => o.value === 'att' + m[1])) show('att' + m[1]);   // only attempts in the dropdown
+  const m = location.hash.match(/^#attempt-(\w+)$/);
+  show(m && [...sel.options].some(o => o.value === 'att' + m[1]) ? 'att' + m[1] : sel.value);   // only attempts in the dropdown
 })();
 </script>
 </body>

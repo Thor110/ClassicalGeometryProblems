@@ -1,21 +1,30 @@
 // The script every paper page shares: the contents list and the figure viewer.
 // Figures open full size; arrows step through them, Escape closes.
 const figs = [...document.querySelectorAll('.fig img')], lb = document.getElementById('lb');
-let at = 0;
+let at = 0, back = null;          // back: what had focus before the viewer opened, to return to
+lb.setAttribute('aria-modal', 'true');
 function openFig(i) {
   at = (i + figs.length) % figs.length;
   document.getElementById('lbImg').src = figs[at].src;
   document.getElementById('lbCap').textContent = figs[at].alt;
+  if (!lb.classList.contains('open')) back = document.activeElement;
   lb.classList.add('open');
+  document.getElementById('lbClose').focus();
 }
-figs.forEach((f, i) => f.onclick = () => openFig(i));
+function closeFig() { lb.classList.remove('open'); if (back && back.focus) back.focus(); back = null; }
+// every figure can be opened from the keyboard as well as by clicking
+figs.forEach((f, i) => {
+  f.onclick = () => openFig(i);
+  f.tabIndex = 0; f.setAttribute('role', 'button');
+  f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFig(i); } });
+});
 document.getElementById('lbPrev').onclick = () => openFig(at - 1);
 document.getElementById('lbNext').onclick = () => openFig(at + 1);
-document.getElementById('lbClose').onclick = () => lb.classList.remove('open');
-lb.onclick = e => { if (e.target === lb) lb.classList.remove('open'); };
+document.getElementById('lbClose').onclick = closeFig;
+lb.onclick = e => { if (e.target === lb) closeFig(); };
 document.addEventListener('keydown', e => {
   if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'Escape') closeFig();
   if (e.key === 'ArrowLeft') openFig(at - 1);
   if (e.key === 'ArrowRight') openFig(at + 1);
 });

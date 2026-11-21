@@ -55,7 +55,7 @@
     .chart tr[data-key] td{display:block;border:0;padding:1px 0;grid-column:2;}
     .chart tr[data-key] td:first-child{grid-column:1;grid-row:1 / span 9;font-size:18px;color:#888;}
     .chart tr[data-key] td.keycell:empty,.chart tr[data-key] td.keycell:has(.mark:empty){display:none;}
-    .chart td[data-label]::before{content:attr(data-label) ' ';color:#555;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;}
+    .chart td[data-label]::before{content:attr(data-label) ' ';color:#8a8a8a;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;}
     .chart .links a{display:inline-block;margin-right:16px;}
   }
 </style>
@@ -185,6 +185,7 @@
 <script src="common.js"></script>
 <script src="archive-data.js"></script>
 <script src="ai-checks.js"></script>
+<script src="ai-sweeps.js"></script>
 <script src="crossref.js"></script>
 <script src="data.js"></script>
 <script>

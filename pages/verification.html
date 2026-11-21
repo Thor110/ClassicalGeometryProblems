@@ -157,7 +157,7 @@ function table() {
 $('all').innerHTML = '<tr><th>Problem</th><th>Entry</th><th>By</th><th>Status</th><th>People</th><th>AI check</th><th>File measures</th><th>What the AI found</th></tr>' + all.filter(e => who === 'all' || (e.holder_kind === 'ai' ? 'ai' : 'person') === who).map(e => {
   const s = statusOf(e), c = s.ai || {};
   const found = (c.checks || []).filter(x => !/^every rebuilt|^no hand-placed|reproduces the chart/.test(x)).join('; ') || (c.status === 'reproduced' ? 'All checks passed.' : '');
-  return `<tr><td><a class="link" href="charts.html#${e.problem.id}">${e.problem.short}</a></td>
+  return `<tr><td><a class="link" href="charts.html#${e.problem.id}${e.archived ? '' : '/' + e.id}">${e.problem.short}</a></td>
     <td>${e.archived ? 'below 95%' : e.side + ' #' + e.rank} · <b>${esc(e.acc)}%</b><br><span class="muted" style="font-size:13px;">${esc(e.holder)}</span></td>
     <td>${e.holder_kind === 'ai' ? 'AI' : 'person'}</td>
     <td><span class="badge ${s.status}">${s.status.replace('-', ' ')}</span></td>
